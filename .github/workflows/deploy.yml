@@ -8,8 +8,8 @@
 #   https://<owner>.github.io/<repo>/textbook/    -> Quarto book
 #
 # Build layout (locally and on CI):
-#   _site/                  <- wiki (mkdocs build --site-dir ../_site/)
-#   _site/textbook/         <- book (quarto render; output-dir in _quarto.yml)
+#   _site/                  <- wiki (mkdocs build --site-dir ../_site/) [built FIRST]
+#   _site/textbook/         <- book (quarto render; only cleans its own output-dir) [built SECOND]
 #
 # Triggers:
 #   - push to main
@@ -82,12 +82,12 @@ jobs:
       # target directory and only clears its own previously-built files,
       # so the /textbook subtree is preserved.
       # ------------------------------------------------------------------
-      - name: Render Quarto textbook -> _site/textbook/
-        run: quarto render
-
       - name: Build MkDocs wiki -> _site/ (root)
         working-directory: wiki
         run: mkdocs build --site-dir ../_site/
+
+      - name: Render Quarto textbook -> _site/textbook/
+        run: quarto render
 
       - name: List built site (diagnostic)
         run: |
