@@ -1,0 +1,438 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// ASSIP 2026 Empirical Finance Research — theme overrides
+// Aim: academic-textbook restraint (think "Causal Inference: The
+// Mixtape" / "Probabilistic ML" / Quarto's own book gallery exemplars).
+// Apply on top of cosmo (light) and darkly (dark).
+// =====================================================================
+
+// --- typography ------------------------------------------------------
+$font-family-serif:
+  "Source Serif Pro", "Source Serif 4",
+  "Charter", "Iowan Old Style",
+  Georgia, "Times New Roman",
+  ui-serif, serif !default;
+
+$font-family-sans-serif:
+  "Source Sans Pro", "Source Sans 3",
+  -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  sans-serif !default;
+
+$font-family-monospace:
+  "JetBrains Mono", "Fira Code", "Source Code Pro",
+  ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !default;
+
+$font-family-base:   $font-family-serif !default;
+$headings-font-family: $font-family-sans-serif !default;
+
+$font-size-base:   1.0625rem !default;   // 17px — slightly larger for serif body
+$line-height-base: 1.65 !default;
+$headings-line-height: 1.25 !default;
+$headings-font-weight: 600 !default;
+
+// Reading column: cap width for long prose.
+$content-padding-top: 1.5rem !default;
+
+// --- palette (restrained academic) ----------------------------------
+// Deep ink as the primary; muted slate as secondary. Avoid Anthropic-orange,
+// avoid juvenile saturated brand colors. Accents are reserved for links
+// and callouts.
+$ink:        #1a202c;
+$ink-2:      #2c3e50;
+$slate:      #4a5568;
+$slate-2:    #718096;
+$paper:      #fdfdfb;
+$paper-2:    #f5f4ef;
+$rule:       #e2e2dc;
+
+$accent:     #1f4e79;   // deep academic blue
+$accent-2:   #2e6da4;
+$accent-hi:  #14365a;
+
+$callout-note:    #1f4e79;
+$callout-tip:     #2e7d32;
+$callout-warning: #b8860b;
+$callout-caution: #c0392b;
+$callout-important: #6a1b9a;
+
+// Bootstrap overrides
+$primary:   $accent !default;
+$secondary: $slate !default;
+$body-color: $ink !default;
+$body-bg:    $paper !default;
+$link-color: $accent !default;
+$link-hover-color: $accent-hi !default;
+$border-color: $rule !default;
+
+$code-color: #b8336a !default;
+$code-bg:    $paper-2 !default;
+$pre-bg:     $paper-2 !default;
+
+/*-- scss:rules --*/
+
+// =====================================================================
+// Global prose
+// =====================================================================
+body {
+  font-feature-settings: "kern", "liga", "onum";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main p, main li {
+  // Slightly tighter measure in the main column for readability.
+  max-width: 72ch;
+}
+
+main h1, main h2, main h3, main h4 {
+  letter-spacing: -0.005em;
+}
+main h1 { margin-top: 0.25em; margin-bottom: 0.6em; }
+main h2 { margin-top: 2.2rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--bs-border-color); }
+main h3 { margin-top: 1.6rem; }
+main h4 { margin-top: 1.25rem; color: $ink-2; }
+
+// Drop caps off, hyphens on, justified off (we keep ragged-right for code-heavy prose).
+main p { hyphens: auto; }
+
+// Block quotes feel like a sidebar in a journal article.
+main blockquote {
+  border-left: 3px solid $accent;
+  background: rgba(31, 78, 121, 0.04);
+  padding: 0.6rem 1rem;
+  margin: 1.25rem 0;
+  font-style: normal;
+  color: $ink-2;
+}
+
+// =====================================================================
+// Code
+// =====================================================================
+code, kbd, samp {
+  font-family: $font-family-monospace;
+  font-size: 0.92em;
+}
+pre, pre code {
+  font-family: $font-family-monospace;
+  font-size: 0.88em;
+  line-height: 1.55;
+}
+div.sourceCode {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 4px;
+  margin: 1rem 0 1.25rem 0;
+}
+code:not(.sourceCode) {
+  background: $paper-2;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: $accent-hi;
+}
+
+// =====================================================================
+// Callouts (Quarto: .callout-note, .callout-tip, etc.)
+// Simple appearance with a visible color stripe and clean header.
+// =====================================================================
+.callout {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 4px;
+  margin: 1.25rem 0;
+}
+.callout.callout-style-simple {
+  border-left-width: 4px;
+}
+.callout-note    { border-left-color: $callout-note    !important; }
+.callout-tip     { border-left-color: $callout-tip     !important; }
+.callout-warning { border-left-color: $callout-warning !important; }
+.callout-caution { border-left-color: $callout-caution !important; }
+.callout-important { border-left-color: $callout-important !important; }
+.callout .callout-header {
+  font-weight: 600;
+  font-family: $font-family-sans-serif;
+  letter-spacing: 0.01em;
+}
+
+// =====================================================================
+// Math (KaTeX)
+// =====================================================================
+.katex { font-size: 1.05em; }
+.katex-display {
+  margin: 1.2rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+// =====================================================================
+// Tables
+// =====================================================================
+main table {
+  border-collapse: collapse;
+  width: auto;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 0.95em;
+  font-family: $font-family-sans-serif;
+}
+main thead th {
+  border-top: 2px solid $ink;
+  border-bottom: 1px solid $ink;
+  padding: 0.4rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+main tbody tr:last-child td {
+  border-bottom: 2px solid $ink;
+}
+main td { padding: 0.35rem 0.75rem; }
+
+// =====================================================================
+// Sidebar / TOC / Navbar
+// =====================================================================
+.sidebar-title, .sidebar-item-text, .sidebar nav {
+  font-family: $font-family-sans-serif;
+  font-size: 0.93rem;
+}
+.sidebar-item-text { line-height: 1.35; }
+.navbar-brand, .navbar-nav .nav-link {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.navbar { border-bottom: 1px solid var(--bs-border-color); }
+#TOC, .toc-active, nav[role="doc-toc"] {
+  font-family: $font-family-sans-serif;
+  font-size: 0.875rem;
+}
+nav[role="doc-toc"] ul a { color: $slate; }
+nav[role="doc-toc"] ul a.active { color: $accent; font-weight: 600; }
+
+// =====================================================================
+// Landing-page (index.qmd) custom blocks
+// =====================================================================
+.hero {
+  padding: 3rem 1rem 2rem 1rem;
+  border-bottom: 1px solid var(--bs-border-color);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.hero-eyebrow {
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $slate-2;
+  margin-bottom: 0.75rem;
+}
+.hero-title {
+  font-family: $font-family-serif;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.1;
+  margin: 0 0 0.5rem 0;
+  color: $ink;
+  border: none !important;
+  padding: 0 !important;
+}
+.hero-subtitle {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  color: $slate;
+  margin: 0.25rem 0 1.25rem 0;
+}
+.hero p { max-width: 65ch; color: $ink-2; }
+.hero-cta { margin: 1.5rem 0 0.5rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.hero-host {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: $slate;
+  font-style: italic;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-family: $font-family-sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border: 1px solid $accent;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-primary {
+  background: $accent;
+  color: $paper !important;
+}
+.btn-primary:hover {
+  background: $accent-hi;
+  color: $paper !important;
+}
+.btn-outline {
+  background: transparent;
+  color: $accent !important;
+}
+.btn-outline:hover {
+  background: $accent;
+  color: $paper !important;
+}
+
+// Quick-stats row
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0 2.5rem 0;
+  background: $paper-2;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 4px;
+}
+.stat { text-align: center; }
+.stat-num {
+  display: block;
+  font-family: $font-family-serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: $accent;
+  line-height: 1;
+}
+.stat-lbl {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $slate;
+}
+
+// Week-card grid: equal-weight 4-column on wide screens, 2-column on
+// tablet, 1-column on phone.
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+@media (max-width: 1100px) { .week-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:  640px) { .week-grid { grid-template-columns: 1fr; } }
+
+.week-card {
+  border: 1px solid var(--bs-border-color);
+  border-left: 3px solid $accent;
+  border-radius: 4px;
+  padding: 1rem 1.1rem;
+  background: var(--bs-body-bg);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.week-card:hover {
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+.week-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-family: $font-family-sans-serif;
+  font-size: 1.0rem;
+  letter-spacing: 0.02em;
+  color: $slate-2;
+  text-transform: uppercase;
+  border: none !important;
+  padding: 0 !important;
+}
+.week-card h3 a { color: $accent; text-decoration: none; }
+.week-card h3 a:hover { text-decoration: underline; }
+.week-card p { margin: 0.35rem 0 0 0; font-size: 0.95rem; color: $ink-2; }
+.week-card strong { font-family: $font-family-sans-serif; color: $ink; }
+
+// "Use" grid (How to use the book)
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+@media (max-width: 700px) { .use-grid { grid-template-columns: 1fr; } }
+.use-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 4px;
+  padding: 1rem 1.1rem;
+  background: $paper-2;
+}
+.use-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-family: $font-family-sans-serif;
+  font-size: 1.05rem;
+  color: $accent;
+  border: none !important;
+  padding: 0 !important;
+}
+.use-card p { margin: 0; font-size: 0.95rem; }
+
+.cta-row, .footer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 1.25rem 0 2rem 0;
+}
+.footer-cta {
+  border-top: 1px solid var(--bs-border-color);
+  padding-top: 1.5rem;
+}
+
+// 404 page
+.not-found {
+  max-width: 60ch;
+  margin: 3rem auto;
+  text-align: left;
+}
+.not-found h1 {
+  font-size: 5rem;
+  color: $slate-2;
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  border: none !important;
+  padding: 0 !important;
+}
+
+// Notebook launcher buttons inherit from _includes/notebook-buttons.html.
+// We only adjust spacing here so it sits nicely after the title block.
+.nb-launch { font-family: $font-family-sans-serif; }
+
+// =====================================================================
+// Dark-mode tuning. Darkly is the base; lift contrast and recolor links.
+// =====================================================================
+.quarto-color-scheme-dark {
+  --bs-body-bg: #1a1d23;
+  --bs-body-color: #d6d6cf;
+  --bs-border-color: #2f343c;
+
+  blockquote { background: rgba(46, 109, 164, 0.10); color: #d6d6cf; }
+  code:not(.sourceCode) { background: #23272f; color: #f4a3c1; }
+  .week-card { background: #1f242b; border-color: #2f343c; }
+  .week-card p, .use-card p { color: #cfd2d0; }
+  .quick-stats { background: #1f242b; }
+  .stat-num { color: #6aa3d4; }
+  .hero { border-bottom-color: #2f343c; }
+  .hero p { color: #cfd2d0; }
+  .use-card { background: #1f242b; }
+  main blockquote { color: #d6d6cf; }
+  main thead th, main tbody tr:last-child td { border-color: #cfd2d0; }
+  .btn-primary { background: #2e6da4; border-color: #2e6da4; }
+  .btn-primary:hover { background: #3a82c1; border-color: #3a82c1; }
+  .btn-outline { color: #6aa3d4 !important; border-color: #6aa3d4; }
+  .btn-outline:hover { background: #6aa3d4; color: #1a1d23 !important; }
+  .nb-launch { background: #1f242b; border-color: #2f343c; }
+  .nb-launch a.nb-btn { background: #23272f; color: #d6d6cf; border-color: #2f343c; }
+  .nb-launch a.nb-btn:hover { background: #2c313a; }
+}
+
+// =====================================================================
+// Print: drop the navbar/sidebar; black-on-white prose.
+// =====================================================================
+@media print {
+  .navbar, .sidebar, #TOC, nav[role="doc-toc"],
+  .hero-cta, .footer-cta, .cta-row, .nb-launch { display: none !important; }
+  body { background: white !important; color: black !important; }
+  a { color: black !important; text-decoration: none !important; }
+}

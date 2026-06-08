@@ -1,0 +1,306 @@
+---
+title: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
+subtitle: "Eight full-time weeks of research-grade empirical finance, built for the GMU ASSIP 2026 group"
+pagetitle: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
+description-meta: >
+  An 8-week, full-time empirical finance research curriculum for the
+  GMU ASSIP 2026 cohort. Hosted (remote) by Prof. Lei Gao at George
+  Mason University's Costello College of Business. Probability, OLS,
+  causal inference, quasi-experiments, text-as-data, and a research
+  poster for the Aug 12, 2026 ASSIP Symposium.
+toc: false
+number-sections: false
+page-layout: full
+format:
+  html:
+    css: styles.scss
+    include-in-header:
+      - text: |
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="Empirical Finance from the Ground Up — ASSIP 2026 Cohort">
+          <meta name="twitter:description" content="An 8-week full-time empirical-finance research curriculum for the GMU ASSIP 2026 cohort. Hosted remotely by Prof. Lei Gao at GMU.">
+          <meta property="og:type" content="website">
+          <meta property="og:title" content="Empirical Finance from the Ground Up — ASSIP 2026 Cohort">
+          <meta property="og:description" content="An 8-week full-time empirical-finance research curriculum for the GMU ASSIP 2026 cohort. Hosted remotely by Prof. Lei Gao at GMU.">
+          <meta property="og:site_name" content="Empirical Finance from the Ground Up — ASSIP 2026 Cohort">
+---
+
+::: {.hero}
+
+::: {.hero-eyebrow}
+George Mason University · College of Science · Aspiring Scientists Summer Internship Program (ASSIP) 2026
+:::
+
+# Empirical Finance from the Ground Up {.hero-title}
+
+### ASSIP 2026 Cohort · Eight full-time weeks · A research poster at the symposium on Aug 12, 2026 {.hero-subtitle}
+
+A textbook-and-lab system for the 14 advanced high-school and pre-graduation
+undergraduate researchers in the **ASSIP 2026 Empirical Finance group** —
+empirical finance the way it is actually done: with code, with data,
+and with intellectual honesty about what we can and cannot conclude.
+
+::: {.hero-cta}
+[Start here →](book/00-front-matter/00-preface.md){.btn .btn-primary}
+[How to use the book](book/00-front-matter/02-how-to-use.md){.btn .btn-outline}
+[View source on GitHub](https://github.com/edwardlg/assip-2026-empirical-finance){.btn .btn-outline}
+:::
+
+::: {.hero-host}
+Faculty mentor: **[Prof. Lei Gao](https://business.gmu.edu/)**, Associate Professor of Finance,
+Costello College of Business, George Mason University. **2026 ASSIP slot: REMOTE only.**
+Program director: Dr. Amanda Haymond Still · `cosassip@gmu.edu`.
+:::
+
+:::
+
+::: {.quick-stats}
+::: {.stat}
+[**8**]{.stat-num} [Weeks]{.stat-lbl}
+:::
+::: {.stat}
+[**40**]{.stat-num} [Chapters]{.stat-lbl}
+:::
+::: {.stat}
+[**40**]{.stat-num} [Notebooks]{.stat-lbl}
+:::
+::: {.stat}
+[**34**]{.stat-num} [Data cards]{.stat-lbl}
+:::
+::: {.stat}
+[**5**]{.stat-num} [Capstones]{.stat-lbl}
+:::
+::: {.stat}
+[**1**]{.stat-num} [Instructor manual]{.stat-lbl}
+:::
+:::
+
+---
+
+## Two interlinked sites
+
+This project ships as **two sites** on a single GitHub Pages domain. Use the wiki for cohort logistics (calendars, mentors, templates, FAQ, symposium info); use the textbook for the chapters, problem sets, notebooks, capstones, and instructor's manual.
+
+::: {.use-grid}
+::: {.use-card}
+### Cohort wiki — `/`
+Operational dashboard: week-by-week schedule, project templates (PAP, poster), mentor roster, code of conduct, FAQ, symposium logistics, reading list, data access, setup guide.
+
+[Open the wiki →](../){.btn .btn-outline}
+:::
+
+::: {.use-card}
+### Textbook — `/textbook/` (you are here)
+The 8-week curriculum: probability and inference, OLS, causal inference I & II, paper-reading guides, text/AI, two project weeks, plus appendices A–E, the capstone gallery, and the instructor's manual.
+
+[Read the preface →](book/00-front-matter/00-preface.md){.btn .btn-outline}
+:::
+:::
+
+---
+
+## The 8-week arc — ASSIP 2026 calendar
+
+Orientation is **Thursday Jun 18, 2026**. The cohort works **Mon–Fri 9 am – 5 pm**
+from **Mon Jun 22** through the **ASSIP Research Symposium on Wed Aug 12**.
+Holidays off: **Fri Jun 19** (Juneteenth) and **Fri Jul 3** (Independence Day observance).
+
+::: {.week-grid}
+
+::: {.week-card}
+### [Week 1](book/weeks/week-01/README.md)
+**Probability, Inference, and the Logic of Estimation**
+
+The two laws, expectations as geometry, sampling distributions, LLN/CLT, the
+mechanics of a $t$-test. Lab: simulating the *coin-flip universe*.
+*Jun 22 – Jun 26, 2026.*
+:::
+
+::: {.week-card}
+### [Week 2](book/weeks/week-02/README.md)
+**OLS, Geometry, and Inference**
+
+OLS in matrix form, Gauss-Markov, Frisch-Waugh-Lovell, robust and clustered
+standard errors, omitted-variable bias. Lab: Fama-MacBeth on CRSP.
+*Jun 29 – Jul 2, 2026 (Jul 3 off).*
+:::
+
+::: {.week-card}
+### [Week 3](book/weeks/week-03/README.md)
+**Causal Inference Foundations**
+
+Potential outcomes and SUTVA, matching and propensity scores, entropy
+balancing, IV and weak-IV pathology. Lab: making weak instruments lie.
+*Jul 6 – Jul 10, 2026.*
+:::
+
+::: {.week-card}
+### [Week 4](book/weeks/week-04/README.md)
+**Quasi-Experiments in Finance**
+
+Event studies, staggered DiD (TWFE vs. Callaway-Sant'Anna), regression
+discontinuity, synthetic control, Bartik shift-share. Lab: HMDA DiD.
+*Jul 13 – Jul 17, 2026.*
+:::
+
+::: {.week-card}
+### [Week 5](book/weeks/week-05/README.md)
+**Reading the Empirical Finance Canon**
+
+Reader's guides to Fama-French 1992 & 1993, Jegadeesh-Titman 1993,
+Petersen 2009, Bertrand-Duflo-Mullainathan 2004. *What does a JF paper actually do?*
+*Jul 20 – Jul 24, 2026.*
+:::
+
+::: {.week-card}
+### [Week 6](book/weeks/week-06/README.md)
+**Text, AI, and Alternative Data**
+
+Patent value, 10-K similarity, Loughran-McDonald sentiment, fair-lending
+decomposition, and an AI copilot lab — without fooling yourself.
+*Jul 27 – Jul 31, 2026.*
+:::
+
+::: {.week-card}
+### [Week 7](book/weeks/week-07/README.md)
+**Your Project, Part I**
+
+Idea generation, data acquisition, pre-analysis plan, dataset
+construction, identification memo. The week you stop being a student.
+*Aug 3 – Aug 7, 2026.*
+:::
+
+::: {.week-card}
+### [Week 8](book/weeks/week-08/README.md)
+**Your Project, Part II — Symposium**
+
+Specification curve, robustness battery, poster build, peer review,
+defense. **Poster session at the ASSIP Research Symposium, Wed Aug 12.**
+*Aug 10 – Aug 12, 2026.*
+:::
+
+:::
+
+---
+
+## Who this is for
+
+This site is built for the **ASSIP 2026 Empirical Finance cohort** — a
+group of **14 advanced high-school students (15+) and pre-graduation
+undergraduates** selected by GMU's College of Science to work full-time,
+Monday through Friday 9 am – 5 pm, from June 22 through the ASSIP
+Research Symposium on August 12, 2026.
+
+The group is at the high end of typical ASSIP group size (2–15), so we
+run a **layered mentorship model**: Prof. Gao (faculty mentor, remote
+slot) over the whole cohort, with PhD / RA sub-leaders working closely
+with sub-pods on data engineering, identification, and writing. See
+[Cohort & Mentorship Model](book/00-front-matter/04-cohort-and-mentorship.md)
+for how that scales for 14 students.
+
+The methodological bar is real. You should be comfortable with strong
+precalculus or calculus, ready to learn Python quickly if you have not
+yet, and willing to read math that begins:
+
+$$
+\hat{\boldsymbol{\beta}}_{\text{OLS}} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}.
+$$
+
+If that equation is intimidating but interesting, you are exactly the
+intended reader. Appendix A is a math toolkit; Appendix B is a setup
+guide; the prerequisite self-test will tell you which gaps to close
+before orientation on Jun 18.
+
+::: {.cta-row}
+[Take the prerequisite self-test →](book/00-front-matter/03-prerequisite-self-test.md){.btn .btn-outline}
+[Cohort & mentorship model →](book/00-front-matter/04-cohort-and-mentorship.md){.btn .btn-outline}
+:::
+
+---
+
+## What you'll build — and what ASSIP requires
+
+The **required ASSIP 2026 deliverable** is a research poster presented
+at the **ASSIP Research Symposium on Wed Aug 12, 2026** (in-person poster
+session for on-site interns + virtual breakouts for remote interns —
+which is all of us, since our 2026 slot is remote). Beyond that, by
+the end of Week 8 you will have:
+
+- A **research poster** for the Aug 12 symposium, audience includes Mason
+  faculty, mentors, families, College of Science leadership, and Mason
+  News press.
+- A **research abstract** submitted to the *Journal of Student-Scientists'
+  Research* (JSSR, GMU Mason Publishing).
+- An optional **full paper** if your project supports it.
+- A **public replication packet**: code, data references, README,
+  environment file, one-command rebuild.
+- **3 GMU College of Science credits** for completion, plus participation
+  in the ASSIP scientific-writing and career forum.
+- **Reading fluency** in five canonical empirical-finance papers and
+  five more from the text/AI tradition.
+
+---
+
+## How to use the book
+
+::: {.use-grid}
+::: {.use-card}
+### For students
+Read each week's chapters in order. Work the problem sets *before*
+opening the solutions. Run every notebook. The labs are the part where
+you actually learn. Anchor every analysis decision to the
+identification memo you will write in Week 7.
+:::
+
+::: {.use-card}
+### For instructors & mentors
+The [instructor manual](book/instructor-manual/README.md) has the
+ASSIP-specific pacing guide, grading rubrics, common pitfalls, and
+answer keys. The [capstone gallery](book/capstones/README.md) gives
+five fully-specified projects with synthetic illustrative results.
+:::
+
+::: {.use-card}
+### For independent readers
+You can run every notebook on **Colab** or **Binder** directly from each
+notebook page — look for the buttons at the top. The
+[`environment.yml`](https://github.com/edwardlg/assip-2026-empirical-finance/blob/main/environment.yml)
+pins the conda environment.
+:::
+
+::: {.use-card}
+### For everyone
+Every chapter that makes a quantitative claim flags the claim with a
+`[CHECK]` tag if it has not yet been verified against a primary source.
+This is on purpose. Research is a process, not a posture.
+:::
+:::
+
+---
+
+## Acknowledgements
+
+This curriculum is built for the **ASSIP 2026 (Aspiring Scientists
+Summer Internship Program)** at George Mason University's College of
+Science — director **Dr. Amanda Haymond Still**, program contact
+`cosassip@gmu.edu`. ASSIP makes research-grade methods accessible to
+high-school students and pre-graduation undergraduates who are ready
+for them, regardless of GPA, and offers full tuition waivers for
+Pell-eligible and reduced-lunch students. The
+[articulation matrix](book/00-front-matter/01-articulation-matrix.md)
+maps every learning objective to the ASSIP symposium deliverable and to
+downstream undergraduate / PhD-level competencies, with sources cited.
+
+The textbook was drafted in a multi-agent workflow that pairs planning,
+writing, and review agents under human supervision. See [About](about.qmd)
+for the methodology and the editorial standard.
+
+---
+
+::: {.footer-cta}
+Ready to start?
+
+[Read the preface →](book/00-front-matter/00-preface.md){.btn .btn-primary}
+[Browse the capstones →](book/capstones/README.md){.btn .btn-outline}
+[Open on GitHub →](https://github.com/edwardlg/assip-2026-empirical-finance){.btn .btn-outline}
+:::

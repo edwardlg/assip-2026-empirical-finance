@@ -1,0 +1,37 @@
+# =============================================================================
+# ASSIP 2026 — .gitignore
+# Excludes build artifacts, secrets, and licensed/large data so only source
+# files are committed.
+# =============================================================================
+
+# ---- Python -----------------------------------------------------------------
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+
+# ---- Build artifacts: Quarto + MkDocs --------------------------------------
+_site/
+.quarto/
+_freeze/
+_book/
+wiki/site/
+wiki/.cache/
+
+# ---- Locks (we pin via environment.yml / requirements.txt instead) ---------
+*.lock
+
+# ---- Data (licensed data must NOT be committed) -----------------------------
+data/
+*.parquet
+*.csv
+!data-cards/**
+
+# ---- OS / editor ------------------------------------------------------------
+.DS_Store
+.vscode/
+
+# ---- Secrets ----------------------------------------------------------------
+.env
+*.key

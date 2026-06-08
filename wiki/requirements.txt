@@ -1,0 +1,26 @@
+# =============================================================================
+# ASSIP 2026 Wiki — Python build dependencies
+# -----------------------------------------------------------------------------
+# Install with:  pip install -r requirements.txt
+# Pinned to current-stable minors so CI builds are reproducible. Bump
+# deliberately (one PR per major theme version) so visual regressions are
+# easy to bisect.
+# =============================================================================
+
+# Core static-site generator + Material theme
+mkdocs>=1.6,<2.0
+mkdocs-material>=9.5,<10.0
+
+# Extension pack — superfences, tabbed, arithmatex, details, etc.
+pymdown-extensions>=10.7,<11.0
+
+# "Last updated" stamps on every page
+mkdocs-git-revision-date-localized-plugin>=1.2,<2.0
+
+# Jinja2 macros inside markdown (shared facts: dates, contacts, names)
+mkdocs-macros-plugin>=1.0,<2.0
+
+# Pillow + CairoSVG are required by mkdocs-material's social-card generator,
+# which we may enable later. Cheap to keep available.
+Pillow>=10.0
+cairosvg>=2.7

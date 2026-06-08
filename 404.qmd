@@ -1,0 +1,31 @@
+---
+title: "Page not found"
+pagetitle: "404 — Page not found"
+description-meta: "The page you are looking for does not exist on the ASSIP 2026 Empirical Finance textbook site."
+toc: false
+number-sections: false
+page-layout: article
+---
+
+::: {.not-found}
+
+# 404
+
+## This page is not here.
+
+The link you followed is broken, the page has been moved, or the URL
+was mistyped. None of those are research-ending events.
+
+A few useful places to land instead:
+
+- [**Home**](index.qmd) — the landing page with the 8-week ASSIP 2026 arc.
+- [**Preface**](book/00-front-matter/00-preface.md) — what this cohort is and is not.
+- [**How to use the book**](book/00-front-matter/02-how-to-use.md) — the recommended path.
+- [**Instructor manual**](book/instructor-manual/README.md) — for course staff and mentors.
+- [**Capstone gallery**](book/capstones/README.md) — five fully-specified research projects.
+- [**Search**](#){.search-trigger onclick="document.querySelector('.aa-DetachedSearchButton')?.click(); return false;"} — type a chapter or topic into the search bar in the navbar.
+
+If you arrived from an external link that you think should still work,
+please [open an issue on GitHub](https://github.com/edwardlg/assip-2026-empirical-finance/issues/new).
+
+:::

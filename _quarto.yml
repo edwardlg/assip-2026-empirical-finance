@@ -1,0 +1,509 @@
+# =====================================================================
+# Empirical Finance from the Ground Up — ASSIP 2026 Cohort
+# Quarto book configuration
+# Faculty mentor: Prof. Lei Gao, GMU Costello College of Business
+# Host program:   ASSIP (Aspiring Scientists Summer Internship Program),
+#                 GMU College of Science. Director: Dr. Amanda Haymond Still.
+#
+# Site layout: the deployed GitHub Pages site is dual-hosted.
+#   /            -> the project wiki (Markdown tree, separate)
+#   /textbook/   -> this Quarto book (built from this repo)
+# That is why output-dir is _site/textbook -- the book lives at the
+# /textbook/ subpath of the Pages domain.
+#
+# Render locally:   quarto preview        (live reload)
+# Render once:      quarto render
+# Deploy:           push to main; GitHub Actions publishes to gh-pages.
+# =====================================================================
+
+project:
+  type: book
+  output-dir: _site/textbook
+  preview:
+    port: 4200
+    browser: false
+  resources:
+    - "notebooks/**/*.ipynb"
+    - "data-cards/**/*.md"
+    - "environment.yml"
+    - "CONVENTIONS.md"
+
+# -----------------------------------------------------------------
+# Global execution policy: never execute code on CI or locally during
+# render. Notebooks ship as static renderings; students download/run
+# them in Colab / Binder / locally. Freeze prerendered outputs.
+# -----------------------------------------------------------------
+execute:
+  enabled: false
+  freeze: true
+
+# Bibliography: no central .bib yet. Uncomment when refs/refs.bib lands.
+# bibliography: refs/refs.bib
+# csl: chicago-author-date.csl
+
+book:
+  title: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
+  subtitle: "Eight Full-Time Weeks for the GMU ASSIP 2026 Empirical Finance Group"
+  author:
+    - name: "Lei Gao"
+      affiliation: "Costello College of Business, George Mason University"
+      url: "https://business.gmu.edu/"
+  date: "2026-06-08"
+  date-format: "iso"
+  reader-mode: true
+  search:
+    location: navbar
+    type: overlay
+  page-navigation: true
+  back-to-top-navigation: true
+  repo-url: "https://github.com/edwardlg/assip-2026-empirical-finance"
+  repo-branch: main
+  repo-actions: [edit, issue, source]
+  downloads: []
+  sharing: [twitter, linkedin]
+  twitter-card:
+    creator: "@gmu_business"
+    card-style: summary_large_image
+    title: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
+    description: "An 8-week full-time empirical-finance research curriculum for the GMU ASSIP 2026 cohort. Hosted remotely by Prof. Lei Gao."
+  open-graph:
+    locale: en_US
+    site-name: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
+    title: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
+    description: "An 8-week full-time empirical-finance research curriculum for the GMU ASSIP 2026 cohort. Hosted remotely by Prof. Lei Gao."
+  favicon: ""
+  site-url: "https://edwardlg.github.io/assip-2026-empirical-finance/textbook/"
+  navbar:
+    pinned: true
+    background: light
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Front Matter"
+        href: book/00-front-matter/00-preface.md
+      - text: "Weeks"
+        menu:
+          - text: "Week 1 — Probability & Inference"
+            href: book/weeks/week-01/README.md
+          - text: "Week 2 — OLS & Inference"
+            href: book/weeks/week-02/README.md
+          - text: "Week 3 — Causal Inference"
+            href: book/weeks/week-03/README.md
+          - text: "Week 4 — Quasi-Experiments"
+            href: book/weeks/week-04/README.md
+          - text: "Week 5 — Reading Finance Papers"
+            href: book/weeks/week-05/README.md
+          - text: "Week 6 — Text, AI, Alt Data"
+            href: book/weeks/week-06/README.md
+          - text: "Week 7 — Your Project I"
+            href: book/weeks/week-07/README.md
+          - text: "Week 8 — Your Project II"
+            href: book/weeks/week-08/README.md
+      - text: "Capstones"
+        href: book/capstones/README.md
+      - text: "Instructor Manual"
+        href: book/instructor-manual/README.md
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: "https://github.com/edwardlg/assip-2026-empirical-finance"
+        aria-label: GitHub
+
+  # -----------------------------------------------------------------
+  # Chapters — every existing path is listed. Verified by find(1) on
+  # 2026-06-08 against book/, notebooks/, data-cards/.
+  # -----------------------------------------------------------------
+  chapters:
+    - index.qmd
+
+    - part: "Front Matter"
+      chapters:
+        - book/00-front-matter/00-preface.md
+        - book/00-front-matter/01-articulation-matrix.md
+        - book/00-front-matter/02-how-to-use.md
+        - book/00-front-matter/03-prerequisite-self-test.md
+        - book/00-front-matter/04-cohort-and-mentorship.md
+        - book/TOC.md
+
+    - part: "Week 1 — Probability, Inference, and the Logic of Estimation"
+      chapters:
+        - book/weeks/week-01/README.md
+        - book/weeks/week-01/ch11-joint-conditional-two-laws.md
+        - book/weeks/week-01/ch12-expectation-variance-geometry.md
+        - book/weeks/week-01/ch13-estimators-sampling-distributions.md
+        - book/weeks/week-01/ch14-lln-clt.md
+        - book/weeks/week-01/ch15-hypothesis-testing.md
+        - book/weeks/week-01/lab1-coin-flip-universe.md
+        - book/weeks/week-01/mentor1-what-is-a-finding.md
+        - book/weeks/week-01/ps1.1.md
+        - book/weeks/week-01/ps1.2.md
+        - book/weeks/week-01/ps1.3.md
+        - book/weeks/week-01/ps1.4.md
+        - book/weeks/week-01/ps1.5.md
+        - book/weeks/week-01/assessment1.md
+        - notebooks/week-01/nb1.1-lie-ltv-by-simulation.ipynb
+        - notebooks/week-01/nb1.2-covariance-matrices-correlation-heatmaps.ipynb
+        - notebooks/week-01/nb1.3-sampling-distribution-explorer.ipynb
+        - notebooks/week-01/nb1.4-lln-clt-convergence.ipynb
+        - notebooks/week-01/nb1.5-power-and-the-t-test.ipynb
+
+    - part: "Week 2 — OLS, Geometry, and Inference"
+      chapters:
+        - book/weeks/week-02/README.md
+        - book/weeks/week-02/ch21-ols-matrix-form.md
+        - book/weeks/week-02/ch22-gauss-markov.md
+        - book/weeks/week-02/ch23-frisch-waugh-lovell.md
+        - book/weeks/week-02/ch24-heteroskedasticity-clustering-hac.md
+        - book/weeks/week-02/ch25-misspecification-ovb-measurement-error.md
+        - book/weeks/week-02/lab2-fama-macbeth-crsp.md
+        - book/weeks/week-02/mentor2-standard-error-ballgame.md
+        - book/weeks/week-02/ps2.1.md
+        - book/weeks/week-02/ps2.2.md
+        - book/weeks/week-02/ps2.3.md
+        - book/weeks/week-02/ps2.4.md
+        - book/weeks/week-02/ps2.5.md
+        - book/weeks/week-02/assessment2.md
+        - notebooks/week-02/nb2.1-ols-from-scratch.ipynb
+        - notebooks/week-02/nb2.2-gauss-markov-monte-carlo.ipynb
+        - notebooks/week-02/nb2.3-fwl-residualization.ipynb
+        - notebooks/week-02/nb2.4-se-flavors-clustered-panel.ipynb
+        - notebooks/week-02/nb2.5-biased-estimator-lab.ipynb
+
+    - part: "Week 3 — Causal Inference Foundations"
+      chapters:
+        - book/weeks/week-03/README.md
+        - book/weeks/week-03/ch31-potential-outcomes-sutva.md
+        - book/weeks/week-03/ch32-matching-propensity-scores.md
+        - book/weeks/week-03/ch33-entropy-balancing-doubly-robust.md
+        - book/weeks/week-03/ch34-instrumental-variables.md
+        - book/weeks/week-03/ch35-reading-iv-weak-iv-pathology.md
+        - book/weeks/week-03/lab3-weak-iv-pathology.md
+        - book/weeks/week-03/mentor3-natural-experiments.md
+        - book/weeks/week-03/ps3.1.md
+        - book/weeks/week-03/ps3.2.md
+        - book/weeks/week-03/ps3.3.md
+        - book/weeks/week-03/ps3.4.md
+        - book/weeks/week-03/ps3.5.md
+        - book/weeks/week-03/assessment3.md
+        - notebooks/week-03/nb3.1-potential-outcomes-selection-bias.ipynb
+        - notebooks/week-03/nb3.2-psm-balance-diagnostics.ipynb
+        - notebooks/week-03/nb3.3-entropy-balancing-ipw-aipw.ipynb
+        - notebooks/week-03/nb3.4-2sls-first-stage-f.ipynb
+        - notebooks/week-03/nb3.5-weak-iv-pathology.ipynb
+
+    - part: "Week 4 — Quasi-Experiments in Finance"
+      chapters:
+        - book/weeks/week-04/README.md
+        - book/weeks/week-04/ch41-did-event-studies.md
+        - book/weeks/week-04/ch42-staggered-adoption-crisis.md
+        - book/weeks/week-04/ch43-regression-discontinuity.md
+        - book/weeks/week-04/ch44-synthetic-control.md
+        - book/weeks/week-04/ch45-bartik-shift-share.md
+        - book/weeks/week-04/lab4-hmda-did.md
+        - book/weeks/week-04/mentor4-detecting-discrimination.md
+        - book/weeks/week-04/ps4.1.md
+        - book/weeks/week-04/ps4.2.md
+        - book/weeks/week-04/ps4.3.md
+        - book/weeks/week-04/ps4.4.md
+        - book/weeks/week-04/ps4.5.md
+        - book/weeks/week-04/assessment4.md
+        - notebooks/week-04/nb4.1-event-study-parallel-trends.ipynb
+        - notebooks/week-04/nb4.2-staggered-twfe-vs-callaway-santanna.ipynb
+        - notebooks/week-04/nb4.3-rd-rdrobust-cct.ipynb
+        - notebooks/week-04/nb4.4-synthetic-control-sdid.ipynb
+        - notebooks/week-04/nb4.5-bartik-shift-share.ipynb
+
+    - part: "Week 5 — Reading the Empirical Finance Canon"
+      chapters:
+        - book/weeks/week-05/README.md
+        - book/weeks/week-05/ch51-readers-guide-fama-french-1992.md
+        - book/weeks/week-05/ch52-readers-guide-fama-french-1993.md
+        - book/weeks/week-05/ch53-readers-guide-jegadeesh-titman-1993.md
+        - book/weeks/week-05/ch54-readers-guide-petersen-2009.md
+        - book/weeks/week-05/ch55-readers-guide-bertrand-duflo-mullainathan-2004.md
+        - book/weeks/week-05/reading-guide-pack-5.md
+        - book/weeks/week-05/mentor5-anatomy-of-a-jf-paper.md
+        - book/weeks/week-05/ps5.1.md
+        - book/weeks/week-05/ps5.2.md
+        - book/weeks/week-05/ps5.3.md
+        - book/weeks/week-05/ps5.4.md
+        - book/weeks/week-05/ps5.5.md
+        - book/weeks/week-05/assessment5.md
+        - notebooks/week-05/nb5.1-ff92-portfolio-sorts.ipynb
+        - notebooks/week-05/nb5.2-ff93-factor-regressions.ipynb
+        - notebooks/week-05/nb5.3-momentum-backtest.ipynb
+        - notebooks/week-05/nb5.4-petersen-clustering-replication.ipynb
+        - notebooks/week-05/nb5.5-bdm-placebo-law.ipynb
+
+    - part: "Week 6 — Text, AI, and Alternative Data"
+      chapters:
+        - book/weeks/week-06/README.md
+        - book/weeks/week-06/ch61-readers-guide-kpss-2017.md
+        - book/weeks/week-06/ch62-readers-guide-hoberg-phillips-2016.md
+        - book/weeks/week-06/ch63-readers-guide-loughran-mcdonald-2011.md
+        - book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.md
+        - book/weeks/week-06/ch65-ai-copilot-for-research.md
+        - book/weeks/week-06/reading-guide-pack-6-ai-lab-manual.md
+        - book/weeks/week-06/mentor6-text-as-data-ai-without-fooling-yourself.md
+        - book/weeks/week-06/ps6.1.md
+        - book/weeks/week-06/ps6.2.md
+        - book/weeks/week-06/ps6.3.md
+        - book/weeks/week-06/ps6.4.md
+        - book/weeks/week-06/ps6.5.md
+        - book/weeks/week-06/assessment6.md
+        - notebooks/week-06/nb6.1-patent-value-panel.ipynb
+        - notebooks/week-06/nb6.2-10k-text-similarity.ipynb
+        - notebooks/week-06/nb6.3-loughran-mcdonald-sentiment.ipynb
+        - notebooks/week-06/nb6.4-mortgage-disparity-decomposition.ipynb
+        - notebooks/week-06/nb6.5-ai-copilot-lab.ipynb
+
+    - part: "Week 7 — Your Project, Part I"
+      chapters:
+        - book/weeks/week-07/README.md
+        - book/weeks/week-07/ch71-idea-generation-workshop.md
+        - book/weeks/week-07/ch72-data-acquisition-in-practice.md
+        - book/weeks/week-07/ch73-pre-analysis-plan.md
+        - book/weeks/week-07/ch74-building-the-analysis-dataset.md
+        - book/weeks/week-07/ch75-identification-memo.md
+        - book/weeks/week-07/lab7-your-data-reproducibly.md
+        - book/weeks/week-07/mentor7-how-i-pick-and-kill-a-project.md
+        - book/weeks/week-07/ps7.1.md
+        - book/weeks/week-07/ps7.2.md
+        - book/weeks/week-07/ps7.3.md
+        - book/weeks/week-07/ps7.4.md
+        - book/weeks/week-07/ps7.5.md
+        - book/weeks/week-07/assessment7.md
+        - notebooks/week-07/nb7.1-idea-to-spec-template.ipynb
+        - notebooks/week-07/nb7.2-multi-source-data-pull-harness.ipynb
+        - notebooks/week-07/nb7.3-pap-companion-power-calc.ipynb
+        - notebooks/week-07/nb7.4-dataset-build-validation.ipynb
+        - notebooks/week-07/nb7.5-first-look-regressions.ipynb
+
+    - part: "Week 8 — Your Project, Part II"
+      chapters:
+        - book/weeks/week-08/README.md
+        - book/weeks/week-08/ch81-execution-specification-curve.md
+        - book/weeks/week-08/ch82-robustness-inference-stress-tests.md
+        - book/weeks/week-08/ch83-writing-the-empirical-paper.md
+        - book/weeks/week-08/ch84-peer-review-and-revision.md
+        - book/weeks/week-08/ch85-presentation-and-replication-packet.md
+        - book/weeks/week-08/lab8-final-manuscript-repo-defense.md
+        - book/weeks/week-08/mentor8-defending-a-result.md
+        - book/weeks/week-08/ps8.1.md
+        - book/weeks/week-08/ps8.2.md
+        - book/weeks/week-08/ps8.3.md
+        - book/weeks/week-08/ps8.4.md
+        - book/weeks/week-08/ps8.5.md
+        - book/weeks/week-08/assessment8.md
+        - notebooks/week-08/nb8.1-specification-curve.ipynb
+        - notebooks/week-08/nb8.2-robustness-battery.ipynb
+        - notebooks/week-08/nb8.3-publication-tables-figures.ipynb
+        - notebooks/week-08/nb8.4-reproducibility-check.ipynb
+        - notebooks/week-08/nb8.5-final-manuscript-build.ipynb
+
+    - part: "Capstone Projects"
+      chapters:
+        - book/capstones/README.md
+        - book/capstones/capstone1-fair-lending-hmda.md
+        - book/capstones/capstone2-common-ownership-13f.md
+        - book/capstones/capstone3-innovation-uspto.md
+        - book/capstones/capstone4-8k-text-classification.md
+        - book/capstones/capstone5-fred-macro-event-study.md
+
+    - part: "Instructor Manual"
+      chapters:
+        - book/instructor-manual/README.md
+        - book/instructor-manual/IM1-pacing-guide.md
+        - book/instructor-manual/IM2-grading-rubrics.md
+        - book/instructor-manual/IM3-common-pitfalls.md
+        - book/instructor-manual/IM4-guest-lectures-mentor-notes.md
+        - book/instructor-manual/IM5-answer-keys-anchor-work.md
+        - book/instructor-manual/IM6-equity-access.md
+
+  appendices:
+    - part: "Appendix A — Math Toolkit"
+      chapters:
+        - book/appendices/A-math-toolkit/README.md
+        - book/appendices/A-math-toolkit/A1-matrix-algebra.md
+        - book/appendices/A-math-toolkit/A2-optimization.md
+        - book/appendices/A-math-toolkit/A3-asymptotics.md
+        - book/appendices/A-math-toolkit/A4-distributions.md
+    - part: "Appendix B — Python & LaTeX Setup"
+      chapters:
+        - book/appendices/B-python-latex-setup/README.md
+        - book/appendices/B-python-latex-setup/B1-toolchain.md
+        - book/appendices/B-python-latex-setup/B2-github-classroom.md
+        - book/appendices/B-python-latex-setup/B3-wrds-cloud.md
+        - book/appendices/B-python-latex-setup/B4-hopper-slurm.md
+        - book/appendices/B-python-latex-setup/B5-overleaf-latex.md
+    - part: "Appendix C — Data Dictionary"
+      chapters:
+        - book/appendices/C-data-dictionary/README.md
+        - data-cards/README.md
+        - data-cards/bea.md
+        - data-cards/bls.md
+        - data-cards/capital-iq.md
+        - data-cards/census-acs.md
+        - data-cards/cfpb-complaints.md
+        - data-cards/compustat.md
+        - data-cards/crsp.md
+        - data-cards/crypto-onchain.md
+        - data-cards/edgar-10k-10q.md
+        - data-cards/edgar-13f.md
+        - data-cards/edgar-8k.md
+        - data-cards/edgar-def14a.md
+        - data-cards/edgar-nport.md
+        - data-cards/edgar-xbrl.md
+        - data-cards/fdic.md
+        - data-cards/ffiec-call-reports.md
+        - data-cards/fomc-gdelt-text.md
+        - data-cards/fr-y9c.md
+        - data-cards/fred.md
+        - data-cards/free-equity-apis.md
+        - data-cards/hmda.md
+        - data-cards/ibes.md
+        - data-cards/international-macro.md
+        - data-cards/loughran-mcdonald-dict.md
+        - data-cards/mergent-fisd.md
+        - data-cards/msrb-emma.md
+        - data-cards/nber-patent-link.md
+        - data-cards/noaa-fema.md
+        - data-cards/optionmetrics.md
+        - data-cards/thomson-13f.md
+        - data-cards/trace.md
+        - data-cards/treasury-finra.md
+        - data-cards/usaspending.md
+        - data-cards/uspto-patentsview.md
+    - part: "Appendix D — Style Guide"
+      chapters:
+        - book/appendices/D-style-guide/README.md
+        - book/appendices/D-style-guide/D1-table-craft.md
+        - book/appendices/D-style-guide/D2-reporting-regressions.md
+        - book/appendices/D-style-guide/D3-robustness-sections.md
+        - book/appendices/D-style-guide/D4-replication-packet.md
+        - book/appendices/D-style-guide/D5-prose-style.md
+    - part: "Appendix E — Solutions Manual"
+      chapters:
+        - book/appendices/E-solutions-manual/README.md
+        - book/appendices/E-solutions-manual/E-w1-ps1.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w1-ps1.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w1-ps1.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w1-ps1.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w1-ps1.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w2-ps2.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w2-ps2.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w2-ps2.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w2-ps2.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w2-ps2.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w3-ps3.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w3-ps3.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w3-ps3.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w3-ps3.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w3-ps3.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w4-ps4.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w4-ps4.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w4-ps4.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w4-ps4.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w4-ps4.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w5-ps5.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w5-ps5.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w5-ps5.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w5-ps5.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w5-ps5.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w6-ps6.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w6-ps6.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w6-ps6.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w6-ps6.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w6-ps6.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w7-ps7.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w7-ps7.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w7-ps7.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w7-ps7.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w7-ps7.5-solutions.md
+        - book/appendices/E-solutions-manual/E-w8-ps8.1-solutions.md
+        - book/appendices/E-solutions-manual/E-w8-ps8.2-solutions.md
+        - book/appendices/E-solutions-manual/E-w8-ps8.3-solutions.md
+        - book/appendices/E-solutions-manual/E-w8-ps8.4-solutions.md
+        - book/appendices/E-solutions-manual/E-w8-ps8.5-solutions.md
+
+  page-footer:
+    border: true
+    left: |
+      &copy; 2026 Lei Gao &middot; Costello College of Business, George Mason University &middot;
+      Licensed [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+    center: |
+      <small>Built with [Quarto](https://quarto.org/). Source on
+      [GitHub](https://github.com/edwardlg/assip-2026-empirical-finance).</small>
+    right: |
+      <small>[404](404.qmd) &middot; [About](about.qmd)</small>
+
+# -----------------------------------------------------------------
+# HTML format. KaTeX for fast math. Cosmo (light) + Darkly (dark) with
+# a custom SCSS layer to push the look toward an academic textbook.
+# -----------------------------------------------------------------
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+      dark: [darkly, styles.scss]
+    css: []
+    fontsize: "1.0rem"
+    linestretch: 1.6
+    mainfont: "Source Serif Pro, 'Source Serif 4', Georgia, 'Times New Roman', serif"
+    monofont: "JetBrains Mono, 'Fira Code', Menlo, Consolas, monospace"
+    code-copy: hover
+    code-fold: false
+    code-tools: true
+    code-link: true
+    code-overflow: wrap
+    code-line-numbers: false
+    code-block-border-left: true
+    highlight-style: github
+    html-math-method: katex
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    toc-expand: 2
+    number-sections: false
+    number-depth: 2
+    smooth-scroll: true
+    anchor-sections: true
+    citations-hover: true
+    crossrefs-hover: true
+    fig-responsive: true
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    link-external-newwindow: true
+    link-external-icon: true
+    callout-appearance: simple
+    callout-icon: true
+    notebook-links: inline
+    notebook-view: true
+    include-in-header:
+      - file: _includes/notebook-buttons.html
+
+# -----------------------------------------------------------------
+# Cross-reference labels (Quarto's section/figure/table refs).
+# -----------------------------------------------------------------
+crossref:
+  chapters: true
+  sec-prefix: "Section"
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"
+  eq-prefix: "Equation"
+  thm-prefix: "Theorem"
+  def-prefix: "Definition"
+
+# -----------------------------------------------------------------
+# Filters (none enabled yet). Notebook buttons are injected via
+# include-in-header above; a Lua filter could replace it later.
+# -----------------------------------------------------------------
+filters: []
+
+# -----------------------------------------------------------------
+# Editor metadata (used by `quarto edit`).
+# -----------------------------------------------------------------
+editor:
+  render-on-save: false

@@ -1,0 +1,250 @@
+# =============================================================================
+# ASSIP 2026 Empirical Finance Research — Course Wiki / Dashboard
+# -----------------------------------------------------------------------------
+# This is the operational dashboard for the cohort (Week-by-Week, Projects,
+# Cohort roster, Resources). It is a SEPARATE site from the Quarto textbook;
+# the textbook lives at /mnt/e/ccli/ASSIP8weeks/ and is published via Quarto.
+# The wiki and the textbook cross-link to each other.
+# =============================================================================
+
+site_name: "ASSIP 2026 — Empirical Finance Research"
+site_description: >-
+  Cohort dashboard for the Aspiring Scientists Summer Internship Program
+  (ASSIP) Empirical Finance Research group at George Mason University,
+  Summer 2026. Eight weeks of code, capital markets, and capstone research.
+site_author: "Prof. Lei Gao (George Mason University)"
+site_url: "https://edwardlg.github.io/assip-2026-empirical-finance/"
+
+# -----------------------------------------------------------------------------
+# Source repo (drives "edit this page" links + git-revision-date plugin)
+# -----------------------------------------------------------------------------
+repo_name: "ASSIP8weeks"
+repo_url: "https://github.com/edwardlg/assip-2026-empirical-finance"
+edit_uri: "edit/main/wiki/docs/"
+
+copyright: >-
+  Copyright &copy; 2026 Lei Gao, George Mason University &middot;
+  Content licensed CC BY-NC 4.0 &middot; Code licensed MIT
+
+# -----------------------------------------------------------------------------
+# Theme: Material for MkDocs — Direction A (course dashboard, grid cards,
+# top tabs for program phases, GMU green / gold palette).
+# -----------------------------------------------------------------------------
+theme:
+  name: material
+  language: en
+  custom_dir: overrides  # may be empty; reserved for future template overrides
+
+  features:
+    # Navigation
+    - navigation.tabs           # top-level tabs for each program phase
+    - navigation.tabs.sticky    # keep tabs visible on scroll
+    - navigation.sections       # group nav items into bold section headers
+    - navigation.expand         # expand the left sidebar by default
+    - navigation.indexes        # section index pages (folder/index.md)
+    - navigation.top            # back-to-top button
+    - navigation.footer         # previous/next page links in footer
+    - navigation.instant        # SPA-style instant page loads
+    - navigation.tracking       # update URL with active heading anchor
+    # Table of contents
+    - toc.integrate             # merge page TOC into the left sidebar
+    - toc.follow                # auto-scroll TOC to active heading
+    # Search
+    - search.suggest            # inline autocomplete
+    - search.highlight          # highlight hits on landing
+    - search.share              # shareable search URL
+    # Content / code
+    - content.code.copy         # copy button on code blocks
+    - content.code.annotate     # inline annotations on code
+    - content.tabs.link         # linked content tabs across the page
+    - content.action.edit       # "edit this page" pencil
+    - content.action.view       # "view source" eye
+    - content.tooltips          # rich tooltips on abbreviations
+
+  palette:
+    # ---- Light scheme: GMU green primary, gold accent --------------------
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom            # overridden in stylesheets/extra.css
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # ---- Dark scheme: inverse (gold dominant on near-black) --------------
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+  favicon: assets/favicon.ico
+  logo: assets/logo.svg
+
+# -----------------------------------------------------------------------------
+# Extra CSS / JS — GMU palette overrides and KaTeX/MathJax wiring
+# -----------------------------------------------------------------------------
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  generator: false  # hide "Made with Material for MkDocs" footer line
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/edwardlg/assip-2026-empirical-finance
+      name: Source repository
+    - icon: fontawesome/solid/envelope
+      link: mailto:lgao9@gmu.edu
+      name: Email Prof. Gao
+    - icon: fontawesome/solid/graduation-cap
+      link: https://science.gmu.edu/assip
+      name: GMU ASSIP program
+  program:
+    name: "Aspiring Scientists Summer Internship Program (ASSIP)"
+    host: "George Mason University, College of Science"
+    director: "Dr. Amanda Haymond Still"
+    director_email: "cosassip@gmu.edu"
+    cohort: "Empirical Finance Research Group (Prof. Lei Gao)"
+    modality: "Remote (online)"
+    orientation: "2026-06-18"
+    first_day: "2026-06-22"
+    symposium: "2026-08-12"
+
+# -----------------------------------------------------------------------------
+# Markdown extensions — math, tabs, admonitions, code annotations, etc.
+# -----------------------------------------------------------------------------
+markdown_extensions:
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true             # emit \(...\) and \[...\] for MathJax/KaTeX
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true     # required for content.tabs.link
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.smartsymbols
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+
+  # Standard / Python-Markdown built-ins
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: "Permanent link"
+      toc_depth: 4
+  - tables
+  - footnotes
+  - abbr
+  - def_list
+
+# -----------------------------------------------------------------------------
+# Plugins
+# -----------------------------------------------------------------------------
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-revision-date-localized:
+      type: date                # show only date (no time)
+      enable_creation_date: true
+      fallback_to_build_date: true
+      locale: en
+  # mkdocs-macros gives Jinja2 in markdown — useful for sharing program facts
+  - macros:
+      module_name: docs/macros  # optional; will be empty stub initially
+
+# -----------------------------------------------------------------------------
+# Navigation — 5 top tabs (Home, Week-by-Week, Projects, Cohort, Resources).
+# Pages below MAY NOT EXIST YET; content agents will create them.
+# -----------------------------------------------------------------------------
+nav:
+  - Home:
+      - "Welcome": index.md
+      - "Program at a glance": home/overview.md
+      - "Key dates": home/calendar.md
+      - "How this wiki works": home/how-to-use.md
+      - "Announcements": home/announcements.md
+      - "FAQ": home/faq.md
+
+  - Week-by-Week:
+      - "Phase map": weeks/index.md
+      - "Week 0 — Onboarding (Jun 18–21)": weeks/week-00-onboarding.md
+      - "Week 1 — Foundations (Jun 22–26)": weeks/week-01-foundations.md
+      - "Week 2 — Returns & risk (Jun 29–Jul 2)": weeks/week-02-returns-risk.md
+      - "Week 3 — Factors & portfolios (Jul 6–10)": weeks/week-03-factors.md
+      - "Week 4 — Events & news (Jul 13–17)": weeks/week-04-events.md
+      - "Week 5 — Text & filings (Jul 20–24)": weeks/week-05-text-filings.md
+      - "Week 6 — Patents & innovation (Jul 27–31)": weeks/week-06-patents.md
+      - "Week 7 — Capstone build (Aug 3–7)": weeks/week-07-capstone.md
+      - "Week 8 — Symposium prep (Aug 10–12)": weeks/week-08-symposium.md
+
+  - Projects:
+      - "Capstone gallery": projects/index.md
+      - "Project charter template": projects/charter-template.md
+      - "Poster template": projects/poster-template.md
+      - "Abstract guide (JSSR)": projects/abstract-jssr.md
+      - "Group A — TBD": projects/group-a.md
+      - "Group B — TBD": projects/group-b.md
+      - "Group C — TBD": projects/group-c.md
+
+  - Cohort:
+      - "Roster & teams": cohort/index.md
+      - "Mentor & sub-leaders": cohort/mentors.md
+      - "Code of conduct": cohort/code-of-conduct.md
+      - "Office hours": cohort/office-hours.md
+      - "Slack / Discord etiquette": cohort/comms.md
+      - "Career forum": cohort/career-forum.md
+
+  - Resources:
+      - "Toolbox": resources/index.md
+      - "Python & Quarto setup": resources/setup.md
+      - "Data sources (CRSP / Compustat / EDGAR / PatentsView)": resources/data-sources.md
+      - "Cheat sheets": resources/cheatsheets.md
+      - "Reading list": resources/reading-list.md
+      - "Citation & reproducibility": resources/citations.md
+      - "Textbook (Quarto site)": resources/textbook-link.md
+
+# -----------------------------------------------------------------------------
+# Watch — rebuild on edits to overrides/ and stylesheets/
+# -----------------------------------------------------------------------------
+watch:
+  - overrides
+  - docs/stylesheets
+  - docs/javascripts
+
+# -----------------------------------------------------------------------------
+# Strict mode for CI
+# -----------------------------------------------------------------------------
+strict: false  # set true once nav targets are populated by sibling agents

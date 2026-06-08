@@ -1,0 +1,113 @@
+# =====================================================================
+# ASSIP 2026 — Dual-deploy GitHub Actions workflow
+# ---------------------------------------------------------------------
+# This single job builds BOTH sites and publishes them together to the
+# gh-pages branch so the deployed Pages site looks like:
+#
+#   https://<owner>.github.io/<repo>/             -> MkDocs wiki (root)
+#   https://<owner>.github.io/<repo>/textbook/    -> Quarto book
+#
+# Build layout (locally and on CI):
+#   _site/                  <- wiki (mkdocs build --site-dir ../_site/)
+#   _site/textbook/         <- book (quarto render; output-dir in _quarto.yml)
+#
+# Triggers:
+#   - push to main
+#   - manual dispatch ("Run workflow" button on the Actions tab)
+#
+# After this workflow first succeeds, enable GitHub Pages in
+# Settings -> Pages, with:
+#   Source:  Deploy from a branch
+#   Branch:  gh-pages   /  (root)
+# =====================================================================
+name: Build and deploy ASSIP wiki + textbook
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Only one Pages deployment at a time; later pushes wait for the in-flight
+# build to finish rather than cancelling it (we don't want a half-published
+# site if the user pushes twice in quick succession).
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # peaceiris/actions-gh-pages pushes to gh-pages
+
+jobs:
+  build-and-deploy:
+    name: Build wiki + textbook and publish to gh-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history; needed for git-revision-date plugin
+
+      # ------------------------------------------------------------------
+      # MkDocs (Python) toolchain
+      # ------------------------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: wiki/requirements.txt
+
+      - name: Install MkDocs Material + plugins
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r wiki/requirements.txt
+
+      # ------------------------------------------------------------------
+      # Quarto toolchain
+      # ------------------------------------------------------------------
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: false   # HTML-only build; KaTeX handles math
+
+      - name: Quarto check (diagnostic)
+        run: quarto check
+
+      # ------------------------------------------------------------------
+      # Build: Quarto first (writes to _site/textbook), then MkDocs writes
+      # to _site/ at root. Order matters only in that the wiki build must
+      # NOT delete the textbook subdir; mkdocs writes files into the
+      # target directory and only clears its own previously-built files,
+      # so the /textbook subtree is preserved.
+      # ------------------------------------------------------------------
+      - name: Render Quarto textbook -> _site/textbook/
+        run: quarto render
+
+      - name: Build MkDocs wiki -> _site/ (root)
+        working-directory: wiki
+        run: mkdocs build --site-dir ../_site/
+
+      - name: List built site (diagnostic)
+        run: |
+          echo "::group::Top-level _site/"
+          ls -la _site/ || true
+          echo "::endgroup::"
+          echo "::group::_site/textbook/"
+          ls -la _site/textbook/ 2>/dev/null | head -40 || true
+          echo "::endgroup::"
+
+      # ------------------------------------------------------------------
+      # Publish to gh-pages
+      # ------------------------------------------------------------------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Publish ${{ github.sha }}"
