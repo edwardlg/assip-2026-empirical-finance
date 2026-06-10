@@ -166,5 +166,5 @@ See [`CONVENTIONS.md`](CONVENTIONS.md) for the full constitution: audience and v
 
 - **Faculty mentor / author:** Prof. Lei Gao, Costello College of Business, George Mason University. 2026 ASSIP slot: REMOTE only.
 - **Host program:** ASSIP (Aspiring Scientists Summer Internship Program), GMU College of Science. Director: Dr. Amanda Haymond Still. Program contact: `cosassip@gmu.edu`.
-- **Build process:** drafted via a multi-agent workflow (Planner → Writer → Coder → Reviewer), with every slice logged under [`agents/handoffs/`](agents/handoffs/README.md).
-- **Open items:** outstanding `[CHECK]` items — chiefly exact page ranges/venues for the Week 5–6 cited papers — are tracked in [`agents/handoffs/`](agents/handoffs/README.md) and consolidated at the foot of [`book/TOC.md`](book/TOC.md). All Prof. Gao citations follow `CONVENTIONS.md §6` verbatim.
+- **Build process:** drafted via a multi-agent workflow (Planner → Writer → Coder → Reviewer), with every slice logged under [`agents/handoffs/`](agents/handoffs/).
+- **Open items:** outstanding `[CHECK]` items — chiefly exact page ranges/venues for the Week 5–6 cited papers — are tracked in [`agents/handoffs/`](agents/handoffs/) and consolidated at the foot of [`book/TOC.md`](book/TOC.md). All Prof. Gao citations follow `CONVENTIONS.md §6` verbatim.

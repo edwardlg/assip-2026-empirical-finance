@@ -56,7 +56,7 @@ Every student leaves with a poster, a JSSR abstract, three GMU credits of Colleg
 
     The 14-student roster, sub-team leaders, office hours, and Slack norms.
 
--   :material-help-circle-outline: &nbsp; **[FAQ](home/faq.md)**
+-   :material-help-circle-outline: &nbsp; **[FAQ](faq/index.md)**
 
     ---
 

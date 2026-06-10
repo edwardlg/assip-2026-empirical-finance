@@ -48,9 +48,7 @@ I list, for each slot, only forks I would defend out loud in a seminar. (One slo
 
 ### 3. The specification curve
 
-![Specification curve for Maya's fair-lending DiD: top panel, 144 ATT estimates sorted by magnitude with 95% CIs (all filled/significant, all below zero); bottom panel, the aligned choice grid (controls, state trends, sample window, clustering, outcome).](spec-curve.png)
-
-*Figure read against the committed `spec-curve.png` from `nb8.1`. Top panel: the 144 point estimates, sorted most-negative (left) to least-negative (right), each with its 95% CI; every marker is filled (significant at 5%); the curve sits entirely below the zero line. The pre-registered primary is marked with a red diamond. Bottom panel: one row per analytic choice, one column per specification, aligned to the top sort order, with a tick where a specification uses a choice.*
+**Figure (student-generated; see `spec-curve.png` committed from `notebooks/week-08/nb8.1-specification-curve.ipynb`).** Specification curve for Maya's fair-lending DiD. *Top panel:* 144 ATT estimates sorted by magnitude with 95% CIs (all filled/significant, all below zero), sorted most-negative (left) to least-negative (right); the pre-registered primary is marked with a red diamond. *Bottom panel:* the aligned choice grid — one row per analytic choice (controls, state trends, sample window, clustering, outcome), one column per specification, aligned to the top sort order, with a tick where a specification uses a choice.
 
 ### 4. The read
 

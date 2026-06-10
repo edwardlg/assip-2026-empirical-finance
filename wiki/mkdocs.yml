@@ -186,55 +186,44 @@ plugins:
       module_name: docs/macros  # optional; will be empty stub initially
 
 # -----------------------------------------------------------------------------
-# Navigation — 5 top tabs (Home, Week-by-Week, Projects, Cohort, Resources).
-# Pages below MAY NOT EXIST YET; content agents will create them.
+# Navigation — top tabs for Home, Week-by-Week, Projects, Cohort, Resources,
+# Symposium. Only files that exist in docs/ are listed here; ghost entries
+# break the MkDocs build, so add a new file before adding a new nav line.
 # -----------------------------------------------------------------------------
 nav:
   - Home:
       - "Welcome": index.md
-      - "Program at a glance": home/overview.md
-      - "Key dates": home/calendar.md
-      - "How this wiki works": home/how-to-use.md
-      - "Announcements": home/announcements.md
-      - "FAQ": home/faq.md
+      - "FAQ": faq/index.md
 
   - Week-by-Week:
-      - "Phase map": weeks/index.md
-      - "Week 0 — Onboarding (Jun 18–21)": weeks/week-00-onboarding.md
-      - "Week 1 — Foundations (Jun 22–26)": weeks/week-01-foundations.md
-      - "Week 2 — Returns & risk (Jun 29–Jul 2)": weeks/week-02-returns-risk.md
-      - "Week 3 — Factors & portfolios (Jul 6–10)": weeks/week-03-factors.md
-      - "Week 4 — Events & news (Jul 13–17)": weeks/week-04-events.md
-      - "Week 5 — Text & filings (Jul 20–24)": weeks/week-05-text-filings.md
-      - "Week 6 — Patents & innovation (Jul 27–31)": weeks/week-06-patents.md
-      - "Week 7 — Capstone build (Aug 3–7)": weeks/week-07-capstone.md
-      - "Week 8 — Symposium prep (Aug 10–12)": weeks/week-08-symposium.md
+      - "Phase map": weekly/index.md
+      - "Week 1 — Foundations": weekly/week-01.md
+      - "Week 2 — Returns & risk": weekly/week-02.md
+      - "Week 3 — Factors & portfolios": weekly/week-03.md
+      - "Week 4 — Events & news": weekly/week-04.md
+      - "Week 5 — Text & filings": weekly/week-05.md
+      - "Week 6 — Patents & innovation": weekly/week-06.md
+      - "Week 7 — Capstone build": weekly/week-07.md
+      - "Week 8 — Symposium prep": weekly/week-08.md
 
   - Projects:
       - "Capstone gallery": projects/index.md
-      - "Project charter template": projects/charter-template.md
+      - "Pre-analysis plan template": projects/pap-template.md
       - "Poster template": projects/poster-template.md
-      - "Abstract guide (JSSR)": projects/abstract-jssr.md
-      - "Group A — TBD": projects/group-a.md
-      - "Group B — TBD": projects/group-b.md
-      - "Group C — TBD": projects/group-c.md
 
   - Cohort:
       - "Roster & teams": cohort/index.md
       - "Mentor & sub-leaders": cohort/mentors.md
       - "Code of conduct": cohort/code-of-conduct.md
-      - "Office hours": cohort/office-hours.md
-      - "Slack / Discord etiquette": cohort/comms.md
-      - "Career forum": cohort/career-forum.md
 
   - Resources:
       - "Toolbox": resources/index.md
       - "Python & Quarto setup": resources/setup.md
-      - "Data sources (CRSP / Compustat / EDGAR / PatentsView)": resources/data-sources.md
-      - "Cheat sheets": resources/cheatsheets.md
-      - "Reading list": resources/reading-list.md
-      - "Citation & reproducibility": resources/citations.md
-      - "Textbook (Quarto site)": resources/textbook-link.md
+      - "Data access (CRSP / Compustat / EDGAR / PatentsView)": resources/data-access.md
+      - "Reading list": resources/reading.md
+
+  - Symposium:
+      - "Symposium hub": symposium/index.md
 
 # -----------------------------------------------------------------------------
 # Watch — rebuild on edits to overrides/ and stylesheets/
