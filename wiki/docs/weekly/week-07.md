@@ -62,11 +62,11 @@ This is the week where the textbook stops being something you read and becomes s
 
 ## What to read
 
-- [Ch 7.1 — Idea-Generation Workshop](../../../book/weeks/week-07/ch71-idea-generation-workshop.md)
-- [Ch 7.2 — Data Acquisition in Practice](../../../book/weeks/week-07/ch72-data-acquisition-in-practice.md)
-- [Ch 7.3 — The Pre-Analysis Plan](../../../book/weeks/week-07/ch73-pre-analysis-plan.md)
-- [Ch 7.4 — Building the Analysis Dataset](../../../book/weeks/week-07/ch74-building-the-analysis-dataset.md)
-- [Ch 7.5 — The Identification Memo](../../../book/weeks/week-07/ch75-identification-memo.md)
+- [Ch 7.1 — Idea-Generation Workshop](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-07/ch71-idea-generation-workshop.html)
+- [Ch 7.2 — Data Acquisition in Practice](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-07/ch72-data-acquisition-in-practice.html)
+- [Ch 7.3 — The Pre-Analysis Plan](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-07/ch73-pre-analysis-plan.html)
+- [Ch 7.4 — Building the Analysis Dataset](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-07/ch74-building-the-analysis-dataset.html)
+- [Ch 7.5 — The Identification Memo](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-07/ch75-identification-memo.html)
 
 **Notebooks:** `notebooks/week-07/`.
 **Mentor reading:** Mentor 7 — "Pre-registering before peeking".
@@ -75,7 +75,7 @@ This is the week where the textbook stops being something you read and becomes s
 
 ## What to submit (due Fri Aug 7, 5:00 pm ET) — *team deliverables*
 
-1. **Pull script + data card** in `projects/<team>/data/` ([PS 7.2](../../../book/weeks/week-07/ps7.2.md) style).
+1. **Pull script + data card** in `projects/<team>/data/` ([PS 7.2](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-07/ps7.2.html) style).
 2. **Pre-Analysis Plan** — registered, time-stamped, in `projects/<team>/pap.md`.
 3. **Merged analysis dataset** — passes `pytest -q projects/<team>/tests/`.
 4. **Identification memo + threats table** in `projects/<team>/identification-memo.md`.
@@ -91,11 +91,11 @@ This is the week where the textbook stops being something you read and becomes s
 
 Whatever your team's charter calls for. The most common combinations:
 
-- [CRSP](../../../data-cards/crsp.md) + [Compustat](../../../data-cards/compustat.md) — corporate-finance and asset-pricing teams.
-- [HMDA](../../../data-cards/hmda.md) + [FFIEC Call Reports](../../../data-cards/ffiec-call-reports.md) — fair-lending and bank-regulation teams.
-- [USPTO PatentsView](../../../data-cards/uspto-patentsview.md) — innovation teams.
-- [EDGAR 10-K/10-Q](../../../data-cards/edgar-10k-10q.md) + [Loughran–McDonald](../../../data-cards/loughran-mcdonald-dict.md) — text-as-data teams.
-- [FRED](../../../data-cards/fred.md) — every team, for macro controls.
+- [CRSP](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html) + [Compustat](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/compustat.html) — corporate-finance and asset-pricing teams.
+- [HMDA](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/hmda.html) + [FFIEC Call Reports](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/ffiec-call-reports.html) — fair-lending and bank-regulation teams.
+- [USPTO PatentsView](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/uspto-patentsview.html) — innovation teams.
+- [EDGAR 10-K/10-Q](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-10k-10q.html) + [Loughran–McDonald](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/loughran-mcdonald-dict.html) — text-as-data teams.
+- [FRED](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/fred.html) — every team, for macro controls.
 
 ---
 

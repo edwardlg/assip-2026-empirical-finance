@@ -48,11 +48,11 @@ Three days from a registered PAP to a defended poster. By 5 pm Wednesday August 
 
 ## What to read
 
-- [Ch 8.1 — Execution & Specification Curve](../../../book/weeks/week-08/ch81-execution-specification-curve.md)
-- [Ch 8.2 — Robustness & Inference Stress-Tests](../../../book/weeks/week-08/ch82-robustness-inference-stress-tests.md)
-- [Ch 8.3 — Writing the Empirical Paper](../../../book/weeks/week-08/ch83-writing-the-empirical-paper.md)
-- [Ch 8.4 — Peer Review & Revision](../../../book/weeks/week-08/ch84-peer-review-and-revision.md)
-- [Ch 8.5 — The 8-Minute Presentation & Replication Packet](../../../book/weeks/week-08/ch85-presentation-and-replication-packet.md)
+- [Ch 8.1 — Execution & Specification Curve](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-08/ch81-execution-specification-curve.html)
+- [Ch 8.2 — Robustness & Inference Stress-Tests](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-08/ch82-robustness-inference-stress-tests.html)
+- [Ch 8.3 — Writing the Empirical Paper](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-08/ch83-writing-the-empirical-paper.html)
+- [Ch 8.4 — Peer Review & Revision](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-08/ch84-peer-review-and-revision.html)
+- [Ch 8.5 — The 8-Minute Presentation & Replication Packet](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-08/ch85-presentation-and-replication-packet.html)
 
 **Notebooks:** `notebooks/week-08/`.
 **Mentor reading:** Mentor 8 — "Defending a result".

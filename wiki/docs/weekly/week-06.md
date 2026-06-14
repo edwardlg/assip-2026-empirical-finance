@@ -62,11 +62,11 @@ By Friday your capstone charter is locked. Anything not in the signed charter on
 
 ## What to read
 
-- [Ch 6.1 — KPSS 2017 Reader's Guide](../../../book/weeks/week-06/ch61-readers-guide-kpss-2017.md)
-- [Ch 6.2 — Hoberg & Phillips 2016 Reader's Guide](../../../book/weeks/week-06/ch62-readers-guide-hoberg-phillips-2016.md)
-- [Ch 6.3 — Loughran & McDonald 2011 Reader's Guide](../../../book/weeks/week-06/ch63-readers-guide-loughran-mcdonald-2011.md)
-- [Ch 6.4 — Bartlett et al. 2022 + Bhutta–Hizmo–Ringo](../../../book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.md)
-- [Ch 6.5 — The AI Co-Pilot for Research](../../../book/weeks/week-06/ch65-ai-copilot-for-research.md)
+- [Ch 6.1 — KPSS 2017 Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch61-readers-guide-kpss-2017.html)
+- [Ch 6.2 — Hoberg & Phillips 2016 Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch62-readers-guide-hoberg-phillips-2016.html)
+- [Ch 6.3 — Loughran & McDonald 2011 Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch63-readers-guide-loughran-mcdonald-2011.html)
+- [Ch 6.4 — Bartlett et al. 2022 + Bhutta–Hizmo–Ringo](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.html)
+- [Ch 6.5 — The AI Co-Pilot for Research](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch65-ai-copilot-for-research.html)
 
 **Notebooks:** `notebooks/week-06/` — including `nb6.5`, the AI co-pilot lab (offline-safe, env-gated live cells).
 **Mentor reading:** Mentor 6 — "Responsible AI in empirical research".
@@ -88,10 +88,10 @@ By Friday your capstone charter is locked. Anything not in the signed charter on
 
 ## Data we touch this week
 
-- [EDGAR 10-K / 10-Q](../../../data-cards/edgar-10k-10q.md) — for Hoberg–Phillips and LM.
-- [USPTO PatentsView](../../../data-cards/uspto-patentsview.md) + [NBER patent linking table](../../../data-cards/nber-patent-link.md) — for KPSS.
-- [Loughran–McDonald dictionary](../../../data-cards/loughran-mcdonald-dict.md).
-- [HMDA](../../../data-cards/hmda.md) — for the fair-lending paper.
+- [EDGAR 10-K / 10-Q](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-10k-10q.html) — for Hoberg–Phillips and LM.
+- [USPTO PatentsView](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/uspto-patentsview.html) + [NBER patent linking table](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/nber-patent-link.html) — for KPSS.
+- [Loughran–McDonald dictionary](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/loughran-mcdonald-dict.html).
+- [HMDA](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/hmda.html) — for the fair-lending paper.
 
 ---
 

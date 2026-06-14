@@ -62,11 +62,11 @@ By Friday you should be able to read a fair-lending paper, identify the threat t
 
 ## What to read
 
-- [Ch 3.1 — Potential Outcomes & SUTVA](../../../book/weeks/week-03/ch31-potential-outcomes-sutva.md)
-- [Ch 3.2 — Matching & Propensity Scores](../../../book/weeks/week-03/ch32-matching-propensity-scores.md)
-- [Ch 3.3 — Entropy Balancing & Doubly-Robust](../../../book/weeks/week-03/ch33-entropy-balancing-doubly-robust.md)
-- [Ch 3.4 — Instrumental Variables](../../../book/weeks/week-03/ch34-instrumental-variables.md)
-- [Ch 3.5 — Reading IV in the Wild + Weak-IV Pathology](../../../book/weeks/week-03/ch35-reading-iv-weak-iv-pathology.md)
+- [Ch 3.1 — Potential Outcomes & SUTVA](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-03/ch31-potential-outcomes-sutva.html)
+- [Ch 3.2 — Matching & Propensity Scores](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-03/ch32-matching-propensity-scores.html)
+- [Ch 3.3 — Entropy Balancing & Doubly-Robust](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-03/ch33-entropy-balancing-doubly-robust.html)
+- [Ch 3.4 — Instrumental Variables](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-03/ch34-instrumental-variables.html)
+- [Ch 3.5 — Reading IV in the Wild + Weak-IV Pathology](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-03/ch35-reading-iv-weak-iv-pathology.html)
 
 **Notebooks:** `notebooks/week-03/` — nb3.1 through nb3.5.
 **Lab:** Lab 3 — PSM + 2SLS on HMDA.
@@ -86,8 +86,8 @@ By Friday you should be able to read a fair-lending paper, identify the threat t
 
 ## Data we touch this week
 
-- [HMDA (Home Mortgage Disclosure Act)](../../../data-cards/hmda.md) — fair-lending panel for Lab 3.
-- [CRSP](../../../data-cards/crsp.md) and [Compustat](../../../data-cards/compustat.md) — for the PSM example.
+- [HMDA (Home Mortgage Disclosure Act)](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/hmda.html) — fair-lending panel for Lab 3.
+- [CRSP](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html) and [Compustat](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/compustat.html) — for the PSM example.
 
 ---
 

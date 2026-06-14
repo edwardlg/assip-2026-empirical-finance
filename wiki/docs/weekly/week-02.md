@@ -60,21 +60,21 @@ By Thursday close you should be able to derive $\hat{\boldsymbol{\beta}} = (\mat
 
 ## What to read
 
-- [Ch 2.1 — OLS in Matrix Form](../../../book/weeks/week-02/ch21-ols-matrix-form.md)
-- [Ch 2.2 — Gauss–Markov](../../../book/weeks/week-02/ch22-gauss-markov.md)
-- [Ch 2.3 — Frisch–Waugh–Lovell](../../../book/weeks/week-02/ch23-frisch-waugh-lovell.md)
-- [Ch 2.4 — Heteroskedasticity, Clustering, HC/HAC](../../../book/weeks/week-02/ch24-heteroskedasticity-clustering-hac.md)
-- [Ch 2.5 — Misspecification (OVB, Measurement Error)](../../../book/weeks/week-02/ch25-misspecification-ovb-measurement-error.md)
+- [Ch 2.1 — OLS in Matrix Form](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ch21-ols-matrix-form.html)
+- [Ch 2.2 — Gauss–Markov](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ch22-gauss-markov.html)
+- [Ch 2.3 — Frisch–Waugh–Lovell](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ch23-frisch-waugh-lovell.html)
+- [Ch 2.4 — Heteroskedasticity, Clustering, HC/HAC](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ch24-heteroskedasticity-clustering-hac.html)
+- [Ch 2.5 — Misspecification (OVB, Measurement Error)](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ch25-misspecification-ovb-measurement-error.html)
 
 **Notebooks** (`notebooks/week-02/`): nb2.1 through nb2.5.
-**Lab:** [Lab 2 — Fama–MacBeth on CRSP](../../../book/weeks/week-02/lab2-fama-macbeth-crsp.md).
-**Mentor reading:** [Mentor 2 — "Standard-error ballgame"](../../../book/weeks/week-02/mentor2-standard-error-ballgame.md).
+**Lab:** [Lab 2 — Fama–MacBeth on CRSP](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/lab2-fama-macbeth-crsp.html).
+**Mentor reading:** [Mentor 2 — "Standard-error ballgame"](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/mentor2-standard-error-ballgame.html).
 
 ---
 
 ## What to submit (due Thu Jul 2, 5:00 pm ET)
 
-1. **Problem Set 2** ([PS 2.1](../../../book/weeks/week-02/ps2.1.md) · [PS 2.2](../../../book/weeks/week-02/ps2.2.md) · [PS 2.3](../../../book/weeks/week-02/ps2.3.md) · [PS 2.4](../../../book/weeks/week-02/ps2.4.md) · [PS 2.5](../../../book/weeks/week-02/ps2.5.md)).
+1. **Problem Set 2** ([PS 2.1](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ps2.1.html) · [PS 2.2](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ps2.2.html) · [PS 2.3](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ps2.3.html) · [PS 2.4](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ps2.4.html) · [PS 2.5](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-02/ps2.5.html)).
 2. **Lab 2 notebook** with the Fama–MacBeth coefficient series + Newey–West-adjusted t-stat reported.
 3. **Journal entry** — `journal/week-02.md`.
 4. **Pull request** — `week-02 — <your name>`.
@@ -86,8 +86,8 @@ By Thursday close you should be able to derive $\hat{\boldsymbol{\beta}} = (\mat
 
 ## Data we touch this week
 
-- [CRSP (daily / monthly stock files)](../../../data-cards/crsp.md) — first live pull
-- [FRED (risk-free rate, macro)](../../../data-cards/fred.md) — for excess returns
+- [CRSP (daily / monthly stock files)](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html) — first live pull
+- [FRED (risk-free rate, macro)](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/fred.html) — for excess returns
 
 ---
 

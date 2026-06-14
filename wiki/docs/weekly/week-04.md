@@ -62,11 +62,11 @@ You will see, with your own simulation, a two-way fixed-effects DiD estimator re
 
 ## What to read
 
-- [Ch 4.1 — DiD & Event Studies](../../../book/weeks/week-04/ch41-did-event-studies.md)
-- [Ch 4.2 — The Staggered-Adoption Crisis](../../../book/weeks/week-04/ch42-staggered-adoption-crisis.md)
-- [Ch 4.3 — Regression Discontinuity](../../../book/weeks/week-04/ch43-regression-discontinuity.md)
-- [Ch 4.4 — Synthetic Control & Synthetic DiD](../../../book/weeks/week-04/ch44-synthetic-control.md)
-- [Ch 4.5 — Bartik / Shift-Share](../../../book/weeks/week-04/ch45-bartik-shift-share.md)
+- [Ch 4.1 — DiD & Event Studies](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-04/ch41-did-event-studies.html)
+- [Ch 4.2 — The Staggered-Adoption Crisis](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-04/ch42-staggered-adoption-crisis.html)
+- [Ch 4.3 — Regression Discontinuity](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-04/ch43-regression-discontinuity.html)
+- [Ch 4.4 — Synthetic Control & Synthetic DiD](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-04/ch44-synthetic-control.html)
+- [Ch 4.5 — Bartik / Shift-Share](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-04/ch45-bartik-shift-share.html)
 
 **Notebooks:** `notebooks/week-04/`.
 **Lab:** Lab 4 — Staggered-DiD bake-off.
@@ -86,9 +86,9 @@ You will see, with your own simulation, a two-way fixed-effects DiD estimator re
 
 ## Data we touch this week
 
-- [CRSP](../../../data-cards/crsp.md) + [Compustat](../../../data-cards/compustat.md) — policy-shock event studies.
-- [USPTO PatentsView](../../../data-cards/uspto-patentsview.md) — for the Bartik example.
-- [USA Spending](../../../data-cards/usaspending.md) — for shift-share exposure construction.
+- [CRSP](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html) + [Compustat](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/compustat.html) — policy-shock event studies.
+- [USPTO PatentsView](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/uspto-patentsview.html) — for the Bartik example.
+- [USA Spending](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/usaspending.html) — for shift-share exposure construction.
 
 ---
 

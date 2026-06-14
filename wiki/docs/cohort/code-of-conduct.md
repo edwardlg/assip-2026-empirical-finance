@@ -55,7 +55,7 @@ The benchmark is the one you'll be held to in college: if a reader couldn't, in 
 
 You may use AI assistants (ChatGPT, Claude, Copilot, Gemini, the GMU Azure APIM models) in your work. Many of you should. AI tools, used well, are how a high-school student can produce college-level empirical work in one summer. But:
 
-The standard is set in **Chapter 6.5** of the [textbook](https://lgao9.github.io/8weeks/) ("Responsible AI Use in Empirical Research"). Three rules from that chapter:
+The standard is set in **Chapter 6.5** of the [textbook](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/) ("Responsible AI Use in Empirical Research"). Three rules from that chapter:
 
 1. **Disclose, in writing, in every artifact you ship.** A line in your PAP, in your poster's footer, and in your JSSR abstract. Be specific — *"GPT-5 was used to help debug the pandas `groupby` calls in `code/02_merge.py`. All resulting numbers were verified against a hand-written sanity check."*
 2. **Verify every number.** AI confabulates with confidence; if a chatbot tells you the coefficient on `MLadopt` is –0.012, do not put that on your poster until your own code produces it.
@@ -68,7 +68,7 @@ The standard is set in **Chapter 6.5** of the [textbook](https://lgao9.github.io
 We work with a mix of public-domain data (HMDA, ACS, USPTO PatentsView, FRED) and licensed data (WRDS — CRSP, Compustat, IBES, TAQ, dealscan, etc.).
 
 - **Public-domain data** — you may share, redistribute, and publish derived figures freely. Cite the source.
-- **WRDS data stays on GMU infrastructure.** Period. Do not download a CRSP daily-returns file to a personal laptop, do not upload it to GitHub, do not paste it into an LLM, do not share it with a sibling who is not also on a Mason credential. The GMU WRDS license terms govern; the [textbook Appendix C](https://lgao9.github.io/8weeks/) data-cards spell out which datasets are which.
+- **WRDS data stays on GMU infrastructure.** Period. Do not download a CRSP daily-returns file to a personal laptop, do not upload it to GitHub, do not paste it into an LLM, do not share it with a sibling who is not also on a Mason credential. The GMU WRDS license terms govern; the [textbook Appendix C](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/) data-cards spell out which datasets are which.
 - **Derived results** (regression tables built from WRDS data) **may** be published — the license restriction is on the raw data, not on coefficients that summarize it.
 - **Hand-coded or scraped data** — declare the license at the top of the file and stick to it.
 

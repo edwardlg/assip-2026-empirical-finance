@@ -33,7 +33,7 @@ Everything you need to *do the work* — separate from the operating schedule an
 
     ---
 
-    Every dataset we touch has a one-page data card in the textbook at `data-cards/`. Browse them in [the textbook](../../../data-cards/README.md).
+    Every dataset we touch has a one-page data card in the textbook at `data-cards/`. Browse them in [the textbook](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/README.html).
 
 -   :material-file-document-multiple-outline: &nbsp; **Cheat sheets**
 

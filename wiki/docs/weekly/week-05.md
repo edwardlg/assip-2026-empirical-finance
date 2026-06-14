@@ -62,12 +62,12 @@ This is the week where the program turns from "learn the tools" to "read the lit
 
 ## What to read
 
-- [Ch 5.1 — Fama & French (1992) Reader's Guide](../../../book/weeks/week-05/ch51-readers-guide-fama-french-1992.md)
-- [Ch 5.2 — Fama & French (1993) Reader's Guide](../../../book/weeks/week-05/ch52-readers-guide-fama-french-1993.md)
-- [Ch 5.3 — Jegadeesh & Titman (1993) Reader's Guide](../../../book/weeks/week-05/ch53-readers-guide-jegadeesh-titman-1993.md)
-- [Ch 5.4 — Petersen (2009) Reader's Guide](../../../book/weeks/week-05/ch54-readers-guide-petersen-2009.md)
-- [Ch 5.5 — Bertrand, Duflo & Mullainathan (2004) Reader's Guide](../../../book/weeks/week-05/ch55-readers-guide-bertrand-duflo-mullainathan-2004.md)
-- [Reading Guide Pack 5 — the reusable 7-part template](../../../book/weeks/week-05/reading-guide-pack-5.md)
+- [Ch 5.1 — Fama & French (1992) Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-05/ch51-readers-guide-fama-french-1992.html)
+- [Ch 5.2 — Fama & French (1993) Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-05/ch52-readers-guide-fama-french-1993.html)
+- [Ch 5.3 — Jegadeesh & Titman (1993) Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-05/ch53-readers-guide-jegadeesh-titman-1993.html)
+- [Ch 5.4 — Petersen (2009) Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-05/ch54-readers-guide-petersen-2009.html)
+- [Ch 5.5 — Bertrand, Duflo & Mullainathan (2004) Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-05/ch55-readers-guide-bertrand-duflo-mullainathan-2004.html)
+- [Reading Guide Pack 5 — the reusable 7-part template](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-05/reading-guide-pack-5.html)
 
 The papers themselves are on the [Resources → Reading](../resources/reading.md) page with JSTOR / SSRN links.
 
@@ -89,7 +89,7 @@ The papers themselves are on the [Resources → Reading](../resources/reading.md
 
 ## Data we touch this week
 
-- [CRSP](../../../data-cards/crsp.md), [Compustat](../../../data-cards/compustat.md) — for the FF92/FF93/JT93 replications.
+- [CRSP](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html), [Compustat](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/compustat.html) — for the FF92/FF93/JT93 replications.
 - Ken French Data Library (public, no auth) — for the canonical factor returns.
 
 ---

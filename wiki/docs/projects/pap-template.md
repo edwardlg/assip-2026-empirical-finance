@@ -9,7 +9,7 @@ description: >-
 
 A pre-analysis plan is a short document you write **before** you look at the outcome data. It pins down what you expect to find, how you will measure it, and what would *change your mind*. The PAP is what separates a finding from a story; it is what makes the August 12 poster credible to a Mason faculty audience.
 
-The standard we use is described in **Chapter 7.3** of the [textbook](https://lgao9.github.io/8weeks/) ("Pre-Analysis Plans and the Logic of Pre-Specification"). What follows is the one-pager that ships with this site — filled-in example first so you can see what a complete PAP looks like, then a blank template you can copy into `pap/pap-v1.md` in your repo.
+The standard we use is described in **Chapter 7.3** of the [textbook](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/) ("Pre-Analysis Plans and the Logic of Pre-Specification"). What follows is the one-pager that ships with this site — filled-in example first so you can see what a complete PAP looks like, then a blank template you can copy into `pap/pap-v1.md` in your repo.
 
 !!! tip "How to file your PAP"
     1. Copy the **blank template** below into `pap/pap-v1.md` in your project repo.

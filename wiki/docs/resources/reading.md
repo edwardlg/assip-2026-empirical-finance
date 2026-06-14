@@ -98,7 +98,7 @@ These five trace the methodological arc of the program — fair lending, banking
 
     ---
 
-    See [the Quarto textbook bibliography](../../../book/bibliography.md) for the canonical citation and the publicly available working-paper SSRN link.
+    See [the Quarto textbook bibliography](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/bibliography.html) for the canonical citation and the publicly available working-paper SSRN link.
 
     *Why it matters:* the foundation paper for our fair-lending and bank-screening discussions. Week-3 PSM examples ride on its empirical setup.
 
@@ -106,7 +106,7 @@ These five trace the methodological arc of the program — fair lending, banking
 
     ---
 
-    Cited in [the Week 6.4 Reader's Guide](../../../book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.md). SSRN link in the textbook bibliography.
+    Cited in [the Week 6.4 Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.html). SSRN link in the textbook bibliography.
 
     *Why it matters:* the over-controlling trap in HMDA-based fair-lending studies, made concrete. Lab 3 and Lab 6 both build on it.
 

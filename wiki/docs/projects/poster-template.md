@@ -7,7 +7,7 @@ description: >-
 
 # Poster Template — August 12 Symposium
 
-Your **required deliverable** for ASSIP 2026 is a research poster, defended in person (and via virtual breakout for remote interns) at the **ASSIP Research Symposium on Wednesday, August 12, 2026**. This page tells you exactly what the poster needs to look like and how to build it. The substantive guidance — what counts as a finding worth posting, how to talk to a stranger about your work in three minutes — lives in **Chapter 8.5** of the [textbook](https://lgao9.github.io/8weeks/).
+Your **required deliverable** for ASSIP 2026 is a research poster, defended in person (and via virtual breakout for remote interns) at the **ASSIP Research Symposium on Wednesday, August 12, 2026**. This page tells you exactly what the poster needs to look like and how to build it. The substantive guidance — what counts as a finding worth posting, how to talk to a stranger about your work in three minutes — lives in **Chapter 8.5** of the [textbook](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/).
 
 ---
 
@@ -81,7 +81,7 @@ The Mason brand fonts (Source Sans 3 for body, Roboto Slab for display) are the 
 
 ## Figure standards
 
-Every figure on your poster must conform to the **Appendix D — Figure Standards** in the [textbook](https://lgao9.github.io/8weeks/). The short version:
+Every figure on your poster must conform to the **Appendix D — Figure Standards** in the [textbook](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/). The short version:
 
 - **One** message per figure. If you find yourself writing "and also" in the caption, split it into two figures.
 - **Axes labeled** with units (`Coefficient (pp)`, not `coef`).

@@ -9,7 +9,7 @@ description: >-
 
 This page is the one-stop guide to the four data sources that cover roughly 90 % of what the cohort will pull this summer: **WRDS** (CRSP, Compustat, IBES, OptionMetrics), **FRED** (macro), **HMDA** (fair lending) via the CFPB Data Browser, and **EDGAR** (10-Ks, 13Fs).
 
-For dataset-by-dataset details — coverage, key fields, gotchas, licensing — see the **data cards** in the textbook at [`data-cards/`](../../../data-cards/README.md). The data cards are the canonical reference for "what's in this dataset, how do I cite it, and where does it break"; this page is the canonical reference for "how do I get logged in."
+For dataset-by-dataset details — coverage, key fields, gotchas, licensing — see the **data cards** in the textbook at [`data-cards/`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/README.html). The data cards are the canonical reference for "what's in this dataset, how do I cite it, and where does it break"; this page is the canonical reference for "how do I get logged in."
 
 ---
 
@@ -78,10 +78,10 @@ CRSP, Compustat, IBES, and OptionMetrics are **licensed data**. They stay on GMU
 
 ### Data cards
 
-- [`data-cards/crsp.md`](../../../data-cards/crsp.md)
-- [`data-cards/compustat.md`](../../../data-cards/compustat.md)
-- [`data-cards/ibes.md`](../../../data-cards/ibes.md)
-- [`data-cards/optionmetrics.md`](../../../data-cards/optionmetrics.md)
+- [`data-cards/crsp.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html)
+- [`data-cards/compustat.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/compustat.html)
+- [`data-cards/ibes.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/ibes.html)
+- [`data-cards/optionmetrics.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/optionmetrics.html)
 
 ---
 
@@ -109,7 +109,7 @@ FRED (the St. Louis Fed's Federal Reserve Economic Data) hosts the risk-free rat
 
 ### Data card
 
-[`data-cards/fred.md`](../../../data-cards/fred.md)
+[`data-cards/fred.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/fred.html)
 
 ---
 
@@ -124,7 +124,7 @@ HMDA (Home Mortgage Disclosure Act) data lives at the Consumer Financial Protect
 
 ### Data card
 
-[`data-cards/hmda.md`](../../../data-cards/hmda.md) — coverage, key fields (race, sex, action_taken, loan_amount, applicant_income), version notes (the 2018 reformat).
+[`data-cards/hmda.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/hmda.html) — coverage, key fields (race, sex, action_taken, loan_amount, applicant_income), version notes (the 2018 reformat).
 
 ---
 
@@ -140,26 +140,26 @@ r = requests.get("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK
 
 ### Data cards
 
-- [`data-cards/edgar-10k-10q.md`](../../../data-cards/edgar-10k-10q.md)
-- [`data-cards/edgar-13f.md`](../../../data-cards/edgar-13f.md)
-- [`data-cards/edgar-8k.md`](../../../data-cards/edgar-8k.md)
-- [`data-cards/edgar-def14a.md`](../../../data-cards/edgar-def14a.md)
-- [`data-cards/edgar-nport.md`](../../../data-cards/edgar-nport.md)
-- [`data-cards/edgar-xbrl.md`](../../../data-cards/edgar-xbrl.md)
+- [`data-cards/edgar-10k-10q.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-10k-10q.html)
+- [`data-cards/edgar-13f.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-13f.html)
+- [`data-cards/edgar-8k.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-8k.html)
+- [`data-cards/edgar-def14a.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-def14a.html)
+- [`data-cards/edgar-nport.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-nport.html)
+- [`data-cards/edgar-xbrl.md`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/edgar-xbrl.html)
 
 ---
 
 ## 5. Other sources you may touch
 
-The textbook has data cards for **35 datasets** in total. Browse [`data-cards/`](../../../data-cards/README.md) for the full list. Highlights:
+The textbook has data cards for **35 datasets** in total. Browse [`data-cards/`](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/README.html) for the full list. Highlights:
 
-- [PatentsView (USPTO)](../../../data-cards/uspto-patentsview.md) — Week 6 and innovation capstones.
-- [Loughran–McDonald dictionary](../../../data-cards/loughran-mcdonald-dict.md) — Week 6 sentiment.
-- [FFIEC Call Reports](../../../data-cards/ffiec-call-reports.md) — bank-regulation capstones.
-- [FR Y-9C](../../../data-cards/fr-y9c.md) — BHC-level bank data.
-- [TRACE](../../../data-cards/trace.md), [MSRB EMMA](../../../data-cards/msrb-emma.md), [Treasury / FINRA](../../../data-cards/treasury-finra.md) — fixed-income capstones.
-- [CFPB Consumer Complaints](../../../data-cards/cfpb-complaints.md) — fair-lending text capstones.
-- [NOAA / FEMA](../../../data-cards/noaa-fema.md) — climate-risk capstones.
+- [PatentsView (USPTO)](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/uspto-patentsview.html) — Week 6 and innovation capstones.
+- [Loughran–McDonald dictionary](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/loughran-mcdonald-dict.html) — Week 6 sentiment.
+- [FFIEC Call Reports](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/ffiec-call-reports.html) — bank-regulation capstones.
+- [FR Y-9C](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/fr-y9c.html) — BHC-level bank data.
+- [TRACE](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/trace.html), [MSRB EMMA](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/msrb-emma.html), [Treasury / FINRA](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/treasury-finra.html) — fixed-income capstones.
+- [CFPB Consumer Complaints](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/cfpb-complaints.html) — fair-lending text capstones.
+- [NOAA / FEMA](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/noaa-fema.html) — climate-risk capstones.
 
 ---
 

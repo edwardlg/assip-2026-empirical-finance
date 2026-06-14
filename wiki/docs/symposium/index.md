@@ -92,7 +92,7 @@ After submission, JSSR runs a light editorial review and publishes the proceedin
 
 ## Pitch advice from the textbook
 
-**Chapter 8.5** ("Defending Numbers in Public") of the [textbook](https://lgao9.github.io/8weeks/) walks through the structure of the three-minute pitch. The short version is below; read the chapter for the full treatment.
+**Chapter 8.5** ("Defending Numbers in Public") of the [textbook](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/) walks through the structure of the three-minute pitch. The short version is below; read the chapter for the full treatment.
 
 ### The three-minute structure
 

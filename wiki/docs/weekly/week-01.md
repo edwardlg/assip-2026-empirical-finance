@@ -68,28 +68,28 @@ All times Eastern. **Morning** = independent reading + notebook follow-along. **
 
 The textbook is the primary text. Open the chapter, then the notebook of the same number side-by-side.
 
-- [Ch 1.1 — Joint, Conditional, and the Two Laws That Run Everything](../../../book/weeks/week-01/ch11-joint-conditional-two-laws.md) (LIE, LTV)
-- [Ch 1.2 — Expectations, Variance, Covariance as Geometry](../../../book/weeks/week-01/ch12-expectation-variance-geometry.md)
-- [Ch 1.3 — Estimators and Their Sampling Distributions](../../../book/weeks/week-01/ch13-estimators-sampling-distributions.md)
-- [Ch 1.4 — The LLN and the CLT, Shown Not Asserted](../../../book/weeks/week-01/ch14-lln-clt.md)
-- [Ch 1.5 — Hypothesis Testing Done Right](../../../book/weeks/week-01/ch15-hypothesis-testing.md)
+- [Ch 1.1 — Joint, Conditional, and the Two Laws That Run Everything](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ch11-joint-conditional-two-laws.html) (LIE, LTV)
+- [Ch 1.2 — Expectations, Variance, Covariance as Geometry](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ch12-expectation-variance-geometry.html)
+- [Ch 1.3 — Estimators and Their Sampling Distributions](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ch13-estimators-sampling-distributions.html)
+- [Ch 1.4 — The LLN and the CLT, Shown Not Asserted](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ch14-lln-clt.html)
+- [Ch 1.5 — Hypothesis Testing Done Right](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ch15-hypothesis-testing.html)
 
 **Notebooks** (`notebooks/week-01/` in the repo): nb1.1 · nb1.2 · nb1.3 · nb1.4 · nb1.5. All run headless with `numpy.random.default_rng(42)`; no network access required.
 
-**Lab:** [Lab 1 — Build a Coin-Flip Universe](../../../book/weeks/week-01/lab1-coin-flip-universe.md).
+**Lab:** [Lab 1 — Build a Coin-Flip Universe](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/lab1-coin-flip-universe.html).
 
-**Mentor reading** for Wednesday: [Mentor 1 — "What Is a Finding?"](../../../book/weeks/week-01/mentor1-what-is-a-finding.md).
+**Mentor reading** for Wednesday: [Mentor 1 — "What Is a Finding?"](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/mentor1-what-is-a-finding.html).
 
 ---
 
 ## What to submit (due Fri Jun 26, 5:00 pm ET)
 
 1. **Problem Set 1** — five problems committed to your fork:
-    - [PS 1.1 — Conditional probability & LIE/LTV](../../../book/weeks/week-01/ps1.1.md)
-    - [PS 1.2 — Expectation, variance, covariance geometry](../../../book/weeks/week-01/ps1.2.md)
-    - [PS 1.3 — Bias, variance, MSE of estimators](../../../book/weeks/week-01/ps1.3.md)
-    - [PS 1.4 — CLT / LLN by simulation](../../../book/weeks/week-01/ps1.4.md)
-    - [PS 1.5 — Power, size, confidence intervals](../../../book/weeks/week-01/ps1.5.md)
+    - [PS 1.1 — Conditional probability & LIE/LTV](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ps1.1.html)
+    - [PS 1.2 — Expectation, variance, covariance geometry](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ps1.2.html)
+    - [PS 1.3 — Bias, variance, MSE of estimators](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ps1.3.html)
+    - [PS 1.4 — CLT / LLN by simulation](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ps1.4.html)
+    - [PS 1.5 — Power, size, confidence intervals](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-01/ps1.5.html)
 2. **Lab 1 notebook** (`notebooks/week-01/lab1.ipynb`) — runs end-to-end on `numpy.random.default_rng(42)`.
 3. **Journal entry** — one paragraph in `journal/week-01.md`: what clicked, what is still murky, the one question you would ask Prof. Gao if you could only ask one.
 4. **Pull request** — open a PR titled `week-01 — <your name>` from your fork against `main`. A sub-leader will code-review before Monday.
@@ -105,8 +105,8 @@ None. Week 1 is all simulated data — that is the point. We need the universe t
 
 A preview of where real data starts next week:
 
-- [Data card — CRSP (daily/monthly stock files)](../../../data-cards/crsp.md) — comes online in Week 2.
-- [Data card — FRED](../../../data-cards/fred.md) — your first FRED pull is in Week 2's Lab.
+- [Data card — CRSP (daily/monthly stock files)](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/crsp.html) — comes online in Week 2.
+- [Data card — FRED](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/data-cards/fred.html) — your first FRED pull is in Week 2's Lab.
 
 ---
 
