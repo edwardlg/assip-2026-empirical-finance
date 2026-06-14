@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Problem Set 1.3 — Bias, Variance, and MSE of Estimators – Empirical Finance from the Ground Up — ASSIP 2026 Cohort</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../book/weeks/week-01/ps1.4.html" rel="next">
+<link href="../../../book/weeks/week-01/ps1.2.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-73e50f194f8969045223ab0f228c1d3e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4b57db4d15cdb5d5a0ed3eb768106780.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-73e50f194f8969045223ab0f228c1d3e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-7aa7a36c24b3a3d63b5bd977f374d48f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-527642d68ab497b58f9da6371c142dff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-7aa7a36c24b3a3d63b5bd977f374d48f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<!--
+  Notebook launcher buttons.
+  Injected into <head> of every page by _quarto.yml's
+  `format.html.include-in-header`. The script self-detects whether the
+  current page was rendered from an .ipynb source (via the
+  meta "quarto:source-file" tag that Quarto writes when `notebook-links`
+  is enabled, or via the URL ending in a path Quarto recognizes as a
+  notebook). If the source is a notebook, three buttons are inserted
+  immediately under the page's H1: Download .ipynb, Open in Colab,
+  Open in Binder.
+
+  Repo coordinates — keep in sync with _quarto.yml.
+-->
+<style>
+  .nb-launch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--bs-border-color, #dee2e6);
+    border-left: 4px solid #2c3e50;
+    border-radius: 4px;
+    background: var(--bs-tertiary-bg, #f8f9fa);
+    font-size: 0.95rem;
+    align-items: center;
+  }
+  .nb-launch-label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    color: var(--bs-emphasis-color, #2c3e50);
+  }
+  .nb-launch a.nb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--bs-border-color, #ced4da);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    background: var(--bs-body-bg, #ffffff);
+    color: var(--bs-body-color, #212529);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nb-launch a.nb-btn:hover {
+    background: var(--bs-secondary-bg, #e9ecef);
+    border-color: #2c3e50;
+    text-decoration: none;
+  }
+  .nb-launch a.nb-btn img {
+    height: 1em;
+    vertical-align: middle;
+  }
+</style>
+
+<script>
+(function () {
+  // Keep these in sync with _quarto.yml `book.repo-url`.
+  const GH_OWNER  = "edwardlg";
+  const GH_REPO   = "nextgen-empirical-finance-camp";
+  const GH_BRANCH = "main";
+
+  function nbRelativePathFromSourceMeta() {
+    // Quarto stamps the original source file into the page either as a
+    // <meta name="quarto:source-file" ...> tag or in the page's
+    // `data-source-file` body attribute, depending on version. Try both.
+    const m = document.querySelector('meta[name="quarto:source-file"]');
+    if (m && m.content) return m.content;
+
+    const b = document.body && document.body.getAttribute("data-source-file");
+    if (b) return b;
+
+    // Fallback: infer from the URL. Pages rendered from notebooks
+    // typically live under /notebooks/week-XX/nbX.Y-....html.
+    const path = window.location.pathname;
+    const match = path.match(/(notebooks\/week-\d+\/nb[^\/]+)\.html$/);
+    if (match) return match[1] + ".ipynb";
+    return null;
+  }
+
+  function isNotebookPath(p) {
+    return p && /\.ipynb$/i.test(p);
+  }
+
+  function buildButtons(relPath) {
+    const colabURL  = `https://colab.research.google.com/github/${GH_OWNER}/${GH_REPO}/blob/${GH_BRANCH}/${relPath}`;
+    const binderURL = `https://mybinder.org/v2/gh/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}?filepath=${encodeURIComponent(relPath)}`;
+    const rawURL    = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/${relPath}`;
+    const ghViewURL = `https://github.com/${GH_OWNER}/${GH_REPO}/blob/${GH_BRANCH}/${relPath}`;
+
+    const bar = document.createElement("div");
+    bar.className = "nb-launch";
+    bar.setAttribute("role", "navigation");
+    bar.setAttribute("aria-label", "Notebook launcher");
+    bar.innerHTML = `
+      <span class="nb-launch-label">Run this notebook:</span>
+      <a class="nb-btn" href="${colabURL}" target="_blank" rel="noopener" title="Open in Google Colab">
+        <img alt="" src="https://colab.research.google.com/assets/colab-badge.svg" />
+        Open in Colab
+      </a>
+      <a class="nb-btn" href="${binderURL}" target="_blank" rel="noopener" title="Open in Binder">
+        <img alt="" src="https://mybinder.org/badge_logo.svg" />
+        Open in Binder
+      </a>
+      <a class="nb-btn" href="${rawURL}" download title="Download the .ipynb file">
+        &#x2B07; Download .ipynb
+      </a>
+      <a class="nb-btn" href="${ghViewURL}" target="_blank" rel="noopener" title="View source on GitHub">
+        &#xf09b; View on GitHub
+      </a>
+    `;
+    return bar;
+  }
+
+  function inject() {
+    const relPath = nbRelativePathFromSourceMeta();
+    if (!isNotebookPath(relPath)) return;
+
+    // Find the page's H1. Quarto wraps content in <main id="quarto-document-content">.
+    const main = document.querySelector("main#quarto-document-content")
+              || document.querySelector("main")
+              || document.body;
+    if (!main) return;
+
+    // Don't double-inject.
+    if (main.querySelector(".nb-launch")) return;
+
+    const h1 = main.querySelector("h1, header > h1, .quarto-title h1");
+    const bar = buildButtons(relPath);
+
+    if (h1 && h1.parentNode) {
+      // Insert after the H1's containing block (the title block).
+      const block = h1.closest("header.quarto-title-block, .quarto-title") || h1;
+      block.parentNode.insertBefore(bar, block.nextSibling);
+    } else {
+      main.insertBefore(bar, main.firstChild);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", inject);
+  } else {
+    inject();
+  }
+})();
+</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Empirical Finance from the Ground Up — ASSIP 2026 Cohort">
+<meta property="og:description" content="An 8-week full-time empirical-finance research curriculum for the GMU ASSIP 2026 cohort. Hosted remotely by Prof.&nbsp;Lei Gao.">
+<meta property="og:site_name" content="Empirical Finance from the Ground Up — ASSIP 2026 Cohort">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:title" content="Empirical Finance from the Ground Up — ASSIP 2026 Cohort">
+<meta name="twitter:description" content="An 8-week full-time empirical-finance research curriculum for the GMU ASSIP 2026 cohort. Hosted remotely by Prof.&nbsp;Lei Gao.">
+<meta name="twitter:creator" content="@gmu_business">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Empirical Finance from the Ground Up — ASSIP 2026 Cohort</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../book/00-front-matter/00-preface.html"> 
+<span class="menu-text">Front Matter</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-weeks" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Weeks</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-weeks">    
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-01/README.html">
+ <span class="dropdown-text">Week 1 — Probability &amp; Inference</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-02/README.html">
+ <span class="dropdown-text">Week 2 — OLS &amp; Inference</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-03/README.html">
+ <span class="dropdown-text">Week 3 — Causal Inference</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-04/README.html">
+ <span class="dropdown-text">Week 4 — Quasi-Experiments</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-05/README.html">
+ <span class="dropdown-text">Week 5 — Reading Finance Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-06/README.html">
+ <span class="dropdown-text">Week 6 — Text, AI, Alt Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-07/README.html">
+ <span class="dropdown-text">Week 7 — Your Project I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../book/weeks/week-08/README.html">
+ <span class="dropdown-text">Week 8 — Your Project II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../book/capstones/README.html"> 
+<span class="menu-text">Capstones</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../book/instructor-manual/README.html"> 
+<span class="menu-text">Instructor Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.qmd"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/edwardlg/assip-2026-empirical-finance"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/edwardlg/assip-2026-empirical-finance" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../book/weeks/week-01/README.html">Week 1 — Probability, Inference, and the Logic of Estimation</a></li><li class="breadcrumb-item"><a href="../../../book/weeks/week-01/ps1.3.html"><span class="chapter-title">Problem Set 1.3 — Bias, Variance, and MSE of Estimators</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Empirical Finance from the Ground Up — ASSIP 2026 Cohort</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/00-front-matter/00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/00-front-matter/01-articulation-matrix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Articulation Matrix: The 8-Week Camp and the ASSIP 2026 Calendar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/00-front-matter/02-how-to-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">How to Use This Book</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/00-front-matter/03-prerequisite-self-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prerequisite Self-Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/00-front-matter/04-cohort-and-mentorship.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The Cohort and the Mentorship Structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/TOC.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Table of Contents — <em>Empirical Finance from the Ground Up</em></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 1 — Probability, Inference, and the Logic of Estimation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 — Probability, Sampling, and the Logic of Inference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ch11-joint-conditional-two-laws.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 1.1 — Joint, Conditional, and the Two Laws That Run Everything</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ch12-expectation-variance-geometry.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 1.2 — Expectations, Variance, Covariance as Geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ch13-estimators-sampling-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1.3 — Estimators and Their Sampling Distributions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ch14-lln-clt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 1.4 — The LLN and the CLT, Shown Not Asserted</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ch15-hypothesis-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1.5 — Hypothesis Testing Done Right</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/lab1-coin-flip-universe.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 1 — Build a Coin-Flip Universe</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/mentor1-what-is-a-finding.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 1 — “What Is a Finding?”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ps1.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 1.1 — Conditional Probability &amp; LIE/LTV Drills</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ps1.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 1.2 — Expectation/Variance Algebra &amp; Correlation Geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ps1.3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Problem Set 1.3 — Bias, Variance, and MSE of Estimators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ps1.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 1.4 — The LLN and the CLT, by Hand and by Simulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/ps1.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 1.5 — Power, Size, and Confidence Intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-01/assessment1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 Assessment — Probability, Estimation, and Inference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-01/nb1.1-lie-ltv-by-simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb1.1 — LIE / LTV by Simulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-01/nb1.2-covariance-matrices-correlation-heatmaps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb1.2 — Covariance Matrices &amp; Correlation Heatmaps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-01/nb1.3-sampling-distribution-explorer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb1.3 — The Sampling-Distribution Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-01/nb1.4-lln-clt-convergence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb1.4 — The LLN and the CLT, Shown Not Asserted</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-01/nb1.5-power-and-the-t-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notebook 1.5 — Power Curves and the t-Test From Scratch</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 2 — OLS, Geometry, and Inference</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 — The OLS Engine</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ch21-ols-matrix-form.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 2.1 — OLS in Matrix Form</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ch22-gauss-markov.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2.2 — Gauss–Markov and the Meaning of “Best”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ch23-frisch-waugh-lovell.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 2.3 — The Frisch–Waugh–Lovell Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ch24-heteroskedasticity-clustering-hac.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2.4 — When the Errors Misbehave: Heteroskedasticity, Clustering, HC/HAC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ch25-misspecification-ovb-measurement-error.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2.5 — Misspecification: OVB, Measurement Error, Functional Form</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/lab2-fama-macbeth-crsp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 2 — Replicate a Textbook Fama–MacBeth on CRSP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/mentor2-standard-error-ballgame.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 2 — “Why your standard error is the whole ballgame.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ps2.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 2.1 — Matrix-OLS Derivations &amp; Numerical Inversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ps2.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 2.2 — Gauss–Markov: Breaking the Contract on Purpose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ps2.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 2.3 — Frisch–Waugh–Lovell: Partialling-Out by Hand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ps2.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 2.4 — Robust, Clustered, and HAC Standard Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/ps2.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 2.5 — OVB Sign Predictions and the Measurement-Error Simulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-02/assessment2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 Assessment — The OLS Engine</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-02/nb2.1-ols-from-scratch.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb2.1 — OLS from Scratch with NumPy vs.&nbsp;statsmodels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-02/nb2.2-gauss-markov-monte-carlo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb2.2 — Gauss–Markov by Monte Carlo: Seeing “BLUE”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-02/nb2.3-fwl-residualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb2.3 — FWL Residualization, Visualized</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-02/nb2.4-se-flavors-clustered-panel.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notebook 2.4 — Standard-Error Flavors on a Clustered Panel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-02/nb2.5-biased-estimator-lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb2.5 — The Biased-Estimator Lab</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 3 — Causal Inference Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 — Causal Inference I: Potential Outcomes, Selection-on-Observables, and Instruments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ch31-potential-outcomes-sutva.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3.1 — Potential Outcomes, SUTVA, and the Fundamental Problem of Causal Inference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ch32-matching-propensity-scores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3.2 — Selection on Observables I: Matching &amp; Propensity Scores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ch33-entropy-balancing-doubly-robust.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3.3 — Selection on Observables II: Entropy Balancing &amp; Doubly-Robust Estimation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ch34-instrumental-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 3.4 — Instrumental Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ch35-reading-iv-weak-iv-pathology.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3.5 — Reading IV in the Wild + The Weak-IV Pathology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/lab3-weak-iv-pathology.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 3 — Reproduce a Weak-IV Pathology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/mentor3-natural-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 3 — “Natural experiments: finding the lever nature pulled.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ps3.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 3.1 — Potential-Outcomes Algebra &amp; the Selection-Bias Decomposition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ps3.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 3.2 — Hand-Matching, Propensity Scores, and the Limits of Selection-on-Observables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ps3.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 3.3 — Entropy-Balancing Weights &amp; AIPW by Hand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ps3.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 3.4 — Instrumental Variables: 2SLS Derivation and Weak-IV Diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/ps3.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 3.5 — Anderson–Rubin Inference and the Instrument-Validity Critique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-03/assessment3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 Assessment — Causal Inference I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-03/nb3.1-potential-outcomes-selection-bias.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb3.1 — Potential Outcomes &amp; Selection Bias: Playing God with the Science Table</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-03/nb3.2-psm-balance-diagnostics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb3.2 — Propensity-Score Matching with Balance Diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-03/nb3.3-entropy-balancing-ipw-aipw.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notebook 3.3 — Entropy Balancing vs.&nbsp;IPW vs.&nbsp;AIPW</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-03/nb3.4-2sls-first-stage-f.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb3.4 — 2SLS with <code>linearmodels</code>; the First-Stage F</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-03/nb3.5-weak-iv-pathology.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb3.5 — The Weak-Instrument Pathology, Reproduced</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 4 — Quasi-Experiments in Finance</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 — Causal Inference II: DiD, RD, Synthetic Control, and Shift-Share</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ch41-did-event-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4.1 — Difference-in-Differences and Event Studies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ch42-staggered-adoption-crisis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 4.2 — The Staggered-Adoption Crisis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ch43-regression-discontinuity.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 4.3 — Regression Discontinuity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ch44-synthetic-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 4.4 — Synthetic Control &amp; Synthetic DiD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ch45-bartik-shift-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 4.5 — Bartik / Shift-Share Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/lab4-hmda-did.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 4 — A Clean DiD on HMDA + a State Policy Shock</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/mentor4-detecting-discrimination.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 4 — “Detecting discrimination with a clean design.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ps4.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 4.1 — The 2×2 Difference-in-Differences and Event-Study Construction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ps4.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 4.2 — Goodman-Bacon by Hand, and the Negative-Weights Crisis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ps4.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 4.3 — Regression Discontinuity: Local-Polynomial Fitting and Bandwidth Experiments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ps4.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 4.4 — Synthetic Control Weights &amp; Placebo Inference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/ps4.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 4.5 — Shift-Share Exposure Weights and the Identification Critique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-04/assessment4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 Assessment — Causal Inference II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-04/nb4.1-event-study-parallel-trends.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb4.1 — Event Studies &amp; Parallel Trends: Playing God with Priya's Climate-Insurance Shock</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-04/nb4.2-staggered-twfe-vs-callaway-santanna.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb4.2 — Staggered DiD: TWFE vs.&nbsp;Callaway–Sant’Anna</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-04/nb4.3-rd-rdrobust-cct.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb4.3 — RD with <code>rdrobust</code>; CCT bandwidths</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-04/nb4.4-synthetic-control-sdid.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb4.4 — Synthetic Control &amp; Synthetic DiD: Building the Counterfactual You Wish You Had</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-04/nb4.5-bartik-shift-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb4.5 — Bartik / Shift-Share Instrument Decomposition</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 5 — Reading the Empirical Finance Canon</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 — Reading the Frontier I: Decoding Empirical Papers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ch51-readers-guide-fama-french-1992.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5.1 — Reader's Guide: *The Cross-Section of Expected Stock Returns* (Fama &amp; French 1992)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ch52-readers-guide-fama-french-1993.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 5.2 — Reader's Guide: Fama &amp; French (1993), "Common Risk Factors in the Returns on Stocks and Bonds"</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ch53-readers-guide-jegadeesh-titman-1993.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 5.3 — Reader's Guide: Jegadeesh &amp; Titman (1993)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ch54-readers-guide-petersen-2009.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5.4 — Reader’s Guide: Petersen (2009), “Estimating Standard Errors in Finance Panel Data Sets”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ch55-readers-guide-bertrand-duflo-mullainathan-2004.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5.5 — Reader's Guide: Bertrand, Duflo &amp; Mullainathan (2004)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/reading-guide-pack-5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Reading Guide Pack 5 — How to Read an Empirical Paper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/mentor5-anatomy-of-a-jf-paper.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 5 — “Anatomy of a JF paper.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ps5.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 5.1 — Sorting, Double-Sorting, and the Fama–MacBeth Horse Race in Fama &amp; French (1992)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ps5.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 5.2 — FF93 Factor Construction &amp; Time-Series Regressions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ps5.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 5.3 — Momentum Portfolio Replication and the Transaction-Cost Critique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ps5.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 5.4 — Re-running Petersen’s Clustering Comparison on a Panel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/ps5.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 5.5 — Reproduce a BDM Placebo-DiD False Positive</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-05/assessment5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 Assessment — Reading the Frontier I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-05/nb5.1-ff92-portfolio-sorts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb5.1 — FF92 Portfolio Sorts: the Size and Book-to-Market Cross-Section</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-05/nb5.2-ff93-factor-regressions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb5.2 — FF93 Factor Regressions: Loadings, <span class="math inline">R^2</span>, <span class="math inline">\alpha</span>, and the GRS Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-05/nb5.3-momentum-backtest.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notebook 5.3 — Momentum Backtest (Jegadeesh–Titman)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-05/nb5.4-petersen-clustering-replication.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notebook 5.4 — Replicating Petersen (2009): The Clustering Taxonomy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-05/nb5.5-bdm-placebo-law.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb5.5 — The BDM Placebo-Law Simulation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 6 — Text, AI, and Alternative Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6 — Reading the Frontier II: Text, Modern Empirics, and the AI Co-Pilot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ch61-readers-guide-kpss-2017.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6.1 — Reader's Guide: *Technological Innovation, Resource Allocation, and Growth* (Kogan, Papanikolaou, Seru &amp; Stoffman 2017)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ch62-readers-guide-hoberg-phillips-2016.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6.2 — Reader's Guide: Hoberg &amp; Phillips (2016), "Text-Based Network Industries and Endogenous Product Differentiation"</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ch63-readers-guide-loughran-mcdonald-2011.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6.3 — Reader's Guide: Loughran &amp; McDonald (2011), "When Is a Liability Not a Liability?"</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6.4 — Reader's Guide: Fair Lending in the Algorithmic Era (Bartlett et al. 2022; Bhutta, Hizmo &amp; Ringo)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ch65-ai-copilot-for-research.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6.5 — The AI Co-Pilot for Research (LLM-in-the-Loop)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/reading-guide-pack-6-ai-lab-manual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Reading Guide Pack 6 + AI Lab Manual — When the Data Is Words, and the Tool Has Opinions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/mentor6-text-as-data-ai-without-fooling-yourself.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 6 — “Text as data, and AI without fooling yourself.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ps6.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 6.1 — Building the KPSS Patent-Value Measure: Construction, Validation, and Critique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ps6.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 6.2 — 10-K Cosine Similarity &amp; TNIC Mini-Build</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ps6.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 6.3 — The LM Dictionary vs.&nbsp;a Naive Dictionary: When a Liability Is Not a Liability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ps6.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 6.4 — Fair-Lending Decomposition and the Disparate-Impact Critique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/ps6.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Set 6.5 — An LLM Classifier as a Measurement Instrument: Held-Out Validation and a Leakage Audit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-06/assessment6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6 Assessment — Reading the Frontier II: Build and Validate a Text Classifier</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-06/nb6.1-patent-value-panel.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb6.1 — Building a Patent-Value Panel: Reading a Patent’s Worth Off the Stock Price (KPSS-style)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-06/nb6.2-10k-text-similarity.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb6.2 — 10-K Text Vectorization &amp; Similarity (Hoberg–Phillips, TNIC-style)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-06/nb6.3-loughran-mcdonald-sentiment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb6.3 — The Loughran–McDonald Sentiment Pipeline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-06/nb6.4-mortgage-disparity-decomposition.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb6.4 — Mortgage-Disparity Decomposition: How Much of Maya’s Gap Is Real Risk?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-06/nb6.5-ai-copilot-lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb6.5 — The AI Co-Pilot Lab</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 7 — Your Project, Part I</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 — Independent Research Project I: From Question to Pre-Analysis Plan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ch71-idea-generation-workshop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7.1 — Idea-Generation Workshop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ch72-data-acquisition-in-practice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7.2 — Data Acquisition in Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ch73-pre-analysis-plan.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7.3 — The Pre-Analysis Plan (Short Form)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ch74-building-the-analysis-dataset.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7.4 — Building the Analysis Dataset</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ch75-identification-memo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 7.5 — The Identification Memo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/lab7-your-data-reproducibly.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 7 — Your Data, Reproducibly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/mentor7-how-i-pick-and-kill-a-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 7 — “How I pick a project — and kill one.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ps7.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 7.1 — Three Candidate Questions, Scored: A Feasibility-and-Novelty Deliverable</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ps7.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 7.2 — A Working Data-Pull Script and Data Card for One Project Source</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ps7.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 7.3 — Write and Register a Complete Pre-Analysis Plan for <em>Your</em> Project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ps7.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 7.4 — A Reproducible Merged Analysis Dataset, With Diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/ps7.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 7.5 — Your Identification Memo + Threats Table</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-07/assessment7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7 Assessment — Independent Research Project I: The Design Half</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-07/nb7.1-idea-to-spec-template.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb7.1 — The Idea-to-Spec Template</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-07/nb7.2-multi-source-data-pull-harness.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb7.2 — The Multi-Source Data-Pull Harness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-07/nb7.3-pap-companion-power-calc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notebook 7.3 — PAP Companion: A Power Calculation for <em>Your</em> Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-07/nb7.4-dataset-build-validation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb7.4 — Building the Analysis Dataset: Merge, Lag, and Validate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-07/nb7.5-first-look-regressions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb7.5 — First-Look Regressions: Frozen Until the PAP Is Filed</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 8 — Your Project, Part II</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 — Independent Research Project II: Execution, Robustness, Poster, and Defense</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ch81-execution-specification-curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8.1 — Execution &amp; the Specification Curve</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ch82-robustness-inference-stress-tests.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 8.2 — Robustness &amp; Inference Stress-Tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ch83-writing-the-empirical-paper.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8.3 — Writing the Empirical Paper (and the Abstract Your Poster Carries)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ch84-peer-review-and-revision.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 8.4 — Peer Review &amp; Revision</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ch85-presentation-and-replication-packet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ch 8.5 — The 8-Minute Poster Talk &amp; the Replication Packet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/lab8-final-manuscript-repo-defense.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 8 — Final Poster + Repo + Symposium Defense</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/mentor8-defending-a-result.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mentor Session 8 — “Defending a result: what a referee actually asks.”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ps8.1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 8.1 — Specification Curve for Your Main Result</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ps8.2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 8.2 — The Full Robustness Battery + Write-Up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ps8.3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 8.3 — Draft Your JSSR Abstract and Poster Results Narrative Against the Style Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ps8.4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 8.4 — A Referee Report + Your R&amp;R Memo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/ps8.5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">PS 8.5 — Your 8-Minute Poster Talk + the One-Click Replication Packet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/weeks/week-08/assessment8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8 Assessment — The Capstone (Terminal Assessment of ASSIP)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-08/nb8.1-specification-curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb8.1 — The Specification-Curve Generator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-08/nb8.2-robustness-battery.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb8.2 — The Robustness Battery: Try to Kill Your Own Result</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-08/nb8.3-publication-tables-figures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb8.3 — Publication-Quality Tables &amp; Figures: Turning Maya's Frozen Results into a Paper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-08/nb8.4-reproducibility-check.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb8.4 — The Reproducibility Check: Can a Stranger Regenerate Your Number?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/week-08/nb8.5-final-manuscript-build.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">nb8.5 — The Final Manuscript Build: Markdown/LaTeX → PDF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/capstones/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capstone Gallery — Exemplar Papers Behind the ASSIP Poster Deliverable</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/capstones/capstone1-fair-lending-hmda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capstone 1 (Exemplar) — Fair Lending on HMDA: How Much of the Mortgage-Denial Gap Survives the Controls?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/capstones/capstone2-common-ownership-13f.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capstone 2 (Exemplar) — Common Ownership from 13F</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/capstones/capstone3-innovation-uspto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capstone 3 — Innovation from USPTO PatentsView</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/capstones/capstone4-8k-text-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capstone 4 — Reading the Tape: An Out-of-Sample-Validated Text Classifier for SEC 8-K Events and the Short-Window Return Reaction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/capstones/capstone5-fred-macro-event-study.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capstone 5 — FRED Macro Event Study</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Instructor Manual</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instructor’s Manual — ASSIP 2026</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/IM1-pacing-guide.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IM-1 — Pacing Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/IM2-grading-rubrics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IM-2 — Grading Rubrics (Consolidated)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/IM3-common-pitfalls.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IM-3 — Common Student Pitfalls, by Week</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/IM4-guest-lectures-mentor-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IM-4 — Mentor-Session Facilitation &amp; Guest Lectures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/IM5-answer-keys-anchor-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IM-5 — Answer Keys &amp; Anchor Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/instructor-manual/IM6-equity-access.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IM-6 — Equity, Access &amp; Compliance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix A — Math Toolkit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/A-math-toolkit/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A — Math Toolkit (stub). See ../../TOC.md.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/A-math-toolkit/A1-matrix-algebra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A.1 — Matrix Algebra (just enough)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/A-math-toolkit/A2-optimization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A.2 — Optimization (just enough)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/A-math-toolkit/A3-asymptotics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A.3 Asymptotics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/A-math-toolkit/A4-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A.4 Probability Distributions Reference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix B — Python &amp; LaTeX Setup</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/B-python-latex-setup/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B — Python + LaTeX Setup (stub). See ../../TOC.md.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/B-python-latex-setup/B1-toolchain.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">B.1 Toolchain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/B-python-latex-setup/B2-github-classroom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">B.2 GitHub &amp; GitHub Classroom</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/B-python-latex-setup/B3-wrds-cloud.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">B.3 WRDS Cloud</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/B-python-latex-setup/B4-hopper-slurm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">B.4 — GMU Hopper SLURM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/B-python-latex-setup/B5-overleaf-latex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">B.5 — Overleaf + the AEA LaTeX Template</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix C — Data Dictionary</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/C-data-dictionary/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C — Data Dictionary Master</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Cards — Appendix C source dictionary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/bea.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — U.S. Bureau of Economic Analysis (BEA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/bls.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — U.S. Bureau of Labor Statistics (BLS)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/capital-iq.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Capital IQ (S&amp;P Capital IQ via WRDS)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — U.S. Census Bureau: ACS + County Business Patterns</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/cfpb-complaints.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — CFPB Consumer Complaint Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/compustat.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Compustat (S&amp;P Global Fundamentals)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/crsp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — CRSP (Center for Research in Security Prices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/crypto-onchain.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Crypto / On-Chain: Etherscan / CoinGecko / DeFiLlama</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/edgar-10k-10q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — SEC EDGAR 10-K / 10-Q (Annual &amp; Quarterly Reports)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/edgar-13f.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — SEC EDGAR 13F (Institutional Holdings, the Free Path)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/edgar-8k.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — SEC EDGAR 8-K (Material Events)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/edgar-def14a.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — SEC EDGAR DEF 14A (Proxy Statements)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/edgar-nport.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — SEC EDGAR N-PORT (Fund Portfolio Holdings)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/edgar-xbrl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/fdic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — FDIC (Institution Directory, SDI financials, and bank failures)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/ffiec-call-reports.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — SEC EDGAR XBRL Financial Statement Data (Structured Financials)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/fomc-gdelt-text.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — FOMC Text (statements / minutes / speeches) + GDELT Global News</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/fr-y9c.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — FR Y-9C (Bank Holding Company Financials)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/fred.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — FRED (Federal Reserve Economic Data)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/free-equity-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Free Equity Price APIs: yfinance / Stooq / Tiingo / Alpha Vantage</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/hmda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — HMDA (Home Mortgage Disclosure Act Loan Application Register)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/ibes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — IBES (Institutional Brokers’ Estimate System)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/international-macro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — International Macro: ECB SDW · BIS · IMF IFS · World Bank WDI · OECD.Stat</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/loughran-mcdonald-dict.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Loughran–McDonald Master Dictionary (Finance Sentiment Word Lists)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/mergent-fisd.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Mergent FISD (Fixed Income Securities Database)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/msrb-emma.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — MSRB EMMA (Municipal securities disclosures and trades)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/nber-patent-link.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — NBER / KPSS Patent–Compustat Links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/noaa-fema.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — NOAA Billion-Dollar Disasters / Storm Events + FEMA Disaster Declarations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/optionmetrics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — OptionMetrics (IvyDB US)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/thomson-13f.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — Thomson Reuters / SEC 13F Institutional Holdings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/trace.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — TRACE (Transaction Reporting and Compliance Engine)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/treasury-finra.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — U.S. Treasury (TreasuryDirect + Daily Yield Curve) and FINRA TRACE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/usaspending.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — USAspending.gov (Federal Awards)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../data-cards/uspto-patentsview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Card — USPTO PatentsView (now USPTO Open Data Portal)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix D — Style Guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/D-style-guide/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D — Empirical-Finance Style Guide (stub). See ../../TOC.md.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/D-style-guide/D1-table-craft.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">D.1 — Table Craft</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/D-style-guide/D2-reporting-regressions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">D.2 — Reporting Regressions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/D-style-guide/D3-robustness-sections.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">D.3 — Robustness Sections That Persuade</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/D-style-guide/D4-replication-packet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">D.4 — The Replication Packet Standard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/D-style-guide/D5-prose-style.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">D.5 — Prose Style</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix E — Solutions Manual</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/README.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E — Solutions Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w1-ps1.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 1.1 (Conditional Probability &amp; LIE/LTV Drills)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w1-ps1.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 1.2 (Expectation/Variance Algebra &amp; Correlation Geometry)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w1-ps1.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 1.3 (Bias, Variance, and MSE of Estimators)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w1-ps1.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 1.4 (The LLN and the CLT)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w1-ps1.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 1.5 (Power, Size, and Confidence Intervals)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w2-ps2.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 2.1 (Matrix-OLS Derivations &amp; Numerical Inversion)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w2-ps2.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 2.2 (Gauss–Markov: Breaking the Contract on Purpose)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w2-ps2.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 2.3 (Frisch–Waugh–Lovell: Partialling-Out by Hand)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w2-ps2.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 2.4 (Robust, Clustered, and HAC Standard Errors)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w2-ps2.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 2.5 (OVB Sign Predictions and the Measurement-Error Simulation)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w3-ps3.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 3.1 (Potential-Outcomes Algebra &amp; the Selection-Bias Decomposition)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w3-ps3.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 3.2 (Hand-Matching, Propensity Scores, and the Limits of Selection-on-Observables)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w3-ps3.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 3.3 (Entropy-Balancing Weights &amp; AIPW by Hand)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w3-ps3.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 3.4 (Instrumental Variables: 2SLS Derivation and Weak-IV Diagnostics)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w3-ps3.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 3.5 (Anderson–Rubin Inference and the Instrument-Validity Critique)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w4-ps4.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 4.1 (The 2×2 Difference-in-Differences and Event-Study Construction)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w4-ps4.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 4.2 (Goodman-Bacon by Hand, and the Negative-Weights Crisis)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w4-ps4.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 4.3 (Regression Discontinuity: Local-Polynomial Fitting and Bandwidth Experiments)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w4-ps4.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 4.4 (Synthetic Control Weights &amp; Placebo Inference)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w4-ps4.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 4.5 (Shift-Share Exposure Weights and the Identification Critique)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w5-ps5.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 5.1 (Sorting, Double-Sorting, and the Fama–MacBeth Horse Race in Fama &amp; French 1992)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w5-ps5.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 5.2 (FF93 Factor Construction &amp; Time-Series Regressions)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w5-ps5.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 5.3 (Momentum Portfolio Replication and the Transaction-Cost Critique)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w5-ps5.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 5.4 (Re-running Petersen’s Clustering Comparison on a Panel)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w5-ps5.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 5.5 (Reproduce a BDM Placebo-DiD False Positive)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w6-ps6.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 6.1 (Building the KPSS Patent-Value Measure: Construction, Validation, and Critique)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w6-ps6.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 6.2 (10-K Cosine Similarity &amp; TNIC Mini-Build)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w6-ps6.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 6.3 (The LM Dictionary vs.&nbsp;a Naive Dictionary: When a Liability Is Not a Liability)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w6-ps6.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 6.4 (Fair-Lending Decomposition and the Disparate-Impact Critique)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w6-ps6.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — Problem Set 6.5 (An LLM Classifier as a Measurement Instrument: Held-Out Validation and a Leakage Audit)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w7-ps7.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 7.1 (Three Candidate Questions, Scored)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w7-ps7.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 7.2 (A Working Data-Pull Script and Data Card for One Project Source)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w7-ps7.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 7.3 (A Complete Pre-Analysis Plan Draft)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w7-ps7.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions — PS 7.4 (A Reproducible Merged Analysis Dataset, With Diagnostics)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w7-ps7.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 7.5 (Identification Memo + Threats Table)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w8-ps8.1-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 8.1 (Specification Curve for Your Main Result)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w8-ps8.2-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 8.2 (The Full Robustness Battery + Write-Up)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w8-ps8.3-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 8.3 (An A-Grade Introduction + Headline-First Results Excerpt)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w8-ps8.4-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 8.4 (Referee Report + R&amp;R Memo)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../book/appendices/E-solutions-manual/E-w8-ps8.5-solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Model Deliverable — PS 8.5 (8-Minute Deck + One-Click Replication Packet)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#problem-1-unbiasedness-of-the-sample-mean-the-long-way-and-the-short-way-12-points" id="toc-problem-1-unbiasedness-of-the-sample-mean-the-long-way-and-the-short-way-12-points" class="nav-link active" data-scroll-target="#problem-1-unbiasedness-of-the-sample-mean-the-long-way-and-the-short-way-12-points">Problem 1 — Unbiasedness of the sample mean, the long way and the short way (12 points)</a></li>
+  <li><a href="#problem-2-deriving-operatornamevarbarx-sigma2n-and-the-price-of-precision-15-points" id="toc-problem-2-deriving-operatornamevarbarx-sigma2n-and-the-price-of-precision-15-points" class="nav-link" data-scroll-target="#problem-2-deriving-operatornamevarbarx-sigma2n-and-the-price-of-precision-15-points">Problem 2 — Deriving <span class="math inline">\operatorname{Var}(\bar{x}) = \sigma^2/N</span> and the price of precision (15 points)</a></li>
+  <li><a href="#problem-3-the-biasvariancemse-decomposition-applied-to-two-recipes-20-points" id="toc-problem-3-the-biasvariancemse-decomposition-applied-to-two-recipes-20-points" class="nav-link" data-scroll-target="#problem-3-the-biasvariancemse-decomposition-applied-to-two-recipes-20-points">Problem 3 — The bias–variance–MSE decomposition, applied to two recipes (20 points)</a></li>
+  <li><a href="#problem-4-unbiased-but-inconsistent-biased-but-consistent-16-points" id="toc-problem-4-unbiased-but-inconsistent-biased-but-consistent-16-points" class="nav-link" data-scroll-target="#problem-4-unbiased-but-inconsistent-biased-but-consistent-16-points">Problem 4 — Unbiased but inconsistent; biased but consistent (16 points)</a></li>
+  <li><a href="#problem-5-designing-a-monte-carlo-to-measure-bias-and-variance-17-points" id="toc-problem-5-designing-a-monte-carlo-to-measure-bias-and-variance-17-points" class="nav-link" data-scroll-target="#problem-5-designing-a-monte-carlo-to-measure-bias-and-variance-17-points">Problem 5 — Designing a Monte Carlo to measure bias and variance (17 points)</a></li>
+  <li><a href="#problem-6-priyas-variance-estimator-and-bessels-correction-20-points" id="toc-problem-6-priyas-variance-estimator-and-bessels-correction-20-points" class="nav-link" data-scroll-target="#problem-6-priyas-variance-estimator-and-bessels-correction-20-points">Problem 6 — Priya’s variance estimator and Bessel’s correction (20 points)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/edwardlg/assip-2026-empirical-finance/edit/main/book/weeks/week-01/ps1.3.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/edwardlg/assip-2026-empirical-finance/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/edwardlg/assip-2026-empirical-finance/blob/main/book/weeks/week-01/ps1.3.md" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../book/weeks/week-01/README.html">Week 1 — Probability, Inference, and the Logic of Estimation</a></li><li class="breadcrumb-item"><a href="../../../book/weeks/week-01/ps1.3.html"><span class="chapter-title">Problem Set 1.3 — Bias, Variance, and MSE of Estimators</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Problem Set 1.3 — Bias, Variance, and MSE of Estimators</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Pairs with Chapter 1.3 (Estimators and Their Sampling Distributions) and the notebook <code>nb1.3</code>. Use only tools through Chapter 1.3: linearity of expectation, the variance of a sum of independent variables, <span class="math inline">\operatorname{Var}(\bar{x}) = \sigma^2/N</span>, the bias–variance decomposition of MSE, and the definitions of unbiasedness and consistency. You may invoke the Law of Large Numbers and the Central Limit Theorem <strong>intuitively</strong> — for example, “the variance goes to zero so the estimator concentrates on the truth” — but you are not asked to prove either; those proofs belong to Chapter 1.4.</em></p>
+<p><strong>Notation (from <code>CONVENTIONS.md</code>).</strong> Population mean <span class="math inline">\mu = \mathbb{E}[x_i]</span>, population variance <span class="math inline">\sigma^2 = \operatorname{Var}(x_i)</span>. An estimator is written <span class="math inline">\hat{\mu}</span> (a random rule); a particular realized number is the estimate. <span class="math inline">\mathbb{E}[\cdot]</span>, <span class="math inline">\operatorname{Var}(\cdot)</span>, <span class="math inline">\operatorname{Cov}(\cdot,\cdot)</span> are expectation, variance, covariance. <span class="math inline">\xrightarrow{p}</span> denotes convergence in probability. The sample mean is <span class="math inline">\bar{x} = \frac{1}{N}\sum_{i=1}^{N} x_i</span>.</p>
+<p><strong>Total: 100 points across 6 problems.</strong> Each problem is self-contained. Show your steps; a correct number with no derivation earns little credit.</p>
+<hr>
+<section id="problem-1-unbiasedness-of-the-sample-mean-the-long-way-and-the-short-way-12-points" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-unbiasedness-of-the-sample-mean-the-long-way-and-the-short-way-12-points">Problem 1 — Unbiasedness of the sample mean, the long way and the short way (12 points)</h2>
+<p>Maya is studying the gig-economy: she has <span class="math inline">N</span> weekly earnings figures <span class="math inline">x_1, \dots, x_N</span> from a panel of food-delivery drivers, and she models them as independent draws from a population with mean <span class="math inline">\mathbb{E}[x_i] = \mu</span> (the “typical” weekly take) and variance <span class="math inline">\operatorname{Var}(x_i) = \sigma^2</span>. She uses the sample mean <span class="math inline">\bar{x} = \frac{1}{N}\sum_{i=1}^{N} x_i</span> to estimate <span class="math inline">\mu</span>.</p>
+<p><strong>(a) [4 pts]</strong> Prove from the definition that <span class="math inline">\mathbb{E}[\bar{x}] = \mu</span>. State explicitly, in one sentence, which property of expectation you use at each step and which assumption about the <span class="math inline">x_i</span> the proof relies on.</p>
+<p><strong>(b) [3 pts]</strong> Maya only has <span class="math inline">N = 6</span> drivers’ data. A classmate says, “Six is way too few — your estimate must be biased.” Is the classmate right that the estimate is <em>biased</em>? Answer yes or no and justify in two sentences, distinguishing bias from sampling error.</p>
+<p><strong>(c) [5 pts]</strong> Now suppose Maya’s panel accidentally over-samples drivers from one high-pay metro area — the recruiting flyer was posted mostly in that city — so that for the over-sampled drivers <span class="math inline">\mathbb{E}[x_i] = \mu + \delta</span> with <span class="math inline">\delta &gt; 0</span>, while the rest satisfy <span class="math inline">\mathbb{E}[x_i] = \mu</span>. If a fraction <span class="math inline">\pi</span> of the <span class="math inline">N</span> drivers are from the over-sampled metro, find <span class="math inline">\mathbb{E}[\bar{x}]</span> and the bias of <span class="math inline">\bar{x}</span>. Does collecting more drivers <em>the same way</em> fix the problem? Explain in one sentence, and connect your answer to the difference between <em>sampling error</em> (which shrinks with <span class="math inline">N</span>) and <em>bias from a broken sampling frame</em> (which does not).</p>
+<hr>
+</section>
+<section id="problem-2-deriving-operatornamevarbarx-sigma2n-and-the-price-of-precision-15-points" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-deriving-operatornamevarbarx-sigma2n-and-the-price-of-precision-15-points">Problem 2 — Deriving <span class="math inline">\operatorname{Var}(\bar{x}) = \sigma^2/N</span> and the price of precision (15 points)</h2>
+<p>Stick with Maya’s setup: <span class="math inline">x_1, \dots, x_N</span> independent, each with variance <span class="math inline">\sigma^2</span>.</p>
+<p><strong>(a) [6 pts]</strong> Starting from <span class="math inline">\operatorname{Var}\!\left(\sum_{i=1}^N x_i\right) = \sum_{i=1}^N \operatorname{Var}(x_i)</span> (the variance-of-a-sum-of-independents result from Chapter 1.2), derive <span class="math inline">\operatorname{Var}(\bar{x}) = \sigma^2/N</span>. Show clearly where the factor <span class="math inline">1/N^2</span> comes from and why pulling the constant <span class="math inline">1/N</span> outside the variance squares it.</p>
+<p><strong>(b) [3 pts]</strong> Hence write the standard error <span class="math inline">\operatorname{se}(\bar{x})</span> in terms of <span class="math inline">\sigma</span> and <span class="math inline">N</span>. Suppose weekly earnings have <span class="math inline">\sigma = \$240</span>. Compute the standard error for <span class="math inline">N = 6</span> and for <span class="math inline">N = 600</span>.</p>
+<p><strong>(c) [4 pts]</strong> Maya wants the standard error to be at most $10. Using <span class="math inline">\sigma = \$240</span>, what is the smallest <span class="math inline">N</span> that achieves this? Show the inequality you solve.</p>
+<p><strong>(d) [2 pts]</strong> Maya currently has <span class="math inline">N = 600</span> with a standard error of (your answer from part b). She wants to <em>halve</em> it. By what factor must she multiply her sample size? Explain in one sentence why this is the “<span class="math inline">1/\sqrt{N}</span> tax” on precision.</p>
+<hr>
+</section>
+<section id="problem-3-the-biasvariancemse-decomposition-applied-to-two-recipes-20-points" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-the-biasvariancemse-decomposition-applied-to-two-recipes-20-points">Problem 3 — The bias–variance–MSE decomposition, applied to two recipes (20 points)</h2>
+<p>A population has true mean <span class="math inline">\mu</span> and variance <span class="math inline">\sigma^2</span>, and you draw <span class="math inline">N</span> independent observations. Recall the decomposition <span class="math inline">\operatorname{MSE}(\hat{\mu}) = \operatorname{Var}(\hat{\mu}) + \operatorname{Bias}(\hat{\mu})^2</span>.</p>
+<p>Consider two estimators of <span class="math inline">\mu</span>:</p>
+<ul>
+<li><strong>Recipe A:</strong> the plain sample mean, <span class="math inline">\hat{\mu}_A = \bar{x}</span>.</li>
+<li><strong>Recipe B:</strong> a <em>shrinkage</em> estimator that pulls the sample mean a fraction of the way toward a fixed guess of zero: <span class="math inline">\hat{\mu}_B = c\,\bar{x}</span>, for a constant <span class="math inline">0 &lt; c &lt; 1</span>.</li>
+</ul>
+<p><strong>(a) [4 pts]</strong> Show that <span class="math inline">\hat{\mu}_A</span> is unbiased and write its MSE in terms of <span class="math inline">\sigma^2</span> and <span class="math inline">N</span>.</p>
+<p><strong>(b) [5 pts]</strong> Find <span class="math inline">\mathbb{E}[\hat{\mu}_B]</span> and hence the bias of <span class="math inline">\hat{\mu}_B</span>. Find <span class="math inline">\operatorname{Var}(\hat{\mu}_B)</span>. (Hint: <span class="math inline">\hat{\mu}_B</span> is a constant times <span class="math inline">\bar{x}</span>.)</p>
+<p><strong>(c) [5 pts]</strong> Write <span class="math inline">\operatorname{MSE}(\hat{\mu}_B)</span> in terms of <span class="math inline">c</span>, <span class="math inline">\mu</span>, <span class="math inline">\sigma^2</span>, and <span class="math inline">N</span>. Confirm it reduces to your answer from (a) when <span class="math inline">c = 1</span>.</p>
+<p><strong>(d) [6 pts]</strong> Show that there exists a value of <span class="math inline">c</span> strictly between <span class="math inline">0</span> and <span class="math inline">1</span> for which <span class="math inline">\operatorname{MSE}(\hat{\mu}_B) &lt; \operatorname{MSE}(\hat{\mu}_A)</span> — i.e.&nbsp;a <em>biased</em> estimator beats the unbiased one. You do not need the optimal <span class="math inline">c</span>; it is enough to evaluate the MSE at one specific <span class="math inline">c &lt; 1</span> (for instance, take <span class="math inline">\mu = 0</span> exactly, or take <span class="math inline">c</span> very close to <span class="math inline">1</span>) and show the inequality holds. State in one sentence what this says about the bias–variance tradeoff.</p>
+<hr>
+</section>
+<section id="problem-4-unbiased-but-inconsistent-biased-but-consistent-16-points" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-unbiased-but-inconsistent-biased-but-consistent-16-points">Problem 4 — Unbiased but inconsistent; biased but consistent (16 points)</h2>
+<p>Devon is estimating the mean of a crypto token’s daily return, with population mean <span class="math inline">\mu</span> and variance <span class="math inline">\sigma^2</span>, from <span class="math inline">N</span> independent daily observations <span class="math inline">x_1, \dots, x_N</span>.</p>
+<p><strong>(a) [4 pts]</strong> Devon’s lazy estimator is “just use the first day: <span class="math inline">\hat{\mu}_1 = x_1</span>, ignore the rest.” Show <span class="math inline">\hat{\mu}_1</span> is unbiased for every <span class="math inline">N</span>. Compute its variance. Does its variance go to zero as <span class="math inline">N \to \infty</span>?</p>
+<p><strong>(b) [4 pts]</strong> Using your variance from (a) and the intuition from Chapter 1.3 §5 (an estimator concentrates on a point only if its spread collapses to zero), argue that <span class="math inline">\hat{\mu}_1</span> is <strong>not consistent</strong>. In one sentence, say what is “wrong” with the recipe even though it is unbiased.</p>
+<p><strong>(c) [5 pts]</strong> Now consider a <em>biased</em> estimator: <span class="math inline">\hat{\mu}_2 = \frac{1}{N+5}\sum_{i=1}^N x_i</span> (it divides by <span class="math inline">N + 5</span> instead of <span class="math inline">N</span>). Find <span class="math inline">\mathbb{E}[\hat{\mu}_2]</span> and its bias. Show the bias is nonzero for every finite <span class="math inline">N</span> but tends to <span class="math inline">0</span> as <span class="math inline">N \to \infty</span>.</p>
+<p><strong>(d) [3 pts]</strong> Find <span class="math inline">\operatorname{Var}(\hat{\mu}_2)</span> and argue that <span class="math inline">\hat{\mu}_2</span> <strong>is</strong> consistent (its bias vanishes and its variance goes to zero). State the one-sentence moral: unbiasedness and consistency are different properties, and neither implies the other.</p>
+<hr>
+</section>
+<section id="problem-5-designing-a-monte-carlo-to-measure-bias-and-variance-17-points" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5-designing-a-monte-carlo-to-measure-bias-and-variance-17-points">Problem 5 — Designing a Monte Carlo to measure bias and variance (17 points)</h2>
+<p>You have read in Chapter 1.3 that in real life you only ever draw <em>one</em> sample, so you can never <em>see</em> the sampling distribution — but on a computer you can play god and draw thousands of samples from a known population. In this problem you <strong>design</strong> (do not run) such an experiment; it mirrors what <code>nb1.3</code> actually does.</p>
+<p>Priya wants to compare two estimators of the mean claim size <span class="math inline">\mu</span> on a right-skewed (lognormal) loss population whose true mean she sets to <span class="math inline">\mu = \$8{,}000</span>: the plain sample mean <span class="math inline">\bar{x}</span> and the 5%-trimmed mean (which discards the smallest and largest 5% of claims before averaging), at sample size <span class="math inline">N = 200</span>.</p>
+<p><strong>(a) [7 pts]</strong> Write clear pseudocode (or commented Python in the style of Chapter 1.3) for a Monte Carlo with <span class="math inline">R = 10{,}000</span> replications that, for <em>each</em> of the two estimators, produces a simulated estimate of (i) its bias and (ii) its variance. Your pseudocode must make explicit: how you draw one sample, what you store on each replication, and how you turn the stored values into a bias estimate and a variance estimate at the end. Use the known true <span class="math inline">\mu</span>.</p>
+<p><strong>(b) [4 pts]</strong> Write the formula you would use to turn your <span class="math inline">R</span> stored estimates <span class="math inline">\hat{\mu}^{(1)}, \dots, \hat{\mu}^{(R)}</span> into (i) a Monte Carlo estimate of the bias and (ii) a Monte Carlo estimate of the MSE, given the known <span class="math inline">\mu</span>. Confirm that your MSE estimate is consistent with <span class="math inline">\widehat{\operatorname{MSE}} \approx \widehat{\operatorname{Var}} + \widehat{\operatorname{Bias}}^2</span>.</p>
+<p><strong>(c) [3 pts]</strong> Why must this be a <em>simulation</em> rather than something Priya can compute from her one real spreadsheet of 200 claims? Answer in two sentences, using the estimator/estimate distinction.</p>
+<p><strong>(d) [3 pts]</strong> The notebook <code>nb1.3</code> reports that on this particular lognormal loss population, the 5%-trimmed mean has <strong>higher</strong> MSE than the plain mean for estimating <span class="math inline">\mu</span>. Explain, using the bias–variance decomposition, <em>why</em> trimming can lose here even though it cuts the variance. (Hint: which way does trimming push the estimate on a right-skewed distribution, and what is the true target?)</p>
+<hr>
+</section>
+<section id="problem-6-priyas-variance-estimator-and-bessels-correction-20-points" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6-priyas-variance-estimator-and-bessels-correction-20-points">Problem 6 — Priya’s variance estimator and Bessel’s correction (20 points)</h2>
+<p>Priya now wants not the mean claim but a sense of how <em>spread out</em> claims are: she needs to estimate the population variance <span class="math inline">\sigma^2</span> from her sample <span class="math inline">x_1, \dots, x_N</span> of independent claims with mean <span class="math inline">\mu</span> and variance <span class="math inline">\sigma^2</span>. A tempting recipe divides by <span class="math inline">N</span>:</p>
+<p><span class="math display">
+\hat{\sigma}^2_{\text{naive}} = \frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2 .
+</span></p>
+<p>This problem shows why the standard software default divides by <span class="math inline">N-1</span> instead (this is <em>Bessel’s correction</em>, the <code>ddof=1</code> you saw in the Chapter 1.3 code).</p>
+<p><strong>(a) [5 pts]</strong> As a warm-up, suppose for a moment that Priya magically knew the true mean <span class="math inline">\mu</span>, and used <span class="math inline">\tilde{\sigma}^2 = \frac{1}{N}\sum_{i=1}^N (x_i - \mu)^2</span>. Show this is unbiased for <span class="math inline">\sigma^2</span>, i.e.&nbsp;<span class="math inline">\mathbb{E}[\tilde{\sigma}^2] = \sigma^2</span>. (Use the definition <span class="math inline">\sigma^2 = \mathbb{E}[(x_i - \mu)^2]</span> and linearity of expectation.)</p>
+<p><strong>(b) [9 pts]</strong> Now use the actual <span class="math inline">\bar{x}</span>, not <span class="math inline">\mu</span>. Prove the algebraic identity</p>
+<p><span class="math display">
+\sum_{i=1}^N (x_i - \bar{x})^2 = \sum_{i=1}^N (x_i - \mu)^2 - N(\bar{x} - \mu)^2 ,
+</span></p>
+<p>and then take expectations of both sides to show</p>
+<p><span class="math display">
+\mathbb{E}\!\left[\sum_{i=1}^N (x_i - \bar{x})^2\right] = (N-1)\,\sigma^2 .
+</span></p>
+<p>(You will need <span class="math inline">\mathbb{E}[(x_i - \mu)^2] = \sigma^2</span> and <span class="math inline">\mathbb{E}[(\bar{x} - \mu)^2] = \operatorname{Var}(\bar{x}) = \sigma^2/N</span> from Problem 2.)</p>
+<p><strong>(c) [3 pts]</strong> Conclude that <span class="math inline">\hat{\sigma}^2_{\text{naive}}</span> (dividing by <span class="math inline">N</span>) is <strong>biased</strong>, report the exact direction and size of its bias, and write down the corrected, unbiased estimator <span class="math inline">s^2</span>. This is the estimator with <code>ddof=1</code>.</p>
+<p><strong>(d) [3 pts]</strong> For Priya’s <span class="math inline">N = 200</span> claims, by what percentage does the naive estimator under- or over-state <span class="math inline">\sigma^2</span> on average? Is Bessel’s correction a big deal at <span class="math inline">N = 200</span>, and at what kind of <span class="math inline">N</span> does it actually start to matter? Answer in two sentences.</p>
+<hr>
+<p><em>Solutions: see Appendix E, <code>E-w1-ps1.3-solutions.md</code>. To check parts of Problems 3, 5, and 6 empirically, open <code>nb1.3</code> and turn the dials — set the population to lognormal, fix the true mean, and read off the simulated bias, variance, and MSE for each estimator.</em></p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/edwardlg\.github\.io\/assip-2026-empirical-finance\/textbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../book/weeks/week-01/ps1.2.html" class="pagination-link" aria-label="PS 1.2 — Expectation/Variance Algebra &amp; Correlation Geometry">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">PS 1.2 — Expectation/Variance Algebra &amp; Correlation Geometry</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../book/weeks/week-01/ps1.4.html" class="pagination-link" aria-label="Problem Set 1.4 — The LLN and the CLT, by Hand and by Simulation">
+        <span class="nav-page-text"><span class="chapter-title">Problem Set 1.4 — The LLN and the CLT, by Hand and by Simulation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Problem Set 1.3 — Bias, Variance, and MSE of Estimators</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>*Pairs with Chapter 1.3 (Estimators and Their Sampling Distributions) and the notebook</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">`nb1.3`</span>. Use only tools through Chapter 1.3: linearity of expectation, the variance of a sum</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>of independent variables, $\operatorname{Var}(\bar{x}) = \sigma^2/N$, the bias–variance</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>decomposition of MSE, and the definitions of unbiasedness and consistency. You may invoke the</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Law of Large Numbers and the Central Limit Theorem **intuitively** — for example, "the variance</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>goes to zero so the estimator concentrates on the truth" — but you are not asked to prove</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>either; those proofs belong to Chapter 1.4.*</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**Notation (from `CONVENTIONS.md`).** Population mean $\mu = \mathbb{E}<span class="co">[</span><span class="ot">x_i</span><span class="co">]</span>$, population</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>variance $\sigma^2 = \operatorname{Var}(x_i)$. An estimator is written $\hat{\mu}$ (a random</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>rule); a particular realized number is the estimate. $\mathbb{E}<span class="co">[</span><span class="ot">\cdot</span><span class="co">]</span>$, $\operatorname{Var}(\cdot)$,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$\operatorname{Cov}(\cdot,\cdot)$ are expectation, variance, covariance. $\xrightarrow{p}$</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>denotes convergence in probability. The sample mean is $\bar{x} = \frac{1}{N}\sum_{i=1}^{N} x_i$.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**Total: 100 points across 6 problems.** Each problem is self-contained. Show your steps;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>a correct number with no derivation earns little credit.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem 1 — Unbiasedness of the sample mean, the long way and the short way (12 points)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Maya is studying the gig-economy: she has $N$ weekly earnings figures $x_1, \dots, x_N$ from a</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>panel of food-delivery drivers, and she models them as independent draws from a population with</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>mean $\mathbb{E}<span class="co">[</span><span class="ot">x_i</span><span class="co">]</span> = \mu$ (the "typical" weekly take) and variance</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>$\operatorname{Var}(x_i) = \sigma^2$. She uses the sample mean</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>$\bar{x} = \frac{1}{N}\sum_{i=1}^{N} x_i$ to estimate $\mu$.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**(a) [4 pts]** Prove from the definition that $\mathbb{E}<span class="co">[</span><span class="ot">\bar{x}</span><span class="co">]</span> = \mu$. State explicitly,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>in one sentence, which property of expectation you use at each step and which assumption about</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>the $x_i$ the proof relies on.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**(b) [3 pts]** Maya only has $N = 6$ drivers' data. A classmate says, "Six is way too few — your</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>estimate must be biased." Is the classmate right that the estimate is *biased*? Answer yes or no</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>and justify in two sentences, distinguishing bias from sampling error.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**(c) [5 pts]** Now suppose Maya's panel accidentally over-samples drivers from one high-pay</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>metro area — the recruiting flyer was posted mostly in that city — so that for the over-sampled</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>drivers $\mathbb{E}<span class="co">[</span><span class="ot">x_i</span><span class="co">]</span> = \mu + \delta$ with $\delta &gt; 0$, while the rest satisfy</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>$\mathbb{E}<span class="co">[</span><span class="ot">x_i</span><span class="co">]</span> = \mu$. If a fraction $\pi$ of the $N$ drivers are from the over-sampled metro,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>find $\mathbb{E}<span class="co">[</span><span class="ot">\bar{x}</span><span class="co">]</span>$ and the bias of $\bar{x}$. Does collecting more drivers *the same way*</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>fix the problem? Explain in one sentence, and connect your answer to the difference between</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>*sampling error* (which shrinks with $N$) and *bias from a broken sampling frame* (which does</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>not).</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem 2 — Deriving $\operatorname{Var}(\bar{x}) = \sigma^2/N$ and the price of precision (15 points)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Stick with Maya's setup: $x_1, \dots, x_N$ independent, each with variance $\sigma^2$.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>**(a) [6 pts]** Starting from $\operatorname{Var}<span class="sc">\!</span>\left(\sum_{i=1}^N x_i\right) = \sum_{i=1}^N \operatorname{Var}(x_i)$</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>(the variance-of-a-sum-of-independents result from Chapter 1.2), derive</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$\operatorname{Var}(\bar{x}) = \sigma^2/N$. Show clearly where the factor $1/N^2$ comes from and</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>why pulling the constant $1/N$ outside the variance squares it.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**(b) [3 pts]** Hence write the standard error $\operatorname{se}(\bar{x})$ in terms of $\sigma$</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>and $N$. Suppose weekly earnings have $\sigma = \$240$. Compute the standard error for $N = 6$</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>and for $N = 600$.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>**(c) [4 pts]** Maya wants the standard error to be at most \$10. Using $\sigma = \$240$, what</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>is the smallest $N$ that achieves this? Show the inequality you solve.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>**(d) [2 pts]** Maya currently has $N = 600$ with a standard error of (your answer from part b).</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>She wants to *halve* it. By what factor must she multiply her sample size? Explain in one</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>sentence why this is the "$1/\sqrt{N}$ tax" on precision.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem 3 — The bias–variance–MSE decomposition, applied to two recipes (20 points)</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>A population has true mean $\mu$ and variance $\sigma^2$, and you draw $N$ independent</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>observations. Recall the decomposition $\operatorname{MSE}(\hat{\mu}) = \operatorname{Var}(\hat{\mu}) + \operatorname{Bias}(\hat{\mu})^2$.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Consider two estimators of $\mu$:</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Recipe A:** the plain sample mean, $\hat{\mu}_A = \bar{x}$.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Recipe B:** a *shrinkage* estimator that pulls the sample mean a fraction of the way toward</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>  a fixed guess of zero: $\hat{\mu}_B = c\,\bar{x}$, for a constant $0 &lt; c &lt; 1$.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>**(a) [4 pts]** Show that $\hat{\mu}_A$ is unbiased and write its MSE in terms of $\sigma^2$</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>and $N$.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>**(b) [5 pts]** Find $\mathbb{E}<span class="co">[</span><span class="ot">\hat{\mu}_B</span><span class="co">]</span>$ and hence the bias of $\hat{\mu}_B$. Find</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>$\operatorname{Var}(\hat{\mu}_B)$. (Hint: $\hat{\mu}_B$ is a constant times $\bar{x}$.)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>**(c) [5 pts]** Write $\operatorname{MSE}(\hat{\mu}_B)$ in terms of $c$, $\mu$, $\sigma^2$, and</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$N$. Confirm it reduces to your answer from (a) when $c = 1$.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>**(d) [6 pts]** Show that there exists a value of $c$ strictly between $0$ and $1$ for which</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>$\operatorname{MSE}(\hat{\mu}_B) &lt; \operatorname{MSE}(\hat{\mu}_A)$ — i.e. a *biased* estimator</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>beats the unbiased one. You do not need the optimal $c$; it is enough to evaluate the MSE at one</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>specific $c &lt; 1$ (for instance, take $\mu = 0$ exactly, or take $c$ very close to $1$) and show</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>the inequality holds. State in one sentence what this says about the bias–variance tradeoff.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem 4 — Unbiased but inconsistent; biased but consistent (16 points)</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Devon is estimating the mean of a crypto token's daily return, with population mean $\mu$ and</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>variance $\sigma^2$, from $N$ independent daily observations $x_1, \dots, x_N$.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>**(a) [4 pts]** Devon's lazy estimator is "just use the first day: $\hat{\mu}_1 = x_1$, ignore</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>the rest." Show $\hat{\mu}_1$ is unbiased for every $N$. Compute its variance. Does its variance</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>go to zero as $N \to \infty$?</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>**(b) [4 pts]** Using your variance from (a) and the intuition from Chapter 1.3 §5 (an estimator</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>concentrates on a point only if its spread collapses to zero), argue that $\hat{\mu}_1$ is **not</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>consistent**. In one sentence, say what is "wrong" with the recipe even though it is unbiased.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>**(c) [5 pts]** Now consider a *biased* estimator: $\hat{\mu}_2 = \frac{1}{N+5}\sum_{i=1}^N x_i$</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>(it divides by $N + 5$ instead of $N$). Find $\mathbb{E}<span class="co">[</span><span class="ot">\hat{\mu}_2</span><span class="co">]</span>$ and its bias. Show the</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>bias is nonzero for every finite $N$ but tends to $0$ as $N \to \infty$.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>**(d) [3 pts]** Find $\operatorname{Var}(\hat{\mu}_2)$ and argue that $\hat{\mu}_2$ **is**</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>consistent (its bias vanishes and its variance goes to zero). State the one-sentence moral:</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>unbiasedness and consistency are different properties, and neither implies the other.</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem 5 — Designing a Monte Carlo to measure bias and variance (17 points)</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>You have read in Chapter 1.3 that in real life you only ever draw *one* sample, so you can never</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>*see* the sampling distribution — but on a computer you can play god and draw thousands of</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>samples from a known population. In this problem you **design** (do not run) such an experiment;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>it mirrors what <span class="in">`nb1.3`</span> actually does.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>Priya wants to compare two estimators of the mean claim size $\mu$ on a right-skewed</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>(lognormal) loss population whose true mean she sets to $\mu = \$8{,}000$: the plain sample mean</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>$\bar{x}$ and the 5%-trimmed mean (which discards the smallest and largest 5% of claims before</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>averaging), at sample size $N = 200$.</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>**(a) [7 pts]** Write clear pseudocode (or commented Python in the style of Chapter 1.3) for a</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Monte Carlo with $R = 10{,}000$ replications that, for *each* of the two estimators, produces a</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>simulated estimate of (i) its bias and (ii) its variance. Your pseudocode must make explicit:</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>how you draw one sample, what you store on each replication, and how you turn the stored values</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>into a bias estimate and a variance estimate at the end. Use the known true $\mu$.</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>**(b) [4 pts]** Write the formula you would use to turn your $R$ stored estimates</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>$\hat{\mu}^{(1)}, \dots, \hat{\mu}^{(R)}$ into (i) a Monte Carlo estimate of the bias and (ii) a</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Monte Carlo estimate of the MSE, given the known $\mu$. Confirm that your MSE estimate is</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>consistent with $\widehat{\operatorname{MSE}} \approx \widehat{\operatorname{Var}} + \widehat{\operatorname{Bias}}^2$.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>**(c) [3 pts]** Why must this be a *simulation* rather than something Priya can compute from her</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>one real spreadsheet of 200 claims? Answer in two sentences, using the estimator/estimate</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>distinction.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>**(d) [3 pts]** The notebook <span class="in">`nb1.3`</span> reports that on this particular lognormal loss population,</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>the 5%-trimmed mean has **higher** MSE than the plain mean for estimating $\mu$. Explain, using</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>the bias–variance decomposition, *why* trimming can lose here even though it cuts the variance.</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>(Hint: which way does trimming push the estimate on a right-skewed distribution, and what is the</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>true target?)</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem 6 — Priya's variance estimator and Bessel's correction (20 points)</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>Priya now wants not the mean claim but a sense of how *spread out* claims are: she needs to</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>estimate the population variance $\sigma^2$ from her sample $x_1, \dots, x_N$ of independent</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>claims with mean $\mu$ and variance $\sigma^2$. A tempting recipe divides by $N$:</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>\hat{\sigma}^2_{\text{naive}} = \frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2 .</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>This problem shows why the standard software default divides by $N-1$ instead (this is</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>*Bessel's correction*, the <span class="in">`ddof=1`</span> you saw in the Chapter 1.3 code).</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>**(a) [5 pts]** As a warm-up, suppose for a moment that Priya magically knew the true mean $\mu$,</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>and used $\tilde{\sigma}^2 = \frac{1}{N}\sum_{i=1}^N (x_i - \mu)^2$. Show this is unbiased for</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>$\sigma^2$, i.e. $\mathbb{E}<span class="co">[</span><span class="ot">\tilde{\sigma}^2</span><span class="co">]</span> = \sigma^2$. (Use the definition</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>$\sigma^2 = \mathbb{E}<span class="co">[</span><span class="ot">(x_i - \mu)^2</span><span class="co">]</span>$ and linearity of expectation.)</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>**(b) [9 pts]** Now use the actual $\bar{x}$, not $\mu$. Prove the algebraic identity</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>\sum_{i=1}^N (x_i - \bar{x})^2 = \sum_{i=1}^N (x_i - \mu)^2 - N(\bar{x} - \mu)^2 ,</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>and then take expectations of both sides to show</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>\mathbb{E}<span class="sc">\!</span>\left<span class="co">[</span><span class="ot">\sum_{i=1}^N (x_i - \bar{x})^2\right</span><span class="co">]</span> = (N-1)\,\sigma^2 .</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>(You will need $\mathbb{E}<span class="co">[</span><span class="ot">(x_i - \mu)^2</span><span class="co">]</span> = \sigma^2$ and</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>$\mathbb{E}<span class="co">[</span><span class="ot">(\bar{x} - \mu)^2</span><span class="co">]</span> = \operatorname{Var}(\bar{x}) = \sigma^2/N$ from Problem 2.)</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>**(c) [3 pts]** Conclude that $\hat{\sigma}^2_{\text{naive}}$ (dividing by $N$) is **biased**,</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>report the exact direction and size of its bias, and write down the corrected, unbiased</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>estimator $s^2$. This is the estimator with <span class="in">`ddof=1`</span>.</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>**(d) [3 pts]** For Priya's $N = 200$ claims, by what percentage does the naive estimator</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>under- or over-state $\sigma^2$ on average? Is Bessel's correction a big deal at $N = 200$, and</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>at what kind of $N$ does it actually start to matter? Answer in two sentences.</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>*Solutions: see Appendix E, <span class="in">`E-w1-ps1.3-solutions.md`</span>. To check parts of Problems 3, 5, and 6</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>empirically, open <span class="in">`nb1.3`</span> and turn the dials — set the population to lognormal, fix the true</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>mean, and read off the simulated bias, variance, and MSE for each estimator.*</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Lei Gao · Costello College of Business, George Mason University · Licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+<p><small>Built with <a href="https://quarto.org/">Quarto</a>. Source on <a href="https://github.com/edwardlg/assip-2026-empirical-finance">GitHub</a>.</small></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/edwardlg/assip-2026-empirical-finance/edit/main/book/weeks/week-01/ps1.3.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/edwardlg/assip-2026-empirical-finance/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/edwardlg/assip-2026-empirical-finance/blob/main/book/weeks/week-01/ps1.3.md" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p><small><a href="404.qmd">404</a> · <a href="about.qmd">About</a></small></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,32 @@
+# Conda environment for the NextGen Empirical Finance Research Camp.
+# Create with:  conda env create -f environment.yml   then:  conda activate finlab
+# Pinned per CONVENTIONS.md §5. See book/appendices/B-python-latex-setup/B1-toolchain.md.
+name: finlab
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas>=2.2
+  - numpy
+  - scipy
+  - statsmodels
+  - matplotlib
+  - scikit-learn
+  - pyarrow
+  - requests
+  - jupyterlab
+  - nbformat
+  - pip
+  - pip:
+      - linearmodels
+      - pyfixest
+      - differences
+      - rdrobust
+      - pysyncon
+      - wrds
+      - yfinance
+      - pandas-datareader
+      - fredapi
+      # AI module (Week 6) — keys via env vars only (ANTHROPIC_API_KEY, AZURE_OPENAI_KEY); never commit keys.
+      - anthropic
+      - openai

@@ -1,0 +1,285 @@
+/* ============================================================================
+   ASSIP 2026 Wiki — GMU palette + dashboard styling
+   ----------------------------------------------------------------------------
+   Direction A: course dashboard with grid cards, top tabs for program phases,
+   George Mason green primary + GMU gold accent.
+
+   GMU brand palette (College of Science / official):
+     Mason Green   #006633   (PMS 356)
+     Mason Gold    #FFCC33   (PMS 1235)
+     Dark Green    #003D1F   (logo shadow / dark-mode primary)
+     Warm Gold     #FFB81C   (hover, link emphasis)
+     Stone Gray    #6E6E6E
+     Slate         #1F2937
+============================================================================ */
+
+/* ---------- 1. Palette overrides (light scheme) -------------------------- */
+[data-md-color-scheme="default"] {
+  /* Primary = Mason Green; Material maps several CSS vars off of this */
+  --md-primary-fg-color:        #006633;
+  --md-primary-fg-color--light: #1a8050;
+  --md-primary-fg-color--dark:  #003D1F;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: #ffffffcc;
+
+  /* Accent = Mason Gold (links, focus rings, in-text emphasis) */
+  --md-accent-fg-color:         #B8860B;  /* darker gold for AA contrast on white */
+  --md-accent-fg-color--transparent: #FFCC3322;
+  --md-accent-bg-color:         #ffffff;
+  --md-accent-bg-color--light:  #ffffffcc;
+
+  /* Code blocks: subtle neutral, not pure white */
+  --md-code-bg-color: #f6f7f4;
+  --md-code-fg-color: #1F2937;
+
+  /* Typography */
+  --md-text-font-family: "Inter", system-ui, -apple-system, "Segoe UI",
+                         Roboto, "Helvetica Neue", Arial, sans-serif;
+  --md-code-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular,
+                         Menlo, Consolas, monospace;
+}
+
+/* ---------- 2. Palette overrides (dark / slate scheme) ------------------- */
+[data-md-color-scheme="slate"] {
+  /* Inverse: Mason Gold dominant, deep green as accent surface */
+  --md-primary-fg-color:        #FFCC33;
+  --md-primary-fg-color--light: #FFD96B;
+  --md-primary-fg-color--dark:  #B8860B;
+  --md-primary-bg-color:        #0e1116;
+  --md-primary-bg-color--light: #0e1116cc;
+
+  --md-accent-fg-color:         #4CAF7A;  /* lighter green for legibility on dark */
+  --md-accent-fg-color--transparent: #00663322;
+  --md-accent-bg-color:         #0e1116;
+
+  --md-default-bg-color:        #0e1116;
+  --md-default-fg-color:        #e6edf3;
+
+  --md-code-bg-color: #161b22;
+  --md-code-fg-color: #e6edf3;
+}
+
+/* Make the top header bar use Mason Green even when `primary: custom` */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #006633;
+  color: #ffffff;
+}
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #003D1F;
+  color: #FFCC33;
+}
+
+/* Active tab underline = Mason Gold */
+.md-tabs__link--active,
+.md-tabs__link:focus,
+.md-tabs__link:hover {
+  color: #FFCC33 !important;
+  opacity: 1;
+}
+
+/* ---------- 3. Typography refinements ------------------------------------ */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--md-primary-fg-color--dark);
+  border-bottom: 3px solid #FFCC33;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.8em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #FFCC33;
+  border-bottom-color: #006633;
+}
+
+.md-typeset h2 {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 1.8em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #FFCC33;
+}
+
+/* Body copy — comfortable reading measure */
+.md-typeset p,
+.md-typeset li {
+  line-height: 1.65;
+}
+
+/* Inline code chips */
+.md-typeset code {
+  background-color: var(--md-code-bg-color);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+}
+
+/* ---------- 4. Grid-card dashboard (Home page + phase pages) ------------- */
+/* Material already ships a `.grid.cards` component via attr_list+md_in_html;
+   these rules tune it for the GMU palette and a slightly denser layout. */
+.md-typeset .grid.cards {
+  grid-gap: 1rem;
+}
+
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > .card {
+  border: 1px solid rgba(0, 102, 51, 0.18);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 204, 51, 0.04) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              border-color 0.15s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 102, 51, 0.14);
+  border-color: #FFCC33;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > .card {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 102, 51, 0.15) 0%,
+    rgba(14, 17, 22, 0) 70%
+  );
+  border-color: rgba(255, 204, 51, 0.25);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > .card:hover {
+  border-color: #FFCC33;
+  box-shadow: 0 6px 18px rgba(255, 204, 51, 0.12);
+}
+
+/* First-line heading inside each card → Mason Green / Mason Gold */
+.md-typeset .grid.cards > ul > li > :first-child,
+.md-typeset .grid.cards > .card > :first-child {
+  color: var(--md-primary-fg-color--dark);
+  font-weight: 650;
+  margin-top: 0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li > :first-child,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > .card > :first-child {
+  color: #FFCC33;
+}
+
+/* ---------- 5. Admonitions — Mason Green tint ---------------------------- */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: #006633;
+}
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: #FFCC33;
+}
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: #B8860B;
+}
+
+/* A custom "deadline" admonition (use `!!! deadline "Aug 12 — Symposium"`) */
+:root {
+  --md-admonition-icon--deadline: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm.5 5h-1v6l5 3 .5-.85-4.5-2.65V7z"/></svg>');
+}
+.md-typeset .admonition.deadline,
+.md-typeset details.deadline {
+  border-left-color: #B8860B;
+}
+.md-typeset .deadline > .admonition-title,
+.md-typeset .deadline > summary {
+  background-color: rgba(255, 204, 51, 0.18);
+}
+.md-typeset .deadline > .admonition-title::before,
+.md-typeset .deadline > summary::before {
+  background-color: #B8860B;
+  -webkit-mask-image: var(--md-admonition-icon--deadline);
+          mask-image: var(--md-admonition-icon--deadline);
+}
+
+/* ---------- 6. Tables — quiet zebra stripe ------------------------------- */
+.md-typeset table:not([class]) th {
+  background-color: rgba(0, 102, 51, 0.08);
+  color: var(--md-primary-fg-color--dark);
+  font-weight: 600;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: rgba(255, 204, 51, 0.12);
+  color: #FFCC33;
+}
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(0, 102, 51, 0.03);
+}
+
+/* ---------- 7. Buttons / call-to-action links ---------------------------- */
+.md-typeset .md-button {
+  background-color: #006633;
+  color: #ffffff;
+  border: 2px solid #006633;
+  border-radius: 6px;
+  padding: 0.55em 1.1em;
+  font-weight: 600;
+  transition: background-color 0.15s ease, color 0.15s ease,
+              border-color 0.15s ease;
+}
+.md-typeset .md-button:hover {
+  background-color: #FFCC33;
+  border-color: #FFCC33;
+  color: #003D1F;
+}
+.md-typeset .md-button--primary {
+  background-color: #FFCC33;
+  color: #003D1F;
+  border-color: #FFCC33;
+}
+.md-typeset .md-button--primary:hover {
+  background-color: #006633;
+  color: #ffffff;
+  border-color: #006633;
+}
+
+/* ---------- 8. Footer ---------------------------------------------------- */
+.md-footer {
+  background-color: #003D1F;
+}
+.md-footer-meta {
+  background-color: #00250F;
+}
+
+/* ---------- 9. Selection -------------------------------------------------- */
+::selection {
+  background-color: #FFCC33;
+  color: #003D1F;
+}
+
+/* ---------- 10. Small utility: badge pill for week status ---------------- */
+.md-typeset .week-badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 600;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+.md-typeset .week-badge.upcoming  { background: #e8f1eb; color: #006633; }
+.md-typeset .week-badge.active    { background: #FFCC33; color: #003D1F; }
+.md-typeset .week-badge.complete  { background: #d9d9d9; color: #4a4a4a; }
+[data-md-color-scheme="slate"] .md-typeset .week-badge.upcoming { background: #003D1F; color: #FFCC33; }
+[data-md-color-scheme="slate"] .md-typeset .week-badge.complete { background: #2a2f37; color: #c0c5cc; }
