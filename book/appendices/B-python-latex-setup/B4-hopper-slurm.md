@@ -282,7 +282,38 @@ The governance argument, restated once because it is the reason this whole secti
 
 ---
 
-## B.4.7 Where this connects
+## B.4.7 Use case — rendering teaching videos on Hopper
+
+The first six subsections built the case for Hopper around the camp's *analysis* needs: licensed data that cannot leave GMU, GPUs for the Week-6 AI module, and unattended runs for long jobs. The cluster turns out to be just as useful for a very different production task — rendering the weekly **teaching videos** that accompany this book. The pipeline lives in `tools/make_video_hopper.py` (the Hopper-side renderer) and `slurm/render_video.sbatch` plus `slurm/render_all_videos.sbatch` (the per-week and array dispatchers); this subsection is the operator's view of *why* Hopper and *when* to skip it.
+
+Why Hopper for videos at all, when a laptop will run `tools/make_video.py` end-to-end? Three reasons, parallel to B.4.1's analysis case. First, **narration quality**: the local pipeline falls back to gTTS or `pyttsx3`, both of which produce a recognisably robotic voice. The Hopper pipeline runs **Coqui XTTS-v2** on an A100 GPU at roughly realtime — neural narration that is hard to distinguish from a human reader at normal listening attention — and supports **voice cloning** from a 30-second reference WAV, so you can record yourself once and have all twelve weekly videos narrated in your own voice. Second, **resolution**: a 4K render on a laptop is a slow grind that pegs every core for an hour per deck; on the A100 node the same render finishes in ten to thirty minutes, with the CPU work (libreoffice → PDF → PNG, ffmpeg compositing) parallelised across the eight cores SLURM gave you. Third — and this is the operational lever — **array jobs**. A single `sbatch slurm/render_all_videos.sbatch` queues all twelve weekly videos as one SLURM array (`--array=1-12%4`), runs four at a time across four A100 nodes, and finishes the full set in one to two hours of wall time instead of the half-day a serial laptop render would take. ASSIP's eight-week variant is the same script with `--array=1-8%4` and finishes in roughly an hour.
+
+The end-to-end workflow is four commands. **First**, SSH in (the same `ssh hopper` alias from B.4.2). **Second**, `git clone` (or `git pull` if already cloned) and pre-warm the XTTS-v2 model into scratch *once*, so subsequent jobs reuse the cached weights:
+
+```bash
+export XDG_CACHE_HOME="/scratch/$USER/.cache"            # [CHECK] scratch path
+mkdir -p "$XDG_CACHE_HOME"
+module load miniconda && conda activate finlab          # [CHECK] module names
+pip install --user "TTS>=0.22"
+python -c "from TTS.api import TTS; TTS('tts_models/multilingual/multi-dataset/xtts_v2')"
+```
+
+The model weights are ~2 GB and the download takes a few minutes — well worth doing on a login node *before* the array job, so each compute node does not race to download the same file. **Third**, submit:
+
+```bash
+sbatch slurm/render_all_videos.sbatch                              # production 4k
+sbatch --export=RES=1080 slurm/render_all_videos.sbatch            # 1080p draft
+sbatch --export=VOICE_SAMPLE=/scratch/$USER/voice/me30s.wav \
+       slurm/render_all_videos.sbatch                              # cloned voice
+```
+
+Watch progress with `squeue -u $USER`; the array's twelve tasks pop in and out of `R` state in groups of four. **Fourth**, when the queue empties, `rsync` the rendered MP4s back to your laptop and publish them — `rsync -avzP NETID@hopper.orc.gmu.edu:8weeks/videos/ ./videos/` followed by an upload to the cohort's GitHub Release (or Cloudflare R2 / GMU MediaSpace), because the videos are too large for git itself. The Quarto site embeds each video by URL, so the published book stays a small repo even though the lecture corpus is hundreds of megabytes.
+
+When is Hopper *overkill*? Three honest cases. **Single-slide revisions**: if you tweaked one bullet on week 3, slot 12, you do not want to spin up an A100 — render that single deck locally with `python tools/make_video.py --input book/decks/week-03.pptx --output videos/week-03.mp4` and move on. **Narration drafts**: while you are still iterating on what the speaker notes *say*, the gTTS/Piper output is fine for review purposes, and a five-minute laptop render is faster than a queue-wait-plus-render on a busy cluster. **No-VPN travel**: Hopper sits behind GMU SSO and the campus VPN, so on a flight or hotel WiFi the cluster is unreachable; the local pipeline works offline, which is why both pipelines emit the same MP4 schema (1080p H.264 + AAC) — a viewer cannot tell which produced a given file, only the narration voice differs. Use the cluster for the production cut once a week, the laptop for everything between, and the `[CHECK]` discipline from the rest of this appendix for every cluster string in the SLURM scripts.
+
+---
+
+## B.4.8 Where this connects
 
 This appendix is the infrastructure floor under three other parts of the book. The pinned conda environment your jobs `source activate` is the one from **B.1** (the toolchain and `python=3.11` stack); the repository you `sbatch` from is the one you stood up in **B.2** (GitHub workflow) and finished as a one-click packet in Lab 8; the licensed data your CPU jobs read is accessed under the read-only, stays-on-GMU rules of **B.3** (WRDS Cloud). And the GPU and Ollama jobs are the operational backing for Chapter 6.5's local-model fallback. When you write your capstone's replication packet (Appendix D, Lab 8), the SLURM scripts themselves belong *in the repo*, alongside the `Makefile` — a reviewer with a Hopper account should be able to `sbatch analysis.slurm` and watch your licensed-data step reproduce, exactly as a reviewer without one runs `make all` on the public-data path. The scripts are part of the recipe.
 

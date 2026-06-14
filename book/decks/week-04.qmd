@@ -1,0 +1,303 @@
+---
+title: "Week 4 — Causal Inference II: DiD, RD, Synthetic Control, and Shift-Share"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 4 — Causal Inference II: DiD, RD, Synthetic Control, and Shift-Share {.title}
+
+::: notes
+Welcome to Week Four, the second half of the causal-inference arc. Last week we fought selection on observables with matching, propensity scores, and instrumental variables, and we found that finding a clean instrument is rare. This week we exploit the *structure* the world hands us — a policy switching on at a date, a cutoff drawing a knife-edge through a score, a single treated unit needing a hand-built twin, and shocks layered through industry exposure. Four designs, one reflex: name the threat, name the assumption that addresses it, separate what the data can test from what you must argue, and bring the diagnostic that shows where the result is fragile. Priya leads us through the climate-insurance examples, Sam takes the Russell-2000 cutoff, and Maya carries the bank-lending shift-share. The headline news, the part that should make you sit up: the textbook DiD regression you would reach for first, run on the most common kind of policy data, can come out with the wrong sign. Sit with that.
+:::
+
+## Learning Objectives
+
+- Run a 2×2 DiD and an event study; state parallel trends and name what it cannot test
+- Diagnose the staggered-adoption crisis: forbidden comparisons and negative weights
+- Estimate a sharp and a fuzzy RD with a local-linear, triangular-kernel fit at a data-driven bandwidth
+- Build a synthetic control with convex weights and run a placebo permutation test
+- Construct a shift-share instrument and decompose it with Rotemberg weights
+
+::: callout-tip
+## Key takeaway
+Every design buys identification with one untestable assumption. Your job is to know which one, defend it, and run the diagnostic that exposes it when it breaks.
+:::
+
+::: notes
+Five objectives, one per chapter. Notice the verbs: run, diagnose, estimate, build, construct. We are not asking you to recite the names of the estimators. We are asking you to operate them and to spot when they lie. Every chapter follows the same arc that worked in Weeks One through Three: state the clean idea, walk through a worked example with Priya, Sam, or Maya, then reveal exactly when the clean idea breaks and how the modern fix routes around it. The lab on Friday is a real difference-in-differences on CFPB HMDA mortgage data with a state policy shock, using the Callaway-Sant'Anna heterogeneity-robust estimator. The mentor session on Monday revisits Gao and Sun's 2019 PNAS paper on detecting lending discrimination with a clean design. By Friday you will be able to read any causal-design paper in finance and ask the four questions a referee asks first.
+:::
+
+## Priya's 2×2: The Whole Trick in Four Numbers
+
+|                | Before  | After   |
+|----------------|---------|---------|
+| **Treated**    | \$1,500 | \$1,680 |
+| **Control**    | \$1,200 | \$1,310 |
+
+- Treated change \$180 mixes regulation with everything-else
+- Control change \$110 is *pure* everything-else
+- $\widehat{\text{DiD}} = 180 - 110 = \$70$ — the regulation's effect
+
+::: callout-tip
+## Key takeaway
+Two contaminated comparisons cancel each other's contamination. Differencing over time kills the fixed state difference; differencing across states kills the common time shock.
+:::
+
+::: notes
+Priya studies climate risk in insurance markets. One state passed a wildfire-pricing regulation on January first; the others left their rules alone. The before-and-after difference for the treated state, one hundred eighty dollars, mixes the regulation with everything else that moved that year — worsening fires, costlier reinsurance, inflation. The treated-minus-control difference at any single date confounds the regulation with whatever made the treated state different to begin with. Each comparison alone is contaminated. The trick of difference-in-differences is that the two bad comparisons, combined the right way, cancel each other. Subtract the control's one-ten change from the treated's one-eighty change and you get seventy dollars. That is what the regulation did, under one assumption we are about to state with great care. Card and Krueger ran exactly this design on New Jersey's 1992 minimum-wage hike with Pennsylvania as control, and the design was clean enough that critics had to argue with the assumption rather than the arithmetic.
+:::
+
+## Parallel Trends — The Load-Bearing Wall
+
+$$
+\mathbb{E}[Y_{it}(0)\mid T, \text{post}] - \mathbb{E}[Y_{it}(0)\mid T, \text{pre}] = \mathbb{E}[Y_{it}(0)\mid C, \text{post}] - \mathbb{E}[Y_{it}(0)\mid C, \text{pre}]
+$$
+
+- Treated state's *untreated* path would have moved like the control's
+- Levels can differ; *trends* must match
+- TWFE form: $Y_{it} = \alpha_i + \lambda_t + \beta D_{it} + \varepsilon_{it}$
+- Cluster standard errors by unit (Bertrand-Duflo-Mullainathan 2004)
+
+::: callout-warning
+## Watch out
+Parallel trends is an assumption about a *counterfactual*. It can never be tested for the post-period. Flat leads in an event study are reassuring, not conclusive.
+:::
+
+::: notes
+Here is the identifying assumption of every difference-in-differences study. In English: had the regulation never happened, the treated state's premiums would have moved in lockstep with the controls', not at the same level but with the same trend. Two lines on a premium plot would have stayed parallel. This is a weaker demand than Week Three's conditional independence. It lets the groups differ in level; what it forbids is a differential trend. The two-way fixed-effects regression encodes both differencings automatically. Unit dummies absorb fixed group differences; time dummies absorb common shocks; the coefficient on the treatment dummy is exactly the double difference. But the assumption is about a world that did not happen and so it can never be tested. The event study lets the leads detect a *pre-existing* divergence — necessary but not sufficient. And Bertrand, Duflo, and Mullainathan showed that naive standard errors flag pure noise as significant up to forty-five percent of the time; cluster by the unit of treatment.
+:::
+
+## The Staggered-Adoption Crisis: TWFE Can Flip the Sign
+
+- Two states, eight years, every true effect *negative* and growing
+- Run TWFE: $\hat{\beta} = +0.40$ — sign is wrong
+- Cause: an *already-treated* state used as control for a newly-treated state
+- Goodman-Bacon (2021): $\hat{\beta}^{\text{TWFE}}$ is a weighted sum of every 2×2 DiD
+- de Chaisemartin–D'Haultfœuille (2020): some weights are *negative*
+
+::: callout-warning
+## Watch out
+Staggered timing plus dynamic effects equals broken TWFE. This is the most common situation in modern policy data.
+:::
+
+::: notes
+Now the part that should change how you read every DiD paper for the rest of your life. Priya's wildfire regulation does not arrive in one state in one year — California adopts in twenty-seventeen, a cluster in twenty-nineteen, another wave in twenty-twenty-one. Staggered adoption. And the disclosure effect plausibly builds as insurers reprice slowly. Now run the same TWFE regression. Goodman-Bacon proved that the single coefficient is, identically, a weighted average of every two-by-two DiD you could form. Some of those comparisons use *early adopters* as controls for *later adopters* — and during that window the early adopter is itself still treated and still moving. That motion gets subtracted from the later effect as if it were a counterfactual trend. de Chaisemartin and D'Haultfœuille generalize it: the TWFE coefficient is a weighted sum of cell-level effects, and some weights are negative. Negative weights on positive effects can produce a negative number — or here, a positive number on uniformly negative effects.
+:::
+
+## The Cure: Clean Controls Plus Transparent Aggregation
+
+- Never let an *already-treated* unit serve as a control
+- Estimate $\widehat{\text{ATT}}(g, t)$ per cohort $g$, calendar time $t$
+- Use only never-treated or *not-yet-treated* comparison units
+- Aggregate by event time with cohort-size weights you choose
+
+::: callout-tip
+## Key takeaway
+Callaway–Sant'Anna, Sun–Abraham, and Borusyak–Jaravel–Spiess are three routes to one principle: clean controls plus weights you can write down. On Priya's panel they recover the true \$-2.57\$ where TWFE returns \$-1.23\$ or worse.
+:::
+
+::: notes
+Step back from the wreckage. The pooled regression failed because it let OLS pick the comparisons, and OLS could not tell a clean control from a contaminated one. Every modern heterogeneity-robust estimator takes the comparison-selection out of OLS's hands and does it on purpose. For each newly-treated cohort, estimate its effect only against units that are *never-treated* or *not-yet-treated* — clean at the moment of comparison. Callaway and Sant'Anna build the group-time grid from explicit two-by-twos. Sun and Abraham saturate the event-study regression with cohort-by-event-time interactions. Borusyak, Jaravel, and Spiess impute the untreated counterfactual from clean cells only. Three routes, one principle, near-identical answers. Priya's lab on Friday runs the Callaway-Sant'Anna estimator on real CFPB HMDA mortgage data with a state policy shock and reproduces the sign and magnitude of the true effect that pooled TWFE attenuates badly.
+:::
+
+## Sam's Russell-2000 Cutoff: RD in One Picture
+
+- Running variable $X$: stock's market-cap rank around 1000
+- Cutoff $c$: enter Russell 2000 vs. bottom of Russell 1000
+- Sharp RD: $\tau_{\text{SRD}} = \lim_{x \downarrow c}\mathbb{E}[Y|X{=}x] - \lim_{x \uparrow c}\mathbb{E}[Y|X{=}x]$
+- Identifying assumption: $\mathbb{E}[Y(0)|X]$ is continuous through $c$
+- Local randomization: ranks at the dollar are noise — assignment is a coin flip
+
+::: callout-tip
+## Key takeaway
+RD trades CIA's "no unobserved confounders anywhere" for "smoothness at one point." A jump at $c$ — when nothing else jumps at $c$ — is the treatment effect.
+:::
+
+::: notes
+Sam trades momentum and has fixated on the cleanest natural experiment in finance. Once a year FTSE Russell ranks stocks by market cap and slices the list at roughly one thousand. A stock at rank nine-ninety-eight and one at rank one-thousand-and-two are nearly identical firms, but one ends a small fish in the large-cap pond and the other a big fish in the small-cap pond — and vastly more passive money tracks the Russell 2000. The fine-grained noise in market cap on the ranking date — a rival's earnings surprise, a block trade — dominates which side of the cutoff a marginal firm lands on. Local randomization. The identifying assumption is continuity of the untreated potential-outcome mean through the cutoff. The estimand is the vertical jump in the conditional mean. The whole design is "measure the jump, and argue that nothing else jumps at the same cutoff." That last argument is institutional, not statistical, and we will return to it.
+:::
+
+## Stay Local, Stay Low-Order
+
+```{.python}
+# Local-linear RD with a triangular kernel and bandwidth h
+import statsmodels.api as sm
+d = df[(df.X - c).abs() <= h].copy()
+d["Xc"] = d.X - c
+d["D"]  = (d.Xc >= 0).astype(int)
+w = (1 - (d.Xc.abs() / h)).clip(lower=0)        # triangular kernel
+M = sm.add_constant(d[["D", "Xc"]].assign(XcD=d.Xc*d.D))
+tau_hat = sm.WLS(d.Y, M, weights=w).fit().params["D"]
+```
+
+- Local linear, triangular kernel, narrow window — the modern default
+- Global high-order polynomials let *distant* data dictate the boundary (Gelman–Imbens 2019)
+- Bandwidth is a bias-variance trade-off: automate with IK or CCT
+- Report Calonico–Cattaneo–Titiunik robust bias-corrected intervals
+
+::: callout-warning
+## Watch out
+Bandwidth-shopping until the stars appear is the easiest way to fool yourself with RD. Pick the procedure *before* looking at the estimate.
+:::
+
+::: notes
+The tempting move is a high-order global polynomial fit to all the data. It seems flexible and efficient. It is a trap. Gelman and Imbens proved that high-order polynomials produce noisy, misleading estimates of a boundary value — distant points dictate the curvature at the cutoff, the implicit weights on observations can be bizarre and even negative, and the answer is hostage to the arbitrary choice of polynomial order. The fix is to stay local and stay low-order. Local linear regression with a triangular kernel on a narrow window around the cutoff. Wider window: precise but biased. Narrower: honest but noisy. The Imbens-Kalyanaraman bandwidth minimizes asymptotic mean squared error; Calonico-Cattaneo-Titiunik add a bias-correction and the robust standard error that fixes the conventional interval's undercoverage at the MSE-optimal width. That is what the rdrobust package delivers. Pick the procedure before you look at your estimate. Bandwidth-shopping turns RD into theater.
+:::
+
+## Fuzzy RD Is Instrumental Variables in Disguise
+
+$$
+\tau_{\text{FRD}} = \frac{\lim_{x\downarrow c}\mathbb{E}[Y|X] - \lim_{x\uparrow c}\mathbb{E}[Y|X]}{\lim_{x\downarrow c}\mathbb{E}[D|X] - \lim_{x\uparrow c}\mathbb{E}[D|X]} = \frac{\text{jump in } Y}{\text{jump in } D}
+$$
+
+- Sharp RD: $D = \mathbf{1}\{X \geq c\}$ (deterministic step)
+- Fuzzy RD: cutoff only *shifts* the treatment probability
+- Instrument $Z = \mathbf{1}\{X \geq c\}$ — same Wald ratio from Week 3
+- Identifies a LATE for compliers at the cutoff (under monotonicity)
+
+::: callout-tip
+## Key takeaway
+Russell index membership is actually fuzzy: passive-fund ownership jumps in *probability*, not deterministically. Divide the outcome jump by the treatment jump.
+:::
+
+::: notes
+Naively the Russell cutoff looks sharp — your rank deterministically decides your index. But the *outcome* economists care about — actual passive-fund ownership, index weight, governance — does not jump deterministically. Float adjustments and banding rules introduce slack. So crossing into the Russell 2000 sharply raises the *probability* and intensity of passive ownership but does not force a fixed amount. Fuzzy RD. And now Week Three returns. You have a discontinuity affecting the outcome, a discontinuity affecting the treatment, and the causal effect is their ratio. That ratio is the Wald estimator with the above-cutoff indicator as the instrument. Everything from Chapter Three-Four transfers. Relevance is the first-stage jump in treatment probability and you can see it. Exclusion is that crossing the cutoff affects the outcome only through the treatment — and if other policies switch at the same rank, exclusion fails. You identify a LATE for compliers at the cutoff under a monotonicity assumption, exactly as in IV.
+:::
+
+## Auditing the Design: When the Cutoff Lies
+
+- **McCrary density test** — manipulation leaves a cliff in the histogram at $c$
+- **Covariate balance** — pre-determined characteristics should *not* jump
+- **Compound treatments** — same cutoff triggering multiple changes is fatal and untestable
+- **Donut RD** — drop a sliver right at $c$ to check exact-threshold artifacts
+- **Bandwidth sensitivity** — does the result survive halving and doubling $h$?
+
+::: callout-warning
+## Watch out
+Compound treatments leave no statistical fingerprint. They must be ruled out from institutional knowledge — exactly like Week 3's exclusion restriction.
+:::
+
+::: notes
+RD is the most visual design in this book, and a good RD plot is half the argument. Plot the binned scatter, the two local-linear fits, and the jump. Then audit. Maya's lending cutoff at six-sixty: if a savvy applicant can nudge a six-fifty-eight into a six-sixty-one by paying down one small balance, the just-above and just-below groups stop being exchangeable. The fingerprint is bunching in the histogram of the running variable at the cutoff. The McCrary density test asks whether the density is continuous at the cutoff and rejects when it is not. Second, pre-determined covariates — things fixed before treatment — should not jump at the cutoff; if a stock's pre-reconstitution book-to-market jumps at the rank cutoff, something other than index membership is sorting at the line. Third, the deadliest threat: compound treatments. If the same cutoff at six-sixty triggers loan approval *and* the interest rate tier, your jump is a compound effect you cannot attribute to one channel. That one leaves no statistical fingerprint and must be argued from how the rule actually works.
+:::
+
+## Synthetic Control: One Treated Unit, Build the Twin
+
+$$
+\mathbf{w}^{*} = \arg\min_{\mathbf{w}} (\mathbf{X}_1 - \mathbf{X}_0\mathbf{w})'\mathbf{V}(\mathbf{X}_1 - \mathbf{X}_0\mathbf{w}), \quad w_j \geq 0, \quad \sum_j w_j = 1
+$$
+
+- Treated state's twin = *convex* weighted average of donor states
+- Weights chosen to match the pre-treatment path
+- Non-negativity + sum-to-one forbids extrapolation outside donor range
+- Typical result is *sparse*: "0.46 Oregon + 0.31 Colorado + 0.18 Arizona"
+- Inference is a **placebo permutation test**, not a t-statistic
+
+::: callout-tip
+## Key takeaway
+DiD with frozen equal weights becomes synthetic control with optimized weights. You don't *assume* parallel trends — you *engineer* them and let the reader see the match.
+:::
+
+::: notes
+Sometimes the world hands you one treated unit. A single state passes a first-in-the-nation mandate; a single firm gets hit by a scandal; a single country builds a wall. DiD's parallel trends becomes a wish — no naturally occurring state is a twin for one specific state. Abadie's synthetic control replaces the wish with a construction. From a pool of untreated donors, find the weighted average that best reproduces the treated unit's pre-treatment outcomes. That weighted average is the synthetic control, and you read the effect off how far the real unit drifts from its twin after treatment. The two constraints — non-negative weights summing to one — forbid the wild extrapolation that unconstrained regression commits, and they produce sparse weights you can name in a sentence. Inference is not a t-statistic. With one treated unit there is no honest standard error. Instead, run the procedure on every donor as if it were the treated unit, compute the post-over-pre RMSPE ratio, and ask whether the real unit is an outlier. Synthetic DiD by Arkhangelsky et al. generalizes both methods.
+:::
+
+## Maya's Shift-Share: Build the Instrument
+
+$$
+B_r = \sum_{j} s_{rj}\, g_j \qquad \text{shares (local, baseline)} \times \text{shifts (national, period)}
+$$
+
+- Rustville: $0.60(-8\%) + 0.10(3\%) + 0.30(-1\%) = -4.8\%$ (auto-heavy, auto bust)
+- Finchester: $0.05(-8\%) + 0.55(3\%) + 0.40(-1\%) = +0.85\%$ (finance-heavy)
+- Instrument the endogenous *realized* local shock with the *predicted* shock
+- GPSS (2020): exogeneity lives in the **shares**
+- BHJ (2022): exogeneity lives in the **shifts**
+
+::: callout-tip
+## Key takeaway
+A constructed instrument is a *product*: it is exogenous if *either* factor is. You get two independent shots at the hardest assumption in all of IV — name your shot.
+:::
+
+::: notes
+Maya wants the causal effect of a local labor-demand shock on household delinquency. Realized local employment growth is endogenous — a local housing bubble, a local scandal, reverse causality all contaminate it. Bartik's trick is to import the demand piece from outside the region. Take the national growth rate of each industry — a shock no single town caused — and reweight by how much that town depended on each industry at baseline. That predicted shock is the instrument. The same skeleton drives immigration shocks weighted by settlement shares, the China trade shock weighted by industry exposure, and the bank-lending version Maya can also build. The deep insight: from a cross-sectional standpoint the shifts are fixed numbers; only the shares vary across regions. Goldsmith-Pinkham, Sorkin, and Swift show the Bartik IV is identical to using each share as a separate instrument with the shifts as weights — so exogeneity is a statement about the shares. Borusyak, Hull, and Jaravel locate identification in the shifts when there are *many* dispersed industries. A product is exogenous if either factor is.
+:::
+
+## Rotemberg Weights: Where Is Your Estimate Coming From?
+
+$$
+\hat{\beta}_1^{\text{Bartik}} = \sum_j \hat{\alpha}_j\, \hat{\beta}_{1,j}, \qquad \sum_j \hat{\alpha}_j = 1
+$$
+
+- Each $\hat{\beta}_{1,j}$ = IV using only industry $j$'s share alone
+- Rotemberg weight $\hat{\alpha}_j$ = how much industry $j$ moves the headline
+- A few high-$|\hat{\alpha}_j|$ industries usually dominate — audit *those* shares
+- Adão–Kolesár–Morales (2019): standard errors must respect shared exposure
+
+::: callout-warning
+## Watch out
+Region-clustered SEs miss the cross-regional correlation induced by shared industry exposure. Use AKM-robust standard errors.
+:::
+
+::: notes
+Same spirit as Goodman-Bacon for DiD: a headline estimate is a weighted average of building-block estimates, and you had better look at the weights. Goldsmith-Pinkham, Sorkin, and Swift hand you the Rotemberg weights. For each industry, compute the IV estimate using only that industry's share as the sole instrument. The headline two-stage least squares is a weighted average of these per-industry estimates with explicit weights. Rank industries by absolute Rotemberg weight; for the top few, sanity-check that their shares are plausibly exogenous, that the estimate is not an outlier driving everything, and that the result survives dropping the suspect industry. If your causal claim about household debt rests on the oil-and-gas share and you cannot defend why oil-share exposure is exogenous to delinquency, you do not have a result — you have a story. Adão, Kolesár, and Morales note that two regions on opposite coasts both heavily exposed to autos have correlated errors through the common auto shock — region-clustering misses it and standard errors are too small.
+:::
+
+## Common Pitfalls Across All Four Designs
+
+1. Treating untestable identifying assumptions as if a diagnostic *proved* them
+2. Running pooled TWFE on staggered panels and reading $\hat\beta$ as the ATT
+3. Fitting a global high-order polynomial in RD instead of staying local
+4. Reporting a t-statistic on a synthetic control with one treated unit
+5. Reporting region-clustered SEs on a shift-share design (use AKM)
+6. Bandwidth- or specification-shopping until the stars appear
+
+::: callout-warning
+## Watch out
+Each pitfall makes your headline look stronger than it is. Each modern fix exists *because* the naive default failed loudly in print.
+:::
+
+::: notes
+Six failure modes, one per chapter and one shared across them all. First, pre-trend tests can refute parallel trends; they can never confirm it. Underpowered tests give you falsely reassuring flat leads. Second, the staggered TWFE coefficient is contaminated whenever timing varies and effects are heterogeneous or dynamic — which is essentially always in policy data. Third, Gelman and Imbens showed that global polynomials let distant data dictate boundary values and swing wildly with polynomial order. Fourth, a t-statistic on a single-treated-unit study is false precision dressed up as rigor — placebo permutation gives you the honest small-sample inference. Fifth, region-clustering misses cross-regional correlation induced by shared industry exposure — Adão, Kolesár, and Morales fix it. Sixth, picking bandwidths or specifications after seeing the result is p-hacking by another name. The CCT robust interval and pre-registered bandwidth procedures exist to take that temptation away. Every fix on this list exists because the naive default failed loudly in a famous paper.
+:::
+
+## Deliverable and Look-Ahead
+
+- **Lab 4** — a clean DiD on real CFPB HMDA data with a state policy shock, run with Callaway–Sant'Anna and a Goodman-Bacon decomposition
+- **Mentor Session 4** — Gao and Sun (2019, PNAS): "Detecting discrimination with a clean design"
+- **Problem sets 4.1–4.5** — 2×2 DiD, Goodman-Bacon weights, RD bandwidth choice, synthetic control placebo, shift-share Rotemberg decomposition
+- **Look-ahead, Week 5** — stop *building* tools and start *reading* the frontier
+
+::: callout-tip
+## Look-ahead
+Weeks 3 and 4 built the modern empiricist's kit. Weeks 5 and 6 use that kit to read published finance papers — including Prof. Gao's — tables-first, the way professionals do.
+:::
+
+::: notes
+Three deliverables close the week. The lab runs a clean DiD on real CFPB HMDA mortgage data with a state policy shock — you will use Callaway-Sant'Anna with never-treated and not-yet-treated controls, decompose the pooled TWFE into Goodman-Bacon weights, and verify that the heterogeneity-robust estimate diverges from the broken pooled coefficient by exactly the amount the forbidden comparisons inject. Monday's mentor session walks through Gao and Sun's 2019 PNAS paper on detecting lending discrimination, which uses exactly this design discipline. The problem sets drill each chapter's mechanic. And the look-ahead: Weeks Three and Four built the modern empiricist's full kit. Weeks Five and Six stop deriving estimators and start decoding published finance papers, tables-first. The questions we have trained you to ask — what is the design, what is the identifying assumption, where are the weights, is the inference honest — are precisely the questions a Reader's Guide is built around. Turn the page.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+The references slide is auto-populated by Pandoc from cited keys. Names mentioned in this deck include Card and Krueger 1994, Bertrand, Duflo, and Mullainathan 2004, Goodman-Bacon 2021, de Chaisemartin and D'Haultfœuille 2020, Callaway and Sant'Anna 2021, Sun and Abraham 2021, Borusyak, Jaravel, and Spiess 2024, Imbens and Kalyanaraman 2012, Calonico, Cattaneo, and Titiunik 2014, Gelman and Imbens 2019, McCrary 2008, Lee and Lemieux 2010, Abadie, Diamond, and Hainmueller 2010, Arkhangelsky, Athey, Hirshberg, Imbens, and Wager 2021, Bartik 1991, Goldsmith-Pinkham, Sorkin, and Swift 2020, Borusyak, Hull, and Jaravel 2022, Adão, Kolesár, and Morales 2019, and Gao and Sun 2019.
+:::

@@ -1,0 +1,237 @@
+---
+title: "Week 3 — Causal Inference I: Potential Outcomes, Matching, and Instruments"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 3 — Causal Inference I {.title}
+
+::: notes
+Welcome to Week 3. Last week you fought omitted-variable bias inside a regression. This week we step back and ask: when does any number from a dataset actually mean a causal effect? The answer lives in a framework called potential outcomes, and once you see it, every method in the next two weeks becomes the same story told four different ways. The villain has a name — the selection-bias term — and our job is to make it go to zero or design around it.
+:::
+
+## Learning Objectives
+
+- Write any causal claim in potential-outcomes notation: $Y_i(1)$, $Y_i(0)$, $D_i$
+- Decompose a naive difference in means into ATT plus selection bias
+- Apply matching, propensity scores, IPW, and entropy balancing under CIA
+- Read an IV paper using the five-question referee checklist
+- Diagnose weak-instrument pathology with the first-stage $F$ and Anderson-Rubin
+
+::: callout-tip
+## Key takeaway
+Correlation is cheap. We earn the word *causes* through design, not through controls.
+:::
+
+::: notes
+Five objectives. Verbs first: write, decompose, apply, read, diagnose. By Friday you should be able to take any X-causes-Y claim and locate the precise assumption it leans on. The capstone is Lab 3, where you build a weak-instrument disaster in simulation and then watch Anderson-Rubin inference rescue it. The notation will feel pedantic for an hour and then it becomes the only way you ever think about causation.
+:::
+
+## Maya's Twenty-One Points
+
+- 62% of program enrollees got approved
+- 41% of non-enrollees got approved
+- Naive gap: 21 percentage points, hugely significant
+- Maya is about to recommend nationwide rollout — and to make a serious mistake
+
+::: callout-warning
+## The hidden question
+*Who signs up for a six-week evening course on personal finance?*
+:::
+
+::: notes
+Maya volunteers at a credit union with a free financial-literacy program. Enrollees show a twenty-one-point higher approval rate than non-enrollees. The t-statistic is enormous. But the people who voluntarily sit through six evening sessions are organized, worried about credit, the kind already likely to be approved. Her twenty-one points are some blend of program effect plus head-start. No control variable fixes this, no robust standard error saves it. The problem is in the word *causes*.
+:::
+
+## Potential Outcomes — Two Parallel Worlds
+
+For applicant $i$, imagine both worlds:
+
+- $Y_i(1)$ — outcome if she enrolls
+- $Y_i(0)$ — outcome if she does not
+- $D_i \in \{0,1\}$ selects which world we observe
+
+$$Y_i = D_i\, Y_i(1) + (1 - D_i)\, Y_i(0), \qquad \tau_i = Y_i(1) - Y_i(0)$$
+
+::: callout-tip
+## Key takeaway
+Both potential outcomes exist; only one is ever realized.
+:::
+
+::: notes
+Imagine two parallel worlds: in one Maya's applicant enrolls, in the other she does not. Call those outcomes Y-sub-i-of-one and Y-sub-i-of-zero. These are properties of the person, fixed in advance. The treatment switch D-sub-i picks which world actually happens — observed Y equals D times Y-of-one plus one-minus-D times Y-of-zero. The individual treatment effect tau-sub-i is just Y-of-one minus Y-of-zero. No regression, no error term, just two numbers and their difference.
+:::
+
+## The Fundamental Problem + The Master Decomposition
+
+> We observe at most **one** potential outcome per unit — the other is the missing counterfactual (Holland 1986).
+
+$$\Delta = \underbrace{\text{ATT}}_{\text{what we want}} + \underbrace{\mathbb{E}[Y_i(0)\mid D_i=1] - \mathbb{E}[Y_i(0)\mid D_i=0]}_{\text{selection bias}}$$
+
+- Maya's 21 points = 7 points ATT + 14 points selection bias
+- Bigger sample tightens the bias — does **not** remove it
+
+::: notes
+Holland's Fundamental Problem: per unit, we see exactly one of the two potential outcomes. The other is gone forever, not because instruments are crude but because reality runs only one world. The escape is to ask about averages. Apply the consistency rule, add and subtract the enrollees' missing counterfactual, and the naive difference decomposes exactly into the ATT plus a selection-bias term — the gap in Y-of-zero between groups. For Maya, seven points of real program effect plus fourteen points of preexisting difference. Her data cannot split the two. Every method this week chases that second term.
+:::
+
+## Randomization — The Gold Standard
+
+If a coin assigns $D_i$:
+
+$$(Y_i(0), Y_i(1)) \perp\!\!\!\perp D_i \;\Longrightarrow\; \text{selection bias} = 0 \;\Longrightarrow\; \Delta = \text{ATE}$$
+
+- The coin balances **observed and unobserved** confounders alike
+- In finance: usually cannot randomize firms, families, crises
+- Hence the rest of the camp
+
+::: callout-tip
+## Key takeaway
+Randomization prevents bias by design — not by clever statistics.
+:::
+
+::: notes
+Flip a fair coin for each applicant and the treatment indicator becomes statistically independent of the potential outcomes — the coin does not know who you are. The savvy applicants split evenly across treatment and control. The selection-bias term collapses to zero by construction. The naive difference in means is the ATE. The math is trivial; the work was done by the design. But you cannot assign families to debt or countries to crises, which is why the rest of camp exists.
+:::
+
+## Selection on Observables — CIA and Overlap
+
+Assume randomization holds *within each value of $\mathbf{X}$*:
+
+$$(Y_i(0), Y_i(1)) \perp\!\!\!\perp D_i \mid \mathbf{X}_i \qquad 0 < \Pr(D_i=1 \mid \mathbf{X}_i) < 1$$
+
+- Together: **strong ignorability** (Rosenbaum and Rubin 1983)
+- CIA is *untestable* — one missing confounder and the bet fails
+- Overlap is *partly checkable* — look at where treated and controls coexist
+
+::: callout-warning
+## CIA is OVB in new clothes
+If applicant motivation is not in $\mathbf{X}$, matching cannot save you.
+:::
+
+::: notes
+When you cannot randomize, assume the next-best thing. Conditional independence says that once you fix the observed covariates X, whether someone got treated carries no further information about potential outcomes. Overlap adds that at every value of X, both treated and untreated must exist. Together: strong ignorability. The catch is enormous — CIA is exactly what omitted-variable bias preys on. If motivation drives both enrollment and approval and is not in X, the matching bet fails, and no balance table will warn you.
+:::
+
+## Matching and the Propensity Score
+
+- Exact matching dies in high dimensions — 7 covariates, 12,000 cells, empty bins
+- **Rosenbaum-Rubin miracle**: match on one scalar instead
+
+$$e(\mathbf{X}_i) = \Pr(D_i = 1 \mid \mathbf{X}_i)$$
+
+CIA on $\mathbf{X}$ implies CIA on $e(\mathbf{X})$ — a 7-D problem collapses to 1-D.
+
+::: notes
+Under CIA the recipe is: find untreated units with the same X, average their outcomes as the counterfactual. With seven covariates coarsened to a few bins each you get twelve thousand cells, most empty. Nobody has an exact twin. Rosenbaum and Rubin in 1983 proved that if CIA holds given the full vector X, it also holds given the single scalar propensity score. Match on that one number and you balance everything else. A seven-dimensional matching problem collapses to one dimension.
+:::
+
+## IPW, Entropy Balancing, Doubly Robust
+
+Three ways to use $e(\mathbf{X})$:
+
+- **IPW**: weight treated by $1/e$, controls by $1/(1-e)$ — build a pseudo-population
+- **Entropy balancing** (Hainmueller 2012): skip the propensity model, solve for balance weights directly
+- **AIPW / doubly robust**: combine weighting and outcome models — correct if **either** is right
+
+::: callout-tip
+## Key takeaway
+Stability under specification error is the real differentiator.
+:::
+
+::: notes
+Three families once you have a propensity score. IPW reweights units by the inverse of their score, building a pseudo-population in which treatment looks random. Entropy balancing skips the propensity model and solves directly for the weights that match covariate means across groups. Doubly-robust AIPW combines a weighting model and an outcome model so that if either one is correct, the estimate is consistent. In Chapter 3.3 Maya's wobbly propensity estimate stabilizes under entropy balancing — that is the practical payoff.
+:::
+
+## Instrumental Variables — Devon's Lever
+
+When unobserved confounders are unavoidable, find a third variable $Z$.
+
+> If $Z$ shoves $D$ around but reaches $Y$ only through $D$, then $\beta = \dfrac{\text{Cov}(Z,Y)}{\text{Cov}(Z,D)}$.
+
+- **Relevance**: $\text{Cov}(Z,D) \neq 0$ — *testable* via first-stage $F$
+- **Exclusion**: $\text{Cov}(Z,\varepsilon) = 0$ — *arguable, not testable*
+- IV identifies the **LATE** — the effect for compliers, not everyone
+
+::: notes
+Now drop CIA. Devon studies whether a course lowers debt, but motivation drives both course-taking and outcomes and is unobservable. The nonprofit's random mailing is the lever. Random Z buys him exclusion's hardest half for free. The IV estimator is a ratio: reduced form over first stage. Two conditions: relevance, testable; exclusion, only arguable. And IV does not estimate the average effect for everyone — it estimates the LATE, the effect for the people Z actually moved.
+:::
+
+## The Weak-IV Pathology + the Anderson-Rubin Cure
+
+When the first stage is faint, 2SLS goes wrong two ways at once:
+
+- **Biased toward OLS** — the disease you were treating
+- **Standard error too small** — falsely narrow CI
+
+$$\frac{\mathbb{E}[\hat\beta_{2SLS}] - \beta}{\mathbb{E}[\hat\beta_{OLS}] - \beta} \approx \frac{1}{F+1}$$
+
+```python
+# Anderson-Rubin: never divides by the first stage.
+# Sweep beta_0; keep every value where regress(y - beta_0*x ~ z) F-test fails to reject.
+```
+
+- Bound-Jaeger-Baker (1995): a *random* instrument produced a "significant" effect
+- Lab 3: conventional 2SLS coverage **0.80**, AR coverage **0.97**
+
+::: notes
+Devon reads his first IV paper. The estimate is three times OLS, the standard error tight, the stars dense. His instinct is to be impressed. This slide dismantles that instinct. When the first stage is weak, 2SLS is biased toward the OLS estimate you fled, and the conventional standard error is too small — a tight interval centered on the wrong place. Bound, Jaeger, and Baker in 1995 replaced the Angrist-Krueger quarter-of-birth instrument with random numbers and 2SLS still produced a plausible significant coefficient. The cure is Anderson-Rubin, published in 1949 and rediscovered fifty years later: never divide by the first stage. Form y minus beta-zero times x, regress on z, F-test the coefficient — keep every beta-zero the test fails to reject. Valid no matter how weak the instrument is.
+:::
+
+## Common Pitfalls
+
+1. Reporting a naive difference and calling it an "effect"
+2. Believing a balance table proves CIA — it cannot, by the Fundamental Problem
+3. Trusting 2SLS when the first-stage $F$ is in the single digits
+4. Quoting an IV estimate as "the effect" instead of "the LATE for compliers"
+5. Adding more instruments to fix weakness — many-instruments bias is worse
+
+::: callout-warning
+## Watch out
+Every one of these makes your number look more credible while making it less true.
+:::
+
+::: notes
+Five traps. Sam's naive difference is almost never a causal effect. Maya's balance table cannot speak to unobservables — that is the Fundamental Problem talking. A small 2SLS standard error does not mean a strong instrument; check the first-stage F against Stock-Yogo critical values, not against a t of two. IV identifies the LATE, not the universal effect; do not let an abstract overclaim. And piling on extra instruments to fix weakness typically makes many-instruments bias worse. Leah will spot all five in next week's reading group.
+:::
+
+## Deliverable + Look-Ahead
+
+- **Lab 3**: build a weak-IV pathology, measure 2SLS vs. Anderson-Rubin coverage
+- **PS 3.1-3.5**: potential outcomes, matching, IPW/AIPW, 2SLS, AR critique
+- **Mentor session**: Deng, Gao, and Kim (2020, *JCF*) — natural experiments
+- **Next week**: difference-in-differences, regression discontinuity, synthetic control
+
+::: callout-tip
+## Key takeaway
+This week gave you the spine. Week 4 gives you four more designs for the same one problem.
+:::
+
+::: notes
+Your deliverable is Lab 3, where you set the true effect to exactly zero, dial the first-stage strength from weak to strong, and watch 2SLS slide between OLS and the truth as the knob turns. Run more than a thousand simulated draws, measure coverage, and confirm conventional 2SLS undercovers badly while Anderson-Rubin recovers the promised ninety-five percent. The mentor session brings in Deng, Gao, and Kim's 2020 JCF paper. Next week we move to four more designs — each one another way to attack the same selection-bias term you met today.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+The references slide is auto-populated by Pandoc from cited keys. Do not edit by hand.
+:::

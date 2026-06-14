@@ -35,3 +35,17 @@ data/
 # ---- Secrets ----------------------------------------------------------------
 .env
 *.key
+
+/.quarto/
+**/*.quarto_ipynb
+
+# ---- LaTeX build artifacts (from quarto pdf renders) ------------------------
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz

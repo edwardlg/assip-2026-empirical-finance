@@ -1,0 +1,329 @@
+---
+title: "Week 5 — Reading the Frontier I + PAP Filing"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-07-20"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 5 — Reading the Frontier I + PAP Filing {.title}
+
+::: notes
+Welcome to Week 5. For four weeks you have been a producer of empirical
+work. This week we flip the verb. You become a consumer. The skill that
+separates a student who has taken econometrics from one who can do
+research is the ability to pick up a frontier paper and decide for
+yourself whether to believe it. We train that muscle on five classics:
+Fama and French nineteen ninety-two and ninety-three, Jegadeesh and
+Titman, Petersen, and Bertrand, Duflo, and Mullainathan. And Friday,
+you file a pre-analysis plan that freezes your capstone in writing.
+:::
+
+## Learning Objectives
+
+- Apply the seven-part Reader's-Guide anatomy to any empirical paper
+- Read tables first, prose last — spot the headline in 30 seconds
+- Distinguish a cross-sectional study from a time-series factor model
+- Diagnose when a paper's standard errors are honest
+- File a Pre-Analysis Plan for your capstone by Friday, tagged PAP-v1
+
+::: callout-tip
+## Key takeaway
+Reading well and writing well are the same act run in opposite
+directions.
+:::
+
+::: notes
+Notice the verbs: apply, read, distinguish, diagnose, file. None of
+them is memorize. By Friday you should be able to hand a stranger an
+empirical paper and, in twenty minutes, tell them what it claims,
+whether to believe it, and where it is soft. The PAP filing on Friday
+closes the week. You will tag a git commit as PAP version one, which
+freezes your capstone hypotheses, your specification, and your
+falsification test before you have seen any results.
+:::
+
+## The Seven-Part Anatomy
+
+Every paper this week gets the same seven boxes:
+
+1. Research question — one sentence ending in a question mark
+2. Identification strategy — design plus the identifying assumption
+3. Data — source, sample, unit of observation, filters
+4. Table-by-table reading order — which table is the headline
+5. What's clever — the one genuinely good idea
+6. What's vulnerable — the soft spot a referee will hit first
+7. Three replication exercises — what you could build on a laptop
+
+::: callout-tip
+## Key takeaway
+A sharp question without credible identification is a guess. Great
+identification without data is a curiosity.
+:::
+
+::: notes
+The order is not decoration. It is the order in which a claim has to
+survive scrutiny. Box two is the most important — name the design and
+then state the identifying assumption in one sentence. Box four teaches
+you to find the headline number off the table itself before reading a
+single word of the authors' framing. And box seven turns reading into
+doing — three things a student could replicate on a laptop. Apply
+these boxes to Fama and French on Monday, and to an unseen paper on
+Friday's assessment.
+:::
+
+## Monday — Fama & French 1992: Beta Dies
+
+Research question: what explains why some stocks earn higher average returns than others?
+
+- CAPM's verdict: only market beta should matter
+- The data's verdict: size and book-to-market matter; beta is flat
+- Method: portfolio sorts plus Fama–MacBeth cross-sectional regression
+- Sample: nonfinancial CRSP–Compustat stocks, 1963 to 1990
+
+::: callout-tip
+## Key takeaway
+The dog that didn't bark. Beta is the number that should be big under
+CAPM and isn't — that absence is the finding.
+:::
+
+::: notes
+Sam walked into Lab 2 with the working belief that riskier stocks pay
+more. Monday's paper is the autopsy on that belief. The move you watch
+is the double sort. Sort stocks into size-and-beta portfolios, then
+slide across beta within a row of roughly constant size, and watch
+whether average return climbs. CAPM says it must. What you see is close
+to flat. Then put beta against size and book-to-market in one
+regression. Beta's slope collapses; the other two survive. The paper
+did not add a variable. It dethroned one.
+:::
+
+## Tuesday — Fama & French 1993: The Three-Factor Machine
+
+FF92 said size and book-to-market are *priced*. FF93 turns them into *factors* on the right-hand side.
+
+$$
+R_{it} - R_{ft} = \alpha_i + b_i\,(R_{Mt}-R_{ft}) + s_i\,\text{SMB}_t + h_i\,\text{HML}_t + \varepsilon_{it}
+$$
+
+- SMB = small minus big; HML = high minus low book-to-market
+- Test assets: the 25 size–BE/ME portfolios
+- Pricing test: GRS joint $F$-statistic on all 25 intercepts
+
+::: callout-tip
+## Key takeaway
+Cross-section asks "what is priced?" Time series asks "do these
+factors explain co-movement and leave no alpha?"
+:::
+
+::: notes
+Students conflate these two papers constantly. FF92 is cross-sectional —
+freeze a month, regress returns on characteristics. FF93 is time series
+— freeze a portfolio, regress its monthly returns on factor returns.
+The factors are real long-short portfolios: SMB is small minus big,
+HML is high minus low book-to-market. The regression hands you two
+things the cross-section cannot: an R-squared, which says the factors
+capture common variation, and an alpha, the pricing error. The GRS
+test asks whether all twenty-five intercepts are jointly zero.
+:::
+
+## Wednesday — Jegadeesh & Titman 1993: Momentum
+
+Buy past winners, short past losers, hold 3 to 12 months. It works.
+
+- Sort stocks into deciles on past $J$-month return
+- Hold the winner-minus-loser spread for $K$ months
+- Classic 6/6: roughly one percent per month, survives risk adjustment
+- Overlapping cohorts inflate the t-stat — Newey–West with lag $K-1$ is mandatory
+
+::: callout-warning
+## Watch out
+A profitable rule built only from past returns strikes weak-form
+efficiency. Either a risk factor is missing, or prices do not impound
+information cleanly.
+:::
+
+::: notes
+Sam has been waiting all week for this one. Jegadeesh and Titman take a
+strategy a sixteen-year-old day-trader would invent on a napkin and
+show it earns about one percent per month at the classic six-month,
+six-month window. The methodological subtlety students miss is the
+overlapping-holding-period trick. You form a new winner-minus-loser
+portfolio every month and hold each cohort for K months. That uses
+every month of data, but it induces serial correlation. The Week 2
+fix — Newey–West HAC with lag at least K minus one — is mandatory.
+:::
+
+## Thursday — Petersen 2009: Which Standard Error Is Honest?
+
+Petersen surveys finance journals and finds chaos. Same regression, six methods, t-stats from 5 to 1.8.
+
+- Monte Carlo identification: build a world where you *know* the truth
+- Firm effect → cluster by firm; time effect → cluster by time
+- White / heteroskedasticity-robust does *not* fix within-cluster correlation
+- Fama–MacBeth corrects a time effect but misses a firm effect
+
+::: callout-tip
+## Key takeaway
+"Robust" does not mean "robust to everything." Match the cluster to
+the correlation your residuals actually have.
+:::
+
+::: notes
+A methods paper claims something about how we should do empirical work.
+You cannot check it against a stylized fact. The only way is to find a
+world where you already know the right answer, and watch which method
+recovers it. Petersen's cleverest move: he identifies the truth by
+building it himself, in Monte Carlo simulations where he sets the
+true beta and the true error structure. The lesson Priya and Maya
+carry forward is the taxonomy. White-robust is barely better than
+classical OLS when a firm effect is present.
+:::
+
+## Friday — Bertrand, Duflo & Mullainathan 2004: The Placebo Law
+
+The question: do conventional DiD standard errors overstate significance?
+
+- Real CPS state-year panel; assign a *fake* law to random states
+- True effect is zero by construction; rejections are false positives
+- Headline: conventional t-stats reject around 40 percent of the time, not 5
+- Fix: cluster by state, block bootstrap, or collapse to pre/post
+
+::: callout-warning
+## Watch out
+The disease is serial correlation in slow-moving outcomes. The longer
+the panel, the worse the over-rejection.
+:::
+
+::: notes
+The placebo-law experiment is one of the cleanest identification moves
+in empirical economics. Take a real state-year panel with all its
+serial correlation baked in. Invent a fake law. Pick random states and
+a random year and declare them treated. Nothing actually happened, so
+the true effect is exactly zero. Run the regression thousands of times.
+If standard errors were honest you would reject five percent of the
+time. The actual rejection rate is roughly forty percent. Priya saw
+this last week when her wildfire t-stat fell from five to one point eight.
+:::
+
+## Mentor Session: Anatomy of a JF Paper
+
+Prof. Gao dissects his own working paper (*Rainbow of Credits*, AEA 2025) from the *inside*.
+
+- A sharp question with a one-sentence counterfactual
+- A credible research design with the identifying assumption stated explicitly
+- Transparent tables: key coefficient marches across columns as controls pile on
+- Honest robustness: the months spent trying to kill your own result
+
+::: callout-tip
+## Key takeaway
+The anatomy you apply outward to strangers' papers is the anatomy you
+apply inward when you design your own.
+:::
+
+::: notes
+Wednesday's mentor session flips the camera. All week you have been a
+reader. Now I show you what it looks like to be a writer. I take one
+of my own working papers and walk you through the two years of false
+starts that produced it. The published paper hides those false starts
+beautifully. Today I expose them. Bring your written warm-ups — we
+will work through Maya, Devon, Priya, Sam, and Leah's capstone
+questions together.
+:::
+
+## Common Pitfalls When Reading Papers
+
+1. Reading front-to-back instead of tables-first — you get sold by the intro
+2. Confusing FF92 (cross-section) with FF93 (time-series factor model)
+3. Quoting a t-stat from an overlapping-portfolio backtest without Newey–West
+4. Believing "White-robust" is robust to clustered errors
+5. Treating placebo failure as a curiosity rather than a verdict on the method
+
+::: callout-warning
+## Watch out
+Each of these will make a paper look stronger than it is. Reading the
+table before the prose is the best inoculation against an author's framing.
+:::
+
+::: notes
+Each pitfall has been published, repeatedly, by people who should know
+better. The FF92 versus FF93 confusion is rampant because students
+remember "size and value" but not the structural difference between a
+cross-sectional regression and a time-series factor model. White-robust
+is the single most over-trusted standard error in finance, and
+Petersen's whole paper is the case against it under correlated errors.
+:::
+
+## Friday Deliverable — File Your PAP
+
+Friday afternoon you tag a git commit `PAP-v1`. The PAP freezes:
+
+- One-sentence research question with the implied counterfactual
+- Primary specification: outcome, key regressor, controls, fixed effects, clustering
+- Sample window, filters, and data sources
+- The falsification test: what result would make you abandon the hypothesis?
+
+::: callout-tip
+## Key takeaway
+From Friday on, what counts as a result is fixed in writing. A
+specification you wrote down before seeing the data has standing; one
+you wrote down after does not.
+:::
+
+::: notes
+Friday is the day your capstone becomes real. Every student files a
+Pre-Analysis Plan, tagged in your project repo as PAP version one.
+Maya, your fair-lending question. Devon, crypto adoption. Priya,
+climate-insurance pricing. Sam, intraday momentum. Leah, R-and-D and
+innovation. By Friday at five, each of you has a tagged commit. The
+distinction between a confirmatory test, declared in PAP-v1, and an
+exploratory analysis declared after the fact, is the cleanest honesty
+technology our field has.
+:::
+
+## What's Next — Week 6
+
+- Reading-the-frontier continues: governance, common ownership, fintech credit
+- Capstone work begins in earnest against your frozen PAP
+- Wednesday mentor: matching your design to the right standard error
+- Friday: first-look regressions — and the discipline of not re-writing the PAP
+
+::: callout-tip
+## Key takeaway
+The PAP is a promise to your future self. Next week you start cashing
+it in against the data.
+:::
+
+::: notes
+Week 6 is when you run the regressions your PAP committed you to. Any
+deviation from the PAP gets documented in writing, with a reason. The
+reading skills you built this week are now turned against your own
+work — applying the seven-part anatomy inward, exactly as the mentor
+session promised.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+The references slide is auto-populated by Pandoc from cited keys
+including Fama and French nineteen ninety-two and ninety-three,
+Jegadeesh and Titman, Petersen two thousand nine, and Bertrand, Duflo,
+and Mullainathan two thousand four.
+:::

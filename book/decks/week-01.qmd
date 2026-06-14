@@ -1,0 +1,259 @@
+---
+title: "Week 1 — Probability, Sampling, and the Logic of Inference"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 1 — Probability, Sampling, and the Logic of Inference {.title}
+
+::: notes
+Welcome to Week One of the ASSIP eight-week empirical finance camp. This is the foundation week, the week that makes every later week possible. We are going to rebuild probability and frequentist inference from the ground up, using simulation as our microscope, so that when we hit ordinary least squares in Week Two, that machinery rests on solid pillars. Five characters will follow us all summer — Maya, who cares about household finance and fair lending; Devon, who pulls crypto data off-chain; Priya, an insurance intern wrestling with wildfire claims; Sam, a backtest-happy trader; and Leah, who likes asking the inconvenient question. By Friday you will be able to take a research question, build the data-generating universe yourself, and decide honestly whether a number you observed is a finding or just noise wearing a nice outfit.
+:::
+
+## Learning Objectives
+
+- Use joint, conditional, and marginal distributions; apply the Law of Iterated Expectations and Law of Total Variance
+- Compute expectations, variances, and covariances and read correlation as a cosine
+- Distinguish estimator from estimate; decompose mean squared error into bias and variance
+- Read the LLN and CLT — including when they fail — and run a hypothesis test correctly
+
+::: callout-tip
+## Key takeaway
+By Friday you can take a research question, build the universe yourself, and decide whether your number clears the three gates of a real finding.
+:::
+
+::: notes
+Four objectives, one per chapter, plus the lab that ties them together. Notice the verbs — use, compute, distinguish, read. We are not asking you to recite definitions. We are asking you to operate the machine. The dataset for this week is the coin-flip universe you will build yourself in lab, plus the small joint-distribution tables we work in lecture. Everything is documented in Appendix C. The reveal-the-trick pedagogy is simple: I will state the result, show you why it works, and then show you exactly when it fails — because the failure modes are where empirical judgment lives. Bring questions. The lab on Friday is the capstone, and Monday's mentor session is where we argue about what counts as a finding.
+:::
+
+## Sam's Regime Table — The Whole Course in One Joint Distribution
+
+| | $X = -2\%$ | $X = 0\%$ | $X = +2\%$ |
+|---|---|---|---|
+| **Calm** ($Y=1$) | $0.05$ | $0.35$ | $0.30$ |
+| **Stormy** ($Y=2$) | $0.15$ | $0.10$ | $0.05$ |
+
+- Marginal of $Y$: calm $0.70$, stormy $0.30$
+- $\mathbb{E}[X \mid Y=\text{calm}] = +0.71\%$; $\mathbb{E}[X \mid Y=\text{stormy}] = -0.67\%$
+- Unconditional $\mathbb{E}[X] = 0.30\%$ — a blend that hides two opposite stories
+
+::: callout-tip
+## Key takeaway
+Conditioning is the mathematical name for "using what you know." Every later tool — regression, causal inference, standard errors — is a sophisticated way of estimating a conditional expectation.
+:::
+
+::: notes
+This is Sam's running example, and it carries the whole chapter. X is the daily return on a momentum portfolio, Y is the market regime — calm or stormy. The table is a legitimate joint distribution: every entry is non-negative and the six cells sum to one. Read it as a map of co-occurrence. Now do the move that makes finance possible: condition on Y equals stormy. Walk into the stormy row, divide each cell by the row total of 0.30, and you get a clean distribution over returns inside the stormy world. On a calm day the strategy earns about plus 0.71 percent. On a stormy day it loses about 0.67 percent. The single unconditional number, 0.30 percent, was hiding two opposite stories — and that is the empirical content of "momentum behaves differently across regimes," stated as a precise comparison of two conditional distributions.
+:::
+
+## The Two Laws That Run Everything
+
+$$
+\mathbb{E}[X] = \mathbb{E}\big[\mathbb{E}[X \mid Y]\big] \qquad \text{(Law of Iterated Expectations)}
+$$
+
+$$
+\operatorname{Var}(X) = \mathbb{E}\big[\operatorname{Var}(X\mid Y)\big] + \operatorname{Var}\big(\mathbb{E}[X\mid Y]\big) \qquad \text{(Law of Total Variance)}
+$$
+
+- LIE: the average of the conditional averages equals the overall average
+- LTV: total risk splits into within-group risk plus across-group risk
+- For Sam: $2.110 = 1.710 + 0.400$ — about 81% of risk lives *inside* the regimes
+
+::: callout-tip
+## Key takeaway
+Even if Sam perfectly forecast tomorrow's regime, only a fifth of the portfolio's variance would go away. Regime timing alone will not tame this strategy.
+:::
+
+::: notes
+These are the two structural identities that let you decompose a random quantity along the lines of something you know and put it back together with a guarantee that nothing was lost. The Law of Iterated Expectations says you can compute an overall average in two stages: first average within each group, then average those group-averages weighted by group size. A school's overall test score equals the enrollment-weighted average of classroom averages. The Law of Total Variance is even more useful. It splits risk into two distinct sources: the wobble inside each regime, and the wobble caused by switching between regimes. For Sam's table, total variance is 2.110. The within piece is 1.710 — about 81 percent. The across piece is only 0.400. The blunt takeaway: even if Sam could perfectly forecast tomorrow's regime, only about a fifth of the portfolio's variance would go away. That single sentence — quantitative, actionable, defensible — is what the second law buys you.
+:::
+
+## Maya's Diversification — The Cross-Term Is Everything
+
+For $R_p = wR_1 + (1-w)R_2$ with $w = 0.5$, $\sigma_1^2 = 0.04$, $\sigma_2^2 = 0.01$:
+
+$$
+\operatorname{Var}(R_p) = w^2\sigma_1^2 + (1-w)^2\sigma_2^2 + 2w(1-w)\,\sigma_{12}
+$$
+
+- $\sigma_{12} = +0.02$ (perfect comovement): $\operatorname{sd}(R_p) = 0.150$
+- $\sigma_{12} = 0$ (uncorrelated): $\operatorname{sd}(R_p) \approx 0.112$
+- $\sigma_{12} = -0.01$ (move oppositely): $\operatorname{sd}(R_p) \approx 0.087$ — *lower than either asset alone*
+
+::: callout-tip
+## Key takeaway
+Expected return is a straight average. Risk is not. Diversification lives entirely in one term — the covariance.
+:::
+
+::: notes
+Maya has one dollar to split between two assets. The first has 8 percent expected return and 20 percent volatility; the second has 4 percent expected return and 10 percent volatility. Linearity of expectation tells us the portfolio's expected return is a straight weighted average — 6 percent at the even split, and it does not depend on how the assets are related. Risk is not so generous. The variance of a sum carries a cross-term, two w times one-minus-w times the covariance, and that one term is where diversification comes from. Watch what happens. When the assets move in lockstep, mixing them just averages the risk — volatility lands exactly at 15 percent. When they are uncorrelated, the cross-term dies and volatility drops to 11.2 percent, below the average of the two ingredients. When they move oppositely, the cross-term subtracts and volatility falls to 8.7 percent — lower than the safer asset alone. Diversification is not magic. It is one term in one quadratic.
+:::
+
+## Correlation Is a Cosine — Random Variables Are Vectors
+
+| Vector world | Random-variable world |
+|---|---|
+| inner product $\langle \mathbf{u}, \mathbf{v}\rangle$ | $\operatorname{Cov}(X, Y)$ |
+| squared length | $\operatorname{Var}(X)$ |
+| cosine of angle | correlation $\rho_{XY}$ |
+| perpendicular | uncorrelated |
+
+- $|\rho| \le 1$ is Cauchy–Schwarz
+- "Uncorrelated" and "orthogonal" are the same word in two languages
+- This is the engine of OLS in Week 2
+
+::: callout-tip
+## Key takeaway
+Covariance only sees straight lines. Two variables can be perfectly dependent yet uncorrelated — a warning linear regression inherits.
+:::
+
+::: notes
+Here comes the reveal. Center every variable to mean zero. Now covariance is an inner product, variance is squared length, standard deviation is length, and correlation is the cosine of the angle between two variables. That is not an analogy. The axioms match exactly. The famous bound that correlation lives between minus one and plus one is just the Cauchy-Schwarz inequality, the same inequality you half-know from geometry. Maya's three scenarios become three angles between two arrows of length 0.20 and 0.10 — zero degrees in scenario A, ninety degrees in scenario B where Pythagoras buys her free risk reduction, and one-twenty degrees in scenario C where the arrows splay apart and partly cancel. Hold onto one warning: covariance only senses linear comovement. Take Y symmetric around zero and X equal to Y-squared. They are perfectly dependent yet have zero covariance. Linear regression inherits that blindness in Week Two.
+:::
+
+## Priya's Question — Estimator versus Estimate
+
+> An **estimator** is a random rule for turning data into a guess.
+> An **estimate** is the one number you get when you feed it the data you happen to have.
+
+- Priya's sticky note: $\bar{x} = \$8{,}410$ from $N = 200$ wildfire claims
+- The recipe $\hat{\mu} = \bar{x}$ is a random variable — it has a *sampling distribution*
+- Score every recipe on three words: **bias**, **variance**, **MSE**
+
+::: callout-tip
+## Key takeaway
+The honest question is not "is my number right?" but "if the universe had handed me a different 200 claims, how different would my sticky note be?"
+:::
+
+::: notes
+Priya is interning at a regional insurer. Her supervisor asks: what is the average wildfire claim per policy this season? There is a true number, mu, but Priya cannot see it — she only sees her sample of two hundred claims. She averages them and writes 8,410 dollars on a sticky note. Here is the deep question this chapter is about: how much should she trust that number? Not "is it right" — she will never know. The honest question is, if the universe had handed her a different 200 claims, how different would her sticky note be? That "what if the draw had been different" question is the entire content of statistical inference. To answer it we stop thinking about Priya's one number and start thinking about the rule that produced it. The recipe is an estimator; the number is an estimate. Confusing the two is the single most common conceptual error in empirical work, so we will be pedantic about it.
+:::
+
+## Bias, Variance, MSE — The One Number That Combines Both
+
+$$
+\operatorname{MSE}(\hat{\mu}) = \operatorname{Var}(\hat{\mu}) + \operatorname{Bias}(\hat{\mu})^2
+$$
+
+- Sample mean: unbiased; $\operatorname{Var}(\bar{x}) = \sigma^2/N$; $\operatorname{se}(\bar{x}) = \sigma/\sqrt{N}$
+- Priya: $\sigma = 12{,}000$, $N = 200 \Rightarrow \operatorname{se} \approx \$849$
+- To halve uncertainty: *quadruple* the sample — precision is expensive
+
+::: callout-tip
+## Key takeaway
+Sometimes a biased recipe wins. A small, deliberate bias bought with a big variance cut is a bargain — this is the engine behind shrinkage and machine learning.
+:::
+
+::: notes
+Total error equals variance plus bias squared — read it as a budget. The sample mean is unbiased for any sample size, even N equals three. What changes with N is the variance: sigma squared over N, with standard error sigma over root N. That square root is the most consequential one in statistics, and it is a little disappointing the first time you meet it. Priya's standard error is about 849 dollars on 200 claims. To cut that in half she does not double her sample — she quadruples it. To gain one decimal digit of precision she needs a hundredfold more data. Now the surprise: sometimes a biased estimator wins. A five-percent-trimmed mean drops the catastrophe tail, gives up some bias, but slashes the variance — if the variance savings beat the bias-squared penalty, the biased recipe has lower MSE. That tradeoff is the engine behind shrinkage estimators and essentially all of machine learning. Hold the picture.
+:::
+
+## LLN and CLT — Shown Not Asserted
+
+- **Weak LLN**: $\bar{x} \xrightarrow{p} \mu$ — the sample mean homes in on the truth
+- **CLT**: $\dfrac{\bar{x} - \mu}{\sigma/\sqrt{N}} \xrightarrow{d} N(0,1)$ — *whatever* the population shape
+- LLN says the cloud shrinks. CLT says under a $\sqrt{N}$ microscope the cloud is a perfect bell.
+
+::: callout-tip
+## Key takeaway
+The LLN guarantees inference is possible. The CLT keeps inference alive — it gives the cloud around $\mu$ a precise, knowable shape.
+:::
+
+::: notes
+You watched the sampling distribution tighten last chapter; here is why. The Weak Law of Large Numbers, which falls out of Chebyshev's inequality in one line once you know the sample mean has variance sigma-squared over N, says x-bar converges in probability to mu. Pick any tolerance, however tight; for large enough N the probability of missing by more than that tolerance shrinks to zero. More data, less luck. The Central Limit Theorem is the deeper surprise. Standardize x-bar — subtract its mean, divide by sigma over root N — and the entire shape of its distribution converges to a perfect bell, regardless of the population you started from. Skewed, lumpy, bounded, discrete — it does not matter, as long as the variance is finite. The LLN is a statement about a point. The CLT is what keeps inference alive: under a root-N microscope, the cloud around mu has a precise, knowable shape.
+:::
+
+## Devon's Crypto Returns — When the CLT Fails
+
+- **Fat tails** = one observation refuses to be small relative to the rest
+- Student's $t$ with $\nu = 5$: CLT holds *slowly* — need $N$ in the thousands
+- Student's $t$ with $\nu = 2$: variance infinite — CLT does not apply
+- **Cauchy** ($\nu = 1$): the mean itself fails to exist; averaging never helps
+
+::: callout-tip
+## Watch out
+"$N \ge 30$" is a folk rule, not a theorem. It quietly assumes your data are not too wild. Crypto returns are wild.
+:::
+
+::: notes
+Devon has been pulling daily crypto returns. He reads chapters three and four, reasons confidently — average a few hundred returns, the CLT kicks in around N equals thirty, slap a confidence interval on it. He runs it and the interval comes out absurdly narrow on one sample and wildly different the next month. The problem is fat tails. The CLT has a secret clause: the bell emerges only when the sum is built from many small contributions, no single one of which dominates. Crypto fails that clause. One minus-fifty-percent day yanks x-bar around all by itself. The averaging never gets to do its noise-cancelling job. There is a hierarchy: Student-t with five degrees of freedom — slow but eventual; with two — variance infinite, CLT fails; the Cauchy distribution — the mean itself does not exist, and averaging a million draws is no more informative than looking at one. Before trusting any average, plot the tails.
+:::
+
+## Sam's t-test — Hypothesis Testing Done Right
+
+Sam's reversal rule: $\bar{x} = 0.08\%$, $s = 0.75\%$, $N = 252$
+
+$$
+t = \frac{\bar{x} - 0}{s/\sqrt{N}} = \frac{0.08\%}{0.0473\%} \approx 1.69
+$$
+
+- One-sided critical value at $\alpha = 0.05$: about $1.65$ — Sam clears, barely
+- Two-sided $95\%$ CI: $[-0.013\%, +0.173\%]$ — *zero is inside*
+- Same average over only $63$ days: $t \approx 0.85$ — *opposite conclusion*
+
+::: callout-tip
+## Key takeaway
+A result is only as convincing as the sample size beneath it. Identical averages, opposite verdicts, purely because of $N$.
+:::
+
+::: notes
+Sam has a trading rule that earned eight basis points a day over 252 days. Briefly very exciting. Then the doubt arrives. Could a truly worthless rule produce that average by luck? Hypothesis testing answers exactly that one question and refuses to answer the others. State the null — mu equals zero, the skeptic's position. State the alternative — mu greater than zero. Compute the t-statistic: estimate minus null, over estimated standard error. Sam gets 1.69, barely clearing the one-sided critical value of 1.65 at alpha equals 0.05. Now look at the two-sided 95-percent confidence interval — minus 0.013 to plus 0.173 percent. Zero is inside. A two-sided test would not reject. And critically — same average over a single quarter, the t-statistic falls to 0.85 and the conclusion flips. Identical edge, opposite verdict, purely because of N.
+:::
+
+## What a p-value Is — and Three Mistakes Never to Make
+
+> **The p-value** is the probability, *assuming the null is true*, of observing a statistic at least as extreme as the one you got.
+
+1. "$p$ is the probability $H_0$ is true" — **no**, that swaps the conditional bar
+2. "We accept the null" — **no**, we *fail to reject*; absence of evidence is not evidence of absence
+3. "Statistical significance settles it" — **no**, asterisks are not findings; report magnitudes
+
+::: callout-warning
+## Watch out
+Test twenty worthless rules at $\alpha = 0.05$ and the chance at least one looks "significant" by luck is about $64\%$. The first question of any result: *how many things did you try?*
+:::
+
+::: notes
+Sam's p-value is 0.046 — just inside the line. Now the correction that matters more than almost anything else in this book. The p-value is not the probability the null is true. It is the probability of data this extreme assuming the null. Swapping those two sides of the conditional bar is the same error as confusing probability of wet given rain with probability of rain given wet. Three mistakes never to make. First, the swap I just named. Second, "we accept the null" — no, we fail to reject. Sam's failure to reject does not mean the rule has zero edge; it means 252 days cannot distinguish the edge from zero. Third, statistical significance is not economic significance. Scale Sam's test to 100,000 days and an edge of eight ten-thousandths of a percent becomes wildly significant — and still worthless after trading costs. Asterisks are not findings. And if you tested twenty worthless rules, the chance at least one looks significant is 64 percent. The reported p-value is then a lie.
+:::
+
+## This Week's Deliverable and Look-Ahead
+
+- **Lab 1** — build a coin-flip universe; measure your own test's size and power; run a small p-hacking experiment
+- **Monday mentor session** — "What is a finding?" Three gates: too large to be noise, large enough to care, robust to the search
+- **Assessment** — short answer plus a small Monte Carlo you code and report
+
+::: callout-tip
+## Look-ahead
+Week 2's OLS coefficient ships with $t = (\hat{\beta} - 0)/\widehat{\operatorname{se}}(\hat{\beta})$ — the *same* machine you built today, pointed at a slope instead of a mean.
+:::
+
+::: notes
+Three deliverables close the week. Lab One — the coin-flip universe — is where you cheat. You build the population yourself, fix the true parameter, and check whether the tools do what the chapters claim. You will watch a sampling distribution tighten like one over root N, measure your own test's false-positive rate under the null, trace a power curve, and run the p-hacking experiment that shows in numbers why a lone significant result pulled from many tries means almost nothing. Monday's mentor session anchors all of it: when is a number a finding? Three gates — too large to be noise, large enough to care about, robust to the search. Walking a number through those gates honestly is what we do for the next eight weeks. And the look-ahead — every t-statistic you computed today returns in Week Two, pointed at a regression coefficient instead of a mean. Same machine. Now to lab.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+The references slide is auto-populated by Pandoc from cited keys.
+:::

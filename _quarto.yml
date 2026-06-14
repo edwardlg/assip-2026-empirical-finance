@@ -44,6 +44,7 @@ execute:
 book:
   title: "Empirical Finance from the Ground Up — ASSIP 2026 Cohort"
   subtitle: "Eight Full-Time Weeks for the GMU ASSIP 2026 Empirical Finance Group"
+  output-file: "assip-2026-empirical-finance.pdf"
   author:
     - name: "Lei Gao"
       affiliation: "Costello College of Business, George Mason University"
@@ -483,6 +484,20 @@ format:
     notebook-view: true
     include-in-header:
       - file: _includes/notebook-buttons.html
+  pdf:
+    documentclass: scrbook
+    papersize: letter
+    geometry: [margin=1in]
+    fontsize: 11pt
+    fig-pos: 'H'
+    code-line-numbers: false
+    code-overflow: wrap
+    pdf-engine: xelatex
+    keep-tex: false
+    toc: true
+    number-sections: true
+    colorlinks: true
+    cite-method: natbib
 
 # -----------------------------------------------------------------
 # Cross-reference labels (Quarto's section/figure/table refs).

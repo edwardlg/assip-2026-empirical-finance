@@ -1,0 +1,209 @@
+---
+title: "Week N — Lecture Title"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-06-14"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    # Optional: drop a styled .pptx into book/decks/templates/ and uncomment.
+    # The reference doc supplies master slide layouts, fonts, and color theme.
+    # reference-doc: templates/assip-reference.pptx
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+# csl: ../../assets/csl/chicago-author-date.csl   # uncomment once a CSL is in assets/csl/
+---
+
+<!--
+DECK TEMPLATE — usage notes for deck-drafting agents
+======================================================
+- One H2 (`##`) starts a new slide. Use Title Case.
+- One H3 (`###`) inside a slide is an optional subhead.
+- Put the speaker script inside a `::: notes` fenced div. These become
+  PowerPoint speaker notes and are later fed to TTS for narration.
+- Keep on-slide bullets to <= 6 lines, <= 10 words per line.
+- End every content slide with a "Key takeaway" callout (see below).
+- Math: use $inline$ and $$display$$ LaTeX; Pandoc converts to OMML.
+- Code: triple-backtick fenced blocks with a language tag.
+- Figures: drop into ../../assets/figures/ and reference by relative path.
+- Citations: `[@key]` resolves against ../bibliography.md.
+- Delete this comment block when authoring a real deck.
+-->
+
+# Title Slide {.title}
+
+::: notes
+Welcome to Week N of the ASSIP 8-Week Empirical Finance Camp. Today we will
+[one-sentence framing of the lecture's purpose]. By the end of this
+session you should be able to [learning objective in plain English].
+:::
+
+## Learning Objectives
+
+- Define [concept 1] and explain why it matters for empirical finance
+- Compute [statistic / estimator] from a real dataset
+- Interpret [result] in the context of [economic question]
+- Critique [common pitfall] when applying the method
+
+::: callout-tip
+## Key takeaway
+By the end of this slide deck students can move from a research question
+to a defensible empirical estimate, and articulate what could go wrong.
+:::
+
+::: notes
+Walk through each objective and tie it to the lab they will run after
+the lecture. Mention that the dataset for today lives in
+data/week-N/ and is documented in Appendix C.
+:::
+
+## Motivating Question
+
+### Why do we care?
+
+- Investors face [problem]
+- Standard intuition says [naive answer]
+- The data show [surprising fact, with citation]  [@famafrench1993]
+
+::: callout-tip
+## Key takeaway
+The empirical pattern is not what introductory theory predicts — that
+gap is the whole reason this field exists.
+:::
+
+::: notes
+Spend about two minutes here. Anchor the question in a recent news
+story or a number students have seen in the WSJ. Do not solve it yet —
+the point is to make them uncomfortable with the naive answer.
+:::
+
+## A Little Math
+
+The excess return of asset $i$ in month $t$ is
+
+$$
+r_{i,t} - r_{f,t} = \alpha_i + \beta_i \,(r_{m,t} - r_{f,t}) + \varepsilon_{i,t},
+$$
+
+where $\beta_i = \operatorname{Cov}(r_i, r_m) / \operatorname{Var}(r_m)$.
+
+- $\alpha_i$ — risk-adjusted "abnormal" return
+- $\beta_i$ — sensitivity to the market factor
+- $\varepsilon_{i,t}$ — idiosyncratic shock, mean zero
+
+::: callout-tip
+## Key takeaway
+CAPM is a *regression*, not a law of nature. $\alpha$ is what the
+model cannot explain — and that residual is where the research lives.
+:::
+
+::: notes
+Walk through the equation term by term. Remind students that the
+betas they will estimate in lab are sample statistics with standard
+errors, not point predictions.
+:::
+
+## Code You Will Run in Lab
+
+```{.python}
+import pandas as pd
+import statsmodels.api as sm
+
+# Load Fama-French factors + a test asset (see Appendix C data card)
+df = pd.read_parquet("data/week-N/ff_plus_asset.parquet")
+
+y = df["ret"] - df["rf"]
+X = sm.add_constant(df["mkt_rf"])
+
+model = sm.OLS(y, X).fit(cov_type="HAC", cov_kwds={"maxlags": 3})
+print(model.summary())
+```
+
+::: callout-tip
+## Key takeaway
+HAC standard errors matter the moment your residuals are serially
+correlated — which they almost always are in monthly return data.
+:::
+
+::: notes
+Do not run this live unless the room has working Python. Instead,
+project the expected output (saved as a screenshot in
+assets/figures/week-N/ols-summary.png) and walk through how to read
+each column: coef, std err, t, p-value, confidence interval.
+:::
+
+## Result and Interpretation
+
+![Rolling 36-month beta of the test asset](../../assets/figures/week-N/rolling-beta.png){width=70%}
+
+- Beta drifts from `~0.8` (pre-2008) to `~1.3` (post-2020)
+- Standard errors widen during 2008 and 2020 — small-sample noise
+- The point estimate alone is misleading without the error band
+
+::: callout-tip
+## Key takeaway
+A single number ("beta = 1.1") hides a time-varying, noisy estimate.
+Always report uncertainty, and prefer a picture over a point estimate.
+:::
+
+::: notes
+Pause here and ask: "If beta is unstable, what does that imply for a
+portfolio manager who hedges using historical beta?" Let two students
+answer before moving on.
+:::
+
+## Common Pitfalls
+
+1. Survivorship bias — using only firms that exist *today*
+2. Look-ahead bias — using information not available at time $t$
+3. Multiple testing — running 50 regressions and reporting the best
+4. Overfitting in-sample with no held-out window
+
+::: callout-warning
+## Watch out
+Every one of these will make your $R^2$ look great and your out-of-sample
+performance look terrible.
+:::
+
+::: notes
+Tie each pitfall to a real published-then-retracted finding when you
+can. Students remember stories, not bullet points.
+:::
+
+## What's Next
+
+- Lab N: estimate $\beta$ for a stock of your choice, 2000–2025
+- Read: [@famafrench1993], sections 1–3 only
+- Optional: replicate Figure 2 with a different sample window
+
+::: callout-tip
+## Key takeaway
+The lecture gave you the model; the lab is where you will discover
+how brittle it is. That is the point.
+:::
+
+::: notes
+Remind students that the lab notebook is in book/weeks/week-N/lab.ipynb
+and that office hours are Thursday 4–5 PM. Close on the motivating
+question from slide 2: "Has the data changed your prior yet?"
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+The references slide is auto-populated by Pandoc from cited keys.
+Do not edit by hand.
+:::

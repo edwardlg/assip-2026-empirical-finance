@@ -1,0 +1,351 @@
+---
+title: "Week 2 — The OLS Engine"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 2 — The OLS Engine {.title}
+
+::: notes
+Welcome to Week 2. Last week we treated random variables as vectors and
+learned what unbiasedness and consistency mean for a sample mean. This
+week we cash that picture in for the workhorse of empirical finance:
+ordinary least squares. By Friday you will derive OLS in matrix form,
+state the five Gauss-Markov assumptions, partial variables out with
+Frisch-Waugh-Lovell, fix your standard errors when the errors misbehave,
+and recognize the three classic ways a regression can be biased. The
+week runs Monday June 29 through Thursday July 2; July 3 is off. Keep
+one phrase in your pocket all week: the point estimate is the easy part.
+The standard error is the whole ballgame.
+:::
+
+## Learning Objectives
+
+- Derive $\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$ by calculus and by geometry
+- State the five Gauss-Markov assumptions; know which one is load-bearing
+- Use Frisch-Waugh-Lovell to read any control coefficient as a partial slope
+- Choose between classical, robust, clustered, and HAC standard errors
+- Recognize omitted-variable bias, measurement error, and functional-form misspecification
+
+::: callout-tip
+## Key takeaway
+OLS is one line of algebra and one geometric act: drop a perpendicular
+onto the column space of the regressors.
+:::
+
+::: notes
+Notice the verbs: derive, state, use, choose, recognize. None is
+memorize. Each chapter follows the reveal-the-trick pattern. State the
+result, see it on a tiny worked example, derive the algebra, then watch
+where it fails. By Friday you should hand a stranger a regression
+printout and tell them which standard-error column to trust.
+:::
+
+## Sam's Beta: OLS in Matrix Form
+
+The model stacks one equation per observation into
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon
+$$
+
+- $\mathbf{X}$ has a column of ones for the intercept, then regressors
+- One derivation in matrix form covers every linear regression
+- Sam's four-day toy: market $-2, 0, 1, 1$; stock $-1, 0, 3, 2$
+- We will recover $\hat\beta_1 = 7/6 \approx 1.17$ by hand
+
+::: callout-tip
+## Key takeaway
+Matrix form means one derivation, done once, covers every linear
+regression you will ever run.
+:::
+
+::: notes
+Sam trades momentum names and wants to know how much his stock moves
+when the market moves one percent. That number is beta, just a
+regression slope. We start with four days small enough to invert
+matrices by hand. Stack the outcomes into y, build X with a column of
+ones and a column of market returns, and the whole regression becomes
+y equals X beta plus epsilon. Matrix form is the gift that keeps
+giving: when Sam adds ten controls next week, not a single symbol
+changes.
+:::
+
+## The Normal Equations, Two Ways
+
+Calculus: minimize $(\mathbf{y} - \mathbf{X}\mathbf{b})'(\mathbf{y} - \mathbf{X}\mathbf{b})$, set gradient to zero.
+
+Geometry: demand the residual be perpendicular to every regressor, $\mathbf{X}'\hat{\mathbf{e}} = \mathbf{0}$.
+
+Both give:
+
+$$
+\mathbf{X}'\mathbf{X}\,\hat{\boldsymbol\beta} = \mathbf{X}'\mathbf{y}
+\quad\Longrightarrow\quad
+\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}
+$$
+
+::: callout-tip
+## Key takeaway
+Minimizing squared residuals and dropping a perpendicular are the same
+act. OLS is an orthogonality machine.
+:::
+
+::: notes
+Here is the reveal. Two completely different routes land on the same
+formula. Calculus takes the sum of squared residuals as a quadratic
+bowl, takes the gradient, sets it to zero. Geometry takes no
+derivatives. It says: if the residual still had any component along a
+regressor, we could nudge the fit that way and shorten the residual.
+So the residual must be perpendicular to every column of X. Write that
+as X transpose e hat equals zero, plug in, and the normal equations
+fall out.
+:::
+
+## Sam's Beta, By Hand
+
+For Sam's four days,
+
+$$
+\mathbf{X}'\mathbf{X} = \begin{pmatrix} 4 & 0 \\ 0 & 6 \end{pmatrix}, \quad
+\mathbf{X}'\mathbf{y} = \begin{pmatrix} 4 \\ 7 \end{pmatrix}, \quad
+\hat{\boldsymbol\beta} = \begin{pmatrix} 1 \\ 7/6 \end{pmatrix}
+$$
+
+- Residuals sum to zero exactly (intercept identity)
+- Residuals orthogonal to market column: dot product equals zero
+- Fitted values are the projection of $\mathbf{y}$ onto $\text{col}(\mathbf{X})$
+
+::: callout-tip
+## Key takeaway
+Beta of $7/6$ means Sam's stock amplifies the market by about 17%.
+:::
+
+::: notes
+Watch what just happened. X transpose X is diagonal, four and six. X
+transpose y is four and seven. Invert and multiply. Out pops beta naught
+equals one and beta one equals seven sixths, about one point one seven.
+Sam's stock amplifies the market by seventeen percent. Now check the
+geometry: the four residuals sum to zero exactly, because we included
+an intercept, and the residuals dotted with the market column is also
+exactly zero. Not lucky — algebraic identities that least squares
+mechanically forces.
+:::
+
+## Gauss-Markov: When OLS is BLUE
+
+The five assumptions, as testable claims about Maya's loan data:
+
+1. Linearity in parameters (not in $x$'s)
+2. Random sampling + full column rank
+3. **Zero conditional mean**: $\mathbb{E}[\boldsymbol\varepsilon \mid \mathbf{X}] = \mathbf{0}$
+4. Homoskedasticity: $\text{Var}(\boldsymbol\varepsilon \mid \mathbf{X}) = \sigma^2 \mathbf{I}$
+5. Normality of errors (only for finite-sample t-tests)
+
+::: callout-warning
+## The contract
+"BLUE" is a contract with five clauses. Assumption 3 is the one that
+matters most.
+:::
+
+::: notes
+Maya regresses loan interest rates on borrower income and gets minus
+zero point four two. Each extra ten thousand dollars of income, forty-
+two basis points lower rate. Gauss-Markov says OLS is the Best Linear
+Unbiased Estimator — but only if you sign all five clauses. Assumption
+three, zero conditional mean, determines whether your coefficient means
+anything causal. Weeks 3 and 4 exist because Assumption 3 is hard.
+Chapter 2.4 will rip up Assumption 4. Assumption 5 is mostly irrelevant
+in modern asymptotics.
+:::
+
+## Frisch-Waugh-Lovell: Reveal the Trick
+
+A multiple-regression coefficient equals a simple-regression slope on
+**residualized** variables.
+
+Leah's R&D and patents, six firms, full multiple regression: $\hat\beta_1 = 1.838$.
+
+1. Regress R&D on size, save residuals $\tilde x$
+2. Regress patents on size, save residuals $\tilde y$
+3. Slope of $\tilde y$ on $\tilde x$ is exactly $1.838$
+
+::: callout-tip
+## Key takeaway
+"Controlling for $z$" means subtracting $z$'s linear footprint from
+both sides. Within-group demeaning *is* fixed effects.
+:::
+
+::: notes
+Leah studies innovation and regresses patents on R and D, controlling
+for firm size. Her coefficient, one point eight three eight, is "the
+effect of R and D, holding size fixed." Frisch-Waugh-Lovell says she
+can get the same number a different way. Regress R and D on size, keep
+the residual — the part of R and D that size cannot explain. Do the
+same to patents. Regress the second residual on the first. Slope is
+one point eight three eight, on the nose. Bonus: this is what fixed
+effects do.
+:::
+
+## When Errors Misbehave: The Sandwich
+
+OLS variance without homoskedasticity is a sandwich:
+
+$$
+\text{Var}(\hat{\boldsymbol\beta}\mid\mathbf{X})
+= (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\boldsymbol\Omega\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}
+$$
+
+Four flavors of $\boldsymbol\Omega$:
+
+- Classical: $\sigma^2 \mathbf{I}$ — assumes IID errors
+- HC robust (White): unequal variances along the diagonal
+- Cluster-robust: errors correlated within firm or lender
+- HAC (Newey-West): errors correlated over time
+
+::: callout-tip
+## Key takeaway
+Same $\hat\beta$. Different $\boldsymbol\Omega$. Different t-stat.
+Different conclusion.
+:::
+
+::: notes
+The OLS point estimate is unbiased under Gauss-Markov regardless of
+the error covariance. But the variance of beta hat is a sandwich:
+outer slices of X transpose X inverse, filling of X transpose Omega X.
+Omega is the error covariance matrix you never see — you estimate it.
+Classical assumes Omega equals sigma squared times identity. In
+finance, essentially always false. Each shape of Omega gets its own
+estimator: White, cluster-robust, Newey-West HAC. Point estimate
+never moves. Standard error can swing by a factor of three.
+:::
+
+## Maya's Megaphone Becomes a Whisper
+
+Maya's fair-lending regression, $N = 9{,}000$ loans:
+
+| Standard error type | SE   | t-stat |
+|---------------------|------|--------|
+| Classical           | 0.07 | 6.0    |
+| HC robust           | 0.09 | 4.7    |
+| Cluster by lender   | 0.19 | 2.2    |
+
+- Same $\hat\beta_1 = 0.42$ in every row
+- The $0.07$ was the lie; the $0.42$ was right the whole time
+- See Petersen 2009 for the panel-data taxonomy
+
+::: callout-warning
+## Watch out
+With clusters of size $n$, even mild within-cluster correlation can
+multiply the true variance many times (Moulton 1986).
+:::
+
+::: notes
+Same Maya. Same nine thousand loans. Same coefficient of zero point
+four two. Three different standard errors, three different t-stats,
+three different career outcomes. Classical says screaming six-sigma.
+White's robust knocks it to four point seven. Clustering by lender —
+the right thing to do, because lenders set rates in correlated ways —
+drops the t-stat to two point two. The point estimate did not move a
+hair. Petersen 2009 is required reading for panel regressions.
+:::
+
+## Three Ways the Coefficient is Wrong
+
+Beyond standard errors, the *point estimate itself* can be biased:
+
+- **Omitted variable bias**: bias $= \beta_2 \cdot \delta_1$
+- **Measurement error in $x$**: attenuation toward zero
+- **Functional-form misspecification**: forcing a line through a curve
+
+::: callout-warning
+## Master fault
+Each is a different way $\mathbb{E}[\varepsilon \mid x] = 0$ breaks.
+A precise standard error on a biased coefficient is precisely wrong.
+:::
+
+::: notes
+Standard errors say nothing about whether the number you wobble around
+is the right number. Three classic ways your coefficient points wrong.
+Omitted variable bias: leave out a relevant variable correlated with
+your regressor, your coefficient absorbs its effect. Bias equals beta
+two times delta one — the omitted variable's effect times its slope on
+the included regressor. Measurement error pulls slopes toward zero,
+called attenuation. Functional form dumps missing curvature into
+epsilon. All three are failures of zero conditional mean. This chapter
+is the bridge to Weeks 3 and 4.
+:::
+
+## Common Pitfalls
+
+1. Reporting classical t-stats on clustered data
+2. Dummy variable trap: every category plus an intercept
+3. Reading a control coefficient as causal (the table 2 fallacy)
+4. Trusting in-sample $R^2$ as out-of-sample evidence
+
+::: callout-warning
+## Watch out
+Each of these has been published and retracted.
+:::
+
+::: notes
+The classical-SE-on-clustered-data mistake is the single most common
+referee complaint in finance. The only coefficient you can interpret
+causally is the one whose exogeneity you actually defended, not the
+controls hanging off it. Bring the discipline: write the one-line spec,
+defend the standard-error choice, and only causally interpret the
+coefficient your identification strategy was designed to recover.
+:::
+
+## Deliverable + Look-Ahead
+
+- **Lab 2**: Fama-MacBeth on CRSP (or seeded synthetic fallback)
+- **Mentor session**: "Why your standard error is the whole ballgame"
+- **Assessment**: derive OLS, interpret an FWL printout, choose an SE
+
+Look ahead to Week 3:
+
+- Zero conditional mean finally fails on purpose
+- Causal inference, potential outcomes, the credibility revolution
+
+::: callout-tip
+## Key takeaway
+You have the engine. Week 3 is about when the engine measures cause,
+not correlation.
+:::
+
+::: notes
+Thursday's lab is Fama and MacBeth 1973, the most famous two-pass
+procedure in asset pricing. Estimate a beta per stock, run cross-
+sectional regressions month by month, average the slopes. The scatter
+of those slopes divided by root T is your standard error, automatically
+handling within-month cross-sectional correlation. We plant a known
+premium in synthetic data so you can check your machine. Next week we
+finally drop the pretense that Assumption 3 holds by accident.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+References auto-populated by Pandoc from cited keys including Fama and
+MacBeth 1973, Petersen 2009, Moulton 1986, and Gao et al. 2024.
+:::

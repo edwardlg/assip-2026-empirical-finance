@@ -1,15 +1,18 @@
 # =====================================================================
-# ASSIP 2026 — Dual-deploy GitHub Actions workflow
+# ASSIP 2026 - Dual-deploy GitHub Actions workflow
 # ---------------------------------------------------------------------
 # This single job builds BOTH sites and publishes them together to the
 # gh-pages branch so the deployed Pages site looks like:
 #
-#   https://<owner>.github.io/<repo>/             -> MkDocs wiki (root)
-#   https://<owner>.github.io/<repo>/textbook/    -> Quarto book
+#   https://<owner>.github.io/<repo>/                  -> MkDocs wiki (root)
+#   https://<owner>.github.io/<repo>/textbook/         -> Quarto book (HTML)
+#   https://<owner>.github.io/<repo>/textbook/<book>.pdf -> Quarto book (PDF)
+#   https://<owner>.github.io/<repo>/decks/week-*.pptx -> PowerPoint decks
 #
 # Build layout (locally and on CI):
 #   _site/                  <- wiki (mkdocs build --site-dir ../_site/) [built FIRST]
-#   _site/textbook/         <- book (quarto render; only cleans its own output-dir) [built SECOND]
+#   _site/textbook/         <- book HTML + PDF (quarto render --to html|pdf) [built SECOND]
+#   _site/decks/            <- PPTX decks per week with speaker notes
 #
 # Triggers:
 #   - push to main
@@ -41,7 +44,7 @@ jobs:
   build-and-deploy:
     name: Build wiki + textbook and publish to gh-pages
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
 
     steps:
       - name: Checkout
@@ -65,19 +68,19 @@ jobs:
           pip install -r wiki/requirements.txt
 
       # ------------------------------------------------------------------
-      # Quarto toolchain
+      # Quarto toolchain (with TinyTeX for PDF rendering)
       # ------------------------------------------------------------------
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          tinytex: false   # HTML-only build; KaTeX handles math
+          tinytex: true   # required for PDF format (xelatex)
 
       - name: Quarto check (diagnostic)
         run: quarto check
 
       # ------------------------------------------------------------------
-      # Build: Quarto first (writes to _site/textbook), then MkDocs writes
-      # to _site/ at root. Order matters only in that the wiki build must
+      # Build: MkDocs first (writes to _site/ at root), then Quarto writes
+      # to _site/textbook. Order matters only in that the wiki build must
       # NOT delete the textbook subdir; mkdocs writes files into the
       # target directory and only clears its own previously-built files,
       # so the /textbook subtree is preserved.
@@ -86,8 +89,29 @@ jobs:
         working-directory: wiki
         run: mkdocs build --site-dir ../_site/
 
-      - name: Render Quarto textbook -> _site/textbook/
-        run: quarto render
+      - name: Render Quarto textbook -> _site/textbook/ (HTML)
+        run: quarto render --to html
+
+      - name: Render Quarto textbook -> _site/textbook/ (PDF)
+        run: quarto render --to pdf
+
+      # ---- Per-week PowerPoint decks (with speaker notes) --------------
+      - name: Render decks -> book/decks/*.pptx
+        run: |
+          set -e
+          mkdir -p _site/decks
+          shopt -s nullglob
+          for f in book/decks/week-*.qmd; do
+            echo "::group::Rendering $f"
+            quarto render "$f" --to pptx
+            base="$(basename "$f" .qmd)"
+            if [ -f "book/decks/${base}.pptx" ]; then
+              cp "book/decks/${base}.pptx" "_site/decks/${base}.pptx"
+            fi
+            echo "::endgroup::"
+          done
+          echo "Decks copied to _site/decks/:"
+          ls -la _site/decks/ || true
 
       - name: List built site (diagnostic)
         run: |
@@ -96,6 +120,9 @@ jobs:
           echo "::endgroup::"
           echo "::group::_site/textbook/"
           ls -la _site/textbook/ 2>/dev/null | head -40 || true
+          echo "::endgroup::"
+          echo "::group::_site/decks/"
+          ls -la _site/decks/ 2>/dev/null || true
           echo "::endgroup::"
 
       # ------------------------------------------------------------------

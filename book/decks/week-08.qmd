@@ -1,0 +1,405 @@
+---
+title: "Week 8 — Defense and JSSR Submission"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 8 — Defense and JSSR Submission {.title}
+
+::: notes
+Welcome to Week 8 of the ASSIP Empirical Finance Camp. This is the last
+active week of the program, and on Wednesday, August twelfth, you will
+stand beside a forty-eight by thirty-six inch research poster at the
+ASSIP Symposium and defend, in eight minutes, the result you have spent
+seven weeks building. The pre-analysis plan you tagged in Week 7 is no
+longer a document. It is a contract that comes due this week. You will
+run the pre-registered specification once, build a one-hundred-forty-four
+specification multiverse around it, try to kill your own result with
+placebos and bootstraps, write a two-hundred-fifty-word JSSR abstract
+that compresses the whole project into one paragraph, and then face a
+roomful of faculty whose job is to find the reason not to believe you.
+This deck previews all five chapters. The reveal that runs through them
+is the same: a result you have already attacked is the only kind worth
+defending in public.
+:::
+
+## Learning Objectives
+
+- Execute the pre-registered specification once, and report whatever it shows
+- Build a specification curve that makes the garden of forking paths visible
+- Try to kill your own result with placebos, bootstraps, and Oster delta
+- Write a two-hundred-fifty-word JSSR abstract and a six-panel poster
+- Defend the result for eight minutes against a hostile referee
+
+::: callout-tip
+## Key takeaway
+A result that survives every honest attack you can mount on it before
+the symposium is the only kind that survives the attacks the room
+mounts on you during the symposium.
+:::
+
+::: notes
+Notice the verbs: execute, build, kill, write, defend. None of them is
+explore. By this week the design is fixed and the question is fixed.
+What changes is whether you can hold the result up to a stranger and
+say honestly what you found, what you did not find, and what you cannot
+yet rule out. Maya, Devon, Priya, Sam, and Leah will all walk this same
+arc with you. By Wednesday morning the JSSR abstract is generated from
+code, the poster compiles with one command, and the talk has been
+rehearsed against a timer three times. Everything else this week is in
+service of those three artifacts being ready.
+:::
+
+## The Confirmatory Run
+
+- Open the notebook gated by the `PAP_FILED=True` flag
+- Run the one specification your `pap-filed` commit named — exactly once
+- Report the number whichever way it falls
+- Maya's run: ATT of negative one point eight nine percentage points
+
+::: callout-tip
+## Key takeaway
+The PAP froze the forks. The confirmatory run honors that freeze. The
+sin is not deviating; the sin is hiding the deviation or letting the
+outcome steer the change.
+:::
+
+::: notes
+Here is the result in one sentence. Your first job this week is to run
+the pre-registered primary specification once, on the confirmation
+data, and report what it produces whatever the sign. This is the
+hardest professional habit in the entire course, and it is
+psychological, not technical. Recall from Chapter one point five that a
+p-value of zero point zero five is only a five percent false-positive
+rate if the test was fixed before you saw the outcome. The instant you
+look at the coefficient, dislike it, and tweak the specification to
+improve it, that contract is broken and your p-value means something
+larger and unknowable. Maya's notebook is technologically gated behind
+a flag that must be asserted before the analysis cell will run. When
+she flipped the gate, the estimator returned an ATT of negative one
+point eight nine percentage points with a clustered standard error of
+zero point zero six five. That is the number she reports, full stop.
+:::
+
+## The Garden of Forking Paths, Made Visible
+
+- Enumerate every defensible analytic choice — controls, fixed effects, sample, clustering, outcome
+- Maya: four controls times two fixed-effects choices times three samples times three clusterings times two outcomes — one hundred forty-four specifications
+- Run all of them, plot estimates sorted, choices in a grid below
+- The pre-registered specification is one labeled point inside the multiverse
+
+::: callout-tip
+## Key takeaway
+P-hacking exploits multiplicity by concealment. Specification-curve
+analysis defangs multiplicity by exhaustive disclosure.
+:::
+
+::: notes
+The pre-analysis plan protects your headline, but it leaves one
+question hanging that the plan cannot answer. How many of the other
+defensible paths would have given you the same answer? Simonsohn,
+Simmons, and Nelson's specification curve answers that by refusing to
+hide. You list every defensible analytic choice in each of the seven
+spec-discipline slots, you multiply them out, and for Maya that gives
+exactly one hundred forty-four specifications. Each is a single point
+in the multiverse. You run all of them, mechanical and fast, and you
+plot the estimates sorted from most negative to most positive on the
+top panel, with a grid below showing which choices produced each point.
+The genius of the picture is the bottom panel. You can read downward
+from any interesting region of the curve and see exactly which fork
+created it. The garden of forking paths is no longer hidden. It is on
+the slide.
+:::
+
+## Reading the Specification Curve
+
+- Where does the sign live? Does it flip across specifications?
+- Where does the pre-registered estimate sit — center or tail?
+- What fraction is significant, and where do the hollow markers cluster?
+- Which row of the bottom panel best separates the curve?
+
+::: callout-tip
+## Key takeaway
+A flat curve sitting below zero with the pre-registered point at its
+median says robust. A curve sweeping from significantly negative
+through zero to significantly positive says the result is an artifact
+of analytic choice.
+:::
+
+::: notes
+Reading the curve is the skill. Maya's reads as a flat sweep from
+about negative two point four to negative zero point four percentage
+points, median around negative one point eight, with one hundred
+thirty-two of one hundred forty-four specifications significant. The
+twelve that are not all combine the wild cluster bootstrap with the
+most aggressive sample trim — the lowest-power corner. Sign never
+flips. Now contrast Sam's momentum curve. It sweeps from significantly
+negative on the left through a fat band of insignificance to
+significantly positive on the right, and every significant positive
+specification shares one choice: equal-weighted, microcaps included.
+Reading downward in one glance tells the whole story. The anomaly is
+not a feature of the cross-section of returns. It is a feature of how
+you weight tiny illiquid stocks. The curve drags that into the light
+and forces Sam's honest sentence onto the page.
+:::
+
+## Trying to Kill the Result
+
+- Placebos — fake dates, fake units, fake outcomes
+- Alternative standard errors — cluster by county, by state, two-way
+- Wild cluster bootstrap when treated clusters are few
+- Multiple-testing correction across the outcome family — Benjamini-Hochberg
+
+::: callout-tip
+## Key takeaway
+A robustness section organized around the reader's doubts disarms
+attacks before they land. A robustness section that only contains
+passes signals you did not try hard enough to fail.
+:::
+
+::: notes
+Chapter eight point two turns the discipline adversarial. You stop
+varying your choices and start attacking your inference itself.
+Devon's wild cluster bootstrap exists because his treated-cluster count
+is small, and the conventional clustered standard error over-rejects
+when clusters are few. The bootstrap flips the sign of each cluster's
+residuals at random under the null and rebuilds the distribution of
+the t-statistic. If the bootstrap p-value agrees with the conventional
+p-value, your significance is real. If the bootstrap says zero point
+one eight where the table said zero point zero one, you do not keep
+the stars. Priya's placebo on a fake treatment year three years before
+any state actually adopted is her parallel-trends test in disguise.
+Leah's family of eight outcomes gets the Benjamini-Hochberg correction
+because the chance of at least one false positive across eight true
+nulls is one in three. The honest report names the family size and the
+correction explicitly.
+:::
+
+## Oster Delta: The Confounder You Did Not Measure
+
+- $\hat\delta$ = how strong unobservable selection must be, relative to observable selection, to explain away the effect
+- $\hat\delta \ge 1$ means a confounder would have to be at least as strong as everything you observed
+- Maya's run: coefficient moves from $-2.2$ to $-1.4$ while $R^2$ climbs from $0.08$ to $0.42$
+- $\hat\delta \approx 4.7$ — robust
+
+::: callout-tip
+## Key takeaway
+Coefficient stability alone proves nothing. Stability relative to how
+much explanatory power the controls added is what matters. Oster's
+delta makes the comparison precise.
+:::
+
+::: notes
+Oster confronts the deepest threat — an omitted variable you never
+measured. The naive idea is that if your coefficient barely moves when
+you add controls, it must be robust. Oster shows that is only half the
+story. A coefficient that stays put while R-squared jumps from zero
+point one zero to zero point five five is far more reassuring than one
+that stays put while R-squared barely rises, because in the first case
+the controls were powerful and the coefficient shrugged them off, and
+in the second the controls were toothless and proved nothing. You
+read three numbers off two regressions, you fix an R-max at one point
+three times the controlled R-squared, and you solve for the delta that
+would drive your effect to zero. Maya's delta comes out at four point
+seven, meaning an unobserved confounder would have to be roughly five
+times as predictive as her full applicant-composition controls to
+explain away the effect. That is implausible enough to defend in
+print.
+:::
+
+## The JSSR Abstract: Two Hundred Fifty Words
+
+- Hook — one sentence with a concrete stake
+- Question — one sentence
+- Data and design — name the identifying assumption verb
+- Headline number in human units, with confidence interval
+- Strongest robustness fact
+- One sentence on what you are not claiming
+
+::: callout-tip
+## Key takeaway
+The abstract is an introduction at one-twentieth scale. The four moves
+of Chapter eight point three — hook, contribution, "we find" preview,
+positioning — compress to ten sentences without losing the discipline.
+:::
+
+::: notes
+The JSSR abstract lives permanently in the Journal of Student
+Scientists' Research index whether or not you submit a full paper. It
+is the single most-read paragraph of your entire ASSIP. The shape is
+fixed and the discipline is the same one Chapter eight point three
+trains for an introduction, just compressed. You open with a concrete
+stake — Maya does not open with "fair lending has been studied"; she
+opens with "mortgage applicants from minority neighborhoods were
+denied at nearly twice the rate of applicants from white
+neighborhoods." You state the question, then the data and design, with
+the identifying-assumption verb calibrated to your design. You give
+the headline number in units a human can feel — "one point eight
+percentage points, about a fifth of the pre-period gap" — with its
+confidence interval. You name the strongest robustness fact in one
+sentence. And you close with one sentence on what you are not
+claiming. The abstract is generated from code, never retyped, so it
+cannot drift from the analysis.
+:::
+
+## The Six-Panel Poster, the Eight-Minute Arc
+
+- Question — one sentence a sixteen-year-old can repeat back
+- Why it matters — one concrete stake
+- Design and identification — the assumption, in plain English
+- Headline result — one number with its confidence interval, shown as a picture
+- Robustness — the specification curve
+- Contribution — what is now known, and what you are not claiming
+
+::: callout-tip
+## Key takeaway
+One beat per panel, one panel per minute, with two minutes of slack
+for the talk to run long. Rehearse it three times against a timer and
+cut until it fits in seven minutes, not eight.
+:::
+
+::: notes
+Eight minutes is not a short version of a long talk. It is a different
+object with room for exactly one idea defended cleanly. Memorize the
+six-beat arc: question, why it matters, design, headline, robustness,
+contribution. One beat per slide, one slide per panel on the poster,
+roughly one minute per beat. The discipline that separates a paper
+from a talk is the table-to-figure translation. A live audience cannot
+read a five-column regression table while you speak. A single
+coefficient with its interval becomes a point with an error bar.
+Coefficients across specifications become a coefficient plot.
+Difference-in-differences becomes an event-study plot. Same number,
+two encodings, chosen for the medium. A table is for a reader who can
+stop and study; a figure is for a listener who cannot. Sam's momentum
+talk does not show the Fama-MacBeth machinery; it shows one sentence
+and one small picture of the sort.
+:::
+
+## Defending Identification Under Questions
+
+- Survivable critique attacks a number — "did you cluster correctly?"
+- Fatal critique attacks the comparison — "your groups were already diverging"
+- For each row of your threats table: prepare the question, the test, the residual concern
+- Honest "I don't know," located, beats any bluff
+
+::: callout-tip
+## Key takeaway
+The questions you will get are the rows of your Chapter seven point
+five threats table. You wrote them down weeks ago. You are not
+improvising — you are reading from a script you authored when you
+were calm.
+:::
+
+::: notes
+The talk is eight minutes; the questions are where the talk is
+actually judged. The good news is that you already did the work. Take
+your threats-and-responses table and turn each row into a prepared
+answer: yes, that is the central worry; if that confounder were
+driving this, we would see this signature; we checked, and we see this
+reassuring result; what I still cannot fully rule out is this, though
+the bound on how bad it could be is this. When the question lands you
+answer in that order. The professional move when you get a question
+you cannot answer is to say "I don't know" with structure — not a
+bare shrug, but a located one. Maya, asked whether her effect would
+generalize to auto loans, does not invent a number; she says her data
+is mortgages, the mechanism is examiner attention, and she would
+expect it to matter wherever there is a comparable exam regime, but
+she would not extend without rerunning. That is a better answer than
+a confident yes.
+:::
+
+## Common Pitfalls
+
+1. Treating a failed robustness test as a setback to be buried, not a finding
+2. Letting verbs drift across sections — abstract hedges, conclusion claims "we prove"
+3. Showing a regression table on a slide nobody can read in four seconds
+4. Bluffing through a question instead of saying a located "I don't know"
+5. Defending a fatal identification critique that the room can see is broken
+
+::: callout-warning
+## Watch out
+Every one of these makes a result that survived the math collapse under
+the eyes of the audience. The math was the easy part.
+:::
+
+::: notes
+Each pitfall has a story. Devon almost buried a failed wild-cluster
+bootstrap until his mentor caught it; the honest paper says "the
+estimate is suggestive but imprecisely estimated" and earns more
+credibility than the three stars he wanted to keep. Leah caught her
+own verb drift on a final read-through — the abstract said "is
+associated with," the conclusion said "we have shown causes." She
+walked every verb back to match her weakest assumption. Priya
+translated every results table into a figure for the talk and kept the
+tables in backup slides for questioners who wanted the fourth
+decimal. Sam practiced one located "I don't know" out loud the night
+before until he could say it without flinching. And Maya rehearsed
+her concession line for the fatal critique that never came — but she
+walked in knowing exactly which retreat position she would take if it
+did. That is the professional posture: prepared for the worst, calm
+in the room.
+:::
+
+## This Week's Deliverable and Look-Ahead
+
+- JSSR abstract — two hundred fifty words, generated from code
+- Research poster — six panels, forty-eight by thirty-six landscape, GMU template
+- Replication packet — one command rebuilds every number from raw data
+- Eight-minute symposium talk — Wednesday, August twelfth
+- Optional: full paper for students pushing toward an undergraduate journal
+
+::: callout-tip
+## Key takeaway
+The repository is the submission. The first thing a JSSR reviewer or
+a symposium judge does is clone it and type one command. Everything
+else is downstream of whether that command works.
+:::
+
+::: notes
+There is no separate final upload. The repository you have been
+committing into since Lab 7 is the submission, with the `pap-filed`
+tag still in its history, the confirmatory commit dated after it,
+deviations log filled in, the compiled poster PDF and the JSSR
+abstract both regenerable by the same one-command build. The capstone
+is two hundred points across four deliverables, and the standard is
+the one this book has pressed since Chapter one point five. A modest
+result you have stress-tested honestly outscores an ambitious one you
+cannot defend. A capstone that writes, unprompted, that its Oster
+delta is zero point four and reports the result as a robust
+association rather than a clean causal effect earns more than one
+that overclaims from the same data. Eight weeks ago you computed an
+average return and thought you had an answer. Wednesday you stand
+beside a poster and defend a result. That is the arc. See you at the
+symposium.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+References are auto-populated by Pandoc from the cited keys. The full
+bibliography for Week 8 — Simonsohn, Simmons, and Nelson 2020;
+Cameron, Gelbach, and Miller 2008 and 2011; Bertrand, Duflo, and
+Mullainathan 2004; Petersen 2009; Oster 2019; Benjamini and Hochberg
+1995; Elnahas, Gao, Hossain, and Kim 2024; Gao and Sun 2019 — lives
+in the textbook's bibliography file and in each chapter's footnote
+block.
+:::

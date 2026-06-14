@@ -1,0 +1,256 @@
+---
+title: "Week 7 — Independent Research Project I: From Question to Pre-Analysis Plan"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+author: "Prof. Lei Gao, George Mason University"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+    toc: false
+    fig-width: 7.5
+    fig-height: 4.2
+    fig-dpi: 200
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+bibliography: ../bibliography.md
+---
+
+# Week 7 — From Question to Pre-Analysis Plan {.title}
+
+::: notes
+Welcome to Week 7. For six weeks you have been a passenger — datasets arrived pre-cleaned, regressions had known answers in the back of the book, and every research question was really a teaching device. Starting today the scaffold comes down. The rest of the camp is your own project: a real empirical question, on real data you acquire and clean yourself, answered with a design you choose and defend. This week we build the design half of your capstone. By Friday you will have a falsifiable question, data on disk, a pre-analysis plan filed as a tagged Git commit, an analysis-ready panel, and a one-page identification memo. Next week is the estimation half. Today, I want to reveal the trick that experienced researchers use to cross the gap between a vague interest and a defensible empirical project — because it is a trick, a repeatable procedure, not a flash of genius you either have or you do not.
+:::
+
+## Learning Objectives
+
+- Turn a puzzle into a falsifiable, signed hypothesis
+- Pull data reproducibly — pinned, cached, logged
+- File a short-form pre-analysis plan before peeking at outcomes
+- Build a merged panel that survives a referee's review
+- Defend one identifying assumption in writing
+
+::: callout-tip
+## Key takeaway
+By Friday you will own the design half of your capstone — a question, a dataset, a PAP, and an identification memo, all in one tagged repo.
+:::
+
+::: notes
+Four skills, one week. Notice what is not here: running the regression. That is Week 8. This week is design, and design is what separates a project that survives questioning from one that collapses under the first sharp question from the audience. Maya, Devon, Priya, Sam, and Leah have each carried a puzzle since Week 1. By the end of this week each of them — and each of you — has converted that puzzle into a contract: a one-sentence spec, a dated PAP, a clean panel, and a memo. The repository you stand up this week is your capstone deliverable. Weeks 7 and 8 both live inside it.
+:::
+
+## From Puzzle to Researchable Question
+
+- Puzzle: a mood, no prediction, cannot be wrong
+- Hypothesis: outcome, treatment, direction, window
+- Devon's puzzle: "crypto crashes feed on themselves"
+- Refined: "DEX volume spikes on the day of a depeg"
+- Now Devon can be wrong — that is a feature
+
+::: callout-tip
+## Key takeaway
+A research question commits to a sign. If no result could refute it, it is not a scientific claim.
+:::
+
+::: notes
+A puzzle is a feeling that something is interesting. Crypto crashes seem to feed on themselves. Insurers are pulling out of wildfire states. Banks treat some borrowers differently. Puzzles are necessary — you should not work on something boring for five weeks — but a puzzle is not a research question, because you cannot be wrong about a puzzle. Watch Devon's transformation. The vague crypto puzzle becomes: when a large stablecoin loses its dollar peg, trading volume on decentralized exchanges spikes within the same day. Notice what sharpening did. It named the trigger, named the outcome, named the timing, and committed to a direction — volume goes up, not down, not changes. Now if Devon pulls the data and volume does not move, the hypothesis is dead. A hypothesis you cannot kill is a hypothesis you cannot learn from.
+:::
+
+## Three Filters: So What, Who Cares, What's New
+
+- So what — would either answer change a decision?
+- Who cares — is there a conversation to join?
+- What's new — does your combination add anything?
+- Run them in order; each is cheap and kills the most ideas
+- Maya's HMDA question survives all three
+
+::: callout-tip
+## Key takeaway
+Run "so what" first because it is cheapest. Run "what's new" last, after the scan, because you cannot know what is new until you know what exists.
+:::
+
+::: notes
+A sharp falsifiable hypothesis can still be a bad project, because being answerable is not the same as being worth answering. So you run three filters. So what — if you found the answer, either answer, would a regulator price risk differently, an investor trade differently, a borrower be treated more fairly? Who cares — does this sit inside a conversation, like the one Maya joined by reading Bartlett and Bhutta on fair lending, or is it floating in empty space? What's new — new data, new period, new outcome, new identification, or a careful replication in a new setting. The order matters. So what is cheapest and kills most ideas. Who cares tells you which literature to scan. What is new requires the scan first. An idea that survives all three is not guaranteed to be good — feasibility can still kill it — but an idea that fails any one of them is not worth carrying further, no matter how clever the econometrics would be.
+:::
+
+## The Cast's Feasible Projects
+
+- Maya: HMDA denial gaps, RD at credit-score cutoff
+- Devon: stablecoin depegs and DEX volume, event study
+- Priya: FEMA disasters and insurance cost, DiD
+- Sam: 12-month momentum on yfinance, portfolio sort
+- Leah: USPTO patent grants and forward citations, RD
+
+::: callout-tip
+## Key takeaway
+Pick a question, then run the Weeks 3–4 catalog backward: where is the variation in your treatment that is plausibly unrelated to the confounders you fear?
+:::
+
+::: notes
+Five students, five feasible questions, five real datasets that are genuinely open or accessible through the program. Each pairing was chosen so the data is obtainable for free this week, the scope fits five weeks, and an identification strategy from Weeks 3 and 4 is at least available. Use these as templates. Maya starts with home-field advantage because HMDA is the same dataset she met in the Week 4 fair-lending lab. Devon's depeg has a clean on-chain timestamp, which is what makes it identifiable as an event study. Priya's FEMA declarations give her a clean dated treatment for difference-in-differences. Sam's momentum question is deliberately descriptive-leaning — he can build a clean portfolio sort on a laptop. Leah's patent grants offer a sharp cutoff at the application-quality margin. Pick a question first, then run the Weeks 3 and 4 catalog backward to find your design — never the other way around.
+:::
+
+## Data Acquisition: Pin, Cache, Log
+
+```{.python}
+import os, hashlib, json, datetime, pathlib
+
+FRED_KEY = os.environ["FRED_API_KEY"]   # secrets via env, never in code
+
+def log_pull(logfile, source, query, df):
+    record = {
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "source": source, "query": query,
+        "n_rows": int(len(df)), "n_cols": int(df.shape[1]),
+        "content_sha256": hashlib.sha256(
+            df.to_csv(index=False).encode()).hexdigest(),
+    }
+    with open(logfile, "a") as f:
+        f.write(json.dumps(record) + "\n")
+```
+
+::: callout-tip
+## Key takeaway
+A pull is reproducible only if it is pinned to a snapshot, cached to disk, and logged with a content hash.
+:::
+
+::: notes
+Getting data is the slowest, most error-prone part of empirical work, and almost none of it is glamorous. It is API keys and user-agent headers and pagination and license agreements. But it is also where reproducibility is won or lost. Three rules cut across every source. Rule one — secrets live in environment variables, never in code. The instant you type your API key into a notebook, that key is in your shell history, your git history, and on GitHub forever. Rule two — licensed data, meaning CRSP, Compustat, IBES, TRACE, stays on GMU infrastructure, read-only on WRDS or Hopper, never copied to your laptop. Rule three — a pull is reproducible only if pinned to a snapshot date, cached to disk so every downstream step reads from the cached file, and logged with the query, the row count, and a SHA-256 content hash. Six months from now when a reviewer asks where a number came from, the log answers.
+:::
+
+## The Pre-Analysis Plan: Why It Exists
+
+- One test of a true null: $P(p<0.05) = 0.05$
+- Twenty tests of true nulls: $1 - 0.95^{20} \approx 0.64$
+- Five binary forks = 32 specifications
+- Maya's afternoon: outcome-aware choices steered toward a star
+- PAP collapses 32 forks to one confirmatory test
+
+::: callout-tip
+## Key takeaway
+You cannot fish in a pond whose boundaries you nailed down before you knew where the fish were.
+:::
+
+::: notes
+Here is the math you proved in Chapter 1.5. When the null is true the p-value is uniform on zero to one. A single test crosses 0.05 by luck 5 percent of the time. Run twenty independent tests of true nulls and the chance that at least one crosses is one minus 0.95 to the twentieth — about 64 percent. Better than a coin flip from pure luck. Now picture Maya's afternoon. She did not consciously run twenty tests, but every fork in her thicket — drop small lenders, winsorize income, add quadratic LTV, purchase-only, cluster by lender — doubles the paths to a starred result. Five binary choices is 32 specifications. Worse, she walked the forks with the outcome in view, pulled at each step toward the branch that nudged the coefficient her way. Andrew Gelman calls this the garden of forking paths. The pre-analysis plan is the device that stops it: write the spec down before you can see the outcome, and 32 forks collapse to one.
+:::
+
+## Five Components of a Short-Form PAP
+
+1. Hypotheses, stated directionally with a sign
+2. Primary specification — all seven CONVENTIONS slots
+3. Multiple-testing plan — primary vs secondary, BH-FDR
+4. What would falsify the hypothesis
+5. Planned robustness, committed to be reported either way
+
+::: callout-tip
+## Key takeaway
+A PAP is a contract with your future self. Five components, written in order, before you peek.
+:::
+
+::: notes
+The short-form PAP comes from Ben Olken's 2015 piece in the Journal of Economic Perspectives, the most balanced thing written on the topic. Five components, written in order. One — hypotheses stated directionally. Not "race is related to denial," which is a coin that lands heads on any nonzero coefficient, but "minority applicants face higher denial rates conditional on observables." Two — the primary specification with all seven slots from CONVENTIONS section 4: outcome, treatment, controls, fixed effects, clustering, sample, identifying assumption in one sentence. Three — the multiple-testing plan, declaring primary versus secondary outcomes, then Benjamini–Hochberg false-discovery-rate control within each family. Four — what result would make you abandon the hypothesis, not merely fail to confirm. Five — planned robustness, with the promise to report each check whichever way it comes out. Each component forces a specific kind of honesty before the data can flatter you.
+:::
+
+## Benjamini-Hochberg in One Slide
+
+For $m$ p-values sorted ascending, find the largest $k$ with
+
+$$p_{(k)} \le \frac{k}{m}\,\alpha.$$
+
+Reject all hypotheses with rank $\le k$.
+
+- With $m=5$, $\alpha=0.05$, thresholds are $\{0.01, 0.02, 0.03, 0.04, 0.05\}$
+- p-values $\{0.008, 0.012, 0.039, 0.041, 0.330\}$: BH keeps the two smallest
+
+::: callout-tip
+## Key takeaway
+BH-FDR is the modern default for families: lenient where Bonferroni is harsh, honest where p-fishing is tempting.
+:::
+
+::: notes
+Here is the recipe you will code in nb7.3. Sort your m p-values from smallest to largest. The k-th smallest is compared against k over m times alpha. Find the largest rank k for which the p-value is still below its threshold. Reject everything at that rank and below. Watch the worked example. Five income-band p-values: 0.008, 0.012, 0.039, 0.041, 0.330. The Benjamini-Hochberg thresholds with alpha 0.05 are 0.01, 0.02, 0.03, 0.04, and 0.05. Compare from the top: 0.330 fails, 0.041 fails, 0.039 fails, 0.012 is below 0.02, so k equals two and you declare the two smallest as discoveries. Bonferroni would have held every band to 0.01 and kept only one. That is why FDR is the default for families. The discipline the PAP enforces is that you commit the family list before you have the p-values, so the correction cannot be spoofed.
+:::
+
+## Building the Panel: Crosswalks and validate=
+
+- CRSP keys on PERMNO, Compustat keys on GVKEY
+- Tickers are nicknames, not identifiers — "C" was Chrysler
+- Use the CCM link table — `LINKTYPE in ('LU','LC')`, with date window
+- `pd.merge(..., validate="many_to_one")` — assert cardinality
+- Always check the match rate before computing anything
+
+::: callout-tip
+## Key takeaway
+A dataset is not data; it is a sequence of decisions. The two amateur skips: counting rows and checking match rates.
+:::
+
+::: notes
+Sam pulled CRSP returns and Compustat fundamentals and discovered his question lives in neither file. To compute book-to-market for firm i in month t, he has to join them — and the moment he typed merge, quiet decisions became loud ones. CRSP keys on PERMNO, a security identifier; Compustat keys on GVKEY, a company identifier; these are not the same kind of object. Tickers are nicknames, not identifiers — "C" meant Chrysler before it meant Citigroup. The crosswalk is the CRSP-Compustat Merged link table. Keep LINKTYPE LU or LC, respect the LINKPRIM primary flag, and join on the date window LINKDT to LINKENDDT, because the same PERMNO may belong to a different GVKEY outside that window. Then the one keyword that saves you: pandas merge with validate equals many to one. Pandas raises a MergeError instead of silently doing a Cartesian explosion. Always check the match rate. If only 60 percent link, stop — something is wrong with your identifiers or your date filter.
+:::
+
+## The Identification Memo
+
+> Our estimate of **[the effect]** is **causal / credible** as long as **[the assumption]**, which we defend by **[the design feature]**.
+
+- Name the threat, not "endogeneity"
+- The sentence is allowed to be the longest in your paper
+- Threats-and-responses table — four columns, residual concerns mandatory
+- Lead with your most dangerous threat
+- Match the verb to the evidence
+
+::: callout-tip
+## Key takeaway
+If you cannot state the one-sentence identifying assumption, you do not yet have a design — you have a regression and a hope.
+:::
+
+::: notes
+There is one page in your capstone that matters more than any other, and it is not the abstract. It is the identification memo — one paragraph stating your identifying assumption, one table listing every reason a skeptic might not believe you. The sentence has three blanks. First, what you are estimating — the effect, not the coefficient. Second, the assumption — name the specific threat, not the word endogeneity. Maya's draft three reads: "Our estimate of the effect of state fair-lending examinations on the county-level minority-white denial gap is credible as long as adopting and never-adopting states would have moved in parallel absent the examinations, which we defend with a flat pre-trend, a Callaway-Sant'Anna comparison against never- and not-yet-treated states, and the institutional fact that adoption timing was driven by legislative calendars unrelated to local lending conditions." That sentence is a contract. It tells the referee exactly what to attack and exactly what evidence you are betting on. The threats table makes that contract operational with a mandatory residual-concern column — because every real design has residual concerns, and a reader who sees none assumes you have not looked hard enough.
+:::
+
+## Common Pitfalls
+
+1. Vague hypothesis with no signed direction
+2. Picking a method first, then hunting for a question
+3. Filing the PAP after peeking at outcomes
+4. Merging on ticker instead of the dated CCM crosswalk
+5. "We control for endogeneity" — naming nothing
+
+::: callout-warning
+## Watch out
+Each of these errors is invisible at the time you make it. Each one is fatal when a referee asks why.
+:::
+
+::: notes
+Every one of these pitfalls feels reasonable in the moment. A vague hypothesis feels safe because it cannot be wrong, but a hypothesis that cannot be wrong cannot teach you anything either. Picking a method first — "I want to do a regression discontinuity" — and then hunting for a question is the most common mistake in first projects; pick a question, then run the catalog backward. Filing the PAP after peeking is the silent killer — it converts the entire design from confirmatory to exploratory, and you may not even notice you did it. Merging on ticker glues Chrysler's returns to Citigroup's fundamentals, silently, with no error message. And "we control for endogeneity" is the phrase CONVENTIONS section 4 forbids — you have to name the threat. Every published-then-retracted finding I can think of failed one of these tests. Tie each pitfall to a real story when you teach it; students remember stories, not bullet points.
+:::
+
+## This Week's Deliverable + Look-Ahead
+
+- Capstone repo with `data/`, `src/`, `notebooks/`, `paper/`
+- `PRE-ANALYSIS-PLAN.md` tagged as `pap-filed` commit
+- Analysis panel built with `validate=` and a match-rate report
+- `IDENTIFICATION-MEMO.md` with sentence + threats table
+- Next week: estimation, robustness, and the write-up
+
+::: callout-tip
+## Key takeaway
+The repository you build this week is your capstone. Get the scaffolding right now and the rest of the camp is building on rock.
+:::
+
+::: notes
+By Friday submit one tagged commit containing the short-form PAP, the identification memo, and the machinery that makes them reproducible — pinned environment, git-ignored licensed data, secrets in env vars, every pull pinned and logged. The lab walks you through the repository scaffold step by step. Mentor session 7 is the kill session — bring the three or four candidates you scored in PS 7.1, and we will apply kill-criteria to your own work out loud. The biggest difference between people who finish good research and people who do not is not cleverness at generating ideas; it is the willingness to kill the ones you have already fallen in love with, early, before the love becomes sunk cost. Next week we run the regression you registered today and discover what your data actually say. The contract you sign with yourself this week is what makes that discovery credible to anyone else.
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+::: notes
+The references slide is auto-populated by Pandoc from cited keys. Olken 2015 in the Journal of Economic Perspectives is the anchor reading for the pre-analysis plan; Bartlett and colleagues for the fair-lending design Maya inherits; Callaway and Sant'Anna for the staggered difference-in-differences estimator named in Maya's identifying-assumption sentence.
+:::
