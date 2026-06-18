@@ -1,0 +1,46 @@
+---
+title: "The Four-Slot Hypothesis Grammar"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# The Four-Slot Hypothesis Grammar {.title}
+
+::: notes
+Welcome back to Chapter seven-point-one, part two of eight. In part one we sharpened a puzzle into a falsifiable hypothesis — Devon's depeg idea named a trigger, an outcome, a timing, and a direction. Now we make that structure explicit as a grammar with four slots, because you will run every project idea through it, and because it connects directly to the empirical-spec discipline this whole book runs on.
+:::
+
+## Slot 1 and Slot 2 — Outcome and Treatment
+
+- **Outcome $y$** — a number you'd put in a column, for many units
+- "DEX volume," "loan approval," "premium," "next-month return," "citations"
+- No number in mind? You have a *mood*, not an outcome
+- **Treatment $D$** — the variation whose effect you want; it must *vary*
+- No variation, no study: nothing to compare
+
+::: notes
+The first slot is an outcome — call it y — a thing you can measure, ideally a number, for many units. Decentralized-exchange trading volume, loan approval, a homeowner premium, a next-month return, citations to a patent. If you cannot say what number you would put in the y column of a dataset, you do not yet have an outcome; you have a mood. The second slot is a treatment or key variation — call it D — the thing whose effect on y you want to know, and which must vary across your units. A stablecoin depeg, being above a credit-score cutoff, a new wildfire-pricing regulation, a momentum signal, winning a patent grant. The rule is simple: no variation, no study. If every unit has the same value of D, there is nothing to compare.
+:::
+
+## Slot 3 and Slot 4 — Direction and Unit-and-Window
+
+- **Direction or magnitude** — the prediction; up or down
+- "Larger for group A than group B" — this is what makes it falsifiable
+- **Unit and window** — *whose* outcome, over *what* period
+- "U.S. mortgage applicants, 2018–2022" · "ERC-20 stablecoins, 2022–2024"
+- Four slots = CONVENTIONS §4's spec, written *before* you have data
+
+::: notes
+The third slot is a direction or magnitude — the prediction. Up or down. Larger for group A than for group B. This is the slot that makes the hypothesis falsifiable; without a committed direction, no observation can contradict you. The fourth slot is a unit and a window — whose outcome, over what period. U.S. mortgage applicants, 2018 to 2022. ERC-20 stablecoins, 2022 to 2024. S&P 500 firms, monthly, 2010 to 2024. You met this grammar before without it being labeled. CONVENTIONS section four — the empirical-spec discipline this whole book runs on — demands that every regression name its outcome, treatment, controls, fixed effects, clustering, sample, and identifying assumption. A sharp hypothesis is just the first, second, and last of those, written down before you have any data. The rest of Week Seven fills in the middle slots.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Every sharp hypothesis fills four slots: a measurable **outcome**, a **treatment that varies**, a **signed direction**, and a **unit-and-window**. That is CONVENTIONS §4 written before any data exists. Next: the three filters that decide whether a sharp idea is worth answering at all.
+:::
+
+::: notes
+To summarize part two: every sharp hypothesis fills four slots — a measurable outcome, a treatment that genuinely varies, a signed direction that lets the data prove you wrong, and a unit and window that fix whose outcome over what period. That four-slot grammar is just CONVENTIONS section four written before you have any data. But being answerable is not the same as being worth answering. In part three we begin running a sharp idea through three brutal filters — so what, who cares, and what's new — that kill most ideas cheaply before you waste a week pulling data.
+:::

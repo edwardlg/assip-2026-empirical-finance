@@ -1,0 +1,63 @@
+---
+title: "Maya's Worked Memo, End to End"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Maya's Worked Memo, End to End {.title}
+
+::: notes
+Welcome back to the identification memo, part eight of nine. In part seven we covered the honesty rules — state the residual, match the verb, never bury the hard question. Now we write the whole memo end to end for the project Maya has carried since Week One. This is the lesson made concrete on a real dataset: a specification, an identifying-assumption paragraph, and a threats table read the way a referee would read it.
+:::
+
+## The Specification
+
+- Staggered DiD on HMDA: did fair-lending exams cut the denial gap?
+- Outcome: county-year minority–white mortgage-denial gap
+- Treatment: active state examination program, staggered adoption
+- Controls enter via covariate-conditional parallel trends
+- Callaway–Sant'Anna against never- and not-yet-treated controls
+- State-clustered inference; placebo reassigns adoption years
+
+::: notes
+Maya's project is a staggered difference-in-differences on HMDA data, asking whether state fair-lending examination programs reduced the minority-white gap in mortgage-denial rates. This is the exact design of Chapter four-point-two, pointed at the dataset Professor Gao and his coauthor used to ask whether same-sex couples were treated differently when they applied to borrow. The outcome is the county-year minority-white mortgage-denial gap from the HMDA loan-application register. The treatment is an indicator for whether the applicant's state had an active fair-lending examination program that year, with staggered adoption and never-adopters as clean controls. Applicant-composition controls — income, loan-to-value, requested-loan-amount — enter through covariate-conditional parallel trends. Fixed effects for county and year are absorbed inside the group-time estimator, inference is clustered by state, and a placebo check randomly reassigns adoption years.[^gaosun]
+:::
+
+## The Identifying-Assumption Paragraph
+
+- Estimate is **credible** — not causal — and the verb is earned
+- Assumption: adopting and never-adopting gaps would move in parallel
+- Defended three ways, each filling the third blank
+- Flat event-study leads; clean Callaway–Sant'Anna controls
+- Timing set by legislative calendars, not local lending shocks
+- That paragraph is the contract the whole paper defends
+
+::: notes
+The identifying-assumption paragraph reads: our estimate of the effect of state fair-lending examination programs on the county-level minority-white mortgage-denial gap is credible as long as, absent the programs, the denial gaps in adopting and never-adopting states would have evolved in parallel. Notice the verb is credible, not causal, and it is earned. The paragraph then defends that per-cohort parallel-trends assumption three ways: with an event study whose pre-treatment leads are flat and statistically indistinguishable from zero; with a Callaway-Sant'Anna estimator that forms only clean comparisons against never- and not-yet-treated states, never the already-treated states that contaminate pooled two-way fixed effects under dynamic effects; and with the institutional fact that each state's program timing was set by its legislative and budget calendar, argued to be unrelated to contemporaneous shocks to local mortgage markets. That paragraph is the contract. Everything in the paper defends it.
+:::
+
+## Reading The Table Like A Referee
+
+- Row one is the hardest question — parallel trends — and it leads
+- Each column three is the *right kind* of response
+- Test where testable: pre-trends, composition, placebo
+- Argue where not: a compound, co-timed policy shock
+- **No residual-concern cell is empty** — none honestly could be
+- A paper on this spine can be attacked, but not ambushed
+
+::: notes
+Maya's table has six rows, led by the differential pre-trend — the hardest question, where it belongs. Below it: the forbidden comparison and negative weights, answered by the Callaway-Sant'Anna design choice and a Goodman-Bacon decomposition; anticipation, partly testable by inspecting the quarters just before adoption; a compound policy shock, only arguable from legislative records because no test detects a perfectly co-timed policy; the outcome being a composite measure, addressed with a doubly-robust composition-matched estimate; and few-treated-cluster inference, answered with state-clustered errors plus the placebo permutation. Read it the way a referee would. The first row is the hardest question and it leads. Every column three is the right kind of response — a test where the threat is testable, an institutional argument where it is not. And no residual-concern cell is empty, because none honestly could be. The sentence says credible, not causal, and every leftover worry is on the page where a reader can see Maya already saw it. A paper built on this spine can be attacked — every paper can — but it cannot be ambushed.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Maya's memo is the lesson made concrete: a **credible** sentence, an assumption paragraph defended three ways, and a six-row table led by its hardest threat with no empty residual cell. The verb matches the evidence, the tests sit where threats are testable, and the arguments sit where they are not. A paper on this spine can be attacked, but never ambushed. Next: how the memo becomes the Week-8 paper.
+:::
+
+::: notes
+To summarize part eight: Maya's worked memo shows the whole discipline on a real dataset. The specification is a staggered difference-in-differences on HMDA. The identifying-assumption paragraph uses the verb credible, not causal, and defends parallel trends three ways — flat leads, clean Callaway-Sant'Anna controls, and exogenous legislative timing. The six-row table leads with the hardest threat, puts a test where the threat is testable and an argument where it is not, and leaves no residual-concern cell empty. A paper built on this spine can be attacked but cannot be ambushed. In part nine we trace how this one page becomes the spine of your entire Week-Eight paper, and how the notebook enforces the honesty.
+:::
+
+[^gaosun]: Gao, L., & Sun, H. (2019). Lending practices to same-sex borrowers. *Proceedings of the National Academy of Sciences*, 116(19), 9293–9302.

@@ -1,0 +1,54 @@
+---
+title: "Now Kill Your Own — and Commit"
+date: "2026-08-03"
+---
+
+# Now Kill Your Own — and Commit {.title}
+
+::: notes
+Welcome back to Mentor Session seven, part four of four. In part three I walked you through two of my own funnels — the C-S-R paper rescued by a clean non-fundamental shock, and the municipal-borrowing project that traveled the funnel over years. Both lived or died on the same two questions: where is the clean variation, and can I measure and get this? Now we point those questions at your work. You walked in with three or four candidates from problem set seven-point-one. You'll walk out having killed at least one on purpose and committed hard to one, with a runner-up in reserve.
+:::
+
+## The Two Questions, Turned on You
+
+- Take the candidate you are **most** attached to
+- Answer in one sentence each: *where is the clean variation?*
+- And: *can I actually measure and get this, in my time?*
+- Be honest — attachment is exactly what the furnace is for
+
+::: notes
+Step back from my projects to yours. Across both my cases, the same two questions decided whether a version lived or died: where is the clean variation, and can I measure and get this in the time I have? Take the candidate from problem set seven-point-one you're most attached to — the one you'd least like to kill — and answer both honestly, in one sentence each. Your attachment is exactly what the furnace exists to overcome, because the idea you love is the one your instincts defend past the point of reason. Then do the harder thing: take the candidate you scored lowest and, instead of discarding it, try to find the one move — a cutoff, a dated policy, a clean event, or a non-fundamental shock like the C-S-R paper's — that would rescue it. If no such move exists, say so plainly.
+:::
+
+## Commitment Is the Other Half
+
+- Once the furnace has run, **stop shopping** for a better idea
+- A good question you **finish** beats a brilliant one you don't
+- Inability to ever commit is **just as fatal** as a bad question
+- The evidence to commit: the two questions both answered cleanly
+
+::: notes
+Commitment is the other half of killing. Once the furnace has run, you stop shopping for a better idea and start building. A good question you finish beats a brilliant one you don't. Here's the part students underweight: the inability to ever commit is just as fatal to a five-week project as a bad question. If you keep your whole portfolio of ideas alive out of fear, you haven't been careful — you've refused to decide, and that is a decision to finish nothing. So what evidence should make you commit? Precisely the two questions answered cleanly: you can point to where the clean variation comes from, and confirm you can get the data in time. When both hold for one candidate, commit, and put your second-best in reserve.
+:::
+
+## Graded on the Defense
+
+- Your capstone is graded on the **defense**, not the cleverness
+- Phase 2's first question: *what did you consider and reject, and why?*
+- A good answer **shows the furnace ran**
+- Write the **kill-or-commit memo** — bring it next week
+
+::: notes
+One more thing about what we reward. Your capstone is graded on the defense, not the cleverness of the idea. The first thing I'll ask in Phase two is: what did you consider and reject, and why? A strong answer shows the furnace ran — you generated several candidates, killed most on purpose, and committed to one for reasons you can state. A weak answer reveals you kept the first idea you liked. That's why this week's reflection prompt makes you write your own kill-or-commit memo. For every candidate, run the so-what test both ways, scan the fatal-flaw checklist, and name where the clean variation would come from. Then kill at least one on purpose, commit to one in the Conventions section-four sentence-spec — outcome, treatment, controls, fixed effects, clustering, sample, identifying assumption — and name a one-line runner-up. Bring it next week.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A researcher's real skill is generating **many** ideas, killing most **on purpose and without grief**, and committing **hard** to one. Run your candidates through the furnace, kill at least one, commit to one with a runner-up — then write the kill-or-commit memo. Next: Chapter 7.2 turns that committed sentence into a working design.
+:::
+
+::: notes
+To summarize part four, and the whole session: a researcher's real skill is not having one brilliant idea — it is generating many, killing most on purpose and without grief, committing hard to one, and knowing the difference between a project that is merely hard and one that is dead. Turn the two questions on your candidates: where is the clean variation, and can I get the data in time. Kill at least one on purpose, commit to one with a runner-up, and remember that never committing is as fatal as a bad question. Write your kill-or-commit memo and bring it back. Next, in Chapter seven-point-two, we take that committed sentence and turn it into a working empirical design — outcome, treatment, and identification, built out for real. See you there.
+:::

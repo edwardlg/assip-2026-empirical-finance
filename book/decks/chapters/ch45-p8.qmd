@@ -1,0 +1,45 @@
+---
+title: "AKM Inference & Back to IV"
+date: "2026-07-13"
+---
+
+# AKM Inference & Back to IV {.title}
+
+::: notes
+Welcome back to Chapter four-point-five, part eight of ten. In part seven we met the second identification view — Borusyak, Hull and Jaravel put the burden on quasi-random shifts across many industries. Now the third paper, which concerns inference rather than identification and bites under both views, and then we map the whole chapter back onto the instrumental-variables vocabulary of Week Three: relevance, exclusion, and the two strategies for arguing the same untestable restriction.
+:::
+
+## AKM: The Standard Errors Are the Sneaky Problem
+
+- Adão, Kolesár & Morales (2019): about **inference**, not identification
+- Regions with similar shares are exposed to the **same** shocks
+- Auto-heavy zones on opposite coasts → correlated errors, **no shared cluster**
+- Ordinary region/state clustering **misses** it → SEs too small
+- AKM-robust (or BHJ shock-level) SEs are the honest choice
+
+::: notes
+There is a third paper you must know, because it concerns inference, not identification, and it bites under both views. Adão, Kolesár and Morales, in twenty nineteen, pointed out that regions sharing similar industry shares are effectively exposed to the same shocks, which induces a correlation in their regression errors that ordinary clustering — by region or by state — completely misses. Two commuting zones on opposite coasts that are both auto-heavy will have correlated outcomes through the common auto shock, even though they share no geographic cluster. Standard shift-share standard errors are therefore too small, sometimes wildly, and the over-rejection can be severe. Adão, Kolesár and Morales derive standard errors valid under this cross-regional correlation induced by shared exposure; the Borusyak, Hull and Jaravel shock-level regression delivers correct inference by construction, clustering at the shock level. The Chapter two-point-four lesson returns in a new guise: the structure of your design dictates the structure of your dependence, and the wrong clustering lies to you about precision. When you report a shift-share result, use AKM-robust or shock-level standard errors, not vanilla region-clustered ones.
+:::
+
+## Relevance and Exclusion, Shift-Share Edition
+
+- **Relevance**: regress realized shock on $B_r$; want a healthy first-stage F
+- Significance is not strength — use robust / effective-F diagnostics (Ch 3.5)
+- **Exclusion**: $B_r$ affects $Y$ only through the local shock
+- **GPSS route**: exogenous *shares* → any shifts as weights
+- **BHJ route**: exogenous *shifts* → any shares as exposure
+
+::: notes
+Now map the chapter onto the two IV conditions, because a shift-share instrument earns no exemptions. Relevance is exactly as before, and exactly as testable. The first stage regresses the realized local shock — employment growth, or credit growth — on the constructed instrument and the controls; you want a large, precisely-estimated coefficient and a healthy first-stage F. Regions predicted to be hit hard should actually have been hit hard. But heed Chapter three-point-five's warning: significance is not strength, so use robust and effective-F diagnostics. A weak shift-share first stage drags two-stage least squares back toward OLS just as surely as any weak instrument. Exclusion is where the structure earns its keep. The shift-share exclusion restriction is that the instrument affects the outcome only through the realized local shock and is uncorrelated with the error. Since the instrument is shares times shifts, that covariance can be made to vanish by making either ingredient exogenous. The Goldsmith-Pinkham route assumes the shares are exogenous, so any shifts will do as weights, and you defend it region-by-region. The Borusyak, Hull and Jaravel route assumes the shifts are exogenous, so any shares will do as exposure, and you defend it industry-by-industry.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**AKM:** regions with similar shares share shocks, so ordinary clustering understates uncertainty — use shock-robust standard errors. And it is **still IV**: relevance is testable (first-stage F, robustly); exclusion is arguable, sourced from *either* the shares (GPSS) or the shifts (BHJ). Next: two shots at one assumption, the code, and closing the arc.
+:::
+
+::: notes
+To summarize part eight: Adão, Kolesár and Morales warn that the standard errors are the sneaky failure — regions with similar industry shares are exposed to the same shocks, so their errors are correlated even across distant geographic clusters, and ordinary region clustering understates your uncertainty. Use AKM-robust or shock-level standard errors. And the whole chapter maps cleanly back onto Week Three: a shift-share instrument is still an instrument, so relevance is testable through a robust first-stage F, and exclusion is arguable — sourced from the shares the Goldsmith-Pinkham way or from the shifts the Borusyak, Hull and Jaravel way. In part nine we draw out the deep lesson — two shots at one untestable assumption — walk the runnable code that builds and decomposes an instrument, and close the causal-inference arc of the entire camp.
+:::

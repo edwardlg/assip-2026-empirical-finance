@@ -1,0 +1,67 @@
+---
+title: "The Two-Sign Rule, and Why Controls Are a Bet"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Two-Sign Rule, and Why Controls Are a Bet {.title}
+
+::: notes
+Welcome back to Chapter two-point-five, part four of nine. In part three we derived that omitted variable bias equals beta-two times delta-one, a product of two slopes. You rarely know its magnitude, but you can almost always reason about its sign — enough to know whether your estimate is too big or too small. This part gives you the two-sign rule, works Maya's case and a finance example, then dismantles the belief that you can control your way to the truth.
+:::
+
+## The Two-Sign Rule
+
+- Bias sign = sign of $\beta_2$ times sign of $\delta_1$
+- $(+)(+)\to$ up, $(+)(-)\to$ down, $(-)(+)\to$ down, $(-)(-)\to$ up
+- "Same signs push up, opposite signs push down"
+- Sign of effect on $y$, times sign of correlation with $x$
+
+::: notes
+The sign of the bias, beta-two times delta-one, is just the product of two signs. Find the sign of the omitted variable's effect on the outcome, beta-two, and the sign of its correlation with your regressor, delta-one, then multiply. Same signs give positive bias, pushing your estimate too high. Opposite signs give negative bias, pushing it too low. The mnemonic: same signs push up, opposite signs push down. That is the entire rule, and it gives the direction of contamination even when you cannot measure the size.
+:::
+
+## Maya's Case, Worked
+
+- $\beta_2$: effect of creditworthiness $C$ on approval — **positive**
+- $\delta_1$: slope of $C$ on $D$ — **negative** (group $D{=}1$ lower $C$)
+- Product $(+)(-) = -$: bias is **negative**
+- Her raw $D$ coefficient **overstates** the penalty — an upper bound
+
+::: notes
+Maya's regressor is the demographic indicator D, coded so the disadvantaged group is D-equals-one; her outcome is approval; the omitted variable is creditworthiness C. Two signs. First, beta-two, the effect of creditworthiness on approval: positive — more creditworthy applicants are approved more often. Second, delta-one, the slope of C on D: the D-equals-one group has lower average measured creditworthiness, so regressing C on D gives a negative slope. The product, positive times negative, is negative. So her short-regression coefficient overstates the approval penalty against group D-equals-one. The honest statement is not that there is no discrimination — but that the raw D coefficient is an upper bound on the disadvantage attributable to D itself, inseparable from creditworthiness without controlling for C, or better a Week Four design comparing applicants identical on creditworthiness.
+:::
+
+## A Second Example: Sam's Momentum Signal
+
+- Sam regresses next-month return on momentum, omits firm **size**
+- Suppose $\beta_2 > 0$ (size raises returns), $\delta_1 > 0$ (correlated)
+- Then $(+)(+) = +$: momentum coefficient biased **up**
+- He overstates momentum — establish the actual signs, then include size
+
+::: notes
+A second example flips the mechanics. Sam regresses a stock's next-month return on a momentum signal but omits firm size. Suppose size raises returns, so beta-two is positive, and momentum is positively correlated with it, so delta-one is positive. Then positive times positive is positive: Sam's momentum coefficient is biased up, and he overstates momentum's profitability — exactly the mirage Chapter one-point-five warned about, now with a structural cause. Flip either sign and the bias flips. The lesson is the rule, not the particular signs: Sam must establish the actual signs in his sample, and ideally include size, before claiming any direction in print.
+:::
+
+## Adding Controls Is a Bet, Not a Cure
+
+- "Include everything" fixes only the variables you actually add
+- And only if they are well-measured and correctly shaped
+- Unobservable confounders still sit in the error term
+- The regression **cannot tell you** whether you won the bet
+
+::: notes
+Here is the seductive trap. Fine, you say — bias comes from omitting variables, so I will include everything. Maya adds creditworthiness, employment, ten more controls. Does that fix it? It fixes the bias from those variables, and only if they are measured well and shaped right. It does nothing about what you still omit — unobserved motivation, soft information the loan officer saw, local shocks. The formula does not care whether you omitted a variable because you forgot it or because it is unmeasurable. So controlling-for-it is a bet that the variables you added were the important confounders and nothing comparable remains — and the regression cannot tell you whether you won. No diagnostic, no R-squared, no standard error reveals bias from a variable not in your data. That is the wall pure regression hits, and why Weeks Three and Four turn to designs that make the assumption credible by construction.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **two-sign rule** gives the bias direction for free: sign of effect on $y$ times sign of correlation with $x$. And "add a control" is a **bet** the regression can never confirm you won.
+:::
+
+::: notes
+To summarize: the two-sign rule hands you the direction of omitted variable bias for free — sign of effect on the outcome times sign of correlation with your regressor, same signs up, opposite signs down. Maya's penalty is overstated, Sam's momentum could be inflated, and adding controls is a bet the regression can never confirm you won. In part five we turn to the second threat, which strikes even when you omitted nothing: measurement error, and the attenuation that pulls coefficients toward zero.
+
+:::

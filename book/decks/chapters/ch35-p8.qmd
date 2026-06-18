@@ -1,0 +1,67 @@
+---
+title: "Reproducing the Disaster in Code"
+date: "2026-07-06"
+---
+
+# Reproducing the Disaster in Code {.title}
+
+::: notes
+Welcome back to Week Three-point-five, part eight of nine. In part seven, many-instruments bias dragged two-stage least squares toward O-L-S. Now we do what Bound, Jaeger, and Baker did in spirit: build a world with a known true effect, plant a weak instrument, and watch two-stage least squares lie — then watch Anderson–Rubin and the effective F catch it. This is the pathology of Lab three and notebook nb-three-point-five.
+:::
+
+## The Data-Generating Process
+
+- $x$ is **endogenous** — shares error $u$, so OLS is biased up
+- $z$ is **valid** — uncorrelated with $u$, so exclusion holds
+- $z$ is **weak** — first-stage coefficient $\pi$ tiny and tunable
+- True effect $\beta = 0$, so any nonzero estimate is **pure bias**
+
+::: notes
+Our data-generating process has three features. First, x is endogenous — it shares the structural error u, so O-L-S is biased upward. Second, the instrument z is valid — uncorrelated with u, so exclusion holds; we test weakness, not invalidity. Third, z is weak — a small, tunable first-stage coefficient pi. We set the true effect beta to exactly zero, so any nonzero estimate is pure bias — echoing Maya's zero-discrimination world from Chapter two-point-five. In code, x equals pi times z, plus zero-point-eight times u, plus noise — pi is the weak first stage, u the endogeneity. And y equals beta times x plus u, with z absent, so exclusion holds by construction.
+:::
+
+## Reading Every Number
+
+- `OLS  beta_hat = 0.388` (true 0)
+- `2SLS beta_hat = 0.281   SE = 0.214`
+- `first-stage F = 4.91`
+- 2SLS sits **between** OLS and truth — the $1/(F+1)$ story
+- SE $0.214$ is **too narrow to trust** at $F\approx 5$
+
+::: notes
+Read every number. O-L-S beta-hat is about zero-point-three-nine against a truth of zero — badly biased upward, because x shares the shock u with the outcome. But two-stage least squares reports about zero-point-two-eight: it has not purged the bias, only shrunk it partway toward O-L-S, landing between O-L-S and the truth — as the one-over-F-plus-one story predicts at low F. The first-stage F of about five is below ten; the klaxon sounds. And the standard error of zero-point-two-one-four gives an interval centered well away from zero and far too narrow to trust, since the normal approximation fails here. In many draws it excludes zero entirely: a confident, significant, completely false discovery.
+:::
+
+## The Cure in Code
+
+- Sweep $\beta_0$; regress $y - \beta_0 x$ on $z$; $F$-test; keep non-rejected
+- AR interval comes back **wide**, like $[-0.9,\ 1.4]$ — **contains 0**
+- Crank $\pi$ toward zero $\Rightarrow$ AR interval goes **unbounded**
+- Olea–Pflueger effective $F$ sits **below** its critical value
+- Narrow-and-wrong vs. wide-and-honest — the whole lesson
+
+::: notes
+Now the cure. We compute the Anderson–Rubin interval by inverting the test over a grid: for each candidate beta-naught, regress y minus beta-naught times x on z and keep every value not rejected at five percent. The A-R interval comes back wide — about minus zero-point-nine to one-point-four — and contains the true value of zero, honestly reflecting that this weak instrument cannot pin down the effect. Crank pi down to zero-point-zero-one, and the interval grows unbounded — the data confess they cannot answer. Meanwhile the Olea–Pflueger effective F sits below its critical value. That contrast is the whole lesson: the conventional interval is narrow and can falsely exclude the truth; the A-R interval is wide, sometimes unbounded, but always honest.
+:::
+
+## When It Should Work
+
+- Set $\pi = 0.8$ — a **strong** instrument — and re-run
+- First-stage $F$ large; 2SLS lands near true zero
+- Conventional and AR intervals nearly **coincide**, both tight
+- The machinery is **broken by weakness**, not in general
+
+::: notes
+Now flip the experiment to see the system work when it should. Set pi to zero-point-eight — a strong instrument — and re-run. The first-stage F is now large, well above any critical value; two-stage least squares lands near the true zero, purging O-L-S's bias; the conventional and Anderson–Rubin intervals nearly coincide, both tight; and the effective F clears its threshold. The machinery is not broken in general — only by weakness, and I-V then delivers. The discipline is to check first-stage F, effective F, and the A-R interval before believing any two-stage least squares number, your own or a published paper's.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+In a world where the truth is zero, weak-$z$ 2SLS sits **between OLS and the truth** with a falsely tight SE, while the **AR interval** stays wide and honest and the **effective $F$** flags the weakness. Set $z$ strong and every method agrees. Next: the IV reader's ledger and where the camp goes from here.
+:::
+
+::: notes
+To summarize part eight: in a world where the truth was zero, a weak instrument made two-stage least squares sit between O-L-S and the truth, with a standard error too tight to trust, while the Anderson–Rubin interval stayed wide and honest and the Olea–Pflueger effective F flagged the weakness. Set the instrument strong and every method agrees — broken by weakness, not in general. Open notebook nb-three-point-five to build the disaster yourself, measure how often the conventional interval falsely excludes zero, and confirm the A-R interval's coverage. In part nine, the finale, we collect everything into the I-V reader's ledger and look ahead.
+:::

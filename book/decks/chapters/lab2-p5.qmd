@@ -1,0 +1,69 @@
+---
+title: "Two Data Paths and the Synthetic Build"
+date: "2026-06-29"
+---
+
+# Two Data Paths and the Synthetic Build {.title}
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, part five of eight. In part four we saw why the method works — it clusters by time, one vote per month. Now we get concrete about the data. Path A is the real CRSP pull on WRDS, run only on GMU infrastructure. Path B is a seeded synthetic universe with a planted premium that every student builds. Both paths feed the exact same two-pass code, because we give the synthetic panel the same column names as the real one. First, the reproducibility rules.
+:::
+
+## Reproducibility Rules
+
+- Use the modern generator: `rng = np.random.default_rng(SEED)`
+- **Not** the legacy global `np.random.seed`
+- Draw **all** randomness from that one `rng`
+- `SEED = 20260527` — any fixed integer, but write it down
+- Pinned seed = anyone re-running gets your exact figures
+
+::: notes
+Two reproducibility rules you follow without exception. First, pin the seed: use numpy's modern generator, rng equals numpy default-rng of SEED, not the legacy global numpy-random-seed. Second, draw all randomness from that one rng — a single source makes a run replayable bit-for-bit. We set SEED to the integer two-zero-two-six-zero-five-two-seven; any fixed integer works, but write it down. One honest caveat: the Fama–MacBeth premium converges to the average realized factor return over your sample, not to its theoretical mean. Your recovered number sits near the planted truth but wobbles around it by sampling error — and the standard error is precisely the size of that wobble. That is not a bug; it is the thing you are measuring.
+:::
+
+## Path A — Real CRSP via WRDS (Hopper Only)
+
+- `wrds` opens an authenticated connection
+- Credentials in `~/.pgpass` on GMU machine — **never in code**
+- Query CRSP Monthly Stock File `crsp.msf`: `permno`, `date`, `ret`
+- Common stocks (`shrcd` 10,11), exchanges (`exchcd` 1,2,3)
+- Join FF `mktrf`, `rf` for excess returns; **pin the snapshot**
+
+::: notes
+Path A is how you would pull the actual data on Hopper. Do not run it off GMU infrastructure, and never copy CRSP rows into your notes — licensed data stays read-only per Conventions section five. The wrds package opens an authenticated connection, with credentials in a pgpass file on the GMU machine, never in code. You query the CRSP Monthly Stock File for permno — the permanent security identifier — the month-end date, and the holding-period return, restricting to common stocks, share codes ten and eleven, on exchange codes one, two, and three. Then you join the Fama–French market and risk-free series, compute excess returns, and pin the snapshot date. A CRSP pull is not reproducible without that snapshot, because CRSP revises historical data.
+:::
+
+## Path B — The Synthetic DGP
+
+- Build a one-factor universe with a **known** premium
+- Each stock $i$ has a fixed true beta $\beta_i$
+- Market excess return each month — its **long-run mean is** $\lambda$
+- $r_{it} = \gamma_0 + \beta_i\, r_{m,t} + e_{it}$ — the CAPM itself
+- Same "build the universe to check the tools" move as Lab 1
+
+::: notes
+Now Path B, the version every student runs. We build a one-factor universe with a known risk premium, then recover it with the exact two-pass machine — the same build-the-universe-so-you-can-check-the-tools move as Lab One. The data-generating process is the CAPM itself: each stock i has a fixed true beta; the market delivers an excess return each month whose long-run mean is the premium lambda; and a stock's return equals gamma-zero plus its beta times the market return plus idiosyncratic noise. That is literally the equation we are trying to recover, run forward to manufacture data.
+:::
+
+## The Planted Truth
+
+- `N_STOCKS = 300`, `N_MONTHS = 360` — 30 years
+- `LAMBDA_TRUE = 0.006` — true premium = **0.6%/month**
+- `GAMMA0_TRUE = 0.001` — zero-beta rate = **0.1%/month**
+- True betas: $\mathcal{N}(1.0,\,0.35)$, clipped to $[0.1,\,2.5]$
+- Panel: `permno`, `month`, `ret`, `mkt_excess` — 108,000 rows
+
+::: notes
+Here is the planted truth. Three hundred stocks, three hundred sixty months — thirty years of data. The true monthly market risk premium, lambda-true, is zero-point-zero-zero-six, six-tenths of a percent per month. The true zero-beta rate is one-tenth of a percent. Each stock's true beta is drawn from a normal distribution centered at one with standard deviation zero-point-three-five, then clipped between zero-point-one and two-point-five. We build the returns from the CAPM equation and reshape into a tidy panel — three hundred times three hundred sixty, one hundred eight thousand stock-months. Off to the side sit the secret truths the procedure is not allowed to see. Time to estimate.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Path A** pulls real CRSP on Hopper — no numbers leave; pin the snapshot. **Path B** builds a synthetic CAPM universe with a planted $\lambda = 0.006$ (0.6%/month) so you can grade the estimator. Both feed the same two-pass code because the schemas match. Next: run Pass 1 and check the betas.
+:::
+
+::: notes
+To summarize part five: Path A pulls real CRSP data on Hopper, with a pinned snapshot and no numbers ever leaving GMU infrastructure. Path B builds a synthetic CAPM universe — three hundred stocks over three hundred sixty months — with a planted premium of six-tenths of a percent per month, so you can grade the estimator against ground truth. Both share the same schema, so both feed the identical two-pass code. In part six we run pass one — a beta for every stock — and check those betas against the planted truth, something real CRSP would never let you do.
+:::

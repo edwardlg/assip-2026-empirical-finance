@@ -1,0 +1,58 @@
+---
+title: "Bias: Aiming at the Right Target"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Bias: Aiming at the Right Target {.title}
+
+::: notes
+Welcome back to Estimators and Their Sampling Distributions, part two of seven. In part one we separated the recipe from the number it produces, and met the three judging words: bias, variance, and mean squared error. Now we take the first. Bias asks a simple question: across all the samples the universe could have handed you, does a recipe aim at the right target, or does it systematically miss?
+:::
+
+## What Bias Measures
+
+- Imagine running the recipe on *every* possible sample
+- Each sample gives an estimate; they form a distribution
+- **Bias** asks: where is that distribution centered?
+- Unbiased: $\mathbb{E}[\hat{\mu}]=\mu$ — centered on truth
+- $\operatorname{Bias}(\hat{\mu})=\mathbb{E}[\hat{\mu}]-\mu$
+
+::: notes
+Run Priya's recipe not once but, in your imagination, infinitely many times — every possible two-hundred-claim sample the universe could hand her, each weighted by how likely it is. Each sample produces an estimate, and those estimates form a distribution. The question of bias is: where is that distribution centered? We say an estimator mu hat is unbiased for mu if its expected value equals mu — on average across all possible samples, it lands exactly on the truth. Its bias is the expected value of mu hat minus mu. Notice what bias is not. It is not the error in your particular sample. Priya's eight thousand four hundred ten might be off from the true mu by hundreds of dollars — that is sampling error, and every estimate has it. Bias is about the center of the recipe: averaged over all conceivable samples, do the errors cancel to zero, or is the recipe aiming high or low?
+:::
+
+## The Sample Mean Is Unbiased
+
+- Assume each claim has $\mathbb{E}[x_i]=\mu$
+- $\mathbb{E}[\bar{x}]=\mathbb{E}\!\left[\frac{1}{N}\sum x_i\right]=\frac{1}{N}\sum\mathbb{E}[x_i]$
+- $=\frac{1}{N}\cdot N\mu=\mu$ — using only linearity of expectation
+- Holds for **any** $N$, even $N=3$
+- Unbiasedness has nothing to do with lots of data
+
+::: notes
+Let us prove the sample mean is unbiased. Suppose each claim is drawn from a population with mean mu. Then, using only that expectation is linear — it passes through sums and constants, which we established in Chapter one-point-two — the expected value of x bar equals the expected value of one over N times the sum of the claims. Pull the one over N out and the expectation through the sum, and you get one over N times the sum of N copies of mu, which is one over N times N mu, which is mu. The sample mean is unbiased, full stop, for any sample size — even N equals three. That is a strong and slightly surprising fact: unbiasedness has nothing to do with having lots of data. A three-claim average is just as unbiased as a three-million-claim average. What changes with N is something else entirely — the variance — which is the next part and the heart of the lesson.
+:::
+
+## When a Recipe Is Biased
+
+- Drop the three biggest claims "to remove outliers"
+- Losses are right-skewed: this discards the heavy tail
+- Recipe lands *below* $\mu$ — biased downward
+- Bias is baked in; more data never fixes it
+- Proof used one thing: $\mathbb{E}[x_i]=\mu$ for every claim
+
+::: notes
+Contrast that with a biased recipe. Suppose Priya, worried about a budget meeting, quietly drops the three biggest claims before averaging. Insurance losses are skewed right — a few catastrophic fires, lots of small claims — so this systematically discards the right tail. Across all possible samples it lands below mu on average. It is biased downward, and the bias is baked into the recipe; it would persist no matter how much data she collected. Notice the assumption behind the proof: it used exactly one thing, that the expected value of each claim is mu. That quietly assumes the claims come from the same population whose mean Priya cares about. If her spreadsheet over-represents one high-risk county whose broker files more diligently, the claims are not all draws from the target population, the expected value is no longer mu, and the proof collapses. The math did not break; the assumption did. Estimators are only as good as the sampling assumption behind them.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+An estimator is **unbiased** if $\mathbb{E}[\hat{\mu}]=\mu$ — centered on the truth across all samples. The sample mean is unbiased for *any* $N$, by linearity of expectation. But unbiasedness is silent about jumpiness. Next: **variance**, where sample size finally earns its keep.
+:::
+
+::: notes
+To summarize part two: bias asks where the recipe's distribution is centered. Unbiased means the expected value equals mu, and the sample mean clears that bar for any sample size, by linearity of expectation alone. A recipe that discards the heavy tail of a skewed distribution is biased downward, and no amount of data fixes a bias baked in. But unbiasedness says nothing about how jumpy an estimator is. In part three we take the second word, variance, where sample size finally earns its keep.
+:::

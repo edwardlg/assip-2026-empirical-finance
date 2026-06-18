@@ -1,0 +1,58 @@
+---
+title: "Potential Outcomes: Two Worlds, One Person"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Potential Outcomes: Two Worlds, One Person {.title}
+
+::: notes
+Welcome to Week Three, Chapter three-point-one, part one of five. This chapter builds the language the rest of the camp speaks: the potential-outcomes model, also called the Rubin causal model. Here is the story. Maya volunteers at a community credit union that runs a free financial-literacy program. She pulls the records: among people who came through the program, sixty-two percent had their next loan approved; among non-enrollees, only forty-one percent. That is a twenty-one-percentage-point gap, wildly significant. The program seems to cause a twenty-one-point jump. But Maya is about to make a mistake more dangerous than anything in Week Two, because there is no control she can add, no standard error she can robustify, no test that will warn her. Over the next few minutes we build the machinery to say exactly what went wrong.
+:::
+
+## Maya's Tempting Number
+
+- Program enrollees: **62%** loan approval
+- Non-enrollees: **41%** loan approval
+- Gap of **21 points**, hugely significant
+- Tempting conclusion: the program *causes* +21 points
+- The trap is buried in the word **causes**
+
+::: notes
+Look at what Maya has: a twenty-one-point gap with a t-statistic that would make a beginner reach for champagne. The obvious read is that the program causes a twenty-one-point jump. But ask the question Maya skipped: who signs up for a free six-week evening course on personal finance? People already organized enough to commit six weeknights, already worried about their credit, already the type to read the fine print. That kind of person is, on average, already more likely to get a loan approved, program or no program. So Maya is not comparing the same people with and without the program. She is comparing two different kinds of people, and her twenty-one points is some unknown blend of the program's real effect plus the head start the enrollees already had.
+:::
+
+## Two Parallel Worlds for One Person
+
+- Take one applicant, unit $i$
+- World A — she **enrolls**: outcome $Y_i(1)$
+- World B — she **does not**: outcome $Y_i(0)$
+- These are her **potential outcomes**, fixed in advance
+- At most **one** is ever realized
+
+::: notes
+To get precise, forget samples and averages; start with one person, unit i. There is a treatment she might receive, enrollment, and an outcome we care about, loan approval. The central move is to imagine two parallel worlds. In one world she enrolls, and her outcome there is a number we write Y-sub-i-of-one, the outcome if treated. For a yes-or-no outcome like approval, code it one for approved, zero for denied. In the other world the very same person does not enroll, and her outcome there is Y-sub-i-of-zero, the outcome if untreated. These two numbers are her potential outcomes. They are properties of the person, fixed in advance, that exist before anyone decides whether she enrolls. The word potential is doing real work: both numbers are real features of the world, but at most one will ever actually be realized.
+:::
+
+## The Switch and the Observation Rule
+
+- Treatment indicator $D_i = 1$ if enrolled, else $0$
+- $D_i$ is the **switch** picking which world happens
+- Observation rule: $Y_i = D_i\,Y_i(1) + (1-D_i)\,Y_i(0)$
+- Individual treatment effect: $\tau_i = Y_i(1) - Y_i(0)$
+- A clean, assumption-free definition of cause
+
+::: notes
+Now define the treatment indicator D-sub-i: one if unit i enrolls, zero if not. It acts like a switch selecting which of the two parallel worlds actually happens. The outcome we observe, the one that lands in Maya's dataset, is whichever potential outcome the switch points to. In symbols, observed Y-sub-i equals D-sub-i times Y-of-one plus one-minus-D-sub-i times Y-of-zero. If D is one, this collapses to her treated outcome; if D is zero, to her untreated outcome. This is not an assumption; it is the definition of how what we observe relates to the two worlds we imagine. And now the causal effect on this one person writes itself: tau-sub-i equals Y-of-one minus Y-of-zero, the gap between what happens to her with the program and without it. No regression, no error term, just two numbers and their difference. And now the trap springs.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A causal effect is defined per person as $\tau_i = Y_i(1)-Y_i(0)$, the gap between two **parallel-world** outcomes. The treatment $D_i$ is a switch, and we only ever observe the world it selects. Next: why that single fact makes causation hard.
+:::
+
+::: notes
+To summarize part one: a causal effect, for one person, is the difference between her two parallel-world outcomes, Y-of-one minus Y-of-zero. The treatment indicator is a switch selecting which world happens, and the observation rule says we see only the outcome that switch points to. This definition is clean and assumption-free, but it already contains a brutal problem, because the switch takes only one value per person. In part two we meet that problem head-on: the Fundamental Problem of Causal Inference, and the three population averages we chase once we admit we can never see an individual effect.
+:::

@@ -1,0 +1,46 @@
+---
+title: "Sensitivity Analysis: Which Knob Is Your Result Hostage To?"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Sensitivity Analysis: Which Knob Is Your Result Hostage To? {.title}
+
+::: notes
+Welcome back to Chapter eight-point-two, part six of ten. In part five we finished the placebo battery — fake units and fake outcomes — with the rule that a failed placebo must always be reported. Now a different attack. Every analysis has knobs: tuning parameters and judgment calls that are individually defensible but together give you enormous freedom to land on a number you like. Sensitivity analysis wiggles each knob across its defensible range and reports how much the estimate moves. The sharper question is not "is my result stable across all forks?" but "is my result hostage to this particular arbitrary choice?"
+:::
+
+## Three Knobs Your Result Might Be Hostage To
+
+- **Bandwidth** (RD): plot estimate vs. $h$, half to twice optimal
+- Pass: flat and significant; Fail: significant only in a narrow window
+- **Controls**: coefficient stability as you add or drop covariates
+- Fail: coefficient halves or flips — never control a **post-treatment** variable
+- **Sample / winsorizing**: re-run at 0%, 1%, 5%; drop crisis years, largest state
+
+::: notes
+Three knobs matter most. First, bandwidth, for the regression-discontinuity crowd. An R-D estimate compares units just above and below a cutoff, and "just" is set by a bandwidth h. Too wide and you import contaminated units; too narrow and you have almost no data. The standard display is a sensitivity plot: the coefficient and its confidence band as a function of h, from half the optimal bandwidth to twice it. Pass if it is flat and stays significant; fail if it is significant only in a narrow window around the value you happened to pick. Second, controls: report your estimate with none, with primary, and with an aggressive battery, and watch coefficient stability. Fail if the coefficient halves or flips sign — and never control for a variable that is itself an outcome of the treatment, a bad control that bleeds the effect away. Third, sample and winsorizing: re-run at zero, one, and five percent winsorizing, and drop defensible subsamples — the crisis years two-thousand-eight and nine, the largest state, the earliest cohort. A result that lives or dies on a handful of outliers forces a narrower, honest claim.
+:::
+
+## A Family of Outcomes Inflates False Positives
+
+- Maya tests **eight** outcomes; two come back significant at 5%
+- Chapter 1.5: a single test's error rate doesn't protect a **search**
+- If all eight are null: $1-(1-0.05)^8 \approx 0.34$
+- A one-in-three chance of a false "discovery" from pure noise
+- Run enough outcomes and significance is **expected**
+
+::: notes
+Now a related but distinct trap. Maya does not have one outcome. Like most real projects she has a family: the denial gap overall, but also the gap in approval rates, in interest-rate spreads, in loan amounts, broken out by minority subgroup. Suppose she tests eight outcomes and two come back significant at the five percent level. How impressed should you be? Recall the hard lesson of Chapter one-point-five: the false-positive rate of a single test does not protect a search across many tests. If all eight outcomes were truly null, the chance that at least one clears the five percent bar is one minus zero-point-nine-five to the eighth power, which is about zero-point-three-four — a one-in-three chance of a false discovery from pure noise. Run enough outcomes and a significant result is expected, not impressive. Maya owes the reader an adjustment for the size of her family, and that adjustment is the subject of part seven.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Sensitivity analysis asks which arbitrary knob your result is hostage to — bandwidth, controls, or sample. Show the estimate stays flat across each defensible range. And remember: a single test's 5% error rate gives no protection once you search a whole family of outcomes.
+:::
+
+::: notes
+To summarize part six: sensitivity analysis asks not whether your result is stable across all forks, but whether it is hostage to one particular arbitrary choice. Wiggle the bandwidth from half to twice optimal, add and drop controls while watching coefficient stability, and re-run across winsorizing levels and defensible subsamples — never controlling for a post-treatment variable. A result that holds across these is robust; one that lives on a few outliers forces a narrower claim. We also set up the next problem: when you test a whole family of outcomes, a single test's five-percent error rate no longer protects you, and pure noise gives you a one-in-three chance of a false find. In part seven we fix that with the two multiple-testing corrections you must know.
+:::

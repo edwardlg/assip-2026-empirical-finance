@@ -1,0 +1,46 @@
+---
+title: "Why Global Polynomials Are a Trap"
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+# Why Global Polynomials Are a Trap {.title}
+
+::: notes
+Welcome back to Chapter four-point-three, part six of thirteen. We have an estimand — a jump in a conditional mean at the cutoff. Now: how do you actually estimate the height of that curve on each side? This part covers the tempting move a generation of empiricists made, fitting one global high-order polynomial, and the three concrete reasons Gelman and Imbens named it a trap.
+:::
+
+## The Tempting Global Polynomial
+
+- Fit one curve to all the data: $Y$ on $D$, $X, X^2, X^3, X^4$
+- Let slopes differ on each side; read the coefficient on $D$
+- It seems principled — flexible, uses all the data, one regression
+- For years, RD papers did exactly this
+- It is a trap
+
+::: notes
+The tempting move is to fit one global polynomial to all the data — say, regress the outcome on a treatment dummy plus X, X-squared, X-cubed, and X-to-the-fourth over the entire sample, letting the slopes differ on each side of the cutoff, and read the coefficient on the treatment dummy as the jump. It seems principled: a high-order polynomial is flexible, it uses all the data efficiently, and it gives you a tidy single regression. For years, regression-discontinuity papers did exactly this. It is a trap, and Gelman and Imbens, in two-thousand-nineteen, named the trap precisely.
+:::
+
+## Three Reasons It Fails
+
+- Polynomials are erratic near the *edges* of the data
+- Distant points — Apple, a micro-cap — dictate curvature at $c$
+- A quartic twists to fit them and manufactures a spurious wiggle
+- The answer swings wildly between a cubic and a quartic
+- Implicit weights on observations can be bizarre, even negative
+
+::: notes
+High-order global polynomials produce noisy, misleading estimates of the value at a boundary point, for three concrete reasons. First, polynomials are notoriously erratic near the edges of the data, and the cutoff is exactly where you are reading two one-sided extrapolations that meet. Second, a global polynomial lets data far from the cutoff — Apple, on the ten-hundred side; a tiny micro-cap deep in the two-thousand — dictate the curvature right at the cutoff. Those distant points have nothing to do with the marginal stocks you care about, yet a fourth-order polynomial fit to the whole range will twist itself to accommodate them and, in doing so, can manufacture a spurious wiggle, or erase a real jump, exactly at the boundary. Third, the estimate is disturbingly sensitive to the arbitrary choice of polynomial order: the jump you report can swing wildly between a cubic and a quartic, with no principled way to pick. Gelman and Imbens showed the implicit weights such a polynomial places on individual observations can be bizarre and even negative — a sign the estimator is doing something you would never endorse if you saw it spelled out.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A **global high-order polynomial** is a trap (Gelman–Imbens, 2019): it is erratic at edges, lets distant data dictate the curvature at $c$, and makes the answer swing with the arbitrary polynomial order. The implicit observation weights can even go negative. Next: the fix — local linear regression.
+:::
+
+::: notes
+To summarize part six: fitting one global high-order polynomial to all the data is a trap, and Gelman and Imbens named it precisely. Such polynomials are erratic at the edges of the data, they let points far from the cutoff dictate the curvature right at the boundary, and they make the reported jump swing wildly with the arbitrary choice of polynomial order — with implicit observation weights that can even go negative. In part seven we cover the fix: local linear regression on a narrow window, with a triangular kernel.
+:::

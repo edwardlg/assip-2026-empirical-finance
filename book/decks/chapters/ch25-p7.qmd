@@ -1,0 +1,55 @@
+---
+title: "Functional Form: When the Straight Line Is the Wrong Shape"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# Functional Form: When the Straight Line Is the Wrong Shape {.title}
+
+::: notes
+Welcome back to Chapter two-point-five, part seven of nine. In part six we watched measurement error attenuate a coefficient toward zero in code. Now the third and final threat: wrong functional form, where you force a straight line through a curved world. We will see how the missing curvature behaves exactly like an omitted variable, then learn the fixes you already own — polynomials, logs, interactions.
+:::
+
+## When the Straight Line Is the Wrong Shape
+
+- OLS fits the best line; a curved truth makes it wrong
+- Priya: premium vs. emissions is **convex**, $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \varepsilon$
+- Fit only a line: curvature lands in $u = \beta_2 x^2 + \varepsilon$, correlated with $x$
+- The reported slope describes neither low nor high $x$
+
+::: notes
+The third threat is different in flavor. The first two were about which variables and how well measured; this one is about shape. OLS fits the best straight line. If the truth is curved, a straight line can be systematically wrong, and its error is again correlated with x. Consider Priya, who studies how a firm's carbon-emissions intensity relates to its insurance premium. Suppose the truth is convex: premiums rise slowly with emissions at low levels, then steeply at high levels, as insurers price catastrophic tail risk. The true model has a quadratic term — y equals beta-zero plus beta-one x plus beta-two x-squared plus epsilon, with beta-two positive. If Priya fits only a straight line, the x-squared curvature is swept into the error and correlates with x — the same disease as omitted variable bias, where the omitted variable is a transformation of one she already has. The fitted line understates sensitivity at high emissions and overstates it at low, so her single number describes neither.
+:::
+
+## Polynomials: Curved in $x$, Still Linear in Parameters
+
+- Add $x^2$ (and maybe $x^3$): $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \varepsilon$
+- Still OLS — linear in the parameters, even though curved in $x$
+- Marginal effect now varies: $\partial y/\partial x = \beta_1 + 2\beta_2 x$
+- Captures Priya's convexity directly
+
+::: notes
+The good news is you already own the variables — you just add the right transformations. Start with polynomials. Add x-squared, and maybe x-cubed, as regressors. The crucial point is that this stays linear in the parameters — still ordinary least squares, the same machine — even though the relationship in x is now curved. And the payoff is that the marginal effect is no longer a single number. The derivative of y with respect to x becomes beta-one plus two beta-two x, which varies with x. At low emissions the slope is gentle, at high emissions steep — exactly Priya's convexity, captured by a model that is still just OLS with one extra column.
+:::
+
+## Logs and Interactions
+
+- **Logs:** $\ln y$ on $x$ → semi-elasticity; $\ln y$ on $\ln x$ → elasticity
+- Logs tame skewed financial variables (firm size, market cap)
+- **Interactions:** add $x\cdot w$, so slope on $x$ becomes $\beta_1 + \beta_3 w$
+- All ordinary OLS — but only if you know the right shape
+
+::: notes
+Two more transformations round out the toolkit. Logs reshape the relationship and change interpretation to elasticities. With log y regressed on x, beta-one is a semi-elasticity — the approximate proportional change in y per unit of x. With log y on log x, beta-one is a full elasticity — the percent change in y per percent change in x. Logs also tame skewed, multiplicative financial variables like firm size and market cap, and stabilize variance. Then interactions: if the effect of x on y depends on another variable w, include the product x times w, so the slope on x becomes beta-one plus beta-three w, different for different w. Maya might interact loan size with income if the income effect is stronger for large loans. None of these are exotic — they are ordinary OLS with cleverly-constructed regressors — but they only dissolve the problem if you know the right shape. The harder question is diagnosing the problem at all.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A wrong functional form dumps curvature into the error, where it correlates with $x$ — the **same disease as OVB**. Fix it with **polynomials, logs, interactions**: ordinary OLS with transformed regressors, when you know the right shape.
+:::
+
+::: notes
+To summarize part seven: forcing a straight line through a curved relationship dumps the unmodeled curvature into the error, where it correlates with x like an omitted variable — the same disease. You fix it with polynomials that capture curvature while staying linear in the parameters, with logs that convert to elasticities and tame skewed financial variables, and with interactions that let one variable's effect depend on another. All ordinary OLS with transformed regressors. But every one of these requires knowing the right shape in advance. In part eight we meet the diagnostic that tells you when your shape is wrong without you having to guess: Ramsey's RESET test.
+:::

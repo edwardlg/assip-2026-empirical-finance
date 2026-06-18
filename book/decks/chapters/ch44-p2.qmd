@@ -1,0 +1,58 @@
+---
+title: "The Setup and the Estimator"
+date: "2026-07-13"
+---
+
+# The Setup and the Estimator {.title}
+
+::: notes
+Welcome back to Chapter four-point-four, part two of ten. In part one we met the core idea: with one treated unit, build a synthetic control as a weighted average of untreated donors, matched to the treated unit's pre-period. Now we put that idea in Week Four notation and write the estimator in potential-outcomes language.
+:::
+
+## Units, Time, and the Donor Pool
+
+- Index units (states) by $i$, time (years) by $t$ — as in diff-in-diff
+- $J+1$ units total; unit $i=1$ is the **treated** state
+- Units $i = 2, \dots, J+1$ are the **donor pool** — never treated in-sample
+- Treatment turns on at $T_0+1$; pre-period is $t = 1, \dots, T_0$
+- Priya: $Y_{it}$ is the premium; $T_0$ is 2017; mandate hits 2018
+
+::: notes
+Index units — states — by i, and time — years — by t, exactly as in the diff-in-diff chapter. There are J plus one units in total. Unit one is the treated state. The other J units, i equals two through J plus one, are the donor pool: untreated states that never adopted such a mandate over the sample. Treatment turns on at time T-naught plus one, so the pre-treatment period runs from one to T-naught, and the post-treatment period from T-naught plus one to T. For Priya, the outcome Y-i-t is the average homeowner insurance premium in state i, year t. T-naught is twenty-seventeen, the last pre-mandate year, and the mandate takes effect in twenty-eighteen.
+:::
+
+## Potential Outcomes and the Counterfactual
+
+- $Y_{it}^{N}$ = premium with **no** treatment; $Y_{it}^{I}$ = **with** intervention
+- Causal effect: $\tau_{1t} = Y_{1t}^{I} - Y_{1t}^{N}$ for $t > T_0$
+- First term observed; second term $Y_{1t}^{N}$ is the **counterfactual**
+- The missing half: what the premium *would have been* absent the mandate
+- Every causal method fills in a counterfactual
+
+::: notes
+We work in potential outcomes, the language of Chapter three-point-one. Let Y-i-t-superscript-N be the premium state i would show in year t with no treatment, and Y-i-t-superscript-I the premium with the intervention. We observe the treated state's actual, treated premium after T-naught, and everyone else's untreated premium throughout. The causal effect on the treated state in a post-period year is tau-one-t, equal to the treated potential outcome minus the untreated potential outcome, for t greater than T-naught. The first term is observed — the treated state's actual premium. The second term, the untreated potential outcome, is the counterfactual: what the treated state's premium would have been in twenty-nineteen, twenty-twenty, twenty-twenty-one had the mandate never passed. It is unobservable, the missing half of the comparison.
+:::
+
+## The Synthetic Counterfactual
+
+$$\hat{\tau}_{1t} = Y_{1t} - \hat{Y}_{1t}^{N}, \qquad \hat{Y}_{1t}^{N} = \sum_{j=2}^{J+1} w_j\, Y_{jt}$$
+
+- $\hat{Y}_{1t}^{N}$ = weighted average of donors' **observed, untreated** premiums
+- $w_j$ are the synthetic-control weights on the donor states
+- Pick weights well in the pre-period → credible stand-in post-period
+- That is the whole estimator — the art is choosing $\mathbf{w}$
+
+::: notes
+Diff-in-diff fills the counterfactual by assuming parallel trends with a control group; synthetic control fills it with a tailor-made composite. The estimate is the treated state's observed premium minus an estimated untreated counterfactual, and that counterfactual is a weighted average of the donors' observed, untreated premiums — the weights w-j applied to each donor's premium and summed. It is built entirely from premiums we actually see, from states that were never treated. Pick the weights well in the pre-period and you have a credible stand-in for the treated state in the post-period. That is the whole estimator. The art is entirely in choosing the weight vector w — w-two through w-J-plus-one — which is where we turn next.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The treated unit is $i=1$; the rest are the donor pool. The effect is the treated unit's observed outcome minus a synthetic counterfactual $\hat{Y}_{1t}^{N} = \sum_j w_j Y_{jt}$ — a weighted average of donors' untreated outcomes. Everything rides on the weights $\mathbf{w}$.
+:::
+
+::: notes
+To summarize part two: we set up J plus one units with the treated state as unit one and the rest as the donor pool, and we wrote the effect as the treated unit's observed outcome minus a synthetic counterfactual — a weighted average of the donors' untreated premiums. The entire credibility of the estimate rides on choosing the weights so the synthetic unit tracks the treated unit before treatment. In part three we open the engine: the optimization that picks those weights, and the two constraints that give synthetic control its whole personality.
+:::

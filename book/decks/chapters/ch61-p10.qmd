@@ -1,0 +1,57 @@
+---
+title: "KPSS: Read Like a Referee"
+date: "2026-07-27"
+---
+
+# KPSS: Read Like a Referee {.title}
+
+::: notes
+Welcome back to Chapter six-point-one, part ten of ten — the last part. In part nine you built a piece of the measure in the notebook: inspecting the panel, rebuilding one patent's value, and breaking a validation. Now we close by reading K-P-S-S one final time like a referee — three questions of the kind a referee writes in the margin, the kind your capstone will need you to ask.
+:::
+
+## Question 1 — Expected vs Realized Value
+
+- The measure is the market's *forecast* at grant
+- Design a check using *later* outcomes
+- Realized profits, eventual citations, litigation
+- Are the grant-window forecasts unbiased, or too high for some?
+- Why can it never, alone, tell right from consistently-wrong?
+
+::: notes
+Question one: expected versus realized value. The measure is the market's forecast of a patent's value at grant, not what the patent ultimately earned. Design, in words, a check using later outcomes — realized profits, eventual citations, litigation — that would tell you whether the market's grant-window forecasts are, on average, unbiased, or systematically too high for some kinds of patents. And here is the deep part: say why the measure can never, by itself, distinguish the market was right from the market was wrong but consistent. Because the measure is the forecast, it agrees with itself; only an external, later outcome can adjudicate whether that forecast was accurate.
+:::
+
+## Question 2 — Confounds in the Window
+
+- A skeptic: the return is just earnings and analyst news
+- Name the *one* piece of evidence that most reassures you
+- Name the *one* test you would run that the paper did not
+- Which way does the bias go?
+- If grant dates and good-news days correlate positively
+
+::: notes
+Question two: confounds in the window. A skeptic says the grant-window return is really just earnings and analyst news that happens to land near grant dates. Name the one piece of evidence in the paper that most reassures you on this, and the one test you would run that the paper did not. Then say which direction the bias would go if grant dates and good-news days were positively correlated — if firms tend to get good news around the same time their patents issue, the measure would be biased upward, crediting the patent for value that belongs to the other news. Knowing the sign of a bias is half of being a good referee.
+:::
+
+## Question 3 — Whose Innovation Is This?
+
+- Three screens: granted patents, public firms, survivors
+- Write *one* sentence naming the population the panel represents
+- Write *one* conclusion you would *not* extend to the economy
+- Say *why* the data alone cannot support that extension
+- Then on to notebook 6.1 — build the panel
+
+::: notes
+Question three: whose innovation does this panel describe? Given the three selection screens — granted patents, public firms, and survivors — write one sentence stating the population the firm-year value panel actually represents, and one sentence on a growth or reallocation conclusion you would not be willing to extend to the whole economy on this evidence, and why. The panel describes large, public, surviving U.S. firms, so any claim about start-ups, private innovators, or the aggregate economy reaches past what the data can support. That completes Chapter six-point-one and Week Six's opener. Next stop is notebook six-point-one, where you stop reading about the patent-value panel and build it — first inspecting the public dataset, then reconstructing a single patent's value from a grant-window event study of your own.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Read K-P-S-S like a referee: separate **expected** from **realized** value, hunt for **confounds** in the window and name the sign of the bias, and state the **population** the panel truly describes. These three margin questions are the habits your Week-7 capstone will live on.
+:::
+
+::: notes
+To close Chapter six-point-one: a referee leaves three questions in the margin. First, separate the market's expected value at grant from the patent's realized value, and see why only later outcomes can judge the forecast. Second, hunt for confounding news in the window, name the reassuring evidence and the missing test, and state the sign of the bias. Third, name the population the panel describes — large, public, surviving firms — and refuse to over-extend it. Carry these habits into your capstone, where building and defending a measure is the whole job. Next stop is notebook six-point-one, where you build the patent-value panel yourself.
+:::

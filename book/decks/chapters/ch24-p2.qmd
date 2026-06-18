@@ -1,0 +1,70 @@
+---
+title: "The Classical Variance and Its One Assumption"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Classical Variance and Its One Assumption {.title}
+
+::: notes
+Welcome back to When the Errors Misbehave, part two of eight. In part one we saw Maya's t-statistic collapse from six to two while her point estimate never moved. Now we go to the engine room: where does the classical variance formula come from, and what single assumption is holding it up? Find that assumption, and we will know exactly what to break.
+:::
+
+## The Engine-Room Equation
+
+- Model in matrix form: $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$
+- OLS estimator $\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$
+- Substitute and simplify to get the key identity:
+- $\hat{\boldsymbol\beta} = \boldsymbol\beta + (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\boldsymbol\varepsilon$
+- Estimator equals truth plus a sampling-error term
+
+::: notes
+Recall the setup. We write the model in matrix form: y equals X beta plus epsilon, where y is the vector of outcomes, X is the matrix of regressors, beta is the vector of coefficients we want, and epsilon is the vector of errors. The O-L-S estimator is X-prime-X inverse, times X-prime y. Substitute y equals X beta plus epsilon into that and simplify; the X-beta part collapses to beta, which is the algebra behind unbiasedness. What remains is the engine-room identity: beta hat equals beta plus X-prime-X inverse times X-prime epsilon. The estimator equals the truth, beta, plus a sampling-error term that depends on which particular errors the universe happened to deal this sample. The whole variance of beta hat comes from that second term.
+:::
+
+## Name the Middle: Omega
+
+- Take the variance, conditioning on $\mathbf{X}$ as fixed:
+- $\operatorname{Var}(\hat{\boldsymbol\beta}\mid\mathbf{X}) = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\boldsymbol\Omega\,\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}$
+- $\boldsymbol\Omega$ is the $N\times N$ variance–covariance matrix of errors
+- Diagonal: each error's variance; off-diagonal: covariances
+- The whole chapter is a story about $\boldsymbol\Omega$
+
+::: notes
+Take the variance of that sampling-error term, treating X as fixed — conditioning on X, as in Chapter two-point-two. You get a product: X-prime-X inverse, times X-prime, times a middle object, times X, times X-prime-X inverse. I have given the middle object a name: capital Omega, the variance-covariance matrix of the errors. It is N by N. Its diagonal entries are the variances of each error; its off-diagonal entries are the covariances between errors of different observations. Everything in this chapter is a story about what Omega really looks like.
+:::
+
+## The Homoskedasticity Assumption
+
+- Chapter 2.2 assumed $\boldsymbol\Omega = \sigma^2\mathbf{I}$
+- **Homoskedasticity**: every error has the same variance $\sigma^2$
+- **No correlation**: every off-diagonal entry is zero
+- Together: a scalar times the identity matrix
+- Plug in and the sandwich collapses to a clean formula
+
+::: notes
+In Chapter two-point-two we made the homoskedasticity-and-no-correlation assumption: Omega equals sigma squared times the identity matrix. That single equation makes two claims at once. First, homoskedasticity — same scatter: every error has the same variance, sigma squared, regardless of the regressors. A two-thousand-dollar loan and a forty-thousand-dollar loan have rates equally hard to predict, in squared dollars. That puts the same sigma squared all down the diagonal. Second, no correlation across observations: the errors of any two different loans are uncorrelated, so every off-diagonal entry is zero. Together they make Omega a scalar times the identity matrix.
+:::
+
+## The Classical Formula — and Its Catch
+
+- With $\boldsymbol\Omega = \sigma^2\mathbf{I}$ the sandwich collapses:
+- $\operatorname{Var}(\hat{\boldsymbol\beta}\mid\mathbf{X}) = \sigma^2(\mathbf{X}'\mathbf{X})^{-1}$
+- Estimate $\hat\sigma^2 = \frac{1}{N-K}\sum_i \hat\varepsilon_i^2$ from residuals
+- Clean, fast, and what software prints by default
+- Only as true as $\boldsymbol\Omega = \sigma^2\mathbf{I}$ — false in finance
+
+::: notes
+Plug Omega equals sigma squared identity into the sandwich and watch it collapse. The middle sigma squared is a scalar and slides out front; the identity vanishes; one X-prime-X cancels against an inverse, leaving sigma squared times X-prime-X inverse. That is the classical variance formula. The standard error of any coefficient is the square root of the matching diagonal entry, using sigma-hat squared — one over N minus K, times the sum of squared residuals — to estimate the error variance. It is clean, it is fast, and it is what your software prints by default. It is also only as true as the assumption Omega equals sigma squared identity, which in finance data is basically never true.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The classical formula $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$ is just the variance for one special diet: $\boldsymbol\Omega = \sigma^2\mathbf{I}$ — equal variances, no correlation. Everything in this chapter is a story about what $\boldsymbol\Omega$ **really** looks like. Next: the honest formula that never needed that assumption.
+:::
+
+::: notes
+To summarize part two: the classical variance formula, sigma squared times X-prime-X inverse, is just the special case where Omega equals sigma squared times the identity — equal variances down the diagonal and zeros off it. The entire chapter is a story about what Omega really looks like when that assumption fails. In part three we reveal the trick: the honest formula, the full sandwich, never needed the assumption at all, and seeing that reframes the whole problem.
+:::

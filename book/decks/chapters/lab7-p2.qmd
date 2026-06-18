@@ -1,0 +1,45 @@
+---
+title: "Tools, and Where the Licensed Data Lives"
+date: "2026-08-03"
+---
+
+# Tools, and Where the Licensed Data Lives {.title}
+
+::: notes
+Welcome back to Week Seven, the Lab, part two of eight. In part one we framed the repository as your capstone deliverable. Before we build it, we need three tools installed and one mental model fixed firmly in place: the repo travels freely, but the licensed data stays home. Get that boundary right and every later step falls into line.
+:::
+
+## Three Tools, One Identity Step
+
+- Git for version control
+- A GitHub account, made back in Week Six
+- Conda, Miniconda or Anaconda, for the pinned environment
+- The ASSIP container already has all three
+- Set your name and email once, so commits are attributed
+
+::: notes
+You need three tools. Git, for version control. A GitHub account — you almost certainly created one in Week Six. And conda, either Miniconda or Anaconda, for the pinned environment. The ASSIP container has all three; on your own machine, install Miniconda and Git first. Confirm they are present with a one-line version check each. Then one identity step, once per machine: set your Git user name and your email. Git refuses to commit without it, and your pre-analysis-plan timestamp is only meaningful if it carries your name. So this small configuration step is not bureaucracy — it is what attaches your identity to the immutable record you will create at the end of this lab.
+:::
+
+## The Repo Travels; The Licensed Data Stays Home
+
+- Licensed bytes live ONLY on GMU infrastructure
+- That means WRDS Cloud or the Hopper cluster
+- Never on a personal laptop
+- The repo holds code, README, cards, logs, the plan
+- None of those contain licensed data
+
+::: notes
+Now the mental model. If your project touches licensed data — CRSP, Compustat, IBES, TRACE, anyone doing the equities or fundamentals capstones — the rule from our conventions, section five, and Chapter seven-point-two binds: the licensed bytes live only on GMU infrastructure, the WRDS Cloud or the Hopper cluster, never on a personal laptop. But your repository — the code, the README, the data cards, the logs, the pre-analysis plan — can live on your laptop and on GitHub, because none of those contain licensed data. The git-ignore you build later is what enforces that wall. So the mental model is this: the repo travels freely; the licensed data stays home; the repo's job is to be the recipe that reconstructs the data on GMU infrastructure for anyone who has the same access.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Install **Git**, **GitHub**, and **conda**, and set your Git name and email once. Then hold the boundary that governs the whole lab: the repository travels freely, but **licensed data lives only on GMU infrastructure** — the repo is the recipe, not the data. Next: laying out the project tree.
+:::
+
+::: notes
+To summarize part two: you need three tools — Git, a GitHub account, and conda — plus a one-time identity step setting your name and email so your commits, and your eventual timestamp, carry your name. The boundary to hold for the rest of this lab is that the repository travels freely while the licensed data stays home on GMU infrastructure; the repo is the recipe that rebuilds the data, never the data itself. In part three we lay out the project tree, directory by directory.
+:::

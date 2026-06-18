@@ -1,0 +1,47 @@
+---
+title: "The Endogeneity Disease, in Regional Form"
+date: "2026-07-13"
+---
+
+# The Endogeneity Disease, in Regional Form {.title}
+
+::: notes
+Welcome back to Chapter four-point-five, part three of ten. In part two we worked the construction by hand and saw that shares create the cross-regional variation while both ingredients must be dispersed. Now we ask why this instrument was invented and why it is the workhorse of regional economics. The answer is the textbook simultaneity disease of Chapter three-point-four, in regional form. We will see Maya's naive regression, name precisely why it is broken, and watch the Bartik instrument fix it by importing the demand piece from outside the region.
+:::
+
+## Maya's Naive Regression Is Endogenous
+
+$$Y_r = \beta_0 + \beta_1\, \Delta L_r + \varepsilon_r$$
+
+- $Y_r$ = change in region $r$'s delinquency rate
+- $\Delta L_r$ = realized local employment growth; want $\beta_1$
+- Local optimism raises **both** jobs and borrowing
+- Housing bubble inflates jobs **and** sets up later defaults
+- $\Delta L_r$ blends labor **demand** with labor **supply**
+
+::: notes
+Suppose Maya runs the naive regression of a region-level outcome on realized local employment growth. Y-sub-r is the change in the household delinquency rate in region r; delta-L-sub-r is realized growth in local employment, her proxy for how the local economy did; and she wants beta-one, the causal effect of a labor-demand shock on financial distress. The problem is that realized local employment growth is jointly determined with the outcome and tangled with local confounders. A wave of local optimism could raise both employment and household borrowing — reverse-causality-style simultaneity. A local housing bubble could inflate employment and set up the later delinquency spike — an unobserved local confounder living in the error. Worst of all, realized growth blends labor demand, firms wanting to hire, with labor supply, workers moving in or out — and Maya only wants the demand piece. So the covariance of the regressor with the error is not zero: the regressor is endogenous, OLS is biased, and conditional independence is hopeless because the confounders are local and unmeasured.
+:::
+
+## Bartik Imports the Demand Piece
+
+- National shifts $g_j$ = demand shocks no single town caused
+- Reweight by baseline mix → predicted **demand** shock $B_r$
+- Strips out local supply responses and local confounders
+- Instrument realized growth $\Delta L_r$ with $B_r$
+- First stage: worse predicted shock → worse realized growth (**testable**)
+
+::: notes
+Bartik's instrument isolates the demand piece by importing it from outside the region. The national industry shifts are demand-side shocks to each industry that an individual commuting zone is too small to have caused — Toledo's local conditions did not move the national auto cycle. Reweighting those national shocks by region r's baseline industry mix predicts the labor-demand shock region r should have received purely from riding national industry tides, stripped of local supply responses and local confounders. That predicted demand shock is then used as an instrument for realized local growth. The first stage asks: do regions with worse predicted shocks actually have worse realized growth? Yes — that is relevance, and it is testable. The second stage reads the effect of growth on delinquency off the part of growth that the national tides explain. This template — predict a local shock from national-industry-mix exposure, then instrument the realized local shock with the prediction — is the canonical Bartik design.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Realized local growth $\Delta L_r$ is endogenous — it mixes labor demand, labor supply, and local confounders, so $\operatorname{Cov}(\Delta L_r,\varepsilon_r)\neq 0$ and OLS is biased. Bartik **imports the demand piece** from national tides and uses it as an instrument. Next: the finance flavor — bank-lending shocks.
+:::
+
+::: notes
+To summarize part three: Maya's naive regression is broken because realized local employment growth is jointly determined with the outcome, tangled with local confounders, and contaminated by labor supply when she only wants demand. The covariance of the regressor with the error is not zero, so OLS is biased. Bartik's instrument fixes this by importing the demand piece from outside the region — predicting the shock region r should have gotten from national industry tides at its baseline exposure. This same skeleton, with the nouns swapped, drives a huge applied literature: immigration's effect on wages, the China trade shock, and the finance examples. In part four we turn to one of those finance flavors — regional bank-lending shocks — which makes the share-shift logic especially vivid.
+:::

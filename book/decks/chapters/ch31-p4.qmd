@@ -1,0 +1,58 @@
+---
+title: "SUTVA: The Assumption Hiding in the Notation"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# SUTVA: The Assumption Hiding in the Notation {.title}
+
+::: notes
+Welcome back to Chapter three-point-one, part four of five. In part three we decomposed Maya's naive difference into the ATT plus selection bias, and pinned the week's mission as zeroing that bias. But before we meet the tool that zeroes it, we expose an assumption the framework has leaned on since the first line, basic enough to miss yet load-bearing for everything. It is called SUTVA, and finance is unusually good at breaking it.
+:::
+
+## The Assumption We Smuggled In
+
+- We wrote $Y_i(1)$, $Y_i(0)$ — depending on $i$'s *own* treatment
+- That is **SUTVA**, the Stable Unit Treatment Value Assumption
+- **Part 1 — No interference** between units
+- **Part 2 — No hidden versions** of treatment
+- Check the two parts **separately**
+
+::: notes
+Go back to the first move, where we wrote Y-of-one and Y-of-zero for unit i. That notation smuggled in an assumption: unit i's potential outcome depends only on unit i's own treatment. That is SUTVA, the Stable Unit Treatment Value Assumption, with two distinct parts you must check separately. Part one is no interference: one unit's treatment does not affect another unit's potential outcomes. This is what lets us write Y-of-i-of-d as a function of i's own treatment alone, rather than the entire vector of everyone's treatments. Part two is no hidden versions: there is only one treatment and one control, consistently defined, so Y-of-one is a single number rather than a blend of different things. When either part fails, the framework does not just lose precision; it loses meaning, because the potential outcomes are no longer well-defined.
+:::
+
+## Finance Breaks It: Spillovers and Scale
+
+- **Spillover:** enrollees teach roommates, siblings
+- A non-enrollee's $Y_i(0)$ gets contaminated — interference
+- **General equilibrium:** Devon's crypto tax credit at scale
+- Demand surge moves the **price** everyone faces
+- Small-scale estimate does **not** extrapolate to the policy
+
+::: notes
+Finance is unusually good at breaking SUTVA, because financial actors are connected through markets, prices, and networks in exactly the ways SUTVA forbids. Take spillovers in Maya's program. Suppose enrollees teach their roommates and siblings what they learned, how to dispute a credit-report error, how to time an application. Then a non-enrollee living with an enrollee gets some treatment second-hand. Her Y-of-zero, supposedly the outcome with no program, is contaminated. That is interference: the control group is no longer a clean no-treatment world. Now scale up with Devon, who studies a tax credit subsidizing first-time crypto purchases. If a few people get it, no problem. But if it scales nationwide, the surge in demand moves the price, and everyone faces a different market. The non-recipients' Y-of-zero shifts because of other people's treatment, through the price. This is the classic general-equilibrium failure: a treatment harmless at small scale can have completely different effects at large scale, and the small-scale estimate does not extrapolate to the policy.
+:::
+
+## Hidden Versions, and the Practical Rule
+
+- **Priya's ESG case:** "adopting the standard" is not one thing
+- Audited report vs. vague two-paragraph statement
+- Coding both $D_i=1$ blends genuinely different treatments
+- Always **name** your SUTVA assumption out loud
+- Randomization **cannot** fix a SUTVA failure
+
+::: notes
+The second part fails in Priya's case. She evaluates whether adopting an ESG disclosure standard lowers a firm's cost of capital. But adopting the standard is not one thing: one firm publishes an audited, detailed report; another files a vague two-paragraph statement to check the box. Coding both as treated violates SUTVA's second part, because there is no single Y-of-one; treated hides a spectrum of intensities, and her estimate becomes an uninterpretable blend. The practical upshot: every causal claim sits on a SUTVA assumption, and you should state it out loud. I am assuming no spillovers between units, and that treatment is the same well-defined thing for everyone. Often it is fine; a small pilot with unconnected participants rarely moves markets or leaks across people. Sometimes it is fatally wrong. Either way, name it. And note: SUTVA failures cannot be fixed by randomization, the tool we turn to next. Randomizing who gets treated does nothing about treatments spilling across units or meaning different things. SUTVA must hold before randomization can do its job.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**SUTVA** has two parts: no interference between units, and no hidden versions of treatment. Finance breaks both — via spillovers, general-equilibrium price effects, and vague treatments. Name it out loud; randomization cannot fix it. Next: the design that *does* zero selection bias.
+:::
+
+::: notes
+To summarize part four: SUTVA, the assumption hiding in the notation, has two parts. No interference means one unit's treatment does not touch another's outcome. No hidden versions means treatment is a single, well-defined condition. Finance breaks both routinely, through spillovers between connected people, through general-equilibrium price effects when a treatment scales, and through vague treatments that blend many intensities. State your SUTVA assumption out loud, and remember that randomization cannot repair a SUTVA failure; it must hold before any design can work. In part five we meet that design: randomization, the one move that provably drives selection bias to zero, and the bridge to the next four chapters.
+:::

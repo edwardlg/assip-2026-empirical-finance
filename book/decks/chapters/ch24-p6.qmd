@@ -1,0 +1,82 @@
+---
+title: "Clustering: When Errors Hold Hands"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# Clustering: When Errors Hold Hands {.title}
+
+::: notes
+Welcome back to When the Errors Misbehave, part six of eight. In part five we finished heteroskedasticity. Now the failure robust standard errors cannot fix: errors correlated within groups — the single most expensive mistake in empirical finance, and exactly what wrecked Maya's t-statistic in part one.
+:::
+
+## The Failure White SEs Miss
+
+- Robust SEs assume off-diagonals of $\boldsymbol\Omega$ are zero
+- In finance that is heroic and usually false
+- Maya's loans share a lender's pricing model and quirks
+- Priya's claims share a state's fire season and codes
+- Robust SEs are blind — they see one observation at a time
+
+::: notes
+Robust standard errors assume the off-diagonals of Omega are zero — errors uncorrelated across observations. In finance that is heroic and usually false. Maya's loans within the same lender share the lender's pricing model, risk appetite, and quirks; their errors move together. Priya's claims within a state share that state's fire season and building codes. Devon's daily token returns within a week share whatever sentiment shock hit crypto. These are within-cluster correlations, and robust standard errors are blind to them because they only ever look at one observation at a time.
+:::
+
+## Why It Is So Dangerous
+
+- $N$ loans, $G$ lenders of size $n$, within-cluster correlation $\rho$
+- A Moulton-style result inflates the variance:
+- true Var $\approx$ naive Var $\times [\,1 + (n-1)\,\rho_x\,\rho_\varepsilon\,]$
+- Damage scales with cluster size $n$ — bigger groups, worse
+- $n = 200$, mild $\rho_x\rho_\varepsilon = 0.05$: bracket $\approx 11$
+
+::: notes
+Here is why ignoring clustering is so dangerous. Suppose Maya has N loans in G lenders of size n, sharing a common shock within a lender. A classic result — a special case of the Moulton factor — says the true variance is approximately the naive variance times one plus n minus one, times rho-x times rho-epsilon, where rho-epsilon is the within-cluster error correlation and rho-x is the within-cluster correlation of the regressor. The damage scales with cluster size n: bigger clusters, worse understatement. With two hundred loans per lender and even a mild product of zero point zero five, the bracket is one plus one hundred ninety-nine times zero point zero five — about eleven.
+:::
+
+## Maya, Explained by Arithmetic
+
+- True variance is 11 times the naive one
+- True SE is $\sqrt{11} \approx 3.3$ times bigger
+- Reported t of $6.0$ should really be about $1.8$
+- That is Maya's collapse — not bad luck, arithmetic
+- More observations *within* clusters buy no new evidence
+
+::: notes
+Your true variance is eleven times the naive one, so your true standard error is the square root of eleven, about three point three times bigger, and your reported t-stat of six point zero should really be about one point eight. That is exactly what happened to Maya — not bad luck, arithmetic. More observations within existing clusters do not buy the independent evidence the naive formula assumes. Counting nine thousand correlated loans as independent is like polling one household nine times and reporting a sample of nine. What buys evidence is more clusters.
+:::
+
+## The Cluster-Robust Sandwich
+
+- Errors correlated within group, not across: $\boldsymbol\Omega$ block-diagonal
+- Middle becomes a sum over the $G$ clusters:
+- $\sum_{g=1}^{G}\mathbf{X}_g'\hat{\boldsymbol\varepsilon}_g\,\hat{\boldsymbol\varepsilon}_g'\mathbf{X}_g$, bread unchanged
+- Outer product keeps the within-cluster covariances White threw away
+- White SEs are just cluster SEs with every cluster size one
+
+::: notes
+The fix is the same sandwich, with a middle built from whole clusters instead of single points. If errors are correlated within cluster g but uncorrelated across clusters, Omega is block-diagonal — dense blocks down the diagonal, one per cluster, zeros elsewhere. The filling becomes a sum over the G clusters of X-g transpose, times the residual vector, times its transpose, times X-g. Compare White's: there the middle summed squared residuals over single observations; here it sums over whole clusters, and the outer product keeps the within-cluster covariances White threw away. White standard errors are just cluster standard errors with every cluster size one — the same machine, zoomed out from points to groups.
+:::
+
+## The Few-Clusters Caveat
+
+- Consistent as the number of clusters $G \to \infty$, not $N$
+- Cluster by state: at most $G = 50$; by industry: maybe $12$
+- Few clusters: cluster SE is noisy and biased downward
+- Rule of thumb: want at least 30–50 clusters
+- Below that: $t$ with $G-1$ df, or wild cluster bootstrap
+
+::: notes
+There is a catch that bites hard in finance. The cluster-robust estimator is consistent as the number of clusters G goes to infinity, not as N does. The asymptotics live in G. Cluster by state, and Maya has at most fifty clusters; by industry, maybe twelve. With few clusters the standard error is itself noisy and biased downward — overconfident again, the very disease we are treating. The rough rule of thumb: you want at least thirty to fifty clusters before trusting the normal-approximation t-test. Below that, reach for fixes — the small-sample t-distribution with G minus one degrees of freedom, or the wild cluster bootstrap of Cameron, Gelbach, and Miller, two thousand eight, which resamples whole clusters.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Cluster-robust SEs** build the filling from whole blocks, keeping the within-group covariances White discards. Damage scales with cluster size — Maya's $\sqrt{11}\approx 3.3\times$ inflation was arithmetic, not luck. But you need **30–50 clusters**; below that, use the wild cluster bootstrap. Next: HAC, the same disease across time.
+:::
+
+::: notes
+To summarize part six: cluster-robust standard errors build the filling from whole blocks, keeping the within-group covariances White discards. The danger scales with cluster size — Maya's three-point-three-times inflation was arithmetic, not luck. But the estimator needs many clusters; aim for thirty to fifty, else use the wild cluster bootstrap. In part seven, H-A-C — the same disease across time.
+:::

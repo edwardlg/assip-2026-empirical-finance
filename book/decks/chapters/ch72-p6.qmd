@@ -1,0 +1,57 @@
+---
+title: "13F and PatentsView — Holdings and Patents"
+date: "2026-08-03"
+---
+
+# 13F and PatentsView — Holdings and Patents {.title}
+
+::: notes
+Welcome back to Data Acquisition in Practice, part six of eight. In part five we covered FRED's revision trap and H-M-D-A's size problem. Now two more sources: Form thirteen-F institutional holdings, and USPTO PatentsView for innovation data. Each has conceptual limits — not bugs in your code, but limits in the data your design must respect.
+:::
+
+## 13F — Institutional Holdings
+
+- Quarterly report by managers over \$100 million in US equity
+- Discloses long positions: stocks, shares, value at quarter-end
+- Public route: **EDGAR** form thirteen-F-H-R, same rules as before
+- Licensed route: **Thomson/Refinitiv on WRDS**, cleaner panel
+- Holdings keyed on **CUSIP** — a licensed identifier
+
+::: notes
+Form thirteen-F is the quarterly report that institutional managers with over one hundred million dollars in qualifying U-S equity must file, disclosing their long positions: which stocks, how many shares, what value, as of quarter-end. It is how you see what the big funds held — Sam could study institutional crowding; Priya could track ownership of climate-exposed insurers. Two access routes. The free, public route is S-E-C EDGAR: thirteen-F filings are just another EDGAR form, pulled exactly like part four — same user-agent rule, same rate limit, same accession-number pinning. The filing's information table lists each holding. The licensed, cleaned route is the Thomson Reuters Refinitiv thirteen-F files on WRDS — the same holdings, de-duplicated, with cleaner identifiers and historical depth, and with the same GMU-only licensing. Holdings are keyed on C-U-S-I-P, a nine-character security identifier that is itself licensed.
+:::
+
+## What 13F Does *Not* Tell You
+
+- **Long positions only** — no shorts, no most derivatives
+- Filed with a **45-day lag** — holdings are stale when seen
+- Managers can request **confidential treatment** — table incomplete
+- Do not redistribute a large CUSIP-to-name mapping
+- These are limits in the data, not bugs in your code
+
+::: notes
+Three conceptual gotchas, and they matter more than any code detail. One: thirteen-F reports long positions only — no shorts, no most derivatives — so it is not the manager's true net exposure. Two: it is filed with a forty-five-day lag after quarter-end, so the holdings are stale when you see them; treating a thirteen-F as real-time positioning is a look-ahead error in reverse. Three: managers can request confidential treatment for some positions, so the disclosed table can be incomplete. None of these are bugs in your code; they are limits in the data your identification must respect. On licensing: the filings are public, the cleaned Thomson panel is licensed and GMU-only, and C-U-S-I-P itself is licensed — you may use CUSIPs to merge your own data, but redistributing a large CUSIP-to-name mapping can violate the license, so keep CUSIPs inside your analysis and do not publish a master file.
+:::
+
+## PatentsView — Innovation in Bulk
+
+- Granted patents with inventors, assignees, citations, classes
+- Keys on **patent number** and disambiguated inventor IDs
+- Migrated to the USPTO Open Data Portal in March 2026
+- Targeted queries via API; whole-database via **bulk downloads**
+- Public domain — cache and share freely
+
+::: notes
+PatentsView is the USPTO's research-friendly database of U-S patents: every granted patent, with inventors, assignees, filing and grant dates, citations between patents, and technology classifications, back to nineteen seventy-six for full text. This is Leah's project: patent counts and citation-weighted counts by firm-year. Patents key on a patent number; inventors and assignees have disambiguated I-Ds — the database's best guess that this is the same inventor across patents, an estimate to treat with care. PatentsView migrated to the USPTO Open Data Portal in March twenty twenty-six, and the platform has been versioned and migrated several times in two years, so always confirm the current endpoint and header name in the data card and transition guide before a big run. Targeted queries — one firm, one year — go through the API with a free key read from the environment; whole-database extracts come from bulk downloads, not millions of paginated calls. The data is public domain, so cache and share freely.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**13F** shows institutional **long positions only**, filed with a 45-day lag and possibly incomplete — limits your design must respect, not bugs to fix. **PatentsView** offers public-domain patents: targeted queries via API, whole-database via bulk files — and confirm the current endpoint, since the platform keeps migrating. Next: free price-data alternatives.
+:::
+
+::: notes
+To summarize part six: thirteen-F discloses institutional long positions only, filed with a forty-five-day lag and sometimes incomplete through confidential treatment — these are limits in the data your identification must respect. Pull it free from EDGAR or cleaner from the licensed Thomson panel on WRDS, and never redistribute a CUSIP master file. PatentsView gives public-domain patent data: targeted queries through the API, whole-database extracts through bulk downloads, and always confirm the current endpoint because the platform keeps migrating. In part seven we cover the free price-data alternatives: yfinance, Stooq, and Tiingo.
+:::

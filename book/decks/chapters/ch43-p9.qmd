@@ -1,0 +1,58 @@
+---
+title: "IK and CCT: Choosing the Bandwidth"
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+# IK and CCT: Choosing the Bandwidth {.title}
+
+::: notes
+Welcome back to Chapter four-point-three, part nine of thirteen. In part eight the bias-variance trade-off warned against eyeballing the bandwidth. Now we meet the two data-driven procedures that choose it for you: Imbens and Kalyanaraman's mean-squared-error-optimal rule, and the Calonico-Cattaneo-Titiunik robust bias correction that fixes a subtle coverage problem the optimal bandwidth creates.
+:::
+
+## Two Data-Driven Procedures
+
+- **Imbens–Kalyanaraman (2012)**: minimizes asymptotic MSE
+- Estimates curvature and noise from data, plugs into optimal-$h$
+- The first widely adopted automatic choice
+- Made RD analyses far less arbitrary
+- But it leaves one subtlety dangling
+
+::: notes
+Two named procedures choose h for you in a principled, data-driven way, so you are not eyeballing it. Imbens and Kalyanaraman, in two-thousand-twelve, derived the bandwidth that minimizes the asymptotic mean squared error of the estimator. Their formula estimates the two ingredients of the mean squared error — the curvature of the outcome function at the cutoff, which drives bias, and the noise variance, which drives variance — from the data, then plugs them into the optimal-h expression. This was the first widely adopted automatic choice and made regression-discontinuity analyses far less arbitrary. But Imbens and Kalyanaraman leave one subtlety dangling, and Calonico, Cattaneo, and Titiunik fixed it.
+:::
+
+## CCT Robust Bias Correction
+
+- MSE-optimal $h$ is, by design, large enough to leave some bias
+- The naive interval $\hat\tau \pm 1.96\,\widehat{\text{se}}$ assumes no bias
+- So it is mis-located and *undercovers* — below $95\%$
+- CCT: subtract the estimated bias, inflate the standard error
+- Now the interval hits its nominal coverage; `rdrobust` does this
+
+::: notes
+Here is the subtlety. The mean-squared-error-optimal bandwidth is, by design, large enough that the bias is not negligible — that is what minimizing mean squared error means, you accept some bias to buy variance reduction. But the conventional confidence interval, tau-hat plus or minus one-point-nine-six standard errors, is built assuming the estimator is centered on the truth. At the optimal bandwidth it is not centered; there is a leftover bias, so the interval is mis-located and undercovers — it contains the true effect less than ninety-five percent of the time. Calonico, Cattaneo, and Titiunik, in two-thousand-fourteen, gave the now-standard fix, robust bias-corrected inference. They estimate the leading bias term and subtract it from the point estimate, and they inflate the standard error to account for the extra noise that the bias-correction step itself introduces. The result is a confidence interval that achieves its nominal coverage even at the optimal bandwidth. This is what the rdrobust package implements.
+:::
+
+## A Discipline Note
+
+- Pick the bandwidth procedure *before* you see the estimate
+- Report it; do not bandwidth-shop until the stars appear
+- Standard check: halve and double the chosen $h$
+- Confirm the jump does not vanish or explode
+- Today's expectation: data-driven $h$, local linear, CCT intervals
+
+::: notes
+A discipline note. Pick your bandwidth procedure before you look at the estimate, report it, and show that the result survives reasonable alternatives. A standard robustness check is to halve and double the chosen bandwidth and confirm the jump does not vanish or explode. Bandwidth-shopping until the stars appear is one of the easiest ways to fool yourself and your reader. When you report a regression-discontinuity estimate today, the expectation is a data-driven bandwidth in the Imbens-Kalyanaraman or Calonico-Cattaneo-Titiunik style, local linear with a triangular kernel, and robust bias-corrected confidence intervals.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Automate $h$: **IK (2012)** minimizes the MSE; **CCT (2014)** then fixes the catch that the MSE-optimal $h$ leaves a bias, so the naive $\hat\tau\pm1.96\,\widehat{\text{se}}$ interval undercovers. CCT subtracts the bias and inflates the error — `rdrobust`'s default. Pick $h$ before seeing the estimate. Next: reading an RD plot.
+:::
+
+::: notes
+To summarize part nine: automate the bandwidth. Imbens and Kalyanaraman give the mean-squared-error-optimal choice; Calonico, Cattaneo, and Titiunik then fix the catch — that the optimal bandwidth deliberately leaves a bias, so the naive interval undercovers — by subtracting the estimated bias and inflating the standard error. That robust bias-corrected interval is the rdrobust default. And as discipline, pick the bandwidth before you see the estimate and confirm the jump survives halving and doubling it. In part ten we turn to the most visual part of the design: how to read an RD plot like a referee.
+:::

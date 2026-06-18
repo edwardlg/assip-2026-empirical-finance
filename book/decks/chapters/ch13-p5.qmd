@@ -1,0 +1,58 @@
+---
+title: "Consistency: Getting It Right Eventually"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Consistency: Getting It Right Eventually {.title}
+
+::: notes
+Welcome back to Estimators and Their Sampling Distributions, part five of seven. So far everything has been about a fixed sample size. But there is a second, more aspirational virtue we want: as we pour in more and more data, the estimate should home in on the truth and stay there. That virtue is consistency, and you can already see it hiding inside the formulas we have.
+:::
+
+## Defining Consistency
+
+- Now write $\hat{\mu}_N$ — the recipe changes as $N$ grows
+- **Consistent:** $\hat{\mu}_N \xrightarrow{p} \mu$ as $N\to\infty$
+- Equivalently $\operatorname{plim}_{N\to\infty}\hat{\mu}_N=\mu$
+- Pick any tolerance, say within \$10 of truth
+- For large $N$, $\Pr(\text{inside window})\to 1$
+
+::: notes
+An estimator mu hat sub N — now subscripted by sample size to emphasize that it changes as N grows — is consistent for mu if it converges in probability to mu as N goes to infinity. We write that with an arrow carrying a little p, or equivalently with the operator plim, the probability limit. We will treat convergence in probability intuitively here and not prove the underlying theorem; that is the job of the very next chapter. The intuition is exactly what the words say. Pick any tolerance you like, say within ten dollars of the truth. For a large enough N, the probability that mu hat sub N lands inside that window is as close to one — certainty — as you want. The estimate does not just get close on average; it gets reliably, almost surely close, and the window can be made arbitrarily tight.
+:::
+
+## You Can See It in the Formulas
+
+- Sample mean is centered: $\mathbb{E}[\bar{x}]=\mu$ always
+- Its variance $\sigma^2/N \to 0$ as $N\to\infty$
+- Centered with spread collapsing to zero
+- The distribution is squeezed onto the point $\mu$
+- That squeezing is consistency — licensed by the **LLN**
+
+::: notes
+You can actually see consistency hiding inside the two formulas we already have. The sample mean is unbiased — its expected value is mu — so it is always centered on the truth. And its variance is sigma squared over N, which marches to zero as N goes to infinity. An estimator that is centered on the target with a spread collapsing to zero has nowhere to go but the target: the distribution of x bar is being squeezed onto the single point mu. That squeezing is consistency. The formal theorem that licenses this argument is the Law of Large Numbers, and it is the first thing we prove in the next chapter. The precise statement — zero limiting bias plus zero limiting variance implies consistency — even has a name, convergence in mean square, and you have effectively just seen why it works.
+:::
+
+## Two Warnings
+
+- Unbiased and consistent are *different* — neither implies the other
+- "Just use $x_1$": unbiased, but variance $\sigma^2$ forever — inconsistent
+- A recipe can be biased at every $N$ yet consistent
+- Consistency cannot save a broken sampling assumption
+- Confidently converging to the *wrong* number is still wrong
+
+::: notes
+Two warnings, so you do not over-learn the lesson. First, unbiased and consistent are different properties, and neither implies the other. A recipe can be unbiased at every N yet inconsistent — for instance, "just use the first claim and ignore the rest." That is unbiased, since the expected value of the first claim is mu, but its variance is sigma squared forever; pouring in more data never helps because the recipe ignores the new data. It never settles down. Conversely, a recipe can be biased at every finite N but consistent, if its bias shrinks to zero as N grows. Consistency is a statement about the limit; unbiasedness is a statement at each fixed N. Second, consistency does not save a broken sampling assumption. If Priya's claims systematically over-sample one county, more of the same bad data drives x bar toward the wrong number with ever greater confidence. A consistent estimator of the wrong thing is still wrong — just precisely, confidently wrong. Garbage in, garbage in.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+An estimator is **consistent** if $\hat{\mu}_N \xrightarrow{p}\mu$ — for any tolerance, the chance of landing inside the window goes to one. The sample mean qualifies: centered on $\mu$ with variance $\sigma^2/N \to 0$. But it is *different* from unbiasedness, and it cannot rescue bad sampling. Next: *see* the sampling distribution by simulation.
+:::
+
+::: notes
+To summarize part five: consistency says the estimate converges in probability to the truth as data grow without bound — for any tolerance, the chance of landing inside the window approaches certainty. The sample mean qualifies, because it is centered on mu with a variance that collapses to zero, and the Law of Large Numbers makes that rigorous next chapter. But consistency is different from unbiasedness — neither implies the other — and it cannot rescue a broken sampling assumption; it just makes you confidently wrong. In part six we stop deriving and start looking: we fake the universe on a computer and watch the sampling distribution itself.
+:::

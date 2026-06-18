@@ -1,0 +1,55 @@
+---
+title: "Conditioning: Using What You Know"
+date: "2026-06-22"
+---
+
+# Conditioning: Using What You Know {.title}
+
+::: notes
+Welcome back to Chapter one-point-one, part two of seven. In part one we built Sam's joint table and read off the marginals. Now we make the central move: conditioning. A marginal answers "what does a random day look like?" A conditional answers a sharper question — "given that today is stormy, what does the return look like?" That second question is the one a trader, a lender, or a risk manager actually asks. You rarely act on the unconditional average; you act on what you know right now. Conditioning is the mathematical name for using what you know.
+:::
+
+## The Mechanics of Conditioning
+
+- Walk into one row, then rescale it to sum to one
+- $p_{X\mid Y}(x\mid y)=\dfrac{p(x,y)}{p_Y(y)}$, valid when $p_Y(y)>0$
+- Stormy cells $0.15,\ 0.10,\ 0.05$ sum to $0.30$, not $1$
+- Divide each by $0.30$ to get a proper distribution
+
+::: notes
+Here is the mechanics. To condition on Y equals two, the stormy regime, walk into the stormy row of the table. Its three entries are zero point one five, zero point one zero, and zero point zero five. Those describe what happens on stormy days, but they only add to zero point three, not one — because stormy days are only thirty percent of all days. To turn them into a proper probability distribution over the stormy world, divide each by that row total, zero point three. In general, the conditional distribution of X given Y equals the joint probability divided by the marginal of Y, and it is valid whenever the marginal of Y is strictly positive. Dividing-and-rescaling is the whole operation.
+:::
+
+## What Conditioning Reveals
+
+- Stormy: $\Pr=0.50,\ 0.333,\ 0.167$ on $(-2,0,+2)$
+- Calm: $\Pr=0.071,\ 0.50,\ 0.429$ on $(-2,0,+2)$
+- Up $2\%$: $43\%$ of calm days, only $17\%$ of stormy
+- Multiplication rule: $p(x,y)=p_{X\mid Y}(x\mid y)\,p_Y(y)$
+
+::: notes
+Dividing the stormy row gives conditional probabilities of zero point five, zero point three three three, and zero point one six seven on returns of minus two, zero, and plus two percent. These now sum to one — a clean distribution over the stormy subset. Repeating for the calm row, dividing by zero point seven, gives zero point zero seven one, zero point five, and zero point four two nine. Look at what conditioning revealed. Unconditionally, the portfolio is up two percent about thirty-five percent of the time. But given a calm day, it is up two percent about forty-three percent of the time, and given a stormy day, only seventeen percent. The regime genuinely shifts the return distribution. Rearranging the definition gives the multiplication rule: a joint probability is the probability of the condition times the probability of the outcome given the condition.
+:::
+
+## Conditioning Runs Both Directions
+
+- Reverse the question: stormy *given* a bad return?
+- Read up a column, divide by the column total
+- $\Pr(Y=2\mid X=-2\%)=\dfrac{0.15}{0.20}=0.75$
+- Bayes' rule in table form: belief $30\%\to 75\%$
+- Fails when $p_Y(y)=0$ — cannot condition on the impossible
+
+::: notes
+We conditioned return on regime because that matched Sam's decision: see the regime, forecast the return. But the same table answers the reverse, and the reverse is often what a risk manager wants. Suppose Sam observes a bad day, X equals minus two percent, and asks how likely the market was actually stormy. That is the probability of Y equals two given X equals minus two percent — reading up a column instead of across a row. The recipe is identical, but now divide by the column total. From the table, the probability of X equals minus two percent is zero point two, so the answer is zero point one five over zero point two, which is zero point seven five. Three-quarters of Sam's bad days are stormy, even though stormy days are only thirty percent overall. Conditioning updated Sam's belief from thirty percent up to seventy-five. That flip is exactly Bayes' rule in table form. One caution: the definition divides by the marginal of Y, so it is silent when that marginal is zero — you cannot condition on an event that never happens.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Conditioning** restricts the table to one row (or column) and rescales it to a valid distribution: $p_{X\mid Y}=p(x,y)/p_Y(y)$. It runs both directions — return given regime, or regime given return — which is **Bayes' rule** in table form. Next: **independence**, the special case where conditioning teaches you nothing.
+:::
+
+::: notes
+To summarize part two: conditioning restricts the joint table to a single row or column, then rescales it to sum to one. The result, the conditional distribution, is the formal way to use what you know. It runs both directions — return given regime, or regime given return — by rerouting through the joint, which is Bayes' rule in table form. And it is undefined when you try to condition on something with probability zero. In part three we examine the special case where conditioning changes nothing at all: independence.
+:::

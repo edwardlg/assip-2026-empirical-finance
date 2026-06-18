@@ -1,0 +1,70 @@
+---
+title: "Critical Limits: P-Hacking and Reproducibility"
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+# Critical Limits: P-Hacking and Reproducibility {.title}
+
+::: notes
+Welcome back to the AI co-pilot for research, part ten of fourteen. In part nine we covered hallucinated citations and look-ahead bias. Now the remaining two critical limits: prompt-induced p-hacking, and the reproducibility of stochastic outputs.
+:::
+
+## Prompt-Induced P-Hacking
+
+- Recall p-hacking: torture a dataset until $p<0.05$
+- The label column **depends on the prompt** — a new avenue
+- Reword the rubric until the regression result appears
+- Worse than classic: the wording knob is huge and easy to fiddle
+- You may not even notice you are doing it
+
+::: notes
+The third limit: prompt-induced p-hacking. You met p-hacking in Week One — trying specifications until one crosses p less than zero-point-zero-five, confessing a result that is really just noise. Models open a new avenue for it. Because the label column depends on the prompt, you can, consciously or not, rewrite the prompt until the labels produce the regression result you wanted. Try "negative" defined one way: coefficient insignificant. Reword the rubric: now it's significant. Stop, declare victory, report the lucky prompt. This is p-hacking in a new costume, and arguably worse, because the researcher degree of freedom — the exact prompt wording — is so large and easy to fiddle with that you may not even notice you are doing it.
+:::
+
+## Defending Against Prompt P-Hacking
+
+- **Freeze the rubric** before looking at the downstream result
+- The gold set, not the regression, decides when the prompt is good
+- Pre-register the prompt and specification in a dated file
+- Report the prompt **verbatim** in an appendix
+- If you tried several, show results under each — robustness
+
+::: notes
+The defenses are the ones that defeat p-hacking generally, adapted. First, freeze the rubric before you look at the downstream result. Validate the classifier against the gold set — a target unrelated to your regression coefficient — and lock the prompt when its F-one is acceptable. The gold set, not the regression, decides when the prompt is good. Second, pre-register the prompt and specification in a dated file before the final analysis. Third, report the prompt verbatim in an appendix so a replicator can confirm you did not shop for it. Fourth, if you tried several prompts, show the results under each — robustness, not concealment. The honest question is from Mentor Session Five: would this result survive a referee who can see everything you tried?
+:::
+
+## Reproducibility of Stochastic Outputs
+
+- A regression is deterministic; an LLM is **stochastic** by default
+- Ask the same question twice, get two different answers
+- *Temperature* scales randomness; zero is far more repeatable
+- A *seed* pins draws — where the API exposes one
+- Caveat: some frontier models expose **no temperature** at all
+
+::: notes
+The fourth limit: reproducibility of stochastic outputs. A regression is deterministic — same data, same code, same coefficient, forever. A model is, by default, stochastic: ask the same question twice and you can get two different answers, because it samples from a distribution over next tokens. For a research instrument, irreproducibility is a serious problem. Several controls exist, and one honest caveat. Temperature is the classic knob — it scales how much randomness is injected; temperature zero makes the model close to greedy and far more repeatable, which is what you want for classification. A seed, where the A-P-I exposes one, pins the draws. But here is the caveat, itself a reproducibility lesson: these controls differ by provider and model and are not guaranteed bit-for-bit. Some current frontier models do not expose a temperature parameter at all, and even temperature zero is not a hard determinism guarantee across versions or hardware.
+:::
+
+## Make the Pipeline Reproducible Instead
+
+- You cannot rely on the model being deterministic
+- **Pin the exact model version string** — version it like a snapshot
+- **Log every prompt and response** — the labels you used are saved
+- Run classification **once**, save to disk, treat that file as data
+- The labels are data; freeze them like data
+
+::: notes
+The practical consequence: you cannot rely on the model being deterministic, so make your pipeline reproducible by other means. Three things, and they bridge to the next part. First, pin and record the exact model version string — a model silently updated under the same name will change your labels, so version it like a CRSP snapshot date. Second, log every prompt and response so the labels you used are saved, not regenerated. Third, where determinism matters, run the classification once, save the output to disk, and treat that file as your data — never re-query the model inside an analysis meant to be reproducible. The labels are data; freeze them like data.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Freeze the rubric against the gold set** before seeing the regression, to avoid prompt-induced p-hacking. Treat stochastic output by making the *pipeline* reproducible: pin the version string, log every call, and freeze the labels to disk as data. Next: the APIs and correct, current code.
+:::
+
+::: notes
+To summarize part ten: the last two critical limits. Prompt-induced p-hacking is p-hacking in a new costume — the label column depends on the prompt, so freeze the rubric against the gold set before seeing the regression, and report prompts verbatim. Stochastic outputs make models irreproducible by default; temperature and seeds help but are not guaranteed. So make the pipeline reproducible instead: pin the version string, log every call, and freeze the labels to disk as data. In part eleven we move to the A-P-Is and correct, current code.
+:::

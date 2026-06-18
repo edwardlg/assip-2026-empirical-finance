@@ -1,0 +1,57 @@
+---
+title: "Pin the Environment, README, and Data Cards"
+date: "2026-08-03"
+---
+
+# Pin the Environment, README, and Data Cards {.title}
+
+::: notes
+Welcome back to Week Seven, the Lab, part six of eight. In part five we walked the commit loop and saw that pushed history is forever. Now we make your results rebuildable. This part covers two things a stranger needs: a pinned environment that reconstructs your software stack exactly, and the documents — a README and a data card per source — that make the repo legible.
+:::
+
+## Why Pin, and How
+
+- "It worked on my machine" has killed many reproductions
+- Your code runs on specific library versions, each changing behavior
+- Pin the exact versions so anyone rebuilds the same stack
+- Use a conda `environment.yml`: name, channels, Python, dependencies
+- Pin `python=3.11` and the exact stack from our conventions
+
+::: notes
+Here is a sentence that has killed more reproductions than any statistical error: it worked on my machine. Your analysis does not run on Python — it runs on a specific interpreter with specific versions of pandas, numpy, statsmodels, and a dozen other libraries, each of which changes behavior across versions. A default that flipped, a function removed, a numerical routine improved so the last decimal moved — any of these can make the same code produce different numbers on a different machine. Pinning the environment means recording the exact versions, so anyone can reconstruct the identical stack and get the identical result. You pin with a conda environment file that names the environment, its channels, the Python version, and every dependency. Pin Python to three-point-eleven and the exact stack from our conventions, section five — the same libraries every chapter notebook uses.
+:::
+
+## Freeze the Solved Versions
+
+- `conda env create` then activate the environment
+- The solver picks exact patch versions when it installs
+- `conda env export --no-builds` records what it chose
+- Commit that lock file beside the human-readable one
+- Intent in `environment.yml`, exact record in the lock file
+
+::: notes
+Create the environment and activate it. Then the subtle, professional step: freeze the exact solved versions. The human-readable file pins Python and the majors, but conda's solver picks specific patch versions of every dependency when it installs. To make the environment reconstructible to the patch, export what the solver actually chose into a lock-style file and commit that alongside the readable one. The division of labor is deliberate: the readable file is the human-readable intent — these libraries, this Python — easy to edit; the lock file is the machine-exact record that makes a rebuild bit-for-bit. The no-builds flag drops OS-specific build hashes so the lock file is portable across the container and Hopper. The sentence you should be able to say out loud: my results were produced under the lock file; rebuild it and you rebuild my numbers.
+:::
+
+## README and a Data Card Per Source
+
+- README answers three questions: what, why, how-to-run
+- It is the first thing GitHub shows a reader
+- Never paste keys — tell the reader to `export` them
+- One data card per source under `data-cards/`
+- Six fields: coverage, identifiers, access, license, gotchas, pin
+
+::: notes
+Two documents make your repo legible. The README, in the repo root, is the first thing GitHub shows; keep it short and answer three questions — what is this project, why does it exist, and how do I run it, with the exact commands. Notice what it does not do: it does not paste API keys, it tells the reader to export them, and it does not promise a reader can re-pull licensed data — it points them at the data cards. Then write one data card per source, following the same six-field structure Chapter seven-point-two used: coverage, key identifiers, access path, license, rate limits and gotchas, and the reproducibility pin. For a licensed source the card adds the snapshot date and the non-negotiable line: licensed to GMU, analyzed only on GMU infrastructure, raw data never committed.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Pin Python and your stack in `environment.yml`, then **freeze the solver's exact choices** in a lock file so rebuilds are bit-for-bit. A short README answers *what / why / how-to-run* without pasting keys, and one **six-field data card** per source documents how to re-pull it. Next: the `.gitignore` discipline.
+:::
+
+::: notes
+To summarize part six: you pin Python and your stack in a readable environment file, then freeze the solver's exact patch versions into a lock file and commit both — intent in one, machine-exact record in the other, so rebuilds are bit-for-bit. A short README answers what, why, and how-to-run without ever pasting keys, and one six-field data card per source documents how to re-pull it, with licensed sources marked GMU-only. In part seven we build the git-ignore that makes leaking data or secrets impossible.
+:::

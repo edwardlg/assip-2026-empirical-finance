@@ -1,0 +1,65 @@
+---
+title: "Three Ways AI Fools You — and the Guardrail for Each"
+date: "2026-07-27"
+---
+
+# Three Ways AI Fools You — and the Guardrail for Each {.title}
+
+::: notes
+Welcome back to Mentor Session six, part three of five. In part two we ranked the instruments by opacity and built validation's one shape: a random gold set, a held-out split, and precision and recall reported out of sample. Now we get specific. Three disciplines keep an AI instrument honest, all about not fooling yourself. The umbrella: out-of-sample is the whole game — a measure tuned on the same data it is tested on is grading itself with the answer key. Here are the three traps and the guardrail for each.
+:::
+
+## Trap One — Look-Ahead and Leakage
+
+- An LLM may "know the future" — it read what happened
+- Labeling a 2019 filing's **tone** is comparatively safe
+- *Predicting* 2020 returns from that filing — hindsight **leaks in**
+- Guardrail: post-cutoff out-of-sample tests; enforce a **date filter**
+
+::: notes
+The first trap is look-ahead, the finance-specific one. A model trained on text through some cutoff date may know the future relative to your sample — it already read what happened to those twenty-twenty-one stocks. Labeling a twenty-nineteen filing's tone is comparatively safe, because the tone is right there in the text. But predicting twenty-twenty's returns from that filing is where hindsight leaks in and manufactures fake performance that evaporates the moment you trade it forward. The guardrail has two parts: test on post-cutoff episodes the model could not have read, and when you retrieve passages, enforce the date filter mechanically — a query at time t never sees a document dated after t. Let the machine, not your good intentions, enforce the fence.
+:::
+
+## Trap Two — Prompt P-Hacking
+
+- Rewording the rubric until the coefficient turns **significant**
+- It is p-hacking in a new costume — same sin, new tool
+- The prompt **is a variable definition** — treat it like one
+- Guardrail: **freeze** the prompt against the gold set *before* the regression
+
+::: notes
+The second trap is prompt p-hacking — rewording the rubric until the coefficient finally turns significant. That is p-hacking wearing a new costume. The prompt that produced your labels is a variable definition, every bit as much as a formula, so treat it like one. The guardrail: freeze the prompt against the gold set before you ever look at the regression result. If you tune the prompt while watching the coefficient, you will, consciously or not, shop prompts until the result cooperates. Freeze first, report the prompt verbatim in an appendix, and the temptation has nowhere to go.
+:::
+
+## Trap Three — Irreproducibility
+
+- Same 10-K, Monday and Friday — **two different labels**
+- Cause: the model is **stochastic**; versions silently update
+- A deterministic regression never does this
+- Guardrail: pin the version, **log every call**, save labels to disk
+
+::: notes
+The third trap is irreproducibility. Run the same LLM on the same ten-K on Monday and again on Friday, and you may get two different labels. A deterministic regression never does that. Two things cause it: the outputs are stochastic, and the model version can be silently updated underneath you. The fix is not a change to the model — it is a change to your pipeline. The labels are data, so do what you do with data: pin the exact version string, log every call, and save the labels to disk as your dataset. Once the labels live in a file, your regression reads from the file, not a fresh jittery call — and anyone with only your repository reproduces your paper exactly.
+:::
+
+## The Thread Through All Three
+
+- AI is a **co-pilot**: it accelerates work you can verify
+- It is a **hazard** the moment it replaces judgment you don't check
+- Disclosure is what turns the tool into **science**
+- For every text number: proxy? validated how? disclosed how?
+
+::: notes
+Pull the three traps together and one thread runs through all. AI is a co-pilot — it accelerates work you can verify. It becomes a hazard the instant you let it replace judgment you don't check. And disclosure turns the instrument from a private convenience into science: the prompt verbatim, the version pinned, the calls logged, the labels saved. So hold one reflex sharp. For every text-derived number, ask three things: what is it a proxy for, how was it validated, and what would I have to disclose so a referee can judge the error I could not remove?
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Three traps, three guardrails. **Leakage**: test post-cutoff and date-fence retrieval so a query at time $t$ never sees a document after $t$. **Prompt p-hacking**: freeze the prompt against the gold set before you look at the regression. **Irreproducibility**: pin the version, log every call, and save the labels to disk as data.
+:::
+
+::: notes
+To summarize part three: three named traps, each with a guardrail. Look-ahead leakage, fixed by post-cutoff tests and a mechanical date filter where a query at time t never sees a later document. Prompt p-hacking, fixed by freezing the prompt against the gold set before you look at the regression. And irreproducibility, fixed by pinning the version, logging every call, and saving the labels to disk as data. AI is a co-pilot you verify, never a substitute for judgment you skip. In part four we walk the first of Professor Gao's own papers — where the regression's outcome is itself a measured construct.
+:::

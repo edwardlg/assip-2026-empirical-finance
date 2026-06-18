@@ -1,0 +1,69 @@
+---
+title: "Anderson–Rubin: Why It Works and Its Weird Shapes"
+date: "2026-07-06"
+---
+
+# Anderson–Rubin: Why It Works and Its Weird Shapes {.title}
+
+::: notes
+Welcome back to Week Three-point-five, part five of seven. In part four we built the Anderson–Rubin mechanism: to test a candidate effect beta-naught, form the adjusted outcome y minus beta-naught times x and regress it on the instrument, with no first stage anywhere. Now we see why that stays honest however weak the instrument is, then learn to read its two strange interval shapes — unbounded and empty — each carrying a precise message.
+:::
+
+## Why It Stays Honest
+
+- Plain reduced-form regression of a constructed variable on $z$
+- $F$-test exactly valid in finite samples
+- Holds **regardless of first-stage strength**
+- A 5% test rejects a true null exactly 5% of the time
+
+::: notes
+Why does this stay honest? You are testing a coefficient in a plain reduced-form regression of an observed, constructed variable on the instrument. There is no ratio, no denominator hugging zero, no division by a weak quantity. The F-test on z is exactly valid in finite samples under the usual regression assumptions, strong instrument or weak. Whatever the first-stage strength, the Anderson–Rubin test keeps its promised size — a five percent test rejects a true null exactly five percent of samples.
+:::
+
+## Building the Confidence Interval
+
+- Sweep $\beta_0$ across a grid of candidates
+- Run the AR $F$-test at each one
+- Keep every $\beta_0$ the test **fails to reject** at 5%
+- That set is the 95% AR confidence interval
+- Sidesteps the ratio that the conventional CI inherits
+
+::: notes
+To build a confidence interval, you invert the test. Sweep beta-naught across a grid of candidates, run the Anderson–Rubin F-test at each one, and collect every beta-naught the test fails to reject at the five percent level. That set is the ninety-five percent Anderson–Rubin confidence interval; by construction it contains the true beta in ninety-five percent of samples, weak instrument or not. The conventional two-stage interval, estimate plus or minus one-point-nine-six standard errors, inherits the pathology of the ratio; the A-R interval sidesteps it entirely. The price of this honesty is that it can take strange shapes the conventional interval never does — and those shapes are not bugs; they tell you how little the data know.
+:::
+
+## The Unbounded Interval
+
+- Very weak $z$: almost any $\beta_0$ fails to be rejected
+- Not because all are plausible — because the test has **no power**
+- Interval balloons, possibly to the **whole real line**
+- The **honest face** of a weak instrument
+- Conclusion: "this instrument cannot answer the question"
+
+::: notes
+The first strange shape is the unbounded interval. Suppose the instrument is very weak. Then for almost any candidate beta-naught, the adjusted outcome shows no significant relationship with z — not because every value is plausible, but because z is so weakly related to anything the test has no power to reject. The interval balloons, possibly to the whole real number line. An unbounded A-R interval is the honest face of a weak instrument: given how little the instrument moves the treatment, the data are consistent with almost any effect size. The conventional interval would have reported something tight and been lying. The design has failed to identify the parameter; the conclusion is "this instrument cannot answer the question."
+:::
+
+## The Empty Interval
+
+- **No** value of $\beta_0$ survives the test
+- Only possible when **over-identified**
+- Instruments **disagree** so badly no single $\beta$ fits all
+- A red light on **exclusion** or **specification**
+- Does **not** mean "no effect"
+
+::: notes
+Stranger still, the A-R interval can come back empty — no value of beta-naught survives the test. This happens only when the model is over-identified, and it means the instruments disagree about beta so severely that no single value makes them all uncorrelated with the adjusted outcome. An empty A-R interval is a flashing red light on exclusion or specification — an overidentification failure. It does not mean "no effect"; it means "your instruments cannot all be telling the truth." Devon should now demand: what does the A-R interval look like for his crypto paper? If the authors report only a two-stage standard error and the first-stage F is in the single digits, an honest A-R interval might well be unbounded — and the answer is "we don't know."
+
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The AR test stays exactly valid however weak $z$ is. Read its shape: **unbounded** means the instrument cannot identify the effect; **empty** means the instruments disagree — an overidentification failure. Next: the **overidentification test** and the surprise of **many-instruments bias**.
+:::
+
+::: notes
+To summarize part five: the Anderson–Rubin test is exactly valid in finite samples however weak the instrument, because it never divides by the first stage. Invert it across a grid for a confidence interval, then read its shape. An unbounded interval is the honest signal of a weak instrument — the data cannot answer the question. An empty interval signals over-identified instruments disagree — a failure of exclusion or specification. In part six we turn that disagreement into one statistic, the overidentification test, then meet the chapter's surprise — that adding more instruments can make the bias worse, not better.
+:::

@@ -1,0 +1,62 @@
+---
+title: "Multiple-Testing Corrections, Done Right"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Multiple-Testing Corrections, Done Right {.title}
+
+::: notes
+Welcome back to Chapter eight-point-two, part seven of ten. In part six we saw that with a family of eight outcomes, pure noise gives a one-in-three chance of a false discovery, so Maya owes the reader a correction for her family size. Now we meet the two corrections you must know. They answer two different questions, and using the wrong one is a common error. We will work Maya's eight outcomes all the way through.
+:::
+
+## Bonferroni vs. Benjamini–Hochberg
+
+- **Bonferroni** controls **family-wise error** — chance of *even one* false positive
+- Test each at $\alpha/m$: for eight, $0.05/8 = 0.00625$
+- Brutal, conservative — kills power on large families
+- **Benjamini–Hochberg** controls **false discovery rate** — expected *fraction* of finds false
+- BH uses a **sliding bar**: largest $k$ with $p_{(k)} \le \frac{k}{m}\alpha$
+
+::: notes
+Two corrections answer two different questions. Bonferroni controls the family-wise error rate: the probability of even one false positive across the family. The rule is brutal and simple — test each of m hypotheses at alpha over m. For Maya's eight outcomes, the per-test bar becomes zero-point-zero-five divided by eight, which is zero-point-zero-zero-six-two-five. Use it when a single false positive is costly — a drug-approval mindset — but it kills power on a large family. Benjamini–Hochberg, from nineteen-ninety-five, controls the false discovery rate: the expected fraction of your declared discoveries that are false. This is usually the more sensible target when you screen many candidate signals and can tolerate that, say, five percent of finds are flukes — the natural posture in finance and genomics. Its genius is a sliding bar: order the p-values smallest to largest, and find the largest rank k whose p-value is at most k over m times alpha. The smallest p-value faces the strict Bonferroni-like threshold, but each later one gets a more lenient bar, so a cluster of moderately small p-values reinforce each other.
+:::
+
+## Maya's Family, Worked
+
+| Outcome | $p$ | $k$ | bar $\frac{k}{8}(0.05)$ | $\le$? |
+|---|---|---|---|---|
+| Denial gap | 0.004 | 1 | 0.00625 | yes |
+| Approval-rate gap | 0.011 | 2 | 0.01250 | yes |
+| Rate-spread gap | 0.030 | 3 | 0.01875 | no |
+| Loan-amount gap | 0.041 | 4 | 0.02500 | no |
+
+- Largest $k$ passing: $k=2$ — BH keeps the **two** smallest
+- Rate-spread gap ($p=0.030$) cleared naive 5% but **fails** correction
+
+::: notes
+Here is Maya's family worked, with m equals eight and alpha equals five percent. Find the largest rank k whose p-value is at most k over eight times zero-point-zero-five. That is k equals two, because zero-point-zero-one-one is below zero-point-zero-one-two-five. Benjamini–Hochberg then declares the two smallest — the denial gap and the approval-rate gap — significant, and the rest not. Note the rate-spread gap at p equals zero-point-zero-three-zero, which cleared the naive five percent bar, does not survive: once you account for having looked at eight outcomes, it is no longer distinguishable from noise. Bonferroni here would have required p below zero-point-zero-zero-six-two-five and kept only the primary denial gap; B-H keeps two. That gap is the family-wise-versus-false-discovery trade-off made concrete.
+:::
+
+## Declare the Family in Advance
+
+- Non-negotiable: **declare your family** in the pre-analysis plan
+- Cardinal sin: run 20 outcomes, report the 1 winner alone
+- That is the garden of forking paths from Chapter 1.5
+- Honest report names $m$, the correction, and the **surviving set**
+- *"Of 8 pre-specified outcomes, 2 survive BH FDR control at 5%"*
+
+::: notes
+How do you stay honest? The non-negotiable rule: declare your family in advance — ideally in the pre-analysis plan of Chapter seven-point-three — so you cannot gerrymander it after the fact. The cardinal sin is to run twenty outcomes, find one significant, and report it alone as if it were the only test; that is the garden of forking paths from Chapter one-point-five, which the correction exists to disarm. The honest report names m, names the correction, and states the surviving set: of the eight pre-specified outcomes, two survive Benjamini–Hochberg false-discovery-rate control at five percent. If your headline result fails to survive, you say so, and your contribution becomes suggestive on secondary outcomes, robust only on the primary. A reader trusts a corrected family far more than an uncorrected lone star.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Bonferroni controls the chance of *even one* false positive; Benjamini–Hochberg controls the expected *fraction* of your finds that are false, keeping more via a sliding bar. Declare your family of size $m$ in advance, apply the correction, and report the surviving set — never a lone uncorrected star.
+:::
+
+::: notes
+To summarize part seven: when you test a family of outcomes, correct for it. Bonferroni controls the family-wise error rate — the chance of even one false positive — by testing each at alpha over m, which is brutally conservative. Benjamini–Hochberg controls the false discovery rate — the expected fraction of your finds that are false — using a sliding bar that keeps more results, like Maya's two survivors versus Bonferroni's one. The non-negotiable rule is to declare your family of size m in advance, then report m, the correction, and the surviving set. In part eight we turn to the deepest attack — the Oster delta, confronting the one confounder you can never measure.
+:::

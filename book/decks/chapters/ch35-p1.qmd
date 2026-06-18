@@ -1,0 +1,54 @@
+---
+title: "Reading an IV Paper: The First Two Questions"
+date: "2026-07-06"
+---
+
+# Reading an IV Paper: The First Two Questions {.title}
+
+::: notes
+Welcome to Week Three-point-five, part one of seven. Devon is reading his first real instrumental-variables paper. It studies whether holding crypto changes how much you trade other assets, and it instruments crypto-holding with the distance from your home to the nearest crypto A-T-M. The abstract is confident: the I-V estimate is three times the O-L-S estimate, the standard error is tight, the stars are dense. Devon's instinct is to be impressed — surely a small standard error means a reliable answer. This is the chapter where that instinct gets dismantled. Today we start learning to read an I-V paper like a referee.
+:::
+
+## An IV Paper Is a Magic Trick
+
+- The authors want you watching the **coefficient**
+- The real action is the **instrument** doing the work
+- Ignore the coefficient first — **interrogate the instrument**
+- Five questions, in order
+
+::: notes
+Before any algebra, learn to read. An I-V paper is a magic trick, and like any magic trick it depends on misdirection: the authors want you looking at the impressive I-V coefficient, not at the instrument doing the work. Your job is to ignore the coefficient at first entirely and interrogate the instrument. There are five questions, and they go in order. Today we cover the first two.
+:::
+
+## Question 1: What Is the Instrument?
+
+- Name it concretely — papers bury it behind euphemisms
+- Write the triple: instrument $z$, treatment $x$, outcome $y$
+- Devon's paper: $z$ = ATM distance, $x$ = crypto-holding, $y$ = trading
+
+::: notes
+Question one: what is the instrument, exactly? This sounds trivial; it is not. Papers bury the instrument behind a euphemism like "we exploit plausibly exogenous variation." Name it concretely. In Devon's paper the instrument z is distance to the nearest crypto A-T-M, the treatment x is crypto-holding, and the outcome y is trading volume in other assets. Write those three down as a triple — instrument, treatment, outcome — before reading another word. If you cannot state the triple in one sentence, the paper has not earned your trust.
+:::
+
+## Question 2: Is It Relevant?
+
+- Does $z$ actually move $x$?
+- The one question the data answer **cleanly**
+- Look at the **first-stage regression** of $x$ on $z$
+- Hunt for the **first-stage $F$-statistic** — rule of thumb: above 10
+- Single-digit $F$ is a klaxon; $R^2$ reported instead = be suspicious
+
+::: notes
+Question two: is it relevant? Does z actually move x? This is the one question the data can answer cleanly, and the paper must report the answer: the first-stage regression of x on z, plus controls, and its strength. The single number to hunt for is the first-stage F-statistic on the excluded instrument. From earlier you know the rough rule of thumb — F comfortably above ten, the old Staiger–Stock benchmark, or above the relevant critical value. An F in the single digits is a klaxon. If a paper does not report a first-stage F, or reports the first-stage R-squared instead — which is not the right object — and hopes you will not notice, be very suspicious. The first-stage strength is the load-bearing diagnostic of the entire enterprise, and this whole chapter is about what happens when it is weak.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Read an IV paper by interrogating the **instrument**, not the coefficient. First name the **triple** — instrument, treatment, outcome. Then check **relevance** with the first-stage $F$. Next: the remaining three questions — exclusion, compliers, and identification.
+:::
+
+::: notes
+To summarize part one: read an I-V paper by interrogating the instrument, not the coefficient. Question one names the triple — instrument, treatment, outcome — concretely. Question two checks relevance through the first-stage F-statistic, the load-bearing diagnostic of the whole enterprise. In part two we finish the referee's checklist with the three hardest questions: is exclusion plausible, who are the compliers, and is the model just-identified or over-identified.
+:::

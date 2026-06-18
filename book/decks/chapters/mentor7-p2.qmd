@@ -1,0 +1,55 @@
+---
+title: "The So-What Test and the Fatal-Flaw Checklist"
+date: "2026-08-03"
+---
+
+# The So-What Test and the Fatal-Flaw Checklist {.title}
+
+::: notes
+Welcome back to Mentor Session seven, part two of four. In part one we framed the research funnel as a furnace that burns ten ideas per survivor, and we met the first enemy of cheap killing — sunk cost. Now we meet the other two. The second is the inert project, caught with the so-what test pointed at your own work. The third is the fatal flaw — a crack that means stop now, not a weakness you can patch. By the end you'll have a checklist of failures that end a project, every one diagnosable before you run a single regression.
+:::
+
+## Enemy Two: The Inert Project
+
+- Force the sentence: *"If I find either result, then someone should…"*
+- If you can't fill it in, the project is **inert** — a form of dead
+- The test ignores how hard you worked or how clean your code is
+- A flawless answer to a question nobody asked is **still** unwanted
+
+::: notes
+The second tool is the one I lean on hardest, and it is brutally simple. It is the so-what test, the same one from Chapter seven-point-one, but turned into a weapon you point at your own project weekly, not just at the idea once. Force yourself to write the sentence: if I find either result, then someone should believe or do something different. If you cannot fill that in — if the honest answer is, then I would know a thing, but no one would change their mind or their behavior — the project is inert, and inert is a form of dead. The cruelty of the test is that it does not care how hard you worked or how clean your code is. A flawlessly executed answer to a question nobody asked is still an answer nobody asked for.
+:::
+
+## Enemy Three: Fatal Flaws, Not Weaknesses
+
+- A weakness you **patch**; a fatal flaw means **stop now**
+- Like a cracked engine block versus a flat tire
+- Spot them in your own work the way you'd spot them in someone else's
+- The gift: most are visible **on paper**, before any regression
+
+::: notes
+The third tool is a checklist of fatal flaws — failure modes that do not merely weaken a project but end it, the way a cracked engine block ends a car. Unlike a weakness you can patch — a flat tire — a fatal flaw means stop now. The skill is learning to spot these in your own work the way you would spot them instantly in someone else's. And here is the gift: nearly every fatal flaw is diagnosable before you run a single regression. They are visible on paper, in an afternoon, for free. Let me walk the checklist.
+:::
+
+## The Fatal-Flaw Checklist
+
+- **No variation** in the treatment — nothing to compare
+- **Unmeasurable outcome** — no number for the $y$ column
+- **Hopeless confounding** — no cutoff, date, event, or instrument
+- **Data you can't get in time** — the most common killer
+- **Reverse causality** you can't break, or a sample **too small**
+
+::: notes
+First: no variation in the treatment. If your key regressor barely moves across units — every firm got the same shock on the same day, every county is treated — there is nothing to compare, and no design rescues a comparison that doesn't exist. Second: the outcome can't be measured. If you can't say what number goes in the y column, you have a mood, not a study; investor confidence is not an outcome until you have named the series. Third: unbreakable confounding. If your treatment varies for reasons hopelessly tangled with the outcome, and there's no cutoff, no dated policy, no clean event, and no defensible instrument, the causal version is dead — though the descriptive version may live, if you say so honestly, per Conventions section four. Fourth, the most common killer of all: the data doesn't exist, or you can't get it in time — a paywall, an I-R-B you can't clear, an approval longer than the camp. And fifth: reverse causality you can't break, or a sample so small the standard errors swallow any effect. Both are diagnoses you can make before running anything.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **so-what test** kills inert projects: if no one acts on *either* answer, it's dead. The **fatal-flaw checklist** — no variation, unmeasurable outcome, hopeless confounding, unreachable data, reverse causality or tiny samples — kills the rest, and every item is visible on paper before any regression.
+:::
+
+::: notes
+To summarize part two: the so-what test kills inert projects — if no one would believe or do anything different given either answer, the project is dead no matter how clean the code. The fatal-flaw checklist kills the rest: no variation, an unmeasurable outcome, hopeless confounding, data you can't get in time, and reverse causality or a sample too small. Every one is diagnosable on paper, before a single regression runs. In part three I'll show these tools at work in two of my own projects — one that lived because of a clean shock, one that traveled the whole funnel over years.
+:::

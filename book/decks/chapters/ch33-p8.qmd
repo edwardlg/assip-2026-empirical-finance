@@ -1,0 +1,58 @@
+---
+title: "Beyond the Safety Net: Efficiency and ML"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Beyond the Safety Net: Efficiency and ML {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part eight of ten. In part seven we proved the doubly-robust guarantee. Now we see that doubly robust is not merely defensive — it is usually more efficient, and it is the seed of the most active methodology in modern empirical economics and finance.
+:::
+
+## Not Just Defensive — More Efficient
+
+- Lower variance than plain IPW when both models roughly right
+- Outcome model soaks up variation in $Y$ first
+- Weights act on **residuals** (small), not raw outcomes (large)
+- Weight-explosion damage is muffled, not cured
+- A $\hat e$ near zero still hurts — just far less
+
+::: notes
+Doubly robust is not just defensive. It also tends to be more efficient — lower variance — than plain I-P-W when both models are even roughly right, because the outcome model soaks up much of the variation in Y before the noisy inverse-probability weights ever touch it. The weights now act on residuals, which are small after a decent regression, rather than on the raw outcomes, which are large. So the weight-explosion damage is muffled even when some e-hat are small. A-I-P-W does not fully cure the extreme-weight problem — an e-hat near zero still hurts — but it leans on those weights far less than plain I-P-W does.
+:::
+
+## The On-Ramp to Machine Learning
+
+- AIPW is insensitive to small errors in **each** model
+- That property is called **Neyman orthogonality**
+- Plug in forests, boosting, neural nets for both models
+- Use sample-splitting to avoid overfitting
+- Still get valid standard errors and confidence intervals
+
+::: notes
+There is a deeper modern reason A-I-P-W is everywhere now. Because the estimator has a special insensitivity to small errors in each model — a property called Neyman orthogonality — you can plug machine-learning estimators, random forests, gradient boosting, neural nets, into both the propensity model and the outcome model. Use sample-splitting — fit the models on one half, evaluate on the other — to avoid overfitting, and you still get valid standard errors and confidence intervals for the treatment effect. The small errors that machine learners inevitably make in each model do not contaminate the final estimate, thanks to that orthogonality.
+:::
+
+## Double/Debiased Machine Learning
+
+- This is the engine behind **double/debiased ML**
+- Chernozhukov and coauthors, 2018
+- Dominant framework for high-dimensional causal estimation
+- The humble AIPW bracket is its seed
+- AIPW is where selection-on-observables **grows up**
+
+::: notes
+This is the engine behind double-slash-debiased machine learning, from Chernozhukov and coauthors in twenty-eighteen, published in The Econometrics Journal — the dominant framework for high-dimensional causal estimation in current empirical economics and finance. You will not implement that this week, but it is worth knowing that the humble bracket from part seven — the outcome prediction plus the inverse-probability-weighted residual correction — is the seed of the field's most active methodology. When your covariate set is large and you cannot trust a simple linear specification, this is the path. A-I-P-W is where selection-on-observables grows up.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Doubly robust is more than insurance: by letting the outcome model absorb variation first, it is usually **more efficient** than plain IPW, and its **Neyman orthogonality** lets you plug machine learners into both models — the basis of double/debiased ML. Next: a runnable script that puts all three methods side by side.
+:::
+
+::: notes
+To summarize part eight: doubly robust is more than a safety net — it is usually more efficient than plain I-P-W, because the outcome model absorbs variation before the weights act on residuals, and its Neyman orthogonality makes it the on-ramp to machine-learning causal inference through double-slash-debiased machine learning. In part nine we make all of this concrete with one runnable script on simulated data where we know the true effect, and watch which estimators land near it.
+:::

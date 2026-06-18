@@ -1,0 +1,70 @@
+---
+title: "A Number, and the Symptoms to Watch"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# A Number, and the Symptoms to Watch {.title}
+
+::: notes
+Welcome back to When the Errors Misbehave, part five of eight. In part four we built the robust estimator and the H-C flavors. Now we make it concrete with Priya's numbers, watch the four flavors fan out, and then name the three symptoms that let you catch heteroskedasticity in your own work rather than only in a textbook.
+:::
+
+## Priya's Numbers
+
+- 60 claims, error scatter grows with insured value
+- One \$5M estate among \$200K cabins — creates leverage
+- SEs: $0.085$, $0.121$, $0.127$, $0.140$, $0.169$ (classical→HC3)
+- Classical understates true uncertainty by about half
+- If $\hat\beta = 0.30$: classical t $= 3.5$, HC3 t $= 1.8$
+
+::: notes
+Priya simulates sixty claims where the true error standard deviation grows linearly with insured value — textbook heteroskedasticity — with one five-million-dollar estate among two-hundred-thousand-dollar cabins to create leverage. On her coefficient of interest the standard errors come out roughly: classical zero point zero eight five, H-C-zero zero point one two one, H-C-one zero point one two seven, H-C-two zero point one four zero, and H-C-three zero point one six nine. The classical standard error understates the true uncertainty by about half relative to H-C-three. If her coefficient were zero point three zero, the classical t-stat reads three point five — comfortably significant — while the H-C-three t-stat reads one point eight, not significant at the five percent level. Same coefficient, same data; the only thing that changed is whether we told the truth about Omega, and it flipped the conclusion.
+:::
+
+## Why the Flavors Fan Out
+
+- HC0 at $0.121$, HC3 at $0.169$ — a real margin apart
+- The gap exists *because* the \$5M estate is high-leverage
+- HC3's $(1-h_{ii})^2$ denominator inflates its residual hardest
+- With no leverage and many points, all four agree closely
+- The leverage is what makes the choice of flavor matter
+
+::: notes
+Notice how the four robust flavors fan out: H-C-zero at zero point one two one and H-C-three at zero point one six nine differ by a real margin, precisely because that one five-million-dollar estate is a high-leverage point. H-C-three's denominator — one minus h-i-i, squared — inflates that point's residual the hardest. In a sample with no leverage and a few hundred points, those four numbers would have agreed to the third decimal. So the leverage is exactly what makes the choice of flavor matter; when it is absent, you can stop worrying about which H-C you picked.
+:::
+
+## Symptom One and Two
+
+- **Residual plot**: plot $\hat\varepsilon_i$ against fitted value or regressor
+- Homoskedastic: a flat band of constant thickness
+- Heteroskedastic: a fan or funnel that widens or narrows
+- **Formal test**: Breusch–Pagan, or White's test for cross-products
+- Modern attitude: usually do not bother — just always use robust
+
+::: notes
+Three tells, in increasing order of formality. First, the residual plot. Plot the residuals against a fitted value or against a regressor. Under homoskedasticity you see a structureless horizontal band of constant thickness. Under heteroskedasticity you see a fan or funnel — the band widens or narrows as you move along the axis. This single plot catches most real cases and costs one line of code. Second, a formal test. The Breusch–Pagan test regresses the squared residuals on the regressors and asks whether they explain any of the variance; White's test does the same with squares and cross-products to catch more general patterns. But the modern attitude is that you usually should not bother testing — because robust standard errors are valid either way, just always use robust, and test only if a referee asks.
+:::
+
+## Symptom Three
+
+- **The SEs themselves disagree** — the disagreement *is* the diagnostic
+- Classical and robust nearly identical: nothing was at stake
+- They differ materially: heteroskedasticity is real
+- When they differ, the robust number is the one to report
+- In finance, the error usually runs toward overconfidence
+
+::: notes
+Third, the standard errors themselves disagree. If classical and robust standard errors are nearly identical, your errors are roughly homoskedastic and nothing was at stake. If they differ materially — as in Priya's table — heteroskedasticity is real and the robust number is the one to report. The disagreement is the diagnostic. And note the direction: there is no general rule for which way the overall t-stat moves, but in finance it is usually wrong in the direction of overconfidence — the classical formula tells you that you know more than you do.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+On Priya's data, classical SEs understate the truth by half, and the flavors fan out **because** of one high-leverage point. Catch heteroskedasticity three ways: the **residual plot** (fan vs. flat band), a **formal test**, and the **SEs disagreeing**. The disagreement *is* the diagnostic. Next: clustering, the failure robust SEs cannot fix.
+:::
+
+::: notes
+To summarize part five: on Priya's data the classical standard error understates the truth by about half, and the robust flavors fan out only because one high-leverage estate is present. You catch heteroskedasticity three ways — the residual plot showing a fan instead of a flat band, a formal test like Breusch–Pagan, and the simple fact that classical and robust standard errors disagree. The disagreement itself is the diagnostic. But robust standard errors assume the errors are uncorrelated across observations. In part six we meet the failure they cannot fix — clustering, when errors hold hands within groups.
+:::

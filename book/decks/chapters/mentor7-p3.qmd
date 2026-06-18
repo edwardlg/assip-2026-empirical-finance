@@ -1,0 +1,65 @@
+---
+title: "Two of My Own Funnels"
+date: "2026-08-03"
+---
+
+# Two of My Own Funnels {.title}
+
+::: notes
+Welcome back to Mentor Session seven, part three of four. In part two we built the kill toolkit — the so-what test and the fatal-flaw checklist. Now I'll show those tools at work on two of my own projects. The first is a paper where a clean source of variation made it viable at all. The second shows how a project evolves from a vague idea over years. I'll reason about selection, identification, and feasibility only — not magnitudes. Mark anything you'd confirm against the actual paper as a check.
+:::
+
+## Funnel One: A Clean Shock Saves It
+
+- Paper: *Standing Out from the Crowd via CSR* (JFQA 2023)
+- Naive question: *do firms whose price moves engage in more CSR?*
+- That version is **fatally confounded** — good firms just do good things
+- Rescue: price pressure **unrelated** to the firm's fundamentals
+
+::: notes
+The first paper is Gao, He, and Wu, twenty-twenty-three, in the Journal of Financial and Quantitative Analysis. It asks whether price pressure not driven by fundamentals — a swing caused by something mechanical, like flows into and out of an index — changes how a firm engages in corporate social responsibility, or C-S-R. The naive version — do firms whose price moves engage in more C-S-R — is fatally confounded. Firm quality is a confounder that makes C-S-R and price movement move together even if neither caused the other: good firms simply do good things. The whole project hinges on one move — isolating a piece of price movement plausibly unrelated to the firm's quality.
+:::
+
+## The Identifying Assumption
+
+- Non-fundamental variation rescues a hopeless correlation
+- It must move the price **only** for reasons unrelated to fundamentals
+- That assumption turns a correlation into a **design**
+- No clean shock? Redesign as **honest descriptive**, per CONVENTIONS §4
+
+::: notes
+Why does non-fundamental pressure rescue the project? Because it moves the price for reasons unrelated to business prospects, the relationship you measure is no longer just good firms do good things. The identifying assumption, in one sentence: the non-fundamental variation affects C-S-R only through the price channel and is otherwise unrelated to anything that independently drives social engagement. That turns a hopeless correlation into a defensible design. Apply the funnel backwards: if you had the puzzle but no clean source of price variation, you needn't kill it — you could redesign it as honest descriptive work, allowed to claim an association but not a cause, per Conventions section four. Mark as a check the paper's actual source of pressure; reason about what kind of variation the design needs.
+:::
+
+## Funnel Two: An Idea Travels Years
+
+- Paper: *The Rainbow of Credits* — municipal borrowing (AEA 2025, → JF)
+- Puzzle: munis pay very different costs, not only because some are riskier
+- Run it through three filters: **so what · who cares · what's new**
+- A broad question has **many** versions — most must be killed
+
+::: notes
+The second project is Gao, Liu, and Wang — The Rainbow of Credits: Evidence from Municipal Borrowing — presented at the A-E-A in twenty-twenty-five and targeted at the Journal of Finance. It is the better case for watching an idea travel the whole funnel. The puzzle: municipalities pay very different borrowing costs, not only because some are riskier. Run that through yesterday's three filters. So what — who acts differently if either answer is true? A city treasurer, a regulator, a bond investor all plausibly do. Who cares — whose conversation does this sit inside? And what's new — new data, new period, new outcome, or new identification? A question this broad has many versions, and the furnace's destructive half means most must be killed to reach one.
+:::
+
+## Carving and Killing Sub-Questions
+
+- Carve narrower questions; each faces its own likely killer
+- E.g. *which issuers? which channel? which policy moment?*
+- Each dies from missing data, an unbreakable confounder, or **no audience**
+- A multi-year paper affords what a **five-week capstone cannot**
+
+::: notes
+Name two narrower questions you might carve out — say, does a specific disclosure rule change costs, or does a particular intermediary explain the gap. For each, the likely killer differs: a missing data source, an unbreakable confounder, or an audience that doesn't exist. That triage is the furnace running. Now the long road: this went from idea to A-E-A presentation to a Journal of Finance target over years, not a summer. A multi-year project can afford two things your five-week capstone cannot — assemble a bespoke dataset over months, and iterate through several killed versions before one survives. Reason about the life cycle, not the contents.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Both projects lived or died on the **same two questions**: *where is the clean variation?* and *can I actually measure and get this?* The CSR paper became viable only when a **non-fundamental shock** rescued it from confounding; the muni paper shows an idea surviving the furnace over **years**.
+:::
+
+::: notes
+To summarize part three: both projects lived or died on the same two questions — where is the clean variation, and can I measure and get this? The C-S-R paper was a hopeless correlation until non-fundamental price pressure rescued it and turned it into a design. The Rainbow of Credits shows the other half: a broad puzzle spawns many versions, most must be killed, and the survivor can take years. In part four we turn those questions on your own candidates and talk about the other half of killing — commitment.
+:::

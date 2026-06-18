@@ -1,0 +1,54 @@
+---
+title: "What Matching Buys, and What to Carry Forward"
+date: "2026-07-06"
+---
+
+# What Matching Buys, and What to Carry Forward {.title}
+
+::: notes
+Welcome back to Chapter three-point-two, part twelve of twelve, the finale. In part eleven we saw matching is still selection-on-observables and dies of any omitted confounder. So if the assumption is identical to regression's, what does matching actually buy? We give three honest advantages, say when not to trust it, and strip the chapter to its load-bearing sentences.
+:::
+
+## Three Honest Advantages Over Regression
+
+- **Nonparametric in the outcome** — never models $Y$, never misshapes it
+- **Enforces overlap explicitly** — the caliper refuses no-neighbor extrapolation
+- **Separates design from outcome** — matching never touches $Y$
+- None of these weakens the CIA requirement
+
+::: notes
+So what does matching give you over regression with controls, if the identifying assumption is identical? Three honest, non-magical advantages. One: it is nonparametric in the outcome. Regression assumes a functional form linking X to Y, usually linear; matching makes no such assumption — it never models the outcome at all, so it cannot be fooled by getting that shape wrong. Two: it enforces overlap explicitly. A regression will happily extrapolate a fitted line into regions with no controls, silently inventing counterfactuals; matching with a caliper refuses to compare units that have no real neighbor, making the common-support problem visible. Three: it separates design from outcome — the matching stage never touches Y, structurally preventing specification-search. These are real and valuable. But not one of them weakens the CIA requirement.
+:::
+
+## When to Reach for It — and When Not
+
+- Use it when selection drivers are *credibly observed and measured*
+- The argument comes from institutional knowledge, not hope
+- If you can't argue that, switch *designs*, not estimators
+- Instruments, natural experiments, discontinuities — Chapter 3.4, Week 4
+
+::: notes
+When should you reach for it? When you have a credible argument — from institutional knowledge, not hope — that the variables driving selection are observed and measured. Maya's case is honest only if she can argue that credit, income, age, and a handful of other recorded fields really capture why people enroll, with no large unmeasured driver like motivation. Often she cannot make that argument cleanly, and then the right move is not a fancier matching estimator but a different research design — an instrument for enrollment, a natural experiment, a discontinuity in eligibility — the design-based tools of Chapter three-point-four and Week Four that manufacture exogenous variation rather than assuming it away. The most sophisticated thing you can say about matching is knowing when not to trust it. The answer to "is CIA true?" comes from outside the dataset, never from inside it.
+:::
+
+## Carry Forward — and What's Next
+
+- CIA + overlap $\Rightarrow$ compare like with like recovers the effect
+- Propensity score beats the curse; validate with balance, not the outcome
+- CIA is untestable; matching is still selection-on-observables
+- Chapter 3.3: *reweight* by the score — IPW, entropy balancing, AIPW
+
+::: notes
+Strip the chapter to its load-bearing sentences. Under the Conditional Independence Assumption and overlap, comparing treated and untreated units with the same covariates recovers a causal effect, because the selection-bias term vanishes within each cell. Exact matching does this but dies of the curse of dimensionality. The propensity score rescues it — Rosenbaum and Rubin proved conditioning on the scalar suffices, because it is a balancing score. Nearest-neighbor and caliper matching implement the comparison, with choices that trade bias against variance. You validate with balance diagnostics, standardized mean differences, never t-tests, checking balance, not the outcome. And you remember, always, that CIA is untestable and matching is still selection-on-observables. Chapter three-point-three keeps the score but stops matching on it — it reweights by it, building inverse-probability weighting, entropy balancing, and the doubly-robust estimators. The score you built here is the raw material; next chapter turns it into a weight.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Matching's three honest gifts: nonparametric in $Y$, explicit overlap, design–outcome separation — none weakening CIA. Reach for it only when selection drivers are credibly measured; otherwise change *designs*. Carry forward: CIA + overlap let you compare like with like, the score beats the curse, and CIA stays untestable. Next chapter: reweight, don't match.
+:::
+
+::: notes
+To summarize the finale: matching gives three honest advantages over regression — it is nonparametric in the outcome, it enforces overlap explicitly, and it separates design from outcome — but none of them weakens the requirement that you measured the confounders. Reach for matching only when you can credibly argue, from institutional knowledge, that the selection drivers are observed; otherwise the right move is a different design, not a fancier estimator. Carry forward the spine of the chapter: under CIA and overlap, comparing like with like recovers the effect; the propensity score beats the curse of dimensionality; you validate on balance, never the outcome; and CIA remains untestable. Next chapter, we keep the score but reweight by it instead of matching. Well done — that completes Chapter three-point-two.
+:::

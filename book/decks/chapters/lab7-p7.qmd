@@ -1,0 +1,57 @@
+---
+title: "The .gitignore Discipline"
+date: "2026-08-03"
+---
+
+# The .gitignore Discipline {.title}
+
+::: notes
+Welcome back to Week Seven, the Lab, part seven of eight. In part six we pinned the environment and wrote the README and data cards. Now the step that, done wrong, can get a student into genuine trouble — a license violation or a leaked key — and, done right, makes those failures impossible rather than merely unlikely. The tool is a git-ignore file, and it has two non-negotiable rules.
+:::
+
+## Two Non-Negotiable Rules
+
+- Rule one: never commit licensed raw data
+- CRSP, Compustat, IBES, TRACE are licensed, not public
+- Committing them anywhere is redistribution — a license violation
+- Rule two: never commit secrets
+- A key is a password; bots scrape GitHub within minutes
+
+::: notes
+The discipline has two non-negotiable rules. Rule one: never commit licensed raw data. CRSP, Compustat, IBES, TRACE, and the cleaned Thomson thirteen-F panel are licensed, not public. GMU pays for them; the license permits use by GMU researchers on GMU systems. Committing any of those bytes to a Git repo — even a private one — is redistribution outside the licensed walls, which violates the license. So the entire data tree is git-ignored, and the licensed bytes live only in the raw folder on GMU infrastructure. What you commit instead is the recipe — the pull code, the data cards, and the pull log with its content hashes. Rule two: never commit secrets — your API keys, your WRDS credentials, your environment file. A key is a password; the instant it lands in a pushed commit it is in your history forever, and bots scrape public GitHub for exactly such strings within minutes.
+:::
+
+## Write It, Then the .gitkeep Exception
+
+- Ignore everything inside `data/raw/` and `data/processed/`
+- Then un-ignore the `.gitkeep` so the structure survives
+- A bare `data/` line would swallow the `.gitkeep` too
+- Block secrets: the env file, `*.key`, `*.pem`, `.pgpass`
+- Block caches and a belt-and-suspenders `*.parquet`
+
+::: notes
+Create the git-ignore in the repo root. The pattern that ignores everything inside the raw folder, paired with a negation that un-ignores the placeholder, is what lets the folder structure survive a clone while its contents never do. The order matters: a bare data line would swallow the placeholder too, so you ignore the contents with a star pattern and then carve out the exception. Next, block secrets by name: the environment file and its variants, anything ending in key or pem, and the WRDS credentials file. Finally, block caches and build noise — the Python cache folders, compiled files, notebook checkpoints — and add a belt-and-suspenders rule for Parquet files, so even a stray cache outside the data folder cannot be committed. The Parquet line and the credentials-file line are extra guards on your licensed-data access.
+:::
+
+## Verify It — An Untested Ignore Is a Hope
+
+- Create dummy files that MUST be blocked
+- `git check-ignore -v` names each ignored path and its rule
+- The real proof: `git add -A`, then `git status --short`
+- Neither the CRSP file nor the env file should appear staged
+- A hole here means you fix it before you ever push
+
+::: notes
+Now verify it, because an untested git-ignore is a hope, not a guarantee. Git ships a tool that tells you exactly whether a path is ignored. Create a couple of dummy files that should be blocked — a fake CRSP Parquet file and an environment file — and confirm Git refuses them. The check-ignore tool, with the verbose flag, prints any path that is ignored along with the rule that caught it. But the real proof is to stage everything with add-all and then look at the short status: you should see the git-ignore and the placeholders staged, and neither the CRSP file nor the environment file anywhere in the list. If either appears, stop — your git-ignore has a hole, and you fix it before you ever push. This two-minute check is the cheapest insurance in the entire camp. The automatic guard is the git-ignore; the deliberate guard is still staging files by name.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Two rules: **never commit licensed data, never commit secrets.** Git-ignore the whole `data/` tree and all key files, carve out `.gitkeep` with a negation, then **verify** with `git check-ignore` and `git status --short` — a written rule isn't a verified one. Next: filing the pre-analysis plan as a tagged commit.
+:::
+
+::: notes
+To summarize part seven: the git-ignore enforces two non-negotiable rules — never commit licensed data, never commit secrets. You ignore the whole data tree and every key file, carve out the placeholders with a negation so structure survives, and add belt-and-suspenders rules for Parquet and credentials. Then you verify, because a written rule is not a verified one: check-ignore names what is blocked, and a short status after staging everything proves the CRSP file and the environment file never appear. In part eight we file the pre-analysis plan as a tagged commit and seal the whole project.
+:::

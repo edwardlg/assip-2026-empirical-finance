@@ -1,0 +1,76 @@
+---
+title: "The Sign Flip, Live"
+date: "2026-07-13"
+---
+
+# The Sign Flip, Live {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part five of thirteen. In part four we built the smallest broken world — two states, a policy that helps in every treated cell with a building effect, no never-treated unit, perfect parallel trends, and a true effect of about minus three-point-five. Now we run the regression on that table, watch the coefficient come out positive, and trace by hand exactly why.
+:::
+
+## TWFE Returns the Wrong Sign
+
+- Run $Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+\varepsilon_{it}$ on the 16 observations
+- **$\hat\beta=+0.40$** — positive!
+- A policy that helped every treated state-year reads as **harmful**
+- The sign is not imprecise — it is **wrong**
+
+::: notes
+Now run the two-way fixed-effects regression on these sixteen observations. You can do it by hand — it is just two-way demeaning — or trust the arithmetic: the coefficient comes out positive, beta-hat equals plus zero-point-four-zero. A policy that lowered non-renewals in every treated state-year produces a coefficient saying it raised them. The sign is wrong. Not imprecise — wrong. So how can demeaning a table of all-negative effects give a positive number? It is the forbidden comparison from earlier, now caught in the act.
+:::
+
+## The Forbidden Comparison, Caught in the Act
+
+- Years 5–8: to estimate L, TWFE needs a control that didn't change
+- Only candidate is State E — but E is **already treated** there
+- E's effect is **still deepening**, $-4$ down to $-7$
+- E slides down **faster** than freshly-treated L
+
+::: notes
+Focus on years five through eight, when State L is treated. To estimate L's effect, two-way fixed effects wants a control — units whose status did not change when L switched on. With no never-treated state, the only candidate is State E, already treated throughout years five to eight. So the regression must use already-treated State E as the control for newly-treated State L. And what is E doing? Its effect is still deepening, dropping from minus four to minus seven — E's outcome is falling fast for reasons that have nothing to do with L. It is E's own dynamic effect, still in motion.
+:::
+
+## Why the Difference Flips Positive
+
+- TWFE differences L's change against E's change over years 5–8
+- E is **not** flat — it slides **downward**, faster than L
+- So L looks like it is **rising relative to E**
+- The forbidden comparison subtracts E's still-growing effect from L's
+
+::: notes
+When two-way fixed effects differences L's change against E's change over years five through eight, E is not a flat baseline — it is sliding downward under its own still-growing effect, faster than freshly-treated L. So L's outcome looks like it is rising relative to E, even though L's own non-renewals are falling. The forbidden comparison subtracts E's still-growing effect from L's, and because E moves the same direction but faster, the differenced quantity for L flips positive. With no clean control to dilute it, that comparison dominates the pooled average, and beta-hat comes out the wrong sign.
+:::
+
+## Add One Clean State and It's Contained
+
+- With **no** never-treated unit, forbidden comparison is the only game in town
+- That is what delivers the **full** sign flip
+- Add one never-treated state: TWFE stays negative but **attenuated**
+- $\approx -1.2$ vs true $-2.6$ — clean comparisons keep the **sign**
+
+::: notes
+One more crucial point. Add even one never-treated state and the catastrophe is contained. Two-way fixed effects stays negative but badly attenuated — around minus one-point-two instead of the true minus two-point-six on a six-year version. The clean comparisons the never-treated state now provides keep the sign right. The full sign flip needs the forbidden comparisons to be the only game in town, which is exactly what no never-treated unit delivers. Even with a clean control present, the magnitude is badly wrong — attenuated toward zero by the contamination that remains.
+:::
+
+## The Whole Crisis in One Table
+
+- TWFE used **already-treated E** as a control for **newly-treated L**
+- E's own effect was **still changing**
+- That changing effect got **subtracted** from the thing you wanted to measure
+- Everything that follows is a precise accounting of when and how badly
+
+::: notes
+That is the entire crisis in one table. Hold the mechanism: two-way fixed effects used an already-treated unit, State E, whose own effect was still changing, as a control for a newly-treated unit, State L, and that changing effect got subtracted from the thing you were trying to measure. Everything that follows is a precise accounting of when and how badly this happens — first Goodman-Bacon, then de Chaisemartin and D'Haultfœuille's negative-weights result, and finally the estimators that route around the whole problem.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+On data where the policy helps in **every** cell (truth $\approx -3.5$), TWFE returns **$+0.40$** — the sign flip, live. Cause: with no never-treated unit, the **only** control for late-adopting L is already-treated E, whose still-deepening effect gets subtracted out. Add one clean state and the sign survives but is badly **attenuated**. Next: Goodman-Bacon names every culprit exactly.
+:::
+
+::: notes
+To summarize part five: on a table where disclosure helps in every treated cell, with perfect parallel trends, the coefficient comes out positive — plus zero-point-four-zero — when the truth is about minus three-point-five. With no never-treated unit, the only control for late-adopting L is already-treated E, whose still-deepening effect gets subtracted from L's, flipping the sign. Add one clean state and the sign survives but the magnitude is badly attenuated. In part six the Goodman-Bacon decomposition proves this is no accident: the coefficient is exactly a weighted average of every possible two-by-two, and it names which ones are the poison.
+:::

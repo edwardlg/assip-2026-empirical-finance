@@ -1,0 +1,59 @@
+---
+title: "What a Referee Is Actually For"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# What a Referee Is Actually For {.title}
+
+::: notes
+Welcome to Week Eight, Chapter eight-point-four, part one of twelve: peer review and revision. You have built your own paper across three chapters — you ran the pre-registered specification, you broke it on purpose with placebos, and you wrote it up to the style guide. This chapter teaches the skill on the other side of the desk: how to referee someone else's paper, and then how to respond when someone referees yours. In this opening part we frame the lesson and ask what a referee is actually for.
+:::
+
+## The Same Skill, Reversed
+
+- Refereeing and writing are one skill, aimed opposite ways
+- You already learned it in Weeks Five and Six
+- A referee is a Week-Five reader with a deadline
+- The new part: a peer reads what you write
+- You owe them tough on the work, kind to the person
+- That distinction is the whole professional norm
+
+::: notes
+Here is the trick, stated once. Refereeing and writing are the same skill aimed in opposite directions, and you already learned the skill in Weeks Five and Six. When you read Fama and French tables-first, asking what is the identifying assumption and what threatens it, you were rehearsing for exactly this. A referee is just a Week-Five reader with a deadline and a verdict to render. The only thing new in Week Eight is that the paper on the desk was written by a peer who will read what you say, and that you owe them a particular kind of toughness: tough on the work, kind to the person. That is not a politeness; it is the entire professional norm. A referee who is soft on a broken design because the author is nice, or cruel to a person because the paper is weak, is failing the job in both directions.
+:::
+
+## Two Jobs: Gatekeeping and Improvement
+
+- Gatekeeping: should this paper exist in the record?
+- Improvement: how does it become its best self?
+- The far more useful job is improvement
+- Mindset is not "find what is wrong"
+- It is: what claim, believe it, what would convince me
+
+::: notes
+Strip away the ceremony and a referee does two jobs. The first is a gatekeeping verdict: should this paper, in some form, exist in the record? The second, and far more important for you, is improvement: how does this specific paper become the best version of itself? The mindset that makes a referee useful is not find what is wrong. It is: figure out what the paper is claiming, decide whether to believe it, and tell the author exactly what would make you believe it more. This is the Week-Five self-check rubric — the question, the identifying assumption, the threat, the headline table — turned into a service you perform for someone else. A referee who only catches typos has read the abstract. A referee who reconstructs the identifying assumption, names the one alternative explanation that would sink the headline, and says what evidence would rule it out has done the job.
+:::
+
+## Referee, Do Not Hijack
+
+- Not your job to rewrite the paper you would have written
+- It is the author's paper, question, and design
+- Beginner failure: three paragraphs on how you'd do it
+- That is hijacking, not refereeing
+- The real question: given their paper, is the claim credible?
+
+::: notes
+There is an asymmetry worth internalizing now. Your job is not to rewrite the paper into the one you would have written. It is the author's paper, their question, their design. A common failure of beginner referees is to spend three paragraphs explaining how they would have approached the topic — a different dataset, a different identification strategy, a different framing entirely. That is not refereeing; it is hijacking. The referee's question is narrower and harder: given the paper the author chose to write, is the claim credible, and what is the shortest path to making it more so? You may, in one sentence, note that an alternative design exists. You may not demand the author become a different researcher.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A referee does two jobs — **gatekeeping** and, more importantly, **improvement**. The useful mindset is not "find what's wrong" but "what is the claim, do I believe it, what would convince me more." Stay on the author's paper; never hijack it into yours. Next: the fixed skeleton of a referee report.
+:::
+
+::: notes
+To summarize part one: refereeing and writing are the same skill reversed, and you learned it in Weeks Five and Six. A referee does two jobs — a gatekeeping verdict and, far more valuable, helping the paper become its best self. The useful mindset is not find what is wrong, but figure out the claim, decide whether you believe it, and say what would make you believe it more. And stay on the author's paper: note an alternative in one sentence, but never hijack their project into yours. In part two we build the fixed skeleton of a referee report, top to bottom.
+:::

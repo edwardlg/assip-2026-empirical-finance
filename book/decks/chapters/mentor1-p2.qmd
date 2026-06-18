@@ -1,0 +1,65 @@
+---
+title: "Gate One — Too Big to Be Noise?"
+date: "2026-06-22"
+---
+
+# Gate One — Too Big to Be Noise? {.title}
+
+::: notes
+Welcome back to Mentor Session One, part two of five. In part one we set up the gauntlet: a number becomes a finding only by clearing three gates. Now we open the first one. Gate one asks the question Chapter one-point-five built a whole machine to answer — could noise alone have produced this number? It is where every honest evaluation starts, so let us walk a real number through it: Sam's reversal-rule backtest.
+:::
+
+## Sam's Eight Basis Points
+
+- Sam's reversal rule earned $+0.08\%$ a day over 252 days
+- Eight basis points — positive, briefly exciting
+- But daily returns swing a full percent either way
+- Wrong question: "is it positive?" It plainly is
+
+::: notes
+Here is Sam's number. The reversal rule earned plus zero-point-zero-eight percent a day — eight basis points — over two hundred fifty-two trading days. A positive number is briefly exciting. But here is the catch: daily returns on this thing swing by a full percent in either direction, day to day. Against that much wobble, eight basis points is tiny. So the honest question was never "is eight basis points positive?" — it plainly is. It is whether eight basis points is too far from zero to actually be zero, given how violently this quantity bounces around. Answering that is exactly what gate one is for.
+:::
+
+## The t-statistic Is One Ruler
+
+- $t = \dfrac{\text{estimate}}{\text{its own standard error}}$
+- Distance from zero, measured in **noise units**
+- Sam: $\bar{x}=0.08\%$, $\;s/\sqrt{N}=0.047\%$, so $t\approx 1.69$
+- The whole question compressed into one number
+
+::: notes
+The t-statistic is that whole question compressed into one ruler. It is just the estimate divided by its own standard error — the distance of your number from zero, measured in units of its own noise. For Sam, the average is zero-point-zero-eight percent, and the standard error — the standard deviation over the square root of the sample size — is zero-point-zero-four-seven percent. Divide one by the other and you get a t-statistic of about one-point-six-nine. Sam's edge sits about one-point-seven noise-widths from zero. The t-statistic has done its job — it put the estimate and the noise on the same scale.
+:::
+
+## The $\sqrt{N}$ Does the Work
+
+- Same edge, $N=63$ days $\rightarrow$ $t\approx 0.85$
+- Identical edge, **opposite verdict** — purely from sample size
+- A result is only as convincing as the $N$ beneath it
+- The $\sqrt{N}$ in the denominator is doing the work
+
+::: notes
+Now watch what happens when we change only the sample size. Take the exact same eight-basis-point edge, but suppose Sam had only sixty-three days of data instead of two hundred fifty-two. The standard error grows, and the t-statistic falls to about zero-point-eight-five. Same edge, opposite verdict — purely from how much data sits underneath it. This is the lesson of gate one: a result is only as convincing as the N beneath it. The square root of N in the denominator of the standard error is quietly doing all the work. Quadruple your data and you roughly halve your standard error, which roughly doubles your t-statistic, with no change to the edge at all.
+:::
+
+## Respect What the p-value Refuses
+
+- The p-value answers one narrow question correctly
+- And it **refuses** all the others
+- Clearing gate one is the *easiest* of the three
+- Clearing it alone proves almost nothing
+
+::: notes
+One last point about gate one. The p-value that comes out of this — for Sam, about zero-point-zero-four-six — answers exactly one narrow question correctly: if the true edge were zero, how often would noise alone produce a t-statistic at least this extreme? That is all it answers. It refuses every other question. It does not tell you the probability your hypothesis is true; it does not tell you the effect is large; it does not tell you the result will replicate. Respect that refusal. Clearing gate one is the easiest of the three gates, and clearing it alone proves almost nothing. A statistically significant number has earned the right to be examined further — it is not yet a finding.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Gate one asks whether a number is too far from zero to *be* zero. The t-statistic — estimate over its own standard error — answers it, and the $\sqrt{N}$ in the denominator means the same edge can pass or fail purely on sample size. Clearing this gate is the easiest part and proves the least.
+:::
+
+::: notes
+To summarize part two: gate one asks whether a number is too big to be noise, and the t-statistic answers it by measuring the estimate in units of its own standard error. We saw Sam's eight basis points give a t of one-point-six-nine on two hundred fifty-two days but only zero-point-eight-five on sixty-three days — identical edge, opposite verdict, because the square root of N is doing the work. Clearing gate one is the easiest of the three and proves the least. In part three we open gate two, where a number can be wildly significant and still completely worthless — because significance is about precision and importance is about magnitude, and those are not the same thing.
+:::

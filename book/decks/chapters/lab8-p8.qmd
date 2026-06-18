@@ -1,0 +1,45 @@
+---
+title: "The Eight-Minute Talk: The Timed Rehearsal"
+date: "2026-08-10"
+---
+
+# The Eight-Minute Talk: The Timed Rehearsal {.title}
+
+::: notes
+Welcome back to Week Eight, Lab Eight, part eight of ten. In part seven we wired the one-click packet and ran the honesty test. Now the third and final artifact: the eight-minute poster talk. The poster and the packet are surfaces a skeptic touches alone; the talk is the surface they touch with you in the room, or on the symposium's virtual breakout track if you are a remote intern — and it is where the work is actually judged. Chapter Eight-point-five gave you the six-beat arc; Part Three of the lab turns it into a rehearsal protocol you run against a clock. Your slides are the six panels of your poster, and your pointer is your hand on the board. Each beat maps to one panel; you point as you speak.
+:::
+
+## The Three-Pass Protocol
+
+- A budget you have not tested out loud is a **wish**
+- Rehearse timed **at least three times**; cut to fit **seven minutes, not eight**
+- **Pass 1:** out loud, alone, no stopping — just get a total time
+- **Pass 2:** cut the slowest part (usually motivation), then re-time
+- **Pass 3:** in front of one person who is allowed to interrupt
+
+::: notes
+A budget you have not tested out loud is a wish. Rehearse the full talk, timed, at least three times, and cut until it fits seven minutes, not eight — the eighth minute is your insurance against the cough, the lagging clicker, the pause you will take. Run the three passes deliberately, each with a different job. Pass one: out loud, alone, timed, no stopping. Even if a sentence comes out badly, keep going; the only goal is a total time, and it will be over eight minutes — everyone's first pass is. Pass two: find the slowest part, almost always the motivation where nervous speakers pile on context, and cut it to the bone, then re-time. The target is the shape from Chapter Eight-point-five — fast through question and why, slow through design and headline, brisk through robustness and contribution. Pass three: in front of one person, timed, and let them interrupt. A peer who asks one question mid-talk simulates the real thing far better than a mirror.
+:::
+
+## Watch Where the Time Goes
+
+- A bare per-slide timer is enough — phone, tablet, or a one-liner
+- Watch *where* the time goes, not just the total
+- Design panel under a minute → you're rushing the spine
+- Motivation panel over ninety seconds → cut it
+- **Pre-decide your cut line** before the symposium opens
+
+::: notes
+A bare timer is enough — your phone, a tablet propped on the easel, or a dead-simple one-liner on the container that you press Enter to advance and it prints elapsed seconds per slide and a running total. Watch where the time goes, not just the total. If the design panel is under a minute, you are rushing the spine of the talk; if the motivation panel is over ninety seconds, cut it. And the discipline that saves you live: pre-decide your cut line. Before the symposium opens, name the one panel you will skim if you reach minute six still on the headline — almost always the second robustness detail or the third motivation point, never the design panel and never the headline. When you cut on the fly without a plan, you cut badly; when you have pre-decided, you cut cleanly and the next visitor in line never notices.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Rehearse timed **three times** — alone, then cut, then with an interrupter — and trim to **seven minutes**, watching where the time goes. Pre-decide the one panel you'll skim under pressure. Next: the questions, and the fatal-vs-survivable triage.
+:::
+
+::: notes
+To summarize part eight: a talk budget you have not tested out loud is a wish. Rehearse timed at least three times — alone with no stopping, then cut the slowest part, then in front of someone who interrupts — and trim to seven minutes so the eighth is insurance. Watch where the time goes, keeping the design and headline panels full and the motivation tight, and pre-decide the one panel you will skim if you run long. In part nine we prepare for the questions — which are simply the rows of your threats table — and the live triage that keeps you composed: survivable critiques attack a number, fatal ones attack the comparison.
+:::

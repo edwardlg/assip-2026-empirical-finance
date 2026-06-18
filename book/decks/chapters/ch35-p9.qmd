@@ -1,0 +1,56 @@
+---
+title: "The IV Reader's Ledger and What Comes Next"
+date: "2026-07-06"
+---
+
+# The IV Reader's Ledger and What Comes Next {.title}
+
+::: notes
+Welcome back to Week Three-point-five, part nine of nine — the finale. In part eight we reproduced the weak-instrument disaster in code and watched the Anderson–Rubin interval and the effective F catch the lie that the conventional standard error told. Now we collect the whole chapter into a single checklist — the I-V reader's ledger — and then step back to see where Week three sits in the camp's arc and what Week four changes.
+:::
+
+## The IV Reader's Ledger
+
+- **Relevance**: first-stage and effective $F$ vs. critical values
+- **Exclusion**: argue back doors; $J$ only if over-identified
+- **Compliers**: is the LATE population interesting?
+- **Weak-IV bias**: the $1/(F+1)$ pull toward OLS
+- **Honest inference**: Anderson–Rubin CI and its shape
+
+::: notes
+Collect the chapter into a checklist — the I-V analog of Chapter two-point-five's bias ledger. Relevance: first-stage and effective F against the critical values; a single-digit F, or a "significant" first stage in a huge sample, is the Bound–Jaeger–Baker trap. Exclusion: argue the back-door channels, and use the J test only if over-identified — never read a passed J as proof. Compliers: ask whether the LATE population is interesting and whether the abstract overclaims a complier-specific effect as universal. Weak-instrument bias: watch for a two-stage least squares estimate sitting suspiciously close to O-L-S with a low F. Honest inference: demand an Anderson–Rubin interval and read its shape — unbounded means unidentified, empty means an overidentification failure hidden behind a tidy point estimate.
+:::
+
+## The Deep Moral
+
+- Ch 2.5: a regression can't tell you if its coefficient is biased
+- Ch 3.5: a **2SLS SE can't tell you if the instrument is strong**
+- The diagnostics live **outside** the point estimate
+- First-stage $F$, effective $F$, Anderson–Rubin — the real referees
+
+::: notes
+The deep moral connects back to where Week two left off. In Chapter two-point-five the lesson was that a regression cannot tell you whether its own coefficient is biased — the diagnostics live outside the regression, in the research design. This chapter's lesson is the exact parallel: a two-stage least squares standard error cannot tell you whether the instrument is strong enough to trust it. The first-stage F, the effective F, and the Anderson–Rubin interval are the diagnostics that live outside the two-stage least squares point estimate. Devon's confident crypto paper, with its tight standard error and its three-stars coefficient, told him nothing about whether its instrument was strong. Only the first-stage F and an A-R interval could.
+:::
+
+## Where This Goes Next
+
+- Week 3 methods lean on a **single cross-section** + a strong assumption
+- Week 4 exploits **structure in the data itself**
+- **Difference-in-differences**: panels, each unit its own control
+- **Regression discontinuity**: sharp cutoffs, a local experiment
+- **Synthetic control**: a bespoke counterfactual from untreated units
+
+::: notes
+Finally, where this goes next. This chapter closes Week three and the first half of the camp's causal-inference arc. Notice what every Week three method has in common: each leans on a single cross-section and a strong, often untestable assumption — conditional independence for matching, exclusion for I-V. Week four changes the game by exploiting structure in the data itself — repetition over time and sharp thresholds in assignment. Difference-in-differences uses panels, the same units observed before and after a treatment, so each unit serves as its own control, differencing away every fixed confounder you never measured. Regression discontinuity exploits an arbitrary cutoff — a credit score of exactly six-twenty, a test score of exactly seventy — where units just above and just below are as-good-as-randomly assigned, manufacturing a local experiment at the threshold. And synthetic control builds a bespoke counterfactual for a single treated unit out of a weighted blend of untreated ones. These are design-based methods: the credibility comes from the shape of the natural experiment, not from a list of controls or the validity of an instrument.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+You now know the three ways IV breaks — **weak instruments, exclusion violations, many-instrument bias** — and the three tools that catch them: the **first-stage and effective $F$**, the **Anderson–Rubin interval**, and the **overidentification test**. Next, Week 4 hands you **design-based** methods that need fewer leaps of faith.
+:::
+
+::: notes
+To summarize the finale and the whole chapter: you now know the three classic ways instrumental variables breaks — weak instruments, exclusion violations, and many-instrument bias — and the three tools that catch them: the first-stage and effective F, the Anderson–Rubin interval, and the overidentification test. You can read an I-V paper like a referee, interrogating the instrument instead of the coefficient, and you know that the diagnostics live outside the two-stage least squares point estimate. Open notebook nb-three-point-five to run the full pathology yourself. Week four hands you a sharper set of designs that need fewer leaps of faith — difference-in-differences, regression discontinuity, and synthetic control — and asks you to read those just as critically. See you there.
+:::

@@ -1,0 +1,58 @@
+---
+title: "WRDS Cloud — The Licensed Datasets"
+date: "2026-08-03"
+---
+
+# WRDS Cloud — The Licensed Datasets {.title}
+
+::: notes
+Welcome back to Data Acquisition in Practice, part three of eight. In part two we set the three rules: secrets in the environment, licensed data on GMU, and every pull pinned, cached, and logged. Now we apply the six-question template to WRDS Cloud — the front door to the licensed datasets that define empirical finance.
+:::
+
+## Coverage and Identifiers
+
+- **CRSP**: prices, returns, delisting returns, back to 1925
+- **Compustat**: standardized firm financials, North America from the 1950s
+- **IBES**: analyst forecasts; **TRACE**: corporate-bond trades
+- CRSP keys on **PERMNO**; Compustat on **GVKEY**
+- IBES keys on its own internal **TICKER** — a trap
+- The keys differ and are not interchangeable
+
+::: notes
+Coverage. The four WRDS datasets you meet most: C-R-S-P, the Center for Research in Security Prices, gives daily and monthly stock prices, returns, shares outstanding, and its crown jewel, delisting returns — a survivorship-bias-free universe of U-S equities back to nineteen twenty-five. This is Sam's momentum data, done right. Compustat, from S-and-P Global, gives standardized firm financial statements back to the nineteen-fifties — this is Priya's insurer fundamentals. I-B-E-S holds analyst forecasts and recommendations; T-R-A-C-E holds corporate-bond trades. Key identifiers: C-R-S-P keys on PERMNO, a permanent security identifier that never changes when a firm re-tickers. Compustat keys on GVKEY, a permanent company identifier, plus a data-date. I-B-E-S keys on its own internal ticker — not the exchange ticker, a classic trap. The keys differ and are not interchangeable.
+:::
+
+## Access Path — SQL Against a Remote Database
+
+- WRDS runs PostgreSQL; query it with the `wrds` package
+- Connect, run SQL, get a DataFrame
+- **Select only the columns and rows you need**
+- Bound the dates; never `SELECT *` on 100-million rows
+- Explore the schema first: list tables, describe a table
+
+::: notes
+Access path. WRDS runs a PostgreSQL database you query with the w-r-d-s Python package. You connect, run SQL, and get a data-frame back. The package reads your credentials from a pgpass file or caches a token — you never put your WRDS password in code. Two habits matter. First, select only the columns and rows you need. C-R-S-P's daily stock file has tens of millions of rows, and select-star will time out or blow your memory. Bound the dates, name the columns. A good monthly-returns query selects permno, date, return, price, and shares-outstanding from the C-R-S-P monthly stock file, bounded between two dates. Second, explore the schema first: list-libraries, list-tables, and describe-table tell you what is there before you guess. The data card for each WRDS source lists the tables and columns you will most want.
+:::
+
+## Licensing, Gotchas, and the Pull
+
+- WRDS is the reason Rule 2 exists; connection is read-only
+- Cache to `data/raw/` on GMU; git-ignore it; commit only code and log
+- **RET** includes dividends; **RETX** excludes — using wrong one biases
+- Delisting returns live in a *separate* table
+- Pull bounded chunks; pin the snapshot date; cache and log
+
+::: notes
+Licensing. WRDS data is the reason Rule two exists. The connection is read-only, and the data is licensed to GMU. On WRDS Cloud itself the data never leaves Wharton's servers, the cleanest place to work; on GMU's Hopper cluster it stays inside GMU's licensed environment. What you must not do is pull C-R-S-P to your laptop and push it to GitHub. So the data-frame is cached to data-raw on GMU infrastructure, that directory is git-ignored, and only your query code and pull log are committed. Gotchas: WRDS publishes no hard rate limit but enforces practical ones — a reckless select-star is antisocial on a shared cluster, so pull in bounded chunks by year or exchange. The subtlest gotcha is which variable: capital-R-E-T includes dividends and is what you usually want for a total-return study, while R-E-T-X excludes them — the wrong one silently biases every return-based result. And delisting returns live in a separate table; ignoring them is the survivorship bias of Chapter seven-point-four. For the pull: pin the snapshot date, cache to Parquet, and log.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**WRDS Cloud** serves the licensed crown jewels — CRSP, Compustat, IBES, TRACE — via SQL you must keep bounded and column-specific. The data stays on GMU infrastructure: cache to a git-ignored `data/raw/`, commit only code and log. Watch RET versus RETX and the separate delisting table. Next: SEC EDGAR.
+:::
+
+::: notes
+To summarize part three: WRDS Cloud is the front door to the licensed crown jewels — C-R-S-P, Compustat, I-B-E-S, and T-R-A-C-E — queried with bounded, column-specific SQL. Because the data is licensed to GMU, it stays on GMU infrastructure, cached to a git-ignored data-raw, with only code and log committed. Mind the return-with-dividends versus return-without distinction, and remember delisting returns sit in their own table. In part four we move to a fully public source: S-E-C EDGAR.
+:::

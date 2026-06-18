@@ -1,0 +1,57 @@
+---
+title: "Reading the Tables: Symptom, Mechanism, Cure"
+date: "2026-07-20"
+---
+
+# Reading the Tables: Symptom, Mechanism, Cure {.title}
+
+::: notes
+Welcome back to Chapter five-point-five, part four of seven. In part three we saw why long, persistent panels are the perfect crime scene. Now we read the paper itself, and a professional does not read it front to back. You read it tables-first, in the order that tells the story: symptom, then mechanism, then cure.
+:::
+
+## Start With the Headline Table
+
+- The placebo rejection-rate table made the paper famous
+- Find it first; read the conventional standard-error column
+- A number that should be near five percent, but is not
+- Over-rejection is *severe* — many times nominal five percent
+- The advertised five-percent test is a coin-flip-ish test
+
+::: notes
+Start with the placebo rejection-rate table, the headline. This is the table that made the paper famous, and it is the first thing to find. It reports, for the conventional difference-in-differences specification, the fraction of placebo laws, with true effect zero, that came back statistically significant at the five-percent level. Read down the column for the standard, serial-correlation-ignoring standard error and look for a number that should be near zero point zero five and is not. It is far higher. Do not memorize a precise figure; what matters, and what is robustly true, is that the over-rejection is severe, many times the nominal five percent, large enough that a substantial fraction of pure-noise laws look significant. Once you have seen this one number, you understand the whole paper: the advertised five-percent test is, in truth, a coin-flip-ish test. Everything else is diagnosis and cure.
+:::
+
+## Then the Panel-Length Table
+
+- Establishes *when* over-rejection gets worse
+- Longer panels, more serial correlation, worse rejection
+- Confirms the mechanism is autocorrelation
+- Rules out "maybe it is just noise"
+- The paper found the *right* culprit, not a symptom
+
+::: notes
+Then read the table that varies the panel length. Having established that over-rejection happens, BDM show when it gets worse, and the answer, longer panels and more serial correlation, confirms the mechanism. This is the table that rules out the objection maybe it is just noise and pins the blame squarely on autocorrelation. Read it as the paper's argument that it has found the right culprit, not merely a symptom. The fact that over-rejection grows smoothly with the amount of serial correlation, and with the number of time periods, is exactly what you would expect if autocorrelation is the disease, and exactly what you would not expect if the problem were random chance. The dial-turning evidence is the paper proving its own diagnosis.
+:::
+
+## Then the Fixes Tables
+
+- Ask each row: did this bring rejection back to five percent?
+- **Block bootstrap:** resample whole states, keep series intact
+- **Cluster by state:** each state's residuals arbitrarily correlated
+- **Collapse to pre/post:** average to two periods per state
+- Clustering became the field's default — why Priya clustered
+
+::: notes
+Then read the fixes tables, the cures. Having diagnosed the disease, BDM test remedies and report the rejection rate each one delivers. Read every row asking one question: did this fix bring the rejection rate back down to roughly five percent? First, the block bootstrap: resample whole states, entire time series kept intact, so the bootstrap preserves each state's serial-correlation structure instead of shattering it. Second, clustering at the state level: the cluster-robust standard error of Chapter two-point-four, with the cluster set to the unit at which treatment is assigned. It lets each state's residuals be arbitrarily correlated across all its years, which is exactly the serial-correlation pattern the disease consists of. This became the field's default, and the reason Priya clustered by state. Third, collapsing to pre and post: average each state into one before number and one after number, leaving effectively two periods, with no internal serial correlation left to misread.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Read BDM **tables-first**: the headline placebo table (symptom — far above five percent), the panel-length table (mechanism — autocorrelation, not noise), then the fixes tables (cure). The three remedies are block bootstrap, cluster by state, and collapse to pre/post. Symptom, mechanism, cure is the reading-order heuristic this whole week teaches. Next: what is genuinely clever here.
+:::
+
+::: notes
+To summarize part four: read BDM tables-first, in story order. The headline placebo table is the symptom, a rejection rate far above five percent. The panel-length table is the mechanism, proving the culprit is autocorrelation and not chance. The fixes tables are the cure, where you ask of every remedy whether it dragged the rate back toward five percent. The three remedies are the block bootstrap, clustering by state, and collapsing to pre and post. Symptom, mechanism, cure is the reading-order heuristic this whole week is teaching you. In part five we step back and ask what is genuinely clever about this paper.
+:::

@@ -1,0 +1,54 @@
+---
+title: "Overlap and the Curse of Dimensionality"
+date: "2026-07-06"
+---
+
+# Overlap and the Curse of Dimensionality {.title}
+
+::: notes
+Welcome back to Chapter three-point-two, part five of eleven. In part four we ran exact matching on two cells. Now we surface the second assumption — overlap, or common support — then watch exact matching collapse when the covariates multiply, a failure called the curse of dimensionality.
+:::
+
+## The Overlap Assumption
+
+- Within-cell difference needs *both* a treated and an untreated unit
+- $0 < \Pr(D_i = 1 \mid \mathbf{X}_i = \mathbf{x}) < 1$ for all $\mathbf{x}$
+- Every profile: positive chance treated, positive chance not
+- Fail it, and that region has no usable comparison
+
+::: notes
+There is a second assumption hiding in that argument, easy to miss because it is so obvious once stated. To compute the within-cell difference at X equal to little-x, you need both a treated unit and an untreated unit at little-x. If every applicant with a given profile enrolled, no untreated comparison exists, and the cell is useless. This is the overlap, or common-support, condition: the probability of treatment given the covariates lies strictly between zero and one, for every covariate profile in the population of interest. In words: at every profile there is a positive chance of being treated and a positive chance of not. No profile is a guaranteed enrollee, none a guaranteed non-enrollee.
+:::
+
+## Overlap Is Partly Checkable
+
+- Unlike CIA, you can *look* and see where both kinds exist
+- Maya: everyone above credit 780 enrolled; nobody below 580 did
+- Those tails violate overlap — no counterfactuals there
+- Learn the effect only in the **region of common support**
+
+::: notes
+Overlap does the real work in practice, and unlike CIA it is partly checkable: you can look at the data and see whether treated and untreated units occupy the same regions of X. For Maya, suppose every applicant with a credit score above seven-eighty enrolled — the savviest all take the free course — and no applicant below five-eighty ever did. Then there are no untreated high-score units to serve as counterfactuals, and no treated low-score units at all. Those tails violate overlap. Maya can only learn the program's effect in the region of common support — the band of credit scores where both enrollees and non-enrollees exist. CIA plus overlap together are called strong ignorability, the Rosenbaum–Rubin nineteen-eighty-three term.
+:::
+
+## The Curse of Dimensionality
+
+- Realistic confounders: credit, income, age, debt-to-income, more
+- Coarsen into bins: $5 \times 5 \times 4 \times 4 \times 3 \times 2 \times 5 = 12{,}000$ cells
+- With 4,000 applicants, most cells are *empty*
+- Exact matching breaks: nobody has an exact twin
+
+::: notes
+Now add realism. Maya's confounders are credit score, income, age, debt-to-income ratio, employment status, prior banking relationship, and ZIP-code median income. Coarsen each into a few bins — credit into five buckets, income into five, age into four, debt-to-income into four, employment into three, prior-relationship into two, ZIP into five. The distinct cells number five times five times four times four times three times two times five, which is twelve thousand. With about four thousand applicants across twelve thousand cells, the average cell holds well under one person. Most cells are empty; most occupied ones hold a lone treated applicant with no untreated twin, or the reverse. Exact matching breaks down completely — not because the idea is wrong, but because in high dimensions nobody has an exact twin. That is the curse of dimensionality.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Overlap** requires $0 < \Pr(D{=}1\mid\mathbf{X}) < 1$ everywhere — both kinds of unit must exist where you compare. It is partly checkable, unlike CIA. But with many covariates, cells explode (here, $12{,}000$) and empty out: exact matching dies of the **curse of dimensionality**. Next: the propensity score rescues it.
+:::
+
+::: notes
+To summarize part five: overlap requires that the probability of treatment given the covariates lies strictly between zero and one everywhere — both kinds of unit must exist where you compare. Unlike CIA, overlap is partly checkable from the data. Together, CIA and overlap form strong ignorability. But when covariates multiply, the number of cells explodes — twelve thousand in our example — and the data thin out exponentially, so exact matching finds no twins. That is the curse of dimensionality. In part six we meet the tool built to escape it: the propensity score, a single number that collapses the whole matching problem to one dimension.
+:::

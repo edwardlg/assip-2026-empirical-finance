@@ -1,0 +1,57 @@
+---
+title: "From Filings to Vectors"
+date: "2026-07-27"
+---
+
+# From Filings to Vectors {.title}
+
+::: notes
+Welcome back to Chapter six-point-two, part three of nine. In part two we made the research question precise: define industries from text, not codes. Now we begin the construction — the part you rebuild in notebook six-point-two. This is a measurement paper, so its strategy is construction plus validation. We do the construction slowly, starting with two steps: get the text, and turn it into numbers.
+:::
+
+## Step One: Get The Text
+
+- Every U.S. public firm files a 10-K
+- Item 1 is a mandated **business / product description**
+- A few hundred to a few thousand words on the firm's products
+- Extracted from tens of thousands of SEC EDGAR filings
+- How *cleanly* you can extract it is a vulnerability — part eight
+
+::: notes
+The strategy is construction plus validation. The construction is what you rebuild in notebook six-point-two, so we do it the slow way. Step one: get the text. Every U.S. public firm files a ten-K, and Item One is a mandated business and product description — a few hundred to a few thousand words saying what the firm makes and sells. Hoberg and Phillips extract that section from tens of thousands of S-E-C EDGAR filings. How cleanly you can extract it is a vulnerability we will return to in part eight.
+:::
+
+## Step Two: Turn Each Description Into A Vector
+
+- Build a dictionary of every non-trivial word — tens of thousands
+- Firm $i$'s description becomes a vector $\mathbf{w}_i$, one entry per word
+- Entry $j$ = how much firm $i$ uses word $j$
+- Simplest **bag-of-words**: a count or a presence indicator
+- Word order is thrown away — a real limitation, flagged later
+
+::: notes
+Step two: turn each description into a vector. This is the text-as-data heart of the enterprise. Build a giant dictionary of every non-trivial word appearing across all descriptions — tens of thousands of distinct words. Represent firm i's description as a vector w-sub-i with one entry per dictionary word: entry j measures how much firm i uses word j. In the simplest bag-of-words scheme that entry is just a count or a presence indicator. A firm heavy on "wireless," "spectrum," "subscribers" lands far from one full of "crude," "refining," "barrels." Word order is thrown away — hence the word "bag," a real limitation we flag later — but it buys enormous simplicity.
+:::
+
+## Weighting Words: TF–IDF
+
+- Not all words are equally informative
+- "company" appears everywhere — tells you nothing
+- "lithium" appears in few — tells you a lot
+- Inverse-document-frequency weight: $\text{idf}_j = \log\frac{D}{d_j}$
+- Word in every document: $d_j = D$, so weight $= 0$ — silenced
+
+::: notes
+A refinement notebook six-point-two and the A-I module both lean on is T-F-I-D-F — term frequency, inverse document frequency. Not all words are equally informative: "company" appears in every description and tells you nothing about which firm; "lithium" appears in few and tells you a lot. T-F-I-D-F multiplies a word's within-document frequency by a factor that grows when the word appears in fewer documents, downweighting ubiquitous words and amplifying distinctive ones. The inverse-document-frequency weight for word j is the log of capital-D over little-d-sub-j, where capital-D is the number of documents and little-d-sub-j is the number containing word j. A word in every document has little-d equal to capital-D, so its weight is log of one, which is zero — silenced. A word in one document out of ten thousand gets a large weight. The firm vector then holds, in each slot, the term frequency times that inverse-document-frequency weight. This is the standard weighting we teach for the notebook.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The construction starts by pulling each firm's Item 1 product description and turning it into a word vector $\mathbf{w}_i$. Bag-of-words counts are the simplest version; **TF–IDF** reweights so ubiquitous words like "company" go to zero and distinctive words like "lithium" dominate. Next: compare two vectors with the cosine.
+:::
+
+::: notes
+To summarize part three: we pull each firm's Item One product description and turn it into a word vector. The simplest version is bag-of-words — counts or presence indicators. The refinement we teach for the notebook is T-F-I-D-F, which silences ubiquitous words and amplifies distinctive ones. With every firm now a vector, part four asks the key question: how do we measure whether two vectors point the same way? The answer is the cosine, and it is exactly the formula from Chapter one-point-two.
+:::

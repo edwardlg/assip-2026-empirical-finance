@@ -1,0 +1,54 @@
+---
+title: "Matching and Propensity Scores: The Setup"
+date: "2026-07-06"
+---
+
+# Matching and Propensity Scores: The Setup {.title}
+
+::: notes
+Welcome to Week Three, Chapter three-point-two, part one of eleven. This lesson is the first of two on killing selection bias when the thing driving it is observable. We open with Maya's new question: does a free financial-literacy program actually raise loan-approval odds, or do the people who choose to enroll just look better already? In this part we set up the problem in potential-outcomes language and name the target we want to estimate.
+:::
+
+## Maya's New Question
+
+- Free financial-literacy course: budgeting, credit, loan terms
+- Some applicants take it before applying; most do not
+- Goal: the program's causal effect on approval
+- The trap word is *choose* — enrollees may already look better
+
+::: notes
+Maya is back, with a different lender and a different question. The lender runs a free financial-literacy program — a short course on budgeting, credit scores, and how loan terms work. Some applicants take it before applying for a loan, and most do not. Maya wants the program's causal effect on getting approved. Does sitting through the course actually raise your odds, or do the people who choose to enroll just look better to begin with? That word, choose, is the whole problem. Chapter three-point-one gave us the language to handle it, and we use that language now.
+:::
+
+## Potential Outcomes for Each Applicant
+
+- Let $D_i = 1$ if applicant enrolled, $0$ if not
+- $Y_i(1)$: approved if they take the course
+- $Y_i(0)$: approved if they do not
+- We observe only one — the fundamental problem of causal inference
+
+::: notes
+Let D-i equal one if applicant i enrolled in the program, and zero if not. Each applicant has two potential outcomes: Y-i of one, whether they would be approved if they took the course, and Y-i of zero, whether they would be approved if they did not. We only ever observe one of them — that is the fundamental problem of causal inference. The one we see is Y-i, which equals D-i times Y-i of one plus one minus D-i times Y-i of zero. In plain terms: for enrollees we see the treated outcome, and for non-enrollees we see the untreated outcome, never both for the same person.
+:::
+
+## The Target: Average Treatment Effect on the Treated
+
+- $\tau_{\text{ATT}} = \mathbb{E}[\,Y_i(1) - Y_i(0) \mid D_i = 1\,]$
+- The average benefit *for the kind of person who enrolls*
+- ATT, not ATE — the natural target for matching
+- Why? We return to it after the workflow
+
+::: notes
+The causal effect we want here is the average treatment effect on the treated, written tau-A-T-T. In symbols it is the expectation of Y-i of one minus Y-i of zero, conditional on D-i equal to one. In words: the average benefit of the program for the kind of person who actually enrolls. Note we target the treated, not everyone. The average treatment effect on the treated, the ATT, is the natural target for matching, not the average treatment effect over everyone, the ATE. We will say a word later about why, once we have seen the workflow. For now, hold the target in mind: the average gain among enrollees.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Maya wants the **average treatment effect on the treated** — the program's benefit for the kind of person who enrolls. Each applicant has two potential outcomes, $Y_i(1)$ and $Y_i(0)$, but we see only one. Next: why the naive comparison fails, and what selection bias really is.
+:::
+
+::: notes
+To summarize part one: Maya wants the average treatment effect on the treated — the program's benefit for the kind of person who enrolls. Each applicant has two potential outcomes, the approved-if-treated outcome and the approved-if-untreated outcome, but we observe only one per person. The target is the average gain among enrollees. In part two we show why the obvious comparison — enrollee approval rate minus non-enrollee approval rate — does not estimate that target, and we put a precise name on what goes wrong: selection bias.
+:::

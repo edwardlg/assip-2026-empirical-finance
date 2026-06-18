@@ -1,0 +1,69 @@
+---
+title: "RAG — Building the Index"
+date: "2026-07-27"
+---
+
+# RAG — Building the Index {.title}
+
+::: notes
+Welcome back to Reading Guide Pack Six and the AI Lab Manual, part two of eight. In part one we learned that the validation table is where a measurement paper lives or dies. Now we build a tool. The first thing students want to do with a language model is paste a ten-K into the chat box and ask questions. That works for one short document and fails for everything real: filings are too long for the context window, you have thousands of them, and the model will happily answer from its training data — stale, wrong, or invented — rather than from the document in front of it. Retrieval-augmented generation, or RAG, is the standard fix.
+:::
+
+## The Idea in One Sentence
+
+- Don't trust the model to **know** the answer
+- **Retrieve** the relevant passages from your own documents
+- **Paste** them into the prompt as grounded context
+- Ask the model to answer using **only** those passages — and cite them
+- Two phases: build the index **offline**, answer queries **online**
+
+::: notes
+Here is the idea in one sentence. Instead of trusting the model to know the answer, you retrieve the relevant passages from your own documents and paste them into the prompt as grounded context, then ask the model to answer using only those passages and to cite them. The pipeline has two phases. Offline, you build a searchable index. Online, you find the matching passages and feed them to the model. This part covers the offline half; part three covers answering a query.
+:::
+
+## Chunk Each Filing
+
+- A 10-K is hundreds of pages — too big to embed or prompt whole
+- **Split** into passages of ~500 tokens (a few paragraphs)
+- A *token* is a sub-word piece of text
+- Keep a small **overlap** so split sentences survive
+- **Tag** each chunk with its source: firm, filing, year, section
+
+::: notes
+First, chunk. A ten-K is hundreds of pages; you cannot embed it as one unit or fit it in a prompt. So you split it into passages of roughly five hundred tokens — a token is a sub-word piece, so five hundred tokens is a few paragraphs — keeping a small overlap between adjacent chunks so a sentence split across a boundary is not lost. And you tag every chunk with its source: firm, filing, fiscal year, section, so an answer can point back to where it came from. That source tag is what lets a later answer cite its evidence, so do not skip it. As we will see in part three, getting the chunk size wrong is one of the most common ways the whole system quietly fails.
+:::
+
+## Embed Into Vectors
+
+- An **embedding model** turns each chunk into a vector of numbers
+- A few hundred to a few thousand dimensions
+- Similar topics land **near each other** in that space
+- Same **cosine-similarity** geometry as Hoberg–Phillips (Ch 6.2)
+- Two supply-chain passages get nearby vectors — even with no shared words
+
+::: notes
+Second, embed. An embedding model turns each chunk into a vector of numbers — a few hundred to a few thousand dimensions — positioned so that passages about similar topics land near each other. This is the same cosine-similarity geometry Hoberg and Phillips use on ten-Ks in Chapter Six-point-Two; retrieval-augmented generation is that idea industrialized. Two passages about supply-chain risk get nearby vectors even if they share no exact words. That ability to match on meaning rather than literal words is what makes retrieval powerful — and, as we will see, exactly where it sometimes breaks.
+:::
+
+## Store the Vectors
+
+- Save chunk vectors **with** their text and source IDs
+- A **vector store** is built for one job
+- Given a query vector, return the **nearest** chunk vectors fast
+- Run **FAISS** or **Chroma** locally; many hosted options exist
+- This index is built **once per corpus**, reused for every query
+
+::: notes
+Third, the vector store. You save all the chunk vectors, alongside their text and source IDs, in a database built for one operation: given a query vector, return the nearest chunk vectors fast. You can run FAISS or Chroma locally. The key thing is that this index is built once per corpus and reused for every question — that is why it lives in the offline phase. Embedding ten thousand filings is slow and you do it once; answering a single question against that index is fast. With the index built, we are ready for the online half: taking a question and producing a grounded, cited answer. That is part three.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+RAG's **offline** phase builds a reusable index: chunk each filing into ~500-token passages tagged with their source, embed each chunk into a vector, and store the vectors for fast nearest-neighbor search. It is the Hoberg–Phillips cosine geometry, industrialized. Next: the **online** phase — retrieving the right chunks and answering with citations.
+:::
+
+::: notes
+To summarize part two: the offline half of retrieval-augmented generation builds a reusable index. You chunk each filing into roughly five-hundred-token passages, keeping overlap and tagging every chunk with its source. You embed each chunk into a vector, so passages about similar topics sit near each other — the same cosine geometry Hoberg and Phillips use. And you store those vectors for fast nearest-neighbor search, once per corpus. In part three we run the online phase: embed the question, retrieve the closest chunks, stuff them into the prompt, and get an answer grounded in citations — along with the failure modes that make validation non-negotiable.
+:::

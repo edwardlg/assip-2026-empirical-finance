@@ -1,0 +1,65 @@
+---
+title: "The Shared Fix: Clean Controls and Transparent Aggregation"
+date: "2026-07-13"
+---
+
+# The Shared Fix {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part nine of thirteen. In part eight, de Chaisemartin and D'Haultfœuille proved the negative-weights problem in full generality. Both that result and Goodman-Bacon point to one cure. This part states it: the single idea shared by every modern heterogeneity-robust estimator, plus the two phrases and the spec discipline that carry the load.
+:::
+
+## The Root Cause, Restated
+
+- The pooled regression let **OLS pick** the comparisons
+- OLS, blind to which units are clean, included the **forbidden** ones
+- …with whatever weights the timing-variance arithmetic dictated
+- Every modern fix takes selection and weighting **out of OLS's hands**
+
+::: notes
+Step back from the wreckage and ask what went wrong at the root. The pooled regression failed because it let ordinary least squares pick the comparisons — and ordinary least squares, blind to which units are clean controls, included the forbidden ones with whatever weights the timing-variance arithmetic dictated. That is the whole problem in one line: comparison-selection and weighting were left to an algorithm that optimizes fit, not credibility. Every modern heterogeneity-robust estimator fixes this by taking the comparison-selection and the weighting out of ordinary least squares' hands and doing both deliberately. They differ in bookkeeping, but they share one idea.
+:::
+
+## The Shared Idea — Remember This
+
+- **Never** let an already-treated unit serve as a control
+- For each new cohort, compare only to **never-** or **not-yet-treated** units
+- Estimate clean **group-time** effects one at a time
+- Then aggregate into whatever summary you want, with **chosen** weights
+
+::: notes
+If you remember nothing else from this chapter, remember this. Never let an already-treated unit serve as a control. For each newly-treated cohort, estimate its effect by comparing it only to clean controls — units that are never treated, or not yet treated, meaning treated later but not yet at the moment of comparison. Estimate these clean group-time effects one at a time, then aggregate them into whatever summary you actually want, using weights you choose and can write down. That single paragraph is the whole research program of Callaway and Sant'Anna, Sun and Abraham, and Borusyak, Jaravel, and Spiess. The hard part was seeing that two-way fixed effects fails to do this; the fix, once seen, is almost obvious.
+:::
+
+## Two Phrases Carry the Load
+
+- **Clean control:** untreated **at the moment** it is the counterfactual
+- Never-treated (clean forever) or not-yet-treated (clean until it adopts)
+- **Transparent aggregation:** estimate a grid, then average **on purpose**
+- Replaces one opaque $\hat\beta$ with an **audit trail**
+
+::: notes
+Two phrases carry the whole load. Clean control means a unit that is untreated at the moment it is being used as a counterfactual — either never-treated, clean forever, or not-yet-treated, clean until its own adoption date and usable as a control only in the window before it switches on. Transparent aggregation means that instead of one regression spitting out one opaque coefficient, you first estimate a whole panel of group-time effects, then explicitly average them — by event time for a dynamics plot, by calendar time, or into a single overall number with sensible non-negative weights, typically each cohort weighted by its size. The opacity that hid the crisis for thirty years is replaced by an audit trail you can inspect line by line.
+:::
+
+## New Spec Discipline for Staggered DiD
+
+- (1) **Name the control group:** never-treated, not-yet-treated, or both?
+- Never-treated may differ systematically; not-yet-treated shrinks as cohorts adopt
+- (2) **Name the aggregation weights:** event-time, calendar-time, or overall ATT
+- Identifying assumption is still **parallel trends** — now stated **per cohort**
+
+::: notes
+When you write up a staggered design, the spec checklist gains two lines. First, name the control group: are your clean comparisons against never-treated units, not-yet-treated units, or both? Never-treated units may differ systematically from adopters — a state that never regulates insurers is a different animal — whereas not-yet-treated units are eventual adopters, often a more credible counterfactual, but using them shrinks your control pool as more cohorts switch on. Second, name the aggregation weights: an event-time average, a calendar-time average, and a single overall effect can be genuinely different numbers, and the reader must know which your headline reports. The identifying assumption is still parallel trends — but now stated per cohort: each adopting cohort's untreated outcome would have moved parallel to its clean control's.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The cure shared by all three modern estimators: **never use an already-treated control**; estimate clean **group-time** effects against never- or not-yet-treated units; then **aggregate transparently** with weights you choose. Two new spec lines: **name your control group** and **name your weights**. Parallel trends is now stated **per cohort**. Next: Callaway–Sant'Anna make this concrete.
+:::
+
+::: notes
+To summarize part nine: the pooled regression failed because it let ordinary least squares pick comparisons and weights, including forbidden ones. Every modern estimator takes that choice out of the algorithm's hands. The shared idea: never use an already-treated control, estimate a grid of clean group-time effects against never- or not-yet-treated units, then aggregate transparently with chosen weights. Two phrases carry it — clean control and transparent aggregation — and the spec gains two lines: name your control group and name your weights, with parallel trends stated per cohort. In part ten we make this concrete with Callaway and Sant'Anna, the estimator paired with two-way fixed effects in this chapter's notebook.
+:::

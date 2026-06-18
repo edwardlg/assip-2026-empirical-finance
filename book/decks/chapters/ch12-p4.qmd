@@ -1,0 +1,64 @@
+---
+title: "Maya's Two-Asset Budget: Three Scenarios"
+date: "2026-06-22"
+---
+
+# Maya's Two-Asset Budget: Three Scenarios {.title}
+
+::: notes
+Welcome back to Chapter one-point-two, part four of eight. In part three we built the weighted variance formula with its all-important cross-term. Now we watch it work. Maya has one dollar to split between two assets, and the entire story of diversification will play out as we change a single number — the covariance between them. We run three scenarios at an even split and see risk fall below the average, and even below the safer asset alone.
+:::
+
+## Maya's Two Assets
+
+| Quantity | Asset 1 | Asset 2 |
+|---|---|---|
+| Expected return | $0.08$ | $0.04$ |
+| Volatility | $0.20$ | $0.10$ |
+| Variance | $0.04$ | $0.01$ |
+
+- Asset 1 is high-octane: more return, double the volatility
+- $\operatorname{Var}(R_p) = w^2(0.04) + (1-w)^2(0.01) + 2w(1-w)\sigma_{12}$
+
+::: notes
+Here are Maya's two assets, treated as known population quantities for now. Asset one has expected return eight percent, volatility twenty percent, variance zero point zero four. Asset two has expected return four percent, volatility ten percent, variance zero point zero one. Asset one is the high-octane choice: more expected return, but double the volatility. The piece we have not pinned down is how the two move together; call their covariance sigma one two. With weight w in asset one and one minus w in asset two, the portfolio variance is w squared times zero point zero four, plus one minus w squared times zero point zero one, plus two w times one minus w times sigma one two. Everything interesting lives in sigma one two, so we run three scenarios at the even split, where w squared and one minus w squared are both zero point two five, and two w times one minus w is zero point five.
+:::
+
+## Three Scenarios at $w = 0.5$
+
+- **A. Move together** ($\sigma_{12}=0.02$): $\operatorname{Var}=0.0225$, $\operatorname{sd}=0.15$
+- **B. Uncorrelated** ($\sigma_{12}=0$): $\operatorname{Var}=0.0125$, $\operatorname{sd}\approx 0.112$
+- **C. Move oppositely** ($\sigma_{12}=-0.01$): $\operatorname{Var}=0.0075$, $\operatorname{sd}\approx 0.087$
+- Expected return stays $0.06$ throughout
+
+::: notes
+Scenario A: the assets move together perfectly, with covariance zero point zero two, the largest it can be. The variance works out to zero point zero two two five, so volatility is zero point one five. The blend sits exactly on the line between twenty percent and ten percent — no diversification benefit at all. When assets move in lockstep, mixing them just averages the risk. Scenario B: the assets are uncorrelated, covariance zero. The cross-term dies and the variance is zero point zero one two five, so volatility is about zero point one one two — below the average of the two volatilities, purely because the cross-term went away. Maya got lower risk for free. Scenario C: the assets move oppositely, covariance minus zero point zero one. Now the cross-term subtracts, the variance is zero point zero zero seven five, and volatility is about zero point zero eight seven — lower than asset two alone, the safer of the two. By blending in some of the riskier asset, Maya built a portfolio less volatile than either ingredient. Through all three, the expected return stays at six percent.
+:::
+
+## The Code Confirms It
+
+```python
+import numpy as np
+var1, var2 = 0.04, 0.01
+w = 0.5
+for cov12 in (0.02, 0.0, -0.01):
+    var_p = w**2*var1 + (1-w)**2*var2 + 2*w*(1-w)*cov12
+    print(f"cov={cov12:+.3f} Var={var_p:.4f} sd={np.sqrt(var_p):.3f}")
+```
+
+- Output: $0.150$, then $0.112$, then $0.087$
+
+::: notes
+The code makes it concrete. We fix the two variances, set the weight to one half, and loop over the three covariances: together, uncorrelated, and opposed. For each we evaluate the weighted variance formula and take its square root. The printed volatilities march downward — zero point one five, then zero point one one two, then zero point zero eight seven — exactly the hand computations. The punchline of diversification lives entirely in the sign of the covariance term: the lower it goes, the more risk cancels when you combine the assets.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+At a fixed even split, lowering the covariance drives portfolio volatility from $0.15$ down to $0.087$ — below the safer asset alone — while expected return holds at $0.06$. **Diversification is one term in one quadratic: the covariance.** Next: the minimum-risk blend and the lesson Maya takes away.
+:::
+
+::: notes
+To summarize part four: holding the even split fixed and only lowering the covariance drove Maya's portfolio volatility from zero point one five down to about zero point zero eight seven — below even the safer asset — while expected return stayed at six percent. Diversification is not magic and not about spreading out; it is one term in one quadratic, and that term is the covariance. In part five Maya stops settling for the even split, finds the weight that minimizes risk, and we draw the broader lesson.
+:::

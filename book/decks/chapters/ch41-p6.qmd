@@ -1,0 +1,56 @@
+---
+title: "The Crack in the 2×2"
+date: "2026-07-13"
+---
+
+# The Crack in the 2×2 {.title}
+
+::: notes
+Welcome back to Chapter four-point-one, part six of six, the last segment. In part five we saw why flat leads never prove parallel trends, and why DiD inference must cluster by the treatment unit. Now we close by being honest about the boundary. Everything we built assumed a very particular world — one treated group, one control group, one moment when treatment switches on. In that world DiD is beautiful. Step outside it, and the clean story develops a crack that the entire next chapter is devoted to repairing.
+:::
+
+## The World This Chapter Assumed
+
+- **One** treated group, **one** control, **one** switch-on moment
+- Double difference = ATT under parallel trends
+- TWFE $\beta$ recovers it exactly
+- Event study lets the effect breathe and shows pre-trends
+- Clustering (with enough units) gets SEs right
+
+::: notes
+Take stock of the world this chapter assumed: one treated group, one control group, one moment when treatment switches on — a single clean before-and-after for a single clean treated unit. In that world, every piece fits. The double difference equals the average treatment effect on the treated under parallel trends. The two-way fixed-effects coefficient beta recovers it exactly. The event study lets the effect breathe over event time and lets us inspect pre-trends. And clustering by unit, with enough units, gets the standard errors right. This is the foundation, genuinely beautiful when its assumptions hold. But empirical finance rarely hands you that tidy a world.
+:::
+
+## Staggered Adoption Breaks It
+
+- Regulation rolls out at **different times**: CA 2018, CO 2020, OR 2022
+- Instinct: run the *same* TWFE, read $\beta$ as "the" effect
+- It is a **trap**
+- TWFE uses **already-treated** units as controls for newly-treated
+- $\beta$ can even come out the **wrong sign**
+
+::: notes
+Now step into the world empirical finance usually hands you. Suppose the regulation rolls out across many states at different times — California in twenty eighteen, Colorado in twenty twenty, Oregon in twenty twenty-two — a pattern called staggered adoption. Your instinct, and for two decades the profession's instinct, is to run the same two-way fixed-effects regression, with the dummy switching on at each state's own adoption date, and read beta as "the" average treatment effect. Same equation, more switches. It is a trap. When timing varies, that beta is no longer a clean average of effects. The reason, developed next chapter, is that the fixed-effects machine, hunting for units that change treatment status, uses already-treated units as controls for newly-treated units. A state treated in twenty eighteen joins the comparison group for one treated in twenty twenty-two, and if the first state's effect is still evolving, the comparison is contaminated. Under some patterns, beta can even come out the wrong sign while every individual effect is positive.
+:::
+
+## Your Turn: nb4.1
+
+- Build the $2\times 2$; confirm it matches TWFE $\beta$
+- Run the event study; normalize to $k=-1$; plot leads and lags
+- **Break parallel trends on purpose**; watch the leads tilt
+- Stress the inference; reproduce the BDM placebo experiment
+
+::: notes
+Before we close, your lab. Open notebook four-point-one, built on Priya's climate-insurance shock. Because it is a simulation, you again play God — you generate state-year premiums with a known true effect and a tunable differential trend, so you can compare what DiD recovers to the truth. Four things. First, build the two-by-two: simulate one treated state and several controls, compute the four cell means and the double difference by hand, and confirm it matches the two-way fixed-effects coefficient. Second, run the event study: replace the single dummy with leads and lags, normalize to k equals minus one, and plot the coefficients with confidence bands. Third, break parallel trends on purpose: dial up a differential pre-trend and watch the leads tilt from zero while the estimated effect inflates. Fourth, stress the inference: compare classical, robust, and state-clustered standard errors, and reproduce Bertrand, Duflo, and Mullainathan with random placebo treatments.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The TWFE form $Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+\varepsilon_{it}$ is *exactly right* in the 2×2 — and *misleading* the moment treatment timing varies. The double difference is the foundation; the **staggered-adoption critique** is what gets built on it. That is **Chapter 4.2**.
+:::
+
+::: notes
+To close Chapter four-point-one: hold onto the two-way fixed-effects form, but hold it the way you hold a tool whose limits you now know. In the canonical two-by-two, it is exactly the difference-in-differences estimator, and beta is the average treatment effect on the treated under parallel trends. But that same equation becomes misleading the moment treatment timing varies across units. The double difference was the foundation; the staggered critique is what gets built on it. In Chapter four-point-two we show how that interpretation breaks under staggered adoption, and what the modern estimators — the last decade of econometrics — do instead. Well done. I will see you there.
+:::

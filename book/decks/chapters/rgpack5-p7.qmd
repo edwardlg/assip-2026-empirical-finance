@@ -1,0 +1,54 @@
+---
+title: "The Self-Check Rubric and the Road to Your Capstone"
+date: "2026-07-20"
+---
+
+# The Self-Check Rubric and the Road to Your Capstone {.title}
+
+::: notes
+Welcome back to How to Read an Empirical Paper, part seven of seven, the last part. In part six we finished reading the table. Now we close the pack with two things: a self-check rubric you run after applying the seven-part template, and the reason this whole week sits where it does — the road to your capstone. These are the questions your mentor and a seminar audience will fire at you.
+:::
+
+## The Self-Check Rubric — Part One
+
+- **Question:** state it in one sentence, naming outcome and regressor
+- **Identifying assumption:** "equals the true effect *as long as* ___"
+- **Threat:** the most plausible alternative — and its direction of bias
+- **Headline:** which table, and the one number that carries the paper
+
+::: notes
+After you run the seven-part template on a paper, grade your own understanding against this rubric. If you cannot answer these without re-opening the paper, you have not finished reading it. First four questions. The question: can I state the research question in one sentence, naming the outcome and the key regressor? The identifying assumption: can I state it in one sentence, in the form "this estimate equals the true effect as long as blank"? If my answer says "endogeneity" but names no specific threat, I have failed. The threat: can I name the single most plausible alternative explanation, and say which way it would bias the estimate? The headline: which table is the headline, and what is the one number that carries the paper? Could I read its sign, magnitude, and t-statistic aloud?
+:::
+
+## The Self-Check Rubric — Part Two
+
+- **Spec:** outcome · regressor · controls · FE · clustering · assumption
+- **Standard errors:** clustered at the level the key variable varies?
+- **Robustness:** the one check that reassured — and the one missing
+- **Replication:** one number to reproduce, one thing to stress-test
+
+::: notes
+The last four questions. The spec: can I write the headline specification in the conventions format — outcome, key regressor, controls, fixed effects, clustering, sample, and the identifying assumption in one sentence? The standard errors: are they clustered, and at the level the key variable varies? If not, do I expect the reported t-statistics are too big or too small? The robustness: what is the one robustness check the authors ran that most reassured me, and the one they should have run but did not? The replication: can I name one number I could reproduce on a laptop with the data we have, and one thing I would change to stress-test it? A paper you can answer all eight on is a paper you have genuinely read. One you can answer only the first two on is one you have skimmed.
+:::
+
+## Reading and Writing Are the Same Act
+
+- The conventions §4 spec-discipline keeps the **authors** honest
+- The seven-part template points the same rule **outward**
+- Box 1 = outcome and regressor; box 2 = identifying assumption
+- The skeptic and the honest author are the **same person**
+
+::: notes
+You may have noticed this pack and the conventions file say the same thing from two directions. The conventions section four spec-discipline demands that every specification this book writes name its outcome, treatment or key regressor, controls, fixed effects, clustering, sample, and the identifying assumption in one sentence — with no hand-wavy appeals to controlling for endogeneity. That rule keeps us, the authors, from fooling you. The seven-part template is the same rule pointed outward: it is how you hold other authors to the standard we hold ourselves to. Box one is the outcome and key regressor; box two is the identifying assumption; box three is the sample. Reading a paper well and writing a defensible spec are the same act, performed in opposite directions. The skeptic and the honest author are the same person.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Grade yourself on **eight questions**: question, identifying assumption, threat, headline, spec, standard errors, robustness, replication. Reading a paper and writing a defensible spec are the same act in opposite directions. Next: pick up Monday's paper, go straight to the tables, find the headline — then say what it would take to be wrong.
+:::
+
+::: notes
+To summarize part seven and the whole pack: after the seven-part template, grade yourself on eight questions — the question, the identifying assumption, the threat, the headline, the spec, the standard errors, the robustness, and the replication. A paper you can answer all eight on is one you have genuinely read. This is also why Week Five sits where it does: in Weeks seven and eight you write a capstone, with a real question, a real dataset, an identification strategy you can defend, and tables you build yourself. Every box you practice this week becomes a section of that paper. So pick up Monday's paper. Go straight to the tables. Find the headline. Then come back and tell us, in one sentence, what it would take to be wrong.
+:::

@@ -1,0 +1,58 @@
+---
+title: "The Anatomy of a Defensible Pull"
+date: "2026-08-03"
+---
+
+# The Anatomy of a Defensible Pull {.title}
+
+::: notes
+Welcome back to Data Acquisition in Practice, part eight of eight, the finale. Across parts three through seven we toured every source — WRDS, EDGAR, FRED, H-M-D-A, thirteen-F, PatentsView, and the free alternatives. Now we step back: every one of them, however different its access path, fits the same skeleton. That skeleton is the real deliverable of this chapter.
+:::
+
+## The Eight-Step Skeleton
+
+- Read the **data card**; read **secrets from the environment**
+- Write a **bounded, specific query**; aggregate huge sources server-side
+- **Respect the access rules** — rate limits, User-Agent, etiquette
+- **Pin the snapshot** — what the data was as of when
+- **Cache** to a git-ignored `data/raw/`; never commit licensed data
+- **Log the pull** — source, query, row count, content hash
+
+::: notes
+Every source fits the same eight-step skeleton. One: read the data card for coverage, identifiers, endpoints, and license. Two: read secrets from the environment — keys and the S-E-C user-agent, never inline. Three: write a bounded, specific query — only the columns, rows, and dates you need; aggregate server-side for huge sources like H-M-D-A, bound dates and select columns for huge tables like C-R-S-P. Four: respect the access rules — the S-E-C's ten-per-second ceiling and user-agent, WRDS's shared-cluster etiquette, each free API's limit; sleep and back off. Five: pin the snapshot — WRDS date, FRED vintage, EDGAR accession number, H-M-D-A year, PatentsView release — recording what the data was as of when. Six: cache the raw response to a git-ignored data-raw and have everything downstream read the cache. Seven: never commit licensed data — it stays on GMU infrastructure; commit only code and log. Eight: log the pull — source, query without secrets, row count, content hash, timestamp.
+:::
+
+## The Directory Layout
+
+- `.gitignore` excludes `data/raw/` and `.env`
+- `code/pull_data.py` — the bounded queries, keys from env
+- `data/raw/` — cached pulls; licensed data lives **only** here
+- `logs/pulls.jsonl` — one line per pull, with a content hash
+- Public data is fully re-runnable; licensed is recipe-reproducible
+
+::: notes
+The directory layout falls right out of the skeleton, and your capstone repo should use it. A gitignore excludes data-raw and the dot-env file. A code directory holds pull-data, the bounded queries that read keys from the environment. A data-raw directory holds cached pulls, and licensed data lives only here. A logs directory holds pulls-dot-j-s-o-n-l, one line per pull with a content hash. A reviewer handed this repository can read pull-data to see exactly what you requested, read the log to see when and how much, and — for the public sources — re-run the pull and check the content hash against yours. For the licensed sources they cannot re-run it without GMU access, which is correct: the license forbids shipping them the data, but not the recipe. That asymmetry — public data fully re-runnable, licensed data recipe-reproducible-only — is not a loophole; it is the honest best you can do within the rules, and a referee who knows the rules expects exactly that.
+:::
+
+## The Closing Reframe
+
+- The novice thinks acquisition is a chore to rush through
+- The researcher knows it is **part of the method**
+- Every pin, cache, and logged query is a reproducibility claim
+- The data card tells you what is possible
+- The log on disk is the evidence you did it right
+
+::: notes
+One closing reframe. The novice thinks data acquisition is a one-time chore to rush through on the way to the interesting modeling. The researcher knows it is part of the method — every pin, every cache, every logged query is a reproducibility claim your results stand or fall on, as much as your choice of standard errors or fixed effects. The data card tells you what is possible; the eight-step skeleton tells you how to do it defensibly; and the log on disk is the evidence that you did. Get this right, and the rest of Week Seven is built on rock. Your turn: open notebook seven-point-two, the multi-source data-pull harness, and build a data-raw folder, a log with content hashes, and a gitignore that keeps the licensed bytes where the license requires.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Every source fits one **eight-step skeleton**: read the card, secrets from env, bounded query, respect access rules, pin, cache, never commit licensed data, log. Public data is fully re-runnable; licensed data is recipe-reproducible-only. Data acquisition is **part of the method** — and the log on disk is your evidence.
+:::
+
+::: notes
+To summarize the finale: every source fits one eight-step skeleton — read the data card, secrets from the environment, a bounded query, respect the access rules, pin the snapshot, cache to a git-ignored data-raw, never commit licensed data, and log the pull. Public data is fully re-runnable; licensed data is recipe-reproducible-only, the honest best the rules allow. Data acquisition is part of the method, and the log on disk is your evidence. That completes Chapter seven-point-two. Next in Week Seven, you turn this craft into a pre-analysis plan and a dataset build.
+:::

@@ -1,0 +1,58 @@
+---
+title: "Local Randomization and the Continuity Assumption"
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+# Local Randomization and the Continuity Assumption {.title}
+
+::: notes
+Welcome back to Chapter four-point-three, part two of thirteen. In part one we met regression discontinuity and stated the result: the jump in the outcome at the cutoff is the effect. Now we build the deepest justification for why that works — the analogy to a randomized experiment — and then state the formal identifying assumption that makes it rigorous.
+:::
+
+## Why the Cutoff Is a Coin Flip
+
+- A stock's exact rank depends on market cap to the dollar
+- Fundamental size is controlled over years
+- But the precise rank on one day is buffeted by noise
+- A rival's earnings, a block trade, microstructure noise
+- Near $c$, which side you land on is as good as random
+
+::: notes
+Think about what determines a stock's exact reconstitution rank. It is its market capitalization on the ranking date, measured to the dollar. A company's fundamental size, its true economic footprint, is something it controls over years. But its rank to the precise dollar on one particular day in late spring is buffeted by a thousand tiny, essentially random forces: a rival's earnings surprise that nudged sector sentiment that morning, a block trade by some unrelated pension fund, microstructure noise in the closing auction, the exact path of the past month's returns. Two companies of genuinely identical fundamental size can end up on opposite sides of rank one thousand because of this fine-grained noise, and which side they land on is, in the immediate neighborhood of the cutoff, as good as a coin flip.
+:::
+
+## The Local-Randomization Intuition
+
+- Far from $c$, treated and untreated differ systematically
+- You would never compare Apple to a micro-cap
+- But in a small window, noise dominates assignment
+- Units just above and below are balanced on everything
+- The cutoff manufactures a tiny local experiment
+
+::: notes
+This is the local-randomization intuition, and it is the heart of regression discontinuity. Far from the cutoff, treated and untreated units differ systematically. The Russell ten-hundred is full of genuinely enormous firms, and the bottom of the two-thousand is full of genuinely tiny ones; you would never compare Apple to a micro-cap. But in a small window around the cutoff, the assignment to one side or the other is dominated by noise that no firm can finely control. So the units just above and just below the cutoff are balanced on everything, observed and unobserved, exactly as randomization would make them balanced. The cutoff manufactures a tiny local experiment. The treated group is the units that happened to land just above; the control group is the units just below; and because the landing was noise-driven, the two groups are exchangeable.
+:::
+
+## The Continuity Assumption
+
+- $\mathbb{E}[Y_i(1)\mid X]$ and $\mathbb{E}[Y_i(0)\mid X]$ continuous at $c$
+- Without a treatment switch, the outcome flows smoothly through $c$
+- Control-side units supply the missing counterfactual
+- Any jump we see must be the treatment
+- Weaker than CIA — and it leaves fingerprints when it fails
+
+::: notes
+The formal version of this intuition is a continuity assumption, stated in potential-outcomes language. Let Y-i-one and Y-i-zero be unit i's potential outcomes under treatment and control. The identifying assumption of regression discontinuity is that the average potential outcomes are continuous functions of X at the cutoff. Read this carefully, because it is the whole game. It says: if no treatment had switched on at the cutoff, the outcome would have evolved smoothly through it, with no jump. The untreated potential outcome — what would have happened to a just-barely-Russell-two-thousand stock had it stayed just-barely-Russell-ten-hundred — is the same, in the limit, as what we actually observe on the other side. Those control-side stocks supply the missing counterfactual, and any jump we then see must be the treatment. Note the elegant difference from the conditional-independence assumption. That demanded comparability after conditioning on a big pile of covariates you hope is complete. Regression discontinuity demands comparability only in the limit, exactly at the cutoff, from a smoothness condition that is far weaker and leaves observable fingerprints when it fails.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Near the cutoff, which side a unit lands on is driven by noise no one controls, so the groups are **as-good-as-randomly** assigned. Formally, RD assumes the potential-outcome means are **continuous at $c$** — weaker than CIA and, unlike CIA, checkable. The price: RD identifies the effect only *at the cutoff*. Next: sharp RD made concrete.
+:::
+
+::: notes
+To summarize part two: near the cutoff, which side a unit lands on is driven by noise that no one can finely control, so the groups are as-good-as-randomly assigned and balanced on everything. The formal version is a continuity assumption: the potential-outcome means are continuous at the cutoff. This is weaker than the conditional-independence assumption and, unlike it, leaves checkable fingerprints. The price is that regression discontinuity identifies the effect only at the cutoff, for the local population. In part three we make sharp regression discontinuity concrete and work a real number.
+:::

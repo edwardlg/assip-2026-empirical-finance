@@ -1,0 +1,65 @@
+---
+title: "A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk"
+date: "2026-07-06"
+---
+
+# A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk {.title}
+
+::: notes
+Welcome back to Mentor Session three, part five of five. Across the last three parts we built the three pillars of a credible natural experiment: as-good-as-random assignment, the exclusion restriction, and the complier population. Now we put all three to work on a real regulatory pilot my coauthors and I actually used: short-sale constraints and stock price crash risk, the setting Chapter three-point-four section seven previewed. We reason about identification and method only — we will not recite reported magnitudes, because the point is to practice the judgment, not to quote results.
+:::
+
+## The Question and Why It's Hard
+
+- Correlation: harder-to-short stocks have more **crash risk**
+- Crash risk = a sudden, large negative price move
+- The fingerprint of bad news management hoarded until it burst
+- But the correlation is **hopelessly endogenous**
+
+::: notes
+Here is the question. In the data there is a long-standing correlation: stocks that are harder to short tend to have more crash risk — a higher chance of a sudden, large negative price move. Crash risk is the fingerprint of bad news that management hoarded until it burst out all at once. The intuition: if pessimists cannot short a stock, their negative information stays out of the price, and bad news piles up until it breaks. But the raw correlation is hopelessly endogenous, for two distinct reasons, and naming both is the first thing a referee will demand.
+:::
+
+## Two Threats to the Naive Regression
+
+- **Reverse causality**: short-sellers target stocks with bad news
+- …the same bad news that drives crashes
+- **Confounding**: governance, opacity, a manager's appetite to hide
+- These drive **both** shorting and crash-proneness
+
+::: notes
+The first threat is reverse causality. Short-sellers choose which stocks to target based on the very bad news that also drives crashes, so shorting and crashes move together because both respond to the same lurking bad news, not because constraints cause crashes. The second is unobserved confounding. Firm qualities you never observe — governance, opacity, the manager's appetite for hiding losses — drive both how short-sellers behave and how prone the stock is to crash. In the language of Chapter three-point-one, the selection-bias term is not zero. You cannot regress your way out. What you need is exogenous variation in short-sale constraints.
+:::
+
+## The Coin the Regulator Flipped
+
+- A U.S. regulatory **pilot** suspended price restrictions on short sales
+- …for a set of stocks selected off a **ranked list**
+- Selection unrelated to any firm's fundamentals; the rest stayed constrained
+- Treated $=$ pilot stocks; control $=$ the rest
+
+::: notes
+A U.S. regulatory pilot supplied exactly the variation we needed. The regulator suspended price restrictions on short sales for a set of stocks selected off a ranked list, in a way unrelated to any individual firm's fundamentals — while the rest of the market stayed constrained. That ranked-list selection is the coin the regulator flipped. Because assignment came from a list rather than from firm choice, treated and control firms should look alike on everything that matters — which makes the comparison clean and lets us check balance. The pilot stocks are treated; the rest are the control. The reference is Deng, Gao, and Kim, two thousand twenty, in the Journal of Corporate Finance.
+:::
+
+## Run It Through the Three Pillars
+
+- **First stage**: did the pilot actually change short-selling?
+- **Reduced form**: did the pilot change crash risk?
+- **Exclusion**: pilot affects crash risk *only* through shorting — defend it
+- **Compliers**: stocks with a **binding** constraint the pilot relaxed
+
+::: notes
+Now run the design through everything we built. The three-regression anatomy from Chapter three-point-four section seven: the first stage asks whether the pilot actually changed short-selling for treated stocks; the reduced form asks whether it changed crash risk; their relationship identifies the effect. Then exclusion: the pilot must affect crash risk only through short-sale constraints, and a hostile referee will propose side doors — maybe pilot stocks drew more analyst attention, or managers behaved differently knowing their stock was in the experiment. You defend each with institutional facts and placebo checks. Finally compliers: the effect speaks for stocks whose binding constraint the pilot relaxed — silent about never-takers and always-takers.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A regulator's ranked-list pilot gave **exogenous** variation in short-sale constraints, sidestepping reverse causality and confounding. Read it through all three pillars — **balance**, **exclusion**, **compliers** — and the design *is* the finding. Your craft this summer: spot the lever nature pulled and defend it like a hostile referee.
+:::
+
+::: notes
+To summarize this whole session: a natural experiment is a real-world force that assigned treatment as-if at random, and it is credible exactly to the degree you can defend three things — as-good-as-random assignment checked with balance, the exclusion restriction defended with institutional facts, and an honest account of the complier population. The short-sale pilot showed all three: a ranked-list rule gave exogenous variation that sidestepped both reverse causality and confounding. Your craft this summer is to spot the lever nature pulled and defend it the way a hostile referee would attack it — because the design is the finding, and the coefficient is just what falls out once the lever is clean. Next week we move from finding levers to the panel-data tools that exploit them across firms and time.
+:::

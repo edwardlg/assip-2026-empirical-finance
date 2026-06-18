@@ -1,0 +1,69 @@
+---
+title: "Reading a Measurement Paper"
+date: "2026-07-27"
+---
+
+# Reading a Measurement Paper {.title}
+
+::: notes
+Welcome to Week Six, Reading Guide Pack Six and the AI Lab Manual, part one of eight. Last week you learned to read a causal paper: find the headline table, pin down the identifying assumption, and name the alternative explanation that would sink the result. That muscle does not retire, but it is no longer enough. The five Week-Six papers are a different species, and Chapter Six-point-Five hands you a large language model that can either make you a faster researcher or quietly fabricate your evidence. This part retools your reading anatomy for measurement papers.
+:::
+
+## A Different Species of Paper
+
+- Week 5: causal papers — "is the effect causal?"
+- Week 6: measurement papers — "is the measure valid?"
+- Four of five papers turn **words or events** into a number
+- None is, at its core, a clean natural experiment
+- Asking the Week-5 questions verbatim will **mislead** you
+
+::: notes
+Here is the reveal. When you read a causal paper, the load-bearing question is "is the effect causal?" When you read a measurement paper, it becomes "is the measure valid?" — does the number actually capture the concept the authors named it after. The Week-Six papers are Kogan and coauthors, who build a dollar value for each patent from the stock-price jump on its grant day; Hoberg and Phillips, who measure firm similarity from the cosine similarity of ten-K descriptions; Loughran and McDonald, who measure filing tone with a finance sentiment dictionary; and the paired fair-lending studies. Four of the five turn words or events into a continuous number, and none is a clean experiment.
+:::
+
+## Validity Is Argued, Not Assumed
+
+- A good variable name does **not** make a measure valid
+- Validity is argued for, with **evidence**
+- Patent-value: high values must flag truly valuable inventions
+- Similarity score: "similar" firms must really **compete**
+- Your job as reader: find that argument and **grade** it
+
+::: notes
+The crucial discipline is this. Validity is not assumed by giving a variable a good name. A patent-value measure is valid only if higher values really do flag more valuable inventions. A similarity score is valid only if the firms it calls similar really do compete. The gap between concept and proxy is where every measurement paper is vulnerable, and the authors must close it with evidence. So name the latent concept first — before you look at the proxy. Then hunt for the argument that the proxy captures that concept, and grade it.
+:::
+
+## The Validation Table Is Where It Lives or Dies
+
+- Professional test: does it **predict something it was not built to fit?**
+- KPSS show patent value correlates with **citations** (a different method)
+- And predicts future **firm growth**
+- A measure that only correlates with itself is a **tautology**
+- Self-check: name the external quantity it predicts — and did it?
+
+::: notes
+The professional way to grade a measure is to ask whether it predicts something it should predict but was not built to fit — what economists call a validation test. Kogan and coauthors do not merely assert that their patent value is meaningful. They show it correlates with patent citations, built a completely different way, and that it predicts future firm growth. That external check is the whole ballgame. A measure that only correlates with itself is a tautology dressed up as a finding. So the validation table, not the headline table, is where a measurement paper lives or dies. The most important self-check for the week is — can I name, in one sentence, the external quantity this measure predicts that it was not built to fit, and did it? If the paper never validates against anything outside itself, you have found the soft spot, and it is usually fatal.
+:::
+
+## Construction Choices Are Secretly Levers
+
+- Every construction step is a **researcher decision**
+- Which dictionary, what event window, how to clean the text
+- Loughran–McDonald exist because the Harvard dictionary **mislabels finance**
+- "Liability," "tax," "cost," "capital" — neutral in a 10-K
+- Treat each choice like a sample filter: could it manufacture the result?
+
+::: notes
+One more box to rotate. Every step of the construction is a researcher decision: which dictionary, how to handle negation, what window around the event, whether to drop boilerplate. Loughran and McDonald exist precisely because the off-the-shelf Harvard psychology dictionary mislabels finance words — liability, tax, cost, and capital are negative in everyday English but neutral accounting terms in a ten-K. A measure built on the wrong dictionary is a measure of the wrong thing. So treat each construction choice the way you treat a sample filter: a lever someone pulled, which you must check could not have been pulled to manufacture the result.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+For a measurement paper the load-bearing question flips from "is the effect causal?" to "is the measure valid?" Read the **validation table** second, right after the headline — a measure that only correlates with itself is a tautology. Next: how to make a language model answer from *your* documents.
+:::
+
+::: notes
+To summarize part one: when the paper's central act is building a number out of text rather than identifying an effect, your reading lens rotates. Name the latent concept first, study how the raw material becomes a number, then read the validation table second — that external check is where the paper lives or dies. In part two we turn from reading other people's measures to building your own tool: retrieval-augmented generation, the standard way to make a language model answer from your documents with citations you can check.
+:::

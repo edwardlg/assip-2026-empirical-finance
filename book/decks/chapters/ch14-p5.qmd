@@ -1,0 +1,58 @@
+---
+title: "Watching the Bell Emerge"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Watching the Bell Emerge {.title}
+
+::: notes
+Welcome back to Chapter one-point-four, part five of nine. In part four we stated the Central Limit Theorem and built the intuition. Now we honor the spirit of the whole book — shown, not asserted — by starting from a population that looks nothing like a bell, an insurance-claims distribution, and watching the bell appear anyway as the sample grows.
+:::
+
+## See It: Skewed Population to Bell
+
+- Priya studies insurance claims — violently right-skewed
+- Stand-in: **exponential**, $\mu=1$, $\sigma=1$, long right tail
+- Draw $N$, average, standardize to $z_N$, store — repeat 50{,}000 times
+- Histogram the standardized means; overlay the bell
+- Redo for $N=1,2,5,30,100$ and watch it morph
+
+::: notes
+The honest way to be convinced is to start from a population that looks nothing like a normal and watch the bell emerge anyway. Priya is studying insurance claims, which are notoriously skewed — most policies cost the insurer nothing in a given month, a few cost a fortune. A clean stand-in is the exponential distribution: strongly right-skewed, piled up near zero with a long tail to the right. Take its scale to be one, so its mean and standard deviation both equal one. Here is the experiment, the heart of notebook nb-one-point-four. Pick a sample size N. Draw N exponential values, compute the mean, standardize it, store that one number. Repeat fifty thousand times to map out the sampling distribution. Then histogram those fifty thousand standardized means and overlay the standard normal. Finally, redo the whole thing for several values of N — one, two, five, thirty, and a hundred — and watch the histogram morph.
+:::
+
+## Panel by Panel, the CLT
+
+- $N=1$: just the exponential — sharp left wall, long tail
+- $N=2$: wall softens, peak pulls to center, still lopsided
+- $N=5$: skew fading, a bell trying to form
+- $N=30$: histogram and normal nearly overlap — the "$N\ge 30$" folk rule
+- $N=100$: indistinguishable from the bell
+
+::: notes
+Describe to yourself what comes out, panel by panel, because this sequence of pictures is the Central Limit Theorem. At N equals one, the standardized mean is just a single standardized exponential draw — a sharp wall on the left, a long tail dragging off to the right, nothing bell-like. At N equals two, averaging two draws already softens the wall and pulls the peak toward center, but it is still visibly lopsided. At N equals five, the skew is fading; a bell is trying to form. At N equals thirty, the histogram and the dashed normal curve are nearly on top of each other — this is the origin of the folk rule that N at least thirty is enough. And at N equals one hundred, it is indistinguishable from the bell by eye. The lesson lands hardest when you remember where we started: a violently skewed pile-up-at-zero distribution, now a perfect bell.
+:::
+
+## The Folk Rule Is Only a Folk Rule
+
+- "$N\ge 30$" is a teaching crutch, not a theorem
+- Speed depends on **skew** and **tail weight**
+- Symmetric, well-behaved: $N=5$ may suffice
+- Savagely skewed: thousands of observations needed
+- Soon: when the assumption is not strained but **false**
+
+::: notes
+One warning before we move on. N at least thirty is a teaching crutch, not a theorem. How fast the bell arrives depends on how skewed and heavy-tailed the original population is. For a symmetric, well-behaved population, N equals five might already look normal. For Priya's mildly skewed exponential, thirty is comfortable. But for a savagely skewed population — one rare giant value among thousands of zeros — you might need thousands of observations before the standardized mean looks normal. The folk rule quietly assumes your data are not too wild. Later in this chapter we meet a character, Devon, for whom that assumption is not just strained but outright false — and we will watch the bell refuse to form no matter how much data he gathers.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Starting from a violently right-skewed **exponential**, the standardized mean morphs into a perfect bell as $N$ climbs from $1$ to $100$ — the CLT *shown*, not asserted. But "$N\ge 30$" is only a folk rule; speed depends on **skew and tail weight**. Next: how the two laws divide the labor.
+:::
+
+::: notes
+To summarize part five: we watched the Central Limit Theorem happen, morphing a violently skewed exponential — Priya's insurance-claims stand-in — into a perfect bell as the sample size climbed from one to one hundred. That is the theorem shown, not asserted. And we saw the famous N-at-least-thirty rule is only a folk rule: fast for tame, symmetric data, but potentially needing thousands of observations for savagely skewed data. In part six we slow down and fix the division of labor between the two laws in your head, because students mix them up constantly and the rest of the book depends on keeping them straight.
+:::

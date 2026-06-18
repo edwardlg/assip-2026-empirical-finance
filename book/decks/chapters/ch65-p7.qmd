@@ -1,0 +1,46 @@
+---
+title: "An LLM Label Is a Measurement"
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+# An LLM Label Is a Measurement {.title}
+
+::: notes
+Welcome back to the AI co-pilot for research, part seven of fourteen. In part six we grounded answers in retrieved sources with R-A-G. Now the heart of the lesson, and the single most important sentence in it: an LLM-produced label is a measurement, not the truth — so before any label enters a regression, you must validate it against a hand-labeled gold standard and report its error rate on held-out data. If you remember nothing else from Week Six, remember that an LLM classifier is a measurement instrument, and an instrument that has not been calibrated against ground truth is just a confident guess.
+:::
+
+## Why a Label Is a Measurement
+
+- A label is a **noisy proxy**, not the true latent quantity
+- The instrument has systematic and random error components
+- A mismeasured regressor — recall Week One
+- At best attenuates toward zero, inflates standard errors
+- If error correlates with something, it **biases** the coefficient
+
+::: notes
+Why is a label a measurement? Recall the idea of measurement error. When you label a filing "negative tone," you are not observing the true latent quantity — the filing's actual tone — directly. You run it through an instrument, the model plus your rubric, that produces a noisy proxy for it. The instrument has a systematic component — maybe it over-calls "negative" on legal boilerplate — and a random component, since the same filing might get a different label on a re-run. If you then regress, say, next-quarter returns on this label, the label is a mismeasured regressor, and you know from Week One what mismeasurement does: at best it attenuates your coefficient toward zero and inflates your standard errors; at worst, if the measurement error is correlated with something, it biases the coefficient in a direction you cannot sign.
+:::
+
+## Less Transparent Than a Word List
+
+- Compare the Loughran–McDonald finance sentiment dictionary
+- Its "rubric" is a published word list anyone can inspect
+- An LLM's rubric is your prompt plus an **opaque** model
+- More accurate, perhaps — but far less transparent
+- That raises the bar on validation, not lowers it
+
+::: notes
+You met the benign, transparent version of this instrument earlier: the Loughran–McDonald finance sentiment dictionary, which labels tone by counting words from a fixed, published list. The Loughran–McDonald rubric is just a word list anyone can inspect. An LLM's rubric is your prompt plus an opaque model. The LLM may be more accurate, but it is far less transparent, which raises the bar on validation, not lowers it. So the question is never "is the LLM accurate?" in the abstract. The question is: how accurate is this classifier, on my data, measured against truth — and is it accurate enough that my downstream result is not an artifact of label error? You answer it the way you would validate any instrument: against a gold standard, out of sample.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+An LLM label is a **measurement, not the truth** — a noisy proxy with systematic and random error. As a mismeasured regressor it attenuates or biases your coefficient. The model is less transparent than a word list, which raises the validation bar. Next: the out-of-sample validation protocol, step by step.
+:::
+
+::: notes
+To summarize part seven: an LLM-produced label is a measurement, not the truth. It is a noisy proxy with a systematic and a random component, and as a mismeasured regressor it attenuates your coefficient toward zero, inflates standard errors, and can bias the estimate when the error correlates with something. Unlike the Loughran–McDonald word list, an LLM's rubric is opaque, which raises rather than lowers the validation bar. The right question is always how accurate this classifier is on your data against truth. In part eight we run the validation protocol: a gold set, a held-out split, a confusion matrix, and precision, recall, and F-one.
+:::

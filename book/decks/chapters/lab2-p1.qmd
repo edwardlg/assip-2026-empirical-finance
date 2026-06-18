@@ -1,0 +1,66 @@
+---
+title: "Fama–MacBeth on CRSP: The Question"
+date: "2026-06-29"
+---
+
+# Fama–MacBeth on CRSP: The Question {.title}
+
+::: notes
+Welcome to Week Two, Lab Two — replicating a textbook Fama–MacBeth on CRSP, part one of eight. This is the capstone of Week Two. Across Chapters two-point-one through two-point-four you rebuilt ordinary least squares from the floor up: the normal equations, the Gauss–Markov guarantees, and — the part that earns its keep today — the idea that correlated errors make naive standard errors lie. Now you put all of it to work on the most famous estimation procedure in empirical asset pricing.
+:::
+
+## Sam's Question, Scaled Up
+
+- Ch 2.1: Sam ran **one** regression of **one** stock on the market
+- Got **one** beta — how much his stock moves per 1% market move
+- The thousand-paper question: across **all** stocks…
+- …do high-beta stocks actually earn higher average returns?
+
+::: notes
+The question is Sam's, scaled up. Back in Chapter two-point-one, Sam ran one regression of one stock's return on the market and got one beta — a single number for how much his stock moves when the market moves one percent. The natural next question is the one that launched a thousand papers: across all stocks, do the high-beta ones actually earn higher average returns? That is no longer a question about a single stock. It is a question about a whole cross-section of stocks and a whole cross-section of betas, asked at once.
+:::
+
+## What the CAPM Claims
+
+- CAPM says **yes** — and says exactly how much
+- Extra return per unit of beta $=$ the **market risk premium** $\lambda$
+- Relate a **cross-section of returns** to a **cross-section of betas**
+- Hard part: every stock in a month feels the **same** market shock
+
+::: notes
+The Capital Asset Pricing Model says yes, and it says exactly how much: the extra expected return per unit of beta should equal the market risk premium, which we write as lambda. Testing that claim means relating a cross-section of average returns to a cross-section of betas — and doing it in a way whose standard errors survive an awkward fact. In any given month, every stock's return is shoved around by the same market-wide shock. That common shock correlates every stock's error within the month, and as Chapter two-point-four warned, correlated errors are exactly what wrecks naive standard errors.
+:::
+
+## Fama and MacBeth's Trick
+
+- Fama & MacBeth (1973), *J. Political Economy* 81(3), 607–636
+- Run the cross-sectional regression **separately in each period**
+- Treat the sequence of slopes as a little **time series**
+- Its **mean** is your answer; its **scatter** gives the SE free
+- That scatter auto-handles within-month correlation
+
+::: notes
+Eugene Fama and James MacBeth solved this in nineteen seventy-three with a procedure so clean it is still the default fifty years later — Fama and MacBeth, nineteen seventy-three, in the Journal of Political Economy, volume eighty-one, issue three, pages six-oh-seven to six-thirty-six. Their trick — and it is a trick, in the reveal-the-trick sense — is to run the cross-sectional regression separately in each time period, then treat the resulting sequence of slope estimates as a little time series. Its mean is your answer, and its scatter gives you a standard error for free. That standard error automatically handles the within-month cross-sectional correlation that would otherwise wreck you.
+:::
+
+## Two Paths, Because CRSP Is Licensed
+
+- **Path A** — real CRSP via WRDS, on Hopper only; no numbers leave
+- **Path B** — seeded synthetic panel, same schema, **known** premium
+- Conventions §5: licensed data stays read-only on GMU infrastructure
+- Every student completes Path B; Path A is the "do it for real" extension
+
+::: notes
+A note on data, because it governs the lab's structure. The canonical test runs on CRSP monthly returns, and CRSP is licensed. Per the Conventions, section five, licensed data stays read-only on GMU infrastructure — Hopper or the WRDS Cloud — and no CRSP numbers get copied into these notes. So the lab has two paths. Path A is the real thing — the connection pattern, the query, a pinned snapshot — run only on GMU infrastructure, with no CRSP output printed. Path B is a fully self-contained, seeded simulation with the same schema and a known planted risk premium, and it runs anywhere with no credentials. Every student completes Path B; Path A is the do-it-for-real-on-Hopper extension.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The CAPM predicts high-beta stocks earn more — exactly $\lambda$ per unit of beta. **Fama–MacBeth** tests this by running one cross-sectional regression per period and averaging the slopes. We grade it on a synthetic panel with a planted premium. Next: why a single big panel regression is the wrong tool.
+:::
+
+::: notes
+To summarize part one: the CAPM predicts high-beta stocks earn more — exactly lambda per unit of beta. Fama and MacBeth test this by running one cross-sectional regression per period and averaging the slopes, sidestepping the within-month correlation problem. Because CRSP is licensed, every student runs a synthetic Path B panel with a planted premium, so we can grade whether the procedure recovers the truth. In part two we write the CAPM as something we can estimate, and we see exactly why pooling everything into one big panel regression is the wrong tool.
+:::

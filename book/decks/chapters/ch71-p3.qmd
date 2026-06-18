@@ -1,0 +1,45 @@
+---
+title: "So What? Who Cares?"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# So What? Who Cares? {.title}
+
+::: notes
+Welcome back to Chapter seven-point-one, part three of eight. In part two we built the four-slot hypothesis grammar — outcome, treatment, direction, and unit-and-window. But a sharp, answerable hypothesis can still be a bad project, because being answerable is not the same as being worth answering. Before you spend a week acquiring data, you run the idea through three questions, in order, and you must survive all three. This part covers the first two: so what, and who cares. Their job is to kill weak ideas cheaply, today, instead of expensively three weeks from now.
+:::
+
+## So What? — The Consequence Test
+
+- If you found the answer — *either* answer — would anything change?
+- Fill in: "If I find [result], then [someone] should [act / believe]"
+- Must hold for *both* possible answers, or the question is inert
+- Maya's fair-lending question survives easily, either way
+
+::: notes
+First filter: so what — the consequence test. If you found the answer, either answer, would anything actually change? Would a regulator price risk differently, an investor trade differently, a borrower be treated more fairly? The test is brutal and useful: write down the sentence "If I find that this result, then someone should do or believe something different." If you cannot fill that in for both possible answers, the question is inert. Maya's fair-lending question survives easily. If she finds minority applicants are denied at higher rates even after controlling for everything a lender is legally allowed to use, a regulator has a disparate-impact case to investigate. If the gap vanishes once you control for legitimate factors, that too is a publishable, policy-relevant finding. Both answers matter. That is a "so what" that holds.
+:::
+
+## Who Cares? — The Audience Test
+
+- Consequences in principle, but an audience of *zero*?
+- One obscure micro-cap pattern → one day-trader, no community
+- A good question sits inside a *conversation*
+- Weeks 5–6 were secret training: Kelly–Pruitt, Hoberg–Phillips, fair-lending
+- Extend, test, or challenge a live conversation → audience built in
+
+::: notes
+Second filter: who cares — the audience test, different from "so what." A result can have consequences in principle but an audience of zero. "Does the closing price of one obscure micro-cap stock follow a hidden pattern?" might be falsifiable and even consequential to a single day-trader, but there is no community — no regulator, no literature, no class of investors — who would read it. A good question sits inside a conversation. Weeks Five and Six were, secretly, training for exactly this. You read Kelly and Pruitt, Hoberg and Phillips, Loughran and McDonald, the Bartlett and Bhutta fair-lending work, precisely so you would know which conversations exist and where the live arguments are. A project that extends, tests, or challenges something in one of those conversations has an audience built in. A project floating in empty space does not.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**So what** asks whether either answer changes what someone does or believes; **who cares** asks whether a real conversation exists to hear it. Run so-what first — it's cheap and kills the most ideas. Next: the hardest filter, *what's new*, and why order matters.
+:::
+
+::: notes
+To summarize part three: the first two filters are so what and who cares. So what is the consequence test — would either possible answer change what someone does or believes? Run it first because it is cheap and kills the most ideas. Who cares is the audience test — does the question sit inside a real conversation, a literature, a community that would read it? Run it second because it tells you which literature to scan. In part four we add the third and hardest filter — what's new — and explain why these three must be run in a specific order.
+:::

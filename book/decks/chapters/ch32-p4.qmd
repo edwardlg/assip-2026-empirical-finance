@@ -1,0 +1,57 @@
+---
+title: "Compare Like With Like, Then Average"
+date: "2026-07-06"
+---
+
+# Compare Like With Like, Then Average {.title}
+
+::: notes
+Welcome back to Chapter three-point-two, part four of eleven. In part three we proved that, under CIA, the within-cell difference is a clean causal effect. Now we average those cells into the ATT, state the one-line slogan of the whole method, and make it concrete with a two-cell worked example on Maya's data.
+:::
+
+## Averaging Cells Into the ATT
+
+- $\tau_{\text{ATT}} = \mathbb{E}_{\mathbf{X} \mid D=1}\big[\,\mathbb{E}[Y \mid D{=}1,\mathbf{X}] - \mathbb{E}[Y \mid D{=}0,\mathbf{X}]\,\big]$
+- Average within-cell effects over the *treated's* covariate mix
+- The whole engine: **compare like with like, then average**
+- Calipers and scores are just machinery for doing this well
+
+::: notes
+To get the average treatment effect on the treated, average these within-cell effects over the distribution of X among the treated. In symbols, tau-A-T-T is the expectation, over the covariate distribution of the treated, of the within-cell treated-minus-untreated difference. That is the entire engine of selection-on-observables: compare like with like, then average. Everything else in this chapter — matching, calipers, propensity scores — is machinery for doing that comparison well when X is high-dimensional. The idea never changes. Average over the treated's own mix of covariates, because the ATT asks what enrollees gained, weighted by the enrollees' own profiles.
+:::
+
+## A Two-Cell Example
+
+- One confounder: prior checking account, yes or no
+- Account-holders are savvier, approved more regardless
+
+| Cell | enrolled | rate | not enrolled | rate | effect |
+|---|---:|---:|---:|---:|---:|
+| account | 600 | 0.80 | 400 | 0.65 | +0.15 |
+| no account | 200 | 0.50 | 800 | 0.40 | +0.10 |
+
+::: notes
+A number before the Greek letters, to make this concrete. Suppose Maya's only confounder is a single binary variable: whether the applicant already had a checking account. The existing-account applicants are savvier and would be approved more often regardless. Look at the cells. Among account-holders, six hundred enrolled with an eighty-percent approval rate, and four hundred did not enroll with a sixty-five-percent rate — a within-cell effect of plus fifteen points. Among those with no account, two hundred enrolled at fifty percent and eight hundred did not at forty percent — a within-cell effect of plus ten points. Those two within-cell effects are clean; now we must combine them correctly.
+:::
+
+## Naive Versus Exact Matching
+
+- Naive ignores cells: gap $= 0.725 - 0.483 = 0.242$
+- Inflated — enrollees skew toward the higher-baseline cell
+- Exact match, weight by *treated* counts: $\tau_{\text{ATT}} = 0.1375$
+- Selection bias removed $\approx 0.242 - 0.1375 \approx 0.10$
+
+::: notes
+The naive comparison ignores the cells. Enrollee approval is six hundred times point-eight plus two hundred times point-five, all over eight hundred — that is point-seven-two-five. Non-enrollee approval is point-four-eight-three. The gap is point-two-four-two. But that gap is inflated, because enrollees are disproportionately account-holders, the higher-baseline cell. The exact-matching estimate instead takes each within-cell effect and averages it with weights equal to the treated counts, since the ATT averages over the treated's covariate distribution. That is six hundred times point-one-five plus two hundred times point-one-zero, over eight hundred, which gives point-one-three-seven-five — about thirteen-point-seven-five percentage points, barely half the naive twenty-four-point-two. The difference, roughly point-one-zero, is the selection bias, removed by conditioning on the one confounder.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The whole method is **compare like with like, then average** — over the treated's own covariate mix. On two cells, exact matching gives $\tau_{\text{ATT}} = 13.75\%$ versus a naive $24.2\%$; the $\approx 10$-point gap *is* the selection bias. Next: a second assumption hiding in the argument — overlap.
+:::
+
+::: notes
+To summarize part four: the average treatment effect on the treated is the within-cell effect averaged over the treated's own covariate mix — compare like with like, then average. On Maya's two-cell example, exact matching returns thirteen-point-seven-five percent, against a naive twenty-four-point-two percent, and the roughly ten-point gap is precisely the selection bias removed by conditioning on the account variable. This is the whole method on two cells. In part five we surface a second assumption that has been hiding in the argument all along — overlap, the requirement that both kinds of unit exist where you compare.
+:::

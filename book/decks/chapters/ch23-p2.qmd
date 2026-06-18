@@ -1,0 +1,61 @@
+---
+title: "Partialling-Out and Leah's Six Firms"
+date: "2026-06-29"
+---
+
+# Partialling-Out and Leah's Six Firms {.title}
+
+::: notes
+Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part two of eight. In part one we learned the claim: controlling for a variable means subtracting it out, and any multiple-regression coefficient is really a simple slope of the cleaned-up leftovers. Now we first build the intuition for why that can possibly be true, and then meet the dataset we will use to see it happen — a tiny set of six firms studied by a researcher named Leah.
+:::
+
+## Why A Big Problem Collapses To A Small One
+
+- A regression does **two jobs** at once for each regressor
+- Job one: use $x$ to explain $y$
+- Job two: stop $x$ getting credit for what controls explain
+- **Partialling-out** separates the jobs: clean both, then regress
+
+::: notes
+Why should you believe a multivariate problem can collapse to a bivariate one? Here is the intuition before any algebra. A multiple regression is doing two jobs at once for each regressor. It is using x to explain y, and at the same time it is making sure x does not get credit for anything the other regressors could have explained. Those two jobs interfere — that is precisely why the coefficient on x in a multiple regression is generally not the same as the simple slope of y on x. The genius of partialling-out is to separate the two jobs. First settle the bookkeeping: figure out how much of x the other regressors can account for, and set it aside; keep only the part they cannot. Do the same to y. Now the controls have been paid in full, and what remains is a clean, uncontaminated question — of the variation in y the controls did not claim, how much lines up with the variation in x the controls did not claim? No interference is left. So a simple slope of the leftovers answers the partial question exactly. We partial the other regressors out of both variables, then regress.
+:::
+
+## Leah's Innovation Question
+
+- Hunch: firms that spend more on **R&D** produce more **patents**
+- Objection: **big firms do everything more**
+- Big firms spend more on R&D *and* file more patents
+- Honest question: does R&D predict patents **after netting out size**?
+
+::: notes
+Now meet Leah. She studies innovation, and she has a hunch she has heard stated a hundred ways: firms that spend more on research and development produce more patents. But she also knows the obvious objection — big firms do everything more. Big firms spend more on R&D and they file more patents, simply because they are big. So a raw correlation between R&D and patents might be measuring nothing but size. The honest question is the partial one: does R&D predict patents after netting out firm size? The textbook move is a multiple regression of patents on R&D and size, reporting the R&D coefficient as "the effect of R&D, controlling for size." Frisch–Waugh–Lovell claims she can get exactly the same number a completely different way.
+:::
+
+## The Six Firms
+
+| firm | patents $y$ | R&D $x$ | size $z$ |
+|---|---|---|---|
+| 1 | 10 | 2 | 1 |
+| 2 | 14 | 3 | 2 |
+| 3 | 22 | 5 | 3 |
+| 4 | 24 | 4 | 4 |
+| 5 | 33 | 7 | 5 |
+| 6 | 39 | 8 | 6 |
+
+- $y$ = patents, $x$ = R&D (\$M), $z$ = size (log assets)
+- R&D and size move **together** — exactly Leah's worry
+
+::: notes
+Here are Leah's six firms, small enough to do entirely by hand. The outcome y is patents per year. The key regressor x is R&D spending in millions of dollars. The control z is firm size, say log assets. Notice that R&D and size are positively related across these firms — bigger firms tend to spend more on R&D. That is exactly the entanglement Leah worries about, the size signal riding along inside R&D. In part three we run the full three-variable regression to get a target number, and then reproduce that exact number using only two simple regressions and a single scalar division — no matrix inversion bigger than a number.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Partialling-out** separates a regressor's two competing jobs: settle the bookkeeping with the controls first, clean both variables, then regress the leftovers. Leah's six firms, with R&D and size entangled, are our test case. Next: the same coefficient from two simple regressions.
+:::
+
+::: notes
+To summarize part two: a multiple regression makes each regressor do two interfering jobs, and partialling-out separates them — clean the controls out of both variables, then regress the leftovers, and the interference is gone. Leah's six firms, where R&D and size are deliberately entangled, give us a concrete test bed. In part three we put the theorem to work on those numbers: we run the full regression for a target, then reproduce its R&D coefficient exactly with two simple residualizing regressions.
+:::

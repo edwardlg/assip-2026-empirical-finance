@@ -1,0 +1,54 @@
+---
+title: "When the Outcome Itself Is a Measured Construct"
+date: "2026-07-27"
+---
+
+# When the Outcome Itself Is a Measured Construct {.title}
+
+::: notes
+Welcome back to Mentor Session six, part four of five. In part three we named the three ways AI fools you and the guardrail for each: post-cutoff tests for leakage, freeze-the-prompt for p-hacking, and save-the-labels for reproducibility. Now we ground all of it in the first of Professor Gao's two papers — a live worked case. Its lesson is that the measurement discipline we built today applies even when there is no text at all, because the outcome of a regression can itself be a proxy, not a fact.
+:::
+
+## Paper One — Earnings Management as a Proxy
+
+- *Overlapping Institutional Ownership and Earnings Management of Supplier Firms*
+- Outcome: **earnings management** — not directly observable
+- Backed out as **discretionary accruals** (Jones / modified-Jones residual)
+- Same shape as text: a noisy proxy for an unseen latent quantity
+
+::: notes
+The first paper is Gao, Han, Kim, and Pan, twenty-twenty-four, in the Journal of Corporate Finance — Overlapping institutional ownership along the supply chain and earnings management of supplier firms. It asks whether the same institutional investors holding large stakes in both a supplier and its customer change how aggressively the supplier's managers engage in earnings management — the discretionary slack in accruals with which managers shape reported earnings away from cash reality. The crucial point for today: earnings management is not directly observable. It has to be backed out of accounting data as the residual from a model of normal accruals — the Jones or modified-Jones discretionary accruals. That makes it a measurement problem of exactly the same shape as today's text problem — a noisy proxy for an unseen latent quantity — even though the sensor is an accruals model, not an LLM.
+:::
+
+## Validating a Continuous Proxy
+
+- No gold set of hand-labeled "yes/no" earnings managers
+- Substitute: **plant** known discretionary accruals, check the sensor recovers them
+- Lab 4's slogan: build a universe where you *can* ground-truth
+- Report whether the headline holds across **Jones vs. modified-Jones**
+
+::: notes
+Validation looks different here because the outcome is continuous, not a binary label — there is no gold set of hand-labeled yes-or-no earnings managers. So you substitute for one. You simulate a panel in which you plant a known amount of discretionary accruals in a known subset of firm-years, then check whether your sensor recovers the planted truth. That is Lab four's slogan: when you cannot ground-truth in the real world, build a universe where you can. The two numbers you report are how closely the recovered residual tracks the planted truth and how much of the planted effect the sensor captures. Then re-run under an alternative accruals model and report whether the headline correlation moves. Showing the coefficient is similar across Jones and modified-Jones is the continuous analogue of the precision-and-recall move on labels. Mark as a CHECK anything about the paper's actual measure you would confirm against the published version.
+:::
+
+## Panel Dependence Forces the SE Choice
+
+- Same firms over many years, linked into supplier–customer pairs
+- Residuals correlated **within firm** across years — and **across the link**
+- Cluster by firm, by pair, by industry, or **two-way**
+- RHS measurement error + optimistic SEs = double-barreled self-deception
+
+::: notes
+Because this is a panel — the same firms over many years, linked into supplier–customer pairs — the standard-error question from Pack five, Petersen, is not optional. Residuals for the same supplier firm across years are correlated, and may also be correlated across the linked supplier and customer. So you must defend a clustering choice — by firm, by supplier–customer pair, by industry, or two-way — naming what dependence each absorbs. Get it wrong and your t-statistics look more significant than they deserve, because clustered standard errors are usually larger than classical ones. And tie it to today's theme: your key regressor, common ownership, is itself a measured network variable. Measurement error on the right-hand side, combined with an over-optimistic standard error, is a double-barreled way to fool yourself — and clustering fixes the standard error, not the measurement error. CHECK the paper's actual fixed-effects and clustering before asserting them.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The measurement discipline applies wherever a regression's outcome is a **proxy, not a fact** — earnings management backed out of an accruals model is the same problem as tone backed out of a filing. Validate a continuous proxy by **planting known truth in a simulation** and by showing the headline survives an **alternative sensor**.
+:::
+
+::: notes
+To summarize part four: the discipline we built for text applies just as well when the outcome is earnings management backed out of an accruals model — both are noisy proxies for an unseen latent quantity. When you cannot hand-label a gold set, you substitute a simulation with planted truth, and you show the headline result survives an alternative sensor, which is the continuous cousin of precision and recall. And the panel design forces an honest clustering choice, because clustering fixes your standard error but never the measurement error in your regressor. In part five, the last part, we turn to Professor Gao's second paper — using AI responsibly in research and teaching — and make it the integrity section of your own capstone.
+:::

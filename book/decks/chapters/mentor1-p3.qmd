@@ -1,0 +1,65 @@
+---
+title: "Gate Two — Big Enough to Matter?"
+date: "2026-06-22"
+---
+
+# Gate Two — Big Enough to Matter? {.title}
+
+::: notes
+Welcome back to Mentor Session One, part three of five. In part two we opened gate one and saw that a t-statistic measures how far a number sits from zero in units of its own noise. Now we open gate two, and it catches a mistake that fools even careful people. A result can be statistically significant and economically trivial at the same time. Gate two is where you stop asking "can I tell this apart from zero?" and start asking "is it large enough that I would actually act on it?"
+:::
+
+## Significance Is Not Importance
+
+- Significant = "can I tell it apart from zero?" — about **precision**
+- Effect size = "is it large enough to act on?" — about **magnitude**
+- Different questions, different units
+- They can disagree in **both** directions
+
+::: notes
+Here is the core distinction. Statistical significance asks: can I reliably tell this number apart from zero? That is about precision, and precision is controlled by your sample size. Effect size asks something different: is the number large enough, in the actual units of the problem, that I would change a decision because of it? That is about magnitude. These two questions answer to different masters, and they can disagree in both directions — significant but tiny, or large but not significant. Confusing the two is one of the most common ways smart, well-trained people end up confidently wrong.
+:::
+
+## The Trap of Huge N
+
+- Scale Sam's backtest to **100,000 days**
+- An edge of eight ten-thousandths of a percent
+- Becomes "wildly significant" — $t\approx 5$, microscopic p-value
+- Still worthless: dies to the first basis point of trading costs
+
+::: notes
+Let me show you the trap concretely. Take Sam's backtest and scale it up to one hundred thousand days. Now an edge of just eight ten-thousandths of one percent — almost invisible — becomes wildly statistically significant. The t-statistic might be five, the p-value microscopic. Every significance test screams success. And the edge is still completely worthless, because it dies to the very first basis point of trading costs. You would lose money trading it. With enough data you can make almost any nonzero number significant. Effect size is the statement about whether the number is worth anything. Asterisks are not findings.
+:::
+
+## The Four Cases
+
+- Significant **+** large — the dream
+- Significant **+** tiny — huge $N$, worthless edge
+- Insignificant **+** large — the **dangerous** one
+- Insignificant **+** small — move on
+
+::: notes
+It helps to lay out all four combinations. First: significant and large — the dream, a real effect you can both detect and act on. Second: significant and tiny — the huge-N trap we just saw, a worthless edge dressed up in asterisks. Third, the dangerous one: insignificant but large. Your point estimate is big and meaningful, but your data are too noisy to confirm it — a real signal you failed to nail down. The temptation is to call it nothing, but it might be the most important result on your desk; you just need more or cleaner data. Fourth: insignificant and small — fine, move on. The danger lives in the third case, and only effect size plus an honest interval keeps you from throwing away a real signal.
+:::
+
+## Always Report the Interval
+
+- Report the **estimate** *and* its confidence interval
+- Never just a verdict, never just an asterisk
+- The interval shows magnitude **and** precision at once
+- Asterisks are not findings
+
+::: notes
+So here is the discipline gate two demands. Always report the estimate and its confidence interval, never just a verdict. A confidence interval is the most honest single object you can hand a reader, because it shows magnitude and precision at once — how big the effect plausibly is and how sure you are. A bare "significant at five percent" hides both. So train the reflex now: a finding comes with a number, in the units of the problem, and an honest range around it. Asterisks are not findings. The interval is the finding.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Gate two separates *precision* (significance, driven by $N$) from *magnitude* (effect size). With enough data anything is significant — so report the estimate **and** its confidence interval, never just a verdict. Asterisks are not findings.
+:::
+
+::: notes
+To summarize part three: gate two separates statistical significance, which is about precision and grows with your sample size, from effect size, which is about magnitude in the real units of the problem. We saw an eight-ten-thousandths-of-a-percent edge become wildly significant at one hundred thousand days and still be worthless. We laid out the four cases and flagged the dangerous one — large but insignificant, a real signal you might wrongly discard. And the discipline is to always report the estimate together with its confidence interval. In part four we open the gate that kills most findings: would the effect survive the search that found it? That is the multiple-testing gate, and it changes how you read every result.
+:::

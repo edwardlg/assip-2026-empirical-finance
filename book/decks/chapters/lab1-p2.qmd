@@ -1,0 +1,70 @@
+---
+title: "Setup and Your First Coin Universe"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Setup and Your First Coin Universe {.title}
+
+::: notes
+Welcome back to Lab one, part two of seven. In part one we framed the mission — build a universe where you know the truth — and met the coin, a Bernoulli trial with mean p. Now we get our hands dirty: install the tools, pin a random seed for reproducibility, and write the one function that draws a coin sample and returns its proportion.
+:::
+
+## Environment and Imports
+
+- Create a conda env; install `numpy`, `scipy`, `matplotlib`
+- Start every run with the same header
+- Use the modern generator: `rng = np.random.default_rng(SEED)`
+- Draw *all* randomness from that one `rng`
+- A pinned seed makes any rerun bit-for-bit identical
+
+::: notes
+Create and activate a fresh conda environment, then install the three libraries this lab needs: numpy, scipy, and matplotlib. Start every run with the same header. Two rules of reproducibility you follow without exception. First, pin the seed. Use numpy's modern generator — r-n-g equals n-p dot random dot default underscore r-n-g of SEED — not the old global functions. A pinned seed means anyone who reruns your code gets your exact figures. Second, draw all randomness from that one generator; do not mix in a second source. A single source of randomness is what makes a run replayable. Pick any fixed integer for your seed and write it down.
+:::
+
+## One Honest Caveat
+
+- Monte Carlo estimates are themselves **random**
+- Measuring a size of $0.0487$ instead of $0.05$ is not a bug
+- That gap is sampling error in the *measurement*
+- The fix: more reps, and a Monte Carlo standard error
+- Same seed reruns identically; new seed wobbles
+
+::: notes
+One honest caveat before you start. Monte Carlo estimates are themselves random. When you measure a size and get zero point zero four eight seven instead of exactly zero point zero five, that gap is not a bug — it is sampling error in the measurement of the procedure itself. The fix is the same as everywhere else: more repetitions, and a sense of the Monte Carlo standard error, which we will compute. Reruns with a different seed wobble; reruns with the same seed are bit-for-bit identical. So when your numbers miss the textbook value, ask whether the gap is within Monte Carlo noise before hunting for a bug.
+:::
+
+## Step One: Draw One Sample
+
+- Write a function returning one sample proportion $\hat p$
+- `flips = rng.binomial(n=1, p=p, size=N)` gives $0$s and $1$s
+- Their mean *is* $\hat p$, the fraction of heads
+- You set $p$, so you hold the ground truth
+- Sanity-check the output against the known $p$
+
+::: notes
+Now Step One. Write a function that draws one sample of N Bernoulli trials with parameter p and returns the sample proportion p-hat — the fraction of heads. The cleanest way is r-n-g dot binomial, with n equal to one, probability p, and size N. That returns an array of zeros and ones, and their mean is p-hat. A single binomial draw divided by N gives the same p-hat and is faster, but the array of flips is more transparent the first time. Because you set p yourself, you hold the ground truth the rest of the lab is graded against. Then sanity-check: print p-hat for a few sample sizes against the known true p.
+:::
+
+## Watch the Law of Large Numbers
+
+- With $p=0.5$ and $N=10$, $\hat p$ might be $0.3$ or $0.7$
+- At $N=100$ it sits within a few hundredths of $0.5$
+- At $N=10{,}000$ it pins $0.5$ to two or three decimals
+- This is $\hat p \to p$ as $N$ grows — **consistency**
+- Each printed number is one *estimate* of a random rule
+
+::: notes
+Watch what happens. With p equal to one-half, a single p-hat from N equal to ten might be zero point three or zero point seven — wildly off. At N equal to one hundred it should sit within a few hundredths of one-half. At N equal to ten thousand it should pin one-half to two or three decimal places. You are watching the Law of Large Numbers in a single line of code: p-hat converges in probability to p as N grows. The estimator is consistent for the true proportion. And here is the reflection that matters. P-hat is an estimator — a random rule — and each number you printed is one realized estimate. Before you ran the code, p-hat had a whole distribution; afterward it is a single value. It matters that the N equal to ten result could have been something else.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Pin one seed, draw all randomness from one `rng`, and your figures are reproducible forever. The one-line function `rng.binomial(n=1, p=p, size=N).mean()` gives $\hat p$, and watching it tighten as $N$ grows from $10$ to $10{,}000$ is the Law of Large Numbers in action. Next: turn one dot into a whole sampling distribution.
+:::
+
+::: notes
+To summarize part two: pin one seed, draw all randomness from one generator, and your figures become reproducible forever. The one-line function that takes the mean of r-n-g dot binomial gives you p-hat, and watching it tighten as N grows from ten to ten thousand is the Law of Large Numbers in a single line. Remember the caveat: Monte Carlo numbers are themselves random, so small gaps from the textbook value are noise, not bugs. In part three we build p-hat's entire sampling distribution — and watch the bell curve assemble itself.
+:::

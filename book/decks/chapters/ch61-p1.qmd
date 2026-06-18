@@ -1,0 +1,45 @@
+---
+title: "KPSS: Measuring the Value of an Idea"
+date: "2026-07-27"
+---
+
+# KPSS: Measuring the Value of an Idea {.title}
+
+::: notes
+Welcome to Week Six, Chapter six-point-one, part one of seven. Last week handed you a lens — the seven-part reader's-guide anatomy — and four classic papers to practice it on. This week keeps the lens but turns it on a harder, modern problem: measurement. Every paper last week took its key variable as given. Returns came from CRSP, book equity from Compustat; nobody had to invent the number. This week's papers are different. Their central act is to build a variable that did not exist before, out of data never meant to measure the thing they want. That is the frontier skill, and the one your Week-Seven capstone lives or dies on. We open with the paper that taught empirical finance how to measure an idea: Kogan, Papanikolaou, Seru, and Stoffman, two thousand seventeen. We call it K-P-S-S.
+:::
+
+## Week 6 Turns the Lens on Measurement
+
+- Week 5: key variable was *given* — returns, book equity
+- Week 6: the paper must *build* a variable that did not exist
+- The frontier skill your capstone depends on
+- Paper: Kogan, Papanikolaou, Seru, Stoffman (2017)
+- Published in the *Quarterly Journal of Economics*
+
+::: notes
+Here is the shift. Last week, the central variable of each paper was handed to you. This week, building the variable is the contribution. The paper, which we call K-P-S-S, appeared in the Quarterly Journal of Economics in two thousand seventeen, volume one thirty-two. Its title is Technological Innovation, Resource Allocation, and Growth. We read it through the same anatomy as last week, because that order is the order in which a claim must survive scrutiny. And notice Leah's stake. Leah cares about patents and innovation, and in Week One she hit the oldest problem in the field: how do you count innovation? Count patents, and a throwaway design tweak counts the same as the transistor. Count forward citations, and you do better, but slowly — citations accrue over a decade — and you still measure attention, not dollars. Her real question has always been, how much is this invention actually worth? This paper gives her a number.
+:::
+
+## Two Questions Stacked on Top of Each Other
+
+- **Measurement:** dollar value of one patent, in real time?
+- **Economics:** what does valuable innovation tell us about growth?
+- Patent counts weight every patent equally — trivial equals transistor
+- Citations are better but *slow* and *truncated*
+- Neither is denominated in money
+
+::: notes
+Strip the paper to one sentence and it asks two questions stacked on top of each other. Keep them separate while you read, because the contribution is mostly in the first. The measurement question comes first: can we put a dollar value on each patent, in real time, the moment it is granted? Innovation drives long-run growth, but it is maddeningly hard to quantify. The two standard proxies both fail instructively. Patent counts weight every patent equally — a firm with a hundred trivial patents looks more innovative than a firm with the one patent that defined a decade. Citation counts, meaning how many later patents cite this one, are a real improvement and the workhorse of the literature. But they have two defects you should name: they are slow, accumulating over ten or more years, so you cannot value a recent patent in real time; and they are truncated, because recent patents look artificially uncited simply because the future has not happened yet. Neither proxy is denominated in money. The economics question rides on the answer: once you have a firm-by-year flow of innovation in dollars, does a surge of valuable innovation predict that the firm grows and rivals shrink? That second question is only as credible as the variable built to answer the first.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+K-P-S-S asks two stacked questions: first, *how do you put a dollar value on a single patent in real time?* — then, *what does the flow of valuable innovation tell us about growth and reallocation?* The contribution is mostly in the measure. A referee spends her energy there, and so will we.
+:::
+
+::: notes
+To summarize part one: K-P-S-S stacks two questions. The measurement question — can we value each patent in dollars, in real time, the moment it is granted — comes first and carries the contribution. The economics question — does valuable innovation predict firm growth and the reallocation of resources — rides on top, and is only as credible as the measure beneath it. Patent counts treat every patent alike; citations are slow and truncated; neither speaks in dollars. In part two we meet the clever move that solves the measurement problem: let the stock market value the patent for you.
+:::

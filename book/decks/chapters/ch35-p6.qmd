@@ -1,0 +1,55 @@
+---
+title: "The Overidentification Test"
+date: "2026-07-06"
+---
+
+# The Overidentification Test {.title}
+
+::: notes
+Welcome back to Week Three-point-five, part six of nine. In part five we learned to read the Anderson–Rubin interval's shapes — unbounded for a weak instrument, empty when over-identified instruments disagree. Now we turn that disagreement principle into a single statistic: the overidentification test. It lives in the world of over-identification, where you have more instruments than you strictly need, and it buys you a testable implication of exclusion.
+:::
+
+## The Test and Its Logic
+
+- Surplus instruments buy a **testable implication** of exclusion
+- **Sargan** test (1958); robust **Hansen $J$** (1982) inside GMM
+- Each valid $z$ should be uncorrelated with $\hat u = y - x\hat\beta_{\text{IV}}$
+- Ask jointly: are **all** of them uncorrelated with the residual?
+
+::: notes
+Step back to over-identification, where you have more instruments than you need. The bonus is a testable implication of exclusion, and the classical tool is the overidentification test — the Sargan test from nineteen-fifty-eight under homoskedasticity, generalized to the heteroskedasticity-robust Hansen J test from nineteen-eighty-two inside the G-M-M framework that subsumes I-V. The logic is the same disagreement principle behind the empty A-R interval. Each valid instrument, regressed against the I-V residuals — that is, y minus x times beta-hat-I-V — should show no relationship, because a valid instrument is uncorrelated with the structural error by exclusion. With several instruments you ask jointly: are all of them uncorrelated with the residual?
+:::
+
+## Reading the J Statistic
+
+- $J$ measures total correlation of instruments with the residual
+- Under "all valid": $\chi^2$ with df = number of **surplus** instruments
+- Large $J$ (small $p$) **rejects**: some instrument violates exclusion
+- `res.sargan` / `res.wooldridge_overid` in `linearmodels`
+
+::: notes
+The Sargan-Hansen J statistic measures the total correlation between the instruments and the residual. Under the null that all instruments are valid, it follows a chi-squared distribution with degrees of freedom equal to the number of over-identifying restrictions — the number of surplus instruments, which is L minus one when you have L instruments for one regressor. A large J, meaning a small p-value, rejects the joint null: at least one instrument is correlated with the error, that is, at least one violates exclusion. In linearmodels, after fitting an over-identified two-stage least squares with two instruments for one regressor, you read res-dot-sargan for the Sargan version and res-dot-wooldridge-overid for the robust, Hansen-J-style version.
+:::
+
+## The Test's Severe Limits
+
+- Tests only **over-identifying** restrictions, never all of exclusion
+- Just-identified: **zero** restrictions — the test is empty
+- **All invalid the same way $\Rightarrow$ they agree, $J$ passes**
+- Low power when instruments are weak
+- Tells you *that* something is wrong, not *which*
+
+::: notes
+But read the test's limits, because they are severe and routinely ignored. First, it tests only over-identifying restrictions, never the whole exclusion assumption. If you have one instrument, just-identified, there are zero over-identifying restrictions and the test is empty — nothing to check. Even with several instruments, it can only detect relative disagreement. If all your instruments are invalid in the same direction — all sharing the same back door — they will agree perfectly and the J test will happily pass. A clean J is not a certificate of validity; it is merely the absence of evidence of disagreement. Second, the test has low power when instruments are weak. Third, a rejection tells you that something is wrong, not which instrument. Like the RESET test from Chapter two-point-five, the J test is a flag, not a diagnosis — and a passed J test is one of the most over-interpreted results in applied work. Exclusion remains, at bottom, an argument you must make.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **Sargan / Hansen $J$** test checks whether surplus instruments *disagree* about $\beta$ — but a pass is **not** proof of exclusion, and it is empty when just-identified. It is a flag, not a diagnosis. Next: the surprise that adding more instruments can make the bias **worse**.
+:::
+
+::: notes
+To summarize part six: the Sargan and Hansen J overidentification tests check whether surplus instruments disagree about beta, following the same logic as the empty Anderson–Rubin interval. A large J rejects the joint null that all instruments are valid. But the limits are severe: a passed J test is not proof of exclusion — if all instruments share the same back door, they agree and the test passes — and it is empty when you are just-identified. It is a flag, not a diagnosis. In part seven we meet the genuine surprise of the chapter: that adding more instruments, far from strengthening your design, can make the bias worse.
+:::

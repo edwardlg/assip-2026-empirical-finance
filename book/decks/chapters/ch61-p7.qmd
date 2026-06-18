@@ -1,0 +1,45 @@
+---
+title: "KPSS: Vulnerable Joints — Expectations and Confounds"
+date: "2026-07-27"
+---
+
+# KPSS: Vulnerable Joints — Expectations and Confounds {.title}
+
+::: notes
+Welcome back to Chapter six-point-one, part seven of ten. In part six we named the three moves that make K-P-S-S clever. Now we turn referee and attack the paper at its weakest joints. They are mostly in the measure — which is exactly where the soft spots should be in a measurement paper. Part seven takes the first two: the measure captures expectations, not realized value, and the window can carry confounding news.
+:::
+
+## Expected, Not Realized, Value
+
+- The window return is the market's *forecast* at grant
+- Not the value the patent ultimately realized
+- A loved-then-flopped patent still gets a high value
+- Read it as "the market's *expected* private value at grant"
+- The construct-versus-measure gap from Week 1
+
+::: notes
+The single most important caveat, and the authors are explicit about it: the grant-window return is the market's forecast of the patent's value, formed in three days with the information available then. It is not the value the patent ultimately realized. If the market is systematically too optimistic about flashy patents and too pessimistic about quiet ones, the measure inherits that bias. A patent the market loved at grant but that later flopped still gets a high value. So the measure is best read as the market's expected private value at grant, and any sentence that drops the words expected and market's is overclaiming. This is the gap between the construct — true economic value — and the measure — a three-day price reaction. Naming that gap is straight out of Week One.
+:::
+
+## Confounding News in the Window
+
+- Design assumes the *only* news is the patent grant
+- But earnings, deals, analyst revisions land on ordinary days too
+- Short window helps; aggregation averages *idiosyncratic* confounds
+- *Systematic* contamination would not wash out
+- Ask: what rules out non-patent drivers of the return?
+
+::: notes
+The second joint connects to Week Four — event-study identification. The whole design assumes the only value-relevant news in the short window is the patent grant. But firms release earnings, announce deals, and get analyst revisions on ordinary days too. If such news clusters near grant dates, or just lands in the window by chance, the abnormal return mixes the patent's value with the other news, and the measure is contaminated. The short window helps, because there is less time for confounds, and aggregating over many patents averages out idiosyncratic confounds. But systematic contamination would not wash out. The right skeptical question is: what evidence rules out that grant-window returns are driven by something other than the patent? Check how hard the paper works to answer it.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Two joints in the measure: it is the market's **expected** value at grant, not realized value — keep the words *expected* and *market's*; and the window can carry **confounding news**. The short window and aggregation tame *idiosyncratic* confounds, but **systematic** contamination would not wash out.
+:::
+
+::: notes
+To summarize part seven: the first two vulnerable joints are both in the measure. One, the value is the market's forecast at grant, not realized value — a loved-then-flopped patent still scores high, so keep the words expected and market's, the construct-versus-measure gap from Week One. Two, the window assumes the only news is the patent grant, but earnings and deals land near grant dates too; the short window and aggregation handle idiosyncratic confounds, while systematic contamination survives. In part eight we take the remaining three joints: selection, baked-in market efficiency, and the fact that the growth results are associations, not experiments.
+:::

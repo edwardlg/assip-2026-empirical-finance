@@ -1,0 +1,46 @@
+---
+title: "The p-Value, Defined Correctly"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# The p-Value, Defined Correctly {.title}
+
+::: notes
+Welcome back to Chapter one-point-five, part eight of ten. In part seven we set where the rejection region sits with one-sided versus two-sided tests. Now we define the p-value — a richer, continuous measure of how extreme the data are — and then confront the single most common error in all of applied statistics.
+:::
+
+## The p-Value, Defined
+
+- The probability, assuming $H_0$ true, of a statistic
+- at least as extreme as the one you got
+- Everything is conditioned on $H_0$ being true
+- Small p-value: surprising if the null held — evidence against
+- Sam: $p=\Pr(T\geq 1.69\mid H_0)\approx 0.046$
+
+::: notes
+Critical values give a yes-or-no verdict at a fixed alpha. The p-value reports something richer: how extreme the data are, on a continuous scale. Here is the definition, and it must be memorized in exactly this form. The p-value is the probability, computed assuming the null hypothesis is true, of observing a test statistic at least as extreme as the one you actually got. Read it slowly. Everything is conditioned on the null being true. We live inside the skeptic's world — mu equals zero — and ask: in that world, how often would noise alone hand me a result this striking or more so? A small p-value means this data would be a real surprise if the null were true, which is evidence against the null. For Sam's one-sided test, the p-value is the area in the upper tail of the t-distribution beyond one point six nine — the probability T is at least one point six nine given the null — about zero point zero four six. Since that is below zero point zero five, Sam rejects at the five percent level, the same verdict the critical value gave.
+:::
+
+## The Correction That Matters Most
+
+- The p-value is NOT the probability $H_0$ is true
+- $p=0.046$ is *not* "4.6 percent chance of no edge"
+- It is $\Pr(\text{data}\mid H_0)$, not $\Pr(H_0\mid \text{data})$
+- Swapping the bar is a basic probability error
+- Under a true null, the p-value is uniform on $[0,1]$
+
+::: notes
+Now the correction that matters more than almost anything else in this book. The p-value is not the probability that the null hypothesis is true. Sam's p of zero point zero four six does not mean there is a four point six percent chance the rule has no edge. The p-value is the probability of data this extreme given the null is true. The thing students want it to be is the probability the null is true given the data. These are different conditional probabilities, and swapping the two sides of the bar is a basic error — the same as confusing the probability of wet given rain with the probability of rain given wet. To even speak of the probability the null is true you would need a prior and Bayes' rule; a p-value contains no prior. A second caution: the p-value is itself a random variable. When the null is true, the p-value is uniformly distributed on zero to one — every value equally likely — which is exactly why a true null still produces p below zero point zero five a full five percent of the time. That is the seed of the multiple-testing problem.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **p-value** is $\Pr(\text{statistic this extreme}\mid H_0\text{ true})$ — *not* $\Pr(H_0\mid\text{data})$. Swapping those sides of the bar is the most common error in statistics. Sam's $p\approx0.046<0.05$, so he rejects. And under a true null the p-value is uniform on $[0,1]$ — the seed of multiple testing. Next: confidence intervals as inverted tests.
+:::
+
+::: notes
+To summarize part eight: the p-value is the probability of a statistic at least this extreme, assuming the null is true — not the probability the null is true given the data. Swapping those two sides of the conditional bar is the most common error in all of applied statistics. Sam's p is about zero point zero four six, below zero point zero five, so he rejects — the same verdict the critical value gave. And remember: under a true null, the p-value is uniform on the unit interval, which is exactly why a dead null still looks significant five percent of the time. That is the seed of the multiple-testing problem. In part nine we turn the test inside out into a confidence interval, and separate statistical from economic significance.
+:::

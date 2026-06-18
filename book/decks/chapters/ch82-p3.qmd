@@ -1,0 +1,70 @@
+---
+title: "Few Clusters and the Wild Cluster Bootstrap"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Few Clusters and the Wild Cluster Bootstrap {.title}
+
+::: notes
+Welcome back to Chapter eight-point-two, part three of ten. In part two we re-clustered Maya's standard errors at every defensible level and watched the t-stat fall from seven-point-eight to two-point-five — and it still excluded zero. But that table hides a threat: what if the number of clusters that actually matters is small? That is the row Maya wrote as "few-treated-cluster inference," and it is what the wild cluster bootstrap was built to answer.
+:::
+
+## The Hard Case: Too Few Clusters
+
+- Cluster-robust SEs need **many** clusters (rule of thumb: 30–50)
+- Few clusters $\Rightarrow$ the cluster SE is **downward-biased and noisy**
+- The $t$ stops following the $t$-distribution — you **over-reject**
+- Maya has 50 states, but only the **treated** ones count
+- If $\approx 8$ states adopted, effective clusters are dangerously few
+
+::: notes
+Cluster-robust standard errors lean on an asymptotic argument that needs many clusters — the rule of thumb from Chapter two-point-four was thirty to fifty. With few clusters, the cluster-robust standard error is downward-biased and noisy, so the t-statistic does not follow the t-distribution you compare it against, and you over-reject — you find significance that is not there. Maya has fifty states, but the relevant count for a treatment effect is the number of treated clusters. If only, say, eight states ever adopted an examination program, her effective cluster count is dangerously small. This is the same fragility that made Card and Krueger's single-treated-state design demand permutation inference.
+:::
+
+## The Fix: Flip the Signs
+
+- **Wild cluster bootstrap** (Cameron, Gelbach & Miller 2008)
+- Ordinary bootstrap resamples observations — breaks within-cluster correlation
+- Cluster bootstrap resamples whole clusters — too few distinct draws
+- Wild: keep clusters fixed, **flip each cluster's residual signs** at random
+- Multiply by $+1$ or $-1$ (Rademacher) — build the null distribution
+
+::: notes
+The fix is the wild cluster bootstrap, from Cameron, Gelbach and Miller, two-thousand-eight. An ordinary bootstrap resamples observations; that breaks the within-cluster correlation you are trying to respect. A cluster bootstrap resamples whole clusters; with few clusters that does not give enough distinct resamples. The wild cluster bootstrap is cleverer. It keeps the clusters and regressors exactly as they are, and instead flips the sign of each cluster's residuals at random — multiplying every residual in a cluster by plus-one or minus-one with equal probability, the Rademacher weights — to manufacture a distribution of the test statistic under the null.
+:::
+
+## Locating Your Real $t$ in the Null Cloud
+
+- Re-impose the null $\beta = 0$ when computing residuals
+- Perturb the signs, re-estimate thousands of times
+- Read where your **real** $t$ falls in that bootstrapped cloud
+- Two-sided $p$: how often $|t_{\text{boot}}| \ge |t_{\text{obs}}|$
+- Same spirit as a placebo test of nothing happening
+
+::: notes
+Here is the procedure. You re-impose the null — beta equals zero — when computing the residuals, perturb the signs, re-estimate thousands of times, and read your real t-statistic's position in that bootstrapped distribution. The two-sided bootstrap p-value is how often the absolute value of the bootstrapped t is at least as large as the absolute value of your observed t. It is the same permutation logic as a placebo test: build the distribution of this statistic when nothing is going on, then locate your real number in it. In practice you call a vetted package like wildboottest or fwildclusterboot — but knowing the sign-flip mechanism is what lets you trust the output.
+:::
+
+## How to Read Pass and Fail
+
+- **Pass:** wild $p$ is small and agrees with your clustered $p$
+- **Fail:** clustered $p = 0.01$ but bootstrap $p = 0.18$
+- That gap is the few-clusters illusion **exposed**
+- Honest report: *"suggestive, not significant — inference too imprecise"*
+- If they disagree, **believe the bootstrap**
+
+::: notes
+How do you read it? Pass: the wild-cluster p-value is small and roughly agrees with your conventional clustered p-value. Your significance was not an artifact of too few clusters. Fail: the wild-cluster p-value is much larger — say your table said p equals zero-point-zero-one but the bootstrap says zero-point-one-eight. That is the few-clusters illusion exposed, and the honest report is brutal: the point estimate is minus one-point-four points, but with few treated clusters, inference is too imprecise to reject zero; report it as suggestive, not significant. You do not keep the three stars once the bootstrap calls them fake. For designs with few treated clusters, the bootstrap — not the default clustered standard error — is the honest inference. If they disagree, believe the bootstrap.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+With few treated clusters, the conventional cluster SE is too small and the stars are fake. The wild cluster bootstrap re-imposes the null, flips cluster residual signs, and builds the true null distribution. When it disagrees with your clustered $p$, believe the bootstrap.
+:::
+
+::: notes
+To summarize part three: cluster-robust standard errors need many clusters, and the count that matters is the number of treated clusters, which can be dangerously small even with fifty states. With few treated clusters the conventional standard error is downward-biased and the stars may be fake. The wild cluster bootstrap fixes this by re-imposing the null, flipping each cluster's residual signs at random, and building the true null distribution — then locating your real t in it. When the bootstrap disagrees with your clustered p-value, believe the bootstrap. In part four we turn to the most intuitive attack of all: placebo tests — running your analysis where, by construction, there can be no effect.
+:::

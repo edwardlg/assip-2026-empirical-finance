@@ -1,0 +1,57 @@
+---
+title: "Synthetic Control: When You Have One Treated Unit"
+date: "2026-07-13"
+---
+
+# Synthetic Control: When You Have One Treated Unit {.title}
+
+::: notes
+Welcome to Week Four, Chapter four-point-four, part one of ten: synthetic control and synthetic difference-in-differences. In Chapter four-point-one we built difference-in-differences, and it came with a warning. Diff-in-diff compares the change in a treated group to the change in a control group, and it only identifies the causal effect if the two groups would have moved in parallel had the policy never happened. That parallel-trends assumption is the entire engine. With dozens of treated units and controls whose pre-treatment trends lie on top of one another, parallel trends is a bet you can defend. This chapter is about what to do when the world hands you just one treated unit.
+:::
+
+## The Problem: One Treated Unit
+
+- A single state passes a first-in-the-nation law
+- A single firm hit by a scandal; a single country adopts the euro
+- Pick one "similar" control? Your estimate lives or dies on that choice
+- Average all others equally? No reason equal weights match your unit
+- Pre-trends almost never line up — parallel trends becomes a **wish**
+
+::: notes
+Sometimes the world hands you exactly one treated unit. A single state passes a first-in-the-nation law. A single firm gets hit by a scandal. A single country adopts the euro, or unifies after a partition. And the comfortable machinery of diff-in-diff starts to creak. Which control do you use? If you pick one similar state, your estimate lives or dies on that one arbitrary choice, and a critic will always find a different similar state that gives the opposite answer. If you average all the other states equally, there is no reason equal weights should reproduce your treated unit's trajectory. The pre-trends almost never line up, because no naturally occurring group is a good twin for one specific unit. Parallel trends becomes a wish rather than a defensible claim.
+:::
+
+## The Central Idea: Build a Control
+
+- Due to Abadie & Gardeazabal (2003); Abadie, Diamond & Hainmueller (2010)
+- Don't *pick* a control, don't *average* equally — **build** one
+- Take a **donor pool** of untreated units
+- Find the weighted average that best reproduces the treated unit's **pre-period**
+- That weighted average is the **synthetic control** — a synthetic twin
+
+::: notes
+The central idea, due to Abadie and Gardeazabal in two-thousand-three and developed in full by Abadie, Diamond and Hainmueller in twenty-ten, is simple to state and surprisingly deep. Instead of picking a control or averaging controls equally, you build one. You take a pool of untreated units — the donor pool — and find the weighted average of them that best reproduces your treated unit's behavior before the treatment. That weighted average is the synthetic control: a synthetic version of the treated unit, assembled from real untreated units, that walks in lockstep with the real thing through the entire pre-period. Then you let the policy hit, and you watch the real unit and its synthetic twin diverge. The gap between them, after treatment, is your estimated effect.
+:::
+
+## Meet Priya's Case
+
+- One treated state passed a 2018 **climate-risk disclosure mandate**
+- Insurers must publish wildfire- and flood-exposure pricing
+- Question: did the mandate change average homeowner **premiums**?
+- One treated state. No clean twin.
+- Parallel trends is not abandoned — it is **engineered**
+
+::: notes
+Throughout this chapter, Priya is our guide. She is chasing one event: a single state — call it the treated state — that in twenty-eighteen passed a first-in-the-nation climate-risk disclosure mandate, forcing home insurers to publish wildfire- and flood-exposure pricing. Her question is direct: did the mandate change average homeowner premiums? One treated state. No clean twin. The spirit of the method, stated plainly: build a fake control unit as a weighted average of the units that were not treated, choosing the weights so the fake unit matches the treated unit's pre-treatment outcomes; then read the effect off how far the real unit drifts from its fake twin after treatment. Parallel trends does not disappear — it is engineered. The weights are picked precisely so the pre-trends are nearly identical, by construction. The leap of faith shrinks from "these two groups would have moved together" to "this carefully matched composite would have kept moving together for a few more years."
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+When you have **one** treated unit, don't pick or equal-average a control — **build** one. The synthetic control is a weighted average of untreated donors, with weights chosen to match the treated unit's pre-period. The post-treatment gap is your effect.
+:::
+
+::: notes
+To summarize part one: with a single treated unit, diff-in-diff's parallel-trends bet collapses, because no naturally occurring group is a twin for one specific unit. Synthetic control's answer is to construct a comparison rather than assume one. Everything technical that follows is an elaboration of that one sentence. In part two we set up the notation in Week Four terms and write the estimator in potential-outcomes language.
+:::

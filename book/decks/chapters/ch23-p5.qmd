@@ -1,0 +1,54 @@
+---
+title: "The Geometry, and What \"Holding Constant\" Means"
+date: "2026-06-29"
+---
+
+# The Geometry, and What "Holding Constant" Means {.title}
+
+::: notes
+Welcome back to Chapter two-point-three, part five of eight. In part four we proved the theorem in four lines of matrix algebra. Now we make it intuitive with one picture, and cash that picture in — asking what "holding constant" really means once you know controlling is a subtraction. This is the heart of the chapter, and it changes how you read every empirical table for the rest of your life.
+:::
+
+## The Geometry, In One Picture
+
+- Each variable = a vector in $\mathbb{R}^N$, one coordinate per firm
+- Controls $\mathbf{X}_2$ carve out a **plane**; $\mathbf{M}_2$ projects **perpendicular** to it
+- $\tilde{\mathbf{X}}_1,\ \tilde{\mathbf{y}}$ = **shadows** cast off that plane
+- A control coefficient = a simple slope **orthogonal** to the controls
+
+::: notes
+If the algebra felt like symbol-pushing, here is the picture underneath it. Think of every variable as a vector in N-dimensional space — one coordinate per firm. The outcome is a point; the regressors span a subspace; ordinary least squares drops a perpendicular from the outcome onto that subspace. Now picture the controls as carving out their own little subspace — a plane, say, if the controls are the intercept and size. The residual maker projects everything onto the directions perpendicular to that plane. So the cleaned regressor is the shadow of your regressor cast off the plane, and the cleaned outcome is the shadow of the outcome. Frisch–Waugh–Lovell says: to find how much the outcome leans in the regressor's direction after accounting for the plane, project both vectors off the plane first, then measure how the shadows line up. The controls are not deleted; they define the plane you stand perpendicular to. Every multiple-regression coefficient is, geometrically, a simple slope in the subspace orthogonal to the controls. That one sentence is the mental model to keep.
+:::
+
+## "Holding Constant" Is A Subtraction
+
+- Not a filter, not an experiment — a **subtraction**
+- $\hat{\beta}_1$ asks: do firms with **more R&D than size predicts**...
+- ...also show **more patents than size predicts**?
+- A statement entirely about **residual** variation
+
+::: notes
+Now cash the picture in. When a paper says the coefficient is one-point-eight-three-eight, controlling for firm size, beginners picture holding size fixed and wiggling R&D. But the regression has no way to hold size fixed; the firms are whatever sizes they are. What it actually did, the theorem tells us, is remove the linear influence of size from both R&D and patents, then look at how the leftovers move together. So controlling for size is not a filter and not an experiment — it is a subtraction. The coefficient answers a precise question: among firms with more R&D than their size would predict, do we also see more patents than their size would predict? It is a statement entirely about the residual variation that size leaves unexplained.
+:::
+
+## What This Reframing Settles
+
+- **Irrelevant control**: barely changes $x$, so $\hat{\beta}_1$ barely moves
+- **Relevant control**: strips a big chunk of $x$, can move $\hat{\beta}_1$ a lot
+- **Near-redundant controls**: $\tilde{x}\approx\mathbf{0}$ — multicollinearity
+- **Omitting** size: short slope $\approx 4.65$ vs long $1.838$ — the bias
+
+::: notes
+This reframing settles several things at once. First, why adding an irrelevant control barely moves a coefficient. If a control is unrelated to your regressor, residualizing changes your regressor hardly at all, so the coefficient barely budges. But a relevant control — like size, strongly related to R&D — strips out a big chunk of the regressor, and the coefficient can move a lot. Second, why a control with almost no independent variation is dangerous: if the controls together can predict your regressor almost perfectly, the leftover is nearly the zero vector, the denominator is tiny, and the slope becomes wildly sensitive to noise. That is multicollinearity, and the theorem shows exactly where it bites. Third, what omitting a control does. If Leah had run the short regression — patents on R&D alone, leaving size out — she would have gotten about four-point-six-five, more than double the one-point-eight-three-eight she gets with size partialled out. The raw R&D still carries the size signal inside it, so patents respond to both the genuine R&D effect and the size effect traveling with it. That gap is the omitted-variable bias, and Chapter two-point-five turns it into a formula.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Geometrically, a control coefficient is a **simple slope in the subspace perpendicular to the controls**. So "holding size constant" is a subtraction: it asks whether firms with more R&D than size predicts also patent more than size predicts. Next: the honest limit of "controlling," and demeaning.
+:::
+
+::: notes
+To summarize part five: the geometry makes Frisch–Waugh–Lovell intuitive — the controls define a plane, the residual maker projects everything perpendicular to it, and a coefficient is a simple slope among those shadows. And "holding constant" is a subtraction confined to residual variation — which explains why irrelevant controls barely matter, why near-redundant ones are dangerous, and why omitting a control biases the slope. In part six we face the honest limit of "controlling," and then meet the most consequential special case of the theorem: demeaning.
+:::

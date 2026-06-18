@@ -1,0 +1,58 @@
+---
+title: "Time-Stamping, Deviations, and Maya's Plan"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Time-Stamping, Deviations, and Maya's Plan {.title}
+
+::: notes
+Welcome back to Chapter seven-point-three, part six of eight. In part five we wrote the falsification and robustness components and split the data with a hold-out. Now we finish the registration discipline — time-stamping the plan so its contents are provably fixed, and logging the deviations that reality will force on you. Then we read Maya's whole assembled plan and watch it disarm her dangerous afternoon.
+:::
+
+## Register by Time-Stamping
+
+- A plan constrains you only if fixed **before** the analysis
+- Researchers register on OSF, AsPredicted, the AEA registry
+- In this camp your registry is **Git**: file a tagged commit `pap-filed`
+- The tag is a cryptographic time stamp — verifiable, uneditable
+- A plan no one can date is a plan that constrains no one
+
+::: notes
+A plan only constrains you if its contents are fixed before the analysis, and the only way to prove that to a skeptic is a credible time stamp. Professionals register on a public platform — the AEA registry for experiments, OSF or AsPredicted for observational designs — which date-stamps the document so it cannot be silently edited. In this camp your registry is your Git history: Lab Seven has you file the plan as a tagged commit, pap-filed. The tag is your time stamp, a cryptographic promise that anyone can verify the plan existed in exactly this form before the commits containing your confirmatory results. That is why the plan is a deliverable of Lab Seven and not a private note — a plan no one can date is a plan that constrains no one.
+:::
+
+## Log Your Deviations Honestly
+
+- You **will** deviate: collinear control, a bug, a data surprise
+- Deviating is not the sin — **hiding** it is
+- Keep a dated log: what changed, why, was it **outcome-driven**?
+- Mechanical reason: innocent · saw the coefficient first: p-hacking
+- A referee who sees an honest log trusts you **more**
+
+::: notes
+Here is where Olken's perils become operational. You will deviate from the plan. You will find a control is collinear and drops out, that 2020 must be handled differently than you guessed, that a coding bug in your outcome needs fixing. Deviating is not the sin; hiding it is. So you keep a deviation log — a dated record of every departure, what changed, why, and whether it was prompted by seeing the outcome. That last clause is the crux. A deviation forced by mechanical reality — collinearity, a bug, a data surprise — is innocent, and you note it. A deviation that happened because you saw the coefficient and did not like it is exactly the p-hacking the plan exists to prevent. A referee reading an honest log trusts you more, not less, because you have shown them the seams. The value of a plan is not that you never deviate; it is that the reader can see exactly where your analysis was confirmatory and where it became exploratory.
+:::
+
+## Maya's Assembled Plan
+
+- Filed as `pap-filed`, before any confirmatory run
+- H1 primary (one-sided), H2 secondary, H3 exploratory family
+- One equation, seven slots, all fixed in advance
+- Families A, B, C — Benjamini-Hochberg on the exploratory family
+- Falsification · planned robustness · 30/70 hold-out · `DEVIATIONS.md`
+
+::: notes
+Here is the whole thing assembled — the plan Maya files as her pap-filed tagged commit, compact, with the discipline in the precision, not the length. Section one: hypotheses, directional. H1 primary and one-sided — conditional on observables, lender, and neighborhood, minority applicants face a higher denial rate, beta one greater than zero. H2 secondary, the gap is smaller for FinTech lenders. H3 an exploratory subgroup family, two-sided. Section two: the primary specification in full, the denied equation with all seven slots named, including the deliberately excluded loan-product type. Section three: the multiple-testing plan — Family A is H1 alone at five percent, Family B the FinTech interaction, Family C the subgroup gaps under Benjamini-Hochberg control, labeled exploratory. Section four: falsification for H1 and H2. Section five: planned robustness, reported either way. Section six: the thirty-seventy hold-out, split on hash of loan-id, with deviations logged in a deviations file.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A plan constrains you only if **time-stamped before you peek** — a tagged Git commit makes that provable. You will deviate; **hiding** it is the sin, so log every departure and whether it was outcome-driven. Assembled, Maya's six sections turn 32 forks into one honest test. Next: what that plan did to her afternoon, and the perils.
+:::
+
+::: notes
+To summarize part six: a plan is credible only when time-stamped before the analysis, which in this camp means a tagged Git commit called pap-filed. You will deviate, and that is fine — hiding the deviation is the sin, so you keep an honest, dated log noting whether each change was outcome-driven. Assembled, Maya's six sections give exactly one primary specification, one key coefficient, one sample, all fixed in advance, with the rest honestly labeled exploratory. In part seven we see precisely what that plan did to her dangerous afternoon, and then confront Olken's perils — the ways a pre-analysis plan can itself fail.
+:::

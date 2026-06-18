@@ -1,0 +1,45 @@
+---
+title: "Reading Fama–French 1992: The Research Question"
+date: "2026-07-20"
+---
+
+# Reading Fama–French 1992: The Research Question {.title}
+
+::: notes
+Welcome to Week Five, Chapter five-point-one, part one of seven. For four weeks you were a producer of empirical work — you built ordinary least squares from the design matrix up, learned which standard errors lie, drew the line between correlation and cause, and assembled the causal toolkit. Week Five flips the verb: now you become a consumer. The skill that separates someone who has merely taken econometrics from someone who can do research is the ability to pick up a frontier paper, read it the way a referee reads it, and decide whether to believe it. We train that muscle on Fama and French's nineteen ninety-two paper, "The Cross-Section of Expected Stock Returns" — one of the most cited articles in finance, and one that runs on exactly the machine you built in Lab Two.
+:::
+
+## Why This Paper, and Sam's Stake
+
+- One of the most-cited papers in finance
+- It killed a theory that ruled the field for two decades
+- Uses **exactly** the Fama–MacBeth machine from Lab 2
+- Sam believes "riskier stocks pay more" — the CAPM bet
+- This paper is the autopsy on Sam's starting belief
+
+::: notes
+Why this paper? It is among the most cited articles in all of finance. It killed a theory that had ruled asset pricing for twenty years. And it runs on exactly the machine you built in Lab Two, so you already own the tools — this chapter just teaches you to watch a master use them. Remember Sam, who trades on momentum. Sam walked in with a working belief that riskier stocks pay more — the cleanest version being the CAPM claim that a stock's reward is proportional to its market beta. This paper is the moment the field told Sam that belief was, at best, badly incomplete. Read it as the autopsy on the theory Sam started with. We read it through a Reader's-Guide anatomy — seven fixed sections we reuse for every paper this week. Learn the anatomy here; from now on it is the lens.
+:::
+
+## The Research Question
+
+- One sentence: **what explains why some stocks earn more than others?**
+- CAPM's sharp answer: only **market beta** $\beta_i$ should matter
+- $$\mathbb{E}[r_{it}] = \gamma_0 + \gamma_1\,\beta_i,\qquad \gamma_1>0$$
+- Strict CAPM: beta is the *whole story* — every other slope is zero
+- This was the null Sam walked in with
+
+::: notes
+Strip the paper to one sentence: what explains why some stocks have higher average returns than others? To feel the force of that, you need the theory it attacked. The Capital Asset Pricing Model — the framework Sam met in Lab Two — gives a sharp answer. The only thing that should earn a stock a higher average return is its market beta, beta-sub-i, its sensitivity to swings in the overall market. Stock-specific risk earns you nothing, because you can diversify it away for free; only the move-with-the-market part deserves compensation. Written as the relationship Lab Two estimated, the expected return on stock i equals gamma-zero plus gamma-one times beta-sub-i. CAPM predicts gamma-one is positive — higher beta, higher reward — and in strict form that beta is the whole story: add any other firm characteristic and its slope should be zero. For twenty years this was the organizing fact of asset pricing, and it is the null hypothesis Sam walked in with.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Fama–French (1992) asks what explains the cross-section of stock returns. CAPM's bold answer is that **only market beta** should matter — every other firm characteristic's slope should be zero. That is the reigning null the paper sets out to test. Next: the two awkward "anomalies" that turned out to be the main event.
+:::
+
+::: notes
+To summarize part one: the paper asks what explains why some stocks earn more than others, and the theory it attacks is CAPM, which says only market beta should matter — every other characteristic's slope should be zero. That is the reigning null, and it is the belief Sam carried into Lab Two. In part two we meet the twist that makes the paper land: two patterns the field had dismissed as anomalies — size and value — and we ask whether those footnotes are actually the main event. We will also pin down exactly what kind of claim this paper makes.
+:::

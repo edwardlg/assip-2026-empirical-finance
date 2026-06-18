@@ -1,0 +1,57 @@
+---
+title: "What's Clever About BDM"
+date: "2026-07-20"
+---
+
+# What's Clever About BDM {.title}
+
+::: notes
+Welcome back to Chapter five-point-five, part five of seven. In part four we read the tables in story order: symptom, mechanism, cure. Now we step back and ask what makes this paper a classic. Three things, and they compound, turning a technical complaint into a paper that changed how a whole field reports its results.
+:::
+
+## Testing Inference Itself
+
+- Most papers test a hypothesis about the world
+- BDM test a hypothesis about a *procedure*
+- They manufacture a setting where the right answer is known
+- True placebo effect is zero, so *any* rejection is a false positive
+- The researcher is the counterfactual's author
+
+::: notes
+The first and deepest cleverness is the placebo design as a way to test inference itself. Most papers test a hypothesis about the world. BDM test a hypothesis about a procedure, about whether the standard-error formula tells the truth, and they do it by manufacturing a setting where the right answer is known. Because the placebo law has a true effect of exactly zero by construction, any rejection is a false positive, full stop, with no ambiguity about what should have happened. This sidesteps the entire problem of never observing the counterfactual that haunts ordinary causal work: here the researcher is the counterfactual's author. It is the same intellectual move as building a simulator where you play God, Week One's coin universe and Week Four's tunable pre-trend, now elevated into a critique of an entire literature.
+:::
+
+## Putting a Number on the Danger
+
+- Economists long knew serial correlation *could* bias standard errors
+- BDM put a *number* on it, not a warning
+- A vague caveat becomes a measured fact
+- "Might be a little off" is ignorable
+- "Fires on noise a third of the time" is not
+
+::: notes
+The second cleverness is quantifying the over-rejection rather than merely warning about it. Economists had long known, in the abstract, that serial correlation could bias standard errors. What BDM did was put a number on the danger, turning a vague methodological caveat into a measured fact, a five-percent-should-be-but-isn't fact. A number changes behavior in a way a caveat never does. Your standard errors might be a little off is ignorable; people had been ignoring it for years. But your test that claims five percent actually fires on noise a third of the time or more is not ignorable. The measurement is what gave the paper its teeth. It converted a footnote that everyone nodded at and forgot into a result that nobody could responsibly ignore.
+:::
+
+## Breaking Things, Then Fixing Them
+
+- They did not just break inference; they offered working fixes
+- Block bootstrap, cluster-by-state, collapse-to-two-periods
+- All implementable with the tools of the day
+- Each demonstrably pulls rejection back toward five percent
+- A critique with a remedy is one people actually adopt
+
+::: notes
+The third cleverness is that they did not just break things; they offered fixes that work and that practitioners could actually adopt. Block bootstrap, cluster-by-state, collapse-to-two-periods: all are implementable with the tools of the day, and they each demonstrably pull the rejection rate back toward five percent. A critique with a remedy attached is one people will use, and they did. Clustering by the unit of treatment is now so standard that omitting it is treated as an error, which is precisely why it was non-negotiable for Priya last week. The three cleavernesses compound. The placebo design makes the problem visible, the number makes it urgent, and the fixes make it solvable, so the field had both a reason and a way to change, and it did.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+BDM's three compounding strokes: a **placebo design** that tests inference itself by making the right answer known; **a number** that turns a vague caveat into an urgent measured fact; and **working fixes** practitioners could actually adopt. Visible, urgent, solvable — that is why the paper changed the field. Next: where the argument is vulnerable.
+:::
+
+::: notes
+To summarize part five: BDM's brilliance is three compounding strokes. First, a placebo design that tests inference itself, manufacturing a world where the true effect is zero so any rejection is unambiguously a false positive. Second, a number, turning the vague warning that serial correlation could bias standard errors into a measured, urgent fact. Third, working fixes that practitioners could actually adopt, which is why clustering by state became the default. Visible, urgent, solvable: that is the recipe for a paper that changes a field. In part six we do what a good reader must, and push back on the soft spots.
+:::

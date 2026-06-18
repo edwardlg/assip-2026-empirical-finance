@@ -1,0 +1,58 @@
+---
+title: "The One-Click Replication Packet: Data, Code, README"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# The One-Click Replication Packet: Data, Code, README {.title}
+
+::: notes
+Welcome back to Chapter eight-point-five, part seven of nine. In part six we sorted fatal critiques from survivable ones. Now we turn to the second surface the skeptic touches, alone: the replication packet. The bar is exact and unforgiving, and we cover the first three of its six load-bearing parts: the data or data-access script, code in run-order, and the README.
+:::
+
+## The Bar: One Command, Everything
+
+- Serious audience members rebuild your headline themselves
+- A stranger, a fresh machine, runs one command
+- Every table and figure regenerates, raw data to PDF
+- Not "mostly." Not "after I email a fix."
+- It is the repository you have been committing all along
+
+::: notes
+After the talk, the most serious members of your audience do not take your word for anything; they ask for the packet and try to rebuild your headline number on their own machine. The bar is exact and unforgiving: a stranger, on a machine that has never seen your project, runs one command and watches every table and figure in your paper regenerate from raw data to final PDF. Not "mostly." Not "after I email them a fix." One command, everything, byte for byte. That is the difference between a result and an assertion, and it is the entire reason the earlier lab made you stand up the repository in Week Seven. The packet is not a new thing you build now; it is the repository you have been committing into all along, finished. It has six load-bearing parts.
+:::
+
+## Part One: Data, or a Data-Access Script
+
+- Public data ships *in* the packet, cached, vintage pinned
+- Licensed data does **not** ship; the license forbids it
+- Ships instead: the pinned data-access script in src
+- Plus a pull log with content hashes to verify
+- Public is re-runnable; licensed is recipe-reproducible
+
+::: notes
+The first part is the data, or a data-access script. Public data ships in the packet, cached, with its vintage pinned. Licensed data — from the major financial databases, anything from the research data service — does not ship, because the license forbids redistribution; it stays on institutional infrastructure. What ships instead is the data-access script in the source folder, the bounded, pinned query that reconstructs the licensed data for anyone with the same access, plus a pulls log with content hashes, so a reviewer with access can re-pull and verify they got identical bytes. This is the asymmetry of reproducibility: public data is fully re-runnable, licensed data is recipe-reproducible. Your README states honestly which is which.
+:::
+
+## Parts Two and Three: Code and README
+
+- Code in run-order: scripts numbered so order is clear
+- Logic in src, story in notebooks
+- No reviewer should guess which script runs first
+- README: what, why, and how to run
+- "How to run" collapses to a single line
+
+::: notes
+The second part is code in run-order: the scripts and notebooks named or numbered so the order is unambiguous — zero-one pull, zero-two build, zero-three analysis, or whatever ordering your run-all enforces. The rule holds: logic in the source folder, story in the notebooks. A reviewer should never have to guess which script runs first. The third part is a README, the what, why, and how-to-run document — but now the "how to run" section has collapsed to almost nothing, because the whole point of the packet is that the answer is one command. The README still names the data sources, the secrets a user must export, and the licensed-versus-public split, but the run instructions are now a single line.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The packet's bar: **one command, on a fresh machine, regenerates everything from raw data to PDF.** It is your Week 7 repo, finished. Parts one through three: public data ships and licensed data ships a pinned access script; code numbered in run-order; a README whose run section is one line. Next: the pinned environment, the fixed seed, and the make entry point.
+:::
+
+::: notes
+To summarize part seven: the packet's bar is that a stranger on a fresh machine runs one command and watches everything regenerate from raw data to final PDF, byte for byte. It is the Week Seven repository, finished, not a new build. The first three of its six parts are: the data, where public data ships and licensed data ships a pinned access script plus a hash log; code in unambiguous run-order, logic in source and story in notebooks; and a README whose how-to-run has collapsed to a single line. In part eight we cover the last three parts: the pinned environment file, the fixed random seed, and the single make entry point that makes it all one-click.
+:::

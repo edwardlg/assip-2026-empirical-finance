@@ -1,0 +1,54 @@
+---
+title: "Linearity of Expectation"
+date: "2026-06-22"
+---
+
+# Linearity of Expectation {.title}
+
+::: notes
+Welcome to Week One, Chapter one-point-two, part one of eight. Last chapter we met the expectation operator, conditioning, and the two laws of iterated expectation and total variance. This chapter is narrower and, in the long run, more useful. We nail down the algebra of expectation, variance, and covariance, and then reveal that this algebra is secretly geometry. We anchor everything in a question Maya keeps asking: she has money to split between two investments, and she wants to know how risky the blend is. The answer lives in one term, the covariance. We start with the one rule that never asks permission.
+:::
+
+## The One Rule
+
+- $\mathbb{E}[aX + bY] = a\,\mathbb{E}[X] + b\,\mathbb{E}[Y]$
+- True whether or not $X$ and $Y$ are related
+- Most operations need independence; this one does not
+- Expectation passes straight through sums and constants
+
+::: notes
+Here is the result in one sentence. Expectation passes straight through sums and constants: the expected value of a X plus b Y equals a times the expected value of X plus b times the expected value of Y. That last clause is the trick, and it is the most overlooked fact in all of probability. Most operations you know require independence or some special structure. Linearity of expectation does not. X and Y can be the same coin flip counted twice, two assets that move in lockstep, or two utterly unrelated numbers. The expected value of their weighted sum is always the same weighted sum of their expected values.
+:::
+
+## Why It Is True
+
+- Expectation is a weighted average; averaging is linear
+- Sum over the *joint* distribution; cross-terms drop out
+- The joint structure is accounted for, then vanishes
+- Adversarial test: let $Y = X$, perfectly dependent
+
+::: notes
+Why is it true? Think of expectation as a weighted average, where the weights are probabilities. Averaging is a linear operation: double every value and the average doubles; add two columns of numbers row by row and average, and you get the same thing as averaging each column and adding. When you write the expected value of a X plus b Y, you sum over the joint distribution, weighting each value by how often the pair actually occurs. The joint structure is fully accounted for, and it simply drops out. To see the cross-terms vanish, take the most adversarial case: let Y equal X, two perfectly dependent variables. Then the expected value of X plus X is two times the expected value of X, which is exactly the expected value of X plus the expected value of Y. The rule holds even though X and Y could not be less independent.
+:::
+
+## Expectation Forgives, Variance Does Not
+
+- $\operatorname{Var}(X + X) = 4\operatorname{Var}(X)$, not $2\operatorname{Var}(X)$
+- Maya: $\mathbb{E}[R_1]=0.08$, $\mathbb{E}[R_2]=0.04$, even split gives $0.06$
+- Expected return is a straight line in the weight
+- Nonlinear functions get no free pass: Jensen's inequality
+
+::: notes
+Now contrast variance. The variance of X plus X is the variance of two X, which is four times the variance of X — emphatically not two times the variance of X. Expectation forgives dependence; variance does not. That contrast is the hinge of the whole chapter. A number for Maya: suppose asset one has expected return eight percent and asset two has expected return four percent. If she puts a fraction w in asset one and the rest in asset two, her portfolio return is the weighted sum. At an even split, linearity gives expected return six percent, no matter how the assets are related. Expected return is easy; it is a straight line in the weight. The trap is assuming the same free pass extends to nonlinear functions. The expected value of X times Y need not equal the product of the expected values, and the expected value of a nonlinear function need not equal that function of the mean — that gap is Jensen's inequality. Variance involves a square, so the next part is not a one-liner.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Linearity of expectation** holds for any $X$ and $Y$, related or not: the expected value of a weighted sum is the weighted sum of expected values. So expected portfolio return is a simple straight line in the weight. Variance is different — it involves a square. Next: the algebra of variance and covariance.
+:::
+
+::: notes
+To summarize part one: linearity of expectation holds for any X and Y, related or not — the expected value of a weighted sum is the weighted sum of expected values. That makes expected portfolio return a simple straight line in the weight. Variance is a different animal because it involves a square, and dependence will not get a free pass there. In part two we define variance and covariance and start building the algebra Maya's whole problem rides on.
+:::

@@ -1,0 +1,72 @@
+---
+title: "Writing a One-Proportion Test From Scratch"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Writing a One-Proportion Test From Scratch {.title}
+
+::: notes
+Welcome back to Lab one, part four of seven. In part three you built the sampling distribution of p-hat and watched it tighten and go normal. Now you build the decision machine of the hypothesis-testing chapter with your own hands, specialized to a proportion. Sam's question is simple: is the coin fair? You will frame it as a formal test, write the z-statistic, compute a p-value, and check yourself against a library.
+:::
+
+## Frame Sam's Question
+
+- Null $H_0: p = p_0$; alternative $H_1: p \neq p_0$
+- Use $p_0 = 0.5$ for a fairness test
+- Two-sided alternative — the honest default
+- Same idea as a t-statistic: estimate minus null over SE
+- But for a large-sample proportion we use a **z-statistic**
+
+::: notes
+Frame Sam's question as a formal test. The null is that p equals p-naught; the alternative is that p is not equal to p-naught. For a fairness test, set p-naught to one-half. We use a two-sided alternative — the honest default, because a biased coin could land heavy in either direction. The test statistic is the same idea as the t-statistic: estimate, minus null value, divided by standard error. But for a large-sample proportion we use a z-statistic rather than a t, because under the null the standard error is known exactly — it uses p-naught, not an estimated sample standard deviation.
+:::
+
+## The Z-Statistic
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{p_0(1 - p_0)/N}}$$
+
+- Denominator uses $p_0$ — the null value — deliberately
+- Under $H_0$ we pretend $p = p_0$ is true
+- By the CLT, $z \xrightarrow{d} N(0,1)$ under $H_0$
+- Two-sided p-value: the normal area beyond $|z|$
+- `p_value = 2 * stats.norm.sf(abs(z))`
+
+::: notes
+Here is the z-statistic: p-hat minus p-naught, all divided by the square root of p-naught times one minus p-naught, over N. The denominator uses p-naught — the null value — deliberately. Under the null we are pretending that p equals p-naught is true, so we plug in the null value's standard error, not an estimate from the data. By the Central Limit Theorem, this z converges in distribution to the standard normal under the null. So for a two-sided test at level alpha, the p-value is the two-tailed normal area beyond the absolute value of z. In code that is two times stats dot norm dot s-f of the absolute value of z, where s-f is the upper-tail survival function.
+:::
+
+## Write It and Cross-Check It
+
+- Fill in the `se0` and `z` lines yourself
+- Test one honest coin and one rigged coin
+- `scipy` has no z-test, but `binomtest` is an exact cross-check
+- At $N=200$ your z-test and `binomtest` should agree closely
+- Wildly different means a bug in `se0` or `z`
+
+::: notes
+Now write it. The function takes the array of flips and the null value p-naught. You fill in two lines yourself — the standard error under the null, and the z-statistic — because those are the heart of the test. Test it on one honest coin and one rigged coin, then check against a library. Scipy does not ship a one-proportion z-test directly, but the exact binomtest is a good cross-check: pass it the number of heads, the sample size, and the null probability. At N equal to two hundred, your hand-coded p-value and binomtest should agree closely. They will not be identical, because your z-test is the large-sample normal approximation while binomtest is exact, but they should be close. If they are wildly different, your standard-error line or your z line has a bug.
+:::
+
+## What to Expect, and Why $p_0$ Belongs
+
+- Fair coin: usually a large, insignificant p-value
+- Rigged coin ($p=0.62$, $N=200$): usually rejects
+- A p-value is computed *assuming the null is true*
+- So the null's SE — using $p_0$ — belongs in the denominator
+- This is what separates a test's SE from a CI's SE
+
+::: notes
+What to expect. The fair coin should usually return a large, insignificant p-value; the rigged coin, with true p of zero point six two and N of two hundred, should usually reject. Now the reflection. You used p-naught in the standard error, not p-hat. Why? Argue from the definition of a p-value: it is the probability of a result this extreme, computed assuming the null is true. If you assume the null is true, the standard error must be the one the null implies — built from p-naught. That is exactly what distinguishes a test's standard error, which uses the null value, from a confidence interval's, which uses p-hat. Same data, different question, different denominator.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The one-proportion z-test is the familiar estimate-minus-null-over-standard-error machine, with the denominator $\sqrt{p_0(1-p_0)/N}$ built from the **null** value. It matches the exact `binomtest` closely at $N=200$. The null belongs in the denominator because a p-value is computed *assuming the null is true*. Next: measure whether the test really fires at rate $\alpha$.
+:::
+
+::: notes
+To summarize part four: the one-proportion z-test is the same estimate-minus-null-over-standard-error machine you already know, with the denominator built from the null value — the square root of p-naught times one minus p-naught over N. It matches the exact binomtest closely at N equal to two hundred. And the null value belongs in the denominator precisely because a p-value is computed assuming the null is true. You wrote a real test with your own hands. In part five we do something a textbook cannot: we measure whether the test actually fires at the advertised rate alpha.
+:::

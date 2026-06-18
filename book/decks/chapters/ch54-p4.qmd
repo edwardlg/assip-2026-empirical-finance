@@ -1,0 +1,57 @@
+---
+title: "Reading the Tables Column by Column"
+date: "2026-07-20"
+---
+
+# Reading the Tables Column by Column {.title}
+
+::: notes
+Welcome back to Chapter five-point-four, part four of seven. In part three we met the workhorse fabricated data and the firm-effect, time-effect, both taxonomy that is your panel diagnostic. Now we put it to work. A professional does not read this paper front to back; there is an order that gets you to the argument fastest. The core skill is reading the simulation tables column by column, anchored on a single row, and we practice it now.
+:::
+
+## Anchor on the True-SE Ruler, Then OLS
+
+- Read the simulation tables **column by column**, one row at a time
+- Find the **true SE** column — this is your ruler
+- Find **OLS:** under a firm effect, it sits **far below** true SE
+- OLS standard errors are badly biased **downward**
+- Ratio often $\approx \tfrac12$ $\Rightarrow$ t-stats inflated by $\sqrt{2}$ or more
+
+::: notes
+Read the simulation tables column by column, anchoring on a single row and reading across. Step one: find the true SE column. This is your ruler; every other number is judged by how close it comes. Step two: find the OLS column. Under a firm effect, the OLS standard error sits far below the true SE — the canonical, well-established result that OLS errors are badly biased downward when a firm or time effect is present. The ratio of estimated to true is often around one-half or worse, which means your t-statistics are inflated by roughly the square root of two or more. A CHECK tag: read the precise ratios off his tables, do not quote a number from memory.
+:::
+
+## "Robust" Does Not Mean Robust to Everything
+
+- **White / HC:** also badly biased downward — barely better than OLS
+- White fixes unequal variances (the **diagonal** of $\boldsymbol\Omega$)
+- It is **blind** to within-cluster correlation (the off-diagonals)
+- The single most important **gotcha** in the paper
+- **Cluster-by-firm:** under a firm effect, this one **matches** the truth
+
+::: notes
+Step three: find the White, or heteroskedasticity-robust, column. The crucial and surprising finding is that White standard errors are also badly biased downward under a firm or time effect — barely better than OLS. White errors fix unequal variances, the diagonal of the error covariance matrix Omega, but they are blind to the within-cluster correlation, the off-diagonals, that the firm effect creates. This is the single most important gotcha in the paper: "robust" does not mean "robust to everything." Step four: find the cluster-by-firm column. Under a firm effect, this is the one that matches the true SE, and coverage returns to roughly nominal. The method whose assumed correlation structure matches the true one is the method that works.
+:::
+
+## The Symmetry and the Historical Fixes
+
+- **Time-effect panel:** cluster-by-**time** matches; cluster-by-firm fails
+- **Fama–MacBeth** corrects a **time** effect, not a firm effect
+- Wrong tool when the **firm** effect dominates (the corporate-finance case)
+- **Newey–West** also evaluated — each silently assumes a shape for $\boldsymbol\Omega$
+- Read the **decision rule last** — as a conclusion you watched proven
+
+::: notes
+Step five: read the time-effect panel of the tables the same way — there, clustering by firm is the one that fails and clustering by time is the one that matches. That symmetry is the heart of the argument. Second, compare the historical fixes. Petersen also evaluates Fama–MacBeth, which you build in Lab Two, and Newey–West. Fama–MacBeth corrects for a time effect — it averages period-by-period cross-sectional estimates — but it does not correct for a firm effect, so it is the wrong tool when the firm effect dominates, the common corporate-finance case. Reading this teaches you why the profession's chaos produced contradictory standard errors: each method silently assumes a different shape for Omega. Last, the guidance synthesis. The final tables collapse everything into the decision rule — identify the effect, cluster on that dimension; if both, cluster two ways. Read this after the simulations, so it lands as a conclusion you watched being proven.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Read column by column on the **true-SE ruler**: under a firm effect, OLS **and** White both undercover badly — White is blind to off-diagonal correlation. Only the clustering that **matches** the true structure recovers nominal coverage, and the time-effect panel shows the mirror image. Next: what's genuinely clever about the paper.
+:::
+
+::: notes
+To summarize part four: read the tables column by column against the true-SE ruler. Under a firm effect, OLS and White both undercover badly, because White's much-advertised robustness is blind to the off-diagonal correlation that actually matters; only clustering by firm — the method matching the true structure — recovers near-nominal coverage. The time-effect panel shows the mirror image, with clustering by time the winner. And the historical fixes like Fama–MacBeth fail precisely when their silent assumption about Omega is wrong. In part five we step back and name what is genuinely clever about this paper — the transferable moves you will reuse.
+:::

@@ -1,0 +1,55 @@
+---
+title: "2SLS as Frisch–Waugh–Lovell"
+date: "2026-07-06"
+---
+
+# 2SLS as Frisch–Waugh–Lovell {.title}
+
+::: notes
+Welcome back to Chapter three-point-four, part six of eight. In part five we computed Maya's Wald estimate — minus three hundred dollars per completer — for a binary instrument with no controls. Real problems have continuous treatments and many controls, so we need the general workhorse: two-stage least squares. The cleanest way to understand it, having done Chapter two-point-three, is as Frisch-Waugh-Lovell with an instrument swapped in for the contaminated regressor.
+:::
+
+## The Two Stages, Mechanically
+
+- Structural: $Y_i = \beta_0 + \beta_1 D_i + \mathbf{X}_i\boldsymbol{\gamma} + \varepsilon_i$
+- **Stage 1**: regress $D$ on $Z$ **and controls** $\to \hat{D}_i$
+- $\hat{D}_i$ = part of $D$ laundered of the confounder
+- **Stage 2**: regress $Y$ on $\hat{D}_i$ and the same controls
+
+::: notes
+Write the structural equation with controls X — exogenous covariates like age and income, things you do trust — and the endogenous treatment D. The problem is the single column D, which correlates with the error. Two-S-L-S replaces it in two steps. First stage: regress the endogenous treatment on the instrument and the controls, and keep the fitted value D-hat. That fitted value is the part of the treatment explained by Z and the controls — both uncorrelated with the error — so D-hat inherits their cleanliness. It is the slice of D laundered of the confounder; whatever motivation was hiding inside D lived in the residual, which we throw away. Second stage: regress the outcome on D-hat and the same controls. That coefficient is the I-V estimate. Because D-hat is a function of exogenous things, the zero-conditional-mean assumption is restored for the regressor we actually use, and the slope is consistent.
+:::
+
+## Why It Is FWL With an Instrument
+
+$$\hat{\beta}_1^{\text{2SLS}} = \frac{\operatorname{Cov}(\tilde{Z},\tilde{Y})}{\operatorname{Cov}(\tilde{Z},\tilde{D})}$$
+
+- Partial controls out of $Y$, $D$, **and** $Z$ — call them $\tilde{Y},\tilde{D},\tilde{Z}$
+- Use $\tilde{Z}$ to extract the trustworthy part of $\tilde{D}$
+- OLS is the broken case $Z = D$ — its own instrument
+
+::: notes
+Here is the connection to Chapter two-point-three. Recall Frisch-Waugh-Lovell: a multiple-regression coefficient on D equals the simple slope of residualized Y on residualized D, where residualized means partial the controls out of both sides. Ordinary least squares partials the controls out of D and then uses what is left — including its endogenous part — which is exactly the problem. Two-S-L-S makes one surgical change. Partial the controls out of everything — call the residualized versions Y-tilde, D-tilde, Z-tilde. But instead of regressing Y-tilde on the contaminated D-tilde, use the instrument to extract only the trustworthy part of D-tilde. The I-V slope is the covariance of Z-tilde and Y-tilde, over the covariance of Z-tilde and D-tilde. Stare at it and you recognize the Wald ratio, now living in the F-W-L world. Ordinary least squares is the special case where D is its own instrument — Z equals D — which is exactly the move that fails when D is endogenous. Two-S-L-S is F-W-L where you replace the contaminated regressor with its instrument. And the controls go in both stages identically, because F-W-L residualizes every variable against them — forgetting them in the first stage is a classic bug that quietly invalidates the cleaning.
+:::
+
+## Never Trust Hand-Rolled Standard Errors
+
+- Two stages by hand $\to$ correct **point** estimate
+- But the reported standard errors are **wrong**
+- Software treats $\hat{D}_i$ as data, not an estimate
+- Always use a dedicated routine: `IV2SLS`
+
+::: notes
+A non-negotiable warning that students learn the hard way: never run the two stages by hand and trust the standard errors. The second-stage regression on D-hat produces the correct point estimate, but its reported standard errors are wrong, because the software thinks D-hat is data when really it is an estimate carrying its own sampling noise. The right standard errors account for the first-stage uncertainty. Always use a dedicated two-S-L-S routine — linear-models' I-V-two-S-L-S — which gets the point estimate and the standard errors right in one call. Hand-rolling the two stages is for understanding, never for reporting.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**2SLS is FWL with an instrument**: partial out the controls, then regress on the laundered $\hat{D}$ instead of the contaminated $D$. Controls go in **both** stages. Get the point estimate by hand to understand it — but report standard errors only from `IV2SLS`. Next: *whose* effect is it? The LATE.
+:::
+
+::: notes
+To summarize part six: two-stage least squares is Frisch-Waugh-Lovell with an instrument. Partial the controls out of every variable, then regress on the laundered fitted treatment D-hat instead of the contaminated D — the first stage is the residualize-and-project step, the second stage is the simple slope on the cleaned regressor. Controls belong in both stages identically. You can run the two stages by hand to understand the point estimate, but report standard errors only from a dedicated routine like I-V-two-S-L-S. In part seven we confront the deepest idea in the chapter: even when everything works, whose effect did you actually estimate? The answer is the local average treatment effect — the LATE.
+:::

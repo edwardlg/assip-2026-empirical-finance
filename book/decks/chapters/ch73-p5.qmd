@@ -1,0 +1,58 @@
+---
+title: "Falsification, Robustness, and the Hold-Out"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Falsification, Robustness, and the Hold-Out {.title}
+
+::: notes
+Welcome back to Chapter seven-point-three, part five of eight. In part four we governed the army of tests with a primary hierarchy and the Benjamini-Hochberg procedure. Now the last two components — falsification and planned robustness — and the discipline that makes the plan work: registering before you peek, starting with the hold-out sample. These are the parts beginners skip.
+:::
+
+## Component 4 — What Would Falsify It
+
+- For each hypothesis, name the result that makes you **abandon** it
+- A claim no result could contradict is a mood, not science
+- Maya: H1 falsified if the 95% CI contains zero **and** excludes ≥2 points
+- A wide CI that merely includes zero is a **power** failure, not refutation
+- Pre-commits you to believing your own null
+
+::: notes
+Component four is the one beginners skip: for each hypothesis, write the result that would make you abandon it — not fail to confirm, but falsify. A hypothesis no result could contradict is not a claim, it is a mood. For Maya's H1: if the ninety-five percent confidence interval for the gap contains zero and excludes economically meaningful values — say two percentage points or more — she concludes the data do not support a conditional gap, and she says so. Note the care: a wide interval that merely includes zero is a power failure, reported as inconclusive, not a refutation. Writing falsification in advance pre-commits you to believing your own null — and the biggest reason p-hacking happens is that researchers cannot stomach a null. Having written, in a dated file, here is the result I will accept as a no, you inoculate yourself before the temptation arrives.
+:::
+
+## Component 5 — Planned Robustness
+
+- List the robustness checks you **plan** — labeled as planned
+- Maya: re-cluster by county, drop 2020, add rate-spread, top 50 lenders
+- Each is a fork she chooses to walk **deliberately, in advance**
+- Commit to **reporting it whichever way it comes out**
+- Robustness is a stress test you promised — not a search for confirmation
+
+::: notes
+Component five lists the robustness checks you plan to run, labeled as planned to distinguish them from post-hoc robustness you might add later. A planned check is part of your confirmatory design; a post-hoc one discovered later is exploratory. Maya's planned list: re-cluster by county, drop 2020 for COVID disruption, add the continuous rate-spread outcome alongside the binary denial outcome, and restrict to the fifty largest lenders to check the result is not driven by thin-data small lenders. Each is a fork she is choosing to walk deliberately and in advance, which converts it from a p-hacking liability into a strength. The key discipline: a planned robustness check is one whose result you commit to reporting whichever way it comes out. If H1 holds in the main spec but evaporates under county clustering, the plan obligates her to say so. Robustness is not a search for confirmation; it is a stress test you promised to report honestly.
+:::
+
+## The Hold-Out Sample
+
+- Prospective study: the future is your hold-out — no peeking possible
+- Maya's data already exist, so she **splits** it
+- 30% exploration · 70% confirmation, split on a hashed loan-id
+- Play freely in exploration: tune, fish, design the spec there
+- Run the frozen primary spec **once** on the untouched 70%
+
+::: notes
+The five components are what you write; the discipline is when — before you have looked at your outcomes. The cleanest way to stay honest is to never let the confirmatory data touch your eyes during design. Two routes. If your study is prospective — you write the plan before the data even exist — the future is your hold-out. Maya's HMDA data already exist and she could peek, so she uses the second route, a hold-out sample. She partitions her extract — say thirty percent exploration and seventy percent confirmation — splitting on a hash of the loan identifier, so the split is reproducible and pinned. She is free to play in the exploration set: run regressions, tune the specification, even p-hack, because nothing there is confirmatory. Then she freezes the plan, files it, and only then runs the frozen primary specification once on the untouched seventy percent. The hold-out converts don't-peek from superhuman willpower into a mechanical fact — she never saw the confirmation data to tune against it.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Falsification** names the result that would make you abandon a hypothesis — phrased to separate a refutation from a power failure. **Planned robustness** you report either way. And a **hold-out** makes "don't peek" mechanical: design on 30%, confirm once on the untouched 70%. Next: time-stamping the plan and logging deviations.
+:::
+
+::: notes
+To summarize part five: falsification conditions name the pattern that would make you abandon a hypothesis, phrased to separate a genuine refutation from a mere power failure. Planned robustness checks convert dangerous forks into strengths because you promise to report them either way. And the hold-out makes don't-peek mechanical: design on the thirty percent exploration set, then run the frozen spec once on the untouched seventy percent. In part six we register the plan credibly — time-stamping it as a tagged Git commit and keeping an honest deviation log — then read Maya's whole assembled plan.
+:::

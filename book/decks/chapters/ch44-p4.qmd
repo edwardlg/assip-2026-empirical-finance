@@ -1,0 +1,57 @@
+---
+title: "Why Convexity: No Extrapolation, Sparse Weights"
+date: "2026-07-13"
+---
+
+# Why Convexity: No Extrapolation, Sparse Weights {.title}
+
+::: notes
+Welcome back to Chapter four-point-four, part four of ten. In part three we set up the matching problem and its two constraints: non-negative weights that sum to one, making the synthetic control a convex combination of donors. Now we see exactly what that convexity buys — no extrapolation, sparse weights — and walk a worked number that makes it concrete.
+:::
+
+## No Extrapolation
+
+- Synthetic premium stays **inside** the range of donor premiums
+- Never higher than the priciest donor, never lower than the cheapest
+- Contrast: regression is *unconstrained* — any sign, any size, extrapolates
+- Unconstrained fit can be *perfect* in-sample — a fantasy that explodes after
+- Convexity is a handcuff: live inside the **convex hull** of the donors
+
+::: notes
+Why constrain things this way? Because a convex combination cannot extrapolate. The synthetic premium is always boxed inside the range of the donor premiums: it can never be higher than the most expensive donor or lower than the cheapest. Contrast this with ordinary regression, which is an unconstrained linear combination — coefficients can be any sign, any size — and which routinely predicts outside the range of the data. If you regressed the treated state's pre-period premium on the donors with no constraints, you could fit the pre-period perfectly using wild positive and negative coefficients that exploit accidental correlations. That perfect fit would be a fantasy: it interpolates the noise and then explodes out-of-sample in the post-period. The convexity constraint is a deliberate handcuff that says the synthetic control may only live inside the convex hull of the real donors. You buy stability and honesty at the cost of fit. Sometimes you simply cannot match the treated unit well, and that is the constraint telling you the truth.
+:::
+
+## Sparsity: Weights You Can Name
+
+- Optimal weights are usually **sparse** — most donors get exactly zero
+- A handful carry the synthetic control
+- E.g. 0.46 Oregon, 0.31 Colorado, 0.18 Arizona, 0.05 New Mexico
+- Comes from optimizing over the **simplex** — corners are single donors
+- Reads less like regression, more like **matching** (Chapter 3.2)
+
+::: notes
+A second gift of convexity is interpretability through sparsity. The optimal weights are typically sparse — most donors get weight exactly zero, and a handful carry the synthetic control. Priya might find her synthetic state is zero-point-four-six Oregon, zero-point-three-one Colorado, zero-point-one-eight Arizona, zero-point-zero-five New Mexico, and zero elsewhere — a sentence she can write in a paper and defend. Where does the sparsity come from? It is a feature of optimizing a convex objective over the simplex — the set of non-negative weights summing to one, whose corners are the individual donors. Minimizing a sum of squares over that geometry pushes the solution toward a few donors and zeros out the rest, the same way a constrained portfolio optimizer concentrates in a few assets. This is the deep reason synthetic control reads less like a regression and more like matching from Chapter three-point-two: it selects and weights a small comparison set.
+:::
+
+## A Worked Number, and the DiD Link
+
+- Treated $\mathbf{X}_1=(12,13,14)$; donors with various paths
+- Try $\mathbf{w}=(0.5,0,0.5)$ → synthetic $(10.5,11.5,12.5)$, SS $= 6.75$
+- Try $\mathbf{w}=(0,0,1)$ → synthetic $(11,12,13)$, mismatch $(1,1,1)$, SS $= 3$
+- Middle donor $(16,17,18)$ is far above → driven to weight **zero**
+- **DiD is synthetic control with weights frozen equal** ($w_j = 1/J$)
+
+::: notes
+Now a worked number with three pre-periods and three donors. Suppose the treated state's pre-period premiums, in hundreds of dollars, are twelve, thirteen, fourteen. Try weights one-half on the first donor, zero on the second, one-half on the third: the synthetic premiums come out to ten-and-a-half, eleven-and-a-half, twelve-and-a-half, a mismatch of one-point-five at each year, sum of squares six-point-seven-five. Now try all weight on the third donor: synthetic eleven, twelve, thirteen, mismatch one at each year, sum of squares three. Better. The middle donor, far above the treated state at sixteen, seventeen, eighteen, gets driven to zero — including it would only push the synthetic average up and away. The optimizer refuses something absurd that might fit better in-sample. That refusal is the feature. And tie it back to Chapter four-point-one: diff-in-diff is synthetic control with the weights frozen at equality, one over J on every donor, hoping that equal average shares the treated trend. Synthetic control says don't hope — optimize so the pre-trends coincide, and report the match.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Convexity** forbids extrapolation — the synthetic unit stays inside the donor range — and yields **sparse** weights you can name in a sentence. You pay in fit, and that refusal to lie is the feature. Diff-in-diff is the special case with equal weights; synthetic control *optimizes* them.
+:::
+
+::: notes
+To summarize part four: the convexity constraint is the method's conscience. It forbids extrapolation beyond the donors and forbids faking a fit with wild offsetting coefficients, and it tends to produce sparse weights you can name in a single sentence. You pay in fit — sometimes you cannot match a treated unit at the edge of the donor distribution — and that refusal to lie is the feature. Diff-in-diff is just the special case where the weights are frozen equal. In part five we choose the donor pool itself and state the assumptions that protect it.
+:::

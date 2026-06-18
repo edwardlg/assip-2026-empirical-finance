@@ -1,0 +1,46 @@
+---
+title: "Placebo Tests: Fake Units and Fake Outcomes"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Placebo Tests: Fake Units and Fake Outcomes {.title}
+
+::: notes
+Welcome back to Chapter eight-point-two, part five of ten. In part four we ran the in-time placebo — a fake treatment date in the pre-period — to expose differential pre-trends. Now the other two placebo flavors: permuting the units instead of the dates, and swapping in an outcome the program cannot possibly move. Both share the same logic — find nothing where nothing can be — and both end on the same uncompromising rule: a failed placebo must be reported.
+:::
+
+## Fake Treatment Units: The In-Space Placebo
+
+- Assign fake "adoption" to states that **never** adopted
+- Re-estimate, repeat across many random reassignments
+- Build a distribution of placebo effects; locate the **real** one in it
+- **Pass:** real effect in the extreme tail — permutation $p < 0.05$
+- **Fail:** real effect buried in the middle of the placebo cloud
+
+::: notes
+Now permute units instead of time. Assign fake adoption to states that never actually adopted, re-estimate, and repeat across many random reassignments to build a distribution of placebo effects. Then locate the real effect in that distribution. What it probes: whether an effect of Maya's magnitude shows up routinely when treatment is assigned at random — the synthetic-control-style inference of Chapter four-point-four, and the right inference when clusters are too few for the t-approximation. Pass: the real effect sits in the extreme tail of the placebo distribution — say, more extreme than ninety-five percent of placebos, a permutation p-value below zero-point-zero-five. Fail: the real effect is buried in the middle of the placebo cloud — plenty of randomly assigned treatments produce effects just as big — so it is not distinguishable from noise. The placebo distribution is the honest summary of uncertainty here.
+:::
+
+## Fake Outcomes, and Why Honesty Is Not Optional
+
+- Pick an outcome the program **cannot** plausibly move
+- e.g. a denial gap for a loan category **exempt** from exams
+- **Pass:** no effect — rules out a broad shock that moves everything
+- **Fail:** program "moves" what it can't touch — something else drives adopters
+- A placebo is a **prediction of where you find nothing** — report failures
+
+::: notes
+Finally, fake outcomes. Pick an outcome the treatment should have no plausible channel to move, but that shares the same data structure — Maya might use the denial gap for a loan category exempt from fair-lending examination. Pass: no effect on the placebo outcome, which rules out a broad confounder — a general economic shock to adopting states — that would have moved everything. Fail: the program moves an outcome it cannot mechanically affect, a tell that something other than the program is driving adopting states, and your effect is riding on it. The unifying point: a placebo test is a prediction your theory makes about where you should find nothing, and reporting a failed placebo is not optional. Referees run placebos in their heads as they read. A paper that omits the obvious one reads as evasive; a paper that reports a failed one and grapples with it reads as honest. You ran the placebo to find the truth, not to collect a pass.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The in-space placebo permutes treatment across untreated units; your real effect must sit in the tail of the placebo cloud. The fake-outcome placebo rules out a broad confounder. A placebo predicts where you should find nothing — so reporting a failed one is mandatory, not optional.
+:::
+
+::: notes
+To summarize part five: the in-space placebo permutes treatment across units that never adopted, building a distribution your real effect must land in the tail of — if it is buried in the middle, it is indistinguishable from noise. The fake-outcome placebo swaps in an outcome the program cannot touch; finding an effect there exposes a broad confounder driving adopting states. Across all three placebo flavors, the rule is the same: a placebo is a prediction about where you should find nothing, so a failed placebo is a finding you must report, never bury. In part six we move to sensitivity analysis — the arbitrary knobs your result might secretly be hostage to.
+:::

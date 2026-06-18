@@ -1,0 +1,58 @@
+---
+title: "Identification, Specification, Exposition"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Identification, Specification, Exposition {.title}
+
+::: notes
+Welcome back to peer review and revision, part three of twelve. In part two we opened the report with a summary in our own words and the single biggest concern. Now we finish the skeleton — the three remaining tiers, in order: identification threats, then specification and robustness, then exposition last. The ranking is the whole point.
+:::
+
+## Identification Threats, by Danger
+
+- After the biggest concern, work the rest of the threats
+- Pure Week-Five reading: the Chapter seven-point-five menu
+- For DiD: pre-trends, anticipation, the forbidden comparison
+- For each: addressed? convincingly? what evidence settles it?
+- This is the heart of the report
+
+::: notes
+Step two: identification threats, in descending order of danger. This is the heart of the report and it is pure Week-Five reading. For the design the author chose, what is on the standard menu of failures from Chapter seven-point-five? For a difference-in-differences, that menu is pre-trends, anticipation, and, in staggered designs, the forbidden comparison of already-treated units. Go threat by threat and ask, for each: did the author address it, did they address it convincingly, and if not, what specific evidence would settle it? Having led with the biggest one, you work down through the rest of the threats to the causal — or at least credible — interpretation.
+:::
+
+## Specification Is Downstream
+
+- Granting the design, is the estimate fragile?
+- Standard errors clustered where the treatment varies?
+- Does the coefficient survive the march across columns?
+- Are placebo and falsification tests run?
+- A clean error on no design is precise nothing
+
+::: notes
+Step three: specification and robustness. Below identification sit the questions of whether, granting the design, the estimate is fragile. Are the standard errors the right flavor — clustered at the level the treatment varies, as Petersen and Bertrand, Duflo, and Mullainathan drilled in Week Five? Does the headline coefficient survive the march across columns as controls are added, the specification curve from eight-point-one, or does it collapse? Are the obvious placebo and falsification tests run, from eight-point-two? Is the multiple-testing problem handled if the author reports many outcomes? These are real and they matter, but they are downstream of identification: a perfectly clustered standard error on a coefficient with no credible design is a precise estimate of nothing.
+:::
+
+## Exposition Goes Last
+
+- Last come the writing issues
+- An intro that overclaims relative to the tables
+- A results section that narrates instead of interprets
+- Tables that violate the conventions, a figure with no labels
+- Fixing prose on a fatal design is rearranging deck chairs
+
+::: notes
+Step four: exposition, last. Last come the writing issues — an introduction that overclaims relative to the tables, a contribution sentence you cannot find, a results section that narrates the coefficients instead of interpreting them, tables that violate the Appendix D conventions, a figure with no axis labels. Exposition matters — a paper a reader cannot follow is a paper a reader will not believe — but it goes last because fixing prose on a paper with a fatal design is rearranging deck chairs. Put it last so the author reads it last, after they have absorbed what actually matters. Notice this is the exact inversion of how the author experiences the paper: they spent the most time on prose and the least on naming their own worst threat. A good report reverses that ranking and hands it back. That reversal is the gift.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+After the biggest concern, finish the skeleton in order: **identification threats by danger** (the heart), then **specification and robustness** (downstream — a clean standard error on no design is precise nothing), then **exposition last**. The report inverts how the author experienced the paper — and that reversal is the gift. Next: major versus minor, and the verdict.
+:::
+
+::: notes
+To summarize part three: after the biggest concern, work the remaining identification threats in descending order of danger — pre-trends, anticipation, the forbidden comparison — asking for each whether it was addressed convincingly and what evidence would settle it. Then specification and robustness, which are downstream: standard errors, the specification curve, placebos. A clean standard error on a design with no credibility is a precise estimate of nothing. Then exposition, last, so the author reads it after absorbing what matters. The whole report inverts how the author experienced the paper, and that reversal is the gift. In part four we sort every point into major or minor and render a calibrated verdict.
+:::

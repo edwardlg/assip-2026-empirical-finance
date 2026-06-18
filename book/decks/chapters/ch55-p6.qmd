@@ -1,0 +1,57 @@
+---
+title: "What's Vulnerable About BDM"
+date: "2026-07-20"
+---
+
+# What's Vulnerable About BDM {.title}
+
+::: notes
+Welcome back to Chapter five-point-five, part six of seven. In part five we admired what is clever: the placebo design, the number, and the working fixes. Now a good reader pushes back. There are real soft spots, and notably most of them are about the cures, not the diagnosis. The indictment itself is robust; the remedies come with fine print.
+:::
+
+## The Few-Clusters Problem
+
+- Clustering and block bootstrap both need *many* clusters
+- Rule of thumb: thirty to fifty
+- Cluster-robust formula learns correlation *across* clusters
+- Few clusters: not enough variation to estimate it
+- Many real DiD designs have very few treated units
+
+::: notes
+The first vulnerability is the few-clusters problem, which BDM themselves flag and which Week Four hammered home. The clustering fix and the block bootstrap both rely on having many clusters; the rule of thumb is thirty to fifty, because the cluster-robust formula estimates the within-cluster correlation from variation across clusters, and with few clusters there simply is not enough of it. With the fifty United States states you are roughly in the safe zone. But a great many real difference-in-differences designs have far fewer treated units. Recall Priya's single treated state, and Card and Krueger's essentially one. In the small-number-of-clusters regime, the very fix BDM recommend can itself over-reject, and you need further corrections, like the wild cluster bootstrap of Cameron, Gelbach, and Miller, two thousand eight, or few-cluster t adjustments. So the cure is not universal; it is a large-number-of-clusters cure.
+:::
+
+## The Power Cost of Collapsing
+
+- Averaging to pre/post buys honest *size*
+- But size and power trade off, Week One's lesson
+- Discarding within-period variation weakens detection
+- Type Two error rises: you miss real effects
+- Safest for false positives, weakest for finding signals
+
+::: notes
+The second vulnerability is the power cost of collapsing to two periods. Averaging the panel down to pre and post buys honest size, but Week One reminds you that size and power trade off, and you cannot drive both errors to zero with fixed data. By discarding the within-period time variation, you weaken the test's ability to detect a true effect when one exists, so Type Two error rises. Collapsing is the safest fix for false positives and one of the weakest for finding real signals. Which matters more depends on whether your study is more endangered by crying wolf or by missing a real wolf. There is no free lunch here: every fix that protects you from false positives by throwing away information also makes genuine effects harder to see, and the collapse is the starkest version of that bargain.
+:::
+
+## Dependence on Panel Length and Structure
+
+- Headline numbers tied to BDM's specific CPS panels
+- Weaker autocorrelation or shorter panels: different magnitude
+- The exact figure is a property of *this* data, not a constant
+- Qualitative lesson is robust; the precise magnitude travels less well
+- Treat any single number as illustrative, not a law
+
+::: notes
+The third vulnerability is dependence on the panel's length and structure. BDM's headline numbers are tied to the specific autocorrelation and the specific length of the Current Population Survey panels they used. A different outcome with weaker serial correlation, a shorter panel, or a different treatment-timing structure would over-reject by a different amount, so the precise figure is not a universal constant but a property of this data-generating process. The qualitative lesson, that ignoring serial correlation inflates significance and that the longer and more persistent the panel the worse it gets, is robust. The exact magnitude travels less well, and a careful reader should treat any single number as illustrative of a mechanism rather than a law of nature. Hold the lesson firmly and the specific percentage loosely.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+BDM's **diagnosis** is robust; its **cures** carry fine print. Clustering and block bootstrap need many clusters (thirty to fifty), so few-treated-unit designs need extra corrections. Collapsing buys size by spending power. And the headline magnitude is a property of *this* panel, not a constant — keep the lesson, loosen the number. Next: build it yourself.
+:::
+
+::: notes
+To summarize part six: BDM's diagnosis is robust, but its cures carry fine print. First, clustering and the block bootstrap need many clusters, thirty to fifty, so the many designs with few treated units need extra corrections like the wild cluster bootstrap. Second, collapsing to pre and post buys honest size by spending power, raising Type Two error. Third, the headline magnitude is a property of this specific panel, not a universal constant, so keep the qualitative lesson and loosen the exact number. In part seven we turn all of this into code, with three replication exercises that rebuild BDM's headline on your own laptop.
+:::

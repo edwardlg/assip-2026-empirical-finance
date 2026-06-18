@@ -1,0 +1,58 @@
+---
+title: "The Threats-and-Responses Table"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# The Threats-and-Responses Table {.title}
+
+::: notes
+Welcome back to the identification memo, part five of nine. In part four we finished the threat menu and learned to pull our design's row as a starting list. Now we build the table that holds those threats — the operational heart of the memo — and we learn the single most important conceptual distinction in the chapter: some threats you can test, and some you can only argue.
+:::
+
+## Four Columns That Force Honesty
+
+- **Threat:** the named failure, one phrase — *not* "endogeneity"
+- **Why it's plausible:** the concrete story making it real here
+- **What we do about it:** the test or design choice, with expected result
+- **Residual concern:** the honest leftover after you've done everything
+- Blank residual column = you are not being honest
+
+::: notes
+Build the table as a literal Markdown table, because its rigid shape forces honesty. It has exactly four columns. Column one, the threat: the named failure of your identifying assumption, in one phrase, pulled from the menu — not the word endogeneity. Column two, why it's plausible: one sentence on the concrete story under which this threat is real in your setting; if you cannot tell a plausible story, the threat is a strawman and does not belong. Column three, what we do about it: the specific test, design choice, or robustness check, with the expected result that would reassure a reader. Column four, residual concern: what still worries you after you have done everything in column three. The honest leftover. If that fourth column is blank, you are not being honest.
+:::
+
+## The Fourth Column And Row Order
+
+- A table of all-"none" residuals is *less* credible, not more
+- Every real design has residual concerns
+- Point: show you *saw*, *engaged*, and *bounded* the threats
+- Order rows in **descending danger** — deadliest first
+- Burying your worst threat reads as evasion
+
+::: notes
+The fourth column is the one students want to leave empty, and it is the one a good mentor reads first. A threats table whose residual-concern column is all "none" is not a stronger paper — it is a less credible one, because every real design has residual concerns, and a reader who sees none assumes you have not looked hard enough. The point of the table is not to pretend the threats are vanquished; it is to show you have seen them, engaged them, and bounded what remains. That is what intellectual honesty looks like on a page, and it is the single trait that most distinguishes a paper a referee trusts from one they do not. One practical note on ordering: put your rows in descending order of danger. The first row should be the threat that, if true, would most cleanly kill the paper — the one a seminar audience asks about in the first ninety seconds. Burying your most serious threat in row four reads as evasion; leading with it reads as confidence.
+:::
+
+## Test It Or Argue It
+
+- The distinction that organizes columns three and four
+- **Some threats leave fingerprints; some do not**
+- Fingerprints → you *test*; no fingerprint → you *argue*
+- Testing the untestable, or arguing the checkable: the classic error
+- Match the response to the *nature* of the threat, every time
+
+::: notes
+Here is the distinction that organizes the entire third and fourth columns, and it is the most important conceptual point in the chapter. Some threats leave fingerprints in the data, and some do not. The ones that do, you test. The ones that do not, you argue. Confusing the two — running a test for something fundamentally untestable, or arguing your way around something you could simply have checked — is the most common error in a weak identification memo. So for every threat in your table, decide first whether it is testable or arguable, and put the right kind of thing in column three. A memo that runs a clever test against an untestable threat advertises that the author does not understand their own design. A memo that argues past a threat it could have tested looks lazy.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The table has **four columns** — threat, why it's plausible, what we do about it, residual concern — and the rigid shape forces honesty. Never leave the residual column blank; lead with your deadliest threat. The organizing question for every row: is this threat **testable or arguable**? Next: the canonical tests and the canonical arguments.
+:::
+
+::: notes
+To summarize part five: the threats-and-responses table has four columns — threat, why it's plausible, what we do about it, and residual concern. Its rigid shape forces honesty, because every threat must have a response and every response must end in a residual concern, so you cannot quietly drop the threats you have no answer for. Never leave the residual column blank — an all-"none" table is less credible, not more — and order your rows by descending danger, deadliest first. The organizing question for every row is whether the threat is testable or arguable. In part six we name the canonical four testable threats and the canonical untestable ones, so you always put the right kind of thing in column three.
+:::

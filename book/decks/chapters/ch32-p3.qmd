@@ -1,0 +1,54 @@
+---
+title: "The Conditional Independence Assumption"
+date: "2026-07-06"
+---
+
+# The Conditional Independence Assumption {.title}
+
+::: notes
+Welcome back to Chapter three-point-two, part three of eleven. In part two we named selection bias as the gap in the untreated outcome between the groups. Now we state the assumption that erases it — the Conditional Independence Assumption — read its symbols carefully, and prove that, under it, the within-cell comparison is a clean causal effect.
+:::
+
+## State the Assumption
+
+- CIA, a.k.a. unconfoundedness, selection on observables
+- $\{Y_i(1),\, Y_i(0)\} \perp\!\!\!\perp D_i \mid \mathbf{X}_i$
+- Read $\perp\!\!\!\perp$ as "is independent of"
+- Condition on $\mathbf{X}_i$: treatment carries no extra info on outcomes
+
+::: notes
+Start with the result in one sentence: if treatment is as good as randomly assigned once you hold a set of observed characteristics X-i fixed, then within any group of applicants who share the same X-i, the difference in average outcomes between treated and untreated is the causal effect. Formally this is the Conditional Independence Assumption, also called unconfoundedness or selection on observables. In symbols: the pair Y-i of one and Y-i of zero is independent of D-i, conditional on X-i. Read the double-perpendicular symbol as "is independent of." In words: once you condition on the observed covariates, whether someone got treated carries no further information about their potential outcomes.
+:::
+
+## CIA Versus Randomization
+
+- A randomized trial gives independence *unconditionally* — no $\mathbf{X}$ needed
+- CIA asks for less: independence only *within* cells of $\mathbf{X}$
+- And more: you must have *measured the right* $\mathbf{X}$
+- "Randomization, conditional on the covariates"
+
+::: notes
+Treatment may be wildly correlated with potential outcomes overall — savvier people both enroll and get approved — but the assumption says that correlation runs entirely through X-i. Fix X-i, and the leftover variation in treatment is as good as a coin flip. Compare this to a randomized controlled trial. There, the coin flip guarantees independence unconditionally, with no covariates needed, because randomization makes the groups identical in expectation on everything, observed and unobserved. CIA asks for less and more at once. Less, because it only needs independence within cells of X. More, because it demands you have measured the right X. CIA is randomization, conditional on the covariates — the claim that nature ran a stratified experiment, and stratified on variables you happen to observe.
+:::
+
+## Why CIA Delivers the Effect
+
+- Fix a covariate value $\mathbf{x}$; look only at those units
+- Treated and untreated share the same $Y(0)$ distribution there
+- Untreated outcome is a valid counterfactual for the treated
+- Within-cell difference $= \mathbb{E}[Y(1) - Y(0)\mid \mathbf{X} = \mathbf{x}]$
+
+::: notes
+Why does CIA deliver the effect? Pick a value little-x of the covariates and look only at applicants with X-i equal to little-x. Among them, the average untreated outcome of the treated equals the average untreated outcome of the untreated — that equality is exactly CIA. And the right-hand side is something we can measure, because for the untreated we actually observe the untreated outcome. So inside the cell, the untreated group's average is a valid stand-in — a valid counterfactual — for what the treated would have looked like untreated. The within-cell treated-minus-untreated difference is therefore the expected Y of one minus Y of zero in that cell: a clean causal effect. The selection-bias gap in Y of zero has been zeroed out within the cell.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**CIA** says $\{Y_i(1),Y_i(0)\} \perp\!\!\!\perp D_i \mid \mathbf{X}_i$ — once you fix the covariates, treatment is as good as random. Within each cell of $\mathbf{X}$, the untreated are a valid counterfactual for the treated, so the within-cell difference is a clean causal effect. Next: averaging cells, on real numbers.
+:::
+
+::: notes
+To summarize part three: the Conditional Independence Assumption says the potential outcomes are independent of treatment once you condition on the covariates — within each cell of X, treatment is as good as random. That makes the untreated a valid counterfactual for the treated inside the cell, so the within-cell difference is a clean causal effect, with the selection bias zeroed out. In part four we assemble those within-cell effects into the average treatment effect on the treated, and run the whole idea on a concrete two-cell example with real numbers.
+:::

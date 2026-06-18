@@ -1,0 +1,58 @@
+---
+title: "Estimator Versus Estimate"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Estimator Versus Estimate {.title}
+
+::: notes
+Welcome to Week One, Chapter one-point-three, part one of seven. Priya is interning at a regional insurer, and her supervisor asks what sounds like a trivial question: what is the average wildfire claim we pay per policy this season? There is a true answer, mu dollars, but Priya cannot see it. She sees only the two hundred claims that came in. This lesson is about how much to trust the number she computes from them, and it starts with one sharp distinction.
+:::
+
+## Priya's Question
+
+- True average claim is $\mu$ dollars — unknown
+- She sees only this season's sample: $N=200$ claims
+- She averages them: the spreadsheet says \$8,410
+- Real question: how much should she trust \$8,410?
+- If a different 200 claims gave \$6,000, it is a rumor
+
+::: notes
+Priya averages her two hundred claims and the spreadsheet returns eight thousand four hundred ten dollars. She writes it on a sticky note. But here is the deeper question: how much should she trust it? Not "is it the right number" — she will never know that. The honest question is, if the universe had handed her a different two hundred claims, same season, just a different draw of which policies filed, how different would her note be? If a re-draw gives eight thousand three hundred ninety, the number is solid. If a re-draw could plausibly give six thousand or eleven thousand, then eight thousand four hundred ten is barely more than a rumor. To answer that, we stop thinking about her one number and think about the rule that produced it.
+:::
+
+## The Key Distinction
+
+- **Estimator** = a random rule turning data into a guess
+- **Estimate** = the one number from today's data
+- The estimator is the recipe; the estimate is today's cake
+- Sample mean: $\displaystyle \bar{x}=\frac{1}{N}\sum_{i=1}^{N} x_i$
+- $\bar{x}$ is a **random variable**; \$8,410 is not
+
+::: notes
+Here is the most important sentence in the lesson. An estimator is a random rule for turning data into a guess; an estimate is the one number you get when you feed it the data you happen to have. The estimator is the recipe; the estimate is the cake you baked today. Confusing the two is the single most common conceptual error in all of empirical work. Priya's recipe is "add the claims and divide by how many there are" — the sample mean, x bar, equals one over N times the sum of the claims. Now notice what kind of object x bar is. Each claim is a random variable, because before the season plays out you do not know which policies will file. A function of random variables is itself a random variable, so x bar is random. It has an expectation, a variance, and a whole distribution. The number eight thousand four hundred ten is not random — it already happened. It is one realized value of x bar, the way four is one realized value of a die roll. That realized number is the estimate.
+:::
+
+## Many Recipes for One Target
+
+- Write the estimator as $\hat{\mu}$ — "an estimator of $\mu$"
+- Sample mean is one estimator: $\hat{\mu}=\bar{x}$
+- Others: the median, the midrange, a trimmed mean
+- Even "always report \$7,500" is a legal estimator
+- Three judging words: **bias**, **variance**, **MSE**
+
+::: notes
+A convention we hold for the rest of the book: when we name an estimator as a rule, we write it mu hat, read "an estimator of mu." The sample mean is one specific estimator of the population mean, so mu hat equals x bar here. But it is not the only one. Priya could use the median of the two hundred claims, or the midrange — the average of the smallest and largest. She could use a trimmed mean that throws out the top and bottom five percent before averaging. She could even ignore the data and always report seven thousand five hundred dollars — a legal estimator, just a stupid one. Each recipe is a different random variable with a different distribution. The job of this lesson, and really of all econometrics, is language for saying which recipes are good and why. That language has exactly three words: bias, variance, and, combining them, mean squared error.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+An **estimator** is a random rule for turning data into a guess; an **estimate** is the single number you get from today's data. The sample mean $\bar{x}$ is a *random variable* with its own distribution. Next: does the recipe aim at the right target? That is **bias**.
+:::
+
+::: notes
+To summarize part one: an estimator is a random rule, an estimate is the one number it produces today. The sample mean is a random variable with its own distribution, while the realized eight thousand four hundred ten is just one draw of it. Many recipes target the same mu, and we judge them with three words. In part two we take the first, bias, and ask whether a recipe aims at the right target on average.
+:::

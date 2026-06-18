@@ -1,0 +1,57 @@
+---
+title: "Stating the Law of Large Numbers"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Stating the Law of Large Numbers {.title}
+
+::: notes
+Welcome to Week One, Chapter one-point-four, part one of nine. Last chapter we built a sampling-distribution machine and watched it work, but we only described what we saw — we never said why it happened or what shape it formed. This chapter pays both debts with two great theorems. In this opening part we state the first one cleanly: the Law of Large Numbers.
+:::
+
+## Two Debts From Last Chapter
+
+- We *saw* the sampling histogram center on $\mu$
+- We *saw* it narrow as $N$ grew: $\operatorname{Var}(\bar{x})=\sigma^2/N$
+- But never said **why**, or **what shape** it forms
+- **LLN** answers *why it concentrates*
+- **CLT** answers *which shape* it becomes
+
+::: notes
+Last chapter was all observation. We watched the histogram of sample means center itself on the population mean, telling us the sample mean is unbiased. And we watched it shrink as the sample size grew, with a variance that came out exactly as sigma squared divided by N. What we never did was explain why this must be so, or name the shape the shrinking histogram converges toward. Two theorems close those gaps. The Law of Large Numbers explains why the histogram concentrates — why the sample mean stops wandering and homes in on the truth. The Central Limit Theorem explains which shape it settles into, the bell curve. This part is the first theorem.
+:::
+
+## State the Weak Law
+
+- Draw $x_1,\dots,x_N$ independent, mean $\mu$, finite variance $\sigma^2$
+- Sample mean $\displaystyle \bar{x}=\frac{1}{N}\sum_{i=1}^{N}x_i$
+- **Weak Law:** $\bar{x}\xrightarrow{p}\mu$ as $N$ grows
+- The sample mean is **consistent** for $\mu$
+- "More data, less luck" — made precise
+
+::: notes
+Here is the statement. Take independent draws from some population with mean mu and a finite variance sigma squared. Form the sample mean — add the draws and divide by N. The Weak Law of Large Numbers says that as N grows, the sample mean converges in probability to mu. In words: for any tolerance you name — call it epsilon, say one-tenth of a cent — the probability that the sample mean lands more than epsilon away from the true mean can be driven as close to zero as you like, simply by taking N large enough. We say the sample mean is consistent for the population mean. This is the precise version of the intuition we leaned on last chapter: more data, less luck.
+:::
+
+## Reading the Symbols
+
+- "Weak" vs "Strong" Law — distinction won't matter for us
+- $\xrightarrow{p}$ is **not** the ordinary calculus limit
+- $\bar{x}$ is **random** — it never just equals $\mu$
+- What shrinks to zero is the **probability of a meaningful miss**
+
+::: notes
+Two cautions on the wording. First, the word weak distinguishes this from the Strong Law, which makes a subtly stronger promise about a single infinite sequence of draws settling down forever. The distinction is real, but it will not matter for anything we do, so we use the Weak Law and move on. Second, and more important, converges in probability — written with that little p over the arrow — is not the ordinary limit from calculus. The sample mean is random. It does not approach the true mean the way one over N approaches zero. Nothing about the sample mean is guaranteed to equal mu. What shrinks to zero is the probability of a meaningful miss — the chance of landing more than your chosen tolerance away. Keep that distinction sharp.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **Weak Law of Large Numbers** says the sample mean converges in probability to $\mu$ — it stops wandering and homes in on the truth. "Converges in probability" means the *chance of a meaningful miss* vanishes. Next: *why* it must be true, via Chebyshev.
+:::
+
+::: notes
+To summarize part one: the Weak Law of Large Numbers says the sample mean converges in probability to the true mean — it stops wandering and homes in on the truth — and that is why last chapter's histogram concentrated. Remember that converges in probability is not the calculus limit; the sample mean stays random, and what vanishes is the probability of a meaningful miss. In part two we prove this almost for free, using one beautifully crude tool called Chebyshev's inequality.
+:::

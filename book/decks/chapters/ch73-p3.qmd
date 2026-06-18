@@ -1,0 +1,58 @@
+---
+title: "The Primary Specification"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# The Primary Specification {.title}
+
+::: notes
+Welcome back to Chapter seven-point-three, part three of eight. In part two we stated Maya's hypotheses directionally and numbered them, H1 primary. Now we write the heart of the plan: Component two, the primary specification — the single regression that tests H1, the one number that if it broke would sink the paper. The discipline here is to name all seven slots so precisely that there is no fork left to walk. This is where the book's empirical spec-discipline earns its keep.
+:::
+
+## The Seven Slots
+
+- One regression tests H1 — name every slot explicitly:
+- **Outcome** to a variable name: `denied` = 1 if `action_taken` in {3, 7}
+- **Key regressor**: `minority`, the single coefficient $\beta_1$
+- **Controls** named · **fixed effects** · **clustering**
+- **Sample** exact · **identifying assumption** in one sentence
+
+::: notes
+Your primary specification is the single regression that tests H1 — the one number that, if it broke, sinks the paper. Write it naming all seven slots. The outcome, defined to a variable name: not denial but the indicator denied equals one if the HMDA action-taken code is three or seven, else zero. The key regressor: the one coefficient you read off to answer H1 — for Maya the minority indicator, called beta one. The controls, named. The fixed effects. The clustering level. The exact sample, with the row count you expect. And the identifying assumption in one sentence. The plan demands precision in every slot, because every slot is a fork in the garden.
+:::
+
+## Controls — and What You Exclude
+
+- Controls: log loan amount, log income, loan-to-value, term
+- State **why each belongs** — and what you exclude on purpose
+- Maya excludes loan-product type — it is a **channel** of discrimination
+- Conditioning on a channel regresses away the effect you hunt
+- This is Mentor four's over-controlling trap
+
+::: notes
+The controls slot forces a subtle honesty. Maya holds fixed the legitimate covariates — log loan amount, log applicant income, loan-to-value, loan term — and states why each belongs. But the plan also forces her to name a variable she is deliberately not controlling for: the loan-product type. Steering a borrower into a worse product is itself a channel of discrimination, so conditioning on the product would regress away the very effect she is hunting. This is Mentor four's over-controlling trap. A good control closes a back door; a bad control sits on the causal pathway and absorbs the effect. Writing down what you exclude, and why, matters as much as what you include.
+:::
+
+## Clustering and the One-Sentence Assumption
+
+- Clustering by lender vs. county can flip your t-stat — choose **now**
+- Maya clusters by lender: errors correlate within underwriting style
+$$\texttt{denied}_i=\beta_0+\beta_1\texttt{minority}_i+\mathbf{x}_i'\boldsymbol{\gamma}+\alpha_{\ell(i)}+\delta_{t(i)}+\varepsilon_i$$
+- Assumption: $\beta_1$ uncorrelated with the **missing credit score**
+- So $\hat\beta_1$ is a **bound**, not a clean causal effect
+
+::: notes
+Clustering is a notorious fork. Clustering by lender versus county versus tract can change your t-statistic materially, and choosing the level after seeing which gives significance is p-hacking on the standard error. Maya commits to clustering by lender, because the plausible correlation in errors is at the lender level — a lender's underwriting style affects all its loans. The model is the one you built since Week Two: denied for application i equals beta-zero, plus beta-one times the minority indicator, plus the control vector times gamma, plus a lender fixed effect, plus a tract fixed effect, plus the error — with beta one the single coefficient H1 is about. Finally, the identifying assumption in one sentence: conditional on the named controls and the two fixed effects, the minority indicator is uncorrelated with the unobserved creditworthiness — the missing credit score — that the lender legitimately prices. That assumption is imperfect, which is exactly why Maya's headline is a bound, not a clean causal effect.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Pin the **primary specification** by naming all seven slots — outcome, regressor, controls (including what you deliberately exclude), fixed effects, clustering, sample, and the one-sentence identifying assumption. Writing the equation fixes exactly which number is the test. Next: governing the army of other tests with a multiple-testing plan.
+:::
+
+::: notes
+To summarize part three: the primary specification is the heart of the plan, pinned by naming all seven slots — outcome to a variable name, key regressor, controls including the loan-product type Maya deliberately excludes, fixed effects, clustering by lender, the exact sample, and the one-sentence identifying assumption that makes beta one a bound rather than a clean causal effect. Writing the equation fixes, unambiguously, which number is the test. In part four we govern the army of other tests Maya will inevitably run — the multiple-testing plan, with its primary-versus-secondary hierarchy and the Benjamini-Hochberg false-discovery-rate procedure.
+:::

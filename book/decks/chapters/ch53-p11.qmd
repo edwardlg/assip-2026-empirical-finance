@@ -1,0 +1,67 @@
+---
+title: "Replication Exercises and the Referee's Questions"
+date: "2026-07-20"
+---
+
+# Replication and the Referee's Questions {.title}
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part eleven of eleven — the final part. We framed the paper, dissected its construction and data, read its tables in order, and weighed what is clever against what is vulnerable. Now we close with the three replication exercises that feed the problem set, and the three questions a referee would write back with. This is where you turn reading into doing.
+:::
+
+## Exercise One: Rebuild the Grid Honestly
+
+- Build equal-weighted decile winner-minus-loser portfolios
+- All sixteen $J$, $K$ in three, six, nine, twelve, overlapping monthly
+- Report each cell with **two** standard errors side by side
+- Naive i.i.d. versus **Newey-West** at lag $K-1$
+- Confirm six-six positive, roughly one percent per month
+
+::: notes
+Exercise one: rebuild the J-by-K grid and report it honestly. On CRSP monthly NYSE and AMEX data — optionally adding Nasdaq — construct equal-weighted decile winner-minus-loser portfolios for all sixteen combinations of J and K in three, six, nine, and twelve, using the overlapping monthly-reformation method. Report each cell's average monthly spread with two standard errors side by side: the naive independent-and-identically-distributed one, and the Newey-West one at lag K minus one. The deliverable is a table that makes the inference point visible — show how much the t-statistics shrink once you respect the overlap. Confirm six-six is positive and roughly one percent per month over a window near the original sample, and do not expect to match a textbook decimal.
+:::
+
+## Exercise Two: The Transaction-Cost Critique
+
+- Take the six-six gross series, layer on a cost model
+- Per-side bid-ask plus commission on monthly **turnover**
+- A larger, separate cost on the short leg for borrow fees
+- Plot net profit versus round-trip cost; find **break-even**
+- Verdict: at realistic costs, does it survive, which leg kills it?
+
+::: notes
+Exercise two is the transaction-cost critique, the core of the problem set. Take your six-six gross series and layer on a cost model: a per-side bid-ask plus commission charge applied to the turnover each month — the fraction of the portfolio that actually trades on re-ranking — plus a separate, larger cost on the short leg for borrow fees, and a sensitivity dial for the small-cap losers. Plot net momentum profit against round-trip cost in basis points, and find the break-even cost where net alpha hits zero. Then write the one-paragraph verdict: at realistic costs, does momentum survive, and which leg kills it? This is the exercise that turns "anomaly" into "tradable or not."
+:::
+
+## Exercise Three: Out-of-Sample and Snooping
+
+- Re-estimate six-six in rolling, non-overlapping sub-periods
+- In-sample versus modern out-of-sample, including the crash
+- Report spread, worst drawdown, January-versus-rest decomposition
+- Let the multiple-testing rebuttal and crash risk both appear
+
+::: notes
+Exercise three addresses out-of-sample survival and the snooping defense. Re-estimate the six-six strategy in rolling, non-overlapping sub-periods across the full modern sample — for example, nineteen sixty-five to nineteen eighty-nine in-sample versus nineteen ninety to the present out-of-sample — explicitly including the two thousand nine crash window. Report the spread, the worst drawdown, and the January-versus-rest-of-year decomposition in each era. The point is to let you see both stories in one figure: the multiple-testing rebuttal — does the effect persist outside the original grid and sample? — and the crash-risk story — how brutal is the tail? Tie the write-up back to the risk-versus-behavioral debate from the vulnerabilities section.
+:::
+
+## The Three Referee Questions
+
+- Are the $t$-stats **overlap-corrected** (Newey-West, lag $\geq K-1$)?
+- What is the profit **net of costs**, by long and short leg?
+- How do you rule out **snooping** — will you commit to out-of-sample?
+- Then: open the notebook and rebuild the grid
+
+::: notes
+Finally, the three referee questions. One: are the reported t-statistics corrected for the serial correlation from overlapping holding periods? Report Newey-West standard errors at lag at least K minus one alongside the originals, and say how much the inference changes. Two: what is the profit net of realistic transaction and short-sale costs, separately for the long and short legs? Given that the losers are small, illiquid, low-priced stocks, a gross-return result is not yet an efficiency violation. Three: how do you rule out data-snooping across the sixteen cells, and will you commit to an out-of-sample test? Now open the notebook and rebuild the grid. The moment your Newey-West t-stats print next to the naive ones, you will understand why Week Two came before Week Five.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Three exercises: **rebuild the grid** with naive and Newey-West errors side by side; **layer on costs** to find the break-even and which leg kills it; **test out-of-sample** including the crash. The referee asks: overlap-corrected? net of costs? snooping-proof? Now open the notebook and build it.
+:::
+
+::: notes
+To close: the three replication exercises take you from reading to doing. Rebuild the J-by-K grid with naive and Newey-West standard errors side by side. Layer a cost model onto the six-six series to find the break-even cost and which leg kills the profit. And test out-of-sample across modern sub-periods, including the two thousand nine crash. The referee's three questions — overlap-corrected errors, net-of-cost profit by leg, and a snooping defense with out-of-sample commitment — are the bar your replication must clear. Open the notebook and rebuild the grid. That completes our reader's guide to Jegadeesh and Titman.
+:::

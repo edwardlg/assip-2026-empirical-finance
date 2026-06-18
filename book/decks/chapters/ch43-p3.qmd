@@ -1,0 +1,58 @@
+---
+title: "Sharp RD: The Estimand"
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+# Sharp RD: The Estimand {.title}
+
+::: notes
+Welcome back to Chapter four-point-three, part three of thirteen. In part two we built the local-randomization story and the continuity assumption. Now we make the cleanest case concrete: sharp regression discontinuity, where treatment is a perfect step function of the running variable. We state its estimand and flag the one interpretive subtlety.
+:::
+
+## Sharp RD: A Deterministic Step
+
+- Everyone on one side treated, everyone on the other not
+- $D_i = \mathbf{1}\{X_i \geq c\}$ — a gapless function of $X$
+- A lender auto-approves every score $\geq 660$, rejects below
+- The loan officer has no discretion
+- Cross $660$ and approval flips from $0$ to $1$ with certainty
+
+::: notes
+Sharp regression discontinuity is the case where treatment is a deterministic step function of the running variable: everyone on one side is treated, everyone on the other is not, with no exceptions. Formally, the treatment D-i equals the indicator that X-i is at least c — that indicator equals one when its condition holds and zero otherwise. Treatment is a perfect, gapless function of X. A lender's automated underwriting system is the cleanest example: it approves every applicant with a credit score of at least six-sixty and rejects everyone below, mechanically, with the loan officer having no discretion. Cross six-sixty and approval flips from zero to one with certainty.
+:::
+
+## The Sharp-RD Estimand
+
+- $\tau_{\text{SRD}} = \lim_{x\downarrow c}\mathbb{E}[Y\mid X{=}x] - \lim_{x\uparrow c}\mathbb{E}[Y\mid X{=}x]$
+- Limit from above minus limit from below
+- One-sided limits: each curve's height at the boundary
+- $X$ enters smoothly, so only treatment makes the gap
+- The gap is the treatment effect
+
+::: notes
+Under continuity, the sharp-RD estimand is the jump in the conditional-mean function of the outcome at the cutoff. In symbols, tau-S-R-D equals the limit of the average of Y given X as you approach c from above, minus the limit as you approach from below. Those two limits are one-sided limits: you are reading the height of each fitted curve right at the boundary, extrapolated to the cutoff from its own side. Take the limit of the outcome's average as you approach c from above, the treated side; subtract the limit as you approach from below, the control side; and the difference is the treatment effect. Because the running variable X is continuous through c and enters the untreated mean smoothly, the only thing that can produce a gap between those two limits is the treatment switching on. That gap is tau-S-R-D.
+:::
+
+## A Local Effect, Like LATE
+
+- $\tau_{\text{SRD}}$ is the average effect for units with $X = c$
+- Not the effect for all borrowers, the treated, or those far away
+- If the marginal effect differs, RD reports only the margin
+- Perfect for "where should we set the cutoff?" questions
+- Which is why RD is beloved by regulators
+
+::: notes
+There is one subtlety in the interpretation, and it is the regression-discontinuity analog of the local average treatment effect. The estimand tau-S-R-D is the average treatment effect for units with X equal to c — the firms right at rank one thousand, the borrowers right at score six-sixty. It is not the average effect for all borrowers, nor for the treated, nor for anyone whose score is far from the cutoff. If the effect of a loan is large for marginal borrowers but small for deep-subprime applicants far below the line, regression discontinuity will report only the marginal number, because the marginal units are the only ones whose treatment status the cutoff actually pins down. For policy questions about where to set the cutoff — should the threshold be six-sixty or six-forty? — the effect at the margin is exactly the right number, which is part of why regression discontinuity is beloved by regulators.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Sharp RD has treatment as a deterministic step, $D_i=\mathbf{1}\{X_i\ge c\}$. The effect is the **difference of two one-sided limits** of $\mathbb{E}[Y\mid X]$ at $c$ — read each side's curve *to* the boundary and difference. It is a local effect, for units right at the cutoff. Next: a worked number.
+:::
+
+::: notes
+To summarize part three: in sharp regression discontinuity, treatment is a deterministic step, the indicator that X is at least c. The effect is the difference of two one-sided limits of the conditional mean at the cutoff: read each side's curve to the boundary and difference the heights. It is a local effect, valid for units right at the cutoff. In part four we make this concrete with a real number from Sam's Russell setting.
+:::

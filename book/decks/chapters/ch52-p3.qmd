@@ -1,0 +1,59 @@
+---
+title: "Manufacturing the Factors as Portfolios"
+date: "2026-07-20"
+---
+
+# Manufacturing the Factors as Portfolios {.title}
+
+::: notes
+Welcome back to lesson five-point-two, part three of nine. In part two we set the bar: high R-squared for common variation, near-zero alpha for pricing. Now we open the machinery. Everything technical here is built from one idea you already own — ordinary least squares on a time series. The cleverness is entirely in what goes on the right-hand side. We start by manufacturing the factors as real portfolios.
+:::
+
+## A Factor Is a Portfolio
+
+- Not an abstraction — a **factor-mimicking portfolio**
+- A real long-short basket whose return *is* the factor
+- **Market factor:** broad market minus risk-free rate
+- **SMB**, small minus big, captures the size effect
+- **HML**, high minus low book-to-market, the value effect
+
+::: notes
+A factor here is not an abstract statistical thing; it is a factor-mimicking portfolio, a real long-short basket of stocks whose return is the factor. There are three. The market factor, written R-M minus R-f, is the return on a broad value-weighted market portfolio minus the risk-free rate — the old CAPM factor, unchanged. S-M-B, which stands for small minus big, is meant to capture the size effect. And H-M-L, high minus low, is meant to capture the value effect, where high and low refer to book-to-market equity, sometimes abbreviated B-E over M-E. Turning each abstraction into a portfolio is what makes the whole thing testable with nothing fancier than ordinary least squares.
+:::
+
+## The Two-by-Three Sort
+
+- Each June, split stocks into **two size groups**
+- Small versus big, at the NYSE median breakpoint
+- Independently into **three book-to-market groups**
+- Bottom thirty, middle forty, top thirty percent
+- Intersecting gives **six** value-weighted portfolios
+
+::: notes
+S-M-B and H-M-L are built from a two-by-three sort, and the construction matters because half the critique later is about exactly these choices. At the end of June each year, split all stocks into two size groups — small and big, by the NYSE median market-cap breakpoint — and independently into three book-to-market groups: the bottom thirty percent, the middle forty percent, and the top thirty percent, again on NYSE breakpoints. Intersecting the two size groups with the three value groups gives six value-weighted portfolios: small-low, small-medium, small-high, big-low, big-medium, and big-high. Those six portfolios are the raw ingredients from which the two factors are mixed.
+:::
+
+## Mixing SMB and HML
+
+$$\text{SMB} = \tfrac{1}{3}(\text{S-Low}+\text{S-Med}+\text{S-High}) - \tfrac{1}{3}(\text{B-Low}+\text{B-Med}+\text{B-High})$$
+
+$$\text{HML} = \tfrac{1}{2}(\text{S-High}+\text{B-High}) - \tfrac{1}{2}(\text{S-Low}+\text{B-Low})$$
+
+- SMB: average the three value buckets, then small minus big
+- HML: average the two size buckets, then value minus growth
+- Averaging keeps the factors from contaminating each other
+
+::: notes
+Now mix the six into two factors. S-M-B equals one-third of the sum of the three small portfolios — small-low, small-medium, small-high — minus one-third of the sum of the three big portfolios. H-M-L equals one-half of the sum of the two high book-to-market portfolios — small-high and big-high — minus one-half of the sum of the two low portfolios. Read those slowly, because the design is deliberate. S-M-B averages across the three value buckets before differencing small minus big, so it is a clean size bet roughly neutral to value. H-M-L averages across the two size buckets before differencing value minus growth, so it is a clean value bet roughly neutral to size. The averaging is how you keep the two factors from contaminating each other — the same instinct as Frisch-Waugh-Lovell from chapter two-point-three: to isolate one effect, partial the other one out.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A factor is a **real long-short portfolio**, not an abstraction. A two-by-three June sort makes six portfolios; averaging them into **SMB** and **HML** keeps the size bet neutral to value and the value bet neutral to size. Next: the test portfolios and the regression itself.
+:::
+
+::: notes
+To summarize part three: a factor is a real long-short portfolio, not an abstraction — and that is what makes it testable with plain ordinary least squares. A two-by-three June sort produces six value-weighted portfolios, and averaging them into S-M-B and H-M-L keeps the size bet roughly neutral to value and the value bet roughly neutral to size. In part four we pick the test portfolios — the patients the model has to cure — and run the time-series regression that produces the loadings, the intercepts, and the R-squared.
+:::

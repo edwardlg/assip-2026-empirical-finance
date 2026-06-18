@@ -1,0 +1,56 @@
+---
+title: "Joint and Marginal Distributions"
+date: "2026-06-22"
+---
+
+# Joint and Marginal Distributions {.title}
+
+::: notes
+Welcome to Week One, Chapter one-point-one, part one of seven. Almost every finding in empirical finance is, underneath the jargon, a statement about how one random thing behaves once you know something else. Does next month's return depend on whether the market was calm or stormy? Each is a question about a conditional distribution. This chapter builds joint, marginal, and conditional distributions, then proves the two laws that quietly power everything downstream. In this opening part we lay the foundation: two random quantities measured together, and the joint distribution that describes them.
+:::
+
+## Two Random Quantities At Once
+
+- Random variables: capital $X$, $Y$; their values: lowercase $x$, $y$
+- $Y$ = market regime: $1$ calm, $2$ stormy
+- $X$ = Sam's momentum portfolio return, in percent
+- Joint distribution describes the pair $(X,Y)$ together
+- Treat $X$ as discrete first; integrals generalize later
+
+::: notes
+A random variable is a number whose value is not yet determined. We write random variables with capital letters X and Y, and the values they take with lowercase x and y. Most interesting questions involve two random quantities measured together. Sam studies momentum — the tendency for recent price moves to extend over short horizons — and records two things each trading day. First, Y, the market regime that day, coded one for a calm low-volatility day and two for a stormy high-volatility day. Second, X, the return on Sam's momentum portfolio that day, in percent. The joint distribution describes how the pair behaves — the probability of every combination of regime and return occurring together. To keep the arithmetic visible, we first pretend X is discrete; everything generalizes to continuous X by replacing sums with integrals at the end.
+:::
+
+## Sam's Joint Probability Table
+
+- Each cell: $p(x,y)=\Pr(X=x,\,Y=y)$
+- Calm row: $0.05,\ 0.35,\ 0.30$ — totals $0.70$
+- Stormy row: $0.15,\ 0.10,\ 0.05$ — totals $0.30$
+- Valid: every entry $\ge 0$, all sum to $1$
+- Gains cluster on calm days, losses on stormy
+
+::: notes
+Suppose Sam has enough history to estimate a small table. Each cell is the joint probability — the probability that the portfolio earns return x and the day is in regime y. In the calm row, across returns of minus two percent, zero, and plus two percent, the probabilities are zero point zero five, zero point three five, and zero point three zero, which sum to zero point seven. In the stormy row they are zero point one five, zero point one zero, and zero point zero five, summing to zero point three. A valid joint distribution must satisfy two rules: every entry is at least zero, and all entries sum to one. The six cells do add to one. Read the table as a map of co-occurrence. On thirty percent of all days the market is calm and the portfolio is up two percent. On fifteen percent of days it is stormy and the portfolio is down two percent. Already you see the story — gains cluster in calm days, losses cluster in stormy days.
+:::
+
+## Marginals: Collapsing One Variable Away
+
+- Row and column totals are the marginal distributions
+- $p_Y(y)=\sum_x p(x,y)$ — sum across a row
+- $\Pr(Y=1)=0.70$, $\Pr(Y=2)=0.30$
+- $\Pr(X=-2\%)=0.20$, $\Pr(X=0\%)=0.45$, $\Pr(X=+2\%)=0.35$
+
+::: notes
+The numbers in the margins of the table — the row and column totals — are the marginal distributions. The marginal distribution of Y tells you how often each regime occurs, ignoring the return. You get it by summing across the row, which collapses the X dimension away. From the row totals, the probability that Y equals one is zero point seven and that Y equals two is zero point three: calm days are about twice as common as stormy ones. Likewise, the marginal of X comes from summing down each column. The probability that X equals minus two percent is zero point two, that X equals zero is zero point four five, and that X equals plus two percent is zero point three five. The word marginal is literal — these distributions live in the margins. Nothing deep yet; just bookkeeping. The deep idea, conditioning, comes next.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **joint distribution** $p(x,y)$ describes the pair $(X,Y)$ together; **marginals** collapse one variable away by summing rows or columns. Sam's table already hints that gains cluster in calm regimes and losses in stormy ones. Next: **conditioning** — the move that makes finance possible.
+:::
+
+::: notes
+To summarize part one: the joint distribution describes two random quantities together, cell by cell, and must be non-negative and sum to one. The marginal distributions live in the margins — sum across a row for the regime, down a column for the return. Sam's table already whispers the finding: gains cluster in calm days, losses in stormy days. In part two we make that precise with conditioning — the mathematical name for using what you know right now.
+:::

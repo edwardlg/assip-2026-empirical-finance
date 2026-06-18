@@ -1,0 +1,58 @@
+---
+title: "Writing the Identifying-Assumption Sentence"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Writing the Identifying-Assumption Sentence {.title}
+
+::: notes
+Welcome back to the identification memo, part two of nine. In part one we met the page and its fixed sentence template: our estimate of the effect is causal or credible, as long as the assumption holds, which we defend by the evidence. Now we fill the two hard blanks — the assumption and the defense — and watch a real sentence improve from useless to airtight.
+:::
+
+## Name The Threat, Not "Endogeneity"
+
+- Second blank: the condition under which estimate equals the effect
+- The rule that separates a real memo from a hand-wave
+- "No endogeneity" is **not** an assumption
+- Name the *specific* threat the design must survive
+- "Parallel denial-gap trends absent the regulation" — that's an assumption
+
+::: notes
+The second blank names the condition under which your estimate equals the effect, and here is the rule that separates a real memo from a hand-wave: name the specific threat, not the word endogeneity. This is the Conventions rule stated for your own paper. "As long as there is no endogeneity" is not an identifying assumption; it is an admission you have not thought about which endogeneity. "As long as treated and control states would have followed parallel denial-gap trends absent the regulation" is an identifying assumption, because it names exactly the counterfactual that has to hold and exactly the way it could fail. The third blank then names the design or evidence that makes the second believable — fixed effects that absorb the obvious confounder, a placebo that would have caught the obvious failure, an institutional fact that rules out the obvious alternative story.
+:::
+
+## Causal Or Credible: Match The Verb
+
+- Asymmetry baked into "causal / credible"
+- *Causal*: clean RD, randomized instrument — assumption nearly self-evident
+- *Credible*: most observational designs — assumption argued, not proven
+- Overclaiming here is the tell of an amateur
+- A referee distrusts everything after an unearned "causal"
+
+::: notes
+Notice the asymmetry baked into "causal or credible." Some designs let you say causal with a fairly straight face when the assumption holds — a clean regression discontinuity at a cutoff nobody can game, a randomized instrument. Most observational designs earn the weaker word credible: the assumption is not testable, you have argued for it as hard as you can, and an honest reader grants you a conditional belief, not a proof. Choose the word that matches how strong your assumption really is. Overclaiming in this sentence is the tell of an amateur. A referee who reads "causal" where "credible, conditional on parallel trends" was warranted will distrust everything that follows.
+:::
+
+## Three Drafts: Worse To Better
+
+- **Draft 1:** "controlling for endogeneity" — names no threat, fits any paper
+- **Draft 2:** "parallel trends" — names assumption, but *defended how?*
+- **Draft 3:** flat pre-trend leads, clean-control comparison, exogenous timing
+- Draft 3 is a **contract**: what to attack, what evidence, what falsifies
+- The longest sentence in your paper — and that's correct
+
+::: notes
+A worked contrast makes the discipline concrete. Maya drafts her sentence three times. Draft one: "We estimate the causal effect of fair-lending regulation on denial rates, controlling for endogeneity." No. No threat is named, and "controlling for endogeneity" is the exact phrase the Conventions forbid; this sentence could front any paper on any topic. Draft two: "Our estimate of the regulation's effect on the minority-white denial gap is credible as long as treated and control states had parallel trends." Closer — it names the assumption — but it does the third blank no work; a reader cannot tell whether parallel trends is asserted or earned. Draft three names the effect precisely, then defends parallel trends three ways: flat pre-treatment leads in the event study, a Callaway-Sant'Anna comparison against never- and not-yet-treated states only, and the institutional fact that adoption timing was driven by legislative calendars unrelated to local lending. That sentence is a contract. It tells the referee exactly what to attack, exactly what evidence you are betting on, and exactly what would falsify you. It is long, and that is correct — the identifying-assumption sentence is allowed to be the longest sentence in your paper.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Fill the assumption blank by naming the **specific threat**, never "endogeneity." Match the verb — *causal* for a clean design, *credible* for an argued one. A real sentence is a **contract**: it tells the referee what to attack, what evidence you bet on, and what would falsify you. Next: the standard menu of threats, design by design.
+:::
+
+::: notes
+To summarize part two: fill the assumption blank by naming the specific threat, never the bare word endogeneity, and fill the defense blank with the design feature or evidence that makes it believable. Match the verb to the strength of your evidence — causal only for a clean design, credible for an argued one — because overclaiming is the amateur's tell. A real identifying-assumption sentence is a contract that tells a referee what to attack, what evidence you are betting on, and what would falsify you. In part three we stop inventing threats from scratch and pull them off a standard menu, one list per design.
+:::

@@ -1,0 +1,69 @@
+---
+title: "The Event Study, and Stressing Parallel Trends"
+date: "2026-07-13"
+---
+
+# The Event Study, and Stressing Parallel Trends {.title}
+
+::: notes
+Welcome back to Week Four, the Lab, part seven of eight. In part six we looked at the design and watched two-way fixed effects come out attenuated, around minus zero-point-eight-one percentage points. Now two things: estimate the naive event study to read the pre-trends, and then deliberately stress the design — dial a differential pre-trend into the treated states and watch the leads tilt, reproducing in your own data the failure the chapter described.
+:::
+
+## The Naive Event Study
+
+- Chapter four-point-one's leads and lags
+- Code never-adopters to event time minus one, the reference bin
+- Estimate with the indicator interaction, reference at minus one
+- **Leads** ($e<0$) are the pre-trend check
+- **Lags** ($e\ge 0$) are the dynamic effect
+
+::: notes
+First, estimate the naive two-way fixed-effects event study — chapter four-point-one's leads and lags. You compute relative, or event, time for the adopters, year minus adoption year, and you place never-adopters at event time minus one, the omitted reference bin. Then you regress the denial rate on an indicator interaction over relative time, with minus one as reference, absorbing county and year, clustered by state. The coefficients split into two regions: the leads, event time below zero, are your pre-trend check; the lags, event time at or above zero, are the dynamic effect. And from Sun and Abraham in chapter four-point-two, you know that under staggering these coefficients can bleed into each other, so you read them with care.
+:::
+
+## What the Clean Panel Shows
+
+- The **leads** hug zero — no pre-trend by construction
+- Treated and control moved together before adoption
+- The **lags** march steadily more negative as the effect builds
+- The canonical clean picture: flat before, growing after
+- Consistent with parallel trends — but not proof of it
+
+::: notes
+On the clean panel, what do you see? The leads hug zero — the synthetic data has no pre-trend by construction, so the treated and control cohorts moved together before adoption. And the lags march steadily more negative as the planted effect builds. That is the canonical clean event-study picture: flat before, growing after. It is consistent with parallel trends — but, per chapter four-point-one, flat leads do not prove parallel trends. The logical point: the post-period counterfactual never happened. The statistical point: with only a few states, the leads' confidence bands may be too wide to rule out a worrying slope. Reassurance, not proof.
+:::
+
+## Stress It On Purpose
+
+- Inject a **differential** pre-trend into adopting counties
+- Their denial rate drifts extra each year — unrelated to the policy
+- A slope of about zero-point-one-five per year breaks parallel trends
+- Re-estimate the same event study on the stressed data
+- You manufacture the failure yourself
+
+::: notes
+Now stress the design on purpose. You write a function that injects a differential pre-trend into the adopting counties: their denial rate drifts an extra amount each year, for reasons unrelated to the policy — a slope of about zero-point-one-five percentage points per year, added only to adopters. This deliberately breaks parallel trends, because now the treated cohorts were already moving differently before any policy fired. You re-estimate the identical event study on this stressed panel. The point is that you manufacture the failure yourself, so you know its signature from the inside.
+:::
+
+## What the Stressed Panel Shows
+
+- Now the **leads slope** — they drift away from zero
+- The treated cohorts were already moving differently
+- This is the **visible** signature of a violation
+- A tilting pre-trend is a red flag you can **see**
+- A clean pre-trend is reassurance you **cannot** fully bank
+
+::: notes
+What does the stressed panel show? Now the leads slope. The pre-period coefficients drift away from zero, because the treated cohorts were already moving differently before any policy. This is the visible signature of a parallel-trends violation, the thing the event-study plot exists to catch. And here is the lesson, sharpened because you built both cases: a tilting pre-trend is a red flag you can see; a clean pre-trend is reassurance you cannot fully bank. One subtlety — when you inject the pre-trend, the lag coefficients also shift, because the spurious trend keeps running into the post-period and gets mislabeled as a growing effect. And with only a few states, you might fail to detect even this planted pre-trend — the low-power problem — which is why you report the leads honestly rather than asserting the pre-trends look fine.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+On the clean panel, event-study **leads hug zero** and **lags grow** — the canonical flat-then-growing picture. Inject a differential pre-trend and the **leads tilt**: the visible signature of a violation, with the bias bleeding into the lags too. A tilting pre-trend you can see; a clean one you cannot fully bank. Next: Callaway–Sant'Anna recovers the planted effect.
+:::
+
+::: notes
+To summarize part seven: the naive event study splits into leads, your pre-trend check, and lags, the dynamic effect. On the clean panel the leads hug zero and the lags grow steadily — the canonical flat-then-growing picture, consistent with parallel trends but not proof. Then you stress the design, injecting a differential pre-trend, and the leads tilt — the visible signature of a violation. The lesson you now own from the inside: a tilting pre-trend you can see, a clean one you cannot fully bank, especially with few states. In part eight we run the cure — Callaway–Sant'Anna with clean controls — recover the planted effect, and close the lab.
+:::

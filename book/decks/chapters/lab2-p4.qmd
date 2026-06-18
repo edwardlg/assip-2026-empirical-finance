@@ -1,0 +1,57 @@
+---
+title: "Why It Works: Clustering by Time"
+date: "2026-06-29"
+---
+
+# Why It Works: Clustering by Time {.title}
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, part four of eight. In part three we laid out the two passes and the standard error that is just the scatter of the monthly slopes over the square root of T. Now stare at why that average works, because it is genuinely clever. The disease was correlation across stocks within a month. The cure is to let each month produce one number that already digests all the within-month structure — and then quantify only how those monthly numbers scatter. This is exactly clustering by time from Chapter two-point-four.
+:::
+
+## One Month, One Vote
+
+- Disease: errors **correlated across stocks within a month**
+- Each month produces a single number $\hat\gamma_{1,t}$
+- That number digests all within-month structure
+- Correlation inside month $t$ is **sealed inside** $\hat\gamma_{1,t}$
+- SE is built from variation **across months**, not stocks
+
+::: notes
+The disease was correlation across stocks within a month. The cure is to let each month produce a single number, gamma-one-t, that already digests all the within-month structure — including the common shock that correlated everyone's errors. Whatever correlation lived inside month t is sealed up inside that one estimate. The only thing left is to average those T numbers and quantify their scatter. One month, one vote. So the standard error is built from variation across months, not across stocks. It asks: how much does the price of beta bounce from month to month? If the months are roughly independent — a reasonable first approximation for monthly returns — that is a perfectly honest variance, and the within-month correlation never enters the calculation at all.
+:::
+
+## This Is Clustering by Time
+
+- Petersen (2009), Ch 2.4 §6: time effect → **cluster by time**
+- FM clusters by time by the most literal route imaginable
+- It physically runs **one regression per period**, then aggregates
+- Each period contributes exactly **one** independent observation
+- Balanced panel: FM SE ≈ time-clustered SE (Petersen 2009)
+
+::: notes
+This is exactly the clustering idea from Chapter two-point-four, viewed from a different angle. Fama–MacBeth is, in effect, clustering by time period. Recall Petersen's two thousand nine taxonomy, section six: when the dominant correlation is a time effect — a common shock hitting all firms in a period — the right tool is to cluster by time, treating each period's block of correlated errors as one unit. Fama–MacBeth does precisely that, by the most literal route imaginable. It physically runs one regression per period and then aggregates, so each period contributes exactly one independent observation to the final variance. In fact, for a balanced panel the Fama–MacBeth standard error is very close to the time-clustered standard error of a pooled regression. They are two implementations of the same judgment about where the off-diagonal blocks of the error covariance live.
+:::
+
+## What It Does *Not* Fix
+
+- FM does **not** fix a **firm effect**
+- Stock residuals correlated **over time** → FM SE too small
+- It assumes monthly slopes $\hat\gamma_{1,t}$ are independent across $t$
+- Same blind spot White SEs had under clustering
+- Honest fix: **Newey–West (HAC)** on the slope series
+
+::: notes
+The flip side is also straight from Chapter two-point-four, and you must internalize it: Fama–MacBeth does not fix a firm effect. If a stock's residuals are correlated over time — this year's mispricing predicts next year's — then the Fama–MacBeth standard error, which assumes the monthly slopes are roughly independent across time, is too small. That is the same way White standard errors were too small in the presence of clustering. Petersen flagged this exactly. The honest fix is a Newey–West, or HAC, correction applied to the time series of monthly slopes, which you will add as an extension. For now, hold the headline: Fama–MacBeth clusters by time, not by firm.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Fama–MacBeth is **clustering by time**, done literally: one regression per period, then average — each period is one vote. The SE lives in the number of **months** $T$ and handles within-month correlation automatically. It does **not** fix a firm effect (serial correlation over time). Next: the two data paths and the synthetic build.
+:::
+
+::: notes
+To summarize part four: Fama–MacBeth is clustering by time period, done in the most literal way possible — one regression per period, then average, so each period casts exactly one vote. The standard error lives in the number of months, T, and handles the within-month cross-sectional correlation automatically, with no sandwich machinery. What it does not handle is a firm effect — serial correlation in a stock's residuals over time — which would make the plain standard error too small. In part five we get concrete about the data: the real CRSP pull on WRDS, which you run only on Hopper, and the synthetic Path B universe with a planted premium that every student builds.
+:::

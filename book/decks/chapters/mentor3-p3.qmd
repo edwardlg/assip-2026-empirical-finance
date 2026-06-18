@@ -1,0 +1,54 @@
+---
+title: "Pillar Two: The Exclusion Restriction"
+date: "2026-07-06"
+---
+
+# Pillar Two: The Exclusion Restriction {.title}
+
+::: notes
+Welcome back to Mentor Session three, part three of five. In part two we defended the first pillar — as-good-as-random assignment — and saw that balance checks the observables but never the unobservables. Now we face the harder half of the design, and it is the same untestable claim that haunted instrumental variables back in Chapter three-point-four: the exclusion restriction. As-if-random assignment buys you a clean offer of treatment. But that is not yet the effect of the treatment itself. To get there, the assignment must reach the outcome through one channel only, and arguing that there is no second channel is the part of the job where careful empiricists earn their keep.
+:::
+
+## A Clean Offer Is Not Enough
+
+- As-if random buys a clean **offer** of treatment
+- To identify the **treatment**, the offer must reach the outcome…
+- …**only through** the treatment — no side door
+- One channel, and one channel only
+
+::: notes
+Here is the subtle distinction. As-if-random assignment gets you a clean offer of treatment — the regulator's rule landed on some firms and not others, blindly. But the thing you want to measure is the effect of the treatment itself, not merely the effect of being offered it. For the design to identify that, the assignment must reach the outcome only through the treatment — and through nothing else. Picture an arrow from the rule to the outcome. Exclusion says that arrow is allowed to pass through exactly one box, the treatment, on its way. If the rule has any second path to the outcome that does not go through the treatment, the design is broken. That second path is what we call a side door, and finding side doors is the whole game.
+:::
+
+## Side Doors Kill the Design
+
+- If the same rule **also** moved disclosure, attention, or policy…
+- …the assignment has a **second path** to the outcome
+- Example: the rule relaxes a constraint **and** draws analyst attention
+- Now the estimate is **contaminated** — you can't tell the channels apart
+
+::: notes
+Let me make the failure concrete. Suppose the rule that relaxed a short-sale constraint also, at the very same moment, changed disclosure requirements, or drew a wave of analyst attention to those same firms, or shifted some other policy that touches your outcome. Now the rule has a second path to the outcome that does not run through your treatment. When you see the outcome move, you genuinely cannot tell whether it moved because of the treatment or because of that side channel — the two are tangled together, and the estimate is contaminated. This is why a natural experiment demands you know, in institutional detail, what exactly the rule did. Not roughly — exactly. A rule that does one clean thing is a gift; a rule that does three things at once is a trap.
+:::
+
+## You Defend It; You Cannot Test It
+
+- There is **no statistic** that confirms exclusion
+- Defend with **institutional facts** — what the rule did and did *not* do
+- Then attack your own argument like a hostile referee
+- A **strong first stage** is your buffer (Chapter 3.5)
+
+::: notes
+And here is the part students resist: there is no test for exclusion. No statistic confirms it. Instead you defend it with institutional knowledge — what exactly did the rule do, and did it do anything else? — and then you stress-test that defense against every alternative channel a skeptic can name. You play hostile referee against your own paper. One more piece of protection comes from Chapter three-point-five: a strong first stage is your buffer. If the lever moved the treatment a lot, then any tiny exclusion violation washes out. But a faint lever amplifies even a small violation — a weak instrument turns a minor side door into a major bias. So strength in the first stage and a clean exclusion argument work together.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+As-if random buys a clean **offer**; identifying the treatment needs the offer to reach the outcome **only through** the treatment. **Side doors** — disclosure, attention, other policy — contaminate it. There's no test: you defend exclusion with institutional facts. Next: whose effect you actually measured.
+:::
+
+::: notes
+To summarize part three: as-if-random assignment buys a clean offer of treatment, but identifying the effect of the treatment itself requires the exclusion restriction — the offer must reach the outcome only through the treatment, with no side door. Side channels like a simultaneous change in disclosure, analyst attention, or another policy contaminate the estimate, because you can no longer tell which channel moved the outcome. There is no statistical test; you defend exclusion with institutional facts and then attack your own argument, and a strong first stage buffers you against small violations. In part four we turn to the third pillar — the complier population — and the reason a natural experiment measures a local effect, not the average for everyone.
+:::

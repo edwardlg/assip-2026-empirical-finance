@@ -1,0 +1,57 @@
+---
+title: "The Missing Score, and Why Design Wins"
+date: "2026-07-13"
+---
+
+# The Missing Score, and Why Design Wins {.title}
+
+::: notes
+Welcome back to the Week Four mentor session on detecting discrimination, part five of five. In part four we set up the same-sex-borrower case in HMDA data and saw that the raw approval gap is contaminated by unobserved creditworthiness and by selection into applying. Now we confront a sharp feature of this particular dataset — there is no credit score in HMDA — and we turn that apparent weakness into the argument for why a clean design beats more controls. Then we close by stating the difference-in-differences setup and the discipline you will carry into Lab Four and Capstone One.
+:::
+
+## The Missing Credit Score
+
+- HMDA does **not** contain the applicant's credit score
+- So control-for-creditworthiness is **harder** here — a key factor is missing
+- You cannot adjust for what you do not have
+- That makes a **design** differencing out fixed unobservables more valuable
+- The weakness of the data becomes the argument for the method
+
+::: notes
+Here is a sharp twist in this dataset: HMDA does not contain the applicant's credit score. That single omission cuts both ways. On one side, it makes the control-for-creditworthiness argument harder, because one of the single most important legitimate factors an underwriter uses is simply missing from your covariates — and you cannot adjust for what you do not have. On the other side, and this is the key move, precisely because you cannot control your way to a clean estimate, a design that differences out fixed unobservables becomes more valuable here than in a setting where you held the score. The weakness of the data becomes the argument for the method. When controls cannot reach the unobserved factor, you stop leaning on controls and lean on design instead.
+:::
+
+## Setting Up the Difference-in-Differences
+
+- Imagine a policy changing protections at a **known date**, some jurisdictions
+- Outcome: approval or price; treated: same-sex applicants where it changed
+- Differencing over time **and** across groups removes fixed between-group gaps
+- **Parallel trends**: absent the policy, the gap stays on its path
+- Read an **event-study** plot — flat pre-trends reassure, never prove
+
+::: notes
+Now set up the design. Imagine a state or federal change that altered fair-lending protections for same-sex couples at a known date in some jurisdictions and not others. Frame it as a difference-in-differences from Chapter Four-point-one. The outcome is approval or price. The treated group is same-sex applicants in the affected jurisdictions. The comparison is everyone else. Differencing over time and across groups removes the fixed between-group gaps that the cross-sectional regression of part four could never touch — including the unobserved creditworthiness that the missing score left you exposed to. State the parallel-trends assumption explicitly: absent the policy, the same-sex versus different-sex outcome gap would have stayed on the same trajectory. Then inspect an event-study plot, watching the pre-period coefficients, and remember the discipline from Chapter Four-point-one — flat pre-trends are reassuring but never a proof.
+:::
+
+## Standard Errors and the Stakes
+
+- Staggered rollout → naive two-way fixed effects misbehaves (Chapter 4.2)
+- Reach for the robust estimator your **Lab 4** uses instead
+- **Cluster** the standard errors by state (Chapter 4.1, §7)
+- A number headed for Congress must survive referee, regulator, court
+- Run the checklist: comparison, threat, what's untestable
+
+::: notes
+Two final cautions, both non-negotiable when a number is headed for Congressional testimony. First, if the policy rolls out at different dates across states, you are in the staggered-adoption world of Chapter Four-point-two, where a naive two-way fixed-effects regression can give you the wrong sign through contaminated comparisons — so you reach for the robust estimator your Lab Four uses instead. Second, get the standard errors right: cluster by state, following Chapter Four-point-one, section seven, because treatment is assigned at the state level and ignoring that understates your uncertainty. A credible fair-lending estimate has to survive a hostile referee, and then a regulator and a court. The same checklist you run on any design — what is the comparison, what is the threat, what is untestable — is exactly what makes a discrimination finding stand up in that arena.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+HMDA's missing credit score is why a **design** that differences out fixed unobservables beats more controls. Set it up as a difference-in-differences with explicit parallel trends, an event-study check, the staggered-robust estimator, and state-clustered errors. Your **Lab 4** and **Capstone 1** build exactly this on HMDA — look as hard at the comparison as at the gap.
+:::
+
+::: notes
+To close the session: the same-sex-borrower study shows the whole discipline in one place. HMDA hands you a natural comparison through recorded co-applicant sex, but the missing credit score and the threat of selection into applying mean a raw gap, or even a controlled coefficient, is not the causal effect — which is exactly why a design that differences out fixed unobservables earns its keep, paired with explicit parallel trends, an event-study check, a staggered-robust estimator, and standard errors clustered by state. Look as hard at the comparison as you look at the gap, because in fair lending the credibility is the finding, and the coefficient is only what falls out once the comparison is clean. That carries you straight into Lab Four, where you build a clean difference-in-differences on real HMDA data, and on to Capstone One, built to that standard.
+:::

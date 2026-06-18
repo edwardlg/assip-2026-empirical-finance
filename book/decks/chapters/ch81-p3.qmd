@@ -1,0 +1,81 @@
+---
+title: "Reading the Specification Curve"
+date: "2026-08-10"
+---
+
+# Reading the Specification Curve {.title}
+
+::: notes
+Welcome back to The Execution and the Specification Curve, part three of six. In part two we enumerated Maya's one hundred forty-four specifications and ran them all. Now we draw the signature figure and learn to read it — because the reading is the skill. We start with the two panels, then read Maya's robust curve.
+:::
+
+## A Two-Panel Figure
+
+- Two stacked panels share one horizontal axis
+- Horizontal axis runs over all 144 specifications
+- Sorted by magnitude of the estimate
+- Most negative on the left, most positive on the right
+- The curve's **shape** is the whole story
+
+::: notes
+The figure has two stacked panels sharing a horizontal axis that runs over all one hundred forty-four specifications, sorted by the magnitude of the estimate — most negative on the left, most positive on the right. Because they are sorted, the curve rises monotonically left to right, and its shape is the whole story.
+:::
+
+## The Top Panel
+
+- Plots the 144 point estimates as a curve
+- Each with a marker for its confidence interval
+- Filled when significant, hollow when not
+- Flat and below zero, mostly filled = same negative answer everywhere
+- Sweeps across zero with mixed markers = sign depends on the fork
+
+::: notes
+The top panel plots the one hundred forty-four estimates as a curve — hence the name — each with a marker for its confidence interval, filled when significant, hollow when not. A flat curve sitting entirely below zero, with nearly every marker filled, says: every defensible path gives roughly the same negative answer. A curve that sweeps from strongly negative through zero up to strongly positive, with mixed markers, says: the sign and significance of my result depend entirely on which fork I walk — an artifact of analytic choice, not a feature of the world.
+:::
+
+## The Bottom Panel
+
+- A grid: one row per analytic **choice**
+- One column per specification, aligned to the top sort
+- A tick at row, column means that spec used that choice
+- Read **downward** from any region of the curve
+- Converts "my result is fragile" into a forensic finding
+
+::: notes
+The bottom panel turns a pretty picture into a diagnostic. It is a grid: one row per analytic choice — cluster by state, cluster by county, drop twenty-twenty, add state trends — and one column per specification, aligned to the top panel's sort. A tick sits where a specification used a choice. So you read downward from any region of the curve to see which choices produced it. If all the positive, insignificant specifications on the right share a single tick — say, cluster by county plus drop twenty-twenty — you have learned something precise and damning: the fragility is driven by those two choices. That converts "my result is fragile" from a worry into a forensic finding.
+:::
+
+## Reading Maya's Curve
+
+- Estimates run from $-2.4$ on the left to $-0.4$ on the right
+- Median around $-1.8$ percentage points
+- 132 of 144 significant; the dozen hollow ones cluster near zero
+- Those twelve all share wild bootstrap plus the aggressive trim
+- The lowest-power corner of the multiverse
+
+::: notes
+Let us read Maya's curve concretely. Suppose her estimates run from about negative two point four percentage points on the left to about negative zero point four on the right; the median is around negative one point eight; about one hundred thirty-two of the one hundred forty-four are significant, filled, and the dozen hollow ones cluster at the right end near zero. Reading downward from those non-significant specifications, the bottom panel shows they all share two choices: the wild-cluster bootstrap, which widens intervals when adopters are few, and the drop-edge-cohorts sample, which throws away identifying variation. The result loses significance only in the lowest-power corner, and never changes sign.
+:::
+
+## What Makes It Robust
+
+- The sign **never flips**
+- Magnitude is stable around the pre-registered estimate
+- Pre-registered $-1.9$ sits near the center of the distribution
+- Significance is lost only where power is independently lowest
+- The curve is what licenses the word "robust"
+
+::: notes
+That is a robust result, and the curve is what licenses the word. The sign never flips; the magnitude is stable around the pre-registered estimate; and the pre-registered specification, negative one point nine, sits near the center. Loss of significance is confined to the least powerful specifications, for reasons the bottom panel makes legible. Maya's honest paragraph reports all of this: the effect is negative across every defensible specification, with a median of negative one point eight; it is significant in one hundred thirty-two of one hundred forty-four; the twelve exceptions sit in the lowest-power corner and never change sign. A referee cannot accuse her of cherry-picking, because she has shown the entire orchard and pointed to which trees bear less fruit, and why.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The top panel shows the estimates sorted; the bottom panel shows which choice produced each. Read **downward** to turn "fragile" into a forensic finding. Maya's curve is robust: the sign never flips, the pre-registered $-1.9$ sits near the center, and significance is lost only in the lowest-power corner.
+:::
+
+::: notes
+To summarize part three: the top panel sorts the estimates, and the bottom panel shows which choice produced each one. You read downward to turn "my result is fragile" into a forensic finding about a specific fork. Maya's curve is robust — the sign never flips, the pre-registered negative one point nine sits near the center, and significance vanishes only in the lowest-power corner. In part four we read the curve that should terrify you, and build the checklist for any curve.
+:::

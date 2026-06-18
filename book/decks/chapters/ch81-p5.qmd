@@ -1,0 +1,69 @@
+---
+title: "When the Specification Curve Lies"
+date: "2026-08-10"
+---
+
+# When the Specification Curve Lies {.title}
+
+::: notes
+Welcome back to The Execution and the Specification Curve, part five of six. In part four we built the checklist for reading any curve. Now comes the third move: every technique has an assumption that breaks, and a picture this persuasive is dangerous precisely because it is persuasive. A specification curve can mislead in four distinct ways. We take them one at a time.
+:::
+
+## It Only Holds the Forks You Listed
+
+- Exhaustive over choices you listed, silent on the rest
+- Hold the outcome definition fixed and the curve can look robust
+- While resting on one unexamined fork
+- Robustness is conditional on completeness of enumeration
+- Completeness is a judgment call, not a guarantee
+
+::: notes
+First, the deepest limitation. A specification curve is exhaustive over the choices you listed and silent about every choice you did not think to vary. If Maya's multiverse holds the outcome definition nearly fixed — if all one hundred forty-four quietly assume the denial gap is the right outcome and never test the within-applicant indicator — then her curve can look gloriously robust while resting on one unexamined fork. Its robustness is conditional on the completeness of the enumeration, and completeness is a judgment call. The defense is to enumerate broadly, and to state which dimensions you held fixed and why.
+:::
+
+## Not All Specs Are Equally Defensible
+
+- The curve treats all 144 as equal votes
+- But clustering where treatment varies beats clustering by county
+- A doubly-robust DiD beats one without composition controls
+- Pad with weak specs and you drag the median anywhere
+- That is p-hacking with extra steps and a fancier chart
+
+::: notes
+Second, not all specifications are equally defensible, and the curve pretends they are. A naive reading treats all one hundred forty-four points as equal votes, so "the median is negative" sounds like a democratic verdict. But some are better — clustering at the level treatment varies, the state, beats clustering by county; a doubly-robust difference-in-differences with composition controls is better-identified than one without. Pad the multiverse with weak-but-arguable specifications and you drag the median wherever you like — p-hacking with extra steps and a fancier chart. Simonsohn, Simmons, and Nelson are explicit that the choices must be theoretically justified and statistically valid. Include only specifications you would defend out loud.
+:::
+
+## It Describes Choices, Not Identification
+
+- The curve can be flat, tight, all-significant, and **completely wrong**
+- All 144 can share the same fatal identification flaw
+- If parallel trends fails, every spec inherits the bias
+- A robust curve on an invalid design is a confident wrong answer
+- Validity is Chapter 8.2's job, not the curve's
+
+::: notes
+Third, the curve describes analytic-choice fragility, not identification. A specification curve can be flat, tight, all-significant, and completely wrong, because every one of its specifications can share the same fatal identification flaw. If Maya's parallel-trends assumption fails — if adopting states were already on a different denial-gap trajectory — then all one hundred forty-four inherit that bias, and the curve robustly reports a beautifully stable artifact. Robustness across the multiverse is not validity of the design. The curve answers "did my choices drive the result?" and is mute on "did my design identify the effect?" That second question is Chapter eight-point-two's job, with placebos and Oster's delta. A robust curve on an invalid design is a confident wrong answer — the most expensive kind.
+:::
+
+## It Can Become a Fishing License
+
+- Perverse mode: run the multiverse, then pick the median as the headline
+- "I chose the most representative specification"
+- But the median was determined by data you already saw
+- That is outcome-driven selection in a lab coat
+- The PAP fixes the primary spec first; the curve is context
+
+::: notes
+Fourth, the curve can become a fishing license. There is a perverse failure mode where a researcher runs the multiverse, then picks the specification at the center and reports that as the headline — "I chose the median, the most representative one." But the median was determined by the data you have already seen, so choosing it after the fact is just outcome-driven selection in a lab coat. The discipline that prevents this is the one you already have: the pre-analysis plan fixes the primary specification in advance, and the curve is reported around that pre-registered point, not used to choose it. The confirmatory run comes first and is privileged; the curve is context, never a substitute. That is why the curve always marks where the pre-registered specification sits.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A specification curve is a tool for **honesty about analytic-choice multiplicity** — and only that. It is silent on forks you never listed, pretends weak specs are strong, says nothing about identification, and can launder a post-hoc choice if you let it. Use it for what it is; say plainly what it does not do.
+:::
+
+::: notes
+To summarize part five: a specification curve is a tool for honesty about analytic-choice multiplicity, and it is extraordinarily good at that one job. But it is silent on forks you never enumerated, it pretends weak specifications are as good as strong ones, it says nothing about whether your design identifies the effect, and it can launder a post-hoc choice into a pre-registered one if you let it. Use it for what it is — the most complete disclosure of the garden of forking paths — and say plainly what it does not do. In part six we close the loop with the deviations log and look ahead.
+:::

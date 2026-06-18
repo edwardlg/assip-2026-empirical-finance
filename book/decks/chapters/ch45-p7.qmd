@@ -1,0 +1,57 @@
+---
+title: "View II — It's the Shifts (BHJ)"
+date: "2026-07-13"
+---
+
+# View II — It's the Shifts (BHJ) {.title}
+
+::: notes
+Welcome back to Chapter four-point-five, part seven of ten. In part six we finished the shares view, diagnosed with Rotemberg weights. Now the second lens, which at first sounds like a flat contradiction. Borusyak, Hull and Jaravel, in twenty twenty-two, locate identification not in the shares but in the shifts — and they are also right. The two papers simply make exogeneity assumptions about different ingredients, credible in different data regimes. We will see the quasi-experiment in the shocks, its assumption, and how many shocks you must have.
+:::
+
+## The Trick: The Shocks Are a Quasi-Experiment
+
+- Treat the national shifts $g_j$ as the **random** thing
+- As-good-as-randomly drawn across industries, independent of exposure
+- $B_r = \sum_j s_{rj} g_j$ = region's **exposure-weighted average of random draws**
+- More industries → behaves more like a clean experiment
+- Shares demoted to **exposure weights** — endogeneity allowed
+
+::: notes
+Borusyak, Hull and Jaravel ask you to think about the national shifts themselves as the random thing. Imagine the universe drew the industry growth rates — auto down eight percent, finance up three, retail down one — as-good-as-randomly across the many industries, independent of how exposed any region was. If the shifts are essentially a lottery over industries, then a region's predicted shock is a region-specific exposure-weighted average of random draws — and the more industries there are, the more this average behaves like a clean experiment at the region level. The shares are now demoted to exposure weights — hence the name, the exposure-weights view. They are not required to be exogenous; they just determine how much of each random shock each region absorbs. So a region's manufacturing specialization can be as historically loaded as you like, as long as the national manufacturing shock was not picked to coincide with manufacturing regions' latent trends.
+:::
+
+## The Assumption and the Rewrite
+
+- **Quasi-random shifts**: $g_j$ mean-independent of industry unobservables
+- Need **many** shocks with sufficiently **dispersed** exposure
+- BHJ rewrite the IV moment as a regression **at the shock (industry) level**
+- Exogeneity needed there; **shares may be endogenous**
+- A product is exogenous if **either** factor is
+
+::: notes
+State the assumption precisely. The national industry shocks are as-good-as-randomly assigned across industries — mean-independent of the industry-level unobservables, conditional on shock-level controls — and there are many shocks whose exposure is sufficiently dispersed. Identification is then a shock-level quasi-experiment: as if nature randomized industries, and regions are bundles of industry bets. The formal engine is a change of perspective: Borusyak, Hull and Jaravel rewrite the shift-share moment condition as a regression at the level of the shocks, exposure-weighted. Exogeneity of the shocks at that level is what you need, and — critically — the shares are allowed to be endogenous. That is why the two views do not contradict: a product is exogenous if either factor is.
+:::
+
+## How Many Shocks Do You Need?
+
+- **Many industries** → law-of-large-numbers; one endogenous shock washes out
+- **Few concentrated shares** (Maya's banks) → no "many"; **use GPSS**
+- Exposure must be **dispersed**, not concentrated in a few regions
+- Shocks plausibly random: oil prices, technology, foreign competition
+- Diagnostic: report the **effective number of shocks**
+
+::: notes
+When is quasi-random shifts credible? Precisely when the Goldsmith-Pinkham assumption is shaky, and vice versa — a beautiful complementarity. It is most defensible when there are many industries, so the exposure-weighted average has a law-of-large-numbers logic. With hundreds of industries, a single endogenous shock washes out. But with a handful — Maya's bank version, where two banks hold most deposits — there is no many to invoke; one big bank's shock dominates, the law of large numbers fails, and you should not lean on this story. So the how-many-shocks question decides your strategy: many industries means the shifts view is natural; few concentrated shares means the shares view is your only honest defense. It also needs exposure dispersed across regions, and the shocks plausibly random — auto swings driven by oil prices, not handpicked to hurt auto-heavy regions. The diagnostic is the effective number of shocks: if a few industries carry all the exposure weight, your many shocks is an illusion.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**BHJ:** treat the *shifts* as as-good-as-random across *many* industries, so $B_r$ is an exposure-weighted average of random draws — and the shares may be endogenous. Credible when shocks are many and dispersed; diagnose with the **effective number of shocks**. Next: AKM standard errors, then tying it all back to IV.
+:::
+
+::: notes
+To summarize part seven: Borusyak, Hull and Jaravel locate identification in the shifts — treat the national shocks as as-good-as-randomly assigned across many industries, and a region's predicted shock becomes an exposure-weighted average of random draws. The shares are demoted to exposure weights and may be endogenous, which is why this does not contradict the shares view — a product is exogenous if either factor is. This view is credible when shocks are many and dispersed, diagnosed with the effective number of shocks. In part eight we cover Adão, Kolesár and Morales on standard errors and map the chapter back onto the Week Three IV conditions.
+:::

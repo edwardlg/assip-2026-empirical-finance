@@ -1,0 +1,58 @@
+---
+title: "Robustness, Conclusion, and Calibrated Verbs"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Robustness, Conclusion, and Calibrated Verbs {.title}
+
+::: notes
+Welcome back to Writing the Empirical Paper, part six of seven. In part five we walked the body — data, design, and results. Now we finish the paper's argument with robustness and the conclusion, then pull together the single discipline that runs through every section: matching your verbs to your evidence. These are the moves that decide whether a referee trusts you.
+:::
+
+## Robustness as Persuasion
+
+- Present checks as answers to *specific* threats you raised
+- Mirror the threats-and-responses table from your memo
+- Each subsection: one named threat, the check, residual concern
+- Organize around the reader's doubts, not your regressions
+- A check no one asked for persuades no one
+
+::: notes
+The robustness section converts your threats table into persuasion. You already did the work earlier — the placebos, the alternative standard errors, the perturbations of bandwidth and controls and sample, the Oster delta for selection on unobservables. The writing task is to present those checks as answers to the specific threats your design section raised, not as a context-free pile of extra regressions. The organizing move is to mirror the threats-and-responses table from your identification memo: each subsection takes one named threat and shows the check that addresses it, with the residual concern stated plainly. "A reader might worry the result is driven by anticipation; we re-estimate excluding the year before adoption and the effect is unchanged." That sentence names the threat, reports the check, and states the reassuring result — in the reader's order, the order in which they would attack the paper. A check no one asked for persuades no one; one that answers a threat disarms the attack before it lands.
+:::
+
+## The Conclusion Recalibrates
+
+- Not a summary — the reader just read the paper
+- Restate the finding in its properly hedged form
+- State **limitations**: residual concerns, uncovered populations
+- Candor about limits makes a referee trust everything else
+- Then "what's next" — the question you opened, not closed
+
+::: notes
+The conclusion says what we learned, what we cannot claim, and what comes next. It is not a summary that repeats the introduction — the reader just read the paper. It is a recalibration. First, a tight restatement of the finding in its properly hedged form. Second — the part students skip, to their cost — an honest statement of limitations: the residual concerns from your threats table, the populations your sample does not cover, the mechanism you could not fully open up. This is where the residual-concern column of your memo finally appears, and stating it is not weakness; it is the candor that makes a referee trust everything else. Third, what's next: the question your paper opened but did not close, the natural extension. And resist letting the verbs creep back up — no "this paper proves" after pages of disciplined hedging. The conclusion is the most-quoted part after the abstract.
+:::
+
+## Your Verb Is Bounded by Your Weakest Assumption
+
+- Randomized experiment earns "causes," "the effect of"
+- Quasi-experiment with passed assumption: "causally estimate"
+- OLS on observables: "is associated with," "predicts"
+- Descriptive study: "documents" — never causal clothing
+- The common failure is *drift*; audit your verbs in one pass
+
+::: notes
+One rule threads through every section: your strongest verb is bounded by your weakest assumption. A clean randomized experiment earns "causes," "the effect of." A quasi-experiment with a testable-and-passed identifying assumption earns "causally estimate," "the program reduced," with the assumption named. An observational regression earns only "is associated with," "predicts," "suggestive of." A descriptive study earns "documents" and must not wear causal clothing at all. The most common failure is not lying; it is drift: the abstract hedges correctly, the introduction is bolder, the results forget themselves, and the conclusion goes all the way to "we have shown discrimination is caused." Each step is small; the cumulative drift overclaims. Guard against it with a deliberate pass: read only the verbs attached to your main result and force them down to what your weakest assumption permits. But do not over-hedge into mush — claim exactly as much as your design supports, no more and no less.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Robustness **converts your threats table into persuasion**, organized around the reader's doubts. The conclusion **recalibrates**: hedged finding, honest limitations, what's next. And your strongest verb is bounded by your weakest assumption — guard against drift. Next: table craft and a worked intro skeleton.
+:::
+
+::: notes
+To summarize part six: the robustness section converts your threats table into persuasion by answering named threats in the reader's order of attack. The conclusion recalibrates rather than summarizes — a hedged restatement, an honest statement of limitations, and what comes next — because candor about limits is what makes a referee trust everything else. And the discipline running through every section: your strongest verb is bounded by your weakest assumption. Guard against drift by auditing your verbs in one deliberate pass, and avoid over-hedging into mush. In part seven we finish with table and figure craft and assemble a complete worked introduction skeleton.
+:::

@@ -1,0 +1,55 @@
+---
+title: "2SLS by Hand on a Single Draw"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# 2SLS by Hand on a Single Draw {.title}
+
+::: notes
+Welcome back to Lab Three, part three of five. In part two we built the world and confirmed that ordinary least squares is biased upward, landing near plus zero-point-four against a truth of zero. Now we instrument. We will run just-identified two-stage least squares by hand — the projection formula — so nothing is hidden, cross-check it against the linearmodels package to machine precision, and grab the conventional standard error, the one the textbook reports and the one that is about to lie to us. The headline of this part is a warning: a single weak-I-V draw can land almost anywhere, so we will refuse to draw any conclusion from it.
+:::
+
+## The Projection Estimator
+
+- Just-identified 2SLS is the projection estimator:
+$$\hat{\boldsymbol\beta}_{\text{2SLS}} = (\mathbf{X}'\mathbf{P}_Z\mathbf{X})^{-1}\mathbf{X}'\mathbf{P}_Z\,\mathbf{y}$$
+- $\mathbf{P}_Z = \mathbf{Z}(\mathbf{Z}'\mathbf{Z})^{-1}\mathbf{Z}'$, with $\mathbf{X}=[\mathbf{1}, x]$, $\mathbf{Z}=[\mathbf{1}, z]$
+- Structural residual uses the **real $x$**, not $\hat x$
+
+::: notes
+With one instrument, one endogenous regressor, and a constant, just-identified two-stage least squares is the projection estimator: beta-hat equals the inverse of X-prime P-Z X, times X-prime P-Z y, where P-Z is the projection matrix Z times the inverse of Z-prime Z times Z-prime. Here the X matrix is a column of ones next to x, and the Z matrix is a column of ones next to the instrument z. You write this by hand so nothing is hidden. One subtlety students get wrong constantly: the structural residual uses the real x, not the fitted x-hat. You also compute the conventional standard error — the one the textbook formula reports and the one that is about to lie to you. Hand-roll it once to understand it, then never trust your hand-rolled standard error for reporting.
+:::
+
+## Cross-Check and the First-Stage F
+
+- Match `linearmodels.IV2SLS` to ~$10^{-16}$ — floating-point dust
+- First-stage $F$ with one instrument is simply $t^2$
+- Regress $x$ on $[1, z]$, square the t-statistic on $z$
+- Confirms the code; measures instrument strength
+
+::: notes
+You confirm your code is right by matching the linearmodels package to machine precision — the maximum absolute difference is around ten-to-the-minus-sixteen, floating-point dust. While you are here, grab the first-stage F. With a single instrument it is simply the t-statistic squared from regressing x on a constant and z. That single number measures how strong the instrument is, and we lean on it heavily for the rest of the lab. A small F means a weak instrument; a large one means a strong instrument. On this weak draw, the F comes out near one-and-a-half — a klaxon.
+:::
+
+## What One Draw Shows
+
+- Hand-rolled $=$ linearmodels to $\sim 10^{-16}$ — code is correct
+- On this seed: 2SLS $\approx +0.42$, **above** OLS, first-stage $F\approx 1.5$
+- Reported SE $\approx 0.18$ — reassuringly tight, and a **lie**
+- A weak-IV estimate is a **fat-tailed ratio** — one draw lands anywhere
+
+::: notes
+Three things on this single draw. First, your hand-rolled coefficient matches linearmodels to about ten-to-the-minus-sixteen, so the machine is correct. Second, on this seed the single-draw two-stage least-squares estimate lands around plus zero-point-four-two with a first-stage F near one-and-a-half — that is above the ordinary-least-squares number of zero-point-four-zero, not below it, which is your first taste of how violently a single weak-I-V draw can swing. A weak instrument's estimate is a fat-tailed ratio, and one draw can land almost anywhere. Third, the reported standard error of about zero-point-one-eight looks reassuringly tight — and that tightness is exactly the lie Chapter three-point-five warned about. Do not draw any conclusion from this one number. If you went back and re-ran with the strong setting, this same single draw would land near the true zero with a large F. That contrast is the experiment — but to make it rigorous, you must repeat it thousands of times.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Hand-rolled 2SLS matches `linearmodels` to floating-point dust, so the code is trustworthy. But the single weak draw lands *above* OLS with a tight-looking SE — a fat-tailed ratio you must never read a conclusion from. The pathology is only visible by averaging.
+:::
+
+::: notes
+To summarize part three: hand-rolling just-identified two-stage least squares as a projection, and matching linearmodels to ten-to-the-minus-sixteen, proves your code is trustworthy. But the single weak draw landed above ordinary least squares, not below, with a standard error that looked tight and honest — and it is neither. Two-stage least squares with a weak instrument is a fat-tailed ratio, so one draw lands almost anywhere, and you can read no conclusion from it. The claim that weak two-stage least squares is biased toward ordinary least squares is a statement about the distribution, not the point. In part four — the heart of the lab — we run the Monte Carlo: more than a thousand draws that finally expose how badly the conventional confidence interval under-covers, and how the Anderson–Rubin interval rescues honest coverage.
+:::

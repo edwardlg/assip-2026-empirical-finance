@@ -1,0 +1,65 @@
+---
+title: "Pillar Three: Compliers, and How to Read a Design"
+date: "2026-07-06"
+---
+
+# Pillar Three: Compliers, and How to Read a Design {.title}
+
+::: notes
+Welcome back to Mentor Session three, part four of five. In part three we wrestled with the exclusion restriction — the untestable claim that the assignment reaches the outcome only through the treatment. Now the third pillar, the one people forget to state honestly: the complier population. From the LATE theorem in Chapter three-point-four, an instrument identifies the effect only for the units the lever actually moved. So we ask who those units are, why two valid designs can disagree, and then we assemble the whole checklist for reading and running a natural experiment.
+:::
+
+## The Lever Only Moves Some Units
+
+- A perfect design still doesn't measure everyone's effect
+- LATE: you identify the effect for **compliers** only
+- Compliers $=$ the units the lever actually moved
+- This is a **local** average, not the average for all
+
+::: notes
+Even a flawless natural experiment, with perfect balance and an airtight exclusion argument, does not measure the effect on everyone. This is the LATE theorem from Chapter three-point-four, and it changes what your headline is allowed to say. The instrument identifies the effect only for compliers: the units the lever actually moved from untreated to treated — the ones whose treatment status genuinely flipped because of the rule. The effect you estimate is their effect, a local average treatment effect, not the average across the whole population. Local is the operative word, and honesty about who is local is the third pillar.
+:::
+
+## Never-Takers and Always-Takers
+
+- A constraint-relaxing rule moves the **marginal** units
+- **Never-takers**: nobody wanted to short them anyway — untouched
+- **Always-takers**: already shorted to the limit — untouched
+- Your estimate is **silent** about both groups
+
+::: notes
+Make the categories concrete with a short-sale example. A rule that relaxes a short-sale constraint bites only on the marginal stocks — the ones whose short-selling the rule actually unlocked. It does nothing for two other groups. The never-takers are stocks nobody wanted to short anyway; the constraint was never the thing holding shorting back. The always-takers are stocks already shorted to the hilt; they were at the limit before the rule and stay there after. Your estimate is completely silent about both groups. It speaks only for the compliers in the middle. Before you generalize a single word, ask: who are the compliers here, can I describe them, and is their effect the one the policy question cares about?
+:::
+
+## Two Valid Designs Can Disagree
+
+- Two natural experiments, same question, **different numbers**
+- Both correct — they moved **different** compliers
+- So always ask: *can I describe my compliers?*
+- And: *is their effect the policy-relevant one?*
+
+::: notes
+Here is a consequence that surprises people. Two valid natural experiments aimed at the very same question can return two different numbers, and both can be correct. The reason is compliers. If one design's lever moves small, opaque firms and another's moves large, liquid ones, they estimate the effect for different subpopulations, so of course the magnitudes differ. Neither is wrong; they are answers to slightly different questions wearing the same headline. This is why describing your compliers is not optional — it makes your number interpretable and lets a reader reconcile your study with the next one.
+:::
+
+## How to Read and Run One
+
+- Name the assignment mechanism in **one sentence**
+- Then ask: was it blind, what else did it do, whose effect?
+- Report **balance**, the **first stage**, the **reduced form**
+- Weak lever $\Rightarrow$ weak-IV-robust tools, not a confident t-stat
+
+::: notes
+Now assemble the whole checklist. First, name the assignment mechanism in a single sentence — what force assigned the treatment, to whom, and why. Then run the three pillars as questions: was the assignment blind, what else might it have done, and whose effect are you estimating? When you report, show three things: the balance check that supports as-if-random; the first stage, whether the rule actually moved the treatment; and the reduced form, whether the rule moved the outcome. Their relationship identifies the effect. And if the lever is weak, you reach for the weak-instrument-robust tools from Chapter three-point-five, not a confident-looking t-statistic.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A natural experiment measures the effect on **compliers** only — not never-takers, not always-takers. Two valid designs can give two correct, different numbers. Read one by naming the mechanism, then reporting **balance**, **first stage**, and **reduced form**. Next: a real regulatory pilot from the field.
+:::
+
+::: notes
+To summarize part four: the third pillar is the complier population. By the LATE theorem, you measure the effect only for the units the lever moved — not the never-takers, not the always-takers — so your estimate is local. That is why two valid designs can give two correct but different numbers. To read or run a design, name the mechanism in one sentence, then report balance, the first stage, and the reduced form, and use weak-instrument-robust tools when the lever is faint. In part five we put all three pillars to work on a real regulatory experiment from my own coauthored research — short-sale constraints and stock price crash risk.
+:::

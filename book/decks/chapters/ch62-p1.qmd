@@ -1,0 +1,57 @@
+---
+title: "What Industry Is a Company In?"
+date: "2026-07-27"
+---
+
+# What Industry Is a Company In? {.title}
+
+::: notes
+Welcome to Week Six, Chapter six-point-two, part one of nine. This is our reader's guide to Hoberg and Phillips, two thousand sixteen, "Text-Based Network Industries and Endogenous Product Differentiation," published in the Journal of Political Economy. In this opening part we frame the whole lesson: a deceptively simple question that the paper answers in a radically new way, and one warning that changes how you read it.
+:::
+
+## A Question You Never Had To Ask
+
+- *What industry is a company in?*
+- Apple is "technology," Coca-Cola is "beverages"
+- But ask: *who exactly competes with Amazon?*
+- A bookseller? A grocer? A cloud provider?
+- Amazon is all of those at once
+
+::: notes
+Here is a question you have never had to ask, because someone answered it for you decades ago and you never noticed: what industry is a company in? You think you know. Apple is technology, Coca-Cola is beverages. But ask a precise version — who exactly competes with Amazon? — and the easy answer falls apart. A bookseller? A grocery chain? A cloud provider? Amazon is all of those, and the firm it fights hardest on cloud, Microsoft, is not the one it fights on groceries, Walmart. So the comfortable picture of one neat box per company simply does not survive contact with a real, sprawling firm.
+:::
+
+## The Convention This Paper Overthrows
+
+- Official answer: a four-digit SIC or six-digit NAICS code
+- One number slots each firm into one box
+- A fixed, government-maintained tree
+- Everyone in your box is a competitor; everyone outside is not
+- Hoberg and Phillips overthrow exactly this
+
+::: notes
+The official answer is a four-digit S-I-C code or a six-digit NAICS code — a number slotting each firm into one box of a fixed, government-maintained tree. That code forces Amazon into a single box and declares everyone sharing that box a competitor and everyone outside it not. That is the convention this paper overthrows. And the way it overthrows it is the cleanest example in finance of one idea: the words a firm uses to describe itself are data, in the same hard sense a stock price is data. The paper turns prose into geometry — and the geometry is the cosine you met in Chapter one-point-two, when we said correlation is a cosine. Hold that thought; we are about to cash it in.
+:::
+
+## One Warning Before The Anatomy
+
+- Week-5 papers were **causal**: *X causes Y*
+- They lived or died on an identifying assumption
+- This paper is mostly **not** causal
+- Its contribution is a **measurement**: a new way to define an industry
+- Judge it: is the measure better, and better *at what*?
+
+::: notes
+One warning before the anatomy. The Week-Five papers were causal — they claimed X causes Y and lived or died on an identifying assumption. This paper is mostly not causal. Its central contribution is a measurement: a new way to define an industry. A measurement paper is judged differently. Not "is the identifying assumption true?" but "is the measure better than what we had, and better at what?" Keep that distinction live; it is the thing most first-time readers get wrong about this paper.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The official S-I-C and NAICS codes force every firm into one fixed government box. Hoberg and Phillips replace that with a measure built from the words firms use to describe themselves. Read it as a **measurement** paper: judge whether the new measure beats the old, not whether a causal assumption holds.
+:::
+
+::: notes
+To summarize part one: the official industry codes force every firm into one fixed box, and that box cannot describe a firm like Amazon that competes on many fronts at once. Hoberg and Phillips replace it with a measure built from the words firms write about themselves. Read the paper as a measurement, not a causal claim. In part two we make the research question precise: can we define industries from what firms say they do?
+:::

@@ -1,0 +1,57 @@
+---
+title: "Stating the Central Limit Theorem"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Stating the Central Limit Theorem {.title}
+
+::: notes
+Welcome back to Chapter one-point-four, part four of nine. In part three we built the standardized sample mean and asked what shape it converges to. Now we answer: the Central Limit Theorem. We state it, then build the intuition for why the bell must appear — and why it is the only possible destination.
+:::
+
+## State the CLT
+
+$$\frac{\bar{x}-\mu}{\sigma/\sqrt{N}}\;\xrightarrow{d}\;N(0,1)$$
+
+- $\xrightarrow{d}$ = convergence in **distribution** — the whole silhouette
+- The astonishing clause: **regardless of the population's shape**
+- Skewed, lumpy, bounded, discrete, U-shaped — does not matter
+- Only need finite mean and finite variance
+
+::: notes
+Here is the statement. As N grows, the distribution of that standardized sample mean converges to the standard normal — the bell curve with mean zero and standard deviation one. The arrow with a little d means convergence in distribution: the entire shape of the histogram — not just its center or width, but its whole silhouette — approaches the standard normal. And here is the astonishing clause: this happens regardless of the shape of the original population, as long as it has a finite mean and a finite variance. The raw data can be skewed, lumpy, bounded, discrete, U-shaped — it does not matter. Average enough of it, standardize, and you get the same universal bell. That universality is why the normal distribution is everywhere in statistics: not because nature loves bell curves, but because we spend our lives looking at averages of many small independent pieces.
+:::
+
+## Why It Works: The Intuition
+
+- Each draw adds a quirky deviation from $\mu$
+- Two forces: deviations **cancel**, and **no single one dominates**
+- Many small independent contributions $\Rightarrow$ histogram smooths to a bell
+- Lumps and skews of any one source get averaged away
+
+::: notes
+Why should this be true? A full proof uses a device called the characteristic function and is beyond us here, but the intuition is reachable and worth owning. Think about what an average does. Each draw contributes some quirky deviation from mu — maybe far above, maybe just below. When you add up many such deviations, two forces act. First, the deviations partly cancel — that is the Law of Large Numbers force. Second, and this is the Central Limit Theorem's secret, the particular combination of pluses and minuses that survives is built from a huge number of independent little contributions, no single one of which dominates. Mathematics has a strong tendency: whenever a quantity is a sum of many small independent influences of comparable size, the histogram of that sum smooths toward the normal curve. The lumps and skews of any one source get averaged away; only the smooth, symmetric bell survives.
+:::
+
+## Why the Bell Is the *Only* Destination
+
+- Average $N$, then another $N$, then combine into $2N$
+- The shape shouldn't care how you batched it
+- Normal is **stable**: a normal averaged with a normal is normal
+- "No single one dominates" — the clause crypto will violate
+
+::: notes
+A second angle explains why the bell is the unique destination, not one of many. Suppose you average N draws, then separately average another N draws, then combine the two groups into one average of two-N. The shape of the sampling distribution should not care whether you did it in one batch or two — averaging is averaging. The normal distribution is essentially the only shape with finite variance that is stable under this kind of self-combination: a normal averaged with a normal is again normal, just narrower. Any distribution flexible enough to be the limit of repeated averaging is forced, by this self-consistency, into the normal form. You do not have to make that rigorous to feel its pull — the bell is the only fixed point the algebra of summing-and-rescaling will tolerate. And hold onto that phrase, no single one dominates: it is exactly the clause crypto returns will violate later in this chapter.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **Central Limit Theorem** says the standardized sample mean converges in distribution to $N(0,1)$ — for *almost any* population with finite variance. The bell appears because the sum is built from many small contributions, **no single one of which dominates**. Next: watch it emerge from a skewed population.
+:::
+
+::: notes
+To summarize part four: the Central Limit Theorem says the standardized sample mean converges in distribution to the standard normal — the whole silhouette becomes the bell — for almost any population, as long as it has a finite mean and a finite variance. The intuition is that an average is a sum of many small independent contributions, no single one of which dominates, and such sums are forced toward the bell, the only shape stable under repeated averaging. Hold onto that phrase, no single one dominates. In part five we stop asserting and start showing: we watch the bell emerge from a violently skewed population.
+:::

@@ -1,0 +1,58 @@
+---
+title: "The One-Sentence Contribution"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# The One-Sentence Contribution {.title}
+
+::: notes
+Welcome back to Writing the Empirical Paper, part three of seven. In part two we laid out the four moves of the introduction. Now we stop and build just one of them on its own, because it is the reason the paper exists: the one-sentence contribution. If you cannot write it, you do not yet have a paper — you have a regression and a hope. Let us learn what job it does, and how to calibrate it honestly.
+:::
+
+## What the Sentence Must Do
+
+- Answers: what is true *now* that was not established before?
+- It is the reason the paper exists
+- Everything else serves to make this sentence believable
+- Cousin of the identifying-assumption sentence
+- One states what you found; the other, when the claim holds
+
+::: notes
+Stop and build this sentence on its own, because if you cannot write it, you do not yet have a paper — you have a regression and a hope, the same diagnosis the identification memo gave you about the identifying assumption. The one-sentence contribution answers a question a skeptical reader is entitled to ask: what is true now, that was not established before you did this work? It is the reason the paper exists. Everything else — the data, the design, the forty robustness checks — is in service of making this one sentence believable, exactly as the whole paper is in service of the identifying-assumption sentence. The two sentences are cousins: one states what you claim to have found, the other states the condition under which the claim is true.
+:::
+
+## Name the Job
+
+- **First** to credibly estimate a specific effect
+- **Overturn or qualify** an established finding
+- **Reconcile** two conflicting literatures
+- **Measure a mechanism** only speculated about, or bring **new data**
+- Pick the job honestly — false "first" earns contempt
+
+::: notes
+A good contribution sentence does one of a small number of recognizable jobs, and naming the job helps you write the sentence. You might be the first to credibly estimate a specific effect — "we provide the first quasi-experimental estimate of." You might overturn or qualify an established finding — "we show the widely cited X effect disappears once Y is accounted for." You might reconcile two conflicting literatures, measure a mechanism the literature had only speculated about, or bring new data to an old question — "using transaction-level on-chain data, we." Pick the job honestly. The fastest way to a referee's contempt is a sentence claiming the "first" job when three prior papers did the same thing — which is exactly what your literature review is about to either support or expose.
+:::
+
+## Calibrate the Verb, Then Test It
+
+- Your verb is a promise about your design's strength
+- Clean DiD with flat pre-trends earns "credibly estimate"
+- OLS with a plausible omitted variable earns "document an association"
+- Never "show that X causes Y" unsupported
+- Test: a classmate reads only the sentence
+
+::: notes
+Calibrate the verb to the evidence — the causal-language discipline previewed here because it bites first in this sentence. If your design is a clean staggered difference-in-differences with flat pre-trends, you have earned "credibly estimate." If your design is ordinary least squares on observables with a plausible omitted variable you could not rule out, you have not, and your sentence says "document a robust association," "provide suggestive evidence," or "establish a new stylized fact" — never "show that X causes Y." The reading guides of Week Five trained you to catch authors who overclaim in exactly this sentence; your grader runs the same check. Here is a practical test: hand the sentence to a classmate who has not seen your project. If they can tell you what you did and why it matters, it works. If they ask "wait, what's the question?" or "is that causal?", the sentence is doing the introduction's whole job badly.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **one-sentence contribution** answers "what is true now that was not before?" — the reason the paper exists. Name its job honestly (first, overturn, reconcile, mechanism, new data), calibrate the verb to your weakest assumption, and test it on a classmate. Next: the literature review that positions.
+:::
+
+::: notes
+To summarize part three: the one-sentence contribution answers what is true now that was not established before, and it is the reason the paper exists. Everything else serves to make it believable. Name its job honestly — first, overturn, reconcile, mechanism, or new data — and never claim "first" when prior work did the same. Calibrate the verb to your weakest assumption, claiming exactly as much as your design supports. Then test the sentence on a classmate who has not seen the project. In part four we build the section that makes your contribution visible as a gap: the literature review that positions.
+:::

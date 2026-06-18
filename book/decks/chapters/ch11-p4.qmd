@@ -1,0 +1,56 @@
+---
+title: "The Law of Iterated Expectations"
+date: "2026-06-22"
+---
+
+# The Law of Iterated Expectations {.title}
+
+::: notes
+Welcome back to Chapter one-point-one, part four of seven. In part three we computed the conditional expectation in each regime — two numbers. Now the conceptual jump everything depends on: because the regime itself is random, the conditional expectation is a random variable. From that single idea falls the first of our two great laws, the Law of Iterated Expectations, the formal license for the phrase "control for Y."
+:::
+
+## Conditional Expectation Is Random
+
+- Regime $Y$ is random — unknown before the day starts
+- So $\mathbb{E}[X\mid Y]$ is a random variable, a function of $Y$
+- Outputs $0.714\%$ when $Y=1$, $-0.667\%$ when $Y=2$
+- The best forecast of $X$ using only $Y$
+- Literally what **regression** estimates
+
+::: notes
+Slow down for this. We computed two numbers, one per regime. But the regime Y is itself random — before the day starts, Sam does not know which it will be. So the quantity "the expected return for whatever regime today turns out to be" is not a fixed number; it is a random variable. We call it the expectation of X given Y — note, conditioning on the random variable Y, not on a specific value. Concretely, it is the function that outputs zero point seven one four percent when Y equals one, and minus zero point six six seven percent when Y equals two. Since Y equals one with probability zero point seven and equals two with probability zero point three, this object inherits those probabilities. It is a random variable that is a function of Y alone — once you know the regime, you know its value. That is the precise sense in which it is the best forecast of X you can make using only Y. This object is, quite literally, what regression estimates. Hold that thought all the way to Week Two.
+:::
+
+## Stating Iterated Expectations
+
+- $\mathbb{E}[X]=\mathbb{E}\big[\mathbb{E}[X\mid Y]\big]$ — the tower property
+- Average the conditional averages, weighted by group size
+- A school's mean score = enrollment-weighted classroom means
+- Splitting into groups and recombining loses nothing
+
+::: notes
+Here is the law. The Law of Iterated Expectations, sometimes called the tower property, says the expectation of X equals the expectation of the conditional expectation of X given Y. The inner conditional expectation is the random variable we just built; the outer expectation averages it over the distribution of Y. The intuition: you can compute an overall average in two stages — first average within each group, then average those group-averages, weighting each group by its size. A school's average test score equals the enrollment-weighted average of its classrooms' average scores. Sam's overall expected return equals the regime-frequency-weighted average of the per-regime expected returns. The law says these two routes always land on the same number. Splitting into groups and recombining loses nothing.
+:::
+
+## Worked Example and Why It Matters
+
+- $(0.714\%)(0.70)+(-0.667\%)(0.30)=0.30\%$
+- Matches the direct $\mathbb{E}[X]=0.30\%$ — to the penny
+- Formal license for "control for $Y$"
+- Engine behind no-omitted-variable-bias arguments
+- Fails only if $\mathbb{E}[X]$ itself is undefined (heavy tails)
+
+::: notes
+Take the conditional means and average them over the regime frequencies. Plus zero point seven one four percent times zero point seven, plus minus zero point six six seven percent times zero point three, equals zero point five percent minus zero point two percent, which is zero point three percent. That is exactly the expectation of X we got the direct way — not a coincidence, a theorem. The proof is three honest lines: write the outer expectation as a sum over the values of Y, substitute the definition of conditional expectation, then use the multiplication rule to collapse the product back into the joint and sum away Y. Why will you use this constantly? It is the formal license for the most common phrase in econometrics: control for Y. It is the engine behind regression's claim to estimate the conditional expectation, and behind the no-omitted-variable-bias arguments of Week Two. It fails essentially only when the expectation of X does not exist — heavy tails, which you will meet in Chapter one-point-four.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+$\mathbb{E}[X\mid Y]$ is a **random variable** — a function of $Y$ — and it is what regression estimates. The **Law of Iterated Expectations**, $\mathbb{E}[X]=\mathbb{E}\big[\mathbb{E}[X\mid Y]\big]$, recovers the overall mean from conditional means with nothing lost. It is the formal license for "control for $Y$." Next: variance, and Sam's risk decomposition.
+:::
+
+::: notes
+To summarize part four: because the regime is random, the conditional expectation is a random variable — a function of Y, and the very object regression estimates. The Law of Iterated Expectations says the expectation of that conditional expectation equals the overall expectation, recovering Sam's zero point three percent from the per-regime means with nothing lost. It is the formal backbone of every control-for-Y argument you will make. In part five we turn from averages to risk, and state the second great law: the Law of Total Variance.
+:::

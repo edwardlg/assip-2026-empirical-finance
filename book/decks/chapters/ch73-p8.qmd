@@ -1,0 +1,58 @@
+---
+title: "Where This Goes Next — and Your Plan"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Where This Goes Next {.title}
+
+::: notes
+Welcome back to Chapter seven-point-three, part eight of eight — our final segment. In part seven we saw the reveal and confronted Olken's perils, ending on the deepest point: pre-registration buys the honesty of your inference, not its validity. Now we close the lesson by placing the pre-analysis plan in the arc of your project, and pointing you to the notebook where you write your own.
+:::
+
+## The Project Arc
+
+- 7.1 idea · 7.2 data · 7.3 the pre-registered design
+- 7.4 — build the analysis dataset the PAP refers to
+- Merge keys, survivorship and look-ahead checks, the winsorizing
+- 7.5 — the identification memo defending your one assumption
+- PAP says you did not fish; memo says the pond is the right pond
+
+::: notes
+So where does this go. You arrived with an idea from seven-point-one and data from seven-point-two. You now have the instrument that turns them into a falsifiable, pre-registered design — directional hypotheses, one primary specification, a multiple-testing plan that quarantines the garden of forking paths, falsification conditions, planned robustness, a hold-out, and a deviation log. Next, in seven-point-four, you build the analysis dataset the plan refers to — the merge keys, the survivorship and look-ahead checks, the winsorizing you committed to here. Then in seven-point-five you write the identification memo defending the one assumption your beta one rests on. The plan says you will not fish; the memo says the pond is the right pond. Filed together as your Lab Seven tagged commit, they are the spine of a project that could survive a hostile referee.
+:::
+
+## Your Turn — nb7.3
+
+- Open `nb7.3` — the PAP companion, sequel to nb1.5 power curves
+- State your effect size in the **units of your outcome**
+- Estimate residual SD and sample size from your **exploration set only**
+- Compute the $N$ for 80% power at $\alpha=0.05$ — before you waste a run
+- Implement Benjamini-Hochberg; emit the template, tag it `pap-filed`
+
+::: notes
+Your turn. Open notebook seven-point-three, the pre-analysis-plan companion — the direct sequel to the power curves you built in notebook one-point-five. Its core is a power calculation. You will state your effect size in the units of your outcome — for Maya, the smallest conditional denial gap, in percentage points, that would matter to a real borrower. You will estimate the residual standard deviation and the effective sample size from your exploration set only. You will compute, as in Chapter one-point-five, the sample size your design needs to detect that effect at five percent with eighty percent power — and discover whether your data can even test your hypothesis before you waste a confirmation run on an underpowered study. You will implement the Benjamini-Hochberg procedure on a family of p-values and watch it admit the right number of discoveries. The notebook ends by emitting a filled-in plan template you tag as pap-filed, the deliverable for problem set seven-point-three and Lab Seven.
+:::
+
+## Carry These Into the Lab
+
+- Name your **three most dangerous forks** — nail each in one sentence
+- Write your **falsification sentence**, then sit with it honestly
+- "I'd keep looking" means a fork is still open — close it
+- **Power before peeking**: would your smallest effect even be detectable?
+- "Run it anyway and hope" is the option pre-registration forecloses
+
+::: notes
+Three reflections to carry into the lab and Mentor Session Seven. First, name your three most dangerous forks — the choices where, if you peeked first, you would be most tempted to pick the branch that helps your hypothesis. For each, write the one sentence you will put in your plan to nail it down. Second, write your falsification sentence, then sit with it — the exact coefficient-and-interval pattern that would make you abandon your primary hypothesis. Would you actually report that null if it came? If your honest answer is I would keep looking, your plan is not yet protecting you; find the fork you are still leaving open. Third, power before peeking. Suppose your power calculation reveals that detecting the smallest effect you care about, at eighty percent power, would need three times the sample you have. What are your options before you run the confirmation regression — and why is run it anyway and hope the one option a pre-registered researcher has already foreclosed?
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The pre-analysis plan, filed with the identification memo as your Lab 7 tagged commit, is the spine of a referee-proof project. Pre-registration buys **honesty**, not **validity** — so file the plan, then defend the assumption. Next chapter (7.4): building the analysis dataset your plan refers to.
+:::
+
+::: notes
+To close Chapter seven-point-three: a pre-analysis plan separates confirmatory from exploratory analysis through five components — directional hypotheses, a precisely specified primary regression, a multiple-testing plan, falsification conditions, and planned robustness — filed before you peek, time-stamped as a tagged commit, with an honest deviation log. It can still fail, so you pair it with an identification memo, and you remember that pre-registration buys honesty, not validity. In the next chapter, seven-point-four, you build the analysis dataset your plan refers to, with its merge keys and survivorship checks. Congratulations — you now hold the device that protects an honest researcher from their own worst instincts.
+:::

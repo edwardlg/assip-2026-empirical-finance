@@ -1,0 +1,54 @@
+---
+title: "Estimating the Score: Two Disciplines"
+date: "2026-07-06"
+---
+
+# Estimating the Score: Two Disciplines {.title}
+
+::: notes
+Welcome back to Chapter three-point-two, part seven of eleven. In part six we learned the propensity score collapses matching to one dimension. Now we estimate it in practice with logistic regression, and meet two disciplines that overturn what Week Two taught about fitting models: judge by balance, not prediction; and never let the outcome in.
+:::
+
+## Estimate It by Logistic Regression
+
+- $D_i$ is binary, so fit a logistic regression of $D$ on $\mathbf{X}$
+- $\hat e(\mathbf{X}_i) = \dfrac{1}{1 + \exp(-(\hat\gamma_0 + \hat\gamma_1 X_{i1} + \dots + \hat\gamma_K X_{iK}))}$
+- Fit by maximum likelihood
+- Any calibrated classifier works; logit is the transparent convention
+
+::: notes
+How do you get the score in practice? You estimate it. The treatment indicator is binary, so the natural model is a logistic regression of D on the covariates. The estimated score, e-hat of X-i, equals one over one plus the exponential of minus the linear index — gamma-hat-zero plus gamma-hat-one times the first covariate, and so on through the K-th. It is fit by maximum likelihood. Any classifier that outputs calibrated probabilities works, but logit is the convention because it is simple, transparent, and its coefficients are interpretable as log-odds of enrolling. So far this looks like ordinary modeling — but the two rules that govern it are unlike anything from Week Two.
+:::
+
+## Discipline One: Judge by Balance, Not Prediction
+
+- The model is judged by the **balance** it produces
+- Predicting $D$ near-perfectly is a *disaster*, not a success
+- Perfect prediction $\Rightarrow \hat e$ near 0 or 1 $\Rightarrow$ overlap catastrophe
+- Iterate the *specification* until balance, not until pseudo-$R^2$ is high
+
+::: notes
+First discipline: the propensity model is judged by the balance it produces, not by how well it predicts treatment. You are not trying to forecast enrollment accurately. A model that predicts treatment near-perfectly is actually a disaster, because perfect prediction means the estimated score is near zero or one for everyone — an overlap catastrophe with no comparable units left. You want a model just rich enough to soak up the covariate imbalance, and you confirm it did so with a balance table, which we cover next part. You iterate on the specification — adding squares, adding interactions — until balance is achieved, not until the pseudo-R-squared is high. This flips the usual goal of model-fitting on its head.
+:::
+
+## Discipline Two: The Outcome Never Appears
+
+- The score is a function of $D$ and $\mathbf{X}$ alone
+- $Y$ never enters the propensity regression
+- That separation is what makes the procedure honest
+- You estimate $\hat e$ — so always *check* balance after
+
+::: notes
+Second discipline: the outcome Y never appears in this regression. The score is a function of treatment and covariates alone. That is what makes the whole procedure honest, and we return to it forcefully when we discuss the firewall between design and outcome. One subtlety to flag now, because the next chapter exploits it. In real data you do not know the true score; you estimate it, usually with the logistic regression just described. The balancing property is a property of the true score, so after matching on the estimated score you must check that covariates actually balanced — the estimated score is only useful insofar as it produced balance. Estimate it well here, and you have built the foundation Chapter three-point-three will reweight by, rather than match on.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Estimate $\hat e(\mathbf{X})$ by **logistic regression** of $D$ on $\mathbf{X}$, by maximum likelihood. Two disciplines: judge the model by the **balance** it produces — not prediction accuracy — and **never** let the outcome $Y$ enter. Since $\hat e$ is estimated, you must check balance after. Next: implementing the match with nearest neighbors and calipers.
+:::
+
+::: notes
+To summarize part seven: estimate the propensity score by a logistic regression of treatment on the covariates, fit by maximum likelihood. Two disciplines govern it. One: judge the model by the balance it produces, not by prediction accuracy — near-perfect prediction is an overlap catastrophe, so you iterate the specification until covariates balance. Two: the outcome never enters the score, which keeps the procedure honest. Because you estimate the score rather than know it, you must verify balance afterward. In part eight we implement the actual comparison: nearest-neighbor and caliper matching, and the design choices that all trade bias against variance.
+:::

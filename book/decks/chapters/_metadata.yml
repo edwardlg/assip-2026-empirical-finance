@@ -1,0 +1,32 @@
+# =====================================================================
+# Shared deck settings for ALL per-subchapter chapter decks.
+# Quarto applies this _metadata.yml to every .qmd in this directory, so
+# each segment deck inherits GMU branding (via the reference-doc) and the
+# pptx layout conventions without repeating YAML.
+#
+# One segment deck (chXY-pN.qmd) = one ≤5-minute teaching video.
+# The [MEF Wx.y Pn] YouTube title-code lives in the render MANIFEST
+# (clips.jsonl), NOT on the slide, so slide titles stay clean.
+# =====================================================================
+author: "Prof. Lei Gao · George Mason University"
+subtitle: "ASSIP 8-Week Empirical Finance Camp"
+
+format:
+  pptx:
+    # GMU brand master (Mason Green/Gold, Poppins/Open Sans, 16:9). Built by
+    # ../templates/build_reference_pptx.py. Path is relative to this deck dir.
+    reference-doc: ../templates/assip-reference.pptx
+    slide-level: 2          # one `##` = one slide
+    incremental: false
+    toc: false
+    fig-width: 11
+    fig-height: 6.2
+    fig-dpi: 200
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+
+bibliography: ../../bibliography.md

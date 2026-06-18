@@ -1,0 +1,65 @@
+---
+title: "Reading Both Papers Table by Table"
+date: "2026-07-27"
+---
+
+# Reading Both Papers Table by Table {.title}
+
+::: notes
+Welcome back to Chapter six-point-four, part four of seven. In part three we settled the data, and saw that the decisive question is always whether the credit score is in it. Now we read both papers the professional way: tables first, in the order the argument flows. Headline disparity, then the controls that shrink it, then the mechanism table that assigns blame to human or machine. We will walk Bartlett et al.'s three key tables, then B-H-R's three, and watch the same shape emerge twice.
+:::
+
+## Bartlett et al. — Tables 1 and 2
+
+- **Table 1 — headline rate gap.** Rate on minority indicator, GSE controls in
+- Sign, magnitude in **basis points**, t-stat — off the table first
+- Robust: a positive, nontrivial premium, a handful of basis points
+- **Table 2 — rejection.** Confirm both margins, not just price
+
+::: notes
+For Bartlett et al., read the headline rate-gap table first. Find the regression of interest rate on the minority indicator with the GSE risk controls in. Read the sign, the magnitude — a rate difference in basis points — and the t-statistic off the table before any prose. This is the number that, if it broke, would sink the paper: minority borrowers pay a meaningful premium conditional on formula-priced risk. Do not memorize a precise figure. What is robust is that the premium is positive and nontrivial, on the order of a handful of basis points; the exact figure carries a check tag. Then read the rejection table — the second margin — to confirm the story is not only about price.
+:::
+
+## Bartlett et al. — The Mechanism Table
+
+- The **FinTech-versus-traditional** table earns the title
+- Is the gap **smaller** for algorithmic lenders than face-to-face?
+- Robust finding: algorithms **reduce but do not eliminate** the disparity
+- Residual survives with no human in the loop $\rightarrow$ proxy pricing
+
+::: notes
+The third Bartlett table is the FinTech-versus-traditional table, and it earns the paper its title. Read whether the gap is smaller for algorithmic lenders than for face-to-face lenders. The robust finding is that algorithmic lending reduces the disparity but does not eliminate it. Discretion-based discrimination shrinks, yet a residual survives even when no human is in the loop — pointing either to pricing on variables that proxy for race, or to weaker competition in some markets. So the machine helps, but it is not the clean cure Maya hoped for. Keep that pattern in mind, because B-H-R produce the same shape on the acceptance margin.
+:::
+
+## BHR — Tables 1 and 2
+
+- **Table 1 — raw disparity.** Large unconditional gap; the alarming "before"
+- **Table 2 — add the controls.** Watch the race coefficient march across columns
+- Formal version: the **Blinder–Oaxaca decomposition** (built by hand in PS 6.4)
+- A meaningful share is risk; a **contested residual** remains
+
+::: notes
+For B-H-R, read the raw-disparity table first: the large unconditional racial gap in denial, and the raw pricing gap. This is deliberately the before picture, meant to look alarming so the decomposition can do its work. Then the decomposition table — the heart of the paper. Watch the race coefficient march across columns as the credit score and the full risk set enter, the left-to-right robustness read the Week-Five pack taught. The formal version of this split is the Blinder–Oaxaca decomposition, from Blinder and Oaxaca, both in nineteen seventy-three, which you build by hand in Problem Set six-point-four. The robust result: a meaningful share of the raw gap reflects legitimate risk — the coefficient shrinks substantially when the score goes in — but a contested residual remains. Read the bottom-row sample size across columns to be sure the sample is not silently changing.
+:::
+
+## BHR — The AUS Benchmark Table
+
+- Compare actual outcomes to the **race-blind** recommendation
+- This is where "how much is bias" gets its sharpest answer
+- Residual after benchmarking = the estimate of **differential treatment**
+- Smaller than the raw gap; smaller than HMDA-only work implied
+
+::: notes
+The third B-H-R table is the automated-underwriting benchmark — what the algorithm would have done. Compare actual outcomes to the race-blind recommendation. This is where "how much is bias" gets its sharpest answer: the residual, after benchmarking to a rule that cannot see race, is the paper's estimate of differential treatment — smaller than the raw gap, and smaller than the disclosure-only literature implied. Read across both papers and the synthesis writes itself. Raw gaps are large. Legitimate risk explains a lot. Algorithms shrink the human discretion channel. And a residual disparity survives on both margins and remains the contested core of the debate.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Same shape twice: **raw gap large**, legitimate risk explains a lot, the algorithm shrinks the human channel, a **residual survives** on both margins. Read sign, magnitude, t-stat off the table first. Next: **what's clever** and **what's vulnerable**.
+:::
+
+::: notes
+To summarize part four: reading tables first, both papers tell the same three-table story — a large raw disparity, a decomposition where legitimate risk explains much of it, and a mechanism table where the algorithm shrinks the human channel but leaves a contested residual on both margins. Always read sign, magnitude and t-statistic off the table before the prose, and watch the sample size as controls enter. In part five we step back and ask what is genuinely clever in each design.
+:::

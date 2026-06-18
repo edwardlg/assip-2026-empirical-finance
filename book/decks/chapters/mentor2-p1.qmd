@@ -1,0 +1,54 @@
+---
+title: "The Point Estimate Is the Easy Part"
+date: "2026-06-29"
+---
+
+# The Point Estimate Is the Easy Part {.title}
+
+::: notes
+Welcome to Week Two, Mentor Session Two, part one of four. The title of this whole session is "Why your standard error is the whole ballgame." Last week you asked when a number is a finding. This week you learned the machinery that turns a regression into a claim — ordinary least squares in matrix form, the Gauss-Markov guarantees, the Frisch-Waugh-Lovell trick, and the chapter on what happens to your standard error when the errors misbehave. Today we put the two weeks together and stare at one uncomfortable fact. In empirical finance, computing the point estimate, beta hat, is usually the easy part. Your laptop hands it to you in milliseconds. The credibility of your work lives almost entirely in the standard error. We argue, not lecture.
+:::
+
+## The Fact That Should Unsettle You
+
+- One regression, one dataset, one estimate $\hat\beta = 0.42$
+- Verdict A: "significant at one percent" — triumphant
+- Verdict B: "can't reject zero" — deflating
+- The decider: a modeling choice about a matrix you never see
+
+::: notes
+Here is a fact that should unsettle you a little. You can run one regression, on one dataset, get one point estimate — beta hat equals zero-point-four-two — and walk away with either a triumphant "significant at one percent" or a deflating "can't reject zero." And the thing that decides which, the entire difference between publish and not-yet, is a modeling choice you make about a matrix you never directly see. That matrix is capital Omega, the variance-covariance matrix of the errors. The choice is how you estimate the middle of what we'll call the variance sandwich. Same beta hat. Same data. A different story about Omega gives a different t-statistic and a different conclusion. That is what we mean when we say the standard error is the whole ballgame.
+:::
+
+## Maya's Two Verdicts
+
+- Loan rates on a ZIP-tier indicator, controls, $N = 9{,}000$ loans
+- Classical SE: $\hat\beta_1 = 0.42$, SE $=0.07$, t $= 6.0$ — a megaphone
+- Cluster by lender: same $0.42$, SE $=0.19$, t $= 2.2$
+- The estimate never moved; the $0.07$ was the lie
+
+::: notes
+Recall Maya's fair-lending result from Chapter two-point-four. She regressed loan interest rates on a ZIP-code-tier indicator, controlling for credit score, loan size, and income, across nine thousand loans. The coefficient came back at zero-point-four-two percentage points, with a classical standard error of zero-point-zero-seven, for a t-statistic of six-point-zero — a number screaming through a megaphone. Then her mentor asked the only question that mattered: are those nine thousand loans really nine thousand independent pieces of evidence? They are not. Loans cluster by lender, through shared pricing models, and by state, through shared regulation and local economies. Once Maya let the errors inside a lender be correlated — that is, once she clustered — the same beta hat of zero-point-four-two came back with a standard error of zero-point-one-nine and a t-statistic of two-point-two. The estimate never moved a hair. The zero-point-zero-seven was the lie; the zero-point-four-two was right the whole time.
+:::
+
+## The Mental Shift for Today
+
+- The SE *is* the result, not a technical afterthought
+- It separates "I computed a number" from "I'm entitled to believe it"
+- A referee: thirty seconds on $\hat\beta$, thirty minutes on the SE
+- Goal: make one $\hat\beta$ tell two stories, then decide which is honest
+
+::: notes
+So here is the mental shift for today. Stop thinking of the standard error as a small technical afterthought you append to a result. The standard error is the result, in the sense that it is the only thing standing between "I computed a number" and "I am entitled to believe it." A referee will spend thirty seconds on your point estimate and thirty minutes on how you computed its uncertainty — what level you clustered at, whether you had enough clusters, whether you confused fixed effects with clustering. Today we learn to think the way that referee thinks, by making the same beta hat tell two different stories and deciding which one is honest.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The point estimate $\hat\beta$ is cheap and, under Gauss-Markov, unbiased no matter how errors correlate. Credibility lives in the **standard error** — the same $\hat\beta = 0.42$ gave Maya t $=6.0$ or t $=2.2$ depending only on how she modeled the errors. Next: the variance sandwich that makes this happen.
+:::
+
+::: notes
+To summarize part one: the point estimate beta hat is cheap, and under Gauss-Markov it is unbiased no matter how the errors are correlated. The credibility of your finding lives in the standard error. The same beta hat of zero-point-four-two gave Maya a t-statistic of six or a t-statistic of two-point-two, depending only on how she modeled the errors. In part two we open up the machine that makes this happen — the variance sandwich — and see exactly why the naive standard error goes wrong, and in which direction.
+:::

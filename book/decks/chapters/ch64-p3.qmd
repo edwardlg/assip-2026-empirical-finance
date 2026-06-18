@@ -1,0 +1,54 @@
+---
+title: "The Data — and the Missing Credit Score"
+date: "2026-07-27"
+---
+
+# The Data — and the Missing Credit Score {.title}
+
+::: notes
+Welcome back to Chapter six-point-four, part three of seven. In part two we saw the two identification bets: Bartlett et al. pricing against a published formula and splitting by lender technology, B-H-R getting the credit score and benchmarking against a race-blind machine. Those bets only work if the data can see the right things — so this part is about the data, and it is the section where the two papers most obviously complement each other, because they see different things. The whole pedagogical point comes down to one fact about the public data everyone starts from: the Home Mortgage Disclosure Act file is blind to the credit score. Hold that thought; it organizes everything.
+:::
+
+## What Bartlett et al. See
+
+- **HMDA** — near-census of U.S. mortgage applications
+- Plus **GSE / loan-level data** for risk inputs and rate detail
+- Unit of observation: the **loan or application**
+- Big enough to estimate small rate gaps precisely; **FinTech flag** splits the sample
+
+::: notes
+Bartlett et al. combine the Home Mortgage Disclosure Act — the near-census of United States mortgage applications, carrying loan amount, applicant race, ethnicity and income, action taken, and, after twenty-eighteen, pricing fields — with government-sponsored-enterprise loan-level data that supply the risk inputs and rate detail that the disclosure data alone does not. The unit of observation is the loan, or the application. The sample is large enough that small rate differences are estimable with precision. What this combination can see is the loan's price and the formula inputs that should determine it; the FinTech flag lets them split the sample by lender technology. There is a check tag here: the exact sample period and loan counts, and whether the lead pricing analysis is on conforming refinance or purchase loans, should be confirmed against the paper.
+:::
+
+## What BHR See
+
+- Also start from **HMDA**, linked to GSE + credit-bureau records
+- Decisive difference: they observe the **credit score** and full file
+- Plus the **race-blind AUS recommendation**
+- The variable whose absence forced Gao & Sun toward design
+
+::: notes
+B-H-R also start from the Home Mortgage Disclosure Act but link to government-sponsored-enterprise and credit-bureau loan-level records, and the decisive difference from every disclosure-only study is that they observe the credit score and a near-complete underwriting file, plus the race-blind automated underwriting recommendation. The unit is again the loan or application. What this dataset can see that the public file cannot is precisely the variable whose absence forced Gao and Sun toward design: the applicant's credit score and the full risk profile the underwriter weighed. Again a check tag applies: the exact data vintages, the specific automated underwriting systems used, and the sample years should be verified against the paper.
+:::
+
+## Why the Missing Score Is the Whole Story
+
+- **HMDA alone is blind to the credit score**
+- That omission is why Mentor 4 argued a *design* beats more controls
+- BHR can directly test how much residual was the missing score in disguise
+- When you read either paper: **locate whether the score is in the data**
+
+::: notes
+The contrast is the whole pedagogical point and worth saying plainly to Maya. The Home Mortgage Disclosure Act alone is blind to the credit score. That single omission is why Mentor Four argued a design beats more controls in the same-sex-borrower work, and why Gao and Sun reached for matched comparison and policy variation rather than a kitchen-sink regression. B-H-R's data let them do the thing the disclosure-only researcher cannot: directly test how much of the residual disparity was the missing score in disguise. So when you read either paper, locate immediately whether the credit score is in the data — because that one fact determines whether the residual race coefficient is a serious estimate of differential treatment or a placeholder for everything the data could not measure.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Both papers start from **HMDA**; both link to richer records. The decisive question for any fair-lending paper is whether the **credit score** is in the data — that determines whether the residual race coefficient means something. Next: reading both papers **table by table**.
+:::
+
+::: notes
+To summarize part three: both papers begin with the public Home Mortgage Disclosure Act data and link it to richer loan-level and credit-bureau records, but B-H-R go further and observe the credit score itself, along with a race-blind machine recommendation. The decisive fact for any fair-lending study is whether the credit score is in the data, because that determines whether a residual race coefficient is a real estimate of differential treatment or just a stand-in for everything you could not measure. In part four we read both papers the professional way — tables first, in the order the argument actually flows: headline disparity, then the controls that shrink it, then the mechanism table that assigns blame to human or machine.
+:::

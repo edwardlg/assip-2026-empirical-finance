@@ -1,0 +1,69 @@
+---
+title: "Where the Model Is Vulnerable"
+date: "2026-07-20"
+---
+
+# Where the Model Is Vulnerable {.title}
+
+::: notes
+Welcome back to lesson five-point-two, part eight of nine. In part seven we praised what is clever in this paper. A guide that only praises is useless. Now we turn the lens around: here is where a sharp referee pushes, and where Weeks One and Two give you the vocabulary to push back.
+:::
+
+## Risk or Mispricing?
+
+- The deepest critique, unsettled to this day
+- FF93 frames size and value as compensation for **risk**
+- Rival camp: the premia reflect **mispricing**
+- Regression machinery **cannot** distinguish these
+- Excellent *description*; silent on the *economics*
+
+::: notes
+First, the deepest critique, and it is unsettled to this day: are S-M-B and H-M-L risk or mispricing? The paper frames size and value as compensation for risk — value stocks are riskier in some state-of-the-world sense, distress say, so they must pay more. But the rival camp says the premia reflect mispricing: investors over-extrapolate the glamour of growth firms and under-price beaten-down value firms, and the premium is just the correction. The regression machinery cannot distinguish these. A high R-squared and a zero intercept are equally consistent with H-M-L is a risk factor and H-M-L captures a systematic behavioral mistake. The model is an excellent description of co-movement; it is silent on the economics of why the premium exists. Hold that humility.
+:::
+
+## The Factor Zoo and Data-Snooping
+
+- Same recipe run on **hundreds** of characteristics
+- Yields the so-called **factor zoo**
+- Testing hundreds of factors = Week One multiple testing
+- With enough tries, some clear the bar by chance
+- Were size and value themselves *found by searching*?
+
+::: notes
+Second, the factor zoo and data-snooping — Week One's multiple testing, in a mirror. The paper found that two sorts, size and book-to-market, survive. But the same recipe — sort on a characteristic, build a long-short portfolio, check the alpha — has since been run on hundreds of characteristics, yielding the so-called factor zoo. When you test hundreds of candidate factors and report the ones with significant alphas, you are running exactly the multiple-comparisons gauntlet from chapter one-point-five: with enough tries, some factors clear the bar by pure chance. This raises a retrospective worry about the paper itself — were size and value found by searching, and would they survive a multiple-testing correction applied to the whole search? The honest reading: they have held up far better out-of-sample and across countries than most zoo entries, real evidence they are not pure flukes — but the method is a data-snooping machine if you are not disciplined.
+:::
+
+## Look-Ahead in Factor Construction
+
+- June re-sort with lag guards against using book equity early
+- But the guard depends on exact timing
+- Compustat **backfilling** sneaks in survivorship bias
+- Sloppy lag manufactures an unearnable value premium
+- A concrete, checkable failure mode
+
+::: notes
+Third, look-ahead in factor construction. The June re-sort with the lagged accounting match is precisely a guard against using book equity before it was public. But the guard depends on getting the timing exactly right, and Compustat's backfilling — historically adding data for firms only after they were established and successful — can sneak survivorship and look-ahead bias into the early sample. If your replication is sloppy about the lag, you will manufacture a value premium that no real-time investor could have earned. This is a concrete, checkable failure mode, and your notebook five-point-two will make you confront it directly.
+:::
+
+## Sensitivity to Construction Choices
+
+- Every construction knob is a researcher *choice*
+- 2×3 sort, NYSE breakpoints, value-weighting, 30/30 cutoffs
+- Value- versus equal-weighting shifts the result
+- All-stock breakpoints load portfolios with micro-caps
+- A robust finding shouldn't hinge on 30% versus 33%
+
+::: notes
+Fourth, sensitivity to portfolio-formation choices. The two-by-three sort, the NYSE breakpoints, the value-weighting, the bottom-thirty and top-thirty cutoffs, the June rebalance — every one of these is a researcher choice, and the factor returns shift if you change them. Value-weighting versus equal-weighting changes how much small stocks drive the result; using all-stock breakpoints instead of NYSE-only loads the small portfolios with thousands of micro-caps. None of these break the paper, but they mean the size and value premia are really the premia under these specific construction rules. A robust finding should not hinge on a cutoff at thirty percent versus thirty-three percent; checking that it does not is part of an honest replication.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Four pressure points: **risk versus mispricing** (the regression can't tell), the **factor zoo** and multiple testing, **look-ahead** bias from backfilled accounting data, and **sensitivity** to every construction knob. None breaks the paper — but each is where an honest replication earns its keep. Next: the three exercises that turn these critiques into measured numbers.
+:::
+
+::: notes
+To summarize part eight: four pressure points. Risk versus mispricing — the regression cannot tell them apart. The factor zoo and multiple testing — was the search itself disciplined? Look-ahead bias from Compustat's backfilled accounting data. And sensitivity to every construction knob, from breakpoints to weighting. None of these breaks the paper, but each is where an honest replication earns its keep. In part nine, the finale, we turn these critiques into three concrete replication exercises and the referee questions that interrogate the paper.
+:::

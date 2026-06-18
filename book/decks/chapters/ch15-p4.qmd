@@ -1,0 +1,46 @@
+---
+title: "Deriving the t-Test"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Deriving the t-Test {.title}
+
+::: notes
+Welcome back to Chapter one-point-five, part four of ten. In part three we built the idealized test statistic but found it still hides the unknown true standard deviation sigma. Now we fix that — estimating sigma from the same sample — and meet the t-distribution that this estimation forces, then put Sam's numbers through it.
+:::
+
+## We Don't Know Sigma — Use s
+
+- The true $\sigma$ is unknown; estimate it with $s$
+- $s=\sqrt{\dfrac{1}{N-1}\sum(x_i-\bar{x})^2}$ (Bessel's $N-1$)
+- The t-statistic: $t=\dfrac{\bar{x}-\mu_0}{s/\sqrt{N}}$
+- Dividing by random $s$ fattens the tails
+- "Student" (Gosset, 1908) found $t\sim t_{N-1}$
+
+::: notes
+The idealized statistic contains sigma, the true population standard deviation of daily returns. Sam does not know it. Nobody ever does. We can only estimate it from the same sample, using the sample standard deviation s — the square root of one over N minus one, times the sum of squared deviations from x-bar. The divisor is N minus one, not N — the Bessel correction from Chapter one-point-three, which makes s squared an unbiased estimator of sigma squared. Replacing the unknown sigma with the estimated s gives the statistic we actually compute, the t-statistic: x-bar minus mu-naught, over s divided by root N, where mu-naught is the null value, here zero. Swapping s for sigma is not free. We replaced a fixed constant with a random quantity, and dividing by something random adds extra uncertainty, fattening the tails. William Gosset worked out the exact consequence in nineteen oh eight, publishing under the pen name Student because his employer, the Guinness brewery, forbade staff publications. The statistic follows Student's t-distribution with N minus one degrees of freedom.
+:::
+
+## From t Back to Normal
+
+- $t$ is bell-shaped but with heavier tails
+- Fewer degrees of freedom $\Rightarrow$ fatter tails
+- As $N\to\infty$, $s\xrightarrow{p}\sigma$, so $t_{N-1}\xrightarrow{d}N(0,1)$
+- With $N=252$, $t$ is normal for practical purposes
+- Sam: $\widehat{\text{se}}=0.75\%/\sqrt{252}=0.0473\%$, $t\approx 1.69$
+
+::: notes
+The t-distribution is shaped like the normal — symmetric, centered at zero — but with heavier tails that account for the extra uncertainty in s. The fewer the degrees of freedom, the fatter the tails. And here is the clean bridge back to Chapter one-point-four: as N grows, s converges in probability to sigma, so the random denominator stops being random, and the t-distribution converges to the standard normal the Central Limit Theorem promised. This is why practitioners use t-statistic, z-statistic, and the rule of two almost interchangeably for large samples. The distinction earns its keep in small samples — twelve firms, twenty patients — where the tail correction genuinely changes the answer. Now Sam's numbers. With sample standard deviation zero point seven five percent over two hundred fifty-two days, the estimated standard error is zero point seven five percent divided by fifteen point eight seven, giving zero point zero four seven three percent. So t equals zero point zero eight percent over that, about one point six nine. Sam's average sits about one point six nine standard errors above zero.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Since the true $\sigma$ is unknown, estimate it with $s$ (Bessel's $N-1$). The statistic becomes the **t-statistic** $t=(\bar{x}-\mu_0)/(s/\sqrt{N})$, following Student's $t_{N-1}$ — heavier-tailed, converging to $N(0,1)$ as $N$ grows. Sam's $t\approx1.69$: about 1.69 standard errors above zero. Next: how surprised must we be before we act?
+:::
+
+::: notes
+To summarize part four: since the true sigma is unknown, we estimate it with the sample standard deviation s, using Bessel's N minus one. The statistic becomes the t-statistic — x-bar minus mu-naught, over s divided by root N — which follows Student's t-distribution with N minus one degrees of freedom. It has heavier tails to pay for not knowing sigma, and converges to the standard normal as N grows. For Sam, t is about one point six nine: roughly one point six nine standard errors above zero. But is that far enough to overturn the skeptic? To answer, in part five we decide in advance how surprised we must be before we act — the language of size and power.
+:::

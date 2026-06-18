@@ -1,0 +1,68 @@
+---
+title: "Pitfalls, the Code, and the Handoff"
+date: "2026-06-29"
+---
+
+# Pitfalls, the Code, and the Handoff {.title}
+
+::: notes
+Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part eight of eight — the finale. In part seven we saw that the within transformation is fixed effects, and why it makes the software fast. Now we close the loose ends: the two places naive use of the trick bites you even though the theorem never becomes false, the whole chapter in fifteen lines of code, the people behind the name, and a look ahead to the next chapter.
+:::
+
+## Two Places The Trick Bites
+
+- Controls **perfectly explain** $\mathbf{X}_1$ $\Rightarrow$ $\tilde{\mathbf{X}}_1=\mathbf{0}$, no slope
+- Count degrees of freedom on the **long** regression: $N-K$, not $N-2$
+- Short regression prints a **too-small** standard error — a real shipped bug
+- Good FE packages handle it; hand-rolled code must not forget
+
+::: notes
+Two cautions. Frisch–Waugh–Lovell is an algebraic identity, so unlike a modeling assumption it never becomes false — it is exactly true whenever the estimator exists. But naive use bites in two places. First, the control block must not perfectly explain your regressor. If the controls reproduce your regressor exactly, the residualized regressor is the zero vector, the denominator is singular, and there is no slope — perfect collinearity in Frisch–Waugh–Lovell clothing. Second, a real bug people ship: degrees of freedom must be counted on the long regression. The residualized regression looks like it used only one or two parameters, so a naive routine reports a standard error using N minus two degrees of freedom. But residualizing silently spent the degrees of freedom in the control block. The correct denominator is N minus K, counting all regressors including the partialled-out ones. The point estimate is identical either way; only the standard error needs this fix. Good fixed-effects packages handle it; if you roll your own, do the accounting by hand.
+:::
+
+## The Whole Chapter In Fifteen Lines
+
+```python
+import numpy as np
+import statsmodels.api as sm
+
+y = np.array([10,14,22,24,33,39], dtype=float)  # patents
+x = np.array([ 2, 3, 5, 4, 7, 8], dtype=float)  # R&D
+z = np.array([ 1, 2, 3, 4, 5, 6], dtype=float)  # size
+
+X_full = sm.add_constant(np.column_stack([x, z]))
+beta_full = sm.OLS(y, X_full).fit().params       # full fit
+
+Z = sm.add_constant(z)                            # the X2 block
+x_tilde = x - sm.OLS(x, Z).fit().fittedvalues
+y_tilde = y - sm.OLS(y, Z).fit().fittedvalues
+beta_fwl = (x_tilde @ y_tilde) / (x_tilde @ x_tilde)
+
+assert np.isclose(beta_full[1], beta_fwl)         # 1.838 == 1.838
+```
+
+::: notes
+Here is the whole chapter in fifteen lines. Build Leah's six firms — patents, R&D, and size. Run the full multiple regression of patents on a constant, R&D, and size, and grab the coefficients. Then do Frisch–Waugh–Lovell by hand: define the control block as the constant plus size, residualize R&D against it, residualize patents against it, and take the no-intercept slope as the dot product of cleaned R&D and cleaned patents divided by the dot product of cleaned R&D with itself. The final line asserts that the full-regression coefficient on R&D equals the two-step coefficient. Run it: it prints one-point-eight-three-eight twice and the assertion passes. The multiple-regression coefficient and the residualize-then-regress slope are the same number — on these six firms, and on any dataset, exactly as the proof guarantees.
+:::
+
+## Where The Name Comes From
+
+- **Frisch & Waugh (1933)**: demeaning-as-partialling, detrending time series
+- **Lovell (1963)**: generalized it, for seasonal adjustment
+- "Absorb firm and year fixed effects" = invoking FWL
+- Carry three things: the **reading rule**, the **equivalence**, the **threat-naming**
+
+::: notes
+A word on the name, since you will meet it constantly. Ragnar Frisch and Frederick Waugh proved the demeaning-as-partialling case in nineteen thirty-three, detrending economic time series. Michael Lovell generalized it in nineteen sixty-three, for seasonal adjustment. The whole tradition of absorbing trends, seasonals, and fixed effects by partialling-out descends from it. When a modern paper writes "we absorb firm and year fixed effects," it invokes Frisch–Waugh–Lovell, ninety years on. Carry three things forward. First, the reading rule: translate "controlling for the other variables" into "I residualized those out of both the outcome and this regressor, then took a simple slope." Second, the equivalence that powers panels: regressing on group dummies equals subtracting group means. Third, the threat-naming discipline: a coefficient controls for exactly the columns you included — everything outside is still in your residuals.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A multiple-regression coefficient is always a **two-variable slope in disguise** — FWL is the disguise-remover. Mind the two pitfalls: no perfect collinearity, and count degrees of freedom on the **long** regression. Next, Chapter 2.4: the **variance** of these estimators — where standard errors come from.
+:::
+
+::: notes
+To summarize: Frisch–Waugh–Lovell tells you what a multiple-regression coefficient is — a humble two-variable slope, once both variables have been cleaned of the other regressors. That single fact lets fixed-effects software absorb thousands of dummies by cheap demeaning, lets you draw any coefficient as a partial-regression plot, and warns you to count degrees of freedom on the long regression. In your notebook you will reproduce Leah's calculation, scale it to a Compustat extract with size and industry controls, and draw the added-variable plot. That mention of standard errors is the perfect handoff. We have nailed down what the coefficient is; next, in Chapter two-point-four, we ask how precise it is — where the variance of an ordinary-least-squares estimator comes from. See you there.
+:::

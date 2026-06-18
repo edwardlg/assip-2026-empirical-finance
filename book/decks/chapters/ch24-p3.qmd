@@ -1,0 +1,70 @@
+---
+title: "The Sandwich That Never Went Away"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Sandwich That Never Went Away {.title}
+
+::: notes
+Welcome back to When the Errors Misbehave, part three of eight. In part two we found that the classical formula rests on one assumption: Omega equals sigma squared times the identity. Now the liberating idea — we never actually needed that assumption to write down the variance. The honest formula is the full sandwich, and we will do a tiny version of it by hand.
+:::
+
+## The Honest Formula Is a Sandwich
+
+- We never needed $\boldsymbol\Omega = \sigma^2\mathbf{I}$ to write the variance
+- $\operatorname{Var}(\hat{\boldsymbol\beta}\mid\mathbf{X}) = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\boldsymbol\Omega\,\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}$
+- Two $(\mathbf{X}'\mathbf{X})^{-1}$ factors are the bread
+- The $\mathbf{X}'\boldsymbol\Omega\mathbf{X}$ in the middle is the filling
+- Classical formula is just the sandwich for one special diet
+
+::: notes
+Here is the key idea, and it is liberating once you see it. We did not need Omega equals sigma squared identity to write down the variance. The honest formula is the full sandwich: X-prime-X inverse, times X-prime Omega X, times X-prime-X inverse. The name is literal. The two X-prime-X inverse factors are the slices of bread; the X-prime Omega X in the middle is the filling. The classical formula is just the sandwich for the special diet Omega equals sigma squared identity. If the real Omega has different variances on the diagonal, or nonzero off-diagonals, the bread is unchanged but the filling is different — and so the standard errors are different.
+:::
+
+## The Real Game
+
+- We never fix $\hat{\boldsymbol\beta}$ — nothing is wrong with it
+- The whole game: estimate the middle $\mathbf{X}'\boldsymbol\Omega\mathbf{X}$
+- $\boldsymbol\Omega$ is $N\times N$ — 81 million entries for Maya
+- Cannot estimate that from 9,000 data points
+- Three clever answers: White, clustered, and HAC
+
+::: notes
+This reframes the problem. We never fix beta hat; nothing is wrong with it. The whole game is estimating the middle of the sandwich, X-prime Omega X, without pretending Omega equals sigma squared identity. That sounds impossible. Omega is N-by-N — with nine thousand loans, eighty-one million entries, and we have only nine thousand data points. We cannot estimate eighty-one million numbers from nine thousand observations. This is the genuine difficulty, and the next three sections give three clever answers: White for heteroskedasticity, clustered for grouped errors, and H-A-C for correlation across time. Same sandwich every time; only the recipe for the filling changes.
+:::
+
+## A Two-World Sandwich by Hand
+
+- Single regressor, no intercept: $y_i = \beta x_i + \varepsilon_i$
+- Then $\operatorname{Var}(\hat\beta) = \dfrac{\sum_i x_i^2\,\sigma_i^2}{\left(\sum_i x_i^2\right)^2}$
+- Use $x = (1,2,3,4)$, so $\sum_i x_i^2 = 30$
+- World A (equal variances): Var $= 30/30^2 = 1/30 \approx 0.033$
+- World B (scatter grows with $x$): a very different answer
+
+::: notes
+Abstract matrices hide the mechanism, so collapse the sandwich to the smallest case: a single regressor, no intercept, so X is just a column of numbers. The model is y equals beta x plus epsilon. Then X-prime-X is the single number sum of x-i squared, and the sandwich reads variance of beta hat equals the sum of x-i squared times sigma-i squared, divided by the square of the sum of x-i squared. Take x equals one, two, three, four, so the sum of x-i squared is thirty. World A is homoskedastic: every sigma-i squared equals one. The numerator is thirty, so the variance is thirty over thirty squared — one over thirty, about zero point zero three three, exactly the classical answer.
+:::
+
+## World B: Heteroskedasticity Bites
+
+- Scatter grows: $\sigma_i^2 = x_i^2$, so variances are $(1,4,9,16)$
+- Numerator $= 1 + 16 + 81 + 256 = 354$
+- $\operatorname{Var}(\hat\beta) = 354/900 \approx 0.393$ — twelve times larger
+- Classical formula still reports $1/30$ — understates by $\approx 3.5\times$
+- A reported t-stat of $3.5$ is really a t-stat of $1$
+
+::: notes
+World B is heteroskedastic: the scatter grows with x, say sigma-i squared equals x-i squared, so the variances are one, four, nine, sixteen. The numerator is now one plus sixteen plus eighty-one plus two hundred fifty-six, which is three hundred fifty-four, so the variance is three hundred fifty-four over nine hundred, about zero point three nine three — almost twelve times larger. The classical formula would still report one over thirty here, because it averages the variances and forgets that the big-variance points are also the high-x, high-leverage points. It understates the true standard error by a factor of about three point five. A reported t-stat of three point five would really be a t-stat of one. That is the entire heteroskedasticity problem in four data points — no calculus, no asymptotics.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The honest variance is always the **sandwich**: bread $(\mathbf{X}'\mathbf{X})^{-1}$ unchanged, filling $\mathbf{X}'\boldsymbol\Omega\mathbf{X}$ estimated honestly. The middle is only $K\times K$, so it is reachable even when $\boldsymbol\Omega$ is enormous. Next: White's recipe for the filling when errors are heteroskedastic but uncorrelated.
+:::
+
+::: notes
+To summarize part three: the honest variance is always the sandwich — the bread, X-prime-X inverse, never changes, and the whole game is estimating the filling, X-prime Omega X, without pretending the errors are well behaved. The filling is only K by K, a small matrix, so it stays reachable even when Omega itself is enormous. Our four-point example showed heteroskedasticity inflating the true variance twelvefold while the classical formula slept. In part four we meet White's recipe for estimating that filling when the errors are heteroskedastic but still uncorrelated.
+:::

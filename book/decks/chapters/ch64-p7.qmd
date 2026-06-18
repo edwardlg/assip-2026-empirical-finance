@@ -1,0 +1,64 @@
+---
+title: "Replicate It Yourself on HMDA"
+date: "2026-07-27"
+---
+
+# Replicate It Yourself on HMDA {.title}
+
+::: notes
+Welcome back to Chapter six-point-four, part seven of seven, the final part. In part six we named what is vulnerable in both papers. Now we put it all to work. These three replication exercises are scaffolded toward notebook six-point-four, the mortgage-disparity decomposition on public disclosure data — keeping front of mind the one thing it cannot show you: the credit score.
+:::
+
+## Exercise 1 — Raw, Then Conditional
+
+- Regress action-taken on a minority indicator, **no controls**
+- Add the legitimate factors HMDA *does* carry: loan amount, income, LTV, fixed effects
+- Watch the race coefficient **march across columns** (the BHR move)
+- Then: *which variable could I not add, and which way would it move the coefficient?*
+
+::: notes
+Exercise one reproduces a raw-then-conditional decomposition — the B-H-R move, limited to what the disclosure data carries. On a disclosure extract, regress the action-taken outcome, or the rate-spread field, on a minority indicator with no controls. Then add the legitimate factors the data does carry — loan amount, applicant income, loan-to-value where available, and census-tract and lender fixed effects — watching the race coefficient march across columns. Report how much of the raw gap the observables explain. Then write the sentence that is the whole point: what is the one variable I could not add, and which way would it move the coefficient? The answer is the credit score, and it almost certainly shrinks the coefficient.
+:::
+
+## Exercise 2 — Over-Control on Purpose, Then Match
+
+- Re-run, **adding** a control on the discrimination pathway (a high-cost-loan flag)
+- Watch the residual shrink **for the wrong reason** — the trap, hands-on
+- Then **match**: pair each minority application to a twin on income, amount, LTV, tract
+- Name the confound matching still can't fix: the **unobserved score**
+
+::: notes
+Exercise two stresses the design the way Mentor Four taught. First, over-control on purpose: re-run exercise one, adding a control that plausibly sits on the discrimination pathway — a loan-product or high-cost-loan flag — and show the residual shrink for the wrong reason. That is a hands-on demonstration of the over-controlling trap. Then build a matched comparison: pair each minority application to a non-minority application identical on income band, loan amount, loan-to-value and census tract, and compare within pairs. Report what matching buys you over the regression, and name the one confound it still cannot fix — the unobserved credit score, and selection into who applies.
+:::
+
+## Exercise 3 — Pricing and the Technology Split
+
+- Use HMDA's post-2018 pricing fields: the **conditional rate-spread** gap
+- Split by lender type: online/FinTech versus traditional banks
+- Test whether the gap is smaller with **no human in the loop** (the Bartlett move)
+- Write down why your version is **weaker**: no GSE formula inputs, no score
+
+::: notes
+Exercise three extends to the pricing margin and the technology split — the Bartlett move. Using the post-twenty-eighteen pricing fields, estimate the conditional rate-spread gap rather than the denial gap, then split the sample by lender type — online or FinTech lenders versus traditional banks — and test whether the gap is smaller where there is no human in the loop. You will be rebuilding Bartlett et al.'s headline contrast on public data: confirm, or fail to confirm, that algorithmic lending reduces but does not eliminate the disparity, and write down why your version is weaker than theirs — no GSE formula inputs, and no credit score.
+:::
+
+## Three Referee Questions to Carry Forward
+
+- Is conditioning on the **score** a control, or controlling away disparate **impact**?
+- If FinTech residual is **geography proxying for race** — is that discrimination?
+- Could a fair-lending enforcement change become a **DiD** (Chapter 4.1)?
+
+::: notes
+Carry three referee questions into the lab. First: B-H-R's residual shrinks once the credit score enters — but the score may itself encode historical discrimination. Is conditioning on it controlling for legitimate risk, or controlling away a channel of disparate impact? Second: Bartlett et al. find algorithmic lending reduces but does not eliminate the rate gap. If the residual comes from the algorithm pricing on geography that proxies for race, is that discrimination, and would removing the proxy fix it or merely hide it? Third: both papers identify off a conditioning set, not a natural experiment. If a state changed fair-lending enforcement at a known date, could you turn either design into the difference-in-differences of Chapter four-point-one — and what would parallel trends mean for a pricing gap rather than an approval gap?
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Rebuild both papers on **public HMDA**: raw-then-conditional, over-control then match, then the pricing-and-technology split — always naming the **missing credit score**. Next, open **`nb6.4`** and read the residual disparity off your own output, on the road to **Capstone 1**.
+:::
+
+::: notes
+To summarize this final part: the three exercises rebuild the spirit of both papers on public data — a raw-then-conditional decomposition, an over-control-then-match stress test, and a pricing-and-technology split — and every one ends by naming the missing credit score. Where this goes next is notebook six-point-four, where you build the regression, run the matched comparison, and read the residual disparity off your own output, confronting the missing-credit-score problem that is the spine of this literature. That pushes you toward Capstone One: a decomposition built to survive a hostile referee. As Gao and Sun's same-sex-borrower work in the Proceedings of the National Academy of Sciences reminds you, Bartlett et al. and B-H-R are the algorithmic-era sequel: same question, new defendant. That closes Chapter six-point-four. Take these tools into the lab.
+:::

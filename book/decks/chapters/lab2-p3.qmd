@@ -1,0 +1,56 @@
+---
+title: "The Two Passes and the FM Standard Error"
+date: "2026-06-29"
+---
+
+# The Two Passes and the FM Standard Error {.title}
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, part three of eight. In part two we wrote the CAPM as an estimable claim and saw why pooling everything fails. Now the heart of the method: two passes plus an average. Pass one gives a time-series beta for every stock. Pass two runs a cross-sectional regression each month, producing a time series of slopes. Then we average — and the average is where the magic lives, because the standard error falls out as nothing more than the standard error of a mean.
+:::
+
+## Pass 1 — A Time-Series Beta per Stock
+
+- For each stock $i$: $\;r_{it} = \alpha_i + \beta_i\, r_{m,t} + u_{it}$
+- The slope $\hat\beta_i$ is exactly **Sam's beta**, one per stock
+- In practice use a **rolling window** (e.g. trailing 60 months)
+- Rolling avoids look-ahead: beta for month $t$ uses data **before** $t$
+- First pass through the lab: full-sample beta to keep it simple
+
+::: notes
+Pass one estimates a time-series beta for every stock. For each stock i, run a time-series regression of its excess return on the market excess return: return-i-t equals alpha-i plus beta-i times market-return-t plus an error. The slope, beta-i-hat, is stock i's estimated beta — exactly Sam's beta from Chapter two-point-one, now computed once per stock. In practice you estimate this on a rolling window, say the trailing sixty months, so beta can drift and, crucially, so the beta used to explain month t's return is estimated only from data before month t — no peeking into the future. For your first pass through this lab, estimate beta on the full sample to keep the moving parts down; the rolling version is the extension.
+:::
+
+## Pass 2 — A Cross-Sectional Regression Each Month
+
+- Flip the regression sideways
+- In each month $t$: $\;r_{it} = \gamma_{0,t} + \gamma_{1,t}\,\hat\beta_i + \varepsilon_{it}$
+- One tiny regression per month — $N$ points, one slope
+- Run it $T$ times → a **time series** of slopes $\hat\gamma_{1,t}$
+- Slopes swing hugely — that's the market showing through
+
+::: notes
+Pass two flips the regression sideways. In each month t, treating the betas from pass one as known regressors, run a single cross-sectional OLS across all stocks: return-i-t equals gamma-zero-t plus gamma-one-t times beta-i-hat plus an error. This is one tiny regression per month — N data points, one slope. Run it T times and you get a time series of intercepts and slopes, one pair per month. The slope gamma-one-t answers: in month t, how much extra return did each unit of beta buy? Some months it is positive — high-beta stocks won — and some months negative, when they lost. That month-to-month swing is enormous, dominated by whether the market happened to go up or down that month.
+:::
+
+## Aggregate — The FM Estimate and SE
+
+- Point estimate: $\hat\gamma_1^{\text{FM}} = \frac{1}{T}\sum_{t}\hat\gamma_{1,t}$ — just the mean
+- Standard error = ordinary **SE of a mean**:
+$$\widehat{\operatorname{se}}=\frac{1}{\sqrt{T}}\sqrt{\tfrac{1}{T-1}\sum_t(\hat\gamma_{1,t}-\hat\gamma_1^{\text{FM}})^2}$$
+- FM t-stat $=\hat\gamma_1^{\text{FM}}/\widehat{\operatorname{se}}$, vs $t$ with $T-1$ df
+
+::: notes
+Now aggregate. Collapse each time series to its mean. The Fama–MacBeth point estimate is simply the average of the period-by-period slopes — gamma-one-FM equals one over T times the sum of the monthly slopes — and likewise for the intercept. And here is the move that makes the whole thing work. Because gamma-one-FM is just the sample mean of T numbers, its standard error is the ordinary standard error of a mean: the sample standard deviation of those monthly slopes divided by the square root of T. The Fama–MacBeth t-statistic is then the estimate divided by that standard error, compared against a t-distribution with T minus one degrees of freedom. No sandwich matrix, no covariance estimation — just the standard error of an average.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Two passes:** time-series betas per stock, then a cross-sectional regression each month giving a series of slopes $\hat\gamma_{1,t}$. The FM estimate is their **mean**; the FM SE is their **scatter over $\sqrt{T}$** — the SE of an average. Next: *why* that simple average neutralizes the within-month correlation.
+:::
+
+::: notes
+To summarize part three: the method is two passes plus an average. Pass one gives a time-series beta for every stock. Pass two runs a cross-sectional regression each month, producing a time series of slopes. The Fama–MacBeth estimate is the mean of those slopes, and the standard error is their scatter divided by the square root of T — nothing more than the standard error of an average. In part four we stare at why that simple average is so clever: how letting each month produce a single number seals up the within-month correlation, and how this is exactly clustering by time from Chapter two-point-four.
+:::

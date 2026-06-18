@@ -1,0 +1,58 @@
+---
+title: "When IPW Explodes — and the Defenses"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# When IPW Explodes — and the Defenses {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part four of ten. In part three we ran a clean six-student example. Now the failure mode: revealing the trick demands we say what breaks. We watch one tiny propensity score blow up a weight, see why thin overlap makes this typical, and lay out three defenses.
+:::
+
+## One Tiny Score, One Giant Weight
+
+- Student C's weight was $5$ at $\hat e = 0.2$
+- Imagine instead $\hat e = 0.02$: weight $= 1/0.02 = 50$
+- One student carries the weight of fifty
+- As $\hat e \to 0$ (treated) the weight $\to \infty$
+- Variance blows up — the **IPW explosion problem**
+
+::: notes
+Look at student C's weight of five, and imagine her propensity score had been estimated at zero-point-zero-two instead of zero-point-two. Her weight becomes one over zero-point-zero-two, equals fifty. One student would carry the weight of fifty, and the entire treated mean would be hostage to that single observation's outcome and to the accuracy of one tiny estimated probability. This is the I-P-W explosion problem, the central practical hazard of the method: as e-hat goes to zero for a treated unit, or to one for a control, the weight goes to infinity, and the estimator's variance blows up.
+:::
+
+## Thin Overlap Makes It Typical
+
+- Overlap requires $0 < e(\mathbf{X}) < 1$ for everyone
+- Near-violations give astronomically large weights
+- A handful of units can swamp everything
+- One bad score can move the answer a full point
+- The symptom is **quiet** — no error is thrown
+
+::: notes
+This is not a rare edge case; it is the typical situation whenever overlap is thin. Recall that overlap requires e-of-X strictly between zero and one for everyone. I-P-W is exquisitely sensitive to near-violations: a unit whose covariates make treatment nearly certain or nearly impossible gets an astronomically large weight, and a handful of such units can swamp everything. A single mis-estimated propensity score near zero can move your headline number by a full percentage point. Worse, the symptom is quiet — you get an estimate and a standard error; nothing throws an error — so you have to look for it.
+:::
+
+## Three Defenses
+
+- **Trimming**: drop $\hat e < 0.01$ or $\hat e > 0.99$; report it
+- **Stabilized weights**: multiply by marginal share $\hat p$
+- **Diagnose**: print max, 99th percentile, effective $N$
+- Effective $N = \big(\sum w_i\big)^2 / \sum w_i^2$
+- Tiny effective $N$ means no credible counterfactual
+
+::: notes
+Three standard defenses, in increasing order of how much you should reach for them. First, trimming: drop units with extreme estimated scores — a common rule discards e-hat below zero-point-zero-one or above zero-point-nine-nine, or restricts to the region of common support. Trimming changes the estimand slightly, so report how many units you dropped and re-run without it as a robustness check. Second, stabilized weights: instead of one over e-hat, use the marginal treatment share p-hat over e-hat for the treated, and one-minus-p-hat over one-minus-e-hat for controls. Multiplying by the marginal probability shrinks the variance of the weights without changing what they estimate, and it is essentially free; most modern I-P-W uses it by default. Third, just diagnose the weights: always print the max, the ninety-ninth percentile, and the effective sample size — the square of the sum of the weights divided by the sum of squared weights — which tells you how many real observations your weighted sample is worth. If your six-hundred-student sample has an effective sample size of forty because three units carry half the weight, no trimming will save you; your data simply do not contain a credible counterfactual, and you should say so.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+IPW is beautiful in theory and treacherous in practice, and the treachery is entirely about **extreme weights born of thin overlap**. Defend with trimming, stabilized weights, and — always — by diagnosing the weight distribution and effective sample size. That treachery is exactly what the next method was invented to avoid. Next: entropy balancing.
+:::
+
+::: notes
+To summarize part four: I-P-W is beautiful in theory and treacherous in practice, and the treachery is entirely about extreme weights born of thin overlap. Defend with trimming, stabilized weights, and — above all — by always diagnosing your weight distribution and effective sample size. That treachery is precisely what the next method was invented to avoid. In part five we meet entropy balancing, which solves directly for the weights instead of fitting a propensity model and hoping.
+:::

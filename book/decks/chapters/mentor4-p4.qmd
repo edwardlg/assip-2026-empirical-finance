@@ -1,0 +1,45 @@
+---
+title: "A Worked Case: Same-Sex Borrowers in HMDA Data"
+date: "2026-07-13"
+---
+
+# A Worked Case: Same-Sex Borrowers in HMDA Data {.title}
+
+::: notes
+Welcome back to the Week Four mentor session on detecting discrimination, part four of five. In part three we surveyed the clean designs — difference-in-differences, matched comparison, and regression discontinuity — that reconstruct the counterfactual in mortgage data. Now we ground the whole discipline in a real, published case from Professor Gao's own work: the lending experience of same-sex borrowers, a study that traveled from a public dataset all the way to Congressional testimony. The reference is Gao and Sun, two thousand nineteen, "Lending practices to same-sex borrowers," in the Proceedings of the National Academy of Sciences, volume one-sixteen, issue nineteen, pages nine-two-nine-three to nine-three-zero-two. We reason about identification and method only — and deliberately do not quote any specific magnitudes, because the point is to practice the judgment, not to recite results.
+:::
+
+## The Setting: HMDA and Co-Borrower Sex
+
+- Under the **Home Mortgage Disclosure Act**, lenders report a near-census
+- Loan amount, applicant traits, income, action taken, pricing
+- Crucially: HMDA records the **sex of each of two co-applicants**
+- So you can flag **same-sex** vs **different-sex** co-borrowers
+- Compare them holding the rest of the application fixed
+
+::: notes
+Here is the setting. Under the Home Mortgage Disclosure Act — HMDA for short — U.S. mortgage lenders report a near-census of applications: the loan amount requested, the applicant and co-applicant characteristics, income, the action taken — approved, denied, or withdrawn — and pricing information, for essentially every application at covered institutions. The crucial feature for this design is that HMDA records the sex of each of two co-applicants. That lets you identify applications from same-sex co-borrowers — two co-applicants of the same recorded sex — and compare them to different-sex co-borrowers, holding the rest of the application fixed. The question is whether same-sex couples are treated differently, in approval or in pricing, for reasons that cannot be explained by creditworthiness. And because this work led to Congressional testimony and engagement with the Department of Housing and Urban Development and the Federal Reserve, a credible finding here is not an academic curiosity — it is evidence in a live regulatory debate.
+:::
+
+## Why the Raw Gap Isn't the Effect
+
+- Target: effect of co-borrowers being **same-sex** on the outcome
+- A raw approval-rate difference confounds **selection** with treatment
+- Same-sex and different-sex couples may **select into applying** differently
+- The workhorse regression adds income, credit factors, loan-to-value, location
+- A nonzero coefficient shows a residual gap — **not** proven discrimination
+
+::: notes
+The counterfactual this design wants is the effect, for an application of a given creditworthiness, of the co-borrowers being same-sex rather than different-sex — on approval, or on price. A raw difference in approval rates between same-sex and different-sex applicants is not that effect, for two distinct reasons. First, unobserved creditworthiness: the two groups may genuinely differ in things the underwriter sees but you do not. Second, and deeper, selection into applying: same-sex and different-sex couples may enter the data differently — different income distributions, a different propensity to apply at all, different choices of lender or neighborhood. Those are two separate threats, and both contaminate the simple regression. So you run the workhorse regression — outcome on a same-sex indicator plus income, credit factors, loan-to-value, and location fixed effects — and a nonzero coefficient shows only that the gap is not explained by the covariates you measured. It does not, by itself, establish discrimination. The omitted-variable threat is still standing.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+HMDA's recorded co-applicant sex enables a same-sex versus different-sex comparison, but **selection into applying** and unobserved creditworthiness mean a raw gap — even a controlled coefficient — is not the causal effect. Next: the missing credit score, and the difference-in-differences that earns its keep here.
+:::
+
+::: notes
+To summarize part four: the same-sex-borrower study hands you a natural comparison, because HMDA records the sex of both co-applicants, so you can line up same-sex against different-sex applications. But the raw approval gap is not the causal effect — it is contaminated by two distinct threats. Unobserved creditworthiness, the same omitted-variable problem from part one, and selection into applying, which is about who enters the dataset at all. Even the controlled workhorse regression only tells you the gap survives the covariates you happened to measure. In part five we confront a sharp feature of this dataset — there is no credit score in HMDA — and we set up the difference-in-differences design that turns that apparent weakness into a reason design beats more controls.
+:::

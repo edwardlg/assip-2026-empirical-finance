@@ -1,0 +1,58 @@
+---
+title: "Lab 1: Building a Coin-Flip Universe"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Lab 1: Building a Coin-Flip Universe {.title}
+
+::: notes
+Welcome to Week One, Lab one, part one of seven. This lab is the capstone of Week One. Everything across the chapters — estimators, sampling distributions, the Law of Large Numbers, the Central Limit Theorem, and the hypothesis test — was about quantities you cannot see. In a real study you get one sample and must reason about the infinity of samples you did not get. A simulation lets you cheat: build the universe yourself, fix its true parameter, and draw freely. In this opening part we set up the mission and the running object — a coin.
+:::
+
+## Why Simulate
+
+- A real study gives you *one* sample only
+- You must reason about samples you never saw
+- Simulation lets you **build** the universe yourself
+- Fix the true parameter, then draw freely
+- You know the truth, so you can **check** the tools
+
+::: notes
+Why simulate? In a real study you get exactly one sample, and from it you must reason about an entire imaginary population and all the other samples you might have drawn but did not. A simulation lets you cheat in the most honest way. You build the universe, fix its true parameter by hand, and draw as often as you like. Because you know the true answer in advance, you can check whether the tools actually do what the chapters claim. You will watch a sampling distribution tighten and go normal. You will write a one-proportion test from scratch and then measure — not assume — its false-positive rate and its power. And you will run a small p-hacking experiment showing why one significant result pulled from many tries means almost nothing.
+:::
+
+## The Running Object: A Coin
+
+- Sam asks: is this coin fair?
+- A coin flip is a **Bernoulli trial** — two outcomes
+- Heads is $1$ with probability $p$; tails is $0$ with $1-p$
+- Mean of a Bernoulli is exactly $p$
+- Variance is $p(1-p)$ — clean, known structure
+
+::: notes
+The running object is the simplest random thing there is: a coin. Sam wants to know whether a coin is fair — or equivalently whether a trading signal that is right with some probability p is better than chance, or whether a fair-lending audit's approval rate is really one-half. A coin flip is a Bernoulli trial: an experiment with two outcomes, the value one for heads with probability p, and the value zero for tails with probability one minus p. The mean of a Bernoulli random variable is exactly p, and its variance is p times one minus p. That clean, known structure is what makes the coin the perfect teaching universe. Every quantity you estimate in this lab has a true value you can write down in advance and grade yourself against.
+:::
+
+## What You Will Be Able To Do
+
+- Build a Bernoulli population with known $p$
+- Construct the sampling distribution of $\hat p$ by Monte Carlo
+- Write a one-proportion z-test from scratch
+- **Measure** the test's size and its power
+- Demonstrate p-hacking with your own hands
+
+::: notes
+Here are the learning goals. By the end of this lab you will be able to build a Bernoulli population with a known parameter p and draw repeated samples from it reproducibly. You will construct the sampling distribution of the estimator p-hat by Monte Carlo, and show empirically that its spread falls like one over the square root of N and its shape converges to a normal — the Central Limit Theorem for a proportion. You will write a one-proportion z-test from scratch — test statistic, decision rule, p-value — and check it against a library. You will measure the empirical size of your test, its actual false-positive rate, and confirm it lands near the alpha you chose. You will measure the empirical power under an alternative and trace a power curve. And as a stretch, you will demonstrate how reporting only the winner from many tests inflates the false-positive rate.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A simulation lets you **build a universe where you know the truth**, then check whether the tools deliver. The running object is a coin: a Bernoulli trial with mean $p$ and variance $p(1-p)$. The discipline throughout is to *audit the procedure*, not trust it. Next: set up the environment and draw your first sample.
+:::
+
+::: notes
+To summarize part one: a simulation lets you build a universe where you already know the truth, and then check whether the statistical tools deliver on their promises. The running object is a coin — a Bernoulli trial whose mean is p and whose variance is p times one minus p. The discipline that runs through everything is the one from the hypothesis-testing chapter: a number is only as convincing as the procedure behind it, and here you get to audit the procedure. In part two we set up the environment, fix a seed for reproducibility, and draw our very first sample.
+:::

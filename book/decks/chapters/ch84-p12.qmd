@@ -1,0 +1,58 @@
+---
+title: "The Same Skill as Week 5"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# The Same Skill as Week 5 {.title}
+
+::: notes
+Welcome back to peer review and revision, part twelve of twelve — the close. In part eleven we finished Maya's memo and saw why it earns recommend acceptance. Now we close the loop explicitly, because the symmetry is the whole point of the chapter, and then we set up the Week-Eight workshop where you will do both jobs in one session.
+:::
+
+## Closing the Loop
+
+- Week Five: read tables-first, find the identifying assumption
+- Chapter seven-point-five: write your own threats in four columns
+- A referee report is that threats table on someone else's paper
+- The R&R memo is your own table, promoted to a public defense
+- Same skill, reversed — credibility decided, then rebuilt
+
+::: notes
+It is worth closing the loop explicitly, because the symmetry is the point. In Week Five you learned to read a paper tables-first and to ask, of any design, what is the identifying assumption and what threatens it. In Chapter seven-point-five you learned to write that assumption down for your own paper and to list its threats in a four-column table. The referee report is that same threats table, written about someone else's paper. The R and R memo is your own threats table, promoted from a private worksheet into a public defense, with the referee's concerns slotted in beside the ones you anticipated. A referee reads tables-first and asks the identification question first because that is how the credibility of a result is actually decided; you respond table-by-table and evidence-by-evidence because that is how credibility is actually rebuilt.
+:::
+
+## There Is No Losing Move but Dishonesty
+
+- Stop seeing peer review as a hazing ritual
+- A good referee improves your paper whether right or wrong
+- If they are right, you fix a flaw
+- If they are wrong, you produce the armoring evidence
+- The only losing move is the dishonest one
+
+::: notes
+The student who internalizes this stops experiencing peer review as a hazing ritual and starts experiencing it as the engine it is. A good referee makes your paper better whether you agree with them or not — if they are right, you fix a flaw; if they are wrong, you produce the evidence that proves they are wrong, which armors the paper either way. There is no losing move except the dishonest one. Reveal the trick to a peer so they can fix theirs; let a peer reveal the trick on yours so you can fix it before the grader does. That exchange, performed in good faith and on the evidence, is the whole of what a research community is.
+:::
+
+## Your Turn: The Week-8 Workshop
+
+- The engine of the Week-Eight workshop and PS eight-point-four
+- Referee a classmate's draft, then write your own R&R memo
+- Bring your draft from chapters eight-point-one through three
+- Mentor Session Eight rehearses the live seminar version
+- Tied to Prof. Gao's disclosure work, JFQA, twenty twenty-four
+
+::: notes
+This chapter is the engine of the Week-Eight peer-review workshop and of Problem Set eight-point-four, where you will be assigned a classmate's capstone draft, write a full referee report on it, and then — after receiving the report someone else wrote on yours — produce an R and R memo responding point by point. Bring your draft from chapters eight-point-one through eight-point-three, and come ready to be both referee and author in the same session. Mentor Session Eight, Defending a result: what a referee actually asks, rehearses the live version — the questions a referee fires in a seminar — tied to Prof. Gao's work on disclosure, Elnahas, Gao, Hossain, and Kim, in the Journal of Financial and Quantitative Analysis, two thousand twenty-four. When you referee, work the skeleton in order. When you write your memo, work each comment quote-change-evidence, deciding consciously whether you concede, defend, or bound.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Refereeing and responding are **one Week-5 skill reversed**: the report is someone else's threats table; the R&R memo is yours, promoted to a public defense. A good referee improves your paper whether right or wrong — the only losing move is dishonesty. In the Week-8 workshop you will be both referee and author, so: **do what you said you did.**
+:::
+
+::: notes
+To summarize part twelve and the chapter: refereeing and responding are one skill, the Week-Five reading skill aimed in opposite directions. The referee report is the four-column threats table written about someone else's paper; the R and R memo is your own table promoted into a public defense. A good referee makes your paper better whether they are right or wrong — if right, you fix the flaw; if wrong, you produce the armoring evidence. The only losing move is the dishonest one. In the Week-Eight workshop you will be both referee and author in the same room: write the report concern-first, write the memo quote-change-evidence, and above all, do exactly what you said you did. That good-faith exchange on the evidence is the whole of what a research community is.
+:::

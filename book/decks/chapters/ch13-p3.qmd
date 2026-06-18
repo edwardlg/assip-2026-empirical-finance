@@ -1,0 +1,70 @@
+---
+title: "Variance and the Standard Error"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Variance and the Standard Error {.title}
+
+::: notes
+Welcome back to Estimators and Their Sampling Distributions, part three of seven. In part two we proved the sample mean aims true: unbiased for any sample size. But aiming true on average is cold comfort if any single sample can be wildly off. This part is about the spread of a recipe from sample to sample — its variance — and the square-root law that governs it.
+:::
+
+## Two Archers
+
+- Both archers are unbiased: arrows center on the bullseye
+- Archer one: tight cluster around the center
+- Archer two: scattered, but symmetric so they average true
+- You want the tight archer — low **variance**
+- Standard error $=\sqrt{\operatorname{Var}(\hat{\mu})}$, in dollars
+
+::: notes
+Picture two archers. Both are unbiased — their arrows center on the bullseye. The first archer's arrows land in a tight cluster; the second's are scattered all over, just symmetrically so they average to the center. You want the first archer. The spread of an estimator across samples is its variance — how much the estimate bounces from one sample to the next. Its square root, the standard error, is in the same units as the estimate — here, dollars — and is the number you actually report. It is the honest companion that says how much your estimate would wobble under a re-draw.
+:::
+
+## The $\sigma^2/N$ Formula
+
+- Claims independent, each with variance $\sigma^2$
+- Variances of independent draws add: $\operatorname{Var}(\sum x_i)=N\sigma^2$
+- Pull $\tfrac1N$ out of a variance and it squares
+- $\displaystyle \operatorname{Var}(\bar{x})=\frac{1}{N^2}\cdot N\sigma^2=\frac{\sigma^2}{N}$
+- Standard error $\displaystyle \operatorname{se}(\bar{x})=\frac{\sigma}{\sqrt{N}}$
+
+::: notes
+Here is where sample size earns its keep. In Chapter one-point-two we found that variances of independent random variables add. If the claims are independent draws with variance sigma squared, the variance of their sum is N times sigma squared. And since x bar is one over N times that sum, and pulling the constant one over N out of a variance squares it, the variance of x bar is one over N squared times N sigma squared, which simplifies to sigma squared over N. Stare at this, because almost everything quantitative in the rest of the book descends from it. The variance of the sample mean is the population variance divided by N, so the standard error is sigma over the square root of N.
+:::
+
+## The Most Consequential Square Root
+
+- $\operatorname{se}$ shrinks like $1/\sqrt{N}$ — **not** like $1/N$
+- Halve the error: *quadruple* the sample, not double
+- One more digit of precision needs $100\times$ the data
+- Twice as sharp from 400 claims means 800, not 600
+- Precision is expensive at a predictable rate
+
+::: notes
+The standard error shrinks like one over the square root of N — not like one over N. This square root is the most consequential one in statistics, and a little disappointing the first time you meet it. To cut your standard error in half, you do not double your sample; you quadruple it. One more decimal digit of precision — a tenfold drop in error — needs a hundredfold increase in data. Priya's boss wants the estimate twice as sharp? That is not four hundred claims, that is eight hundred. Precision is expensive, at a very specific, predictable rate.
+:::
+
+## A Concrete Number
+
+- Suppose $\sigma=\$12{,}000$, $N=200$
+- $\operatorname{se}=12{,}000/\sqrt{200}\approx 12{,}000/14.14\approx \$849$
+- So \$8,410 carries a standard error near \$850
+- With $N=5{,}000$: $\operatorname{se}\approx \$170$
+- Independence is doing real work — clustering breaks it
+
+::: notes
+Make it concrete. Suppose the population standard deviation of claims is twelve thousand dollars — losses are volatile, most small, a few enormous. With N equal to two hundred, the standard error is twelve thousand over the square root of two hundred, roughly eight hundred forty-nine dollars. So Priya's estimate carries a standard error of about eight hundred fifty dollars — a different draw could easily have nudged her note by several hundred dollars. That is the honest, quantitative answer to her boss. With five thousand claims it falls to about one hundred seventy. Now, the clean formula leaned on one assumption: independence. A single wildfire files hundreds of correlated claims. When observations are positively correlated, extra positive covariance terms appear and the true variance exceeds sigma squared over N — the naive standard error understates the real wobble. That is the leak clustered standard errors plug.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The variance of the sample mean is $\sigma^2/N$, so the standard error is $\sigma/\sqrt{N}$ — it shrinks like $1/\sqrt{N}$, not $1/N$. Halving it means *quadrupling* the data. The clean rate assumes **independent** observations. Next: combine bias and variance into one scorecard, the **MSE**.
+:::
+
+::: notes
+To summarize part three: variance is the sample-to-sample spread of a recipe, and its square root, the standard error, is what you report. For the sample mean the variance is sigma squared over N, so the standard error is sigma over root N — halving it costs four times the data. With twelve-thousand-dollar volatility and two hundred claims, that is about eight hundred fifty dollars. And the clean rate assumes independent observations; correlation inflates the true wobble. In part four we fold bias and variance into one honest scorecard, the mean squared error.
+:::

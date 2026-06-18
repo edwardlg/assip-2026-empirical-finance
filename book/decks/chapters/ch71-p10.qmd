@@ -1,0 +1,46 @@
+---
+title: "Priya's Pipeline, the Rubric, and Your Turn"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Priya's Pipeline, the Rubric, and Your Turn {.title}
+
+::: notes
+Welcome back to Chapter seven-point-one, part ten of ten — the finish. In part nine we mapped five cast projects and ran Devon's depeg pipeline to an event-study spec. Now we run the same machine on Priya's disaster-and-insurance question with a different design, then meet the scoring rubric and set up the notebook.
+:::
+
+## Worked Example B — Priya, a DiD Pipeline
+
+- **Puzzle:** "Insurers are fleeing wildfire and hurricane country"
+- **Refined:** disaster-hit counties → insurance costs rise faster than un-hit?
+- **Hypothesis:** faster post-event growth in hit counties; $H_0$: parallel growth
+- **Design:** DiD — FEMA declaration is the dated treatment + parallel-trends check
+- **Spec:** county & year fixed effects, clustered by county, U.S. counties 2010–2023
+
+::: notes
+Now Priya, the same machine, a different design. The puzzle: insurers are fleeing wildfire and hurricane country. Filters — so what: if disaster exposure drives up insurance cost, it bears on housing affordability, regulation of insurer exit, and climate adaptation; a regulator and a homeowner both care either way. Who cares: a fast-growing climate-finance literature. What's new: the recent surge in billion-dollar disasters is a new period, and county-level NOAA, FEMA, and FRED data linked this way is a new combination. The refined question: do counties hit by federally declared disasters see homeowner-insurance costs rise faster than comparable counties that were not hit, in the years after? The testable hypothesis: insurance cost grows faster in disaster-hit counties post-event than in matched un-hit counties; the null is parallel growth. The identifying variation is difference-in-differences: treated counties have a FEMA declaration in a given year, controls are comparable counties without one, and the declaration is the dated treatment. The threat — disaster-prone counties differ systematically — is addressed by the difference in differences, which sweeps out fixed county characteristics, plus a parallel-trends check on pre-disaster cost growth. The spec: outcome is a county insurance-cost proxy; treatment is the FEMA major-disaster declaration; controls are county and year fixed effects; clustering by county; sample is U.S. counties, 2010 to 2023; identifying assumption: absent the disaster, hit and un-hit counties' insurance costs would have trended in parallel. Two passes through the same machine, two designs, both arriving at a single defensible sentence.
+:::
+
+## The Scoring Rubric — Five Dimensions, 0–2 Each
+
+- **Falsifiable? · So-what/who-cares? · Novel? · Identifiable? · Feasible?**
+- Score each 0–2; total out of 10
+- **Veto:** any 0 on *Identifiable* or *Feasible* kills it, whatever the total
+- Solid project: **7+ with no zeros**
+- 4–6 is usually salvageable by *narrowing* the question
+
+::: notes
+You will carry three or four ideas into Week Seven, and you need a fast, honest way to rank them. Here is the rubric you'll use in problem set seven-point-one: score each candidate on five dimensions — falsifiable, so-what-slash-who-cares, novel, identifiable, and feasible — zero to two points each, total out of ten. On falsifiable, two is a sharp signed hypothesis with a null. On so-what, two means a real conversation cares and both answers matter. On novel, two is new data, outcome, or identification. On identifiable, one is descriptive honestly labeled and two is a real design from Weeks Three and Four. On feasible, two is data in hand by Chapter seven-point-two with one clean question. Read the scores as a checklist with veto power, not a sum to maximize. Any zero on identifiable or feasible is a veto — kill the idea regardless of total, because an unidentifiable question is not research and an infeasible one will not finish. A solid project lands at seven or above with no zeros. An idea scoring four to six is usually salvageable by narrowing — tighten the hypothesis, find the cutoff or event date, shrink the sample.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Run your mood through the whole machine to a one-sentence spec, then score three or four candidates 0–10 — veto any zero on *identifiable* or *feasible*. Open **nb7.1** and leave with one project locked plus a runner-up. Next chapter, Ch 7.2: turning that spec into acquired data.
+:::
+
+::: notes
+To wrap up the whole chapter: a good project is a vague interest passed through three filters until it becomes one sentence — the effect of a treatment on an outcome, identified by a source of variation, using data you can get. We saw two full worked examples — Devon's depeg event study and Priya's disaster difference-in-differences — each running from mood to a defensible spec. Then the rubric: score on falsifiable, so-what, novel, identifiable, and feasible, and veto any zero on identifiability or feasibility. Now open notebook seven-point-one, the idea-to-spec template. Bring three candidate ideas; it makes you score and rank them, and you leave with one project locked and a runner-up. That spec is the input to everything that follows. In Chapter seven-point-two we turn it into acquired data — the scaffold is gone for good, and your project starts now.
+:::

@@ -1,0 +1,81 @@
+---
+title: "The Confirmatory Run"
+date: "2026-08-10"
+---
+
+# The Confirmatory Run {.title}
+
+::: notes
+Welcome to Week Eight, Chapter eight-point-one, part one of six. Maya filed her pre-analysis plan two weeks ago. It sits frozen as a tagged commit — one primary specification, a deviation log waiting empty beside it. What remains feels like it should be easy: run the thing. This lesson is about that moment, where most honest projects quietly go wrong. We start with the first job of Week Eight: execute the pre-registered confirmatory result exactly as filed, and report it whatever it shows.
+:::
+
+## Your First Job in Week 8
+
+- Run the pre-registered primary specification **once**
+- On the confirmation data, exactly as the PAP wrote it
+- No edits, no peek-then-tweak
+- Report the number whichever way it falls
+- Easy mechanically — hardest professional habit in the course
+
+::: notes
+Here is the result in one sentence. Your first job in Week Eight is to run the pre-registered primary specification once, on the confirmation data, exactly as written — no edits, no peeking then tweaking — and to report the number it produces no matter which way it falls. That sounds trivial. It is the hardest professional habit in the course, and the reason is psychological, not technical.
+:::
+
+## Why the p-Value Demands It
+
+- Under a true null, the p-value is uniform on zero to one
+- One pre-specified test at five percent rejects truth 5% of the time
+- That five percent is the contract you signed
+- Holds only if the test was **fixed before you saw the outcome**
+- Peek, dislike, adjust — you re-enter the garden of forking paths
+
+::: notes
+Go back to Chapter one-point-five. Under a true null the p-value is uniformly distributed on zero to one, so a single pre-specified test at alpha equals five percent rejects a true null exactly five percent of the time. That five percent is the contract you signed. It only holds if the test was fixed before you saw the outcome. The instant you run a regression, dislike the coefficient, and adjust the specification to improve it, you have re-entered the garden of forking paths, and your p-value no longer means five percent — it means something larger and unknowable, inflated by every fork you walked with the answer in view.
+:::
+
+## Maya's Frozen Specification
+
+- Staggered difference-in-differences on HMDA data
+- Outcome: county-year minority-white denial gap
+- Treatment: a state's active fair-lending exam program
+- County and year fixed effects; clustered by state
+- Notebook gated behind a `PAP_FILED=True` flag
+
+::: notes
+So the mechanics are deliberately rigid. Maya's filed commit named a single staggered difference-in-differences. The outcome is the county-year minority-white denial gap; the treatment is a state's active fair-lending examination program; never-adopters and not-yet-treated states serve as clean controls. She uses county and year fixed effects, standard errors clustered by state, and a fixed HMDA vintage. Her notebook is frozen behind a gate — a flag, PAP filed equals true, that must be asserted before the analysis cell runs. That is the technological enforcement of: do not peek until the plan is filed.
+:::
+
+## The Number She Reports
+
+- $\widehat{\text{ATT}} = -1.89$ percentage points
+- Clustered standard error $= 0.065$
+- Ninety-five percent CI $= [-2.02,\ -1.75]$
+- A roughly 1.9-point **narrowing** of the denial gap
+- The number the rest of the paper defends — full stop
+
+::: notes
+When she ran it, exactly once, the pre-registered estimator returned an average treatment effect of negative one point eight nine percentage points, a clustered standard error of zero point zero six five, and a ninety-five percent confidence interval from negative two point zero two to negative one point seven five. The examination programs are associated with a roughly one-point-nine percentage-point narrowing of the denial gap — the sign she hypothesized — comfortably away from zero. That is the confirmatory result, the number the rest of the paper defends, full stop.
+:::
+
+## Report It Whichever Way It Falls
+
+- Commit **in advance** to reporting any outcome
+- Wide CI straddling zero = power failure, report inconclusive
+- Tight CI hugging zero = a genuine, publishable null
+- Either way, you report it
+- Disappointing result is not a bug to debug
+
+::: notes
+Now the part that separates a researcher from a result-shopper. Maya must commit, in advance, to reporting that number whichever way it came out. Suppose the run had returned negative zero point three points with an interval straddling zero. Her falsification clause already told her what to do: a wide interval that includes zero is a power failure, reported as inconclusive; a tight interval hugging zero would be a genuine, publishable null. Either way she reports it. The temptation is enormous, because she wants the effect to be real. To treat a disappointing confirmatory number as a problem to be debugged rather than a result to be reported — that instinct is the disease.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Run the pre-registered specification **once**, on the confirmation data, and report whatever it shows. The five-percent contract holds only if the test was fixed before you saw the outcome. A clean execution is necessary but not sufficient — it answers what the one specification says, not whether the answer is an artifact of that one specification.
+:::
+
+::: notes
+To summarize part one: run the pre-registered specification once, on the confirmation data, and report whatever it shows. The five-percent contract holds only because the test was fixed before you saw the outcome. But there is a trap inside an honest confirmatory run — mistaking a clean execution for a robust result. Maya ran one specification and got a starred coefficient, one branch of a tree she could defensibly have climbed differently. In part two we make the whole garden visible.
+:::

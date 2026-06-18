@@ -1,0 +1,46 @@
+---
+title: "Placebo Tests: Fake Treatment Dates"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Placebo Tests: Fake Treatment Dates {.title}
+
+::: notes
+Welcome back to Chapter eight-point-two, part four of ten. In part three we used the wild cluster bootstrap to expose fake significance from too few clusters. Now the most intuitive attack, and when it fails, the most damning. A placebo test runs your exact analysis on a setting where, by construction, there can be no treatment effect — a fake date, a fake unit, a fake outcome — and checks that you correctly find nothing. The logic is a control group raised one level: if your method finds an effect where none can exist, then the effect it found in your real analysis is suspect too, because your method is manufacturing patterns out of whatever structure is in the data. This part takes the first kind: the fake treatment date.
+:::
+
+## Fake Treatment Dates: The In-Time Placebo
+
+- Pretend programs switched on **years before** any real adoption
+- Drop the true post-period so real and fake effects can't mix
+- Re-run the **entire** Callaway–Sant'Anna estimator
+- Probes: does the estimator find an "effect" from **trend structure** alone?
+- This attacks the **differential-pre-trend** threat — row one of Maya's table
+
+::: notes
+First, the in-time placebo. Maya picks a year well before any state actually adopted an examination program — say, three years before the earliest real adoption — and pretends the programs switched on then, leaving the true post-period out entirely so the fake effect cannot be contaminated by the real one. She re-runs the entire Callaway–Sant'Anna estimator on this fictional timing. What it probes: whether her estimator detects a treatment effect purely from the trend structure of the data — exactly the differential-pre-trend threat that sits in row one of her table. If adopting states were already on a different denial-gap trajectory, a fake treatment placed in the pre-period will catch that trajectory and report a spurious effect.
+:::
+
+## Reading the In-Time Placebo
+
+- **Pass:** placebo ATT small, indistinguishable from zero
+- That is real support for parallel trends — a flat event-study lead as one number
+- **Fail:** placebo ATT large, maybe as big as the real estimate
+- Close to fatal — "1.4pp effects" appear in years nothing happened
+- No spin survives; redesign or report as uninterpretable
+
+::: notes
+How do you read it? Pass: the placebo A-T-T is small and statistically indistinguishable from zero. This is real, if asymmetric, support for parallel trends — it is the same evidence as a flat event-study lead, dressed as a single number. Fail: the placebo A-T-T is itself large and significant, perhaps even similar in size to the real estimate. That is close to fatal. It means your method finds one-point-four-point effects in years when nothing happened, so the one-point-four points it found in the real years carries no special weight. There is no spin that survives a failed in-time placebo. The honest move is to conclude the design cannot separate the treatment from a pre-existing trend, and either redesign — a cleaner control group, a shorter window — or report the result as uninterpretable.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A placebo runs your exact analysis where no effect can exist and must find nothing. The in-time placebo plants a fake treatment date in the pre-period; a near-zero placebo ATT supports parallel trends, while a large one is close to fatal — your method is catching a pre-trend, not the program.
+:::
+
+::: notes
+To summarize part four: a placebo test runs your exact analysis on a setting where, by construction, there can be no treatment effect, and checks that you correctly find nothing. The in-time placebo plants a fake treatment date well before any real adoption and re-runs the whole estimator. A near-zero placebo A-T-T is genuine support for parallel trends; a large one is close to fatal, because it shows your method manufacturing one-point-four-point effects from trend structure alone, which strips the real estimate of its weight. In part five we keep permuting — fake treatment units and fake outcomes — and confront why reporting a failed placebo is never optional.
+:::

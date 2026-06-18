@@ -1,0 +1,69 @@
+---
+title: "Replicate It Yourself, and What to Ask Next"
+date: "2026-07-20"
+---
+
+# Replicate It Yourself, and What to Ask Next {.title}
+
+::: notes
+Welcome back to Chapter five-point-four, part seven of seven — the last segment of our reader's guide to Petersen. Part six named the paper's three edges. Now we stop reading and start doing. The deepest way to believe a methods result is to make it happen on your own screen. These three exercises, run in notebook five-point-four, hand you a panel-simulation harness to play the author's own game.
+:::
+
+## Exercise 1 — Rebuild the Firm-Effect Table
+
+- Known true slope $\beta=0.30$; error = firm component + noise
+- Regressor also carries a persistent firm component
+- Tabulate per method: avg $\hat\beta_1$, **true SE**, avg estimated SE, 95% coverage
+- Methods: OLS, White/HC, cluster-by-firm, cluster-by-time
+- Headline: OLS and White **undercover**; cluster-by-firm recovers nominal
+
+::: notes
+Exercise one: rebuild the core firm-effect table. Generate a balanced panel with a known true slope of zero-point-three-zero, an error of a firm component plus noise — no time component yet — and a regressor that also carries a persistent firm component. Across many panels, tabulate four numbers per method: the average beta-one-hat, the true standard error — the standard deviation of estimates across draws — the average estimated standard error, and the ninety-five percent coverage. Do this for OLS, White, and cluster by firm and time. You should reproduce Petersen's headline: OLS and White both undercover badly, with estimated SE far below true SE, while cluster-by-firm recovers near-nominal coverage. This is the table-reading skill from part four, done by hand.
+:::
+
+## Exercise 2 — Flip to a Time Effect
+
+- Replace the firm component with a shared **time** component
+- Re-run the same four-method comparison
+- Confirm the **symmetry:** cluster-by-time now matches; firm fails
+- Then add a **time fixed effect** (a dummy per year)
+- It largely **absorbs** it — FE and clustering differ
+
+::: notes
+Exercise two: flip to a time effect. Replace the firm component with a time component shared by all firms in each period. Re-run the four-method comparison and confirm the symmetry: cluster-by-time now matches the truth, cluster-by-firm fails. Then add a time fixed effect — a dummy per year — and show it largely absorbs the time effect. That connects to the Week Two point that fixed effects and clustering do different jobs: a fixed effect removes the common shock from the conditional mean, while clustering corrects the standard error for whatever correlation remains. Seeing both on the same data fixes the distinction.
+:::
+
+## Exercise 3 — Both Effects, Then Break Few Clusters
+
+- Firm and time components comparable; compare one-way, one-way, two-way
+- Verify **two-way** is the one with correct coverage
+- Then shrink to, say, **10 firms** or **8 years**
+- Watch cluster-robust coverage fall **below** nominal — even "done right"
+- Reproduces the **few-clusters** caveat, by your own hand
+
+::: notes
+Exercise three: turn on both effects, then break the few-clusters case. Set the firm and time components to comparable sizes, and compare one-way by firm, one-way by time, and two-way; verify two-way has correct coverage. Then shrink the number of clusters — re-run with only ten firms or eight years — and watch cluster-robust coverage fall below nominal, even though you are doing it right. This reproduces by hand the few-clusters caveat from part six. Believing it from a sentence is one thing; watching your correct method undercover is another.
+:::
+
+## Where This Connects, and Three Referee Questions
+
+- The **deep** version of Week Two, Ch 2.4 — now **proved**
+- Recall nb2.4: $\hat\beta=0.30$, classical $t=5.70 \to$ firm-clustered $t=2.19$
+- **Q1:** How many clusters is enough? And if unstated?
+- **Q2:** Is "robust" a trap word? What does White's claim *not* cover?
+- **Q3:** Does your real dependence match a shape Petersen simulated?
+
+::: notes
+This guide is the deep version of Week Two, Chapter two-point-four, where you met the taxonomy as a recipe — and saw, in notebook two-point-four, a beta-hat of zero-point-three-zero carry a classical t of five-point-seven-zero that collapsed to a firm-clustered t of two-point-one-nine. There you used the result; here you watched it proved. Carry three referee questions into the notebook. One: how many clusters is enough, and how would you know in a paper that does not say? Two: is "robust" a trap word? White errors are sold as robust, yet fail under a firm effect — what claim do they make, and not make, about Omega? Three: does your real dependence match a shape Petersen simulated? If your firms are linked by a supply-chain network, does any clustering choice in his taxonomy capture it — and if not, what then?
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Run the harness before the next paper: watch OLS **undercover** on data whose truth you set, see the firm/time **symmetry**, and **break** the few-clusters case by hand. That is when the recipe stops being memorized and starts being **known**. Next chapter — **Bertrand–Duflo–Mullainathan (2004)**: the same disease in a difference-in-differences costume.
+:::
+
+::: notes
+To summarize part seven, and the whole guide: go to notebook five-point-four and run Exercise One before the next paper. Watching OLS undercover on data whose truth you set is the moment the recipe stops being memorized and starts being known. You will rebuild the firm-effect table, flip to a time effect and see the symmetry, and break the few-clusters case by hand. Tomorrow's paper, Bertrand, Duflo, and Mullainathan, two-thousand-four, is the same disease — ignored within-group serial correlation — in a difference-in-differences costume, so Petersen is the right warm-up. Let the simulation, not the slogan, convince you.
+:::

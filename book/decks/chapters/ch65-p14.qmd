@@ -1,0 +1,57 @@
+---
+title: "Disclosure, Responsibility, and the Capstone"
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+# Disclosure, Responsibility, and the Capstone {.title}
+
+::: notes
+Welcome back to the AI co-pilot for research, part fourteen of fourteen — the close. In part thirteen we covered audit logging and the local fallback. Now we tie it together: your capstone must be honest about how AI was used and reproducible from your repository alone. Treat AI assistance like any other part of the method — disclose it, validate it, make it replicable. Here is the checklist the Week Six assessment holds you to.
+:::
+
+## Disclosure and Validation
+
+- State **where and how** you used a model — be specific
+- Name the exact version strings, providers, and date range
+- Separate AI as a **writing aid** from AI that **generates data**
+- Disclose every data-producing prompt verbatim — the rubric
+- Report out-of-sample precision, recall, and F1 against a gold set
+
+::: notes
+First, disclosure — say what you did. State, in a methods or acknowledgments paragraph, where and how you used a model: literature triage, code review, prose editing, or producing data such as labels. Name the exact model version strings and providers, and the date range over which you ran them. Distinguish clearly between AI used as a writing aid — where you own every word — and AI used to generate data; the second demands validation, the first only that the words are true and yours. Disclose every data-producing prompt verbatim in an appendix, especially the rubric. Then, validation — prove the measurement. For any LLM-generated label used in analysis, include an out-of-sample precision, recall, and F-one table against a hand-labeled gold set, stating the gold-set and test-set sizes. Report performance on the class you care about, never bare accuracy under imbalance.
+:::
+
+## Reproducibility and Integrity
+
+- Commit the **audit log** so the exact calls are on record
+- Pin the model version, API version, and any seed or temperature
+- Save labels to disk — treat that file as your dataset
+- **Freeze the prompt** against the gold set before the regression
+- Address leakage for prediction; report robustness, don't hide it
+
+::: notes
+Next, reproducibility — make it re-runnable. Commit the audit log, or a redacted version, so the exact calls are on record. Pin the model version, the A-P-I version, and any seed or temperature setting, and note where determinism is not guaranteed. Save LLM-generated labels to disk and treat that file as your dataset — do not re-query the model inside the analysis. And verify every citation and figure the model suggested against a primary source before it enters the paper. Finally, integrity — don't fool yourself, or the referee. Freeze your classification prompt against the gold set before looking at the downstream regression, to avoid prompt-induced p-hacking. For prediction tasks, address training-data leakage explicitly: state the model's cutoff and why your sample is not contaminated, or test on post-cutoff data. And if you tried multiple prompts or models, report the robustness — do not hide it.
+:::
+
+## Carry Into Mentor Session 6
+
+- A precision-0.88, recall-0.61 classifier — would you use it?
+- Where does **leakage** threaten your own capstone design?
+- What in your workflow is irreproducible right now?
+- For each gap: freeze labels, pin the version, validate, log
+
+::: notes
+Carry three questions into the lab and into Mentor Session Six. First: when is an LLM label a measurement you can defend, and when is it a confident guess? Suppose a classifier has test-set precision zero-point-eight-eight and recall zero-point-six-one for the negative class, and your result depends on identifying negative filings. Would you use these labels, and what does the low recall do to your regression? Second: where, in your own capstone idea, does training-data leakage threaten you? Name one task where the model might know the future relative to your sample, and describe the cleanest defense, including how you would enforce a date filter in retrieval. Third: what in your workflow is irreproducible right now? Walk through your pipeline, find every place a re-run could produce different numbers, and for each write the one concrete change — freeze the labels, pin the version, validate, log — that would make your work survive replication.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+An LLM is a measurement and drafting instrument you remain **fully responsible** for. As a co-pilot — accelerating verifiable work with validation and logging as guardrails — it makes you faster. As an autopilot, it will fly your paper into a mountain with total confidence. The difference is the guardrails, and the guardrails are your job.
+:::
+
+::: notes
+To close the lesson: the unifying idea for Mentor Session Six is that an LLM is a measurement and drafting instrument that you, the researcher, remain fully responsible for. Used as a co-pilot — accelerating verifiable work, with validation and logging as the guardrails — it makes you faster and lets you tackle text-as-data questions that were out of reach a few years ago. Used as an autopilot — trusted to think, recall, and decide for you — it will, sooner or later, fly your paper into a mountain with total confidence. The difference is entirely in the guardrails, and the guardrails are your job. Now open the lab, where the prompt patterns become a measurement instrument you have personally calibrated.
+:::

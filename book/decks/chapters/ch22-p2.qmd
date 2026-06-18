@@ -1,0 +1,58 @@
+---
+title: "The Contract, Part One: Linearity and Full Rank"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Contract, Part One: Linearity and Full Rank {.title}
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part two of nine. In part one we stated the punchline: O L S is BLUE under a five-clause contract. Now we read the contract itself, stating each clause as a falsifiable claim about Maya's loan data. This part covers the first two assumptions: linearity in the parameters, and full-rank regressors.
+:::
+
+## Assumptions as Testable Claims
+
+- State each as a claim about Maya's data
+- True or false, in principle
+- For each: what fails, and where we fix it
+- An assumption is not a ritual
+- It is a falsifiable statement about the data
+
+::: notes
+Textbooks usually list the classical assumptions as abstract Greek. We will instead state each one as a claim about Maya's loan data that could, at least in principle, be true or false. For each, we flag what you would see if it failed, and where in the book we repair it. Keep the spec discipline in mind: an assumption is not a ritual incantation. It is a falsifiable statement about a data-generating process. That framing turns a list of formulas into a checklist Maya can actually run against her sample.
+:::
+
+## Assumption 1 — Linearity in Parameters
+
+- True model: $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$
+- Linear in the $\beta$'s, **not** in the $x$'s
+- Allowed: $x^2$, $\log(\text{income})$, interactions
+- Banned: a coefficient in an exponent
+- Fails $\Rightarrow$ arc-shaped residuals; fixed in Ch 2.3
+
+::: notes
+Assumption one is linearity in the parameters. The true relationship is y equals X beta plus epsilon, meaning y is a sum of the columns of X, each multiplied by a constant coefficient, plus an error. The crucial and often-misread word is parameters. The model must be linear in the betas, not in the x's. Maya is completely free to put income squared, the log of income, or an interaction term in as a column of X — the curve can bend however the world bends. What she may not write is something like y equals beta zero plus x raised to the beta one, where a coefficient sits in an exponent. What goes wrong if it fails: if the true relationship is, say, beta zero plus beta one times log income, and she fits a straight line in income, she is fitting the wrong functional form, and her residuals show a tell-tale U-shaped or arc-shaped pattern against income. The fix lives this same week: Chapter two-point-three adds polynomial, log, and interaction terms so a linear model captures curved relationships.
+:::
+
+## Assumption 2 — Full-Rank $\mathbf{X}$
+
+- The $N$ loans are a representative draw
+- $\mathbf{X}$ has full column rank
+- No column is an exact combination of others
+- This is what lets $(\mathbf{X}'\mathbf{X})^{-1}$ exist
+- Fails $\Rightarrow$ OLS is undefined, like dividing by zero
+
+::: notes
+Assumption two bundles two ideas. First, the N loans are a representative draw from the population Maya cares about — the analogue of Priya's two hundred claims coming from the population whose mean she wants. Second, and this part is genuinely mechanical rather than statistical: the matrix X has full column rank, which we met in Chapter two-point-one. No column is a constant multiple of another, and no column is an exact linear combination of the others. This is what lets the inverse of X transpose X exist in the first place. Without it, the O L S formula is not biased — it is undefined, like dividing by zero. What goes wrong if it fails: if Maya accidentally includes income in both dollars and thousands of dollars as two columns, one is exactly one thousand times the other, X transpose X is singular, and the software either errors out or silently drops a column. Near failure — two highly but not perfectly correlated regressors — is multicollinearity, which doesn't bias anything but inflates variances; we diagnose it in Chapter two-point-three.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Assumption 1** demands linearity *in the parameters* — you can still bend the curve with $x^2$ or logs. **Assumption 2** demands a full-rank $\mathbf{X}$ so $(\mathbf{X}'\mathbf{X})^{-1}$ even exists. One is about functional form; the other is mechanical. Next: the assumption that decides everything.
+:::
+
+::: notes
+To summarize part two: assumption one demands linearity in the parameters, not in the x's — Maya can still bend the curve with income squared or a log term, just not with a coefficient in an exponent. Assumption two demands a full-rank X, so that the inverse of X transpose X even exists; perfect collinearity makes O L S undefined, not merely biased. One clause is about functional form, fixed in Chapter two-point-three; the other is mechanical. In part three we reach assumption three — zero conditional mean — the one clause that decides everything causal in the entire book.
+:::

@@ -1,0 +1,57 @@
+---
+title: "Critical Limits: Fake Citations and Leakage"
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+# Critical Limits: Fake Citations and Leakage {.title}
+
+::: notes
+Welcome back to the AI co-pilot for research, part nine of fourteen. In part eight we ran the validation protocol. Now: even with good prompts, grounding, and validation, four failure modes can wreck an AI-assisted study, each having produced retracted or embarrassing results. This part covers the first two — hallucinated citations and look-ahead bias from training-data leakage.
+:::
+
+## Hallucinated Citations
+
+- The model invents author lists, titles, years, journals, pages
+- Perfect bibliographic format — for papers that **do not exist**
+- It learned what citations look like, not a database
+- Has embarrassed lawyers citing invented cases
+- **Verify every citation** against a real index before it enters
+
+::: notes
+The first limit: hallucinated citations. A model asked for references will produce author lists, titles, years, journals, and page numbers, in perfect bibliographic format, for papers that do not exist. The format is correct because the model learned what citations look like; the content is fabricated because it is generating plausible text, not querying a database. This has already embarrassed lawyers who filed briefs citing invented cases. The danger in finance is identical: a fabricated "Smith and Jones, twenty-fourteen, found a three percent effect" is indistinguishable, on the page, from a real one. How to catch it: verify every citation against a real index — Google Scholar, the journal's site, a D-O-I lookup — before it enters your document. If you cannot find the paper, it is not real. Treat the model as a suggestion engine for what to go verify, never as the citation itself. The same goes for any specific number: a figure from a model is a hypothesis to check against a primary source, not a datum to cite.
+:::
+
+## Look-Ahead Bias and Training-Data Leakage
+
+- A model is trained on text up to a cutoff date
+- If your sample ends before the cutoff, it may "know" the future
+- Sam backtests: read each January 10-K, predict the year's return
+- The model has likely **read** what those stocks did — fake performance
+- Evaporates the instant you trade it forward on unseen data
+
+::: notes
+The second limit: look-ahead bias and training-data leakage — subtle, specific to finance, and fatal. A model is trained on text up to some cutoff date. If your sample ends before that cutoff, the model may know things about your sample period that were not knowable at the time — it has read the news, the later filings, the eventual outcomes. This is look-ahead bias: information from the future leaking into a decision that should use only past information. Make it concrete. Sam backtests a trading rule: ask the model to read each firm's January ten-K and predict whether the stock will rise that year. Sam runs it on twenty-twenty-one filings, but the model was trained through, say, twenty-twenty-four — it has likely read what happened to those stocks. Its prediction is contaminated by hindsight, and the backtest can show spectacular, entirely fake performance, because the model is not predicting the future, it is remembering it. The result evaporates the instant you trade it forward on data the model has never seen — exactly when real money is at stake.
+:::
+
+## Defending Against Leakage
+
+- Know your model's cutoff; treat earlier samples as suspect
+- Contemporaneous tone labels are far safer than future predictions
+- Cleanest defense: test on data created **after** the cutoff
+- In RAG, filter retrieval to chunks dated $\le t$
+
+::: notes
+How to defend against leakage. First, know your model's training cutoff and treat any earlier sample period as suspected contaminated for forward-looking tasks. Second, classifying contemporaneous attributes — what tone does this text have — is far safer than predicting future outcomes; labeling a twenty-nineteen filing's tone does not require knowing twenty-twenty's returns, whereas predicting those returns from the filing is exactly where leakage bites. Third, the cleanest defense is out-of-sample testing on data created after the model's cutoff, where it cannot have peeked. Fourth, in R-A-G, enforce it mechanically: filter retrieval to chunks dated less than or equal to the question's date — never let a twenty-nineteen query retrieve a twenty-twenty-one filing. This is why we insisted every chunk carry a date.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Verify every citation** against a real index — the model invents perfectly formatted phantom papers. Guard against **leakage**: a model that knows the future relative to your sample produces fake backtest performance. Test on post-cutoff data; filter RAG retrieval by date. Next: p-hacking and reproducibility.
+:::
+
+::: notes
+To summarize part nine: two of the four critical limits. Hallucinated citations look perfect but reference papers that do not exist, so verify every citation and figure against a real index before it enters your document. Look-ahead bias from training-data leakage is fatal in finance: a model that has read your sample's future produces fake backtest performance that evaporates the moment you trade it forward. Defend by knowing the cutoff, preferring contemporaneous labels, testing on post-cutoff data, and filtering R-A-G retrieval by date. In part ten we cover the remaining two limits: prompt-induced p-hacking and the reproducibility of stochastic outputs.
+:::

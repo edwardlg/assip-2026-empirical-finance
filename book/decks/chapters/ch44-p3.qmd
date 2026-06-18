@@ -1,0 +1,58 @@
+---
+title: "Choosing the Weights: Matching the Pre-Period"
+date: "2026-07-13"
+---
+
+# Choosing the Weights: Matching the Pre-Period {.title}
+
+::: notes
+Welcome back to Chapter four-point-four, part three of ten. In part two we wrote the estimator: the effect is the treated unit's observed outcome minus a synthetic counterfactual built from donor weights. Now we open the engine — the optimization that picks those weights to match the pre-period — and the two constraints hanging off it.
+:::
+
+## The Matching Problem
+
+$$\mathbf{w}^{*} = \arg\min_{\mathbf{w}} \; (\mathbf{X}_1 - \mathbf{X}_0 \mathbf{w})' \, \mathbf{V} \, (\mathbf{X}_1 - \mathbf{X}_0 \mathbf{w})$$
+
+- $\mathbf{X}_1$: treated state's $k$ pre-treatment characteristics
+- $\mathbf{X}_0$: same characteristics for each donor ($k \times J$)
+- Minimize squared **mismatch** $\mathbf{X}_1 - \mathbf{X}_0 \mathbf{w}$
+- $\mathbf{V}$ weights the *characteristics* — important predictors count more
+
+::: notes
+We want the synthetic control to reproduce the treated state before treatment — not just its average premium, but the whole pre-period path, and a set of predictors that drive premiums: population density in fire zones, median home value, reinsurance costs, the share of coastal property. Collect for the treated state a column vector X-one of k such pre-treatment characteristics, and collect the same characteristics for each donor into the columns of a matrix X-zero. We choose weights to make the synthetic state's characteristics, X-zero times w, as close as possible to the treated state's, X-one. The thing in parentheses is the vector of mismatches — for each characteristic, how far the synthetic state falls from the real one. We square those mismatches, add them up through the quadratic form, and minimize.
+:::
+
+## The Role of V
+
+- $\mathbf{V}$ is diagonal — holds weights *on the characteristics*
+- Lets predictors that matter more for the outcome count more in matching
+- Usually chosen to minimize pre-treatment prediction error of the **outcome**
+- Often by cross-validation — the software does it for you
+- Don't let it distract you — the heart of the method is $\mathbf{w}$
+
+::: notes
+The diagonal matrix V holds weights on the characteristics. It lets predictors that matter more for the outcome count more in the matching. Choosing V well is its own small problem; in practice it is picked to minimize pre-treatment prediction error of the outcome itself, often by cross-validation, and the software does it for you. Do not let it distract you — the heart of the method is the weight vector w over the donors, not the weighting of characteristics. Keep your eye on w.
+:::
+
+## The Two Constraints
+
+- **Non-negativity:** $w_j \ge 0$ — no "two parts California minus one part Florida"
+- **Sum to one:** $\sum_j w_j = 1$ — the weights are shares of a whole
+- Together: the synthetic control is a **convex combination** of donors
+- A genuine weighted average, like portfolio proportions adding to 100%
+- They look like fine print — they are the entire point
+
+::: notes
+Now notice the two restrictions hanging off the minimization. They look like fine print. They are the entire point. First, non-negativity: every weight is zero or positive. No donor can enter with a negative weight — you cannot say two parts California minus one part Florida. Second, sum to one: the weights are shares of a whole. Together with non-negativity, this means the synthetic control is a convex combination of the donors — a genuine weighted average, where the weights are like proportions of a portfolio that must add to one hundred percent. In the next part we see exactly what this convexity buys you, and what it costs.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Weights minimize squared pre-period **mismatch** $(\mathbf{X}_1 - \mathbf{X}_0\mathbf{w})$, with $\mathbf{V}$ weighting the characteristics. The two constraints — non-negative and summing to one — make the synthetic control a **convex combination** of donors. Those constraints are the whole personality of the method.
+:::
+
+::: notes
+To summarize part three: the weights minimize the squared pre-period mismatch between the treated state and its synthetic counterpart, with the diagonal matrix V deciding how much each characteristic counts. Two constraints sit on top: non-negative weights that sum to one, making the synthetic control a convex combination — a genuine weighted average — of the donors. In part four we unpack why that convexity matters: why it forbids extrapolation, why it produces sparse, nameable weights, and how a worked number makes it concrete.
+:::

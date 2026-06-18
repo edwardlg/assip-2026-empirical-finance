@@ -1,0 +1,70 @@
+---
+title: "The Contract, Part Two: Zero Mean, Same Scatter, Normality"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Contract, Part Two: Zero Mean, Same Scatter, Normality {.title}
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part three of nine. In part two we signed the first two clauses: linearity in the parameters and a full-rank design matrix. Now we reach the three remaining clauses — zero conditional mean, homoskedasticity, and the normality add-on — and stack them into three tiers of payoff.
+:::
+
+## Assumption 3 — Zero Conditional Mean
+
+- $\mathbb{E}[\boldsymbol{\varepsilon}\mid\mathbf{X}] = \mathbf{0}$
+- This is the one that matters
+- At any income, what's left out averages to zero
+- Errors can be large, just not tied to $x$
+- Fails $\Rightarrow$ omitted-variable bias (Ch 2.5)
+
+::: notes
+Assumption three is zero conditional mean: the expected value of epsilon given X equals zero. This is the one that matters. Everything causal in the entire book turns on it, so read it slowly. It says: whatever Maya did not put in her regression — call it the error epsilon — has average value zero for every possible configuration of the things she did put in. Pick any income level, high or low; among borrowers at that income, the stuff the model leaves out — credit history, existing debt, the loan officer's mood — must average to zero. The error is allowed to be large for any individual borrower; it just can't be systematically related to the regressors. What goes wrong if it fails: this is the master fault. If higher-income borrowers also have better credit scores, which Maya didn't include, and credit independently lowers rates, then her income coefficient silently absorbs the credit effect. That is omitted-variable bias, the subject of Chapter two-point-five.
+:::
+
+## Assumption 4 — Homoskedasticity
+
+- $\operatorname{Var}(\boldsymbol{\varepsilon}\mid\mathbf{X}) = \sigma^2\mathbf{I}$
+- Same variance for every observation
+- Uncorrelated across observations
+- Fails $\Rightarrow$ scatter wider for low earners
+- Wrecks standard errors, not $\hat{\boldsymbol{\beta}}$ (Ch 2.4)
+
+::: notes
+Assumption four is homoskedasticity: the variance of epsilon given X equals sigma squared times the identity matrix. Two claims again. The errors all have the same variance, sigma squared, regardless of X — that is the constant sigma squared on the diagonal; the word homoskedastic is Greek for same scatter. And they are uncorrelated across observations — that is the zeros off the diagonal, making the matrix sigma squared times I. What goes wrong if it fails: in Maya's data, the scatter of rates around the line is almost surely larger for low-income borrowers, where lenders have more discretion and risk-based pricing, and tighter for high earners. That is heteroskedasticity. It does not bias beta hat, but it wrecks the standard errors, so every t-statistic and confidence interval from Chapter one-point-five becomes untrustworthy. That is exactly Chapter two-point-four, where robust standard errors come to the rescue.
+:::
+
+## Assumption 5 — Normality (Add-On)
+
+- $\boldsymbol{\varepsilon}\mid\mathbf{X} \sim \mathcal{N}(\mathbf{0},\,\sigma^2\mathbf{I})$
+- **Not** part of Gauss–Markov
+- Buys exact small-sample $t$ and $F$
+- Fails $\Rightarrow$ surprisingly little, for large $N$
+- The CLT makes $\hat{\boldsymbol{\beta}}$ approximately normal
+
+::: notes
+Assumption five is normality: epsilon given X is normally distributed with mean zero and variance sigma squared times I. This one is not part of Gauss–Markov, and it is important to know that. The first four assumptions are all the theorem needs. Normality is an extra assumption we bolt on later when we want exact finite-sample inference — the exact t and F distributions of Chapter one-point-five, valid even at small N. What goes wrong if it fails: surprisingly little, for large samples. Even without normality, the Central Limit Theorem from Chapter one-point-four makes beta hat approximately normal as N grows, so our t-tests are approximately valid anyway. Normality is a convenience for small samples, not a pillar. We lean on it lightly and flag it whenever we do.
+:::
+
+## Three Tiers of Payoff
+
+- Assumptions 1–3 buy **unbiasedness**
+- Adding 4 buys **BLUE**
+- Adding 5 buys **exact small-sample inference**
+- Three tiers, increasingly demanding
+- Each delivering more
+
+::: notes
+Hold this in your head as three tiers. Assumptions one through three buy unbiasedness. Adding four buys BLUE, the full Gauss–Markov guarantee. Adding five buys exact small-sample inference. Three tiers, increasingly demanding, each delivering more. The next parts cash in the first tiers in order.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Assumption 3** (zero conditional mean) is the one everything causal turns on; its failure is omitted-variable bias. **Assumption 4** (same scatter) only damages standard errors. **Assumption 5** (normality) is a small-sample add-on. The tiers: 1–3 buy unbiasedness, +4 buys BLUE, +5 buys exact inference.
+:::
+
+::: notes
+To summarize part three: assumption three, zero conditional mean, is the clause everything causal turns on, and its failure is omitted-variable bias, fixed in Chapter two-point-five. Assumption four, homoskedasticity, leaves beta hat unbiased but damages the standard errors, fixed in Chapter two-point-four. Assumption five, normality, is a small-sample add-on the Central Limit Theorem mostly makes unnecessary. Stack them in tiers: one through three buy unbiasedness, adding four buys BLUE, adding five buys exact inference. In part four we cash in the first tier and prove O L S is unbiased.
+:::

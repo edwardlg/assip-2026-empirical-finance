@@ -1,0 +1,45 @@
+---
+title: "Reading the Build, and the Printed Proof"
+date: "2026-08-10"
+---
+
+# Reading the Build, and the Printed Proof {.title}
+
+::: notes
+Welcome back to Week Eight, Lab Eight, part five of ten. In part four we compiled the poster two ways. Now a short but important segment: how to read the build output without panicking, and the one physical step that has never failed to be worth the time — printing a proof before the symposium. This closes Part One of the lab, the poster, and sets up Part Two, the replication packet.
+:::
+
+## Reading the Build Output
+
+- A *first*-run "failed to resolve N references" is **not an error**
+- Check the final exit code, not the intermediate warnings
+- A real break exits non-zero and names the line in `poster.log`
+- Grep it: `grep -nE "^!|Error" poster.log`
+- A wrong-units `beamerposter` size is a classic non-zero failure
+
+::: notes
+A note from verifying this lab, so you do not panic. A first latexmk run on a fresh poster may print "Latex failed to resolve N references" and rerun automatically — that is latexmk doing its job across passes, not an error, and the final exit code is what you check. A genuinely broken build — a missing input file, an undefined control sequence, a wrong-units beamerposter size — exits non-zero and names the offending line in poster-dot-log. Grep it with grep, dash-n-capital-E, caret-exclamation or the word Error, poster-dot-log. So the skill is distinguishing the harmless multi-pass message, which resolves itself and ends in a clean exit code, from a real error, which stops the build and names a line you can go fix. When in doubt, read the final exit code first, then read the log.
+:::
+
+## Print the Proof Early
+
+- **Print an 11"×17" proof at least 48 hours before Aug 12**
+- Catches typography fine on screen but illegible on the printed board
+- Title ≥ 72 pt, body ≥ 24 pt at full 48"×36" scale
+- Remote interns: export 1920×1080 at 100% scale, preview on a monitor
+- This step has never failed to be worth the time
+
+::: notes
+And one step that has never failed to be worth the time: print a tabloid-sized eleven-by-seventeen-inch proof of the PDF at least forty-eight hours before August twelfth. It catches typography that looks fine on screen but is illegible on the printed board — and you want to catch it with two days to fix it, not at the easel. The rough targets at full forty-eight-by-thirty-six scale are a title at least seventy-two points and body text at least twenty-four points; hold the tabloid proof at arm's length and any text that disappears there will disappear on the board. For remote interns who will present on the virtual breakout track, the equivalent is exporting to a nineteen-twenty-by-ten-eighty image at full scale and previewing it on a second monitor at one hundred percent. Either way, you are checking legibility at the size the audience actually sees.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A first build that reruns to resolve references is **normal** — check the final exit code, and grep `poster.log` only when it exits non-zero. Print an 11"×17" proof 48 hours early; legibility bugs are cheap to fix then and fatal at the easel. Next: the one-click packet.
+:::
+
+::: notes
+To summarize part five, and Part One of the lab: a first build that reruns to resolve references is normal — judge it by the final exit code, and grep the log only when the build actually exits non-zero. Print an eleven-by-seventeen proof forty-eight hours early so legibility bugs are cheap to fix. That finishes the poster. In part six we begin the second artifact — the one-click replication packet — which is just your Lab Seven repository given a single entry point that rebuilds everything from raw bytes under one fixed seed.
+:::

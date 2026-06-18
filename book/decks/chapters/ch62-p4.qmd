@@ -1,0 +1,58 @@
+---
+title: "The Cosine and the TNIC Network"
+date: "2026-07-27"
+---
+
+# The Cosine and the TNIC Network {.title}
+
+::: notes
+Welcome back to Chapter six-point-two, part four of nine. In part three we turned each firm's product description into a word vector. Now comes the payoff — the moment Chapter one-point-two cashes in. We measure similarity with the cosine, then assemble those similarities into the network that names the paper.
+:::
+
+## Step Three: Cosine Similarity
+
+$$\text{sim}(i,k) = \cos\theta = \frac{\mathbf{w}_i \cdot \mathbf{w}_k}{\lVert \mathbf{w}_i\rVert\,\lVert \mathbf{w}_k\rVert}$$
+
+- Exactly the correlation-as-cosine formula from Chapter 1.2
+- Numerator large when two firms emphasize the *same* words
+- Denominators normalize away description *length*
+- Runs from $0$ (no shared vocabulary) to $1$ (identical direction)
+
+::: notes
+Step three: measure similarity with the cosine. The similarity between firm i and firm k is the cosine of the angle between their vectors — the dot product of w-sub-i and w-sub-k, divided by the product of their lengths. This is exactly the correlation-as-a-cosine formula from Chapter one-point-two, applied to word vectors instead of return vectors. The numerator is large when two firms emphasize the same words; the denominators normalize away description length, so a wordy firm and a terse one describing the same product still score similar. The result runs from zero — no shared vocabulary, orthogonal, ninety degrees apart — to one, identical direction, zero degrees. Two oil firms score near one; an oil firm and a streamer near zero. "Are these two firms in the same business?" is now a number computable from text.
+:::
+
+## Step Four: Build The Network
+
+- Cosine for *every pair* in a year → a similarity matrix
+- **TNIC**: Text-based Network Industry Classifications
+- Firm $i$'s industry = firms whose similarity clears a threshold
+- **Firm-specific**: each firm centers its own neighborhood
+- **Time-varying**: recomputed yearly, so neighborhoods drift
+
+::: notes
+Step four: build the network. Compute that cosine for every pair of firms in a year and you have a full similarity matrix. From it, Hoberg and Phillips define T-N-I-C — Text-based Network Industry Classifications. Firm i's industry is the set of firms whose similarity to i clears a chosen threshold. The property that earns the word "network" is that this is firm-specific, time-varying, and intransitive. Firm-specific: each firm centers its own neighborhood, with no global partition. Time-varying: recomputed yearly from that year's filings, so neighborhoods drift as products change.
+:::
+
+## Intransitive — The Amazon Case
+
+- $A$ near $B$, $B$ near $C$, yet $A$ *far* from $C$
+- Amazon neighbors Microsoft (cloud) and Walmart (groceries)
+- But Microsoft and Walmart are not neighbors
+- SIC cannot represent any of this; TNIC is built to
+- Validation is a **horse race**: TNIC versus SIC, judged by fit
+
+::: notes
+The third property is the most important: the network is intransitive. A can be similar to B and B similar to C without A being similar to C — the Amazon case, neighbor to both Microsoft on cloud and Walmart on groceries, even though those two are not neighbors of each other. S-I-C cannot represent any of this; T-N-I-C is built to. So the identifying logic of a measurement paper is its validation logic: a text-based definition beats S-I-C and NAICS if it explains outcomes competition should drive — return co-movement, profit margins, competitive responses — that the official codes explain less well, on the same firms in the same years. That is a horse race, not a causal claim. Reading the tables, you are watching that race.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **cosine similarity** of two word vectors — the same formula from Chapter 1.2 — turns "same business?" into a number from 0 to 1. Stack every pairwise cosine and threshold it, and you get **TNIC**: a firm-specific, time-varying, *intransitive* network SIC cannot represent. Validation is a horse race against SIC.
+:::
+
+::: notes
+To summarize part four: the cosine similarity of two word vectors turns the question "same business?" into a number between zero and one — the identical formula you saw for correlation in Chapter one-point-two. Compute it for every pair, threshold it, and you get T-N-I-C: a firm-specific, time-varying, intransitive network of competitors that the official codes cannot represent. The measure proves itself by winning a horse race against S-I-C on real outcomes. In part five we turn to the data behind all this.
+:::

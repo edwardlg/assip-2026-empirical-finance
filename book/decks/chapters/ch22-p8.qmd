@@ -1,0 +1,70 @@
+---
+title: "Efficiency: The Word for Smallest Variance"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# Efficiency: The Word for Smallest Variance {.title}
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part eight of nine. In part seven we proved why O L S wins — any rival adds a non-negative variance penalty — and saw it in a Monte Carlo. Now we give that smallest-variance property its proper name, efficiency, and stack three cautions that keep the word from being oversold.
+:::
+
+## Efficiency, Defined
+
+- The efficient estimator has the smallest variance
+- Within a *specified class* of estimators
+- Gauss–Markov: OLS is efficient among linear unbiased
+- That is exactly what BLUE abbreviates
+- A property we'll use constantly
+
+::: notes
+The property at the heart of best has a name we will use constantly: efficiency. Among a specified class of estimators, the efficient one is the member with the smallest variance. Gauss–Markov says O L S is efficient within the class of linear unbiased estimators — a property econometricians abbreviate as O L S being the efficient estimator in its class, or simply BLUE. So efficiency and BLUE are two names for the same fact. The word efficient is worth keeping precise, because three cautions keep it from being oversold, and each one maps onto an assumption we can break.
+:::
+
+## Caution One: Relative to a Class
+
+- OLS is the most efficient *linear unbiased* estimator
+- Not the most efficient estimator overall
+- Leave the linear club, you can sometimes beat it
+- A champion of a league, not all leagues
+- Normal errors promote OLS to world champion
+
+::: notes
+First caution: efficiency is relative to a class. O L S is the most efficient linear unbiased estimator. It is emphatically not claimed to be the most efficient estimator overall. If you are willing to leave the linear club — for instance, by using maximum likelihood with a correctly specified non-normal error distribution — you can sometimes beat O L S. Gauss–Markov is a champion of a league, not of all leagues. There is a bonus, though: when the errors are normal, a result we won't prove says O L S also becomes efficient among all unbiased estimators, linear or not. Normality promotes O L S from league champion to world champion. That is one more thing assumption five buys you.
+:::
+
+## Caution Two: Efficiency Dies With Assumption 4
+
+- Heteroskedastic spread $\Rightarrow$ OLS stays unbiased
+- But it is no longer BLUE
+- Weighted least squares achieves lower variance
+- "Linear unbiased but no longer best"
+- Why Chapter 2.4 patches the standard errors
+
+::: notes
+Second caution: efficiency dies with homoskedasticity. When assumption four fails — Maya's heteroskedastic spread, wide for low earners and tight for high earners — O L S stays unbiased but is no longer BLUE. A smarter recipe called weighted least squares, which down-weights the noisy low-income observations, achieves lower variance. O L S becomes linear unbiased but no longer best. We mostly don't switch to weighted least squares in practice, because it requires knowing the variance pattern, but the loss of the efficiency guarantee is precisely why we patch the standard errors in Chapter two-point-four, instead of trusting the sigma squared times the inverse of X transpose X formula blindly.
+:::
+
+## Caution Three: A Trap Ahead
+
+- Efficiency presumes unbiasedness
+- That presumption can be a trap
+- It is the bridge to the chapter's subtlest idea
+- Sometimes a biased estimator is preferable
+- Next part makes the case
+
+::: notes
+Third caution: efficiency presumes unbiasedness, and that presumption can be a trap. The whole Gauss–Markov tournament only admitted unbiased contestants in the first place. But some of the most useful estimators in this book are deliberately biased — and in large samples they can be the right choice anyway. That is the bridge to the chapter's last and subtlest idea, the distinction between unbiased and consistent, which reorders the entire contract by how much each clause should keep you up at night. We take that up in part nine.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Efficiency** = smallest variance *within a class*; for OLS, the class is linear-unbiased, and that's all BLUE means. Three cautions: it's relative to a class, it dies when homoskedasticity fails (Ch 2.4), and it presumes unbiasedness — a presumption that can be a trap. Next: unbiased versus consistent.
+:::
+
+::: notes
+To summarize part eight: efficiency is the name for smallest variance within a specified class, and for O L S that class is the linear unbiased estimators — which is all the word BLUE means. Three cautions keep it honest. Efficiency is relative to a class, so leaving the linear club can beat O L S. Efficiency dies when homoskedasticity fails, handing the crown to weighted least squares, which is why Chapter two-point-four patches the standard errors. And efficiency presumes unbiasedness — a presumption that, it turns out, can be a trap. In part nine we follow that trap to the deepest lesson of the chapter: unbiased versus consistent.
+:::

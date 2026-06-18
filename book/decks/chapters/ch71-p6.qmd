@@ -1,0 +1,47 @@
+---
+title: "Three Designs, and the Honest Descriptive Out"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Three Designs, and the Honest Descriptive Out {.title}
+
+::: notes
+Welcome back to Chapter seven-point-one, part six of eight. In part five we learned to run the catalog backwards — start from your question, search for variation in the treatment unrelated to your confounders. Now we name the realistic patterns that variation usually takes for a high-schooler's project, the one riskier pattern to handle with care, and the honest path when none of them is available.
+:::
+
+## Three Realistic Patterns
+
+- **Sharp rule or cutoff** → regression discontinuity, almost for free
+  (credit-score threshold, Russell 1000/2000 boundary)
+- **Dated policy or shock** hitting some units → difference-in-differences
+  (wildfire-pricing rule, a disclosure mandate, a delisting date)
+- **Natural event with a timestamp** → event study
+  (a depeg, an earnings announcement, a hurricane landfall)
+
+::: notes
+Three patterns are realistic for a high-schooler's project. First, a sharp rule or cutoff gives you regression discontinuity essentially for free. The loan-approval credit-score threshold, the Russell one-thousand / two-thousand reconstitution boundary Sam already met in Chapter four-point-three — these are institutions that randomize for you, just above and below a line. If your treatment switches on when a number crosses a threshold, you have a design. Second, a dated policy or shock that hits some units and not others gives you difference-in-differences: Priya's wildfire-pricing regulation, a state adopting a disclosure rule, an exchange delisting a token on a specific date — anything with a clean before-and-after for a treated group and a comparable untreated group. Third, a natural event with a clear timestamp gives you an event study: a stablecoin depeg, an earnings announcement, a hurricane landfall — measure the outcome in a tight window around the event, against what it was doing before.
+:::
+
+## The Fourth Pattern, and an Honest Out
+
+- **Found/built instrument** (IV, shift-share) — real but hardest in 5 weeks
+- Reach for it only if you can defend it to a skeptic in one sentence
+- Weak-instrument pathology (Ch 3.5) can quietly poison inference
+- No cutoff, policy, event, or instrument? Be honest: **descriptive**
+- A correlation dressed as causal is forbidden by CONVENTIONS §4
+
+::: notes
+A fourth pattern, a found or built instrument — instrumental variables and shift-share — is real but the hardest to pull off well in five weeks, because a valid instrument is something you find rarely and defend with difficulty, and the weak-instrument pathology of Chapter three-point-five can quietly poison your inference. Reach for it only if the instrument is so clean you could explain it to a skeptic in one sentence; otherwise prefer a cutoff, a policy date, or an event, where the identifying assumption is closer to the surface. And if none of these is available — your treatment varies for reasons hopelessly tangled with the outcome, no cutoff, no policy date, no clean event, no instrument — then be honest: your project is descriptive, not causal. That is allowed, and for a first project often wise. A careful description of a new phenomenon is a real contribution. What is not allowed is a descriptive correlation dressed up in causal language. CONVENTIONS section four forbids exactly that: name the threat and the design that addresses it, or do not make the causal claim.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A **cutoff** hands you RD, a **dated policy** hands you DiD, a **timestamped event** hands you an event study; a found instrument is real but riskiest. No design? Label the project **descriptive** honestly — never dress a correlation as causal. Next: feasibility, the filter students skip and regret.
+:::
+
+::: notes
+To summarize part six: three realistic patterns each hand you a design — a sharp cutoff gives regression discontinuity, a dated policy gives difference-in-differences, a timestamped event gives an event study. A found instrument is possible but the riskiest in five weeks because of the weak-instrument pathology. And if you genuinely have none of these, be honest and call the project descriptive rather than dressing a correlation in causal clothes — CONVENTIONS section four forbids the disguise. In part seven we turn to feasibility, the filter students always skip and then regret, and to the fast literature scan that answers "what's new."
+:::

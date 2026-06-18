@@ -1,0 +1,54 @@
+---
+title: "The Propensity Score and the Rosenbaum–Rubin Reduction"
+date: "2026-07-06"
+---
+
+# The Propensity Score and the Rosenbaum–Rubin Reduction {.title}
+
+::: notes
+Welcome back to Chapter three-point-two, part six of eleven. In part five, exact matching died of the curse of dimensionality. Now comes the rescue: the propensity score, a single number, and the surprising Rosenbaum–Rubin result that conditioning on that one scalar is enough. We define it, state the theorem, and sketch why it works.
+:::
+
+## Define the Propensity Score
+
+- $e(\mathbf{X}_i) = \Pr(D_i = 1 \mid \mathbf{X}_i)$
+- One number between 0 and 1: "how likely were they to enroll?"
+- Rosenbaum–Rubin (1983): CIA on $\mathbf{X}$ implies CIA on $e(\mathbf{X})$
+- A 7-dimensional match collapses to a 1-dimensional one
+
+::: notes
+Here is the trick, genuinely surprising the first time you see it. Define the propensity score as the probability of treatment given covariates: e of X-i equals the probability that D-i is one given X-i. It is a single number between zero and one — for Maya, "given everything I know about this applicant, how likely were they to enroll?" Rosenbaum and Rubin, in nineteen-eighty-three, proved a remarkable fact: if CIA holds given the full vector X, then it also holds given the single scalar e of X. So you do not need to match on all seven covariates. You only need to match on the one number that summarizes them for predicting treatment. A seven-dimensional matching problem collapses to a one-dimensional one. The curse of dimensionality is lifted.
+:::
+
+## Why It Works: The Balancing Score
+
+- The score is a **balancing score**
+- Among units with the same score, covariates balance across $D$
+- $\Pr(D{=}1 \mid \mathbf{X}, e(\mathbf{X})) = \Pr(D{=}1 \mid e(\mathbf{X})) = e(\mathbf{X})$
+- So $\mathbf{X} \perp\!\!\!\perp D \mid e(\mathbf{X})$ — covariates balanced at each score
+
+::: notes
+Why does this work? The intuition is that the propensity score is a balancing score: among units with the same score, the distribution of covariates is the same for treated and untreated. Here is the one-line argument. The probability of treatment given both X and the score equals the probability given X alone, which is e of X, since the score is just a function of X and adds nothing. Meanwhile the probability of treatment given only the score is the average of e of X over units with that score, which is e of X again. The two are equal — both are e of X — so conditional on the score, the probability of treatment does not further depend on X. Therefore X and D are independent given the score: the covariates are balanced at each value of the score.
+:::
+
+## From Balance to Conditional Independence
+
+- Once $\mathbf{X}$ is balanced, the CIA part transfers to the score
+- Potential outcomes relate to $D$ only *through* $\mathbf{X}$
+- Same score $\Rightarrow$ same $\mathbf{X}$ on average $\Rightarrow$ like-with-like
+- Match on the scalar, compare comparable units
+
+::: notes
+And once the covariates are balanced, the part of CIA that says potential outcomes do not differ by treatment status given the covariates transfers automatically to the score, because potential outcomes relate to treatment only through X in the first place. Two applicants, one treated and one untreated, with the same enrollment probability look the same on X on average — so comparing them is, under CIA, comparing like with like. That is the whole payoff. We replace a hopeless high-dimensional search for twins with matching on one number, and the math guarantees that units sharing that number are balanced on everything that mattered.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **propensity score** $e(\mathbf{X}) = \Pr(D{=}1\mid\mathbf{X})$ is one number. Rosenbaum–Rubin proved that conditioning on it suffices: it is a **balancing score**, so $\mathbf{X} \perp\!\!\!\perp D \mid e(\mathbf{X})$, collapsing a 7-D match to 1-D. Next: how to actually estimate the score, and the two disciplines that govern it.
+:::
+
+::: notes
+To summarize part six: the propensity score is the probability of treatment given covariates — one number between zero and one. Rosenbaum and Rubin proved that conditioning on it suffices, because it is a balancing score: units with the same score have balanced covariates across treatment, so X is independent of D given the score. That collapses a seven-dimensional matching problem to a one-dimensional one, lifting the curse of dimensionality. In part seven we get practical: how do you actually estimate the score, and what two disciplines — both surprising — govern how you fit and judge that model?
+:::

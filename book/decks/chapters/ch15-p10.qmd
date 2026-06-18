@@ -1,0 +1,58 @@
+---
+title: "Three Mistakes, p-Hacking, and Where This Goes"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Three Mistakes, p-Hacking, and Where This Goes {.title}
+
+::: notes
+Welcome back to Chapter one-point-five, part ten of ten — the finale. In part nine we built confidence intervals and separated statistical from economic significance. Now we name the three mistakes nearly every beginner makes, preview the multiple-testing trap that manufactures false discoveries, and connect this whole machine to the regression engine of Week Two.
+:::
+
+## Three Mistakes to Never Make
+
+- "The p-value is the probability the null is true" — no
+- "We accept the null" — say *fail to reject*
+- Absence of evidence is not evidence of absence
+- "Statistical significance settles the matter" — no
+- A small p means *probably not exactly zero* — nothing more
+
+::: notes
+Three errors are so common, and so corrosive, that we name them explicitly. First: the p-value is the probability the null is true. This is the most frequent error in all of applied statistics. The p-value assumes the null and measures the data's extremeness given that assumption; it says nothing about the probability of the hypothesis. Second: we accept the null. When a test fails to reject, we say exactly that — fail to reject — never accept or prove the null. Absence of evidence is not evidence of absence. If Sam's t had come out at zero point four, the right conclusion is this sample cannot distinguish the edge from zero — not the rule has zero edge. A null that survives a low-powered test has survived nothing. Third: statistical significance settles the matter. A small p-value tells you an effect is probably not exactly zero. It does not tell you the effect is large, robust, causal, or real beyond your sample.
+:::
+
+## The Multiple-Testing Trap
+
+- Sam tested *twenty* rules, kept the one with $p<0.05$
+- If all twenty are worthless and independent:
+- $1-(0.95)^{20}\approx 1-0.358 = 0.64$
+- A 64 percent chance at least one looks "significant"
+- Defenses: pre-registration; Bonferroni $\alpha/m$; control the FDR
+
+::: notes
+Now a warning Week One only previews. Suppose Sam did not test one rule. Sam tested twenty — reversal, momentum, day-of-week, moon phase, the lot — kept the one with p below zero point zero five, and reported only that winner. Has Sam found something? Almost certainly not. If all twenty rules are truly worthless and independent, the probability that at least one crosses p below zero point zero five by pure luck is one minus zero point nine five to the twentieth power, about zero point six four. There is a sixty-four percent chance — better than a coin flip — that at least one dead rule looks significant, simply because Sam gave luck twenty tries. This is p-hacking: running many analyses and reporting only the winners, as though that single test stood alone. Two defenses: pre-registration — committing to hypotheses before the data — and multiple-testing corrections. The crude Bonferroni rule tests each of m hypotheses at alpha over m. More refined approaches control the false discovery rate, the expected fraction of your discoveries that are false.
+:::
+
+## Where This Goes Next
+
+- A test statistic is an estimate over its standard error
+- The p-value measures extremeness under the null — nothing else
+- Effect size, not significance, says whether it matters
+- Week 2: OLS regression, coefficient $\hat\beta$
+- Same machine: $t=(\hat\beta-0)/\widehat{\text{se}}(\hat\beta)$
+
+::: notes
+Step back and see what you built. A test statistic is an estimate divided by its standard error. The t-statistic is that idea made operational when the variance must itself be estimated. Size and power are the two ways to be wrong. The p-value measures extremeness under the null and nothing else. A confidence interval is the whole family of un-rejectable nulls. And effect size — not significance — tells you whether any of it matters. Now look at the t-statistic one more time: estimate, minus null value, divided by standard error. In Week Two we build the ordinary-least-squares regression engine, whose core output is a coefficient beta hat estimating how one variable moves with another. To ask does X actually move with Y, you compute t equals beta hat minus zero, over the standard error of beta hat — the exact same machine, pointed at a slope instead of a mean. Well done — this closes Week One.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Never say the p-value is $\Pr(H_0)$, never "accept the null," never let significance settle the matter. **The single-test error rate does not protect a search across many tests** — that is p-hacking, defended by pre-registration and corrections. In Week 2, the same machine returns as $t=(\hat\beta-0)/\widehat{\text{se}}(\hat\beta)$ for a regression slope.
+:::
+
+::: notes
+To summarize this finale, and the chapter: never say the p-value is the probability the null is true, never say we accept the null, and never let statistical significance settle the matter. The single-test error rate does not protect a search across many tests — that is p-hacking, defended by pre-registration and corrections. And in Week Two the same machine returns, pointed at a regression slope: t equals beta hat over the standard error of beta hat. This closes Week One.
+:::

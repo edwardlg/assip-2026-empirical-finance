@@ -1,0 +1,55 @@
+---
+title: "Reading the Two Laws Together"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Reading the Two Laws Together {.title}
+
+::: notes
+Welcome back to Chapter one-point-four, part six of nine. In part five we watched the bell emerge from a skewed population. Now we fix the division of labor between the two laws — the Law of Large Numbers and the Central Limit Theorem — because students mix them up constantly, and together they form the engine of all the inference still to come.
+:::
+
+## The LLN Is About a Point
+
+- $\bar{x}$ collapses onto the single number $\mu$
+- If that were the whole story...
+- ...large $N$ would make $\bar{x}$ essentially constant
+- Nothing left to do inference about — no uncertainty
+
+::: notes
+Fix the division of labor. The Law of Large Numbers is a statement about a point: the sample mean collapses onto the single number mu. That is all it promises — a destination. But notice what would follow if that were the whole story. For large N the sample mean would be essentially constant, pinned to the truth, and there would be nothing left to do inference about. No uncertainty to quantify, no error bars, no confidence intervals — because the estimate would have stopped moving. If statistics were only the Law of Large Numbers, the subject would end here, with a single number and no honest way to express doubt about it. Something has to keep inference alive in the zone before the collapse is complete. That something is the Central Limit Theorem.
+:::
+
+## The CLT Keeps Inference Alive
+
+- *Before* the collapse, the cloud around $\mu$ has a **knowable shape**
+- Zoom in with a microscope of magnification $\sqrt{N}$
+- Dividing by $\sigma/\sqrt{N}$ **is** that microscope
+- You see a stable bell, not a shrinking dot
+
+::: notes
+The Central Limit Theorem is what keeps inference alive. It says that before the collapse is complete, the cloud of possible sample-mean values around mu has a precise, knowable shape. Here is the picture. Zoom in on the sample mean with a microscope whose magnification is the square root of N — which is exactly what dividing by sigma over root N does. Under that microscope you do not see a shrinking dot; you see a stable bell that never goes away. So the two laws say complementary things. The Law of Large Numbers says the cloud shrinks. The Central Limit Theorem says that under the microscope, the cloud always looks like the standard normal. One is about the destination; the other is about the shape of the wobble on the way there.
+:::
+
+## Together: The Engine of Inference
+
+- LLN: $\bar{x}$ is **near** $\mu$
+- CLT: we know **exactly how its misses are distributed**
+- That lets us say "95% confident the mean is in this interval"
+- The literal subject of the next chapter
+
+::: notes
+Put them together and you have the engine of frequentist statistics. From the Law of Large Numbers we know the sample mean is near mu. From the Central Limit Theorem we know exactly how its misses are distributed — they follow the bell, scaled by sigma over root N. That second part is what lets us make calibrated statements like, I am ninety-five percent confident the true mean lies in this interval. Without the shape, near would be a vague word; with the shape, near becomes a number with a guaranteed coverage rate. Hold that thought, because it is the literal subject of the next chapter — the confidence interval and the t-test are nothing more than this engine, turned into a recipe. But first, a warning: the engine has a part that can fail.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **LLN** is about a *point* — $\bar{x}$ lands on $\mu$. The **CLT** is about the *shape of the wobble* around that point. Together: we know $\bar{x}$ is near $\mu$ **and** exactly how its misses are distributed — the engine behind every confidence interval. Next: the assumption that can break it.
+:::
+
+::: notes
+To summarize part six: the Law of Large Numbers is about a point — the sample mean lands on the truth — and if that were all, there would be no uncertainty left to quantify. The Central Limit Theorem keeps inference alive by giving the shape of the wobble around that point: zoom in with a root-N microscope and you always see the same stable bell. Together they let us say the sample mean is near mu and know exactly how its misses are distributed — the engine behind every confidence interval, the literal subject of the next chapter. But the engine has a load-bearing assumption, and in part seven we meet the character who breaks it.
+:::

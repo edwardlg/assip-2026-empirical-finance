@@ -1,0 +1,59 @@
+---
+title: "Choosing a Method, and the Ceiling"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Choosing a Method, and the Ceiling {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part ten of ten, the finale. In part nine we ran all three methods side by side. Now we turn the lesson into a decision guide you could defend to a referee — then confront the unbreakable ceiling every method here shares, and the doorway out to the next chapter.
+:::
+
+## How to Choose
+
+- **Matching**: transparent, intuitive, good overlap — but discards units
+- **Entropy balancing**: exact balance, max stability, least spec angst
+- Entropy balancing is the right default **most of the time**
+- **AIPW**: strongest guarantee, best efficiency, ML on-ramp
+- AIPW is the right default for a **headline** estimate
+
+::: notes
+You now have four ways to exploit selection-on-observables. Reach for propensity-score matching when you want a transparent, intuitive design and your groups overlap well — it mimics an experiment unit by unit and is easy to explain. Its costs: it discards unmatched units, forces arbitrary choices, and achieves only approximate balance. Good for exposition; rarely your final estimator. Reach for entropy balancing when you want guaranteed exact balance, maximum stability, and minimal specification angst — most of the time in empirical finance. It keeps every unit, produces tame weights, and is hard to accuse of cherry-picking. Its limitation: you must choose which moments to balance. Reach for A-I-P-W, doubly robust, when you want the strongest consistency guarantee and best efficiency, bringing both an outcome model and a treatment model. This is the right default for a headline estimate you intend to publish, and the on-ramp to machine-learning estimation. Its cost is two models, not one, and it still suffers — less — from extreme weights.
+:::
+
+## Report More Than One
+
+- If all three agree near $-0.8$, your finding is **robust**
+- If they disagree, that disagreement is **information**
+- Usually a sign of thin overlap or a fragile spec
+- The disagreement belongs in your paper, not swept away
+- Name the estimand, the covariates, the overlap, the assumption
+
+::: notes
+The honest meta-advice: report more than one. If matching, entropy balancing, and A-I-P-W all point to roughly minus zero-point-eight, your finding is robust to method choice and you can write it up with confidence. If they disagree, that disagreement is information — almost always a sign of thin overlap or a fragile specification — and the disagreement itself belongs in your paper, not swept under the rug of whichever method gave the prettiest number. This is the empirical-specification discipline applied to method choice: name the estimand, A-T-E or A-T-T; name the covariates you balanced on; name the overlap region you restricted to; and name the assumption — conditional independence — that the whole exercise rides on.
+:::
+
+## The Unbreakable Ceiling
+
+- All four engines bolt to one chassis: the **CIA**
+- None can rescue you if CIA is false
+- CIA fails with an **unobserved confounder**
+- Drives both selection and outcome; not in $\mathbf{X}$
+- Every estimator here is then biased — silently
+- The door out is Chapter three-point-four: **instrumental variables**
+
+::: notes
+Stand back and see the boundary. I-P-W, entropy balancing, A-I-P-W, and matching are four different engines bolted to the same chassis: the conditional-independence assumption — that once we condition on, balance, or reweight on the observed covariates X, treatment is as good as random. Every method is a way to use X more cleverly, more stably. Not one can rescue you if that assumption is false. And it is false exactly when there is an unobserved confounder — a variable that drives both selection and the outcome, that you did not measure and cannot put in X. Suppose Maya's enrollees were also more conscientious in a way no dataset captures, and conscientiousness independently lowers rates. Then they would have gotten lower rates even without the program, no balancing on income and credit removes it, and every estimator here is biased — silently, with a clean balance table and a confident standard error. That is the unbreakable ceiling of selection-on-observables. When you cannot defend the assumption, you need a different source of identifying variation: an instrument. Chapter three-point-four introduces instrumental variables as the escape hatch for exactly the situation this chapter cannot handle.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Match for exposition, **entropy-balance** as your most-of-the-time default, **AIPW** for a headline estimate — and report more than one. But all four share one ceiling: they collapse under an **unobserved confounder**, because they only use the covariates you measured. That is the door to instrumental variables in Chapter three-point-four.
+:::
+
+::: notes
+To summarize the lesson: matching is for exposition, entropy balancing is your most-of-the-time default, and A-I-P-W is for a headline estimate — and the honest move is to report more than one and treat disagreement as information. But all four methods share one unbreakable ceiling: they collapse silently under an unobserved confounder, because they can only use the covariates you measured. That ceiling is the doorway to Chapter three-point-four, where instrumental variables give you a fundamentally different source of identifying variation for precisely the situation this chapter cannot handle. That completes Chapter three-point-three.
+:::

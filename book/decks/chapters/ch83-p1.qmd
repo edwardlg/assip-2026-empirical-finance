@@ -1,0 +1,58 @@
+---
+title: "From Folder to Paper: The Core Reveal"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# From Folder to Paper: The Core Reveal {.title}
+
+::: notes
+Welcome to Week Eight, Chapter eight-point-three, part one of seven: Writing the Empirical Paper. By now you have a folder full of tables, a frozen point estimate, a defensible identifying assumption, and a pile of robustness checks that survived. What you do not yet have is a paper. This lesson is about the last transformation: turning that folder into prose a skeptical referee reads in one sitting and comes away believing. In this opening part we state the reveal everything turns on, and learn the fixed shape of the paper.
+:::
+
+## You Already Have the Parts
+
+- A pre-analysis plan and a one-page identification memo
+- A frozen point estimate from the pre-registered spec
+- A specification curve and a threats table, executed
+- A pile of robustness checks that survived
+- What you lack: a paper a stranger will believe
+
+::: notes
+Let us take stock. You filed a pre-analysis plan and distilled it into the identification memo, the one page the whole project defends. You executed the pre-registered specification and built the specification curve. You ran the robustness column of your threats table for every row, turning each promised defense into an actual result. So what you have is a folder full of tables, a frozen point estimate, a defensible identifying assumption, and a pile of checks that survived. What you do not have is a paper. A paper is what a busy, skeptical, slightly hostile stranger called a referee reads in one sitting and comes away believing. Building that object is the work of this chapter.
+:::
+
+## The Reveal: Argument, Not Transcript
+
+- A paper is an *argument*, not a transcript of what you did
+- Transcript: chronological, exhaustive, "first I, then I"
+- Argument: logical, ruthlessly selective
+- Question, why the design answers it, the answer, why it stands
+- Beginners write transcripts; nobody finishes them
+
+::: notes
+Here is the reveal the whole chapter turns on, stated before the details. A paper is not a transcript of what you did; it is an argument for why a reader should believe what you found. Those are different objects. The transcript is chronological and exhaustive: first I downloaded the data, then I cleaned it, then I tried three specifications, two of which broke. The argument is logical and ruthlessly selective: here is the question, here is why my design answers it, here is the answer, here is why you cannot easily dismiss it. Beginning writers produce transcripts and wonder why nobody finishes them. The move from transcript to argument is the single most valuable skill this chapter teaches, and almost every rule below is a special case of it. There is a second reveal beneath it: writing the paper is just building the object you learned to attack in Week Five, so it survives your own skeptical reading.
+:::
+
+## The Fixed Skeleton Is a Gift
+
+- Order: intro, literature, data, design, results, robustness, conclusion
+- Labels vary; the *load* each section carries is invariant
+- Learn the loads, not the labels
+- Spend writing time where the reader spends attention: the front
+- Say the important thing first, at every scale
+
+::: notes
+Empirical-finance papers have a fixed skeleton, and the fixedness is a gift, not a constraint. A referee knows exactly where to look for each thing. The standard order is: introduction, literature, data, empirical design, results, robustness, conclusion. Top journals vary the labels, but the load each section carries is invariant, so learn the loads, not the labels. The proportions matter too. A rookie writes a one-paragraph introduction and a six-page data section. Invert that instinct: the introduction is the most-read and most-rewritten part, and the data section should be efficient. One principle unifies the whole document: say the important thing first, at every scale. The paper leads with its contribution, the introduction with the hook, the results with the headline table, each paragraph with its topic sentence. Suspense is a bug. The reader is your judge; front-load every verdict.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A paper is an **argument for why a reader should believe what you found**, not a transcript of what you did. The skeleton is fixed, so learn the *loads* sections carry, not the labels — and say the important thing first, at every scale. Next: the introduction that promises.
+:::
+
+::: notes
+To summarize part one: a paper is an argument for why a reader should believe what you found, not a transcript of what you did. That single move, from transcript to argument, underlies nearly every rule in this chapter. The skeleton is fixed, which is a gift: learn the load each section carries rather than its label, and spend your writing time at the front where the reader spends their attention. And at every scale, say the important thing first. In part two we open the most-read section of all: the introduction that promises.
+:::

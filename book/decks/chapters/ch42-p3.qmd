@@ -1,0 +1,65 @@
+---
+title: "Why TWFE Looks Innocent — and Where the Trap Is Set"
+date: "2026-07-13"
+---
+
+# Why TWFE Looks Innocent {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part three of thirteen. In part two we stated the crisis in one sentence and named the forbidden comparison. Now we slow down and ask why the pooled regression looks like exactly the right thing to do — because the trap is set by something that looks like a virtue — and we trace, in the algebra, exactly how an already-treated unit gets pressed into control duty.
+:::
+
+## The Setup: Cohorts and an Absorbing Switch
+
+- $N$ states over $T$ years; each adopts in year $G_i$ (its **cohort**)
+- Never-adopters: $G_i=\infty$
+- Treatment $D_{it}=\mathbf{1}\{t\ge G_i\}$ — turns on and **stays on**
+- Same regression as Chapter 4.1
+
+::: notes
+Be precise about the setup. Priya has a panel: N states observed over T years, each state adopting the disclosure rule in some year G-i, called its cohort or group — the year it first switches on — or never, in which case we write G-i equals infinity. The treatment indicator D-i-t is the indicator that t is at least G-i: it turns on in the adoption year and stays on. That is an absorbing treatment, the standard staggered setup — once a state has the rule, it keeps it. She runs the same regression as Chapter four-point-one: the outcome equals a unit fixed effect, plus a time fixed effect, plus beta times the treatment switch, plus an error.
+:::
+
+## Why It Looks Right
+
+- $\alpha_i$ soaks up permanent state differences (CA vs. Ohio wildfire)
+- $\lambda_t$ soaks up nationwide shocks (a bad hurricane season)
+- $\beta$ identified by **within** variation: states flipping $0\to1$
+- With many groups, feels like "pooling all the DiDs"
+
+::: notes
+Why does this look like exactly the right thing? Because the unit fixed effects soak up every state's permanent differences — California always has more wildfire exposure than Ohio. The time fixed effects soak up every nationwide shock — a bad hurricane season that lifts non-renewals everywhere. And beta is left to be identified by the within variation: the moments when a state's treatment indicator flips from zero to one against the backdrop of states whose status did not change. With one treated and one control group this is precisely the two-by-two difference-in-differences. With many groups it feels like the natural generalization — pooling all the difference-in-differences together. For decades that is exactly how it was taught and used.
+:::
+
+## Here Is the Trap
+
+- OLS demeans $D_{it}$ and $Y_{it}$, then regresses residual on residual
+- This is Frisch–Waugh–Lovell from Chapter 2.3
+- Residualized $\tilde D_{it}$ carries all the identifying weight
+- An **already-treated** unit's $\tilde D_{it}$ keeps varying as later cohorts switch on
+
+::: notes
+Here is the trap. To identify beta, ordinary least squares removes the unit means and the time means from the treatment indicator and from the outcome, then regresses the residualized outcome on the residualized treatment. This is the Frisch–Waugh–Lovell logic from Chapter two-point-three, the engine under every fixed-effects regression. The residualized treatment, D-tilde, carries all the identifying weight. And it does something you would never design on purpose: because it is the treatment with the unit and time averages swept out, a unit that is already treated has a residualized treatment that keeps varying relative to the changing time average as later cohorts switch on.
+:::
+
+## OLS Can't Tell Clean from Contaminated
+
+- An already-treated unit becomes a comparison for a **not-yet-treated** unit
+- OLS doesn't know "untreated-and-informative" from "already-treated-and-contaminated"
+- It sees only numbers
+- It uses every scrap of variation — including the **forbidden** kind
+
+::: notes
+In the algebra, an already-treated unit gets pressed into service as a comparison group for a not-yet-treated unit. Ordinary least squares does not know the difference between untreated-and-informative and already-treated-and-contaminated. It sees only numbers, and it uses every scrap of variation it can find — including the forbidden kind. This is the crucial mechanical fact: the very demeaning that makes fixed effects so convenient is also what recruits already-treated units as controls, silently, with no warning in the output. The estimator is not being malicious; it is being literal, optimizing fit over whatever variation remains after demeaning.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The pooled regression looks virtuous: fixed effects absorb permanent and common variation, and $\beta$ rides on **within** variation. But demeaning the treatment (Frisch–Waugh–Lovell) lets OLS recruit **already-treated** units as controls — it can't tell clean from contaminated. Next: why this bias hid for thirty years, then the world where the sign flips.
+:::
+
+::: notes
+To summarize part three: the pooled regression looks virtuous because the unit fixed effects absorb permanent differences, the time fixed effects absorb common shocks, and beta rides on within variation — the natural generalization of the two-by-two. But the trap is that demeaning the treatment, via Frisch–Waugh–Lovell, leaves an already-treated unit's residualized treatment still varying, so ordinary least squares quietly recruits it as a control for not-yet-treated units. The estimator cannot tell informative from contaminated variation. In part four we explain why this bias hid for thirty years — the two common situations where it vanishes — and then begin building the smallest world in which the coefficient comes out with the wrong sign.
+:::

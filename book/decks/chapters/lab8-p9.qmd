@@ -1,0 +1,45 @@
+---
+title: "Questions: Fatal vs. Survivable Triage"
+date: "2026-08-10"
+---
+
+# Questions: Fatal vs. Survivable Triage {.title}
+
+::: notes
+Welcome back to Week Eight, Lab Eight, part nine of ten. In part eight we built the timed rehearsal and the cut line. Now we prepare for the question period — the part most students fear and the part you can actually control. The questions you will get are not a surprise; they are the rows of the threats-and-responses table you wrote weeks ago. This segment turns that table into prepared answers and gives you the single distinction that keeps you composed when a question lands hard.
+:::
+
+## The Questions Are Your Threats Table
+
+- The hard questions are the **rows of your Ch 7.5 threats table**
+- Each attacks your identifying assumption at a named weak point
+- Rehearse a four-part answer: threat, signature, what you did, residual
+- "Yes, that's the central worry — if it were driving this we'd see X…"
+- Conceding what remains makes you look **more** credible, not less
+
+::: notes
+The questions you will get are the rows of your threats-and-responses table from Chapter Seven-point-five. Every hard question has the same shape: isn't your estimate just picking up some confounder rather than the effect you claim? That is your identifying assumption being attacked at a weak point you already named. So before the talk, turn each row into a prepared four-part answer, rehearsed in this order: the threat — concede it is the central worry, do not dismiss it; the signature — if the confounder were driving the result, what would we see; what you did — the test or design choice from column three; and the residual concern — what column four honestly admits remains. Said live: yes, that's the central worry; if it were driving this, we'd see this signature; we checked, and we see this reassuring result; what I still can't fully rule out is this residual, though here is a bound on how bad it could be. That answer makes you look more credible than a confident dismissal, because it shows you saw the problem before they did.
+:::
+
+## Fatal vs. Survivable
+
+- A **survivable** critique attacks a number: "cluster differently," "winsorize at 1%"
+- Answer: "we checked; it doesn't" — point at robustness, or re-run and report
+- A **fatal** critique attacks the comparison: "you were already diverging"
+- If a fatal critique is right, **do not defend the indefensible** — concede and retreat
+- "I don't know" *with structure* proves your other answers are trustworthy
+
+::: notes
+This is the distinction that lets you keep composure: a survivable critique attacks a number; a fatal critique attacks the comparison. A survivable critique asks whether a choice changes the answer — cluster differently, winsorize at one percent not five, control for firm size. You answer "we checked; it doesn't," point at the robustness panel, or say "fair — let me re-run it and report back." The estimate might move a little; it does not vanish. A fatal critique attacks the identifying assumption itself — your treated and control groups were already diverging before treatment, your instrument plausibly affects the outcome directly. If the attacker is right, no amount of re-clustering saves you. The hardest discipline in the camp: do not defend the indefensible. Concede at the level the critique was made and retreat to what survives — this is a strong association consistent with the mechanism, not the clean causal estimate I'd hoped for, and that's a real limitation. A conceded fatal critique is a wounded paper but an intact scientist, and the retreat almost always lands somewhere real — a robust pattern future work should test causally is a genuine contribution. Know your retreat position before you walk in. And for the question you genuinely cannot answer, say "I don't know" with structure — that's outside what my design can speak to; my guess is this direction, but I'd want this specific check first. A located "I don't know" proves the rest of your "I know"s are trustworthy.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The hard questions are your threats-table rows — answer each in four parts. Triage live: **survivable attacks a number** (point at robustness), **fatal attacks the comparison** (concede and retreat to the descriptive claim). Next: the checklist and the capstone.
+:::
+
+::: notes
+To summarize part nine: the hard questions are the rows of your threats table, and each gets a four-part answer that concedes the worry, names the signature, states what you did, and admits the residual. Triage in real time: a survivable critique attacks a number, and you point at robustness; a fatal critique attacks the comparison, and if it is right you concede and retreat to the descriptive claim that survives, never bluffing. And a structured "I don't know" is a strength, not a failure. In part ten we close the lab and the camp — the submission checklist a reviewer runs, the connection to Assessment Eight, and the single sentence this whole eight weeks existed to let you say.
+:::

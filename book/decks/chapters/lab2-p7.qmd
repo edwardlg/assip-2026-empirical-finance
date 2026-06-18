@@ -1,0 +1,45 @@
+---
+title: "Aggregating to the Fama–MacBeth Estimate"
+date: "2026-06-29"
+---
+
+# Aggregating to the Fama–MacBeth Estimate {.title}
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, part seven of eight. In part six we ran pass one and pass two — a beta for every stock and a jagged series of monthly slopes. Now step three: collapse those monthly slopes into the Fama–MacBeth point estimate and its standard error, and watch the recovered premium land near the planted truth. This is just the standard error of a sample mean, applied to a series of regression coefficients — and it is the whole replication in one table.
+:::
+
+## Step 3 — The FM Estimate and SE
+
+- `fm_mean = gammas.mean()` — the FM point estimate
+- `fm_se = gammas.std(ddof=1) / np.sqrt(T)` — SE of a mean
+- `fm_t = fm_mean / fm_se` — the FM t-statistic
+- Recovered `gamma1` ≈ **0.0055**, near planted **0.006**
+- FM t-stat comfortably **above 3**; `gamma0` small
+
+::: notes
+Step three aggregates into the Fama–MacBeth estimate and standard error. Collapse each column of monthly coefficients to its mean — that is the point estimate. Compute its standard error as the sample standard deviation, with one degree of freedom removed, divided by the square root of T. Form the t-statistic as the mean over the standard error. With the seed and parameters we set, the recovered gamma-one lands near the planted zero-point-zero-zero-six — you will get roughly zero-point-zero-zero-five-five — with a Fama–MacBeth t-statistic comfortably above three, and a small intercept. That is the whole replication in one table: a known premium, recovered from data, with a defensible standard error.
+:::
+
+## The Estimate Is the Realized Average
+
+- Recovered = **average realized** market excess return over 360 months
+- Differs from theoretical 0.006 by **sampling error**
+- The FM SE is the size of **that very gap**
+- Re-run with a different seed → estimate wobbles by ~one FM SE
+- That wobble confirms the SE is **calibrated**
+
+::: notes
+One more thing to understand about what you recovered. The Fama–MacBeth estimate is the average realized market excess return over your three hundred sixty months, which differs from the theoretical zero-point-zero-zero-six by sampling error — and the standard error is the size of that very gap. Here is the cleanest way to see it: re-run the whole thing with a different seed, and the point estimate wobbles by about one Fama–MacBeth standard error. That wobble matching the standard error is the best confirmation it is calibrated. You planted the truth, recovered it up to a known amount of noise, and the procedure correctly told you how much noise to expect. That is what it means for a standard error to be honest.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Averaging the monthly slopes gives `gamma1` ≈ 0.0055 — near the planted 0.006 — with FM t-stat above 3. The estimate is the *realized* average market excess return; the FM SE is the size of its gap from the theoretical value, confirmed by the seed-to-seed wobble. Next: reading and defending that SE, then the wrap.
+:::
+
+::: notes
+To summarize part seven: averaging the monthly slopes gives a recovered premium near zero-point-zero-zero-five-five, close to the planted zero-point-zero-zero-six, with a Fama–MacBeth t-statistic above three and a small intercept. The estimate is the realized average market excess return, and the standard error is exactly the wobble you would see across different seeds — which is how you know it is calibrated. In part eight, the final part, we learn to read and defend that standard error with three questions, run the naive comparison that exposes why pooled OLS lies, and close out the lab and Week Two.
+:::

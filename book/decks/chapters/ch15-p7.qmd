@@ -1,0 +1,46 @@
+---
+title: "One-Sided vs. Two-Sided Tests"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# One-Sided vs. Two-Sided Tests {.title}
+
+::: notes
+Welcome back to Chapter one-point-five, part seven of ten. In part six we saw the four levers of power and watched Sam's rule barely clear the bar. Now we pin down where that bar sits — which depends on the shape of the alternative — and confront the temptation that sidedness creates.
+:::
+
+## One-Sided vs. Two-Sided
+
+- $H_1$ decides where the rejection region sits
+- Sam had a directional prior: $H_1:\mu>0$, one-sided
+- Critical value $\approx 1.65$, all in the upper tail
+- Maya tests if two rates differ: $H_1:\mu_A-\mu_B\neq 0$
+- Two-sided splits 5 percent: $\pm 1.96$
+
+::: notes
+The shape of the alternative decides where the rejection region sits, and you must commit to it before looking at the data. Sam had a directional prior — the reversal rule was supposed to make money — so the alternative, mu greater than zero, is a one-sided test, with the entire five percent rejection region in the upper tail, critical value about one point six five. Contrast Maya, who is comparing loan-approval rates between two neighborhoods and testing whether they differ. She has no prior about which is higher; either direction would be a finding. Her null is that mu-A minus mu-B equals zero, and her alternative is that the difference is not zero — a two-sided test. Now the five percent must be split across both tails, two and a half percent in each, so the critical value moves out to about plus or minus one point nine six, the famous one point nine six of large-sample testing. A two-sided test is more conservative: you need a larger statistic in absolute value to reject.
+:::
+
+## Choose Sidedness From the Science
+
+- Temptation: run two-sided, then claim one-sided after
+- That secretly doubles your Type I rate to 10 percent
+- Choose sidedness *before* you see the data
+- When in genuine doubt, use two-sided
+- Most published finance results are two-sided
+
+::: notes
+This creates an obvious temptation and an absolute rule. The temptation: run a two-sided test, see the effect is positive, then retroactively claim you always meant the one-sided test to get the easier one point six five cutoff. That is cheating — it secretly doubles your true Type One rate from five percent to effectively ten percent, because you gave yourself two bites at the apple. So choose the sidedness from the science before you see the data. When in genuine doubt, use two-sided; it is the honest default, and most published finance results are reported two-sided for exactly this reason. Sam can justify one-sided only because the reversal hypothesis was directional from the start — and even then, reporting both is the cautious move.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The alternative's shape sets the rejection region: a directional $H_1:\mu>0$ is **one-sided** (critical value $\approx1.65$); a "do they differ" $H_1\neq0$ is **two-sided** (split $\pm1.96$). Choose sidedness from the science *before* the data — flipping after secretly doubles your Type I rate. When in doubt, two-sided. Next: the p-value, defined correctly.
+:::
+
+::: notes
+To summarize part seven: the shape of the alternative sets where the rejection region sits. A directional alternative — mu greater than zero — is a one-sided test, with critical value about one point six five all in the upper tail. A do-they-differ alternative is two-sided, splitting the five percent into plus or minus one point nine six. Choose the sidedness from the science before you see the data — flipping afterward secretly doubles your true Type One rate to ten percent. When in genuine doubt, use two-sided. In part eight we define the p-value correctly, and confront the single most common error in applied statistics.
+:::

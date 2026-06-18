@@ -1,0 +1,58 @@
+---
+title: "Entropy Balancing: Solve for the Weights"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Entropy Balancing: Solve for the Weights {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part five of ten. In part four we saw I-P-W weights explode under thin overlap. Now a method that fixes that at the root: entropy balancing, which skips the propensity model and solves directly for weights that force exact balance.
+:::
+
+## The Complaint That Motivates It
+
+- We don't actually care about the propensity score
+- It is just an indirect route to balanced covariates
+- We fit a logit, hope, then **check balance afterward**
+- If it fails, we add interactions and fish for a spec
+- Why not solve for balance **directly**?
+
+::: notes
+Step back and notice something odd about the whole propensity-score pipeline, I-P-W and matching alike. We do not actually care about the propensity score. It is a means to an end: a correctly specified propensity model would, if we reweight by it, balance the covariates. But balancing the covariates is the goal; the propensity model is just an indirect route. We fit a logit, hope it is the right functional form, convert its predictions into weights, and then — the embarrassing part — check afterward whether the covariates actually came out balanced. If they did not, we go back, add interactions and polynomials, and try again, fishing for a specification that produces balance. Jens Hainmueller's entropy balancing, from twenty-twelve, asks the obvious question: if balance is what we want, why not solve for it directly?
+:::
+
+## The Idea
+
+- Skip the propensity model entirely
+- State balance as exact mathematical **constraints**
+- Find control weights that satisfy them
+- Many solutions exist — pick the one **closest to uniform**
+- "Closest to uniform" = maximize **entropy**
+
+::: notes
+Skip the propensity model. State the balance conditions you want — the reweighted control group must have the same mean income, mean credit score, and mean age as the treated group — as exact mathematical constraints, and find weights on the controls that satisfy them. There will be many such weight vectors, because the constraints are far fewer than the number of control units. So among all weight vectors that achieve exact balance, pick the one that is closest to uniform — that disturbs the data the least. Closest to uniform is made precise by maximizing entropy, which is where the name comes from. Hainmueller published this in the journal Political Analysis in twenty-twelve.
+:::
+
+## The Optimization, in Plain Terms
+
+- $\min \sum w_i \log(w_i / q_i)$ subject to balance
+- Objective is **Kullback–Leibler divergence** from uniform
+- Constraint: weighted control mean $=$ treated mean, per covariate
+- Can add variances or covariances; plus $\sum w_i = 1$, $w_i \ge 0$
+- Balance is **exact, not approximate**
+
+::: notes
+Set up to estimate the A-T-T. We reweight the control units to look like the treated group, then compare. Let w-i be the weight on control unit i. We minimize the sum of w-i times the log of w-i over q-i, subject to balance and normalization constraints, where q-i is a base weight, uniform unless you have reason otherwise. That objective is the Kullback–Leibler divergence of the weights from uniform — a standard measure of how far one distribution is from another. Minimizing it maximizes entropy: it keeps the weights as flat as possible, and flat weights mean no single unit dominates — exactly the explosion problem I-P-W could not control. The constraints say what balance means: for each covariate, the weighted mean among controls must exactly equal the treated-group mean. You can add a second moment to match variances, or cross-moments for covariances, plus normalization that the weights sum to one and non-negativity. Two things make this powerful. Balance is exact, not approximate — the means come out equal by construction, so there is no post-hoc check that can fail. And you choose which moments to balance, making it transparent and tunable where the black-box logit is not. The solution has a tidy closed form: the optimal weights are exponential in the covariates, with one Lagrange multiplier per balance condition, found by a small convex optimization.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Entropy balancing** drops the propensity model and instead solves directly for control weights that make covariate means (and, if you wish, variances) **exactly** equal the treated group's, while staying as close to uniform as possible. Balance becomes a constraint, not a hope. Next: why this is usually steadier than matching and IPW.
+:::
+
+::: notes
+To summarize part five: entropy balancing skips the propensity model and solves directly for weights that make chosen covariate moments exactly balanced, while keeping the weights as flat as possible by maximizing entropy. Balance is a constraint, not a hope, and there is no post-hoc check that can fail. In part six we see why this is usually more stable than both matching and I-P-W, and watch Maya and Priya put it to work.
+:::

@@ -1,0 +1,57 @@
+---
+title: "KPSS: Three Moves That Make It Clever"
+date: "2026-07-27"
+---
+
+# KPSS: Three Moves That Make It Clever {.title}
+
+::: notes
+Welcome back to Chapter six-point-one, part six of ten. In part five we read the exhibits in referee order — validation first, economics second. Now we step back and name the three moves that separate K-P-S-S from the long line of innovation papers that merely counted patents and citations. Each move is a lesson you can carry into your own work.
+:::
+
+## Move 1 — Market Prices as Valuation
+
+- A competitive market has *already* valued the patent
+- You just have to read the price
+- No structural model of demand, competition, discount rates
+- Extract it with the cleanest tool: abnormal return in a tight window
+- Converts an unobservable into an observable
+
+::: notes
+Move one: use market prices as a real-time valuation of innovation. The deep idea is that a competitive stock market is a forecasting machine that has already done the hard work of valuing a patent — you just have to read the price. Instead of building a structural model of how much a patent is worth, which would require assumptions about demand, competition, and discount rates that nobody can defend, K-P-S-S outsource the valuation to the thousands of investors who collectively set the price. And they extract that valuation with the cleanest possible tool: the abnormal return in a tight window, where confounds have the least time to creep in. This is the same philosophy as an event study, applied to a variable — innovation value — that the field had despaired of measuring. It converts an unobservable into an observable by finding the moment the market reveals its estimate.
+:::
+
+## Move 2 — Fast Where Citations Are Slow
+
+- Citations take a decade and are truncated for recent patents
+- A stock reaction happens in three days, available at grant
+- Anchor on the grant date: value *every* patent immediately
+- That is what makes a long, dense panel possible
+- A panel is what you need to study growth year by year
+
+::: notes
+Move two: turn a slow, truncated proxy into a fast, real-time one. Citations take a decade to accrue and are truncated for recent patents; a stock reaction happens in three days and is available the moment the patent issues. By anchoring on the grant date, K-P-S-S get a value for every patent immediately, including last year's. That is what makes a long, dense panel possible — and a panel is what you need to study growth and reallocation, which play out year by year. The measure is not just better than citations; it is available on a timescale citations can never match. Speed is not a luxury here — it is what unlocks the economics half of the paper.
+:::
+
+## Move 3 — Release the Data as Infrastructure
+
+- The move with the longest half-life
+- A public dataset *compounds* over time
+- Every paper that uses it validates it again
+- The measure becomes a standard, like CRSP returns
+- A shared variable can outweigh any single regression
+
+::: notes
+Move three: release the dataset as public infrastructure. This is the move with the longest half-life. By publishing the patent-level value estimates and keeping them updated, the authors made their measure a common good the whole profession builds on. The cleverness is strategic as much as technical: a public dataset compounds. Every paper that uses the K-P-S-S measure validates it again by using it, and the measure becomes a standard the way CRSP returns are a standard. When you reach your capstone, notice the lesson — a well-constructed, well-documented, openly shared variable can be a larger contribution than any single regression.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Three moves: **read the market's price** instead of modeling value; **anchor on the grant date** to get a fast, real-time number where citations are slow; and **release the data** so the measure compounds into a standard. The third move has the longest half-life.
+:::
+
+::: notes
+To summarize part six: three moves make K-P-S-S clever. First, let market prices do the valuing — outsource an impossible structural problem to the thousands of investors who set the price, and read it with a tight-window event study. Second, anchor on the grant date to get a fast, real-time value for every patent, which is what makes a long panel — and the growth analysis — possible. Third, release the dataset, so the measure compounds into a profession-wide standard. In part seven we turn referee and attack the paper at its weakest joints — every one of which lives in the measure.
+:::

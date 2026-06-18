@@ -1,0 +1,57 @@
+---
+title: "The Code and What to Carry Forward"
+date: "2026-07-13"
+---
+
+# The Code and What to Carry Forward {.title}
+
+::: notes
+Welcome back to Chapter four-point-four, part ten of ten. In part nine we built synthetic diff-in-diff by reweighting units and times on top of diff-in-diff differencing. Now we watch the code run end to end, then gather the four lessons that will do real work for the rest of the camp.
+:::
+
+## The Code, End to End
+
+- Simulate: 1 treated state + 30 donors, 2010–2022, $T_0 = 2017$
+- Two latent factors → a convex donor blend can span the structure
+- Inject a $+1.4$ premium jump from 2018; `SLSQP` finds convex weights
+- Output: sparse weights, pre-RMSPE $\approx 0.035$, ratio $\approx 44$, gap $\approx 1.5$ (true $1.4$)
+- Placebo loop: treated lands as **largest** ratio → $p = 1/31 \approx 0.032$
+
+::: notes
+The code is a self-contained synthetic control on a simulated premium panel, then the placebo loop, using only numpy, pandas, scipy and matplotlib. It simulates one treated state plus thirty donors from twenty-ten to twenty-twenty-two, with T-naught at twenty-seventeen. Two latent factors — a national premium trend and a cyclical climate factor — drive premiums, with each state loading on them differently, so a convex donor blend can span the structure, and the treated state's loadings are set inside the donor range. It injects a plus-one-point-four hundred-dollar premium jump from twenty-eighteen onward. The weight solver uses scipy's S-L-S-Q-P routine to minimize pre-period squared mismatch subject to the weights summing to one and being non-negative — the convexity constraint, in code. Running it prints a sparse weight vector, a tiny pre-RMSPE of about zero-point-zero-three-five against a much larger post-RMSPE for a ratio near forty-four, and a mean post-treatment gap of about one-point-five, close to the true plus-one-point-four we injected. The placebo loop treats each donor as fake-treated and computes its ratio; the genuinely treated unit lands as the single largest ratio among the thirty-one units, giving a permutation p-value of one over thirty-one, about zero-point-zero-three-two.
+:::
+
+## The Test Working in Reverse
+
+- Delete the injected effect (`Y[0, post] += 1.4`) and re-run
+- Treated unit falls back into the placebo crowd: rank $\approx 5$ of 31
+- $p \approx 0.16$ — no longer an outlier, no longer significant
+- Estimated gap collapses toward zero
+- The method correctly finds **nothing** when there is nothing
+
+::: notes
+Two things to internalize. First, the estimate is a gap, not a coefficient with a textbook standard error; its credibility comes from the placebo rank, not a t-statistic. Second, if you delete the line that adds the one-point-four jump so there is no real effect, and re-run, the treated unit's ratio falls back into the placebo crowd — rank about five of thirty-one, p about zero-point-one-six — no longer an outlier, and the estimated gap collapses toward zero. The method correctly finds nothing when there is nothing. That is the test working. In the notebook you will reproduce Priya's study, run the full placebo loop, and estimate the same effect with synthetic diff-in-diff to compare.
+:::
+
+## What to Carry Forward
+
+- **Build the counterfactual, don't assume it** — match the pre-period, show it
+- **Convexity is the method's conscience** — no extrapolation, sparse weights
+- **Inference is permutation, not asymptotics** — RMSPE ratio, floored at $1/(J{+}1)$
+- **Synthetic DiD generalizes** — matched trend, principled variance
+- Next: **§4.5 shift-share** — variation hiding in exposure weights
+
+::: notes
+Four things from this chapter will do real work for the rest of the camp. First, build the counterfactual, don't assume it: with one treated unit, parallel trends is a wish, so synthetic control replaces it with a convex-weighted construction and makes the match visible. Second, the convexity constraint is the method's conscience: non-negative weights summing to one cannot extrapolate and cannot fake a fit with offsetting coefficients; you pay in fit, and that refusal to lie is the feature, while the sparse weights give you a sentence you can defend. Third, inference is permutation, not asymptotics: with one treated unit there is no honest standard error, so the placebo test scales every unit's gap by its own pre-fit and asks whether the real unit is an outlier, with a p-value floored at one over J-plus-one. Fourth, synthetic diff-in-diff generalizes the toolkit: unit and time weights plus differencing need only a matched trend and bring principled variance estimators. Next chapter, four-point-five, leaves the single-treated-unit world for shift-share designs, where the identifying variation hides in exposure weights.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The code recovers the injected effect and, with the effect deleted, correctly finds nothing — the test working. Carry forward: **build** the counterfactual, **convexity** is the conscience, **inference is permutation**, and **synthetic DiD** generalizes. Next: shift-share designs (§4.5).
+:::
+
+::: notes
+To close Chapter four-point-four: the simulated code recovers the injected effect with a permutation p-value around three percent, and when we delete the effect, the treated unit melts back into the placebo crowd and the method correctly finds nothing — that is the test working as it should. Carry four lessons forward: build the counterfactual rather than assume it, treat convexity as the method's conscience, do inference by permutation rather than asymptotics, and remember that synthetic diff-in-diff generalizes the whole toolkit. Next, in chapter four-point-five, we move to shift-share designs and ask, once again, where the identifying variation really comes from.
+:::

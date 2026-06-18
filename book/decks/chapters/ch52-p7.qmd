@@ -1,0 +1,69 @@
+---
+title: "The Intercept Pass and What's Clever"
+date: "2026-07-20"
+---
+
+# The Intercept Pass and What's Clever {.title}
+
+::: notes
+Welcome back to lesson five-point-two, part seven of nine. In part six we made the R-squared and loadings passes through the regression tables. Now we make the third pass — the intercepts — lock in the two-column reading that is the heart of this week's literacy, and then turn to what is genuinely clever in this paper.
+:::
+
+## Intercept Pass
+
+- **Pass three:** read the alpha column and its t-statistics
+- Claim: economically small, mostly indistinguishable from zero
+- Pricing errors tiny relative to average returns
+- Find the **GRS F-statistic** for the joint null
+- Watch **small-growth**: its intercept is most stubborn
+
+::: notes
+Pass three is the intercept pass. Read the alpha-hat column and its t-statistics. The claim is that they are economically small and mostly statistically indistinguishable from zero — the pricing errors are tiny relative to the average returns from the second table. Then find the G-R-S F-statistic for the joint null that all twenty-five intercepts are zero. The story the paper tells is that the three-factor model gets the intercepts down close enough that it dramatically outperforms CAPM, even if the joint test is not always a clean pass in every corner. Note the one cell that tends to misbehave: small-growth, whose intercept is the most stubborn. Honest readers flag it; the model is very good, not perfect.
+:::
+
+## The Two-Column Reading
+
+- Two columns, side by side, tell the whole story
+- **R-squared near one:** these three factors move the portfolios
+- **Alpha near zero:** no extra average return to explain
+- High R-squared plus zero alpha = a working factor model
+- Memorize this; it is the week's core literacy
+
+::: notes
+Here is how to see that the factors explain most common variation. Two columns, side by side, tell the whole story. The R-squared column near one says: whatever moves these portfolios month to month is mostly these three factors. The alpha column near zero says: and once you account for the exposures, there is no extra average return to explain. High R-squared plus zero alpha equals a working factor model. Memorize that two-column reading; it is the literacy this entire week is teaching. We are deliberately not quoting specific coefficient values — the qualitative findings are well established: positive size and value premia, high R-squared values, small intercepts, with small-growth as the weak spot. Any precise number belongs in your own replication, not in a guide written from memory.
+:::
+
+## What's Clever, Part One
+
+- **The factor-mimicking portfolio:** the master stroke
+- Make the abstraction a real, holdable long-short basket
+- Because it is itself a traded excess return...
+- ...the factor must **price itself** — zero own-intercept
+- Turns abstraction into something testable with OLS
+
+::: notes
+Now, what is clever — three moves you can lift into your own work. First, the factor-mimicking portfolio: this is the master stroke. A risk factor sounds like an abstraction you can never observe. The answer here: make it a portfolio. A long-short basket of real stocks has a return you can compute every month, put on the right-hand side of a regression, and that an investor could actually hold. That last point is not cosmetic. Because the factor is itself a traded excess return, asset-pricing theory says the factor must price itself: a regression of S-M-B on the three factors should have a zero intercept too. Turning an abstraction into a portfolio is what makes the whole thing testable with nothing fancier than ordinary least squares.
+:::
+
+## What's Clever, Part Two
+
+- **Separating co-movement from pricing:** two distinct tests
+- You can have high R-squared with no premium, or vice versa
+- Demanding *both* makes the test far more informative
+- **The workhorse benchmark:** size and value as downloadable factors
+- Every later anomaly is judged by its **three-factor alpha**
+
+::: notes
+Second clever move: separating common variation from cross-sectional pricing. The earlier paper only had the pricing question. This paper cleaves it in two — do the factors capture co-movement, the R-squared, and do they capture average returns, the alpha. These are genuinely different, and insisting on both makes the test far more demanding. Third: it became the workhorse benchmark. By packaging size and value as downloadable monthly factors — Ken French has hosted them publicly for decades — the paper gave every later researcher a common yardstick. When someone claims a new anomaly, the first question a referee asks is, what is its three-factor alpha? The paper did not just answer a question; it built the ruler everyone now measures with.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The third pass reads the **alphas**: small, mostly near zero, with **small-growth** the stubborn exception. The two-column literacy — **high R-squared plus zero alpha equals a working model** — is the week's core skill. The cleverness: factor-as-portfolio, splitting co-movement from pricing, and building the benchmark everyone now uses. Next: where it's vulnerable.
+:::
+
+::: notes
+To summarize part seven: the third pass reads the alphas — small, mostly near zero, with small-growth the stubborn exception. The two-column literacy is the week's core skill: high R-squared plus zero alpha equals a working model. And the cleverness is threefold — turning a factor into a holdable portfolio, splitting co-movement from pricing, and building the benchmark every later paper now measures against. In part eight we turn the lens around and ask where a sharp referee pushes back on this celebrated paper.
+:::

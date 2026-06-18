@@ -1,0 +1,46 @@
+---
+title: "Identification: Running the Catalog Backwards"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Identification: Running the Catalog Backwards {.title}
+
+::: notes
+Welcome back to Chapter seven-point-one, part five of eight. In part four we finished the three filters with the novelty test. Now we get specific about the second slot, the treatment, because that is where Weeks Three and Four come back with full force. A sharp, consequential, novel hypothesis is necessary but not sufficient. The thing that turns it into empirical research, rather than a plausible story with a regression attached, is identification — a credible argument that the correlation you measure is the causal effect you claim, and not the confounding, reverse causality, or selection that Week Three taught you to fear.
+:::
+
+## The Spine of Weeks 3 and 4
+
+- Ch 3.1: you never see a unit both treated and untreated
+- Maya's literacy program: a 21-point gap, blended with self-selection
+- Matching/weighting (3.2–3.3) · IV (3.4–3.5)
+- DiD & event studies (4.1–4.2) · RD (4.3) · synthetic control (4.4) · shift-share (4.5)
+- A whole catalog for making the blend *legible*
+
+::: notes
+Recall the spine of Weeks Three and Four. Chapter three-point-one posed the fundamental problem: you never see the same unit both treated and untreated, so every causal claim leans on an assumption about the counterfactual. Maya's financial-literacy example was the lesson — a twenty-one-point approval gap that was some unknown blend of the program's effect and the head start the kind of person who enrolls already had. The entire toolkit that followed was a catalog of strategies for making that blend legible: matching and weighting when you believe selection is on observables; instrumental variables when it is not and you can find an exogenous wiggle; difference-in-differences and event studies when a policy switches on at a date for some units; regression discontinuity when a sharp rule assigns treatment at a cutoff; synthetic control for a single treated unit; and shift-share when you must build an instrument from shares and shifts.
+:::
+
+## Run the Catalog Backwards
+
+- Do **not** pick a method and hunt for a question
+- Pick a question, then ask the design question:
+- *Where is variation in my treatment, unrelated to the confounders I fear?*
+- That source of variation *is* your identification
+- Finding it is the highest-leverage thing you do all of Week 7
+
+::: notes
+The practical move for project design is to run this catalog backwards. Do not pick a method and go looking for a question — that is the beginner's mistake, and it produces a tool in search of a problem. Instead, pick a question, then ask: where, in the world that generates my data, is there a source of variation in my treatment that is plausibly unrelated to the confounders I fear? That source of variation is your identification, and finding it is the single highest-leverage thing you will do all of Week Seven. Everything downstream — the cleaning, the regressions, the standard errors — is mechanical once you have located a clean source of variation. Without one, no amount of mechanical care produces a credible causal claim.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Don't pick a method and hunt for a question — pick a question and search *backward* for variation in your treatment that's unrelated to your confounders. That variation *is* your identification, and finding it is Week 7's highest-leverage move. Next: the three realistic design patterns, and the honest descriptive out.
+:::
+
+::: notes
+To summarize part five: identification is what separates research from a story with a regression attached. The move is to run the Weeks Three and Four catalog backwards — start from your question and search the world that generates your data for variation in the treatment that is unrelated to the confounders you fear. That is the single highest-leverage thing you do all week. In part six we name the three realistic design patterns a high-schooler can actually land — a cutoff, a dated policy, and a timestamped event — plus a fourth riskier one, and the honest descriptive out when you have none of them.
+:::

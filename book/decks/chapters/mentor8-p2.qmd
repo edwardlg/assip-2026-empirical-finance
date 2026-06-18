@@ -1,0 +1,54 @@
+---
+title: "Three Families and the One That Kills"
+date: "2026-08-10"
+---
+
+# Three Families and the One That Kills {.title}
+
+::: notes
+Welcome back to Mentor Session eight, part two of six. In part one we learned the referee is hunting for the more boring explanation, and the best move is to find it first. Now we sort the hard questions into three families ranked by danger, warm up with three Socratic questions you should write before the room, and meet the deadliest family — identification. This is the row at the top of your Chapter seven-point-five threats table, and it is the question I will ask first.
+:::
+
+## Three Families, in Order of Danger
+
+- **Identification** — is the comparison *fair*? (deadliest)
+- **Robustness** — is the number *fragile*?
+- **Alternative explanations** — does a *different mechanism* fit?
+- Identification is fatal; the other two are usually survivable
+
+::: notes
+After refereeing and presenting for two decades, I can tell you the hard questions in empirical finance collapse into three families, and they come in this order of danger. The first and deadliest is identification: is your comparison fair? The second is robustness: is your number fragile to the arbitrary choices you made? The third is alternative explanations: could a different mechanism produce the same data? Internalize the ranking, because it tells you where to spend your scarce composure. Identification is fatal — if the comparison was never clean, no estimation rescues it. Robustness and alternatives are usually survivable: they move a number or steal an interpretation, but they do not erase the comparison.
+:::
+
+## Three Warm-Ups to Write Before the Room
+
+- Decode *"effect driven by pre-existing differences"* — which family?
+- Survivable vs fatal in six seconds — attack a *number* or the *comparison*?
+- The honest *"I don't know"* — the bluff vs the located limit
+- Bring a written sentence or two for each
+
+::: notes
+Three warm-ups, and you should arrive with a written sentence or two for each. First: a referee writes "I worry the effect is driven by pre-existing differences between your treated and control groups." Translate that into plain English, name which family it belongs to, and say what single piece of evidence on a slide would best answer it. Second: tell survivable from fatal in six seconds. "Did you cluster your standard errors at the right level" you can answer with "we checked, it doesn't move." But "couldn't the same event you call your treatment also have changed who is in your sample" can sink the paper. The general test: does the question attack a number, or the comparison? Third: the honest "I don't know" — write the bluff and the located limit, and notice why the room trusts your other answers more after you admit one.
+:::
+
+## Identification Is the One That Kills
+
+- *"Isn't this just picking up [some confounder]?"* — the everyday version
+- A confounded comparison was never clean — no estimation rescues it
+- A precise standard error on a confounded coefficient = a precise estimate of nothing
+- This is why identification sits above robustness, always
+
+::: notes
+Identification, in everyday clothes, is the question "isn't this just picking up some confounder?" It is the question that kills papers, because if the comparison was never clean, no amount of careful estimation rescues it. Let me say the line I want you to remember: a precise standard error on a confounded coefficient is a precise estimate of nothing. You can compute the tightest, most beautifully clustered standard error in the world, and if the underlying comparison was contaminated, all that precision is measuring the wrong thing exactly. That is why identification always sits above robustness in the ranking. Robustness asks whether your number wobbles. Identification asks whether your number was ever meaningful in the first place.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The hard questions fall into three families, ranked by danger: **identification** (is the comparison fair?), **robustness** (is the number fragile?), and **alternative explanations** (does another mechanism fit?). Identification is fatal because no estimation rescues a confounded comparison — robustness and alternatives only move a number.
+:::
+
+::: notes
+To summarize part two: questions sort into identification, robustness, and alternative explanations, ranked by how much damage they do. Identification is fatal because it attacks the comparison itself — a precise standard error on a confounded coefficient estimates nothing. The other two are survivable. In part three we learn the four-beat shape of a strong identification answer, meet the selection version that lands on everyone who did not randomize, and turn to the first of the survivable families, robustness.
+:::

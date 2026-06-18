@@ -1,0 +1,57 @@
+---
+title: "The Donor Pool and the Assumptions That Protect It"
+date: "2026-07-13"
+---
+
+# The Donor Pool and the Assumptions That Protect It {.title}
+
+::: notes
+Welcome back to Chapter four-point-four, part five of ten. In part four we saw convexity forbid extrapolation and yield sparse, nameable weights. But the weighted average is only as good as the units it draws from. Now we choose the donor pool and state the assumptions that protect it.
+:::
+
+## Three Rules for the Pool
+
+- Choosing it is a research-design decision — defend it, don't reflex it
+- **Untreated throughout:** a donor that adopts its own law later is poison
+- Drop it, or truncate the sample before its adoption
+- **Same forces, not the treated unit in disguise:** exclude idiosyncratic shocks
+- A once-in-a-century hurricane in one donor injects a fake spike
+
+::: notes
+The synthetic control is only as good as the units you let it draw from. Choosing the donor pool — which untreated units are eligible to receive weight — is a research-design decision as consequential as choosing an instrument in Chapter three-point-four, and it must be defended. Three rules govern the pool. First, donors must be untreated and stay untreated through the whole sample. If a donor state passed its own disclosure law in twenty-twenty, then after twenty-twenty its premium path is contaminated by its own treatment, and any weight on it corrupts your counterfactual. Drop it, or truncate the sample before its adoption. Second, donors must be plausibly driven by the same forces as the treated unit — the same national reinsurance market, the same climate trends — but must not be the treated unit in disguise. Exclude units hit by idiosyncratic shocks the treated unit did not face. If one donor had a once-in-a-century hurricane in twenty-nineteen, its premium spiked for reasons unrelated to anything the treated state experienced, and letting it in injects that hurricane into your what-would-have-happened line. Curate the pool: similar enough to be relevant, clean enough to be valid.
+:::
+
+## No-Interference (SUTVA)
+
+- Synthetic counterfactual = donors' **untreated** potential outcomes
+- Legitimate only if treatment of unit 1 did not **spill over** onto donors
+- Mandate nudges premiums up *everywhere* → donors' path is bent
+- The gap shrinks → you **understate** the true effect
+- Priya: one state is too small to move the national reinsurance market
+
+::: notes
+Now two more assumptions, both subtle. First, no-interference — the stable-unit SUTVA assumption from Chapter three-point-one. The synthetic counterfactual is the donors' untreated potential outcomes. That is only legitimate if the treatment of unit one did not spill over onto the donors. Suppose the treated state's disclosure mandate spooked the national reinsurance market and nudged premiums up everywhere, including in the donor states. Then the donors are no longer showing you their no-treatment path; they show a path partly bent by the treated state's policy. Your synthetic control inherits that bend, the gap between real and synthetic shrinks, and you understate the true effect. Priya defends this by arguing one state's disclosure rule is too small to move the national reinsurance market, and by checking that geographically distant donors — which should be most insulated — behave like the nearby ones.
+:::
+
+## No-Anticipation
+
+- Pre-treatment fit assumes pre-period outcomes are genuinely **untreated**
+- Insurers repricing in 2017 → that pre-year is already partly treated
+- Synthetic control matched to a contaminated target → biased **toward zero**
+- Fix: set $T_0$ at the moment expectations could first move (announcement)
+- Clean study: flat gap up to $T_0$, a break only after
+
+::: notes
+Second, no-anticipation, shared with diff-in-diff. The pre-treatment fit assumes the treated unit's pre-period outcomes are genuinely untreated. If insurers, anticipating the twenty-eighteen mandate, started repricing in twenty-seventeen — the last pre year — then that year's premium is already partly treated, the synthetic control is matched to a contaminated target, and the estimated effect is biased toward zero, because some of the effect has leaked backward into the matching window. The fix is the same as in event studies: define T-naught at the moment expectations could first have moved — often the announcement date, not the effective date — and inspect the last pre-periods for a suspicious early divergence. A clean synthetic-control study, like a clean event study, shows a flat gap right up to T-naught and a break only after.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Curate the pool: **untreated** throughout, comparable, free of idiosyncratic shocks. Defend **no-interference** (the policy must not bend donor paths) and **no-anticipation** (the pre-period must be genuinely untreated). Both, if violated, bias the effect toward zero.
+:::
+
+::: notes
+To summarize part five: the donor pool must be untreated throughout, comparable to the treated unit, and free of idiosyncratic shocks. And you must defend two assumptions — no-interference, that the policy does not spill onto donors, and no-anticipation, that the pre-period is genuinely untreated. Both, when violated, tend to bias the estimated effect toward zero. In part six we ask what failure actually looks like, by reading the pre-period fit — the method's most honest diagnostic.
+:::

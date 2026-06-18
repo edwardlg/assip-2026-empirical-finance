@@ -1,0 +1,49 @@
+---
+title: "One Sandwich, Many Standard Errors"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# One Sandwich, Many Standard Errors {.title}
+
+::: notes
+Welcome back to Chapter eight-point-two, part two of ten. In part one we framed the adversarial turn: trying to kill your own result, starting with the cheapest attack — a standard error that is too small and fakes significance. Now we make that concrete. One estimator, the sandwich, unifies every flavor of standard error, and the only thing that changes between flavors is what you assume about how the errors are correlated. The robustness exercise is to re-run Maya's headline under each plausible flavor and watch the standard error move.
+:::
+
+## One Sandwich, Many Flavors of $\Omega$
+
+- Sandwich: $\widehat{\operatorname{Var}}(\hat{\boldsymbol\beta}) = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\hat{\boldsymbol\Omega}\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}$
+- Only $\boldsymbol\Omega$ — the error covariance — changes between flavors
+- **Classical**: $\boldsymbol\Omega=\sigma^2\mathbf{I}$, equal and uncorrelated
+- **Robust** (HC1/2/3): diagonal varies; **Cluster**: correlated blocks
+- **HAC** (Newey–West): correlation fades over a bandwidth
+
+::: notes
+The sandwich estimator from Chapter two-point-four is the unifying object. The variance of beta-hat equals X-prime-X inverse, times X-prime omega-hat X, times X-prime-X inverse again — and the only thing that changes between standard-error flavors is what you assume about the error variance-covariance matrix, omega. Classical standard errors assume omega is sigma-squared times the identity — errors all the same size and uncorrelated. Heteroskedasticity-robust standard errors, the H-C-one, two, and three family, let the diagonal of omega vary. Cluster-robust standard errors let omega have correlated blocks. And H-A-C, or Newey–West, lets errors correlate across time within a unit, with the correlation fading over a bandwidth. The robustness exercise is to re-run your headline estimate under each plausible flavor and watch the standard error move.
+:::
+
+## Maya's Clustering Table: The Whole Drama
+
+| Clustering | SE | $t$ | 95% CI |
+|---|---|---|---|
+| Classical | 0.18 | 7.8 | [−1.75, −1.05] |
+| County (unit) | 0.31 | 4.5 | [−2.01, −0.79] |
+| **State (primary)** | **0.55** | **2.5** | **[−2.48, −0.32]** |
+| State + Year | 0.61 | 2.3 | [−2.60, −0.20] |
+
+- Classical $t$ of 7.8 is a fantasy — treats every county-year as independent
+
+::: notes
+The deceptively simple question is: at what level are the errors correlated? The Petersen two-thousand-nine rule says cluster at the level of the correlation, and since treatment varies at the state level, you must cluster at the state level. The honest move is to report a small table. Read it top to bottom and you see the whole drama of Chapter two-point-four in one column. The classical standard error is a fantasy — it treats every county-year as independent information and reports a t of seven-point-eight that no one should believe. As you move to coarser, more honest clustering — county, then state, then two-way by state and year — the standard error roughly triples and the t falls from absurd to merely solid. Maya's result passes, because even under the most conservative defensible clustering, the two-way row, the interval still excludes zero. Had two-way crossed zero, the honest report would be: significant under state clustering but not two-way — and then the result is fragile, and you say so. Note also: clustering by the unit already absorbs arbitrary within-unit serial correlation, so a panel clustered by state is generally serial-correlation-robust without a separate H-A-C step.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The sandwich estimator hides one knob — the error covariance $\boldsymbol\Omega$ — and every SE flavor is a different guess about it. Re-cluster at every defensible level and watch the SE move; a result that survives the most conservative clustering passes. Next: the threat the table hides.
+:::
+
+::: notes
+To summarize part two: the sandwich estimator is the unifying object, and every flavor of standard error — classical, robust, cluster, H-A-C — is just a different assumption about the error covariance matrix omega. The robustness move is to re-cluster Maya's headline at every defensible level — county, state, two-way by state and year — and watch the standard error roughly triple while the t falls from an absurd seven-point-eight to a solid two-point-five. Because even the most conservative clustering still excludes zero, her result passes; a result that crosses zero somewhere is fragile, and you report it as fragile. But that clustering table silently hides a deeper threat. In part three we open it up: what happens when only a handful of clusters are actually treated, and the wild cluster bootstrap that saves you.
+:::

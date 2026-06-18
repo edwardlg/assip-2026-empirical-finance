@@ -1,0 +1,43 @@
+---
+title: "Instrumental Variables: The Escape Hatch"
+date: "2026-07-06"
+---
+
+# Instrumental Variables: The Escape Hatch {.title}
+
+::: notes
+Welcome to Week Three, Chapter three-point-four, part one of eight: instrumental variables. For three chapters we have lived inside one generous assumption — the conditional independence assumption, or C-I-A — that once you condition on enough observed covariates, treatment is as good as randomly assigned. Matching, propensity scores, balancing all squeeze that idea dry. And all of them die the same death the moment a confounder you did not measure walks in. This chapter is the escape hatch. Our guide is Maya, who wants to know whether financial-literacy training actually helps people manage debt.
+:::
+
+## When Conditioning Cannot Save You
+
+- C-I-A tools compare units identical on **measured** variables
+- They all fail with an **unobserved** confounder
+- Endogeneity: $\mathbb{E}[\varepsilon \mid D] \neq 0$
+- IV does not require observing the confounder
+
+::: notes
+Here are the stakes. The whole C-I-A family shares one fatal weakness: when a relevant, correlated variable sits inside the error term, the regressor D is endogenous — the expected value of the error given D is not zero — and no amount of conditioning on the observed covariates can save you, because the thing doing the damage is by definition not among them. Instrumental variables, or I-V, takes a different route. It needs a third variable, an instrument we call Z, that wiggles the treatment D around for reasons that have nothing to do with the confounder. Then it reads the causal effect off how the outcome Y responds to that exogenous wiggle. If you can find such a Z — and that "if" is the whole game — you can identify a causal effect even with an unobserved confounder.
+:::
+
+## The Result in One Plain Sentence
+
+- Find $Z$ that shoves $D$, with no other path to $Y$
+- Then the effect is a ratio you can measure:
+$$\frac{\text{how } Y \text{ moves with } Z}{\text{how } D \text{ moves with } Z}$$
+- $Z$ is a **lever**; the ratio is mechanical advantage
+
+::: notes
+Here is the whole idea in one sentence. If you can find a variable Z that shoves the treatment D around but has no other path to the outcome Y, then the causal effect of D on Y is the ratio of two things you can measure: how much Y moves with Z, divided by how much D moves with Z. Read it as leverage. You cannot move D yourself cleanly — every natural shove on D drags the confounder along. But Z can shove D cleanly, and the only way that shove can reach Y is through D. So whatever response you see in Y when Z changes must have traveled the one open road: Z to D to Y. Divide the Y-response by the D-response, the units of Z cancel, and you are left with the effect of D on Y. The instrument is a lever; the denominator says how hard it pushed the treatment; the numerator says how far the outcome moved; the ratio is the mechanical advantage.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+When an **unobserved** confounder makes treatment endogenous, conditioning cannot help — the culprit is not in your data. An **instrument** $Z$ imports clean variation: the effect is how $Y$ moves with $Z$ over how $D$ moves with $Z$. Next: exactly what is broken in Maya's regression.
+:::
+
+::: notes
+To summarize part one: when an unobserved confounder makes the treatment endogenous, conditioning cannot help, because the culprit is not in your data. An instrument Z imports clean variation from outside the system, and the causal effect is the ratio — how Y moves with Z, divided by how D moves with Z. The price of admission, though, is intellectual, not computational: the arithmetic is a two-line formula and one function call, but the argument that your instrument is valid is where careers are spent. In part two we get exact about what is broken in Maya's regression, and the three classic faces of endogeneity.
+:::

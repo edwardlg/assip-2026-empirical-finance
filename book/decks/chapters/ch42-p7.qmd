@@ -1,0 +1,67 @@
+---
+title: "Goodman-Bacon: The Weights and the Punchline"
+date: "2026-07-13"
+---
+
+# The Weights and the Punchline {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part seven of thirteen. In part six we laid out Goodman-Bacon's building blocks — clean Type-one and Type-two comparisons, and the forbidden Type-three. Now we add the weights: why the forbidden comparison is bad in precise terms, why middle-adopting groups dominate, the formal punchline that names the crisis, and the diagnostic you can actually run.
+:::
+
+## Why the Bad Comparison Is Bad
+
+- Type-3 change is contaminated by the **change in the earlier group's effect**
+- Constant effect $\Rightarrow$ change is zero $\Rightarrow$ harmless (homogeneity saves TWFE)
+- **Dynamic** effect $\Rightarrow$ still moving $\Rightarrow$ subtracted from the later group
+- Type-3 estimates: later ATT **minus** change in earlier effect
+
+::: notes
+In a Type-three comparison, the change you attribute to the later group's treatment is contaminated by the change in the earlier group's treatment effect over the same window. If the earlier group's effect is constant, that change is zero and the comparison is harmless — this is exactly why homogeneous effects save two-way fixed effects. But if the effect is dynamic, growing or shrinking as Priya's disclosure effect grows, the earlier group's effect is still moving, and that movement gets subtracted from the later group's estimated effect. Goodman-Bacon's identity makes this exact: the Type-three building block does not estimate the later group's effect on the treated; it estimates the later group's effect minus the change in the earlier group's effect over the window. The forbidden comparison literally has a treatment effect masquerading as a counterfactual trend.
+:::
+
+## The Weights Track Timing, Not Trust
+
+- Each 2x2 weighted by data share times **treatment variance**
+- A 0/1 variable's variance is largest when the switch is in the **middle**
+- So **middle-adopting** groups get the most weight — clean or forbidden
+- Weighting has nothing to do with how **trustworthy** a comparison is
+
+::: notes
+Now the weights. The pooled coefficient weights each two-by-two by roughly the product of the subsample's share of the data and the variance of treatment within that pair — and the variance of a zero-one variable is largest when the switch happens in the middle of the window. This has two consequences you must internalize. First, groups that adopt in the middle of the sample period get the most weight, regardless of whether their comparisons are clean or forbidden — the weighting has nothing to do with how trustworthy the comparison is, only with treatment timing. A forbidden comparison from a mid-sample adopter can therefore carry more weight than a clean comparison from an early or late adopter.
+:::
+
+## The Goodman-Bacon Punchline
+
+$$\hat\beta^{\text{TWFE}}=\sum_{\text{pairs}} w_{\text{pair}}\cdot\widehat{\text{DiD}}_{\text{pair}}$$
+
+- Weights $w$ sum to one — set entirely by **timing variance**
+- Forbidden (Type-3) comparisons can enter with **negative** weights
+- Even with positive weights, Type-3 estimates the **wrong thing**
+- With dynamic effects, contamination can **dominate** — even reverse the sign
+
+::: notes
+And here is the second consequence, the formal punchline that names the crisis. The coefficient equals the sum over pairs of a weight times that pair's difference-in-differences — an exact weighted average. The weights are determined entirely by treatment-timing variance and sum to one, but the forbidden Type-three comparisons enter with weights that can be negative, and even where weights are positive, the forbidden comparisons estimate the wrong thing. With dynamic effects, the contamination from Type-three comparisons can dominate, dragging beta-hat away from any sensible average of true effects — even reversing its sign, exactly as we saw in the two-state world.
+:::
+
+## You Can Run This Diagnostic
+
+- `bacondecomp` (Stata), Python `bacon` implementations
+- See how much of $\hat\beta$ comes from each type
+- The Goodman-Bacon **plot**: each 2x2 estimate vs. its weight, colored by type
+- Large weight on forbidden comparisons $\Rightarrow$ your $\hat\beta$ is built on sand
+
+::: notes
+This is the practical gift of the decomposition: you can run it — the bacon-decomp routines in Stata, the Python bacon implementations — and literally see how much of your coefficient comes from each type of comparison. If a large share of the weight sits on forbidden comparisons, your headline number is built on sand, and the Goodman-Bacon plot — each two-by-two estimate against its weight, colored by type — shows it at a glance. Priya should run this before she trusts any pooled coefficient.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The Type-3 comparison estimates the later ATT **minus** the earlier group's still-moving effect — pure contamination under dynamics. Weights track **timing variance**, not trustworthiness, and the forbidden ones can be **negative**. Run `bacondecomp` and read the plot. Next: de Chaisemartin–D'Haultfœuille prove the same disease in full generality — the negative-weights result.
+:::
+
+::: notes
+To summarize part seven: the forbidden Type-three comparison estimates the later group's effect minus the change in the earlier group's effect — harmless under constant effects, poisonous under dynamic ones, because a still-moving treatment effect masquerades as a counterfactual trend. The weights track only treatment-timing variance, so middle adopters dominate whether or not their comparisons are clean, and the forbidden comparisons can carry negative weight, dragging the coefficient toward the wrong sign. You can run the bacon-decomp diagnostic and see exactly how much weight sits on forbidden comparisons. In part eight we meet de Chaisemartin and D'Haultfœuille, who prove the same disease in a far more general setting and state it as the negative-weights problem that became the rallying cry of the literature.
+:::

@@ -1,0 +1,55 @@
+---
+title: "The Variance Algebra You Will Use"
+date: "2026-06-22"
+---
+
+# The Variance Algebra You Will Use {.title}
+
+::: notes
+Welcome back to Chapter one-point-two, part three of eight. In part two we defined variance and covariance and worked one number by hand. Now we collect the four algebra properties that carry almost everything in this book: scaling, bilinearity, symmetry, and the variance of a sum. Each follows from the definitions plus linearity of expectation. The last one — the variance of a sum — is the equation Maya's whole problem rides on.
+:::
+
+## Four Properties
+
+- **Scaling:** $\operatorname{Var}(aX) = a^2\operatorname{Var}(X)$; shift does nothing
+- **Bilinearity:** $\operatorname{Cov}(aX+bY, Z) = a\operatorname{Cov}(X,Z) + b\operatorname{Cov}(Y,Z)$
+- **Symmetry:** $\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)$
+- Covariance behaves like a **product** — soon, an inner product
+
+::: notes
+Four properties carry the weight. First, scaling: the variance of a X is a squared times the variance of X. The square is because variance is built from squared deviations, so doubling X quadruples its spread in squared units. A constant shift does nothing — the variance of X plus a constant equals the variance of X — because adding a constant moves X and its mean by the same amount, leaving every deviation unchanged. Second, bilinearity: covariance is linear in each argument. The covariance of a X plus b Y with Z is a times the covariance of X with Z plus b times the covariance of Y with Z, and likewise in the second slot. Constants slide out, sums split apart. Third, symmetry: the covariance of X and Y equals the covariance of Y and X — order does not matter. These three make covariance behave like a product, and soon, like an inner product.
+:::
+
+## Variance of a Sum
+
+$$\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X,Y)$$
+
+- The cross-term can be positive, negative, or zero
+- Move together $\Rightarrow$ risk compounds; oppositely $\Rightarrow$ risk cancels
+- Weighted: $\operatorname{Var}(aX+bY) = a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y) + 2ab\operatorname{Cov}(X,Y)$
+
+::: notes
+Combining those gives the fourth property, the one that deserves a slow look. The variance of X plus Y is the variance of X plus the variance of Y plus two times the covariance of X and Y. The variance of a sum is not just the sum of variances. There is a cross-term, two times the covariance, and it can be positive, negative, or zero. If the two variables tend to move together, risk compounds; if they move oppositely, risk cancels. Derive it once by expanding the squared deviation of the sum into a deviation in X squared, a deviation in Y squared, and a cross-product — those three pieces are exactly the two variances and twice the covariance. The general weighted version, which is what a portfolio needs, follows from scaling plus bilinearity: the variance of a X plus b Y is a squared times the variance of X, plus b squared times the variance of Y, plus two a b times the covariance.
+:::
+
+## When the Cross-Term Vanishes
+
+- $\operatorname{Cov}(X,Y)=0$: call them **uncorrelated**; variance adds cleanly
+- Independence implies uncorrelated; the reverse fails
+- Counterexample: $X$ symmetric, $Y = X^2$, yet $\operatorname{Cov}(X,X^2)=0$
+- Covariance senses only **linear** co-movement — blind to curves
+
+::: notes
+When does the cross-term vanish? If the covariance is zero we call X and Y uncorrelated, and only then does variance add cleanly: the variance of the sum is the sum of the variances. Independence implies uncorrelatedness, because independent variables have the expected value of the product equal to the product of the expected values, which kills the covariance. But the reverse is the classic failure mode: uncorrelated does not imply independent. Take X symmetric about zero and let Y equal X squared. They are tightly linked — Y is a deterministic function of X — yet the covariance of X with X squared is zero when the distribution is symmetric, because covariance only senses linear co-movement. Covariance is blind to curved relationships. Hold onto that; it is exactly the limitation that linear regression inherits in Week Two.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Four rules carry the book: **scaling**, **bilinearity**, **symmetry**, and the **variance of a sum** with its cross-term $2\operatorname{Cov}(X,Y)$. That cross-term is where diversification lives. Uncorrelated means the cross-term vanishes — but it does not mean independent. Next: Maya splits her dollar across two assets.
+:::
+
+::: notes
+To summarize part three: four rules carry the book — scaling, bilinearity, symmetry, and the variance of a sum. That last rule carries a cross-term, two times the covariance, and it is where diversification will live. When the covariance is zero the variables are uncorrelated and variance adds cleanly, but uncorrelated does not mean independent — covariance is blind to curved relationships. In part four we put the weighted variance formula to work as Maya splits her dollar across two assets and watches risk bend.
+:::

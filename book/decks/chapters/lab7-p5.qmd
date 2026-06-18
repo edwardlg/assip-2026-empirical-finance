@@ -1,0 +1,45 @@
+---
+title: "The Commit Loop and the Instructor View"
+date: "2026-08-03"
+---
+
+# The Commit Loop and the Instructor View {.title}
+
+::: notes
+Welcome back to Week Seven, the Lab, part five of eight. In part four you created the private repo and cloned it. Now we walk the daily rhythm of the capstone — stage, commit, push — and look at exactly what the instructor sees on the other side. This is also where the lab's central discipline first bites: never push licensed data or secrets, because history is forever.
+:::
+
+## The Commit and Push Loop
+
+- Make changes, then stage what you want to record
+- Commit with a message that says what changed
+- Push to send commits up to GitHub
+- A commit is a snapshot with a message and timestamp
+- Commit often, in meaningful units — "Add FRED card," not "stuff"
+
+::: notes
+This is the rhythm of the whole capstone. You make changes — edit the README, add a data card, write a pull script. You stage what you want to record, you commit it with a message that says what changed, and you push it up to GitHub so it is backed up and visible. A commit is a snapshot with a message and a timestamp; a push uploads your local commits to the remote. Commit often, and in meaningful units — Add FRED data card, not stuff — because your commit history is a narrative of how the project was built, and it is the very thing that date-stamps your pre-analysis plan later. Prefer staging specific files by name over a blind add-everything, because the second is exactly how people accidentally stage a two-gigabyte CRSP file or a secrets file full of keys.
+:::
+
+## What the Instructor Sees
+
+- Prof. Gao does not see your laptop — only your pushed commits
+- He reads your full commit history and any file at any commit
+- He can leave review comments and clone to run it himself
+- He sees *when* you filed your plan versus your first regression
+- Once pushed, a file is in history **forever**
+
+::: notes
+On the other side, Prof. Gao does not see your laptop — he sees your pushed commits on GitHub. Once you have added him and your sub-leader as collaborators, they browse your repo at its URL: a single page listing every file, every commit, every tag, with the latest commit time visible at a glance. When you push, the instructor can read your commit history — so they see when you filed your plan relative to your first regression, the whole point of the next step — open any file at any commit, leave review comments, and clone your repo to run it. This is why the repo is the deliverable, literally: no separate upload, no email, no Canvas dropbox. What you push is what is graded. The corollary is the discipline this lab is about: never push licensed data or secrets, because once a file is in a pushed commit it is in the history forever, even if you delete it later.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The capstone rhythm is **stage, commit, push** — often, in meaningful units, staging files by name. The instructor grades your *pushed commits*, including *when* you filed your plan. And once pushed, a secret or licensed file is in history **forever**. Next: pinning the environment.
+:::
+
+::: notes
+To summarize part five: the daily rhythm is stage, commit, push — committing often, in meaningful units, and staging files by name rather than blindly adding everything. The instructor sees only your pushed commits, but that is the whole record: history, files, tags, and the timing of your plan, all graded. And the corollary discipline is permanent — once a secret or a licensed file lands in a pushed commit, it lives in history forever. In part six we pin the environment so your numbers rebuild bit-for-bit on a fresh machine.
+:::

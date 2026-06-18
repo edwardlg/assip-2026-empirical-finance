@@ -1,0 +1,44 @@
+---
+title: "Omitted Variable Bias: The Intuition"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# Omitted Variable Bias: The Intuition {.title}
+
+::: notes
+Welcome back to Chapter two-point-five, part two of nine. In part one we drew the line between bias and wobble, and saw that all three threats are the same failure of the zero-conditional-mean assumption. Now we take the first and most important threat: omitted variable bias. The result, in one sentence — when you leave out a variable that belongs in the model and is correlated with a variable you kept, the coefficient on the variable you kept absorbs part of the omitted variable's effect. In this part we build the intuition and watch it forge a fake finding on Maya's own numbers.
+:::
+
+## The Intuition: A Smear of the Omitted Effect
+
+- Maya regresses approval on demographic $D$, but omits **creditworthiness** $C$
+- $C$ affects approval, and $C$ is unevenly distributed across groups
+- The regression cannot tell $D$ itself from $D$'s correlation with $C$
+- Her $D$ coefficient = discrimination effect **plus a smear of** $C$'s effect
+
+::: notes
+Start with the intuition before the algebra. Maya regresses approval on the demographic indicator D, but leaves out creditworthiness C — a composite of credit score, debt-to-income ratio, and payment history. Creditworthiness obviously affects approval; lenders approve creditworthy applicants. And here is the load-bearing fact: for reasons rooted in decades of unequal access to wealth, credit, and stable employment, creditworthiness is not evenly distributed across demographic groups in her sample. So when Maya's regression sees that group D is approved less often, it cannot tell whether that is because of D itself — discrimination — or because D is correlated with lower measured creditworthiness, which the lender is legally allowed to price on. Her coefficient on D blends the two. It is the discrimination effect plus a smear of the creditworthiness effect, channeled through the correlation between D and C. That single sentence is the entire content of omitted variable bias.
+:::
+
+## A Number That Lies: 15 Points From Nothing
+
+- Suppose the **true** discrimination effect is exactly zero
+- $C$ raises approval by $0.30$ per SD; group $D{=}1$ is $0.50$ SD lower in $C$
+- Short slope $\to \beta_1 + \beta_2\delta_1 = 0 + (0.30)(-0.50) = -0.15$
+- Maya reads a $15$-point penalty — in a world with **zero** discrimination
+
+::: notes
+Let me fix ideas with a number before the algebra. Imagine the true effect of being in group D-equals-one on approval is exactly zero — no discrimination at all. But suppose creditworthiness raises the approval probability by zero-point-three-zero per standard deviation of credit; call that beta-two equals zero-point-three. And suppose group D-equals-one has, on average, creditworthiness half a standard deviation lower than group D-equals-zero, so the slope of credit on D is delta-one equals negative zero-point-five. Then the short regression's coefficient on D converges to beta-one plus beta-two times delta-one, which is zero plus zero-point-three times negative zero-point-five — that is negative zero-point-one-five. Maya would read a fifteen-percentage-point approval penalty against group D-equals-one, a damning-looking, highly significant number, in a world with literally zero discrimination. The entire effect is borrowed from creditworthiness through the correlation. That is omitted variable bias in a single line, and it is why we now derive the formula carefully.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Omitting a **relevant, correlated** variable makes your kept coefficient absorb a smear of the omitted variable's effect. On Maya's numbers, that conjures a $15$-point penalty out of a world with **zero** true discrimination.
+:::
+
+::: notes
+To summarize part two: leaving out a variable that both matters for the outcome and is correlated with your regressor makes the kept coefficient absorb a smear of the omitted variable's effect, channeled through their correlation. We saw this manufacture a fifteen-percentage-point fair-lending penalty out of a world with exactly zero discrimination — the entire effect borrowed from creditworthiness. In part three we make that intuition exact: we derive the omitted variable bias formula and discover it is a clean product of two slopes.
+:::

@@ -1,0 +1,55 @@
+---
+title: "Relevance and Exclusion"
+date: "2026-07-06"
+---
+
+# Relevance and Exclusion {.title}
+
+::: notes
+Welcome back to Chapter three-point-four, part three of eight. In part two we saw Maya's treatment was endogenous, with motivation buried in the error. Now we meet the two conditions that earn a variable the name "instrument": relevance and exclusion. They are not symmetric in how you defend them, and learning that asymmetry is half of becoming a competent empiricist.
+:::
+
+## Condition 1 — Relevance
+
+- The instrument must actually move the treatment:
+$$\operatorname{Cov}(Z, D) \neq 0$$
+- No connection $\Rightarrow$ denominator zero $\Rightarrow$ undefined
+- **Testable** — both $Z$ and $D$ are observed
+- Check the **first stage**: regress $D$ on $Z$
+
+::: notes
+Condition one is relevance: the instrument must actually move the treatment, so the covariance of Z and D is not zero. The instrument has to be connected to D, or there is no lever at all — the denominator of our magic ratio is zero and the whole thing is undefined. Here is the good news: relevance is a statement about two variables you both observe, Z and D, so it is testable. You estimate the first stage — the regression of D on Z — and look at whether the coefficient is real. Later we spend serious time on how strong that connection must be, because "nonzero" turns out to be a dangerously low bar. But hold the key fact: relevance is something the data can confirm for you.
+:::
+
+## Condition 2 — Exclusion
+
+- $Z$ affects $Y$ **only through** $D$; unrelated to confounder
+- $\operatorname{Cov}(Z, \varepsilon) = 0$
+- Picture: $Z \to D \to Y$, no arrow $Z \to Y$ around $D$
+- **Fundamentally untestable** — $\varepsilon$ is unobserved
+
+::: notes
+Condition two is exclusion, sometimes called exogeneity: the instrument must affect the outcome only through the treatment, and must be unrelated to the confounder. Formally, Z is uncorrelated with the structural error — their covariance is zero. Pictorially, the only arrow leaving Z goes into D: Z to D to Y, with no arrow from Z to Y that bypasses D, and no link between Z and the error. This bundles two ideas worth separating. First, as-good-as-random assignment of Z: the instrument itself must not be tangled with the confounder. Second, the exclusion restriction proper: even granting Z is random, it must not have its own direct channel to Y. And here is the brutal part — exclusion is fundamentally untestable. You cannot check that the covariance of Z and the error is zero, because the error is unobserved; that is the very reason you are doing I-V. There is no test, no p-value. Exclusion must be argued from institutional knowledge and economic logic.
+:::
+
+## The Asymmetry to Memorize
+
+- **Relevance is testable. Exclusion is arguable.**
+- Weak instrument: a problem you can measure and partly fix
+- Invalid instrument: a logical flaw data never reveals
+- It poisons the estimate with no fingerprint
+
+::: notes
+Hold this asymmetry firmly, because it organizes everything that follows. Relevance is testable; exclusion is arguable. A weak instrument is a statistical problem you can measure and partly fix. An invalid instrument — one that violates exclusion — is a logical problem that no amount of data will ever reveal, and it poisons your estimate without leaving a fingerprint. This is why I-V papers spend pages, not paragraphs, justifying their instrument: the credibility of the entire result rests on a claim the data can never confirm. When you read any I-V design, train yourself to ask two separate questions every single time — what is the relevance evidence, and what is the exclusion argument?
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A valid instrument needs **relevance** ($\operatorname{Cov}(Z,D)\neq 0$, testable via the first stage) and **exclusion** ($Z$ reaches $Y$ only through $D$, untestable). The asymmetry is the whole craft: a weak instrument you can measure; an invalid one you cannot. Next: Maya's actual instrument, the random mailer.
+:::
+
+::: notes
+To summarize part three: a valid instrument satisfies two conditions. Relevance — the covariance of Z and D is nonzero — is testable through the first stage. Exclusion — Z reaches Y only through D and is unrelated to the confounder — is untestable and must be argued. The asymmetry is the whole craft: a weak instrument is something you can measure and partly fix, while an invalid instrument is a logical flaw the data will never reveal. In part four we apply both conditions to Maya's actual instrument — a random promotional mailer — and see how randomization buys the hardest half of exclusion for free.
+:::

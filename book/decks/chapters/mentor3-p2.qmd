@@ -1,0 +1,54 @@
+---
+title: "Pillar One: As-Good-As-Random Assignment"
+date: "2026-07-06"
+---
+
+# Pillar One: As-Good-As-Random Assignment {.title}
+
+::: notes
+Welcome back to Mentor Session three, part two of five. In part one we framed the natural experiment as a real-world force that assigns treatment as-if at random, defended across three pillars. Now we take the first pillar head on: as-good-as-random assignment. This is where the design borrows its whole logic from Chapter three-point-one — the master decomposition that splits a naive comparison into the causal effect plus a selection-bias term. Randomization is special because it zeroes that term. A natural experiment has to zero it too, but without a coin, so let us see exactly how it makes that bet, and how you check yourself afterward.
+:::
+
+## The Villain: Selection Bias
+
+- Naive difference in means $=$ causal effect $+$ **selection bias**
+- $\mathbb{E}[Y_i(0)\mid D_i{=}1]-\mathbb{E}[Y_i(0)\mid D_i{=}0]$
+- How different the groups already were **before** treatment
+- A coin zeroes it — the coin doesn't know who you are
+
+::: notes
+Recall the master decomposition from Chapter three-point-one. The naive difference in means — treated average minus control average — equals the true causal effect plus a selection-bias term. That bias term is the expected value of the untreated potential outcome given you were treated, minus the expected value of the untreated potential outcome given you were not treated. In plain words, it measures how different the two groups already were before treatment ever touched anyone. That difference is the villain in every observational study. Randomization defeats it cleanly: the coin does not know who you are, so it cannot sort sicker firms into one group and healthier firms into the other. In expectation, treated and control start out identical, and the bias term collapses to zero.
+:::
+
+## The Bet a Natural Experiment Makes
+
+- No coin — but the **same** bet on selection bias
+- Claim: the assigning force was **blind** to potential outcomes
+- Pick every other firm off a list sorted by an irrelevant key
+- Treated and control become, in expectation, the **same kind** of firm
+
+::: notes
+A natural experiment makes the same bet without a coin. It claims that whatever force assigned the treatment did so independently of the units' potential outcomes — that the assigning mechanism was blind to the very things that would otherwise confound the comparison. Here is the cleanest example. Suppose a regulator picks treated firms by drawing every other name off a list that was sorted by some irrelevant key — an alphabetical rank, a CUSIP number, something with no connection to firm quality. Then treated and control firms are, in expectation, the same kind of firm. That is exactly the property a coin would have bought you. The assigning rule did not look at which firms were about to crash or which had hidden bad news; it just walked down a list. Your first job is to argue, with institutional facts, that the assigning force really was blind in this way.
+:::
+
+## Check Yourself: Balance
+
+- **Test** the claim with a balance check on observables
+- Treated and control should look alike **before** treatment
+- If the lottery is real, they should — so verify it
+- Necessary, **not** sufficient — unobservables remain an act of faith
+
+::: notes
+You do not just assert as-if-random; you check it. The check is called balance. If the assignment really were a lottery, then treated and control units should look alike on observables measured before treatment — same size distribution, same leverage, same industry mix, same past returns. So you put those pre-treatment characteristics side by side and ask whether the two groups are statistically indistinguishable. If they are, your as-if-random story gains real credibility. But hold onto an important caution: balance is necessary, not sufficient. It checks only the observables — the things you can measure. The unobservables — governance quality, a manager's appetite for hiding losses, the firm's true opacity — could still differ between the groups, and no balance table can see them. Passing balance is reassuring; it is not proof. The unobservables remain an act of faith in the design itself.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The villain is **selection bias** — how different the groups already were. A coin zeroes it; a natural experiment claims the assigning force was **blind** to potential outcomes. **Balance** checks observables and is necessary, not sufficient. Next: the harder pillar — exclusion.
+:::
+
+::: notes
+To summarize part two: the villain in any comparison is selection bias, the gap between the groups before treatment, captured by that difference of untreated potential outcomes from Chapter three-point-one. A coin zeroes it because the coin is blind; a natural experiment claims the assigning force — the regulator drawing every other name off an irrelevant list — was blind in the same way. You test that claim with a balance check on pre-treatment observables, but balance is necessary, not sufficient, because it cannot see the unobservables. In part three we confront the harder of the two untestable claims, the one that haunted instrumental variables in Chapter three-point-four: the exclusion restriction.
+:::

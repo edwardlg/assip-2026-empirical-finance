@@ -1,0 +1,70 @@
+---
+title: "The Sampling Distribution and the CLT"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# The Sampling Distribution and the CLT {.title}
+
+::: notes
+Welcome back to Lab one, part three of seven. In part two you drew a single p-hat and watched it tighten on the truth. One p-hat is just a dot. Here you repeat the draw thousands of times to see its whole distribution — and verify, rather than assume, two facts: that the spread falls like one over the square root of N, and that the shape goes normal.
+:::
+
+## From One Dot to a Distribution
+
+- One $\hat p$ is a dot; repeat thousands of times
+- Vectorize: `flips = rng.binomial(1, p, size=(reps, N))`
+- Take the mean along each row: `flips.mean(axis=1)`
+- Histogram the results for several sample sizes $N$
+- You rebuild the sampling distribution by brute force
+
+::: notes
+To see the distribution, repeat the draw thousands of times and histogram the results for several sample sizes. The clean way is to vectorize: draw r-n-g dot binomial with a two-dimensional size of reps by N, then take the mean along each row with mean of axis one. That gives an array of reps independent p-hats, each from N flips. You are reconstructing, by brute force, the sampling distribution one chapter defined and the next gave a shape to. Try an off-center value like p equal to zero point three as well as one-half; the bell still comes, it just arrives a little slower.
+:::
+
+## Fact One: It Tightens Like One Over Root N
+
+- Theory: $\operatorname{Var}(\hat p) = p(1-p)/N$
+- So the spread is $\sqrt{p(1-p)/N}$ — the **standard error**
+- Quadruple $N$ and the spread should **halve**
+- Compare empirical SD against the theory column
+- They should track each other closely
+
+::: notes
+The first fact: the distribution tightens like one over the square root of N. Theory says the variance of p-hat equals p times one minus p, divided by N. So the standard deviation across samples is the square root of that — the standard error of a proportion. Quadruple N and the spread should halve. In code, compute the empirical standard deviation of your twenty thousand simulated p-hats and print it next to the theoretical standard error. Going from N equal to ten, to forty, to one hundred sixty — each step a factor of four — should roughly halve the spread. The empirical and theoretical columns should track closely. Watching them agree is the whole reason standard-error formulas earn your trust.
+:::
+
+## Fact Two: It Goes Normal
+
+- A proportion is just a mean of $0/1$ draws
+- So the CLT applies directly
+- Standardize: subtract $p$, divide by $\sqrt{p(1-p)/N}$
+- Overlay the standard normal $N(0,1)$
+- At $N=160$ the standardized histogram lies under the bell
+
+::: notes
+The second fact: the distribution goes normal. The Central Limit Theorem says the standardized p-hat converges to the standard normal. A proportion is just a mean of zero-one draws, so the theorem applies directly. To see it cleanly, standardize each p-hat: subtract the true p, then divide by the theoretical standard error. Histogram those values and overlay the standard normal density — the bell with mean zero and standard deviation one. At N equal to one hundred sixty, the standardized histogram should lie almost exactly under the normal curve. The distribution you built by hand has become the bell the theorem promised.
+:::
+
+## The Subtlety: Lumpy and Skewed at Small N
+
+- At $N=10$, $\hat p$ takes only eleven discrete values
+- Near $p=0$ or $1$ it is also **skewed**
+- The CLT still wins, but arrives *slower* near an edge
+- Try $p=0.05$, $N=30$: a clear non-normal pile-up
+- Practitioner check: are $Np$ and $N(1-p)$ both about $10$?
+
+::: notes
+One subtlety is worth chasing. At small N the histogram of p-hat is visibly lumpy. With N equal to ten flips, p-hat can only be zero, zero point one, and so on up to one — eleven discrete spikes. And if p is near zero or one it is also skewed, because p-hat cannot go below zero or above one, so one tail gets squashed against the boundary. The theorem still wins as N grows, but it arrives slower the closer p sits to an edge. Try p equal to zero point zero five with N equal to thirty and you will see a clearly non-normal pile-up. The N at least thirty folk rule quietly assumed a p not too near the boundary. A common check is whether N times p and N times one minus p are both at least about ten.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+You computed the standard error two ways: empirically (the SD of 20,000 simulated $\hat p$'s) and theoretically ($\sqrt{p(1-p)/N}$). They are the same quantity — but with one real sample you only get the formula. That is why standard-error *formulas* exist. Near an edge, the bell arrives late. Next: write a test from scratch.
+:::
+
+::: notes
+To summarize part three: you computed the standard error two ways — empirically, as the standard deviation of twenty thousand simulated p-hats, and theoretically, as the square root of p times one minus p over N. They are the same quantity, but with one real sample you would have only the formula, never the empirical version. That is the whole reason standard-error formulas exist. And remember the subtlety: near a boundary the histogram is lumpy and skewed, and the bell arrives late. In part four we start using the distribution — we build a one-proportion test from scratch.
+:::

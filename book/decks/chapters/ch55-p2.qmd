@@ -1,0 +1,57 @@
+---
+title: "The Placebo-Law Experiment"
+date: "2026-07-20"
+---
+
+# The Placebo-Law Experiment {.title}
+
+::: notes
+Welcome back to Chapter five-point-five, part two of seven. In part one we framed BDM as asking one size question: is a five-percent test really firing at five percent? Now we meet their answer, the identification strategy at the heart of the paper. It is the placebo-law experiment, and it is so clean you will be able to run it yourself by the end of the week.
+:::
+
+## How Do You Test a Standard Error?
+
+- A standard error is a claim about a sampling distribution
+- You cannot test it by staring at one number
+- BDM's move: rerun history under a null they control
+- Count how often the test misbehaves
+- Take a real panel, with its real serial correlation
+
+::: notes
+How do you test whether a standard error is honest? You cannot just stare at one. A standard error is a claim about a sampling distribution, about how much beta hat would bounce around if you could rerun history. BDM's move is to rerun history on purpose, under a null they control, and count how often the test misbehaves. The recipe is almost mischievous in its simplicity. Take a real panel, actual state-year data on some outcome like women's wages, with all its real serial correlation baked in. You do not strip anything out. You keep the genuine time-series structure of the economy exactly as it is, because that persistence is the whole point of the test.
+:::
+
+## Invent a Fake Law
+
+- Pick a random subset of states, declare them "treated"
+- Treatment starts in some random year
+- No real law: nothing actually happened
+- The *true* effect is, by construction, exactly zero
+- Run standard DiD; did t cross one point nine six?
+
+::: notes
+Now invent a fake law. Pick a random subset of states and declare they were treated starting in some random year. There was no real law; nothing actually happened to those states. So the true effect of this placebo intervention is, by construction, exactly zero. Then run the standard difference-in-differences regression with the conventional standard error, compute the t-statistic on the placebo treatment, and ask the Week One question: did it cross one point nine six? Now repeat. Draw a new random set of placebo states and a new random year, run it again, check significance again. Do this hundreds or thousands of times. Each run is a draw from a world where the null, no effect, is known to be true, because you made it true.
+:::
+
+## Reading Off the True Size
+
+- Fraction of "significant" runs estimates the *true size*
+- Same logic as the Week One coin-flip lab
+- Honest standard errors give about five percent rejections
+- Far more than five percent: caught red-handed
+- Worry about serial correlation becomes one measured number
+
+::: notes
+So the fraction of runs that come back significant is a direct, brute-force estimate of the true size of the test. This is exactly the simulation logic from the Week One coin-flip lab, where you built a universe with a genuinely fair coin and counted how often your test wrongly called it biased. BDM build a universe with a genuinely null law and count how often difference-in-differences wrongly calls it real. Here is the punchline. If the standard errors were honest, the placebo rejection rate would come back at about five percent, because that is what five percent means. Reject five percent of the time on data you know is null, and the machinery works. Reject far more than five percent, and you have caught the standard error red-handed: it is too small, the t-stats are inflated, and the test is crying wolf. The placebo design converts an abstract worry into a single number, the empirical size of the test.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **placebo-law experiment**: assign fake laws to random states in random years, where the true effect is zero by construction, then count how often the conventional test rejects. That fraction *is* the true size. Same God's-eye simulation logic as Week One's coin lab and Week Four's placebo inference. Next: the data that makes this the perfect crime scene.
+:::
+
+::: notes
+To summarize part two: the placebo-law experiment assigns fake laws to random states in random years, where the true effect is zero by construction. Run the conventional test thousands of times and count how often it rejects, and that fraction is the true size, measured directly. This is the same God's-eye simulation logic as Week One's coin lab and Week Four's placebo inference, industrialized into a referendum on a whole method. In part three we look at the data BDM chose, and see why a long, persistent panel is the perfect crime scene for this experiment.
+:::

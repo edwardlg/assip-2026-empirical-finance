@@ -1,0 +1,46 @@
+---
+title: "The Fix: Local Linear Regression"
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+# The Fix: Local Linear Regression {.title}
+
+::: notes
+Welcome back to Chapter four-point-three, part seven of thirteen. In part six we saw why a global high-order polynomial corrupts the boundary estimate. Now the fix: throw away distant data and fit a simple straight line in a narrow window on each side, weighted by a triangular kernel. We lay out the recipe and the principle — stay local, stay low-order.
+:::
+
+## The Fix: Local Linear Regression
+
+- Throw away data far from the cutoff
+- Keep observations with $|X_i - c| \leq h$, the bandwidth
+- Fit a separate straight line on each side
+- Weight by a **triangular kernel**: weight $1$ at $c$, $0$ at the edge
+- The jump is the gap between the two lines at $c$
+
+::: notes
+The fix is local polynomial estimation, and the recommended workhorse is local linear regression. The idea is to throw away the data far from the cutoff and fit a simple, low-order — usually linear — model only within a window of width h, the bandwidth, on each side of the cutoff. First, keep only observations within the window, where the absolute distance from the cutoff is at most h. Second, fit a separate straight line to the outcome on each side — equivalently, one regression of the outcome on the treatment dummy, the recentered running variable, and their interaction. Third, weight observations by a kernel that gives points near the cutoff more weight than points near the edge. A triangular kernel, which declines linearly from weight one at the cutoff to weight zero at the window edge, is standard and theoretically near-optimal for boundary estimation. Fourth, the estimated jump is the gap between the two fitted lines at the cutoff — the coefficient on the treatment dummy.
+:::
+
+## Stay Local, Stay Low-Order
+
+- A line is a good local approximation over a short interval
+- It is just the first-order Taylor expansion from calculus
+- No wild extrapolation, unlike a high-order polynomial
+- Go to local quadratic only with lots of data
+- The consensus: stay local, stay low-order
+
+::: notes
+A line is a good local approximation to almost any smooth curve over a short enough interval — it is just the first-order Taylor expansion you know from calculus — so within a narrow window the linear fit captures the trend faithfully, without the wild extrapolation a high-order polynomial commits. You can go to local quadratic if you have a lot of data and want to reduce bias from curvature, but the field's consensus, following Gelman and Imbens, is: stay local, stay low-order. Local linear with a good bandwidth and a triangular kernel is the default for a reason.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Use **local linear regression** in a window $|X-c|\le h$, with a **triangular kernel** weighting points near $c$ most. The jump is the gap between the two fitted lines at $c$. A line is a near-perfect local approximation, so **stay local, stay low-order**. Next: how wide should the window be?
+:::
+
+::: notes
+To summarize part seven: the fix for the global-polynomial trap is local linear regression. Keep only observations within a window of width h around the cutoff, fit a separate straight line on each side, and weight points by a triangular kernel that gives the most weight right at the cutoff. The estimated jump is the gap between the two lines at the boundary. Because a line is a near-perfect approximation to a smooth curve over a short interval, the rule is to stay local and stay low-order. That leaves one consequential choice: how wide should the window be? In part eight we tackle the bias-variance trade-off in bandwidth.
+:::

@@ -1,0 +1,65 @@
+---
+title: "The Negative-Weights Problem, in Full Generality"
+date: "2026-07-13"
+---
+
+# The Negative-Weights Problem {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part eight of thirteen. In part seven, Goodman-Bacon's weights revealed that forbidden comparisons can enter the pooled coefficient with negative weight. Now we generalize that with de Chaisemartin and D'Haultfœuille, in twenty-twenty, who prove the same disease in a far broader setting and state it in the form that became the rallying cry of the literature — the negative-weights problem. Their result strips the problem to its essence.
+:::
+
+## de Chaisemartin–D'Haultfœuille, in Full Generality
+
+- Any TWFE panel; treatment can switch on **and even off**
+- $\hat\beta^{\text{TWFE}}\xrightarrow{p}\sum_{(i,t):D_{it}=1}w_{it}\cdot\text{ATT}_{it}$
+- Weights $w_{it}$ **sum to one** but are **not guaranteed positive**
+- A weighted average with **negative** weights is not an average of anything
+
+::: notes
+Their setup: any panel with two-way fixed effects, treatment that can switch on — and even off — at different times for different units. This is more general than Goodman-Bacon's binary, absorbing, staggered case. They prove that the coefficient beta-hat converges in probability to a weighted average of the treatment effects across all treated unit-time cells: the sum, over every cell where treatment is on, of a weight w-i-t times the genuine effect on the treated for unit i at time t. The weights sum to one but are not guaranteed to be positive. That is the whole result, and it is devastating in its simplicity. A weighted average with some negative weights is not a sensible average of anything.
+:::
+
+## The Sign Flip, Now in General
+
+- If **every** $\text{ATT}_{it}$ is negative but some weights are negative…
+- …the weighted sum can be **positive**
+- That is the §3 sign flip — now derived in **complete generality**
+- Not from a hand-built table, but from the estimator's probability limit
+
+::: notes
+Here is why that matters. If every effect on the treated is negative — disclosure helps everyone, always — but some weights are negative, the weighted sum can be positive. That is exactly the sign flip from the two-state world, now derived in complete generality rather than from a hand-built table. We no longer need a specific contrived example; the negative-weights result shows the sign flip is a generic possibility baked into the estimator's probability limit whenever weights go negative. The hand-built table was just one instance of a phenomenon de Chaisemartin and D'Haultfœuille prove can happen broadly.
+:::
+
+## Two Alarming Consequences
+
+- Weights depend only on the **design** — who is treated when, not the effects
+- So you can **compute the weights before estimating any effect**
+- Diagnostic: count negative weights, sum the total negative weight
+- $\hat\beta$ and **every** individual $\text{ATT}_{it}$ can have **opposite signs**
+
+::: notes
+Two consequences make this more alarming than Goodman-Bacon's already-bad news. First, the weights depend only on the design — how many units are treated when — not at all on the effects. So you can compute the weights from your data alone, before estimating a single effect, and read off a diagnostic: count how many weights are negative and how much total negative weight there is. If a meaningful share is negative, the coefficient is uninterpretable. Second, the failure can be so severe that the coefficient and every individual effect on the treated have opposite signs — all true effects strictly positive, yet the probability limit strictly negative. The estimator can be qualitatively wrong about the direction of the effect — the one thing a policymaker most needs to get right.
+:::
+
+## Two Views of One Object
+
+- Goodman-Bacon: decompose by **pairs of cohorts** — forbidden pairs
+- dCdH: decompose the same $\hat\beta$ by **individual cells** — negative weights
+- Same disease, two diagnostics
+- Same cause: **already-treated units doing control duty**
+
+::: notes
+It helps to see these two results as two views of one object. Goodman-Bacon decomposes beta-hat by pairs of cohorts and shows the forbidden later-versus-already-treated pairs are the culprits. de Chaisemartin and D'Haultfœuille decompose the same beta-hat by individual treated cells and show the culprits manifest as negative cell weights. Same disease, two diagnostics. Both point to the identical cause — already-treated units doing control duty — and both point to the identical cure, which is the subject of the rest of the chapter. You can run either diagnostic on real data; together they give you a pair-level picture and a cell-level count of just how contaminated your pooled coefficient is.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+de Chaisemartin–D'Haultfœuille (2020): $\hat\beta$ converges to a weighted average of **cell-level ATTs** with weights that **sum to one but can be negative** — computable from the **design alone**. In the worst case, $\hat\beta$'s sign is opposite to **every** true effect. Goodman-Bacon and this are two views of one disease. Next: the shared cure — clean controls and transparent aggregation.
+:::
+
+::: notes
+To summarize part eight: de Chaisemartin and D'Haultfœuille prove in full generality that the pooled coefficient converges to a weighted average of cell-level effects whose weights sum to one but can be negative — computable from the design alone, before estimating anything. In the worst case the sign is opposite to every true effect. This and Goodman-Bacon are two views of one disease, one cause: already-treated units doing control duty. In part nine we step back and state the cure — the single idea, clean controls plus transparent aggregation, shared by all three modern estimators — with the two phrases and spec discipline that carry the load.
+:::

@@ -1,0 +1,58 @@
+---
+title: "The Talk's Spine: Design, Result, Robustness, Contribution"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# The Talk's Spine: Design, Result, Robustness, Contribution {.title}
+
+::: notes
+Welcome back to Chapter eight-point-five, part two of nine. In part one we framed the lesson and walked the question and the stakes. Now we walk the four beats that carry the argument: the design and identification slide, the headline result, the robustness check, and the closing contribution. The design slide is the one students underweight, so we spend the most time there.
+:::
+
+## Beat Three: The Design Slide
+
+- The spine, and the one students underweight
+- Put your identifying-assumption sentence on screen
+- "Credible as long as the assumption, defended by the design"
+- Not your regression equation; why the comparison is fair
+- Every hard question lands here
+
+::: notes
+The design and identification slide is the spine, and it is the one students underweight. This is where you put your identifying-assumption sentence from the identification chapter on the screen, in the same form: our estimate is credible as long as the assumption, which we defend by the design. This is not a slide about your regression equation; nobody can read a regression equation in sixty seconds. It is a slide about why the comparison is fair. Sam's momentum talk does not show the Fama-MacBeth machinery; it shows one sentence: long past-winners, short past-losers, within each month, so common shocks cancel, plus one small picture. If the audience leaves understanding only one thing, it should be this slide, because every hard question lands here.
+:::
+
+## Beat Four: The Headline Result
+
+- *One* number with its uncertainty, shown as a picture
+- Not a table
+- One estimate, one interval, one human sentence
+- "1.8 points, a fifth of the gap" — not a t-stat
+- A confidence interval is **part** of the result
+
+::: notes
+The headline result slide is one number with its uncertainty, shown as a picture, not a table. One estimate, one interval, one sentence of interpretation in the units a human cares about: one point eight percentage points, about a fifth of the baseline gap, not beta hat equals zero point zero one eight, t equals three point two. If you remember nothing else about result slides: a confidence interval is part of the result, not an afterthought. Show it, because a point estimate with no interval reads as either naive or evasive, and a sharp audience clocks the difference instantly.
+:::
+
+## Beats Five and Six: Robustness, Contribution
+
+- Robustness: the headline survived one arbitrary choice
+- Show a specification curve clustering near the headline
+- One sentence: stable across the three choices I worried about
+- Contribution: what the room now knows, in one sentence
+- And what you are **not** claiming
+
+::: notes
+The robustness slide has exactly one job: show that the headline did not depend on a single arbitrary choice. This is the visual answer to "is your result fragile?", typically a specification curve or a small grid of alternatives, all clustering near the headline. You do not narrate every check; you show they exist and agree, and say one sentence: the result is stable across the three choices I worried about most. The contribution slide closes by naming what the room now knows that it did not eight minutes ago, in one sentence, and, crucially, what you are not claiming. We show X, under assumption Y; we do not show Z. That last clause is not weakness; it is the single most credibility-building sentence in the talk, because it signals you know exactly where your own claim stops. Then stop talking.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The spine is four beats. **Design**: why the comparison is fair, one sentence. **Headline**: one number, with its interval, as a picture. **Robustness**: it survived the choices you worried about. **Contribution**: what we now know, and what we do not claim. Next: one idea per slide, and turning tables into figures.
+:::
+
+::: notes
+To summarize part two: the four beats that carry the talk are the design slide, which says in one sentence why the comparison is fair; the headline, one number shown with its confidence interval as a picture; the robustness slide, showing the result survived the choices you worried about; and the contribution, naming what the room now knows and what you do not claim. In part three we turn to what goes on each slide: the rule of one idea per slide, and the mechanical translation from a results table into a figure a listener can read.
+:::

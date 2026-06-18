@@ -1,0 +1,62 @@
+---
+title: "The Least-Squares Objective"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Least-Squares Objective {.title}
+
+::: notes
+Welcome back to Chapter two-point-one, part two of seven. In part one we stacked Sam's regression into the matrix equation y equals X-beta plus epsilon. Now we put real numbers on the table — a deliberately tiny four-day dataset — and settle the question those leftover errors force on us: of all the candidate lines, which one is best? Ordinary least squares answers it with a single rule, and we build that rule carefully here.
+:::
+
+## Sam's Tiny Dataset
+
+| Day $i$ | Market $x_i$ | Stock $y_i$ |
+|---|---|---|
+| 1 | $-2$ | $-1$ |
+| 2 | $0$ | $0$ |
+| 3 | $1$ | $3$ |
+| 4 | $1$ | $2$ |
+
+- $N=4$, $K=2$ — small enough to invert **by hand**
+- Days 3 and 4: same $x$, different $y$ $\Rightarrow$ **no** line hits all four
+
+::: notes
+To keep the arithmetic visible, suppose Sam pulls just four trading days. In percent: day one, market down two, stock down one. Day two, market flat, stock flat. Day three, market up one, stock up three. Day four, market up one, stock up two. So N equals four, K equals two. The outcome vector y holds minus one, zero, three, two. The design matrix X has a column of four ones and a column holding minus two, zero, one, one. We carry this example through the whole lesson and recover Sam's beta by hand. Notice already there is no line through all four points: days three and four share the same market return of up one, but different stock returns of three and two, so no function of x can hit both. There will be leftover error no matter what line we pick — which is precisely why we need a principled rule for choosing the best one.
+:::
+
+## Residuals: Guessing the Coefficients
+
+- Don't know $\boldsymbol\beta$, so **guess** it: call the guess $\mathbf{b}$
+$$e_i(\mathbf{b}) = y_i - \mathbf{x}_i'\mathbf{b}$$
+- **Error** $\varepsilon_i$ uses the true $\boldsymbol\beta$ — never observed
+- **Residual** $e_i$ uses our guess $\mathbf{b}$ — computable
+- Game: choose $\mathbf{b}$ so residuals are collectively small
+
+::: notes
+We do not know beta, so we guess it. Call a candidate guess b — a plain vector of numbers we get to choose. For that guess, the predicted outcome for observation i is the fitted value, x-i-transpose times b, where x-i-transpose is the i-th row of X. The residual is the gap between what actually happened and what the guess predicts: e-sub-i of b equals y-sub-i minus x-i-transpose b. Now be careful with two words that look like twins but are not. The error, epsilon-sub-i, is built from the true, unknown beta, and we never observe it. The residual, e-sub-i, is built from a guess b, and we can compute it for any guess we like. The whole game is to choose b so that the residuals are collectively small; the resulting best guess we will crown beta-hat.
+:::
+
+## The Sum of Squared Residuals
+
+- Can't just add residuals — signs cancel
+- Square first, then add:
+$$\text{SSR}(\mathbf{b}) = \mathbf{e}'\mathbf{e} = (\mathbf{y}-\mathbf{X}\mathbf{b})'(\mathbf{y}-\mathbf{X}\mathbf{b})$$
+- $\mathbf{e}'\mathbf{e}$ = **squared length** of the residual vector
+- OLS: $\hat{\boldsymbol\beta} = \arg\min_{\mathbf{b}}\ (\mathbf{y}-\mathbf{X}\mathbf{b})'(\mathbf{y}-\mathbf{X}\mathbf{b})$
+
+::: notes
+What does collectively small mean? We cannot just add the residuals — positive and negative ones cancel, and a wildly wrong line could score zero. So we square them first, which kills the signs and punishes big misses more, then add. Stacking the residuals into a vector e of b equals y minus X-b, the sum of squared residuals is e-transpose-e — the quantity y minus X-b, transposed, times y minus X-b itself. That middle step is worth pausing on: a vector dotted with itself is the sum of its squared entries, its squared length. So the sum of squared residuals is literally the squared length of the residual vector, the squared distance between y and the prediction X-b. Least squares means shortest residual vector. Ordinary least squares is the rule: choose beta-hat to be the arg-min over b of that squared distance. This is the same kind of object Maya minimized last week when she minimized portfolio variance — a quadratic bowl with a genuine bottom. Next, we find that bottom.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Ordinary least squares chooses the coefficients that minimize the **sum of squared residuals**, $\mathbf{e}'\mathbf{e}$ — the squared length of the residual vector. Beware: the *error* uses the true $\boldsymbol\beta$ and is unobserved; the *residual* uses our guess and is computable.
+:::
+
+::: notes
+To summarize part two: with no line able to fit Sam's four points, ordinary least squares picks the coefficients that minimize the sum of squared residuals, which is the squared length of the residual vector. Keep the distinction sharp — the error uses the true, unknown beta and we never see it; the residual uses our chosen guess and we can compute it. The objective is a quadratic bowl with a genuine bottom. In part three we find that bottom the calculus way: expand the bowl, take its gradient, set it to zero, and out come the normal equations.
+:::

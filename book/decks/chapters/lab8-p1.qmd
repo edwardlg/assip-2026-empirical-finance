@@ -1,0 +1,57 @@
+---
+title: "The Capstone Bench: Three Artifacts and One Test"
+date: "2026-08-10"
+---
+
+# The Capstone Bench: Three Artifacts and One Test {.title}
+
+::: notes
+Welcome to Week Eight, Lab Eight — the terminal lab of the whole ASSIP camp. The first thing to know should feel like a relief: this lab introduces no new ideas. That is by design. Everything you need was built in the seven weeks behind you — the estimate you can defend, the robustness battery that survived, the tables and figures your code generated, the repository from Lab Seven, the pre-analysis plan you tagged, the threats table you wrote when you were calm. Lab Eight is the bench where that pile of parts becomes the three artifacts you hand over on Wednesday, August twelfth, twenty twenty-six, at the ASSIP Research Symposium.
+:::
+
+## What You Build Here
+
+- No new ideas — seven weeks of parts become three artifacts
+- **A compiled research poster** plus its JSSR-ready abstract
+- **A one-click replication packet** — clone, one command, rebuild
+- **An eight-minute poster talk** that survives the questions
+- The full paper is now optional; poster, abstract, talk, packet are required
+
+::: notes
+So what are the three artifacts? First, a compiled research poster, plus the abstract it carries, ready for the Journal of Student-Scientists' Research. Second, a one-click replication packet — your Lab Seven repository, finished, so a stranger can clone it and rebuild everything with one command. Third, an eight-minute poster talk that survives the questions a skeptic throws. Chapter Eight-point-five made the argument for why those three are the form your credibility takes; this lab is the bench where you build them. One note: the full empirical-finance paper is now optional. The required deliverable is poster, abstract, talk, and packet. If you want a journal-shaped paper too, the LaTeX manuscript path is preserved in a companion appendix at the end.
+:::
+
+## The "Result" You Are Testing
+
+- A result a stranger cannot reconstruct is **not yet a result**
+- The test is operational, not "is my coefficient right?"
+- Can a stranger scan the QR, clone, type one command, watch it rebuild?
+- Can you stand beside the poster eight minutes and not flinch?
+- These are **yes/no questions you can actually test**
+
+::: notes
+The discipline this lab drills comes straight from Chapter Eight-point-five, stated as a procedure: a result a stranger cannot reconstruct is not yet a result. So the result you check here is operational. The question is not "is my coefficient right?" The questions are yes-or-no. Can a stranger, on a machine that has never seen your project, scan the QR code on your poster, clone the repo, type one command, and watch your abstract and poster rebuild from raw data all the way to a finished PDF? And can you stand beside that poster for eight minutes — in person at GMU's College of Science venue, or on the symposium's virtual breakout track if you are a remote intern — and not flinch when they attack it? Those are things you can actually test, and the submission checklist at the end is how you test them.
+:::
+
+## Setup: One New Capability
+
+- You already have Git, GitHub, conda from Lab 7
+- Lab 8 adds one thing: turning **LaTeX into a PDF**
+- Container ships TinyTeX, `latexmk`, `tectonic`, `pdflatex`, `make`
+- Probe each with `--version`; no local TeX? Use **Overleaf**
+- Licensed data stays on GMU infra — ship the recipe, never the bytes
+
+::: notes
+Lab Eight adds exactly one capability: turning LaTeX into a PDF. The camp container ships a full LaTeX engine — TinyTeX, with latexmk, tectonic, and pdflatex all on the path — plus GNU make. Confirm what is present with a one-line version probe on each. If latexmk and tectonic both print a version, you can build locally. If none resolves — likely on a personal laptop — that is fine; you push the paper folder to Overleaf and compile in the browser, which needs no local install. Either road ends at the same PDF. And one rule from Lab Seven still binds hard: if your project touches licensed data like CRSP or Compustat, the licensed bytes live only on GMU infrastructure. The repo travels freely and ships the recipe — the pull script — never the data.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Lab 8 introduces no new ideas — it forges seven weeks of parts into **three artifacts**: a poster, a one-click packet, and an eight-minute talk. The bar is operational: a stranger must reconstruct every claim. Next: compiling the poster.
+:::
+
+::: notes
+To summarize part one: Lab Eight introduces no new ideas. It is the bench where seven weeks of parts become three handover artifacts — a compiled poster with its JSSR abstract, a one-click replication packet, and an eight-minute symposium talk. The bar is operational: a result a stranger cannot reconstruct is not yet a result. You have confirmed your LaTeX toolchain and the licensed-data wall still holds. In part two we start Part One of the lab — compiling the poster, and the one rule that keeps every number on it honest.
+:::

@@ -1,0 +1,58 @@
+---
+title: "Time Budgeting and the Rehearsal That Proves It"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Time Budgeting and the Rehearsal That Proves It {.title}
+
+::: notes
+Welcome back to Chapter eight-point-five, part four of nine. In part three we covered one idea per slide and the table-to-figure translation. Now we cover time. A budget you have not tested is a wish. We rehearse against a clock, learn where the time should go, and decide a cut line before we ever stand up.
+:::
+
+## Rehearse to Seven, Not Eight
+
+- Rehearse the full talk, timed, at least three times
+- Cut until it fits in **seven** minutes, not eight
+- A live talk runs longer than a rehearsal
+- The eighth minute is insurance, not content
+- Run to ten, and you get cut off at the result
+
+::: notes
+A budget you have not tested is a wish. The single most reliable predictor of a talk going over time is that the speaker never once said it out loud against a clock. So the rule is concrete: rehearse the full talk, timed, at least three times, and cut until it fits in seven minutes, not eight. You target seven because a live talk runs longer than a rehearsal; you will pause, someone will cough, the clicker will lag, and because the eighth minute is your insurance against disaster, not your content. A talk that needs all eight minutes in rehearsal will run to ten on stage, and a talk that runs to ten in an eight-minute slot gets cut off mid-sentence at the result, which is the worst possible place to be cut off.
+:::
+
+## Where the Time Goes
+
+- A minute on question-and-why, combined and fast
+- A minute and a half on design — the spine
+- A minute and a half on the headline — let it land
+- A minute on robustness, a minute on contribution
+- Go fast through motivation, slow through the hard middle
+
+::: notes
+Where does the time go? Roughly: a minute on question-and-why combined, fast, to get to the substance; a minute and a half on the design slide, where you slow down, because this is the spine and the room needs it; a minute and a half on the headline, where you let the number land and then say what it means; a minute on robustness; a minute on contribution; and the rest as slack to recover from things that go wrong. Notice the shape: you go fast through motivation and slow through identification and result, which is the opposite of what nervous speakers do. They race through the hard middle to reach the safe summary. Resist it. The middle is the talk.
+:::
+
+## Know Your Cut Line in Advance
+
+- Decide which slide you skip if you're behind
+- Almost always: a robustness detail or a motivation point
+- **Never** the design slide, never the headline
+- Pre-decided cuts are clean; improvised cuts are bad
+- Rehearsal also finds the sentences you stumble on
+
+::: notes
+A discipline worth stealing from professional speakers: know your cut line in advance. Decide, before you stand up, which slide you will skip if you are at minute six and only on the result. Almost always it is the second robustness detail or the third motivation point, never the design slide, never the headline. When you are over time and improvising, you cut badly; when you have pre-decided the cut, you cut cleanly and nobody notices. The rehearsal is also where you discover the sentences you cannot say smoothly, the ones with three clauses and a parenthetical, and rewrite them, because a sentence you stumble on in rehearsal is a sentence you will fail on stage. The course notebook and lab include a dry-run timer for exactly this; use it until the talk fits with room to spare.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Rehearse timed, three times, and cut to seven minutes** — the eighth is insurance, not content. Go fast through motivation, slow through design and result. And **pre-decide your cut line**: never the design, never the headline. A budget you have not tested out loud is only a wish. Next: defending your identification under questions.
+:::
+
+::: notes
+To summarize part four: rehearse the full talk timed at least three times and cut until it fits in seven minutes, because a live talk runs long and the eighth minute is insurance. Spend your time slow on the design and the headline, fast on motivation, because the hard middle is the talk. And pre-decide your cut line so that when you run over, you cut cleanly, never the design, never the headline. In part five we move from the talk to the questions, where the talk is actually judged, and we start defending identification under attack.
+:::

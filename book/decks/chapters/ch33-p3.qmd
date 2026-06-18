@@ -1,0 +1,59 @@
+---
+title: "Two Estimators and a Worked Number"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Two Estimators and a Worked Number {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part three of ten. In part two we proved that dividing by the propensity score recovers the right average. Now we turn that expectation into a formula — meeting Horvitz–Thompson and its better-behaved cousin Hájek — and run a tiny six-student example by hand.
+:::
+
+## Horvitz–Thompson
+
+- Direct translation of the two expectations
+- $\hat\tau_{\text{HT}} = \frac{1}{N}\sum \frac{D_i Y_i}{\hat e} - \frac{1}{N}\sum \frac{(1-D_i) Y_i}{1-\hat e}$
+- Name from 1950s survey sampling
+- Defect: weights do **not** sum to $N$
+- Can go numerically wild, even outside data range
+
+::: notes
+Turning that expectation into a runnable formula gives the Horvitz–Thompson estimator. The name comes from nineteen-fifties survey sampling, where the same inverse-probability idea handled unequal sampling rates. It is a direct translation: tau-hat-H-T is one over N times the sum of D-i times Y-i over e-hat, minus one over N times the sum of one-minus-D-i times Y-i over one-minus-e-hat — sample averages standing in for the two expectations. There is a subtle defect. The weights one over e-hat do not, in any given sample, add up to N. So the Horvitz–Thompson average divides the weighted sum of outcomes by N rather than by the actual total weight, which can make it numerically wild and even push an estimated mean outside the range of the data.
+:::
+
+## Hájek: Self-Normalizing
+
+- Divide by the **sum of weights** in each arm, not $N$
+- Numerators identical; denominators are total weight
+- A self-normalizing weighted mean
+- Far more stable in practice
+- What software means by "IPW" — use Hájek
+
+::: notes
+The fix is to normalize the weights so they sum to one within each arm, giving the Hájek estimator. The numerators are the same as Horvitz–Thompson; the denominators are now the sum of the weights in each arm rather than N. This is a self-normalizing weighted mean. It is far more stable in practice, and it is what essentially every software package means when it says I-P-W. Use Hájek, not raw Horvitz–Thompson. The distinction is the I-P-W version of a lesson from Chapter one: an estimator can be unbiased in expectation and still be a bad idea in finite samples because its variance is enormous.
+:::
+
+## A Worked Number: Six Students
+
+- Three enrolled, three not; outcome $Y$ is the rate
+- Hájek treated mean of A, B, C $\approx 8.45$
+- Hájek control mean of D, E, F $\approx 9.23$
+- IPW estimate: $8.45 - 9.23 = -0.78$ points
+- Rare "cross-over" units C and D dominate
+- Unweighted gap was $-1.0$ — selection contaminated it
+
+::: notes
+Make it concrete. Maya has six students; three enrolled, three did not. The outcome Y is the interest rate; e-hat is the estimated propensity score. The Hájek treated mean is the weighted average of students A, B, and C — one-point-two-five times seven, plus two times eight, plus five times nine, all divided by the total weight eight-point-two-five — which comes to about eight-point-four-five. The Hájek control mean, the weighted average of D, E, and F, comes to about nine-point-two-three. The I-P-W estimate is eight-point-four-five minus nine-point-two-three, equals minus zero-point-seven-eight percentage points — enrolling lowered the rate by about three-quarters of a point. Notice what the weights did. Student C, a low-propensity enrollee, got weight five and dominates the treated mean; student D, a high-propensity control, got weight five and dominates the control mean. The estimator leans hardest on the units that look like the other group, because those tell us about the missing counterfactual. The simple unweighted difference would have been eight minus nine, equals minus one — a different answer, because the unweighted version lets selection contaminate the comparison.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **Horvitz–Thompson** estimator divides by $N$ and can run wild; the **Hájek** estimator self-normalizes by the sum of weights and is what you should use. In the worked example the cross-over units — those that look like the other group — carry the most weight and move the answer from the contaminated $-1.0$ to $-0.78$. Next: when these weights explode.
+:::
+
+::: notes
+To summarize part three: the Horvitz–Thompson estimator is a direct but fragile translation that divides by N; the Hájek estimator self-normalizes by the sum of weights and is the one to use. In our six-student example the cross-over units carried the most weight and pulled the answer away from the selection-contaminated unweighted gap. In part four we confront the dark side: when a single tiny propensity score makes one weight explode and hijack the whole estimate.
+:::

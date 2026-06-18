@@ -1,0 +1,46 @@
+---
+title: "Hypothesis Testing: Sam's Trading Rule"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Hypothesis Testing: Sam's Trading Rule {.title}
+
+::: notes
+Welcome to Week One, Chapter one-point-five, part one of ten. This lesson builds the machine of hypothesis testing — the careful way to ask whether a result is too far from nothing to be nothing. We close Week One here, and everything returns in Week Two when the thing tested is a regression coefficient. In this opening part we meet Sam's trading rule and the one question that drives every test.
+:::
+
+## Sam's Trading Rule
+
+- Buy yesterday's biggest losers, hold one day, sell
+- A bet on short-term reversal
+- Backtest: 252 days, average daily return 0.08 percent
+- Annualized, that is more than 20 percent
+- Sam is, briefly, very excited
+
+::: notes
+Meet Sam. Sam has a trading rule — nothing fancy. Each morning, buy a basket of the stocks that fell the most yesterday, hold for one day, sell at the close. The idea is that yesterday's losers bounce back — a bet on short-term reversal. Sam backtests it on two hundred fifty-two trading days of last year's data and finds an average daily return of zero point zero eight percent. Eight basis points a day. Annualized, that is more than twenty percent. Sam is, briefly, very excited.
+:::
+
+## The Question That Drives Testing
+
+- Returns bounced everywhere: up 1.5 percent, down 1.2 percent
+- Could a truly worthless rule still average $+0.08\%$?
+- The engine: could pure luck produce what I see?
+- Not "is the rule good?" or "what is the edge?"
+- Just: too far from nothing to be nothing?
+
+::: notes
+Then the doubt arrives, which is the right instinct. The daily returns bounced all over the place — some days up one point five percent, some days down one point two percent. With that much noise, could a rule whose real edge is exactly zero still produce a sample average of plus zero point zero eight percent over two hundred fifty-two days, just by luck? That single question — could pure luck have produced what I am seeing — is the engine of hypothesis testing. Notice what kind of question it is. It is not is the rule good, or what is the true edge; it is the narrower, sharper: is what I observed too far from nothing to be nothing? The test answers that one question well and refuses to answer the others. Most mistakes in this chapter come from forgetting which question was asked.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Sam's reversal rule averaged $+0.08\%$ a day over 252 days — but the returns were noisy. Hypothesis testing answers one sharp question: **could pure luck alone have produced this?** Not "is the rule good," not "what is the edge" — just whether the result is too far from nothing to be nothing. Next: the two competing hypotheses.
+:::
+
+::: notes
+To summarize part one: Sam's reversal rule averaged plus zero point zero eight percent a day over two hundred fifty-two days, but the returns were noisy. Hypothesis testing answers one sharp question: could pure luck alone have produced this? Not is the rule good, not what is the edge — just whether the result is too far from nothing to be nothing. In part two we write that question down formally as two competing hypotheses.
+:::

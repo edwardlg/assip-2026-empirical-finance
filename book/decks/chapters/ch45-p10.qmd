@@ -1,0 +1,45 @@
+---
+title: "Carry Forward & Closing the Causal Arc"
+date: "2026-07-13"
+---
+
+# Carry Forward & Closing the Causal Arc {.title}
+
+::: notes
+Welcome back to Chapter four-point-five, part ten of ten — the finale. In part nine we drew out the two-shots lesson and walked the code that builds, biases, recovers, and decomposes a shift-share instrument. Now we gather the four things from this chapter that will do real work in the weeks ahead, and then step all the way back to close the causal-inference arc of the entire camp and open the next one.
+:::
+
+## Four Things to Carry Forward
+
+- **Built, not found**: $B_r=\sum_j s_{rj} g_j$ — national shifts × baseline shares
+- **Two faces**: GPSS (exogenous *shares*, few shocks) vs BHJ (quasi-random *shifts*, many)
+- A product is exogenous if **either** factor is — name your shot
+- **Diagnose, don't assert**: Rotemberg weights, effective shocks, AKM SEs
+- **Still IV**: relevance testable, exclusion arguable, LATE-like estimand
+
+::: notes
+Four things carry forward. First, a shift-share instrument is built, not found — a national part, the shifts, growth rates no single region caused, and a local part, the shares, exposure weights, combined as B-sub-r equals the sum over industries of share times shift. The canonical use is local labor-demand shocks; the finance uses — regional bank-lending shocks driving household credit and default — are the same skeleton with the nouns swapped. Second, identification has two faces, and you choose your defense by your data: Goldsmith-Pinkham, Sorkin and Swift lean on exogenous shares, best when shocks are few; Borusyak, Hull and Jaravel lean on quasi-random shifts across many industries, and let the shares be endogenous. A product is exogenous if either factor is, so you get two shots — name your shot. Third, diagnose, don't assert: Rotemberg weights show which shares drive the estimate, the effective number of shocks tells you whether many shocks is real, and Adão, Kolesár and Morales tell you the standard errors are the sneaky failure. Fourth, it is still IV — relevance is testable, exclusion is arguable from either ingredient, and what you identify is a Rotemberg-weighted cousin of LATE.
+:::
+
+## The Arc Closes — and the Next One Opens
+
+- Weeks 3-4 built the full causal kit: POs, CIA, IV, DiD, RD, synth, shift-share
+- The **reflex** matters more than any estimator
+- Each design: name the threat, the assumption, the testable, the diagnostic
+- Weeks 5-6: stop *building* tools, start *reading* the frontier — incl. Prof. Gao's papers
+- Read tables-first: design? assumption? weights? honest inference?
+
+::: notes
+Now step all the way back. Weeks Three and Four built you a causal-inference toolkit from the ground up: potential outcomes and SUTVA; the conditional-independence family of matching, propensity scores and doubly-robust; the escape from conditional independence via instruments; and the design-based methods that exploit structure — difference-in-differences and the staggered-adoption crisis, regression discontinuity, synthetic control, and now shift-share. You now own the modern empiricist's full kit and, more importantly, the reflex that matters more than any single estimator: for every design, name the threat, name the assumption that addresses it, separate what the data can test from what you must argue, and bring the diagnostic that shows where the result is fragile. That reflex is the whole point, because Weeks Five and Six turn from building tools to reading the frontier work that uses them. You will stop deriving estimators and start decoding published empirical papers, tables-first, the way professionals read, including papers by Prof. Gao.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Shift-share is *built*, has **two faces** (shares vs. shifts), demands **diagnostics** (Rotemberg weights, effective shocks, AKM SEs), and is **still IV**. With it, the Weeks 3-4 causal toolkit is complete. Open **nb4.5** to build and decompose the instrument — then **Weeks 5-6** turn from *building* tools to *reading* the frontier, tables-first.
+:::
+
+::: notes
+To close the chapter and the arc: shift-share instruments are built from national shifts and baseline shares, identification has two faces you choose between by your data, the design demands real diagnostics — Rotemberg weights, the effective number of shocks, and AKM-robust standard errors — and through it all it remains an ordinary instrument with relevance and exclusion. With this chapter, the Weeks Three and Four causal-inference toolkit is complete, and the reflex it trained is the real prize. When a paper says it instruments local exposure with a Bartik design, you will not nod along; you will ask whether they defended the shares or the shifts, whether they showed Rotemberg weights, and whether their standard errors are AKM-robust. That is what it means to read the frontier. Now open nb4.5, the Bartik instrument decomposition, and build it yourself. Then get ready: in Weeks Five and Six we put the tool-building down and learn to read published empirical papers, tables-first. Turn the page.
+:::

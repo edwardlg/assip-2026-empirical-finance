@@ -1,0 +1,58 @@
+---
+title: "Inverse-Probability Weighting: The Trick"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Inverse-Probability Weighting: The Trick {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part two of ten. In part one we framed three tools and the theme of stability. Now we open the first tool — inverse-probability weighting — with the one image that makes it click, and then the one line of algebra that proves it works.
+:::
+
+## Count Rare Units as Many
+
+- Selection over-counts high-propensity enrollees
+- Treated unit with $e(\mathbf{X}) = 0.8$ gets weight $1/0.8 = 1.25$
+- Rare enrollee with $e(\mathbf{X}) = 0.1$ gets weight $1/0.1 = 10$
+- Mirror it for controls: weight by $1/(1 - e(\mathbf{X}))$
+- Rare control with $e(\mathbf{X}) = 0.8$ gets weight $5$
+
+::: notes
+Here is the whole idea in one image. Maya's enrollees are over-represented among high-income, high-credit students — that is what selection means. Suppose a high-income student had a propensity score of zero-point-eight: students like her enrolled eighty percent of the time. Among the treated, students like her are over-counted. To undo that, count each treated student not as one person but as one over e-of-X — here, one over zero-point-eight, equals one-point-two-five people. A low-income enrollee with a score of zero-point-one is rare and precious: she stands in for the many students like her who did not enroll, so we count her as one over zero-point-one, equals ten people. Do the mirror image for controls, weighting by one over one-minus-e-of-X. A control with score zero-point-eight — the kind who usually enrolls but didn't — is rare and gets up-weighted by one over zero-point-two, equals five.
+:::
+
+## The Pseudo-Population
+
+- Reweighted treated and control share covariate distribution
+- In it, $\mathbf{X}$ is **independent** of treatment $D$
+- Treatment is as good as randomly assigned
+- Naive difference-in-means is now unbiased
+- We reweighted our way into a **fake experiment**
+
+::: notes
+Weight each treated unit by one over e-of-X and each control by one over one-minus-e-of-X, and the reweighted treated and control groups have the same covariate distribution — so comparing their average outcomes is no longer apples to oranges. The reweighted dataset is called a pseudo-population. In it, by construction, the covariates X are independent of treatment D: treatment is as good as randomly assigned, exactly the world a randomized experiment lives in. And in that world the naive difference-in-means is an unbiased causal estimate. We have not run an experiment; we have reweighted our way into a fake one.
+:::
+
+## Why It Works: One Line
+
+- Want $\mathbb{E}[Y_i(1)]$ but see $Y_i$ only when $D_i = 1$
+- Consider $\mathbb{E}\!\left[\dfrac{D_i\, Y_i}{e(\mathbf{X}_i)}\right]$
+- Condition on $\mathbf{X}_i$; under CIA, $D_i \perp Y_i(1)$
+- The propensity scores **cancel** exactly
+- Left with $\mathbb{E}[Y_i(1)]$ — the right average
+
+::: notes
+Why does dividing by the propensity score recover the right average? One line of expectation algebra. We want the expected outcome if everyone were treated, but observe Y only for treated units. Consider the expected value of D-i times Y-i divided by e-of-X-i. The factor D-i zeroes out every control, so the expectation runs only over treated units, where Y equals Y-of-one. Now condition on X-i first using the law of iterated expectations. Inside, e-of-X-i is a constant and comes out front. Under the conditional-independence assumption, D-i is independent of Y-of-one given X-i, so the expectation of their product factors into the expected value of D given X — which is exactly e-of-X — times the conditional mean of Y-of-one. The e-of-X in front cancels the e-of-X from the denominator. That cancellation is the whole trick: dividing by the probability of selection exactly undoes the over- or under-sampling that selection created. What remains is the conditional mean of Y-of-one, whose outer expectation over X is the unconditional mean of Y-of-one. The same argument with one-minus-D over one-minus-e recovers the mean of Y-of-zero. Subtract, and you have the average treatment effect.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**IPW** weights each treated unit by $1/e(\mathbf{X})$ and each control by $1/(1 - e(\mathbf{X}))$, building a pseudo-population where treatment looks random. The proof is one cancellation: dividing by the probability of selection exactly undoes the sampling that selection created. Next: turning this into a runnable estimator.
+:::
+
+::: notes
+To summarize part two: inverse-probability weighting up-weights rare units — the ones that look like the other group — to build a pseudo-population in which treatment is as good as random. The proof is a single cancellation: dividing by the probability of selection undoes the sampling selection created. In part three we turn this expectation into a formula you can run on data, and meet two competing estimators.
+:::

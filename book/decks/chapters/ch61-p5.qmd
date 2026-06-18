@@ -1,0 +1,57 @@
+---
+title: "KPSS: Reading the Exhibits in Order"
+date: "2026-07-27"
+---
+
+# KPSS: Reading the Exhibits in Order {.title}
+
+::: notes
+Welcome back to Chapter six-point-one, part five of ten. In part four we covered the data — patents, daily returns, and the public value panel. Now we read the exhibits, and for this paper there is a specific order dictated by the two-questions structure: read the measure-validation evidence first, the economics second. If the measure is not credible, nothing downstream matters.
+:::
+
+## Step 1 — Does the Dollar Value Behave?
+
+- A constructed measure earns trust by predicting what it should
+- Does value correlate with **forward citations**? Convergent validity
+- Does it predict future **profitability and growth**?
+- Does it survive the obvious **confound** — other news?
+- Read for *signs and significance*, not magnitudes
+
+::: notes
+New readers start at the introduction and drown. You start at the exhibits, in the order a referee uses. Step one: find the validation exhibits — does the dollar value behave like a value should? This is the make-or-break evidence and it usually comes early. A constructed measure earns trust by predicting things it should predict if it really captures patent value. Read these as a checklist. First, does the market-based value correlate with forward citations? Citations are the literature's established, if slow, proxy for patent importance. If the dollar value rises with the citations a patent later receives, the new measure agrees with the old one where the old one is trustworthy — that is convergent validity. Second, does it predict future profitability and growth? A patent the market valued highly at grant should be followed by higher future profits, R-and-D productivity, or output for the owning firm. This is the strongest validation: a measure built from a three-day stock reaction forecasts real outcomes years out. Third, does it survive the obvious confound — could the window return just reflect other contemporaneous news? Read these tables for signs and significance, not magnitudes. The pattern that matters: value predicts citations, profits, and growth, positively and significantly. If that holds, the measure has earned its place; if it were flat, the paper would collapse here.
+:::
+
+## Steps 2 and 3 — Asset Pricing, Then Growth
+
+- **Step 2:** does an innovation sort produce a return spread?
+- Connects the measure to the cross-section of expected returns
+- **Step 3:** the growth and reallocation payoff
+- Innovator expands; rivals lose ground — creative destruction
+- Read these *most* skeptically — associations, not experiments
+
+::: notes
+Step two: the asset-pricing exhibits. Having validated the measure, K-P-S-S show it carries information for returns: firms doing more high-value innovation, or firms exposed to others' innovation, have different return profiles. This connects the innovation measure to the cross-section of expected returns you met in Week Five with Fama-French. Read for whether an innovation-based sort produces a return spread. Step three: the growth and reallocation exhibits — the economics payoff that justifies the title. Look for a firm's innovation predicting its own future growth, the innovator expanding. And look for the creative-destruction signature: a firm's innovation predicting that competitors lose ground, and resources reallocating toward the innovator. At the aggregate level, look for the link between economy-wide patent value and measured productivity and output growth. These are the most interpretively loaded tables, so read them most skeptically: they are associations consistent with creative destruction, not an experiment that isolates it.
+:::
+
+## Spotting the Headline
+
+- For K-P-S-S the headline is *split*
+- **Measurement headline:** value predicts citations and profits
+- **Economics headline:** one firm's innovation predicts rivals' decline
+- If the first broke, the paper is a non-starter
+- If the second broke, it still stands as a measurement paper
+
+::: notes
+How do you spot the headline in a table you have never seen? For this paper the headline is split. The measurement headline is the validation table where the market-based value predicts forward citations and future profits — point to the value coefficient and read its sign and t-statistic. The economics headline is the reallocation table where one firm's innovation predicts rivals' decline. If the first broke, the paper is a non-starter; if the second broke, the paper would still stand as a measurement contribution. Knowing which table carries which claim is most of reading K-P-S-S well.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Read **validation first, economics second**. The measurement headline — value predicts citations and profits — must hold or nothing downstream matters. The economics headline — one firm's innovation predicts rivals' decline — is the creative-destruction payoff, and the table to read most skeptically.
+:::
+
+::: notes
+To summarize part five: read the exhibits in referee order. Step one validates the measure — does the dollar value predict forward citations, profitability, and growth, with the right sign and significance? Step two ties it to returns. Step three delivers the growth and reallocation payoff, the creative-destruction signature, read most skeptically because it is association, not experiment. The headline is split: a measurement headline that must hold, and an economics headline that would survive as a measurement paper even if it failed. In part six we step back and name the three moves that make K-P-S-S clever.
+:::

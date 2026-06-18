@@ -1,0 +1,54 @@
+---
+title: "A Live Paper, and Your Capstone in Miniature"
+date: "2026-07-20"
+---
+
+# A Live Paper, and Your Capstone in Miniature {.title}
+
+::: notes
+Welcome back to the anatomy of a Journal of Finance paper, part four of four. In the first three parts we built the chain — a sharp question, a credible design, transparent tables, and honest robustness. Now I run that whole chain inward on one of my own working papers, still being built, so you see a real one mid-flight rather than a museum piece — and then I show you why this session is your capstone in miniature.
+:::
+
+## The Rainbow of Credits — a Live Case
+
+- Gao, Liu & Wang, *The Rainbow of Credits* (AEA 2025; target *JF*)
+- Setting: the U.S. **municipal bond market**
+- Outcome = the **yield** an issuer must offer; unit = a bond issue
+- Question: does a state's **social and political climate** move the yield?
+
+::: notes
+The live case is a paper my coauthors and I are still building: Gao, Liu and Wang, "The Rainbow of Credits: Evidence from Municipal Borrowing," presented at the American Economic Association meetings in twenty twenty-five, target journal the Journal of Finance. The setting is the U.S. municipal bond market — the market through which states, cities, counties, and school districts borrow money by issuing bonds, to build roads, schools, and water systems. The price of that borrowing is the yield an issuer must offer investors, and the unit of observation is a bond issue. That yield is our outcome. The question: does a state's social and political climate — a factor with nothing mechanical to do with a city's balance sheet — move the interest rate local governments pay to borrow, holding the issuer's actual finances fixed?
+:::
+
+## Reading the Table You Would Expect
+
+- Data: municipal bond issues (MSRB, Bloomberg, bond-deal databases)
+- Cluster the standard errors **by state** — non-negotiable (Petersen)
+- Stable across columns $\rightarrow$ result survives; shrinks to zero $\rightarrow$ artifact
+- The placebo: real factor $\rightarrow$ effect appears; confound $\rightarrow$ effect vanishes
+
+::: notes
+The data comes from municipal-bond issuance and secondary-market trade records, assembled from the M-S-R-B, Bloomberg, and bond-deal databases — and I mark that with a bracketed CHECK: confirm the exact sources and sample window in the current draft before quoting them. The thicket is real — income, industry, demographics, tax treatment, default history — any of which could move both the social factor and the yield, so clustering the standard errors by state is non-negotiable; that is Petersen, this week. Now suppose I hand you the main results table and you have sixty seconds. Look at the column headers, the rows, the one coefficient on the social factor that carries the paper, then the sample size. Watch it march across columns as issuer-finance controls and state fixed effects are added: if it stays stable, that is a result surviving; if it shrinks toward zero, that was an artifact of what was omitted. The check I would demand is a placebo where, if the factor is real, the effect appears, and if it is a confound, it vanishes.
+:::
+
+## Why This Is Your Capstone in Miniature
+
+- You saw a real paper mid-flight, not a finished museum piece
+- Weeks 7–8: **your own** paper — real question, real data, a design you defend
+- CRSP, Compustat, EDGAR, or municipal data; tables you build yourself
+- Bound for the **ASSIP Research Symposium, Wed Aug 12, 2026** + an abstract in **JSSR**
+
+::: notes
+Here is why this session is your capstone in miniature. The Rainbow of Credits is a live paper still being built — you saw a real one mid-flight, not a museum piece. In Weeks Seven and Eight you write your own paper: a real question, real data from C-R-S-P, Compustat, EDGAR or municipal sources, a design you can defend, and tables you build yourself. It is bound for the ASSIP Research Symposium on Wednesday, August twelfth, twenty twenty-six — a poster, with a virtual breakout for our remote interns — and an abstract in the Journal of Student-Scientists' Research, G-M-U Mason Publishing. The seven-part template you read outward this week is what I run inward before committing two years to a project.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Reading a paper outward and building one inward are the **same chain** run in opposite directions. Run it on your own draft before a referee does: which link — question, design, tables, robustness — gets attacked first, and is it strong enough yet to survive? In Weeks 7–8 you build that chain for real.
+:::
+
+::: notes
+To close: reading a paper outward and building one inward are the same chain run in opposite directions — sharp question, credible design, transparent tables, honest robustness. You watched me run it on a live paper of my own, and the judgment is the same whether the cadaver is a stranger's paper or your own draft. The discipline now is to run that chain on your draft before a referee does, and ask honestly: which link gets attacked first, and is it strong enough yet to survive? That is the whole point of Weeks Seven and Eight, when you build the chain for real and carry it to the symposium on August twelfth. Read every paper, including your own, as though you will defend its tables in a seminar. By August twelfth, you will.
+:::

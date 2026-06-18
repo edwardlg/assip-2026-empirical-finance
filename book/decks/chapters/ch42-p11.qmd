@@ -1,0 +1,66 @@
+---
+title: "Aggregating the Grid — and Recovering the Truth"
+date: "2026-07-13"
+---
+
+# Aggregating the Grid {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part eleven of thirteen. In part ten we built Callaway and Sant'Anna's central object — the group-time effect, each an honest two-by-two against clean controls. Now we take the whole grid, aggregate it into the heterogeneity-robust event study, and watch it recover the true answer where two-way fixed effects failed.
+:::
+
+## Aggregate by Event Time
+
+$$\widehat{\text{ATT}}^{\text{es}}(e)=\sum_g \mathbf{1}\{t=g+e\}\,\omega_g\,\widehat{\text{ATT}}(g,g+e)$$
+
+- Event time $e=t-g$ = **years since adoption**
+- Average $\widehat{\text{ATT}}(g,t)$ across cohorts sharing the same $e$
+- Weights $\omega_g$ = cohort sizes (non-negative, sum to one)
+
+::: notes
+Now you have a whole grid of group-time effects — one for every cohort and every post period. This grid is the honest output, and you aggregate it on purpose. The most useful aggregation is by event time e, equal to t minus g — years since adoption — averaging the group-time effects across cohorts that share the same e, with non-negative weights omega-g, the cohort sizes, summing to one. So the event-study effect at, say, two years after adoption is the cohort-size-weighted average of every cohort's two-years-after group-time effect. The weights are explicit, non-negative, and chosen by you — the opposite of the timing-variance weights that ran wild inside the pooled regression.
+:::
+
+## The Heterogeneity-Robust Event Study
+
+- Plot $\widehat{\text{ATT}}^{\text{es}}(e)$ vs. $e$ — honest replacement for the 4.1 event study
+- $e<0$: genuine **placebo / pre-trend** checks (should be near zero)
+- $e\ge0$: the honest **dynamic build-up** TWFE mangled
+- Or collapse to a single **overall ATT** — the one number to report
+
+::: notes
+Plotting this against event time is the heterogeneity-robust event study — the honest replacement for the lead-and-lag two-way fixed-effects event study of Chapter four-point-one. Its negative-event-time values are genuine placebo and pre-trend checks: effects should be near zero before adoption, and because each is built from clean comparisons, this test is trustworthy. Its non-negative-event-time values trace the dynamic build-up of the disclosure effect that two-way fixed effects mangled. You can also collapse the whole grid to a single overall effect on the treated — a transparent weighted average of every clean group-time effect — which is the one number to report in place of the broken pooled coefficient.
+:::
+
+## Clean Estimators Refuse to Fabricate
+
+- §3 world: only E and L, **no** never-treated state
+- Late cohort L has **no** clean control in its post-period
+- So L's effect is **not identified** — the honest flip side of the crisis
+- Clean estimators **refuse** the forbidden comparison rather than fake an answer
+
+::: notes
+Now run this on the two-state world from earlier, but notice the catch that world deliberately exposed. With only the two eventually-treated states E and L, the late cohort L has no clean control in its post-period: E is already treated, and there is no never-treated state. So L's effect is not identified without one. This is the honest flip side of the crisis — clean estimators refuse to form the forbidden comparison, which means they refuse to fabricate an answer when no clean control exists. Two-way fixed effects, by contrast, silently fabricated one and flipped the sign. Refusing to answer when the data cannot answer is a feature, not a bug.
+:::
+
+## Restore a Clean State — and It Works
+
+- Add never-treated State N (Priya's real data has many non-adopters)
+- $\widehat{\text{ATT}}(2,t)$: E vs. N (and not-yet-treated L before yr 5) $\to$ recovers $-1,-2,-3,-4,-5$
+- $\widehat{\text{ATT}}(5,t)$: L vs. N, **never** E $\to$ recovers $-1,-2$
+- Overall clean ATT $=-2.57$ (truth) vs. TWFE's attenuated $-1.23$
+
+::: notes
+So restore a genuine never-treated state N — Priya's real data has plenty of non-adopters — and watch it work on the six-year version. The group-time effect for cohort two, State E, uses State N, and before year five the not-yet-treated State L, as clean controls, and recovers E's true effects of minus one through minus five. The group-time effect for cohort five, State L, uses State N — never the already-treated State E — and recovers L's true effects of minus one and minus two. Aggregate by event time and the overall clean effect comes out at the true minus two-point-five-seven, versus the attenuated minus one-point-two-three that pooled two-way fixed effects returns on the very same data. No forbidden comparison, no contamination, no sign flip. The estimator returns the answer the data actually contain.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Aggregate the grid by **event time** $e=t-g$ with cohort-size weights to get a **heterogeneity-robust event study**: $e<0$ tests pre-trends, $e\ge0$ traces honest dynamics. Where no clean control exists, the estimator **refuses** to answer. With a never-treated state, it recovers the true **$-2.57$** where TWFE gives **$-1.23$**. Next: two more routes, the code, and what to carry forward.
+:::
+
+::: notes
+To summarize part eleven: you aggregate the group-time grid by event time, with cohort-size weights, to produce the heterogeneity-robust event study — negative event times test parallel trends honestly, non-negative event times trace the true dynamic build-up — or collapse it to one overall number. Where no clean control exists, the estimator honestly refuses rather than fabricating the answer two-way fixed effects invented. Restore a never-treated state and it recovers State E's and State L's true effects exactly, for an overall minus two-point-five-seven, while pooled two-way fixed effects gives an attenuated minus one-point-two-three. In part twelve we see the other two leading estimators — Sun and Abraham, and Borusyak, Jaravel, and Spiess — run the code, and gather what to carry forward.
+:::

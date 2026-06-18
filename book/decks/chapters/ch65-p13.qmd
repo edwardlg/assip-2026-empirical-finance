@@ -1,0 +1,57 @@
+---
+title: "Audit Logging and the Local Fallback"
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+# Audit Logging and the Local Fallback {.title}
+
+::: notes
+Welcome back to the AI co-pilot for research, part thirteen of fourteen. In part twelve we covered the call knobs, model tiers, and G-M-U's Azure gateway. Now two pieces that make AI-assisted work auditable and license-safe: logging every A-P-I call, and running a model locally when the text you classify is licensed data that must not leave G-M-U infrastructure.
+:::
+
+## Audit Logging
+
+- **Log every API call** — one line of JSON per call, appended
+- Record the timestamp and the exact model version string
+- Record token counts and cache reads for cost
+- Log a SHA-256 **hash** of the prompt when input is licensed
+- The hash proves what you sent without copying licensed text
+
+::: notes
+First, audit logging. For reproducibility — and for your own sanity when a reviewer asks six months later what exactly you sent the model — log every A-P-I call. One line of J-SON per call, appended to a file. Each record holds the timestamp, the exact model version string, the response, the input and output token counts, and the cache-read tokens. This log is the AI-pipeline equivalent of a Stata log file or a lab notebook. It records which model version produced which label for which input, plus the token cost. With it, your results are auditable: anyone can see the exact requests, confirm the model version never silently changed mid-study, and reconstruct your label column. Without it, "I used an LLM to classify the filings" is an unfalsifiable claim. Note one choice: when the input contains licensed text, log a S-H-A two-fifty-six hash of the prompt rather than the raw prompt. The hash proves exactly what you sent — any change in input changes the hash — without copying licensed data into a log file.
+:::
+
+## Local Fallback for Licensed Data
+
+- Licensed data must **not leave** GMU infrastructure
+- Sending CRSP or TRACE to a public API may violate it
+- When the text is licensed, run the model **locally**
+- Development: an 8-billion-parameter model via **Ollama** on your machine
+- Production: a larger open model on a GPU node on **Hopper**
+
+::: notes
+Second, the local fallback for licensed data. The book's conventions and your WRDS and TRACE license agreements are strict on one point: licensed data must not leave G-M-U infrastructure. Sending raw CRSP, Compustat, or TRACE records to a commercial A-P-I over the public internet may violate the data-use agreement, regardless of the vendor's privacy policy — the data simply is not yours to transmit. When the text you need to classify is licensed, you run the model locally, inside the secured environment, so the data never crosses the boundary. Two practical routes. For development and small jobs, run a roughly eight-billion-parameter open model on your own machine with Ollama — a tool that serves models locally and exposes a local H-T-T-P endpoint, so your data never leaves the laptop. For production-scale jobs over licensed corpora, run a larger open model on a G-P-U node — an A-one-hundred on G-M-U's Hopper cluster — where the licensed data already lives and stays.
+:::
+
+## The Cost Is Capability — So Validate
+
+- A local 8B model is weaker than a frontier API model
+- Its classifier needs the **same** out-of-sample validation
+- You may need the larger Hopper model to clear your F1 bar
+- Validation tells you if the private choice is accurate enough
+
+::: notes
+The privacy rationale is the whole point: a local or on-cluster model keeps WRDS and TRACE text inside the walls the license requires. The cost is capability — an eight-billion-parameter local model is weaker than a frontier A-P-I model, so its classifier needs the same out-of-sample validation from earlier: a gold set, a held-out split, and precision, recall, and F-one. You may find you need the larger Hopper model to clear your F-one bar. Validation is what tells you whether the privacy-preserving choice is also an accurate-enough one. The discipline does not change because the model is local; if anything, a weaker model makes validation more important, not less.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Log every call** — version string, tokens, and a hash of the prompt when input is licensed — so results are auditable. When text is **licensed**, run the model locally via Ollama or on Hopper so data never leaves GMU, and validate it the same way. Next: the disclosure checklist and the close.
+:::
+
+::: notes
+To summarize part thirteen: two pieces that keep AI-assisted work honest and legal. Audit logging writes one J-SON line per call — timestamp, exact model version string, token counts, and cache reads — so your label column is reconstructable and the model version is provably unchanged; hash the prompt when the input is licensed. And the local fallback respects that licensed data must not leave G-M-U: run a smaller open model with Ollama for development, or a larger one on Hopper for production, keeping WRDS and TRACE text inside the walls. Because a local model is weaker, validate it with the same out-of-sample protocol. In part fourteen we close with the responsible-use and disclosure checklist for your capstone.
+:::

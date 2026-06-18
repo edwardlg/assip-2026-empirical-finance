@@ -1,0 +1,69 @@
+---
+title: "What's Vulnerable: Four Lines of Attack"
+date: "2026-07-20"
+---
+
+# What's Vulnerable: Four Lines of Attack {.title}
+
+::: notes
+Welcome back to Chapter five-point-one, part six of seven. In part five we read the regression horse races and named the paper's three clever moves. Now we turn adversarial. A referee's job is not to admire; it is to attack the paper at its weakest joints and see if it holds. Four lines of attack, each connecting to something you already know from earlier weeks.
+:::
+
+## Data-Snooping and Multiple Testing (Week 1)
+
+- Size and BE/ME are *survivors* of a field-wide search
+- Some predictors clear $t>2$ **by chance alone**
+- One FM t-statistic doesn't adjust for hundreds of tests run to find it
+- Harvey, Liu & Zhu (2016): the hurdle should sit well above $t>2$
+- The test: would they survive in data the authors never saw?
+
+::: notes
+First, data-snooping and multiple testing, from Week One. Size and book-to-market were not the first characteristics anyone tried; they are the survivors of a field-wide search across many candidate predictors. When the whole profession ransacks the same dataset, some variables clear a t-greater-than-two bar by chance alone — the multiple-comparisons problem scaled into a decades-long fishing expedition. A single Fama–MacBeth t-statistic does not adjust for the hundreds of tests the literature ran to find it. Later work by Harvey, Liu and Zhu, twenty sixteen, argued the hurdle for discovering a return factor should sit well above the conventional t-greater-than-two, precisely because of all that snooping. The right skeptical question: would size and book-to-market survive in data the authors never saw? Largely yes — out-of-sample and international evidence has been kind to book-to-market — but the burden is real.
+:::
+
+## Survivorship and Look-Ahead in Compustat
+
+- Compustat coverage was **backfilled** — adds firms that *survived*
+- Survivorship bias can distort early-sample book equity
+- The whole build relies on the §3 **timing lag**
+- Get the gap wrong → smuggle in **look-ahead bias**
+- "Careful" is a claim to check, not assume
+
+::: notes
+Second, survivorship and look-ahead in Compustat book equity. Compustat's historical coverage was backfilled, and backfilling tends to add firms that survived long enough to be worth adding — a survivorship bias that can distort early-sample book equity. And the whole construction lives or dies on the timing lag: get the gap wrong and you smuggle in look-ahead bias, crediting investors with accounting numbers they could not yet have seen. The paper is careful here, but careful is a claim to be checked, not assumed.
+:::
+
+## Risk Versus Mispricing — the Mechanism
+
+- The *facts* are clear; the *why* is not
+- **Risk story (authors' lean):** size, BE/ME proxy missed systematic risks
+- **Mispricing story:** investors misprice glamour vs. beaten-down value
+- A **descriptive** design can't adjudicate mechanism
+- Accept the fact; refuse either interpretation as settled here
+
+::: notes
+Third, the interpretation debate: risk versus mispricing. Suppose you fully believe the facts — value and small stocks earn higher average returns. Why? Two camps, never reconciled. The risk story, which the authors lean toward: size and book-to-market proxy for systematic risks the single market beta misses, like distress risk, so the extra return is fair compensation and CAPM was just too crude. The mispricing story: investors irrationally over-love glamorous growth firms and under-price beaten-down value firms, so the value premium is a behavioral mistake the market slowly corrects. The paper documents the pattern but cannot settle which story generates it. Because the design is not causal, it has no leverage to adjudicate mechanism. A referee should accept the cross-sectional fact and refuse either interpretation as established by this paper alone.
+:::
+
+## Errors-in-Variables in Beta (Weeks 2–3)
+
+- Beta isn't observed — it's *estimated* in Pass 1, with noise
+- Random measurement error → **attenuation** toward zero
+- Skeptic: maybe beta's flat slope is just attenuation
+- The fix: **portfolio betas** are far less noisy
+- Premium so near zero that attenuation alone is a strained rescue
+
+::: notes
+Fourth, the subtle one: errors-in-variables in beta, from Weeks Two and Three — and it cuts in the paper's favor while still deserving scrutiny. Beta is not observed; it is estimated in pass one, with noise. A regressor measured with random error suffers attenuation bias — its slope is pulled toward zero. So a skeptic objects: maybe beta's flat slope is just attenuation, and beta really does matter. Fama and French anticipate this — it is the very reason they assign betas via portfolios rather than individual stocks, since portfolio betas are far less noisy. A careful referee asks whether that fix is enough. The honest reading: portfolio grouping shrinks the problem a lot, and the premium is so close to zero that attenuation alone is a strained rescue — but see why the objection is the right one to raise before you decide it fails.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A referee attacks four joints: **data-snooping** (size and BE/ME are search survivors), **Compustat survivorship and look-ahead**, the unsettled **risk-versus-mispricing** mechanism a descriptive design can't resolve, and **errors-in-variables** attenuating beta. Each ties back to an earlier week. Next: rebuild the paper yourself, and the three questions to leave with.
+:::
+
+::: notes
+To summarize part six: a careful referee attacks four joints. Data-snooping, since size and book-to-market survived a field-wide search. Compustat survivorship and look-ahead bias. The unsettled risk-versus-mispricing mechanism a descriptive design can never resolve. And errors-in-variables attenuating the beta slope. In part seven, the last, we rebuild a piece of the paper — three replication exercises — and leave with three referee questions.
+:::

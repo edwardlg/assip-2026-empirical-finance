@@ -1,0 +1,55 @@
+---
+title: "The RESET Test: Is My Line the Wrong Shape?"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The RESET Test: Is My Line the Wrong Shape? {.title}
+
+::: notes
+Welcome back to Chapter two-point-five, part eight of nine. In part seven we saw that wrong functional form dumps curvature into the error, and we collected the fixes — polynomials, logs, interactions. But all of them require knowing the right shape in advance. This part gives you the diagnostic that flags a wrong shape without you having to guess: Ramsey's Regression Equation Specification Error Test, RESET.
+:::
+
+## The Idea Behind RESET
+
+- If the line is right, powers of $\hat{y}$ add no explanatory power
+- Refit with $\hat{y}^2, \hat{y}^3$; $F$-test $H_0: \gamma_1 = \gamma_2 = 0$
+- $\hat{y}$'s powers stand in for all omitted squares and cross terms
+- Rejection ($p < 0.05$) flags curvature — a flag, **not** a diagnosis
+
+::: notes
+Ramsey's RESET test is a simple, clever check for neglected nonlinearity. The idea: if your linear model has captured the true shape, then powers of the fitted values should have no additional explanatory power — there is no leftover curvature for them to pick up. The procedure is mechanical. Fit your model and save the fitted values y-hat. Re-fit, adding y-hat-squared and y-hat-cubed as extra regressors. Then test the joint null that both their coefficients are zero with an F-test, the joint-significance machinery from Chapter two-point-four. Why powers of the fitted value? Because the fitted value combines all your regressors, so its powers are a cheap, low-dimensional stand-in for all the squared and cross terms you might have omitted, without guessing which specific variable needs a polynomial. A rejection — p below zero-point-zero-five — says there is curvature your linear model is not capturing. It is a flag, not a diagnosis: it tells you that something is wrong with the shape, not what.
+:::
+
+## RESET in Four Lines
+
+- Priya's convex truth: $y = 1 + 0.5x + 0.4x^2 + \varepsilon$
+- Linear fit fails RESET — microscopic $p$-value
+- Add $I(x^2)$, re-run: RESET no longer rejects (large $p$)
+- Flagged, fixed, confirmed — the full reveal-the-trick loop
+
+::: notes
+In code it is four lines. We simulate Priya's convex truth — y equals one plus zero-point-five x plus zero-point-four x-squared plus noise, so the true quadratic coefficient is zero-point-four. Fit it with a wrong straight line and run RESET with powers up to three: it fails with a microscopic p-value, correctly flagging the neglected curvature. Now add the quadratic term, an x-squared regressor, and re-run RESET: the p-value is large and RESET no longer rejects. The diagnostic flagged the problem, the polynomial fixed it, and the test confirmed the fix — the full reveal-the-trick loop in four lines.
+:::
+
+## RESET Is Blind to OVB
+
+- RESET tests **functional form**, not omitted variables or measurement error
+- A model can pass RESET and still be hopelessly confounded
+- RESET only looks at curvature among variables you **have**
+- Clean RESET = "shape looks right," **not** "coefficient is causal"
+
+::: notes
+One caution worth stating loudly. RESET is a test for functional form, not for omitted variable bias or measurement error. A model can sail through RESET and still be hopelessly confounded by an omitted variable, because RESET only looks at curvature among the variables you actually have — it cannot see a confounder that is not in your data at all. Passing RESET means the shape looks right, not that the coefficient is causal. Do not let a clean RESET lull you into trusting a number that omitted variable bias has quietly poisoned. This is exactly the kind of confusion the next part is built to prevent — sorting which diagnostics speak to which threat.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**RESET** asks whether powers of $\hat{y}$ still explain $y$ — if so, your shape is wrong. It flags curvature without you guessing the culprit, but it is **blind to OVB**: a clean RESET certifies the shape, not causality.
+:::
+
+::: notes
+To summarize part eight: the RESET test checks whether powers of the fitted values still carry explanatory power; if they do, your functional form is missing curvature. It is a cheap, automatic flag that does not require you to guess which variable needs a transformation. But it is blind to confounding — it only examines the variables you have, so a clean RESET certifies the shape, not the causal interpretation. In part nine, the finale, we assemble all three threats into the bias-consistency ledger, see which diagnostics speak to bias versus standard errors, and cross the bridge into causal inference — Weeks Three and Four.
+:::

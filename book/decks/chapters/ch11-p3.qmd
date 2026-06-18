@@ -1,0 +1,56 @@
+---
+title: "Independence and Conditional Expectation"
+date: "2026-06-22"
+---
+
+# Independence and Conditional Expectation {.title}
+
+::: notes
+Welcome back to Chapter one-point-one, part three of seven. In part two we learned to condition — restrict the table to a row and rescale. Now two ideas. First, independence: the special case where conditioning changes nothing. Second, we combine conditioning with averaging to build the conditional expectation — the single most useful object in the whole course, and quite literally the thing regression will estimate.
+:::
+
+## Independence: Knowing One Tells You Nothing
+
+- Independent when $p(x,y)=p_X(x)\,p_Y(y)$ for all $x,y$
+- Equivalently $p_{X\mid Y}(x\mid y)=p_X(x)$ — conditional equals marginal
+- Test: $p_X(+2\%)\,p_Y(1)=0.35\times0.70=0.245$
+- Actual cell $=0.30\ne0.245$ — so $X,Y$ are dependent
+
+::: notes
+X and Y are independent when conditioning on Y does not change the distribution of X at all. Formally, they are independent if the joint factors into the product of the marginals for every pair of values. Equivalently, the conditional equals the marginal, so conditioning teaches you nothing. Are Sam's X and Y independent? Test the easiest cell. If they were independent, the calm, plus-two-percent cell would have to equal the marginal of plus two percent times the marginal of calm, which is zero point three five times zero point seven, or zero point two four five. The actual joint probability is zero point three, which is not zero point two four five. One failing cell is enough: regime and return are dependent. That is the whole point of Sam's strategy — if returns were independent of the regime, there would be nothing for a regime-aware trader to exploit.
+:::
+
+## The Uncorrelated Trap
+
+- Independence is strictly stronger than "uncorrelated"
+- Covariance only detects *linear* association
+- $Y\in\{-1,0,+1\}$ equally likely, set $X=Y^2$
+- $Y$ pins down $X$, yet $\operatorname{Cov}(X,Y)=0$
+- "Uncorrelated" never licenses "independent"
+
+::: notes
+One subtle trap. Independence is strictly stronger than uncorrelated. Two variables can have zero covariance yet still be dependent, because covariance only detects linear association. Picture a variable Y equally likely to be minus one, zero, or plus one, and set X equal to Y squared. Knowing Y pins down X exactly — they are about as dependent as two variables can be — yet a quick calculation gives covariance of X and Y equal to zero, because the relationship is symmetric and bends rather than slopes. So uncorrelated never licenses you to assume independent. Chapter one-point-two makes covariance precise; for now, hold onto the warning, because conflating the two is one of the most common analytical errors in applied work.
+:::
+
+## Conditional Expectation
+
+- Mean: $\mathbb{E}[X]=\sum_x x\,p_X(x)=0.30\%$
+- Conditional mean: $\mathbb{E}[X\mid Y=y]=\sum_x x\,p_{X\mid Y}(x\mid y)$
+- Calm: $\mathbb{E}[X\mid Y=1]=+0.714\%$
+- Stormy: $\mathbb{E}[X\mid Y=2]=-0.667\%$
+- One blended number hid two opposite stories
+
+::: notes
+Now combine conditioning with averaging. The expectation of a discrete random variable is its probability-weighted average value. For Sam's portfolio, the unconditional expected daily return is minus two times zero point two, plus zero times zero point four five, plus two times zero point three five, which equals zero point three percent. On an average day Sam earns zero point three percent. But Sam never trades on an average day; Sam sees the regime. So the relevant object is the conditional expectation of X given Y equals y — the mean of X computed inside the conditional distribution. On calm days it works out to plus zero point seven one four percent. On stormy days it works out to minus zero point six six seven percent. This is a real finding stated cleanly: the strategy earns about plus zero point seven one percent on a calm day and loses about zero point six seven percent on a stormy day. The single unconditional number, zero point three percent, was a blend that hid two opposite stories.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Independence** means conditioning changes nothing: $p(x,y)=p_X(x)\,p_Y(y)$. It is stronger than uncorrelated — zero covariance can still hide dependence. The **conditional expectation** $\mathbb{E}[X\mid Y=y]$ splits one blended mean into per-regime stories: $+0.71\%$ calm, $-0.67\%$ stormy. Next: why $\mathbb{E}[X\mid Y]$ is itself random.
+:::
+
+::: notes
+To summarize part three: independence is the case where the joint factors into marginals and conditioning teaches you nothing; Sam's regime and return fail this test, so they are dependent. Independence is strictly stronger than uncorrelated — zero covariance can still hide a bending dependence. And the conditional expectation splits Sam's blended zero point three percent into plus zero point seven one on calm days and minus zero point six seven on stormy days. In part four we take the conceptual leap that everything later depends on: the conditional expectation is itself a random variable.
+:::

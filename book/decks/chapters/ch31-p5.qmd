@@ -1,0 +1,58 @@
+---
+title: "Randomization and the Bridge to Controlling for X"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Randomization and the Bridge to Controlling for X {.title}
+
+::: notes
+Welcome back to Chapter three-point-one, part five of five, the payoff. Part four exposed SUTVA, the assumption the framework rests on. Assuming it holds, we meet the one design that provably zeroes the selection-bias term we have chased: randomization. Then we build the bridge to Week Two's controlling for X, and preview the four chapters ahead.
+:::
+
+## Hand the Decision to a Coin
+
+- Randomly assign the program; the applicant has no say
+- This makes $\big(Y_i(0),Y_i(1)\big) \perp\!\!\!\perp D_i$
+- Group membership carries **no** information about outcomes
+- Savvy and disorganized split evenly **by chance**
+- The two groups become the **same kind of people**
+
+::: notes
+We have a villain with a name, the selection-bias term, and we want it to be zero. The cleanest way is to take the decision of who gets treated out of human hands and give it to a coin. Suppose the credit union flips a fair coin per applicant, enrolls the heads, leaves the tails as controls. This makes the treatment indicator statistically independent of the potential outcomes. We write that with the double-perpendicular symbol, read as: the pair Y-of-zero and Y-of-one is independent of D. Which group you land in carries no information about your outcomes, because the coin does not know or care who you are. The credit-savvy, already-approvable applicants split evenly across treatment and control by chance; so do the disorganized ones. The two groups become, in expectation, the same kind of people, differing only in the coin flip.
+:::
+
+## The Bias Term Vanishes
+
+- Independence: $\mathbb{E}[Y_i(0)\mid D{=}1]=\mathbb{E}[Y_i(0)\mid D{=}0]$
+- So selection bias $=0$
+- Master decomposition collapses: $\Delta = \text{ATT} + 0 = \text{ATE}$
+- Maya's counterfactual would equal the controls' $0.41$, not $0.55$
+- This is why an **RCT** is the **gold standard**
+
+::: notes
+Watch what independence does to the bias term. Conditioning on D no longer changes the expectation of a potential outcome, so the expected Y-of-zero among the treated equals the expected Y-of-zero among the untreated, because the groups are interchangeable by construction. So the selection bias, that difference, is zero. It is gone. The same logic collapses the distinction between ATT and ATE: feed the zero into the master decomposition and the naive difference equals the ATT plus zero, the ATE. The simplest estimator, two averages subtracted, now equals the causal effect. In Maya's numbers, had the program been randomized, the enrollees' counterfactual would equal the controls' zero-point-four-one, not the inflated zero-point-five-five. This is why a randomized controlled trial is the gold standard: it does not measure the bias and subtract it; it prevents it from existing, by design. The credibility comes from the coin.
+:::
+
+## Two Caveats, and the Bridge to "Control for X"
+
+- Randomization zeroes bias **in expectation** — finite samples wobble
+- That residual is **sampling variation**, the *good* problem
+- But **usually you cannot randomize** — data is observational
+- "Control for $X$" assumes $\big(Y_i(0),Y_i(1)\big)\perp\!\!\!\perp D_i \mid X_i$
+- **Conditional independence** is an assumption data can't verify
+
+::: notes
+Two honest caveats. First, randomization zeroes selection bias in expectation; in any one finite sample the coin might deal a few more savvy applicants to treatment. That residual is sampling variation, the good problem that Week One's standard errors quantify and that shrinks with sample size. Second, and far more important, most of the time you cannot randomize. You cannot randomly assign families to student debt, firms to ESG standards, or countries to financial crises. The data is observational. When you control for X, adding credit score, income, age, you try to manufacture the comparability randomization gives for free. The hope is that within groups matching on all the X's, treatment is as good as random. That assumption is conditional independence, or unconfoundedness: the potential outcomes are independent of D given X. It is randomization's poorer cousin, and the data cannot verify it. If one unobserved confounder remains, selection bias survives. Randomization needs no such assumption: the coin balances the unobservables too.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Randomization** makes $D_i$ independent of potential outcomes, so selection bias vanishes and the difference in means equals the ATE. When you can't randomize, "controlling for $X$" bets on **conditional independence** — an unverifiable assumption. Next, Chapter 3.2: matching and propensity scores take that bet seriously.
+:::
+
+::: notes
+To summarize: randomization makes treatment independent of the potential outcomes, drives selection bias to zero, and turns the difference in means into the ATE. That is why the randomized controlled trial is the gold standard; the work is done by the coin. But most finance data is observational, and there controlling for X bets on conditional independence, an unverifiable assumption. In your lab, notebook three-point-one, you play God: generate the full science table, watch the naive estimator lie, then turn on the coin and watch the bias collapse. The next four chapters are the climbing equipment. Chapter three-point-two uses matching and propensity scores. Chapter three-point-three reweights. Chapter three-point-four abandons conditional independence for instrumental variables, where LATE gets its derivation. Keep that selection-bias term in your mind's eye, and the week hangs together as a single argument.
+:::

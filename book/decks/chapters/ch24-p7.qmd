@@ -1,0 +1,70 @@
+---
+title: "HAC / Newey–West: Correlation Across Time"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# HAC / Newey–West: Correlation Across Time {.title}
+
+::: notes
+Welcome back to When the Errors Misbehave, part seven of eight. In part six we handled clustering — correlation within groups. Now the same disease across time. Sam's residuals echo from month to month, and we will see why that inflates his t-statistic and how Newey and West repair it.
+:::
+
+## The Time-Series Version
+
+- Sam regresses monthly strategy returns on a signal
+- Residuals are serially correlated — this month echoes last
+- Slow forces persist: drifting premia, liquidity, momentum
+- $\boldsymbol\Omega$ now has off-diagonals that fade with the gap
+- Adjacent periods strongly correlated; far apart, near zero
+
+::: notes
+Sam trades. He regresses a strategy's monthly return on a market-timing signal and gets a beautiful t-stat. But residuals in financial time series are serially correlated — also called autocorrelated: this month's error is correlated with last month's, because slow-moving forces persist — a drifting risk premium, a liquidity squeeze, momentum itself. Now Omega has nonzero off-diagonals, in a special pattern: the correlation is strongest between adjacent periods and fades as the time gap grows. The covariance with last period's error is large; with the error twelve periods back, near zero. This is not clustering — there are no clean groups — and it is not pure heteroskedasticity. It is a third shape for Omega: a band of decaying correlations around the diagonal.
+:::
+
+## Newey and West's Idea (1987)
+
+- HAC: heteroskedasticity-and-autocorrelation-consistent
+- Same sandwich; middle adds cross-products of nearby residuals
+- $\hat\varepsilon_t\hat\varepsilon_{t-\ell}\,\mathbf{x}_t\mathbf{x}_{t-\ell}'$ for lags $\ell = 1,\dots,L$
+- Declining Bartlett weights $w_\ell = 1 - \frac{\ell}{L+1}$
+- Weights also guarantee the variance stays positive
+
+::: notes
+Whitney Newey and Kenneth West built the heteroskedasticity-and-autocorrelation-consistent estimator, H-A-C, for exactly this. Same sandwich. The middle now adds cross-products of residuals from nearby periods — epsilon-t hat times epsilon-t-minus-ell hat, times the matching regressors — for lags ell equals one, two, up to L. Because correlation fades with distance, Newey–West applies declining weights: w-ell equals one minus ell over L plus one, the Bartlett kernel. The lag-one cross-products count almost fully, distant lags count for less, and beyond the bandwidth L they count for nothing. Those weights also do mathematical work: they guarantee the variance matrix is positive, since a variance cannot be negative.
+:::
+
+## Setting the Bandwidth
+
+- The one knob: bandwidth $L$, how many lags to include
+- Too small misses persistence; too large adds noise
+- Rule of thumb $L \approx 4(T/100)^{2/9}$, with $T$ periods
+- Most software offers an automatic-bandwidth option
+- HAC is the default for pure time-series regressions
+
+::: notes
+The one knob you must set is the bandwidth L — how many lags to include. Too small and you miss real persistence; too large and you add noise. A common automatic choice is L approximately four times the quantity T over one hundred, raised to the two-ninths power — the Newey–West rule of thumb — where T is the number of periods, and most software offers an automatic-bandwidth option. For Sam's monthly data, a small multiple of twelve — a year or two of lags — is a sensible manual start. H-A-C standard errors are the default for pure time-series regressions: predictive return regressions, factor-model tests, anything indexed by t with one observation per period.
+:::
+
+## Why Positive Autocorrelation Inflates t
+
+- Same Moulton logic, in time-series costume
+- Each new observation carries less fresh information
+- $T = 120$ months, $0.4$ correlation: effective $T$ well below 120
+- Naive formula divides by too-large $T$ — t too big
+- Positive autocorrelation (the usual case) is the dangerous direction
+
+::: notes
+It is worth pinning down why serial correlation inflates naive standard errors, because the mechanism is the clustering one in a time-series costume. When errors are positively correlated, each new observation carries less fresh information than the naive formula assumes, because part of it echoes what you already saw. If Sam has one hundred twenty monthly returns but each month's residual is, say, zero point four correlated with the previous month's, his effective sample size is well below one hundred twenty. The naive formula divides by the wrong, too-large effective T, so it reports a standard error too small and a t-stat too big. H-A-C repairs this by counting the lagged cross-products. Positive autocorrelation, the usual case in finance, is the dangerous direction; negative autocorrelation would make naive t-stats too conservative instead.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**HAC / Newey–West** handles errors correlated across time: the same sandwich, with declining-weight cross-products of nearby residuals out to bandwidth $L$. Positive autocorrelation shrinks the *effective* sample, inflating t-stats — the dangerous direction. Set $L$ to cover the persistence you expect. Next: panels, where both diseases strike at once.
+:::
+
+::: notes
+To summarize part seven: H-A-C, the Newey–West estimator, handles errors correlated across time using the same sandwich, with declining-weight cross-products of nearby residuals out to a chosen bandwidth L. Positive autocorrelation shrinks the effective sample size, so the naive formula reports a standard error that is too small and a t-stat that is too big — the dangerous direction in finance. Set the bandwidth to cover the persistence you expect. In part eight we reach the hard case Maya and Priya actually live in: a panel, where a firm effect and a time effect can strike at once, and Petersen's taxonomy tells us what to do.
+:::

@@ -1,0 +1,58 @@
+---
+title: "A Disparity Is Not a Finding of Discrimination"
+date: "2026-07-13"
+---
+
+# A Disparity Is Not a Finding of Discrimination {.title}
+
+::: notes
+Welcome to the Week Four mentor session: detecting discrimination with a clean design, part one of five. This week you learned a family of designs that manufacture comparability out of the structure of the world — difference-in-differences, regression discontinuity, and their staggered and synthetic-control cousins. Today we point all of that machinery at a question that is harder than it looks: does a lender treat two otherwise-identical applicants differently because of who they are? This is the heart of Professor Gao's own fair-lending work, and a wonderful teacher, because the naive approach to it is so tempting and so wrong. We start with the single most important distinction in the field — the gap between a disparity and a finding of discrimination.
+:::
+
+## Two Rival Stories, One Disparity
+
+- You see a group approved less, or priced higher
+- That is a **disparity** — not yet a verdict
+- Story A: **same** rule, groups differ in legitimate factors
+- Story B: **different** rule applied to the same factors
+- Only Story B is **discrimination**
+- A raw gap cannot tell the two apart
+
+::: notes
+Here is the setup. You have lending data: who applied, who got approved, on what terms, and a protected characteristic — race, sex, the composition of a borrowing couple. You notice that one group is approved less often, or charged more. Is that discrimination? Not yet. A raw disparity confounds two different stories. In the first, the lender applies the same rule to everyone, but the groups genuinely differ in the things that rule legitimately uses — income, credit score, debt-to-income, loan-to-value. In the second, the lender applies a different rule to the two groups. Only the second is discrimination. And a difference in approval rates, by itself, simply cannot tell you which world you are in. The entire intellectual content of fair-lending empirics lives in the gap between "I found a disparity" and "I found discrimination."
+:::
+
+## The Standard Fix: Control for Creditworthiness
+
+- Regress outcome on the protected trait **and** legitimate factors
+- Income, credit score, loan size, loan-to-value
+- Read the leftover coefficient as the **residual disparity**
+- This is real progress over a raw gap
+- It is the **workhorse** of the field
+
+::: notes
+The standard fix is to control for creditworthiness. You regress the outcome — approval, or price — on the protected characteristic and on income, credit score, loan size, and whatever else the underwriter is supposed to use. Then you read the coefficient on the protected characteristic as the disparity that remains after accounting for legitimate factors. This is genuine progress over a raw gap, and it is the workhorse of the field. But you have to be precise about what it can and cannot establish. It can establish that the disparity is not explained by the covariates you measured. What it cannot establish, by itself, is discrimination — and the reason is exactly the lesson we learned the hard way back in Week Three. We pick that thread up next.
+:::
+
+## Why Controls Are Not Enough
+
+- The underwriter sees things **you do not**
+- A thin-file letter, a soft assessment, hidden collateral
+- If that factor links trait **and** outcome → **omitted-variable bias**
+- Selection-on-observables, Week Three, all over again
+- No set of controls you happen to have can fix this
+
+::: notes
+Here is the catch. The control-for-creditworthiness regression can only adjust for variables you actually measured. But there is almost always something the underwriter sees that you do not — a thin-file applicant's explanatory letter, a banker's soft assessment of character, a piece of collateral that never made it into your dataset. If that unobserved factor is correlated with both the protected characteristic and the outcome, then your residual disparity is part real differential treatment and part omitted-variable bias, and no amount of controls you happen to have can separate the two. This is precisely the failure of selection-on-observables we diagnosed in Week Three, now wearing a fair-lending costume. Controlling is necessary. As we will see, it is never sufficient.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A **disparity** is a gap in approval or pricing; a finding of **discrimination** is a causal claim about differential treatment. Controlling for creditworthiness is real progress but never proof, because the underwriter sees what you cannot. Next: the trap of *over*-controlling, and the counterfactual that defines the target honestly.
+:::
+
+::: notes
+To summarize part one: a disparity is just a gap — one group approved less or priced higher — while a finding of discrimination is a causal claim that the lender applied a different rule because of who the applicant is. Controlling for creditworthiness moves you from a raw gap to a residual disparity, which is real progress, but it can never close the case, because the underwriter always sees things your dataset does not, and that opens the door to omitted-variable bias. In part two we sharpen the problem from the other side: we will see that controlling too much can be just as damaging as controlling too little, and then we will write down the honest target — the counterfactual that actually defines lending discrimination.
+:::

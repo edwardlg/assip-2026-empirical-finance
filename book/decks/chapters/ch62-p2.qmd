@@ -1,0 +1,57 @@
+---
+title: "The Research Question"
+date: "2026-07-27"
+---
+
+# The Research Question {.title}
+
+::: notes
+Welcome back to Chapter six-point-two, part two of nine. In part one we framed the paper: it replaces fixed government industry codes with a measure built from the words firms use. Now we state the research question precisely — and notice that two questions are stacked inside it, which you must hold apart.
+:::
+
+## One Plain Sentence, Two Questions
+
+- Can we define industries from what firms *say* they do?
+- The source: product descriptions in 10-K filings
+- Rather than from fixed SIC / NAICS codes
+- Does the resulting network of competitors describe the world better?
+- The title names both halves
+
+::: notes
+In one plain sentence: can we define industries from what firms say they do — the product descriptions in their ten-K filings — rather than from fixed S-I-C or NAICS codes, and does the resulting firm-specific network of competitors describe the world better? Two questions are stacked here; hold them apart. The first is a measurement question: is there a better way to draw industry boundaries than the official classification? The second is an economics question the better measure makes answerable for the first time: when a firm differentiates its product away from its rivals, what happens, and what drives it? The title names both halves — "Text-Based Network Industries" is the measure, "Endogenous Product Differentiation" is the economics it unlocks.
+:::
+
+## Outcome And Key Variable
+
+- Measurement half: the "outcome" is a *definition*
+- For each firm, a list of who its competitors are
+- Economics half: key variable is **product similarity**
+- How close a firm's description sits to its rivals'
+- Outcomes: profit margins, the choice to differentiate, responses to rivals
+
+::: notes
+Name the outcome and the key variable, as the Week-Five pack drilled you. In the measurement half, the outcome is a definition: for each firm, a list of who its competitors are. In the economics half, the key variable is product similarity — how close a firm's product description sits to its rivals'. The outcomes are things competition should move: profit margins, the decision to differentiate, and how firms respond when a rival or a merger crowds their product space. The unifying claim is that an industry is not a fixed box you are born into, but a neighborhood you occupy — firm-specific, changing year to year as products evolve, and explaining real outcomes better than the static government code.
+:::
+
+## Why Economists Dislike SIC Codes
+
+- SIC is **transitive**: A–B and B–C ⟹ all rivals
+- Clean partitions, no overlaps
+- SIC is **time-invariant**: a firm's code rarely changes
+- Both are false about real competition
+- Netflix: Blockbuster, then HBO, then Disney — a moving neighborhood
+
+::: notes
+Why care that economists dislike S-I-C codes? Because the system has a defect you can feel: it is transitive and time-invariant. Transitive means if A shares a box with B and B with C, then A, B, and C are all declared mutual competitors — clean partitions, no overlaps. Time-invariant means a firm's code rarely changes even as the firm reinvents itself. Both are false about real competition. Netflix fought Blockbuster, then HBO, then Disney — a moving neighborhood, not a fixed box — and its rival set overlaps but does not coincide with Disney's. Hoberg and Phillips ask: what if we let the data draw the neighborhoods, and let them overlap, and let them move?
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The question stacks two halves: a **measurement** half (define industries from 10-K text, not SIC codes) and an **economics** half it unlocks (what drives product differentiation). SIC's twin defects — it is transitive and time-invariant — are exactly what a text-based, overlapping, yearly-updating measure is built to fix.
+:::
+
+::: notes
+To summarize part two: the research question stacks a measurement half and an economics half. The measurement half asks whether ten-K text can define industries better than S-I-C codes; the economics half asks what drives product differentiation, once the measure exists. The motivation is that S-I-C is transitive and time-invariant — two properties that are simply false about competition. In part three we start building the measure itself: getting the text and turning each description into a vector.
+:::

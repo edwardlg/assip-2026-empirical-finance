@@ -1,0 +1,65 @@
+---
+title: "The Result in One Plain Sentence"
+date: "2026-07-13"
+---
+
+# The Result in One Plain Sentence {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part two of thirteen. In part one we framed the problem: the pooled two-way fixed-effects coefficient can be biased or even wrong-signed under staggered timing with heterogeneous or dynamic effects, and we met Priya's climate-disclosure rollout. Now we state the whole crisis in a single sentence, name the phrase that explains it, and preview the cure — which is surprisingly trivial once you see it.
+:::
+
+## The Crisis in One Sentence
+
+- $\hat\beta$ is a weighted average of many small 2x2 DiDs
+- Some comparisons are **forbidden**
+- Forbidden = the "control" group is **already treated**
+- Forbidden weights can be **negative**
+
+::: notes
+Here is the whole chapter in one sentence. When different units start treatment in different years, and the treatment effect is not identical for everyone at every horizon, the single coefficient beta-hat from the two-way fixed-effects regression is a weighted average of many little difference-in-differences comparisons — and some of those comparisons are forbidden, because they use already-treated units as the control group, with weights that can be negative. Everything in this chapter unpacks that sentence. The phrase to burn into memory is forbidden comparison: a two-by-two difference-in-differences in which the control group is a set of units that are already treated.
+:::
+
+## What Makes a Comparison "Forbidden"
+
+- A clean control group is **untreated throughout**
+- Its job: show what would happen **absent** the policy
+- TWFE will treat an **early adopter** as a control for a **late adopter**
+- But the early adopter is **contaminated** by its own effect
+
+::: notes
+In a clean difference-in-differences the control group is untreated throughout — its job is to show you what would have happened to the treated group absent the policy. But the pooled two-way fixed-effects regression, hunting for any variation in the treatment indicator it can use, will happily treat an early-adopting state as a control for a late-adopting state during the years after the early adopter switched on. That early adopter is not a clean counterfactual; it is contaminated by its own treatment effect. If that effect is still moving — growing or decaying — it injects a spurious trend into the comparison, and that spurious trend lands inside beta-hat with a weight that, it turns out, can be negative.
+:::
+
+## The Cure Is Conceptually Trivial
+
+- Only compare a newly treated unit to **clean** controls
+- Clean = **never treated**, or **not yet treated**
+- **Never** to an already-treated unit
+- Estimate each clean comparison, then average with **chosen** weights
+
+::: notes
+Hold onto this through the gloom of the next few parts: the disease has a clean cure, and the cure is conceptually trivial. Only ever compare a newly treated unit to a control group that is genuinely clean — never treated, or not yet treated — never to a unit that has already been treated. Estimate each clean comparison separately, then average them with transparent, non-negative weights you choose on purpose. That single sentence is the whole research program of Callaway and Sant'Anna, Sun and Abraham, and Borusyak, Jaravel, and Spiess — the three modern estimators we will meet. The hard part was seeing that two-way fixed effects fails to do this; the fix, once seen, is almost obvious.
+:::
+
+## The Roadmap
+
+- §2–3: **why** TWFE breaks (worked example, sign flips)
+- §4: **Goodman-Bacon** names the culprit
+- §5: **negative weights** in full generality
+- §6–8: the modern **estimators** that route around it
+
+::: notes
+Here is how the chapter unfolds, following a reveal-the-trick pattern. First the plain statement, which we just gave. Then why two-way fixed effects breaks, with a worked example where the sign actually flips. Then the Goodman-Bacon decomposition, which names the culprit exactly. Then the negative-weights result, which generalizes it. And finally the modern estimators — Callaway and Sant'Anna, Sun and Abraham, and Borusyak, Jaravel, and Spiess — that route around the whole problem. Keep the forbidden comparison in mind the entire way; it is the single thread that ties every section together.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The crisis in one sentence: $\hat\beta$ is a weighted average of 2x2 DiDs, some of them **forbidden** because they use **already-treated** units as controls, with possibly **negative** weights. The cure is trivial once seen: only ever compare to **clean** controls. Next: why TWFE looks so innocent — and exactly where the trap is set.
+:::
+
+::: notes
+To summarize part two: the entire crisis fits in one sentence — the pooled coefficient is a weighted average of many small difference-in-differences, some of them forbidden because they use already-treated units as controls, and those forbidden comparisons can carry negative weights. The phrase to remember is forbidden comparison. The cure is equally simple: compare each newly treated unit only to clean controls — never-treated or not-yet-treated units — and aggregate transparently. In part three we look closely at why the pooled regression looks so innocent, even virtuous, and trace exactly where the trap is set inside the algebra of fixed effects.
+:::

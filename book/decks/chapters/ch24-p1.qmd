@@ -1,0 +1,58 @@
+---
+title: "When the Errors Misbehave: The Problem"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# When the Errors Misbehave: The Problem {.title}
+
+::: notes
+Welcome to Week Two, Chapter two-point-four: When the Errors Misbehave — heteroskedasticity, clustering, and HAC. This lesson is built around one of the most important and most misunderstood facts in applied econometrics: your point estimate can be perfectly fine while your t-statistic lies to you. In this opening part we meet Maya, watch her clean-looking result wobble, and pin down exactly which number was wrong.
+:::
+
+## Maya's Fair-Lending Result
+
+- Studying whether a ZIP-code tier pays higher interest
+- $N = 9{,}000$ consumer loans, controls for score, size, income
+- Tier coefficient $\hat\beta_1 = 0.42$, standard error $0.07$
+- t-statistic $= 0.42 / 0.07 = 6.0$ — screaming significance
+- She writes it up
+
+::: notes
+Maya is studying fair lending. She pulls a dataset of nine thousand consumer loans — mid-prime installment loans like the ones a lot of her friends' families actually use. She wants to know whether borrowers in a particular ZIP-code tier get charged higher interest after controlling for credit score, loan size, and income. She runs the regression her laptop makes easy. Out comes a coefficient on her tier variable of beta one hat equals zero point four two percentage points, with a standard error of zero point zero seven. The t-statistic is zero point four two divided by zero point zero seven, which is six point zero. Six. That is not marginally significant; that is a coefficient screaming through a megaphone. She writes it up.
+:::
+
+## One Question Changes Everything
+
+- Mentor asks: are 9,000 loans really 9,000 independent facts?
+- They are not — loans cluster by lender and by state
+- Same $\hat\beta_1 = 0.42$, but standard error rises to $0.19$
+- t-statistic collapses from $6.0$ to $2.2$
+- Still significant — but now a normal speaking voice
+
+::: notes
+Then her mentor asks one question: are those nine thousand loans really nine thousand independent pieces of evidence? They are not. The loans cluster by lender, and lenders set rates in correlated ways. They cluster by state, and states have correlated regulation and correlated local economies. Once Maya accounts for that, the same coefficient — beta one hat equals zero point four two — comes back with a standard error of zero point one nine, and the t-statistic collapses from six point zero to two point two. Still significant, but the megaphone is now a normal speaking voice, and a referee could reasonably push back.
+:::
+
+## The Whole Chapter in One Line
+
+- Her point estimate never moved — $0.42$ was right all along
+- What was wrong was the $0.07$ — how much to trust it
+- OLS is still unbiased; Gauss–Markov does not break
+- The standard-error formula lies, so every t-stat lies too
+- Replace it with a robust, clustered, or HAC formula
+
+::: notes
+Here is the unsettling part, and it is the whole chapter in one line: her point estimate never moved. The zero point four two was right the whole time. What was wrong was the zero point zero seven — the number that tells you how much to trust the zero point four two. In Chapter two-point-two we proved that O-L-S is unbiased and, under the Gauss–Markov assumptions, the best linear unbiased estimator. None of that breaks here. What breaks is the standard error, and therefore every t-statistic, every p-value, every confidence interval built on top of it. The cure is to replace the classical formula with a robust, clustered, or H-A-C formula that tells the truth.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+When errors are heteroskedastic or correlated, **beta hat is still fine** — but the classical standard-error formula lies, and you must replace it with a robust, clustered, or HAC formula. Maya's estimate never moved; only her *trust* in it did. Next: where the classical formula comes from, and the assumption holding it up.
+:::
+
+::: notes
+To summarize part one: when the errors are heteroskedastic or correlated, beta hat is still fine, but the classical standard-error formula lies. Maya's point estimate of zero point four two never moved; only how much we should trust it did. Getting the estimate right and getting its uncertainty right are two separate jobs. In part two we go back to where Chapter two-point-two left us — the classical variance formula — and pin down the single assumption holding it up, so we can watch that assumption break.
+:::

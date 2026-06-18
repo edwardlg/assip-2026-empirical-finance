@@ -1,0 +1,55 @@
+---
+title: "The Staggered-Adoption Crisis: Framing"
+date: "2026-07-13"
+---
+
+# The Staggered-Adoption Crisis {.title}
+
+::: notes
+Welcome to Week Four, Chapter four-point-two, part one of thirteen. In Chapter four-point-one you built the two-way fixed-effects regression for difference-in-differences and trusted the single coefficient beta as the effect of a policy. This chapter is where that tool stops working — and the reason is not a coding bug, not a violated parallel-trends assumption, but a flaw in the estimator itself that hid in plain sight for thirty years. Around twenty-eighteen to twenty-twenty-one a cluster of papers exposed what applied econometricians now simply call the staggered-adoption crisis. This first part just frames the problem and meets the example we will carry through the whole chapter.
+:::
+
+## The Tool That Worked — Until Now
+
+- Chapter 4.1's regression: $Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+\varepsilon_{it}$
+- $\alpha_i$ absorbs each unit; $\lambda_t$ absorbs each time
+- One $\beta$ = "the" policy effect, trusted under parallel trends
+- The 2x2 logic of Chapter 4.1 is **still sound**
+- The crisis is in the **pooled** regression for many adopters
+
+::: notes
+Recall the machinery. The regression writes the outcome Y for unit i in time t as a unit fixed effect alpha-i that absorbs everything permanent about that unit, a time fixed effect lambda-t that absorbs everything common to that period, beta times the treatment switch D-i-t, plus an error. Under parallel trends, the within-unit, within-time variation in the treatment indicator identifies a difference-in-differences, and the canonical two-by-two case — one treated group, one control, one switch-on date — gave you a beta you could read off a four-cell table and trust. The crisis is not that difference-in-differences is wrong. That two-by-two logic is as sound as ever. The crisis is that the pooled two-way fixed-effects regression you reach for to handle many units adopting at many dates is silently doing something other than what you think.
+:::
+
+## The Unsettling Headline
+
+- Staggered timing + effects that **differ or grow** $\Rightarrow$ trouble
+- The single $\hat\beta$ can be biased, a nonsensical average — even **wrong-signed**
+- You can run a policy that **helped everyone, every year**
+- And get back a **negative** number
+
+::: notes
+The headline result is genuinely unsettling. When units adopt treatment at different times — that is staggered timing — and the treatment effect differs across units or grows over time — that is effect heterogeneity — the single beta from that exact regression can be biased, can be a nonsensical weighted average, and, the part that ought to make you sit up, can come out with the wrong sign. You can run a regression on a policy that helped everyone, every year, and get back a negative number. There is a clean, now-standard fix, and we will build to it: the heterogeneity-robust estimators of Callaway and Sant'Anna, Sun and Abraham, and Borusyak, Jaravel, and Spiess, which all share one disarmingly simple idea.
+:::
+
+## Priya's Staggered Reality
+
+- Outcome $Y_{it}$ = non-renewal rate, state $i$, year $t$
+- Climate-disclosure rule should **lower** non-renewals
+- California adopts 2017, a wave in 2019, another in 2021, some never
+- That is **staggered adoption** — and the effect plausibly **builds**
+
+::: notes
+Priya is our guide again. A wave of states is adopting a climate-risk-disclosure regulation for property insurers — a rule requiring insurers to publish how exposed their books are to wildfire, flood, and storm losses. The hope is that disclosure disciplines underwriting and lowers the share of policies that get non-renewed in high-risk ZIP codes — her outcome, the non-renewal rate in state i, year t. In Chapter four-point-one she imagined a single adoption date. Reality is messier: California adopts in twenty-seventeen, a cluster of states in twenty-nineteen, another wave in twenty-twenty-one, and some states never adopt at all. That is staggered adoption. And the effect plausibly builds — insurers re-underwrite slowly, so the policy bites harder in year three than in year one. Staggered timing plus dynamic effects: that is the exact recipe for the crisis, and Priya is about to run straight into it.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The 2x2 difference-in-differences of Chapter 4.1 is sound, but the **pooled TWFE** regression for many staggered adopters can be biased — even **wrong-signed** — when effects differ or grow over time. Priya's climate-disclosure rollout has exactly that structure. Next: the crisis stated in one plain sentence, and the phrase to burn into memory — the **forbidden comparison**.
+:::
+
+::: notes
+To summarize part one: the two-by-two difference-in-differences logic from Chapter four-point-one is sound, but the pooled two-way fixed-effects regression you reach for when many units adopt at many different dates can be biased and can carry the wrong sign — and the trigger is staggered timing combined with effects that differ across units or grow over time. Priya's climate-disclosure rollout, with California in twenty-seventeen, waves in twenty-nineteen and twenty-twenty-one, never-adopters, and an effect that builds, has exactly that dangerous structure. In part two we state the crisis in a single plain sentence and introduce the one phrase you must burn into memory: the forbidden comparison.
+:::

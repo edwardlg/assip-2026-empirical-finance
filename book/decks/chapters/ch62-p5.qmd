@@ -1,0 +1,57 @@
+---
+title: "The Data Behind the Measure"
+date: "2026-07-27"
+---
+
+# The Data Behind the Measure {.title}
+
+::: notes
+Welcome back to Chapter six-point-two, part five of nine. In part four we built T-N-I-C from pairwise cosine similarities. Now we look underneath: what data feeds the measure, what filters shape it, and the piece of this paper that outlives the paper itself — a public data library you can download.
+:::
+
+## Unit And Sources
+
+- **Unit**: a firm-year — often a firm-*pair*-year
+- The text: one 10-K per firm-year, Item 1 parsed out
+- **Text source**: SEC EDGAR, the public filing system
+- Sample begins mid-1990s, when EDGAR coverage turns comprehensive
+- **Financials**: Compustat fundamentals and CRSP returns
+
+::: notes
+The unit of observation is a firm in a year — and in the network results, often a firm-pair in a year, since every pair gets a similarity score. The text is one ten-K per firm-year, with Item One parsed out of each. The text source is S-E-C EDGAR, the public filing system. The sample is the universe of U.S. public firms that file ten-Ks and match to financial data, over a multi-decade window beginning in the mid-nineteen-nineties, when EDGAR's electronic coverage becomes comprehensive. To match filings to firms and run the economic outcomes — margins, profitability, market values — the text links to Compustat for fundamentals and CRSP for returns and market values, the workhorses you have used since Week One, via S-E-C identifiers bridged to the standard firm keys.
+:::
+
+## Filters Are Decisions, Decisions Are Levers
+
+- A firm must have a usable, extractable product description
+- Failed-parse or boilerplate-only filings drop out — a selection
+- Vocabulary is pruned: common words and likely proper nouns filtered
+- So firms aren't "similar" for sharing "the" or both naming California
+- The similarity **threshold** is a chosen knob
+
+::: notes
+Filters are decisions, and decisions are levers. The salient ones: a firm must have a usable, extractable product description, so filings where the parser fails or the section is missing or boilerplate-only drop out — a selection to keep in mind. The vocabulary is pruned: common words and likely proper nouns — company names, geography — are filtered, so two firms are not scored "similar" merely for sharing the word "the" or both naming "California." And the similarity threshold that turns the continuous matrix into discrete industries is a chosen knob. Notebook six-point-two will let you move these knobs and watch the answers change.
+:::
+
+## The Part That Outlives The Paper
+
+- Hoberg and Phillips published the computed TNIC industries
+- A free, public data library anyone can download and merge
+- You do not re-parse EDGAR — you pull theirs
+- Turning a measure into infrastructure drives the heavy citation
+- Capstone lesson: a reusable measure can outweigh any one regression
+
+::: notes
+Now the part that outlives the paper: the public T-N-I-C data library. Hoberg and Phillips published the computed text-based industries — and related similarity measures — as a free, public data library any researcher can download and merge into their own work. You do not re-parse EDGAR to use text-based industries; you pull theirs. Turning a measure into infrastructure others build on is much of why this paper is cited so heavily — and the deeper capstone lesson: a reusable measure can outweigh any single regression you run with it.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The unit is a firm-year (often a firm-pair-year); text comes from **SEC EDGAR**, financials from **Compustat and CRSP**. Filters — extractability, vocabulary pruning, the similarity threshold — are levers that shape the result. The lasting contribution is a **free public TNIC data library**: a measure turned into reusable infrastructure.
+:::
+
+::: notes
+To summarize part five: the unit of observation is a firm-year, often a firm-pair-year; the text comes from S-E-C EDGAR, and the financials from Compustat and CRSP. Filters — which filings are extractable, how the vocabulary is pruned, and where the similarity threshold sits — are levers that shape every result. The most lasting contribution is the free, public T-N-I-C data library: the authors turned their measure into infrastructure hundreds of later papers reuse. In part six we read the tables in the right order.
+:::

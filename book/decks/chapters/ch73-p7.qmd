@@ -1,0 +1,58 @@
+---
+title: "The Reveal, and Olken's Perils"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# The Reveal, and Olken's Perils {.title}
+
+::: notes
+Welcome back to Chapter seven-point-three, part seven of eight. In part six we time-stamped Maya's plan as a tagged commit and assembled all six sections. Now the payoff — what that plan did to her dangerous afternoon — and then, in Olken's spirit, the perils. A chapter that sold pre-registration as a free lunch would be doing the very thing the technique prevents, hiding the inconvenient results. So we confront the ways a pre-analysis plan can itself be gamed, be too rigid, crowd out discovery, or give false confidence.
+:::
+
+## What the Plan Did to Her Afternoon
+
+- The 32 forks are gone — one spec, one coefficient, one sample
+- Robustness checks promised in advance, reported either way
+- Subgroup fishing quarantined into an FDR-controlled family
+- She **physically cannot** tune the spec to the confirmation data
+- A clean pre-registered null is a contribution, not a failure
+
+::: notes
+Notice what the plan did to Maya's dangerous afternoon. The thirty-two forks of part one are gone: exactly one primary specification, one key coefficient, one clustering choice, one sample, all fixed before she could see a result. The robustness checks she might have used to fish are now promised in advance and reported either way. The subgroup analyses are quarantined into an exploratory family with false-discovery-rate control. And the hold-out means she physically cannot have tuned the confirmatory spec to the confirmatory data. If beta one comes out large and significant on the seventy percent, that is a result a referee can trust. If it comes out a tight zero, the plan has already obligated her to report a null — and a clean, pre-registered null about fair lending is a genuine contribution, not a failure. That is the reveal.
+:::
+
+## Peril 1 — Vague · Peril 2 — Too Rigid
+
+- Vague: "appropriate controls and standard errors" constrains **nothing**
+- Defense is Component two — name outcome, clustering, exact sample
+- Too rigid: Maya finds a better identification strategy on the data
+- Report the pre-registered result **as planned**
+- Report the discovery **separately**, labeled exploratory
+
+::: notes
+First peril: a plan can be written so vaguely it constrains nothing. I will study race and lending using appropriate controls and standard errors is a plan-shaped object that licenses every fork in the garden. The defense is Component two: if the plan does not name the outcome to a variable name, the clustering level, and the exact sample, it is not a plan. Vagueness is p-hacking with extra steps. Second peril: a plan can be too rigid. Suppose Maya, on the confirmation data, discovers a sharp discontinuity in denials at a regulatory threshold suggesting a far better identification strategy. A fundamentalist never-deviate would force her to ignore the best idea in her project. Olken's resolution: she reports the pre-registered result as planned, and separately reports the discovery as clearly-labeled exploratory analysis and a hypothesis for the next study. Both live in the paper, honestly partitioned. The plan cost her only the right to pretend the discovery was a confirmatory test.
+:::
+
+## Peril 3 — Crowding Out · Peril 4 — False Confidence
+
+- Over-fetishizing "was it pre-registered?" devalues exploration
+- But exploration is not lesser science — it is **earlier** science
+- The hold-out exists **for** unconstrained fishing
+- False confidence: a pre-registered design is not a **good** design
+- Pre-registration governs **honesty**, not **validity**
+
+::: notes
+Third peril: a plan can crowd out exploration if a field over-fetishizes it — if was it pre-registered becomes the only question, and the messy, inductive work that generates good hypotheses is treated as second-class. The answer is the confirmatory-exploratory distinction held with a steady hand: exploration is not lesser science, it is earlier science. The hold-out honors this — the exploration set exists for unconstrained fishing. The plan does not forbid exploration; it forbids laundering it as confirmation. Fourth peril, particular to a first project: the plan can give false confidence. A pre-registered design is not automatically a good design. Maya's identifying assumption is still imperfect — the credit score is still missing, the residual is still a bound. Pre-registration governs the honesty of your inference — did you test or did you search — not its validity, whether the test is the right one. Validity is the job of the identification memo you write next.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The reveal: the plan collapses 32 forks into one trusted test, and a pre-registered null becomes a real contribution. But a PAP can still be **vague, too rigid, crowding-out, or falsely confident** — and pre-registration buys **honesty**, not **validity**. Next: where this goes — the analysis dataset and the identification memo.
+:::
+
+::: notes
+To summarize part seven: the reveal is that Maya's plan collapses thirty-two forks into one confirmatory test a referee can trust, and even a tight null becomes a genuine contribution. But the technique is not a free lunch. A plan can be vague, too rigid, crowding-out, or falsely confident — the cures are spec-discipline, honest partitioning, and a companion identification memo. The deepest point: pre-registration buys the honesty of your inference, not its validity. In part eight we look ahead to the analysis dataset and the identification memo, and point you to your own plan in the notebook.
+:::

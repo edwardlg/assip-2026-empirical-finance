@@ -1,0 +1,58 @@
+---
+title: "The Gauss–Markov Theorem: OLS Is BLUE"
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+# The Gauss–Markov Theorem: OLS Is BLUE {.title}
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part six of nine. In part five we found the O L S variance, sigma squared times the inverse of X transpose X, but couldn't yet say it was the smallest possible. Now we state the theorem that compares O L S against the whole field of linear unbiased rivals — and crowns it the champion.
+:::
+
+## Reading BLUE Backward
+
+- **E** — Estimator: a recipe turning data into a guess
+- **U** — Unbiased: $\mathbb{E}[\tilde{\boldsymbol{\beta}}] = \boldsymbol{\beta}$; bars the cheats
+- **L** — Linear: $\tilde{\boldsymbol{\beta}} = \mathbf{C}\mathbf{y}$, $\mathbf{C}$ from $\mathbf{X}$ only
+- OLS qualifies: $\mathbf{C} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'$
+- **B** — Best: smallest variance among them
+
+::: notes
+Read the four letters of BLUE backward, because that is the order in which they constrain the competition. E is for estimator of beta — some recipe that turns the data into a guess. U is for unbiased: we only let estimators into the contest if they aim true, so the expectation of beta-tilde equals beta. This bars the dart-throwers and the always-report-seven-point-five cheats from Chapter one-point-three. L is for linear: we restrict the contest to estimators that are linear in y — recipes of the form beta-tilde equals C times y, for some matrix C that may depend on X but not on y. O L S qualifies, with C equal to the inverse of X transpose X times X transpose. B is for best, meaning minimum variance. Among everyone left standing, O L S has the smallest.
+:::
+
+## The Theorem
+
+- Under Assumptions 1–4, OLS is **BLUE**
+- Among all linear, unbiased estimators
+- It has the smallest variance
+- Holds for any combination $\mathbf{c}'\boldsymbol{\beta}$ you care about
+- Normality (Assumption 5) is **absent**
+
+::: notes
+Put it together. The Gauss–Markov theorem: under assumptions one through four — linearity, full-rank random sampling, zero conditional mean, and homoskedasticity — the O L S estimator beta hat is the Best Linear Unbiased Estimator of beta. Among all estimators that are both linear in y and unbiased, it has the smallest variance. More precisely, for any linear combination c transpose beta of the coefficients you might care about — a single slope, a sum, a difference — the O L S estimate has the smallest variance of any linear unbiased competitor. Notice the contract precisely: normality, assumption five, is absent. Gauss–Markov is a statement about variances, not about distributional shape, so it does not need the errors to be bell-shaped. That is why we filed normality as a separate add-on.
+:::
+
+## What "Best" Buys You
+
+- All contestants are unbiased — archers aiming true
+- OLS is the one with the tightest cluster
+- Zero bias $\Rightarrow$ minimum variance is minimum MSE
+- Narrowest intervals, most powerful t-tests
+- Without leaving linear, unbiased recipes
+
+::: notes
+Here is the intuition for what best buys you. Every linear unbiased estimator is unbiased — they all center on beta, like a roomful of archers all aiming true. Gauss–Markov says O L S is the archer with the tightest cluster. In Chapter one-point-three language: since all contestants have zero bias, mean squared error equals variance for every one of them, so minimum variance is minimum mean squared error within the club. O L S gives you the most precise estimate, the narrowest confidence intervals, and the most powerful t-tests available — without leaving the world of linear, unbiased recipes. You cannot do better on precision without either accepting bias or going nonlinear. That is the whole content of the word best, and also its whole limit.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Read **BLUE** backward: an **E**stimator, restricted to **U**nbiased ones, then **L**inear-in-$\mathbf{y}$ ones, and OLS is **B**est — minimum variance. Under Assumptions 1–4 (no normality needed), OLS is the tightest-clustered archer in the linear-unbiased club. Next: a sketch of *why*, plus a Monte Carlo confirmation.
+:::
+
+::: notes
+To summarize part six: read BLUE backward. Start with any estimator, keep only the unbiased ones, then keep only the ones linear in y, and among those O L S is best — smallest variance. That is the Gauss–Markov theorem, holding under assumptions one through four, with normality conspicuously not required. The picture to keep is a roomful of archers all aiming true, with O L S the one whose arrows cluster tightest. In part seven we sketch why this must be so, and confirm it by faking Maya's universe in a Monte Carlo.
+:::

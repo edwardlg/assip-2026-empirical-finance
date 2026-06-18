@@ -1,0 +1,57 @@
+---
+title: "Two Shots at One Assumption, and the Code"
+date: "2026-07-13"
+---
+
+# Two Shots at One Assumption, and the Code {.title}
+
+::: notes
+Welcome back to Chapter four-point-five, part nine of ten. In part eight we covered the Adão, Kolesár and Morales standard-error warning and mapped the chapter back onto relevance and exclusion. Now we draw out the deep lesson that resolves the two views and walk the runnable code that builds and decomposes an instrument. The headline idea: exclusion for a constructed instrument can be sourced from whichever ingredient you can most credibly call exogenous.
+:::
+
+## Two Shots at One Untestable Assumption
+
+- A product is exogenous if **either** factor is
+- The design gives **two independent shots** at the hardest IV assumption
+- Defend GPSS region-by-region; BHJ industry-by-industry
+- You identify a **LATE-like** weighted average — across regions/shocks
+- "Whose effect?" → "**which industries' shocks, with what weights?**"
+
+::: notes
+This is the deep lesson and why the chapter holds two views without contradiction: exclusion for a constructed instrument can be sourced from whichever ingredient you can most credibly call exogenous. A product is exogenous if either factor is — so the design gives two independent shots at the single hardest, untestable assumption in all of instrumental variables. You defend the Goldsmith-Pinkham route region-by-region with Rotemberg weights; the Borusyak, Hull and Jaravel route industry-by-industry with the effective number of shocks. The honest empiricist names which shot they are taking and brings the matching diagnostic. And just as in Chapter three-point-four, what you identify is a LATE-like weighted average — across regions and shocks, with the decomposition making the weights explicit. "Whose effect did I estimate?" becomes "which industries' shocks, with what weights, are driving this?"
+:::
+
+## The Code: Build, Bias, Recover, Decompose
+
+- $400$ regions, $20$ industries; true effect $\beta_1 = -1.5$
+- Build $B_r = S g$, standardize; realized shock = clean part + confounder
+- **OLS** biased: about $-1.06$ (confounder in the error)
+- **2SLS** with $B_r$ lands on $-1.5$; first-stage F in the hundreds
+- Decompose: top industries by $|\hat{\alpha}_j|$ reassemble the headline
+
+::: notes
+Here is the chapter in one runnable block. We simulate four hundred regions and twenty industries with a true effect of minus one-point-five — a worse local shock raises delinquency. We draw baseline local shares that sum to one per region, independent of a latent regional confounder; we draw national shifts as-good-as-random across the twenty industries; and we build the Bartik instrument as the shares matrix times the shift vector, then standardize it. The realized local shock is a clean part driven by the instrument plus an endogenous part driven by the confounder. Then we run two regressions. OLS comes out biased, about minus one-point-zero-six, because the confounder makes hard-hit regions look worse than the shock alone explains. Two-stage least squares, instrumenting the realized shock with the Bartik instrument, lands right on the true minus one-point-five, with a first-stage F in the hundreds. Finally we decompose: run each industry's share as its own instrument, compute proxy Rotemberg weights, and watch a handful of high-weight industries reassemble the headline number.
+:::
+
+## What the Decomposition Teaches
+
+- OLS-vs-2SLS gap ($-1.06$ vs $-1.5$) **is** the endogeneity, made visible
+- A few industries carry most of the Rotemberg weight
+- Those shares are the ones whose exogeneity you must **defend hardest**
+- nb4.5 **stresses** it: tie shares to the confounder → headline drifts
+- F-stat still looks reassuring even as the estimate is wrong
+
+::: notes
+Two things to watch in the output. First, OLS and two-stage least squares disagree, and the gap — minus one-point-zero-six versus minus one-point-five — is the regional endogeneity made visible, the reason for the exercise. Second, the Goldsmith-Pinkham lesson in code: the decomposition shows the estimate is not spread evenly — a handful of industries carry most of the Rotemberg weight, and those are the shares whose exogeneity you must defend hardest. In this clean baseline the shares were independent of the confounder, so every per-industry estimate hovers near minus one-point-five. The notebook, nb4.5, then stresses it by tying the shares to the confounder, so the high-weight industries become exactly the ones whose share-exogeneity is violated — and you watch the headline drift from the truth even while the F-statistic still looks reassuring. The notebook also adds the exact formula, AKM-robust standard errors, and walks the full decomposition table.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Exclusion is sourced from whichever ingredient is exogenous — **two shots** at the hardest IV assumption — and you identify a Rotemberg-weighted cousin of LATE. In code, OLS is biased ($-1.06$) while 2SLS recovers $-1.5$, and a few industries carry most of the weight. Next: the four carry-forward lessons, and closing the camp's causal arc.
+:::
+
+::: notes
+To summarize part nine: the deep lesson is that exclusion for a constructed instrument can be sourced from whichever ingredient is exogenous — a product is exogenous if either factor is — so the design gives two independent shots at the hardest assumption in instrumental variables, and you identify a Rotemberg-weighted cousin of LATE. In the code, OLS came out biased near minus one-point-zero-six while two-stage least squares recovered minus one-point-five, and the decomposition showed a few industries carrying most of the weight. In part ten, the finale, we gather the four carry-forward lessons and close the causal-inference arc of the entire camp.
+:::

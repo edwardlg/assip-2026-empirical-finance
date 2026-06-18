@@ -222,6 +222,74 @@ def _tts_bark(text: str, out_wav: Path) -> bool:
         return False
 
 
+# Module-level cache so the Chatterbox model loads ONCE per process, not per
+# slide (loading is the expensive part; synthesis is faster-than-realtime on A100).
+_CHATTERBOX_MODEL = None
+
+
+def _chatterbox_chunks(text: str, max_chars: int = 300) -> list[str]:
+    """Split narration into sentence groups Chatterbox can synthesize in one pass."""
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    chunks, cur = [], ""
+    for s in sentences:
+        if not s:
+            continue
+        if len(cur) + len(s) + 1 <= max_chars:
+            cur = f"{cur} {s}".strip()
+        else:
+            if cur:
+                chunks.append(cur)
+            cur = s
+    if cur:
+        chunks.append(cur)
+    return chunks or [text.strip()]
+
+
+def _tts_chatterbox(text: str, out_wav: Path, voice_sample: Optional[Path]) -> bool:
+    """Chatterbox (Resemble AI) neural TTS -- MIT (code+weights), commercial-safe.
+
+    Zero-shot voice cloning from a short reference WAV via `audio_prompt_path`;
+    falls back to the model's built-in voice if no sample is given. Long notes are
+    synthesized in sentence-grouped chunks and concatenated. Every clip carries
+    Chatterbox's inaudible PerTh watermark (harmless for teaching).
+    """
+    global _CHATTERBOX_MODEL
+    try:
+        import torch  # noqa: F401
+        import torchaudio  # type: ignore
+        from chatterbox.tts import ChatterboxTTS  # type: ignore
+    except ImportError:
+        log("Chatterbox: package/torch/torchaudio not installed; skipping.")
+        return False
+    try:
+        device = "cuda" if have_gpu() else "cpu"
+        if _CHATTERBOX_MODEL is None:
+            log(f"Chatterbox: loading model on {device} (one-time)")
+            _CHATTERBOX_MODEL = ChatterboxTTS.from_pretrained(device=device)
+        model = _CHATTERBOX_MODEL
+
+        prompt = None
+        if voice_sample is not None and voice_sample.exists():
+            prompt = str(voice_sample)
+        gen_kwargs = {}
+        if prompt:
+            gen_kwargs["audio_prompt_path"] = prompt
+        # Calmer, lecture-appropriate delivery; override via env if desired.
+        gen_kwargs["exaggeration"] = float(os.environ.get("CHATTERBOX_EXAGGERATION", "0.4"))
+        gen_kwargs["cfg_weight"] = float(os.environ.get("CHATTERBOX_CFG", "0.5"))
+
+        waves = []
+        for chunk in _chatterbox_chunks(text):
+            wav = model.generate(chunk, **gen_kwargs)
+            waves.append(wav)
+        audio = waves[0] if len(waves) == 1 else torch.cat(waves, dim=-1)
+        torchaudio.save(str(out_wav), audio.cpu(), model.sr)
+        return out_wav.exists() and out_wav.stat().st_size > 0
+    except Exception as exc:
+        log(f"Chatterbox failed: {exc!r}; will fall back.")
+        return False
+
+
 def _tts_piper(text: str, out_wav: Path) -> bool:
     """Piper CLI TTS -- CPU-only, very good quality."""
     if not have_cmd("piper"):
@@ -291,10 +359,14 @@ def synthesize_narration(text: str, out_wav: Path,
         return out_wav
 
     requested = os.environ.get("TTS_BACKEND", "").lower().strip()
-    auto_order = ["xtts", "piper", "gtts", "pyttsx3"]
-    if not have_gpu() and "xtts" in auto_order:
-        auto_order.remove("xtts")
-        auto_order.insert(1, "xtts")  # try anyway (CPU fallback is slow but works)
+    # Chatterbox first: MIT-licensed (code+weights), commercial-safe, voice cloning.
+    auto_order = ["chatterbox", "xtts", "piper", "gtts", "pyttsx3"]
+    if not have_gpu():
+        # GPU-only neural backends are slow on CPU; demote them below piper.
+        for b in ("chatterbox", "xtts"):
+            if b in auto_order:
+                auto_order.remove(b)
+                auto_order.insert(2, b)
     order = [requested] + [b for b in auto_order if b != requested] if requested else auto_order
 
     for backend in order:
@@ -302,7 +374,9 @@ def synthesize_narration(text: str, out_wav: Path,
             continue
         log(f"TTS: trying backend={backend}")
         ok = False
-        if backend == "xtts":
+        if backend == "chatterbox":
+            ok = _tts_chatterbox(text, out_wav, voice_sample)
+        elif backend == "xtts":
             ok = _tts_xtts(text, out_wav, voice_sample)
         elif backend == "bark":
             ok = _tts_bark(text, out_wav)

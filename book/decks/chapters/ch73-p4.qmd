@@ -1,0 +1,58 @@
+---
+title: "The Multiple-Testing Plan"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# The Multiple-Testing Plan {.title}
+
+::: notes
+Welcome back to Chapter seven-point-three, part four of eight. In part three we pinned Maya's primary specification slot by slot. But she will compute more than one number — a primary gap, a FinTech interaction, subgroups by income band, separate coefficients for Black and Hispanic applicants. Each is a test, and part one showed where unmanaged tests lead: the sixty-four percent trap. Component three, the multiple-testing plan, decides in advance how the army of tests is governed so the headline is not a lucky draw from a crowd.
+:::
+
+## Declare Primary vs. Secondary
+
+- The most powerful multiplicity control — and it is **free**
+- Commit before seeing anything: H1's denial coefficient is **the** test
+- Held to strict $\alpha=0.05$, reported as the result
+- Everything else is secondary — reported, but not the confirmatory claim
+- Headline multiplicity shrinks to **one**
+
+::: notes
+First, declare primary versus secondary outcomes. This is the single most powerful multiplicity control there is, and it is free. You commit, before seeing anything, that H1's coefficient on the denial outcome is the test — the one held to the strict five percent and reported as the result. Everything else is secondary: interesting, reported, but explicitly labeled as not the confirmatory claim. By promoting one test to primary, you shrink the multiplicity problem for your headline from however many things you tried down to one. Olken stresses this hierarchy precisely because it is the cheapest, most honest defense: most of the multiplicity disappears the moment you say which question is the question.
+:::
+
+## Benjamini-Hochberg on a Family
+
+- Families of related tests: control the **false discovery rate**
+- FDR = expected fraction of declared discoveries that are false
+- Sort $p_{(1)}\le\dots\le p_{(m)}$; find largest $k$ with $p_{(k)}\le\frac{k}{m}\alpha$
+- Reject every hypothesis with rank $\le k$
+- Lenient where Bonferroni is harsh — the modern default
+
+::: notes
+Second, group your secondary tests into families and control the false discovery rate within each. When you have a family — the gap for five income bands, or for Black, Hispanic, and Asian applicants — you cannot report each at five percent and call them all findings; that is the sixty-four percent trap again. Chapter one-point-five gave you the crude Bonferroni rule, testing each of m hypotheses at alpha over m — which controls any false positive but is brutally conservative when m is large. The smarter target is the false discovery rate, the expected fraction of declared discoveries that are false. The Benjamini-Hochberg procedure controls it mechanically: sort your m p-values ascending, find the largest rank k for which the k-th p-value is at most k over m times alpha, and reject every hypothesis with rank up to k. That threshold is lenient where Bonferroni is harsh, so a family with several real effects lets the later ones in.
+:::
+
+## A Worked Example
+
+- Five p-values $\{0.008,\,0.012,\,0.039,\,0.041,\,0.330\}$, $\alpha=0.05$
+- Thresholds $\tfrac{k}{5}(0.05)$: $\{0.01,0.02,0.03,0.04,0.05\}$
+- Top down: $0.330,0.041,0.039$ fail; $0.012\le 0.02$ — $k=2$
+- Declare the two smallest as discoveries
+- Bonferroni keeps only $0.008$; commit the family **in advance**
+
+::: notes
+Here it is in numbers. Maya has five income-band p-values: zero-point-zero-zero-eight, zero-point-zero-one-two, zero-point-zero-three-nine, zero-point-zero-four-one, and zero-point-three-three, at five percent. The thresholds, k over five times zero-point-zero-five, are zero-point-zero-one through zero-point-zero-five. Compare top down. Rank five, zero-point-three-three exceeds zero-point-zero-five, no. Rank four, zero-point-zero-four-one exceeds zero-point-zero-four, no. Rank three, zero-point-zero-three-nine exceeds zero-point-zero-three, no. Rank two, zero-point-zero-one-two is at most zero-point-zero-two, yes — so k equals two, and you declare the two smallest bands as discoveries. Bonferroni would have held every band to zero-point-zero-one and declared only the smallest, throwing away the zero-point-zero-one-two effect that Benjamini-Hochberg keeps. Third and crucial: state the families and procedure now, before you have the p-values, or you could shrink or grow a family until your favorite effect survives.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Govern the tests: declare **one** primary test held to strict $\alpha=0.05$, then control the **false discovery rate** within pre-committed families using Benjamini-Hochberg — lenient where Bonferroni is harsh. Commit the families before you see the p-values. Next: falsification conditions and planned robustness.
+:::
+
+::: notes
+To summarize part four: the multiple-testing plan declares one primary test held to strict five percent — the cheapest and most powerful multiplicity control — then controls the false discovery rate within pre-committed families using Benjamini-Hochberg, which we watched admit two income-band discoveries where Bonferroni admitted only one. The crux is committing the families before you see the p-values, so you cannot shrink or grow them to rescue a favorite effect. In part five we write the last two components: the falsification conditions that let Maya believe her own null, and the planned robustness checks that convert dangerous forks into strengths.
+:::

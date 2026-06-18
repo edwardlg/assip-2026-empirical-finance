@@ -1,0 +1,54 @@
+---
+title: "The Law of Total Variance"
+date: "2026-06-22"
+---
+
+# The Law of Total Variance {.title}
+
+::: notes
+Welcome back to Chapter one-point-one, part five of seven. In part four we proved the Law of Iterated Expectations, which handles averages. But a trader cares about risk — the variance of returns — and, crucially, where the risk comes from. The Law of Total Variance answers exactly that. We also pause briefly on the continuous case, then state Sam's risk decomposition and the intuition behind it.
+:::
+
+## The Continuous Case, Briefly
+
+- Swap mass functions for densities, sums for integrals
+- $f_{X\mid Y}(x\mid y)=\dfrac{f(x,y)}{f_Y(y)}$, $f_Y(y)>0$
+- Iterated expectations reads identically, same proof
+- Subtlety: continuous $Y$ has $\Pr(Y=y)=0$ for every $y$
+
+::: notes
+Everything so far survives the jump to continuous variables; you only swap probability mass functions for probability density functions, and sums for integrals. If X and Y have a joint density, the conditional density is the joint density divided by the marginal density of Y, valid where that marginal is positive. The conditional expectation becomes an integral, and the Law of Iterated Expectations reads identically, with the same three-line proof. The one genuinely new subtlety is the warning from part two: a continuous Y has probability zero of equaling any single value, so conditioning on Y equals y must be defined through densities, not by literally restricting to an event of positive probability. The intuition — look at the slice of the world where Y equals y, then average X over that slice — is exactly right; the machinery just has to be built with densities to be rigorous. We stay with the discrete picture so the arithmetic stays visible.
+:::
+
+## Variance and the Decomposition
+
+- $\operatorname{Var}(X)=\mathbb{E}[X^2]-(\mathbb{E}[X])^2$
+- $\operatorname{Var}(X)=\underbrace{\mathbb{E}[\operatorname{Var}(X\mid Y)]}_{\text{within-regime}}+\underbrace{\operatorname{Var}(\mathbb{E}[X\mid Y])}_{\text{across-regime}}$
+- Within: average day-to-day spread inside each regime
+- Across: spread of the regime means themselves
+
+::: notes
+First, the variance of a random variable measures how spread out it is around its mean. The computing form is the mean of the square minus the square of the mean. Now the Law of Total Variance. Total variance splits cleanly into the average variance inside the groups, plus the variance across the group means. The first term, the expectation of the conditional variance, is the within-regime piece: the average, over regimes, of the day-to-day variance inside each regime — even among calm days, some are up and some down. The second term, the variance of the conditional mean, is the across-regime piece: the regimes have different average returns, plus zero point seven one versus minus zero point six seven, so just switching regimes moves the portfolio's center of gravity. Total risk is exactly the sum of risk you would still face if you knew the regime, plus risk that comes purely from not knowing which regime you are in. Nothing is double-counted; nothing leaks.
+:::
+
+## Why The Split Helps Sam
+
+- Across-regime dominates $\Rightarrow$ forecast the regime, kill the variance
+- Within-regime dominates $\Rightarrow$ knowing the regime barely helps
+- Tells Sam *which kind of problem* they have
+- A modeling diagnostic, not just an identity
+
+::: notes
+This is genuinely useful to Sam. If the across-regime piece dominates, the smart move is regime forecasting — predict the storm and you have killed most of the variance. If the within-regime piece dominates, knowing the regime barely helps, and Sam needs a different edge entirely. The decomposition tells Sam which kind of problem they have. That is the difference between a formula and a tool: the Law of Total Variance does not just balance an equation, it diagnoses where a strategy's uncertainty actually lives, and therefore where effort should go. In the next part we run the numbers on Sam's table and see which piece wins.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **Law of Total Variance** splits risk exactly: $\operatorname{Var}(X)=\mathbb{E}[\operatorname{Var}(X\mid Y)]+\operatorname{Var}(\mathbb{E}[X\mid Y])$ — within-regime plus across-regime, nothing double-counted. If across dominates, forecast the regime; if within dominates, find a new edge. Next: the full worked decomposition on Sam's table.
+:::
+
+::: notes
+To summarize part five: the continuous case just swaps densities for mass functions and integrals for sums, with one subtlety about conditioning on probability-zero events. The Law of Total Variance splits total risk into a within-regime piece, the average conditional variance, and an across-regime piece, the variance of the conditional mean — exactly, with nothing leaking. And the split is a diagnostic: it tells Sam whether to chase regime forecasting or a within-regime edge. In part six we do the full arithmetic on Sam's table and read off the answer.
+:::

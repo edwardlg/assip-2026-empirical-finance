@@ -1,0 +1,46 @@
+---
+title: "Four Levers and Power Made Concrete"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# Four Levers and Power Made Concrete {.title}
+
+::: notes
+Welcome back to Chapter one-point-five, part six of ten. In part five we named the two ways to be wrong — Type One controlled by size alpha, and Type Two whose complement is power. Now we see the four levers that move these errors, and make power concrete with a real calculation on Sam's rule.
+:::
+
+## Four Levers
+
+- Lower $\alpha$: fewer false positives, but lower power
+- A bigger true effect is easier to detect
+- Less noise (smaller $s$) sharpens the test
+- More data (larger $N$) shrinks the standard error
+- Power analysis: find $N$ for, say, 80 percent power
+
+::: notes
+The two error rates trade off, and four levers move them. First, lowering alpha — demanding more evidence — shrinks the rejection region, cutting false positives but also lowering power. You cannot drive both errors to zero at once with fixed data. Second, a bigger true effect is easier to detect, so power rises as the real mu moves farther from the null. Third, less noise — a smaller s — sharpens the test and raises power. Fourth, more data — a larger N — shrinks the standard error, s over root N, and this is the lever you usually control. That is why power analysis — computing, before collecting data, the sample size needed to detect an effect of a given size with, say, eighty percent power — is standard practice in serious empirical work and part of every well-designed study.
+:::
+
+## Power, Made Concrete
+
+- Suppose true edge $\mu=0.05\%$, $\sigma=0.75\%$, $N=252$
+- True mean sits $\approx 1.06$ standard errors above zero
+- Power $=\Pr(Z>1.65-1.06)=\Pr(Z>0.59)\approx 0.28$
+- A real edge caught only about 28 percent of the time
+- 80 percent power here needs $N\approx 1{,}390$ days
+
+::: notes
+Let us make power concrete, because it stays abstract until you compute it. Suppose the reversal rule's true edge is zero point zero five percent per day, with sigma zero point seven five percent. Over two hundred fifty-two days the standard error is zero point zero four seven three percent, so the true mean sits about one point zero six standard errors above zero. The rejection rule fires when t exceeds one point six five. The probability of that, given the true mean, is the chance a normal centered at one point zero six exceeds one point six five — that is, the probability Z exceeds zero point five nine, about zero point two eight. So a rule with a genuine edge this size would be detected only about twenty-eight percent of the time in a single year. That is low power: nearly three times in four, a real edge would slip past unnoticed. To reach eighty percent power, Sam would need about one thousand three hundred ninety days — roughly five and a half years. Sam's actual t of one point six nine just exceeds one point six five, so the rule clears the bar — barely.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Four levers move the errors: lower $\alpha$, bigger true effect, less noise, more data — and $N$ is the one you control. Made concrete: a real $0.05\%$ edge would be caught only **~28%** of the time over one year. 80% power needs ~1,390 days. Sam's $t=1.69$ barely clears 1.65. Next: one-sided vs. two-sided tests.
+:::
+
+::: notes
+To summarize part six: four levers move the two errors — lowering alpha, a bigger true effect, less noise, and more data — and sample size N is the lever you usually control. Made concrete, a genuine edge of zero point zero five percent would be caught only about twenty-eight percent of the time over a single year — low power — and reaching eighty percent power would need roughly one thousand three hundred ninety days, about five and a half years. Sam's actual t of one point six nine barely clears the one point six five bar. In part seven we pin down exactly where that bar sits with one-sided versus two-sided tests.
+:::

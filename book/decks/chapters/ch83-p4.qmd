@@ -1,0 +1,58 @@
+---
+title: "The Literature Review That Positions"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# The Literature Review That Positions {.title}
+
+::: notes
+Welcome back to Writing the Empirical Paper, part four of seven. In part three we built the one-sentence contribution, the claim everything serves. But a claim of novelty is only credible if the reader can see the empty space you fill. That is the literature review's one job. Here we learn how most student papers fail it, what the section actually does, and three rules that keep it honest.
+:::
+
+## The Failure: Annotated Bibliography
+
+- "Smith finds A. Jones finds B. Garcia finds C. We contribute."
+- It is a list — it does the reader no work
+- Tells them what exists, not *where the hole is*
+- A list is to a review as a transcript to a paper
+- Raw material mistaken for the finished argument
+
+::: notes
+Here is where most student papers go wrong, and the failure has a name: the annotated bibliography. That is the review that reads "Smith finds A. Jones finds B. Garcia finds C. We contribute to this literature." It is a list. It does the reader no work. It tells them what exists but not where the hole is, and the hole is the only thing the section exists to reveal. A list of prior work is to a literature review what a transcript is to a paper — the raw material, mistaken for the finished argument. The fix is to stop enumerating and start constructing.
+:::
+
+## Draw a Map So the Gap Is Visible
+
+- One job: draw a map so the gap appears as a gap
+- Group prior work into two or three strands
+- Characterize each by what it established *and could not*
+- Build by grouping and contrasting, not enumerating
+- The gap is *constructed* from the literature, not asserted
+
+::: notes
+A literature review does exactly one job: it draws a map of what is known so that the gap you fill is visible as a gap. The reader should finish able to point at empty space and say "ah — that is what nobody has done, and that is what this paper does." You build that map by grouping and contrasting, not by enumerating. Cluster prior work into two or three strands — by question, by method, or by finding — and characterize each strand by what it established and what it could not. For example: one strand documents the raw denial gap but cannot separate differential treatment from differential applicant composition; a second uses audit studies to isolate treatment but cannot speak to the population-scale effect of policy; we sit at the intersection. Now the gap is not asserted; it is constructed, brick by brick, out of the literature itself.
+:::
+
+## Three Rules to Keep It Honest
+
+- Every cited paper is **load-bearing** — or delete it
+- Be **generous and precise about limits**, never dismissive
+- **Position, do not summarize** — one sentence per paper
+- Cite primary sources with full bibliographic information
+- A hallucinated reference is the error a referee never forgives
+
+::: notes
+Three rules keep the section honest. First, every paper you cite should be load-bearing — it either builds part of the map's wall or marks the edge of the hole. If a citation could be deleted without changing where the gap appears, delete it; a padded review signals you are counting references rather than building an argument. Second, be generous to the work you build on and precise about its limits, never dismissive. "Prior work was wrong" is the voice of someone about to be refereed by the author they just insulted. "Prior work established X under conditions Y; we extend to where Y fails" is the voice of someone who belongs in the conversation. Third, position, do not summarize — the reader needs each paper's coordinate on your map, one sentence, often less. And cite primary sources with full bibliographic information. If you cannot verify a citation, do not fabricate it: a hallucinated reference is the one error a referee can catch in ten seconds and never forgive.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A literature review **draws a map so the gap you fill is visible as a gap** — built by grouping and contrasting strands, never enumerating. Every citation is load-bearing, generous about limits, and positioned not summarized. Never fabricate a reference. Next: data, design, and results.
+:::
+
+::: notes
+To summarize part four: a literature review does one job — it draws a map of what is known so the gap you fill is visible as a gap. Avoid the annotated bibliography, that lifeless list. Build the map by grouping prior work into a few strands and contrasting what each established against what it could not, so the gap is constructed, not asserted. Keep it honest with three rules: every citation load-bearing, generous and precise about limits, positioned rather than summarized. And never fabricate a reference. In part five we redeem the introduction's promise with evidence: the data, design, and results sections.
+:::

@@ -1,0 +1,58 @@
+---
+title: "Why Entropy Balancing Is Steadier"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Why Entropy Balancing Is Steadier {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part six of ten. In part five we set up the entropy-balancing optimization. Now we see why it has become a workhorse in empirical finance — exact balance with tame weights — and watch it work for Maya's loans and Priya's climate insurance.
+:::
+
+## The Stability Punchline
+
+- IPW balances only if the model is right — and roughly
+- It pays for misspecification with **exploding weights**
+- Entropy balancing guarantees **exact** balance every sample
+- It keeps weights as close to uniform as constraints allow
+- The thing IPW promises, without the thing IPW inflicts
+
+::: notes
+Here is the punchline, and the reason entropy balancing has become a workhorse in empirical finance. Plain I-P-W gets balance only if the propensity model is correctly specified, and even then only approximately in any finite sample — and it pays for misspecification with exploding weights. Entropy balancing guarantees exact balance on the moments you chose, in every sample, by construction, while simultaneously keeping the weights as close to uniform as the constraints allow. It gives you the thing I-P-W only promises, balance, without the thing I-P-W inflicts, wild weights. There is even a deep connection: entropy balancing is equivalent to a particular logistic propensity model — but one fit by a loss that targets covariate balance directly rather than predictive likelihood. So it is not magic from nowhere; it is what you get when you stop asking the propensity model to predict treatment well and start asking it to balance covariates well, which is what you needed all along.
+:::
+
+## Versus Matching
+
+- Matching **discards** units outside the caliper
+- Maya lost a third of her control group
+- Entropy balancing **keeps every unit**, just down-weights some
+- More information retained, more precision
+- No caliper-and-algorithm menu to fish through
+
+::: notes
+The practical contrast with matching is just as sharp. Matching discards units — the unmatched controls outside the caliper. Maya lost a third of her control group that way. Entropy balancing keeps every unit and simply gives some of them small weights; nothing is thrown away, so you retain more information and more precision. And it sidesteps the specification-search problem: there is no which-matching-algorithm, which-caliper, with-or-without-replacement menu to agonize over and to invite reviewer suspicion that you picked the spec that gave the prettiest answer.
+:::
+
+## Maya and Priya, Reweighted
+
+- Maya balances controls to enrollees' means; table is perfect
+- Effective $N$ among controls $\approx 410$ of $600$
+- Entropy-balanced ATT: $8.4 - 9.1 = -0.7$ points
+- Adding variance matching barely moves it — real robustness
+- Priya: climate insurance, weights stay tame in odd zones
+
+::: notes
+Back to Maya. She wants the A-T-T: the effect of enrolling, for the kind of student who enrolled. She reweights her non-enrollees so their weighted means of income, starting credit, age, and prior-account count exactly match the enrollees' means, while keeping the weights flat. Her balance table is perfect — every covariate difference is mechanically zero — and her effective sample size among controls is about four-hundred-ten out of six-hundred, a mild and honest cost. The reweighted control mean rate is nine-point-one; the enrollee mean is eight-point-four; her entropy-balanced A-T-T is eight-point-four minus nine-point-one, equals minus zero-point-seven points. Crucially, when she re-runs adding variance matching, the number barely moves — a reassurance the I-P-W wobble never gave her. A Priya variant shows it generalizes. Priya studies climate insurance: did buying parametric drought insurance change a farm's irrigation investment? Insured and uninsured farms differ on rainfall variability, size, distance to a bank, and prior losses. She entropy-balances the uninsured farms to share the insured farms' means and variances, then compares irrigation spending. The weights stay tame even though a few insured farms sit in unusual rainfall zones — the units that would have blown up an I-P-W estimator — precisely because the entropy objective refuses to let any one weight run away.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Entropy balancing delivers **exact balance with tame weights in every sample**, keeps every unit instead of discarding like matching, and survives a robustness check — adding variance matching — that IPW never passes. It is the empirical-finance workhorse for selection-on-observables. Next: a third route entirely — modeling the outcome, and combining both.
+:::
+
+::: notes
+To summarize part six: entropy balancing guarantees exact balance with tame weights in every sample, keeps every unit rather than discarding like matching, and gives robustness — adding variance matching barely moves Maya's answer — that I-P-W never delivers. Its one limitation, which we will return to, is that you must choose which moments to balance. In part seven we open a completely different route to the counterfactual: a model of the outcome, and the doubly-robust estimator that combines it with weighting.
+:::

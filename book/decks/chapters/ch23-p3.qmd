@@ -1,0 +1,65 @@
+---
+title: "FWL by Hand: Reproducing the Coefficient"
+date: "2026-06-29"
+---
+
+# FWL by Hand: Reproducing the Coefficient {.title}
+
+::: notes
+Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part three of eight. In part two we met Leah's six firms, with R&D and firm size deliberately entangled. Now we put the theorem to work on those numbers. We will run the full three-variable regression to get a target, then reproduce its R&D coefficient exactly — using only two simple regressions and one scalar division, never putting R&D and size in the same regression.
+:::
+
+## Step 0: The Target To Match
+
+- Full regression $y_i=\beta_0+\beta_1 x_i+\beta_2 z_i+\varepsilon_i$ gives
+- $\hat{\beta}_1 = 1.838,\quad \hat{\beta}_2 = 3.676,\quad \hat{\beta}_0 = 1.919$
+- **Keep $\hat{\beta}_1 = 1.838$ in mind** — that is the destination
+
+::: notes
+First, so we have a target, run the full multiple regression of patents on R&D and size, with an intercept. It returns three numbers: the coefficient on R&D is one-point-eight-three-eight, the coefficient on size is three-point-six-seven-six, and the intercept is one-point-nine-one-nine. You will reproduce these in the notebook; for now just take them as the destination. Keep that coefficient on R&D — one-point-eight-three-eight — firmly in mind. Frisch–Waugh–Lovell says we can hit it exactly with two simple regressions and no matrix inversion bigger than a scalar.
+:::
+
+## Steps 1 & 2: Clean Size Out Of Both
+
+- **Step 1**: regress R&D on size, keep residual $\tilde{x}_i = x_i-\hat{x}_i$
+- $\tilde{x}_i$ = R&D **that size cannot explain** (firm-specific intensity)
+- **Step 2**: regress patents on size, keep residual $\tilde{y}_i$
+- $\tilde{y}_i$ = patenting **beyond** what size alone predicts
+- Both residual columns **sum to zero**
+
+::: notes
+Step one: residualize the key regressor against everything else. Everything else here is size plus the intercept. So regress R&D on size and keep the residual, which we write x-tilde. The slope of R&D on size works out to about one-point-one-seven, and the residuals x-tilde are the part of R&D that size cannot explain — the firm-specific R&D intensity that has nothing to do with mere bigness. They sum to zero, as residuals from a regression with an intercept always must. Step two: do exactly the same thing to patents. Regress patents on size and keep the residual, y-tilde. These are the part of patenting that size cannot explain — patenting beyond what the firm's size alone would predict. Two cleaned columns, both averaging to zero.
+:::
+
+## Step 3: Regress Leftover On Leftover
+
+- Simple no-intercept slope of $\tilde{y}$ on $\tilde{x}$:
+$$\hat{\beta}_1=\frac{\sum_i \tilde{x}_i\tilde{y}_i}{\sum_i \tilde{x}_i^2}=\frac{5.181}{2.819}=1.838$$
+- **Exactly** the multiple-regression number from Step 0
+- We never put $x$ and $z$ in the same regression
+
+::: notes
+Now the punchline. Run a simple regression of the residualized outcome on the residualized regressor — no intercept needed, since both residual vectors already average to zero. The slope of a simple no-intercept regression is just the sum of the product of x-tilde and y-tilde, divided by the sum of x-tilde squared. Plug in the two residual columns: the numerator is five-point-one-eight-one, the denominator is two-point-eight-one-nine, and the ratio is one-point-eight-three-eight. There it is — the exact same number as the multiple-regression coefficient from Step zero. We never put R&D and size in the same regression. We cleaned size out of both R&D and patents, then ran a two-variable regression on the cleaned versions, and the slope landed precisely on the target. That is not a coincidence of these six numbers; it is a theorem, exactly true for every dataset.
+:::
+
+## One Detail Worth Pausing On
+
+- You must residualize **both** $y$ and $x$ against $z$
+- Cleaning only $x$ still nails the **point estimate**...
+- ...but gives the **wrong** residuals, standard error, and $R^2$
+- Memorize the symmetric version: **clean both sides**
+
+::: notes
+One detail worth pausing on before we prove it. You must residualize both patents and R&D against size. A common mistake is to clean size out of R&D only, then regress raw patents on the cleaned R&D. As it happens, that also gives the right slope here, because the cleaned R&D is orthogonal to size. So you can get away with residualizing only the regressor for the point estimate. But you must residualize both to get the right residuals, the right standard error, and the right R-squared. The clean, symmetric statement — clean both sides — is the one to memorize, and the one the proof in part four delivers.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Clean size out of R&D, clean size out of patents, then regress leftover on leftover: the slope is $1.838$ — **exactly** the multiple-regression coefficient, with no three-variable regression. Residualize **both** sides. Next: the matrix proof of why this always works.
+:::
+
+::: notes
+To summarize part three: we reproduced a three-variable regression coefficient, one-point-eight-three-eight, using only two simple regressions and a scalar division. Clean size out of R&D, clean size out of patents, then regress the leftover patents on the leftover R&D. The match is exact, and it is exact on every dataset, not just these six firms. And remember the discipline: residualize both sides, because cleaning only one side gives the right point estimate but the wrong residuals and standard errors. In part four we promote this from a worked example to a theorem, proving it in four lines of matrix algebra with the residual-maker matrix from Chapter two-point-one.
+:::

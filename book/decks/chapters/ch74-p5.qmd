@@ -1,0 +1,58 @@
+---
+title: "Outliers: Winsorize, Trim, or Neither"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# Outliers: Winsorize, Trim, or Neither {.title}
+
+::: notes
+Welcome back to Building the Analysis Dataset, part five of seven. In part four we locked out look-ahead bias with a point-in-time merge. Now a content decision that can flip a result's sign: what to do with extreme values. Sam computes book-to-market and finds a value of four hundred, and one of negative ninety. These are outliers, and the right move depends entirely on where they came from. This part is about asking that question before reaching for a tool.
+:::
+
+## Where Extreme Values Come From
+
+- Book-to-market mostly sits between 0.2 and 2
+- But a few are 400, and one is negative 90
+- **Data errors**: find and fix or drop, do not smooth
+- **Definitional artifacts**: exclude by a stated rule
+- **Genuine extremes**: real signal — the tails matter
+
+::: notes
+Sam stares at the distribution. Most book-to-market values sit between zero-point-two and two, but a handful are four hundred and one is negative ninety. These outliers are not necessarily errors — but they dominate any mean, any OLS slope, and any Sharpe ratio. Recall that OLS minimizes squared error, so one huge residual can swing beta hat. Extreme ratios come from three sources, and the source dictates the fix. First, data errors — a misplaced decimal, a units mismatch, a stale identifier gluing the wrong firm's book value to a stock. Find and fix or drop these, do not smooth them. Second, definitional artifacts — a firm with near-zero or negative book equity produces a ratio that explodes or flips sign; exclude these by a stated rule, like dropping firm-years with negative book equity. Third, genuine extreme values — a real firm really is that distressed. These are signal, and throwing them away can itself bias you.
+:::
+
+## Winsorize Versus Trim
+
+- **Winsorize**: cap values at, say, the 1st and 99th percentiles
+- Observations stay; you keep N; their leverage is bounded
+- **Trim**: delete beyond the cutoffs — loses N and information
+- Winsorizing is usually preferred: it keeps the row
+- Use it for definitional artifacts and genuine extremes
+
+::: notes
+For artifacts and genuine extremes, the standard tool is winsorizing: instead of deleting extreme observations, you cap them at a percentile. At the first and ninety-ninth percentiles, every value below the first is set to that percentile, and every value above the ninety-ninth is set to the ninety-ninth. The observations stay — you do not lose N — but their leverage on the estimate is bounded. Trimming is the more aggressive cousin: you delete observations beyond the cutoffs rather than capping them, which reduces N and discards information. Winsorizing is usually preferred precisely because it keeps the row. In code, a small helper takes a series and its lower and upper quantiles and clips the series between them, returning a new series you can assign to a winsorized column.
+:::
+
+## Three Points of Discipline
+
+- Winsorize *within each cross-section*, grouping by date
+- Judge "extreme" against contemporaries, not a different decade
+- State cutoffs; apply them symmetrically and once
+- Searching cutoffs until the t-stat clears 2 is p-hacking
+- Never winsorize the variable that *is* your signal
+
+::: notes
+Three points of discipline separate a defensible winsor from a fudge. First, winsorize within the cross-section, grouping by date, so that extreme is judged relative to contemporaries, not relative to a different decade — a nineteen-ninety-nine outlier and a two-thousand-eight outlier should each be judged against their own era. Second, state the cutoffs and apply them symmetrically and once; one percent and ninety-nine percent is conventional, but the cardinal sin is searching over cutoffs until your t-statistic clears two. That is not cleaning; that is p-hacking with extra steps. Third, and this is the when-not-to, do not winsorize the variable that is the whole point. Priya studying catastrophe-insurance losses, or Devon studying crypto returns, lives in fat-tailed worlds where the extreme observations are the phenomenon. The right move there is often a model built for fat tails — a log transform, a quantile regression, a robust estimator — not a cap that defines the problem away.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+For **outliers**, let the source decide: fix data errors, exclude definitional artifacts by a stated rule, and **winsorize** genuine extremes — capping at percentiles, **within the cross-section**, with cutoffs stated once. Never winsorize the variable that *is* your signal. Next: missing data — why it is missing matters more than how much.
+:::
+
+::: notes
+To summarize part five: outliers are not all the same, so let the source decide. Find and fix data errors, exclude definitional artifacts by a stated rule, and winsorize genuine extremes by capping them at percentiles within the cross-section, with cutoffs stated once and applied symmetrically — never searching for a t-statistic. And remember the boundary: winsorize the noise in your controls, but never the variable that is your subject, because in fat-tailed worlds the extremes are the phenomenon. In part six we turn to missing data, where the key question is not how much is missing but why.
+:::

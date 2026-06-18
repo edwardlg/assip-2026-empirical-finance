@@ -1,0 +1,69 @@
+---
+title: "From Counts to a Denial-Rate Panel, and the Spec"
+date: "2026-07-13"
+---
+
+# From Counts to a Denial-Rate Panel, and the Spec {.title}
+
+::: notes
+Welcome back to Week Four, the Lab, part four of eight. In part three we pinned a vintage and wrote the CFPB aggregation query that counts mortgage actions by state, year, and action taken. Now we turn those counts into the outcome — a denial rate — handle the practical traps, define the treatment as a staggered state policy, and name the full empirical spec in one breath.
+:::
+
+## Building the Denial Rate
+
+- Denial rate = denied over decided applications
+- Decided = originated plus denied
+- Expressed in percentage points
+- Pivot counts to wide, then divide
+- Same outcome whatever the geography
+
+::: notes
+Whatever the geography, the outcome you build is the same. The denial rate in a geography-year cell is denied applications divided by applications that got a decision — originations plus denials — expressed in percentage points. In code you pivot the action-taken counts into wide form, rename code one to originated and code three to denied, add them to form applications decided, and compute one hundred times denied over decided. That is your panel's outcome column, one denial rate per geography per year.
+:::
+
+## Two Cautions That Separate Careful From Sloppy
+
+- **Thin cells are noise**: drop cells below a minimum count
+- A rural county with forty applications swings wildly
+- **The denominator is a choice** you must state
+- Excluding withdrawn and incomplete is defensible
+- A referee will ask — write it into your spec
+
+::: notes
+Two practical cautions separate a careful HMDA panel from a sloppy one. First, thin cells are noise. A rural county with forty applications has a denial rate that swings wildly year to year, so you filter out cells below a minimum count — the example uses one hundred decided applications. Second, the denominator is a choice you must state. Denied over originated-plus-denied excludes withdrawn and incomplete applications, which is defensible, but a referee will ask, so write it into your spec. And remember: the denial rate is coarse. By itself it does not separate discrimination from differences in applicant creditworthiness — the subtlety of Week Two's omitted-variable-bias chapter. It is the starting outcome for a design that leans on a policy shock, not the final word.
+:::
+
+## Defining the Treatment
+
+- A state-level regulatory change, adopted in different years
+- Plausibly affects denial rates through fair lending
+- Examples: exam regimes, anti-discrimination statutes, CRA-style rules
+- Encode each state's **adoption year** $G_i$; never-adopters missing
+- **Cite each adoption date** from primary sources
+
+::: notes
+The design needs a treatment: a state-level regulatory change, adopted by different states in different years, that plausibly affects denial rates through the fair-lending channel. Real examples: a state strengthening a fair-lending examination regime, an anti-discrimination statute extending protected classes in credit, or a community-reinvestment obligation. For each state you encode the adoption year, written capital G sub i — the calendar year the rule first binds — with never-adopters coded as missing, exactly the cohort structure the differences package expects. You build that policy table yourself, from primary sources like statute effective dates, and you cite each adoption date. For the lab we do not assert specific real adoption years — that is a capstone research task — so Path B plants a clean staggered pattern, and on real HMDA you swap in your verified, cited table and run identical code.
+:::
+
+## The Real-Data Spec, Named in Full
+
+- **Outcome**: county-year denial rate, percentage points
+- **Treatment**: staggered state fair-lending change, adoption year $G_i$
+- **Fixed effects**: county and year; **clustering**: by state
+- **Control group**: never-adopting states, clean throughout
+- **Identifying assumption**: parallel trends, per cohort, untested
+
+::: notes
+Now the spec, named in full. Outcome: county-year mortgage denial rate in percentage points. Treatment: a state fair-lending regulatory change with a staggered adoption year, capital G sub i, per state. Controls: none in the baseline, or covariate-conditional parallel trends via the doubly-robust option. Fixed effects: county and year, absorbed inside the group-time estimator. Clustering: by state, the unit of treatment — the Bertrand–Duflo–Mullainathan lesson. Sample: counties in the in-scope states over the pinned years, cells with at least one hundred decided applications. Control group: never-adopting states, clean throughout. Aggregation: an event-time average of group-time effects, weighted by cohort size. And the identifying assumption in one sentence: absent the regulation, each adopting cohort's denial rates would have moved parallel to the never-adopting states' — assumed per cohort, not tested.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **denial rate** is denied over decided applications, in percentage points — drop thin cells, and state your denominator. Treatment is a **staggered** state fair-lending change with adoption year $G_i$; never-adopters are missing. Name the full spec in one breath, ending in the identifying assumption: parallel trends, **per cohort, untested**. Next: Path B — build the synthetic panel with a known effect.
+:::
+
+::: notes
+To summarize part four: the denial rate is denied over decided applications, in percentage points — and you drop thin cells and state your denominator choice, because the rate alone cannot separate discrimination from creditworthiness. The treatment is a staggered state fair-lending change with an adoption year, capital G sub i, never-adopters left missing. And you name the full spec, ending on the identifying assumption: parallel trends, assumed per cohort, never tested. In part five we cross into Path B and build the synthetic county-year panel with a planted, dynamic treatment effect.
+:::

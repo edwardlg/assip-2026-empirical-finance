@@ -1,0 +1,57 @@
+---
+title: "The Research Question: Do Past Winners Keep Winning?"
+date: "2026-07-20"
+---
+
+# The Research Question: Do Past Winners Keep Winning? {.title}
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part two of eleven. In part one we framed why this paper broke the efficient-markets story open. Now we state the precise question it asks. The plain-English version is simple: do past winners keep winning? But the precise version pins the result to a specific horizon, and that horizon is the whole game.
+:::
+
+## The Plain-English Question
+
+- Take each stock's return over the past few months
+- Sort all stocks by that past return
+- Do top-decile **winners** beat bottom-decile **losers** next?
+- If yes, past returns predict future returns
+- Buying winners and shorting losers should pay
+
+::: notes
+Here is the plain-English question. Take a stock's return over the past few months — say the past six. Sort all stocks by that past return. Do the ones near the top, the winners, go on to earn higher returns over the next few months than the ones near the bottom, the losers? If yes, then past returns predict future returns at intermediate horizons, and a strategy of buying winners and shorting losers should be profitable. That is the entire hypothesis. Notice it uses only one input — past returns — and nothing else: no accounting data, no firm characteristics, no valuation ratios. Just how the stock moved recently.
+:::
+
+## The Horizon Is Everything
+
+- They study **three-to-twelve-month** formation and holding
+- Wedged between two known opposite patterns
+- Very short horizons: returns **reverse** (a week, a month)
+- Long horizons of three-to-five years: **long-run reversal**
+- Momentum lives in the medium-horizon gap
+
+::: notes
+The horizon is the whole game. Jegadeesh and Titman are precise: they study formation and holding periods of three to twelve months. This is deliberately wedged between two horizons where the opposite pattern was already known. At very short horizons — a week, a month — returns tend to reverse: last week's losers bounce back, a pattern attributable partly to bid-ask bounce and short-run overreaction. At long horizons of three to five years, De Bondt and Thaler had documented long-run reversal: past long-term losers outperform past long-term winners. Momentum lives in the medium-horizon gap between these two reversals — continuation for a few months to a year, then eventual reversal. Pinning the result to that specific window is part of why the paper is credible. It is not "stocks trend forever." It is "stocks trend for three to twelve months and then unwind."
+:::
+
+## The Implication for Efficiency
+
+- Weak-form EMH: prices reflect all past-price information
+- So past returns should carry **no usable signal**
+- A profitable past-returns rule strikes at weak-form efficiency
+- Burden: show profits are **not** just risk compensation
+- The authors try to kill their own result
+
+::: notes
+The implication is the title's second half: implications for stock market efficiency. Recall the weak-form efficient-markets hypothesis from Week One. Prices already reflect all information in past prices, so past returns should carry no usable signal about future returns. A profitable rule built only from past returns is a direct strike at weak-form efficiency. So the paper has a methodological burden it cannot dodge. It must show the profits are not just compensation for risk. If buying winners is really just loading up on some risk factor, then there is no anomaly — you are being paid for bearing danger, exactly as efficiency predicts. The authors therefore spend much of the paper trying to kill their own result with risk adjustment, and reporting that it survives.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The question: do past winners keep winning over **three to twelve months**? That window sits between short-run and long-run reversal. A past-returns rule that pays challenges weak-form efficiency — unless the profit is just risk compensation. Next: how the portfolio is built.
+:::
+
+::: notes
+To summarize part two: the research question is whether past winners keep winning, studied precisely at the three-to-twelve-month horizon. That medium window matters because it sits between short-run reversal and long-run reversal — momentum is continuation in the gap. Because the strategy uses only past returns, a profit directly challenges weak-form efficiency, which puts the burden on the authors to prove the profit is not just risk compensation. In part three we get concrete about identification: there is no instrument and no natural experiment here, so the portfolio construction itself is the method, and we read it cold.
+:::

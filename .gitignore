@@ -49,3 +49,10 @@ data/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Voice clone sample — sensitive; keep local, not in VCS
+assets/voice/*.m4a
+assets/voice/*.wav
+assets/voice/*.mp3
+/_site/
+/_freeze/

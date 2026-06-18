@@ -1,0 +1,69 @@
+---
+title: "Callaway–Sant'Anna Recovers the Effect"
+date: "2026-07-13"
+---
+
+# Callaway–Sant'Anna Recovers the Effect {.title}
+
+::: notes
+Welcome back to Week Four, the Lab, part eight of eight — the finish. In part seven we read the event study and stressed parallel trends until the leads tilted. Now the cure: estimate Callaway–Sant'Anna group-time effects against clean controls, recover the planted effect that two-way fixed effects could not, put the three numbers side by side, and close the whole week. Then a look ahead to Mentor Session Four and Capstone One.
+:::
+
+## The Cure: Clean Controls
+
+- Estimate group-time ATTs against **never-treated** controls
+- Use the `differences` package, exactly as in chapter four-point-two
+- A MultiIndex of entity and time; cohort `NaN` for never-treated
+- Aggregate to an event study and a single overall ATT
+- Compare to the truth and to broken TWFE
+
+::: notes
+Now the cure. You estimate Callaway–Sant'Anna group-time average treatment effects on the treated against never-treated clean controls, using the differences package as in chapter four-point-two. You hand it a multi-index data frame of entity and time — county and year — and a cohort column where never-treated units are not-a-number. You call A-T-T-g-t, fit with the outcome formula, and set the control group to never-treated, the never-adopting states. Then you aggregate two ways: a simple overall effect, and an event-study aggregation indexed by relative period, and compare both to the planted truth and the broken two-way fixed-effects number.
+:::
+
+## It Recovers the Planted Effect
+
+- CS overall ATT lands around **minus 1.32** pp
+- Close to the true minus 1.49, far closer than TWFE
+- Pre-period coefficients hug zero, as the truth demands
+- Post-period coefficients climb with the planted profile
+- The clean estimator recovers; the contaminated one falls short
+
+::: notes
+What you expect: the Callaway–Sant'Anna overall effect lands around minus one-point-three-two percentage points — close to the true minus one-point-four-nine, far closer than two-way fixed effects' minus zero-point-eight-one. The event-study coefficients track the planted build-up. The pre-period coefficients, event time below zero, hug zero — flat, as the truth demands. And the post-period coefficients climb in lockstep with the planted minus zero-point-four-zero, minus zero-point-eight-zero, minus one-point-two-zero profile, dampened only by noise at long horizons. The headline contrast is the whole lab: the clean estimator recovers the planted effect; the contaminated one sits visibly short. The verification assertions confirm it — both estimates negative, the Callaway–Sant'Anna value within a quarter point of the truth, two-way fixed effects strictly more attenuated, and the pre-trends flat.
+:::
+
+## Name Your Aggregation Weights
+
+- CS overall minus 1.32 differs from raw cell-mean minus 1.49
+- That is **not** an error
+- `simple` weights group-time ATTs by **cohort size**
+- The raw target averages over **treated cells**
+- Different weighted averages of the **same** true effects
+
+::: notes
+One honest subtlety. The Callaway–Sant'Anna overall, minus one-point-three-two, is not identical to the raw true-cell-mean, minus one-point-four-nine, and that is not an error. The simple aggregation weights group-time effects by cohort size, while the raw target averages over treated cells — so later horizons, with more accumulated effect, receive different weight. They are different weighted averages of the same true effects. That is exactly chapter four-point-two's point: you must name your aggregation weights, because the overall effect is not one number until you say how you averaged. Two honest analysts can report different overall numbers and both be right, if they weighted differently and said so.
+:::
+
+## Three Numbers, One Picture
+
+- One figure: planted truth, CS, attenuated TWFE
+- Left: event-study curves over the planted profile
+- CS curve hugs the dashed truth; TWFE drifts off in the post-period
+- Right: CS bar reaches most of the way; TWFE bar falls short
+- One picture, the whole week
+
+::: notes
+Finally, make the contrast unmissable with one figure. On the left, plot the event-study curves over the planted-truth profile: the Callaway–Sant'Anna curve hugs the dashed planted-truth line, while the naive two-way fixed-effects curve drifts off it in the post-period — cohort-bleed, made visible. On the right, three headline bars: the planted truth, the Callaway–Sant'Anna overall, and the attenuated two-way fixed-effects coefficient. The Callaway–Sant'Anna bar reaches most of the way to the truth; the two-way fixed-effects bar falls short. One picture, the whole week. The credibility comes from the design, not from a pile of controls.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Callaway–Sant'Anna with **clean controls** recovers an overall ATT near **minus 1.32 pp** — close to the planted minus 1.49, far closer than TWFE's minus 0.81 — with flat pre-trends. Name your aggregation weights: the overall is not one number until you say how you averaged. The lesson: build a universe where you know the truth, and check. Next: Mentor Session 4 and Capstone 1.
+:::
+
+::: notes
+To summarize the lab: Callaway–Sant'Anna with clean, never-treated controls recovers an overall effect near minus one-point-three-two percentage points — close to the planted minus one-point-four-nine, far closer than two-way fixed effects' minus zero-point-eight-one — with pre-trends that hug zero. And you name your aggregation weights, because the overall effect is not one number until you say how you averaged. The habit underneath, the one every lab drills: when unsure whether a tool does what it claims, build a universe where you know the truth and check. That is the move Professor Gao made in the work this week anchors on — Gao and Sun, two thousand nineteen. You will make it again in Mentor Session Four and in Capstone One, fair lending on HMDA. Keep this notebook — its structure and pipeline are the scaffold of a publishable result. That closes Week Four.
+:::

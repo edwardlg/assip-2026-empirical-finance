@@ -1,0 +1,57 @@
+---
+title: "The Data: A Perfect Crime Scene"
+date: "2026-07-20"
+---
+
+# The Data: A Perfect Crime Scene {.title}
+
+::: notes
+Welcome back to Chapter five-point-five, part three of seven. In part two we built the placebo-law experiment, which measures the true size of a difference-in-differences test by assigning fake laws to random states. Now we look at the data BDM ran it on, and see why their choice of panel makes the indictment land on real research practice rather than a strawman.
+:::
+
+## CPS-Style State-Year Panels
+
+- Workhorse data: CPS microdata, aggregated to state-year cells
+- Current Population Survey, the monthly U.S. labor survey
+- For each state and year: an average outcome
+- Example: women's log wages, or an employment rate
+- The kind of panel DiD studies actually use
+
+::: notes
+The paper runs on the kind of panel that difference-in-differences studies actually use, and that is the point. BDM want their indictment to land on real research practice, not a strawman. The workhorse dataset is Current Population Survey style microdata, aggregated to state-year cells. The Current Population Survey is the United States government's monthly labor-market survey, and from it one can build, for each state and each year, an average outcome such as women's log wages or an employment rate. These are exactly the slow-moving economic variables that empirical labor and public economics study, which is what makes them the ideal setting for the experiment. The serial correlation is not something BDM imported; it is already there in the real data.
+:::
+
+## Why a Long Panel Matters
+
+- Serial correlation needs *time* to accumulate
+- Two periods: little room for an autocorrelation problem
+- Twenty periods: residuals form long, drifting runs
+- Independence assumption badly misreads those runs
+- Longer the panel, the worse the over-rejection
+
+::: notes
+Two features of this data make it the perfect crime scene. First, it is a long panel, many years per state, and serial correlation only does real damage when there are enough time periods for within-state persistence to accumulate. With two periods there is little room for an autocorrelation problem to grow. With twenty, a slow-moving outcome's residuals form long, gently drifting runs that the independence assumption badly misreads. The longer the panel, BDM show, the worse the over-rejection. This is the first lever that turns the problem from a theoretical possibility into a measured catastrophe, and it tells you immediately where the danger is greatest: in the rich, many-year panels that researchers prize most.
+:::
+
+## Persistent Outcomes, Persistent Treatment
+
+- Wages and employment move slowly: this year resembles last
+- Residuals are positively autocorrelated within a state
+- Not a data-cleaning artifact: it is the real economy
+- The treatment dummy is itself very persistent
+- Persistent regressor plus serial errors: the worst case
+
+::: notes
+Second, the outcomes are economically persistent in exactly the way that matters. Wages, employment, and similar variables move slowly: this year looks a lot like last year, so a state's residuals are positively autocorrelated. That persistence is not a data-cleaning artifact you can scrub away; it is the genuine time-series structure of the economy, and it is precisely what the conventional difference-in-differences standard error ignores. BDM also note that the treatment dummy D-s-t is itself extremely persistent within a state: off for years, then on for years. And Week Four taught you, via the Moulton intuition, that a highly persistent regressor combined with serially correlated errors is the worst possible case for naive standard errors. Both ingredients of the disaster are present, and they reinforce each other.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+BDM use real CPS-style state-year panels precisely because they are **long** and **persistent** — slow-moving outcomes whose residuals drift, plus a treatment dummy that stays on for years. That combination is the worst case for naive standard errors, so the crime scene is real research practice, not a strawman. Next: how to read the paper's tables in story order.
+:::
+
+::: notes
+To summarize part three: BDM deliberately use real Current Population Survey style state-year panels because they are long and persistent. The outcomes move slowly, so residuals form drifting, autocorrelated runs, and the treatment dummy itself stays on for years. By the Moulton intuition from Week Four, a persistent regressor combined with serially correlated errors is the worst case for naive standard errors, and both are present here. That is why the indictment lands on real practice. In part four we read the paper the way a professional does: tables first, in the order that tells the story.
+:::

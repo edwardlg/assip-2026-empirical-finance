@@ -1,0 +1,69 @@
+---
+title: "Inspect the Design, Then Watch TWFE Fall Short"
+date: "2026-07-13"
+---
+
+# Inspect the Design, Then Watch TWFE Fall Short {.title}
+
+::: notes
+Welcome back to Week Four, the Lab, part six of eight. In part five we built the synthetic panel with a planted, dynamic effect and an honest target near minus one-point-four-nine percentage points. Now, before estimating anything, we look at the design and state the identification argument out loud — then we run static two-way fixed effects first, so you can feel exactly why it is suspect here.
+:::
+
+## Look Before You Estimate
+
+- Tabulate counties per cohort
+- Plot raw cohort-mean denial rates over time
+- Four lines start bunched, drift gently down in parallel
+- Each adopting cohort peels below after its adoption year
+- The picture **is** the identification argument
+
+::: notes
+Before estimating anything, look at the design and state the identification argument out loud — the habit that catches bad designs before the regression does. Tabulate counties per cohort, and plot the raw cohort-mean denial rates over time. What you expect is four lines that start bunched together and drift gently downward in parallel — that is the common trend — with each adopting cohort's line peeling further below the never-adopters after its adoption year, the building policy effect made visible. The picture is the identification argument in one image: before a cohort adopts, its line tracks the never-adopters, the visible parallel pre-trend; after, it separates.
+:::
+
+## The Identification Argument, In Words
+
+- **Parallel-trends story**: absent the policy, adopters move like controls
+- Same downward drift, same shocks
+- **Threats**: anything hitting adopters differently at the same time
+- A boom, a regional housing shock, reverse-causal timing
+- The event study can look — but cannot prove
+
+::: notes
+Now state it in words. The treatment is the state fair-lending policy; the outcome is the county denial rate. The parallel-trends story is: counties in adopting states would, absent the policy, have moved like counties in never-adopting states — same downward drift, same shocks. What threatens it? Anything that hits adopting states' denial rates differently at the same time as the policy, for reasons other than the policy: a state that adopts fair-lending rules because its denial rates were already falling — reverse causation in the timing — a coincident state economic boom, or a regional housing shock that happens to align with the adoption wave. The event study, coming up next, lets you look for the most detectable of these, a pre-existing divergence. But, as chapter four-point-one insisted, a clean pre-trend is evidence, not proof.
+:::
+
+## Run TWFE First
+
+- Static regression: denial rate on the treatment dummy
+- Absorb county and year fixed effects
+- Cluster by state
+- The regression a beginner reaches for
+- On staggered, dynamic data, exactly the suspect one
+
+::: notes
+Now run the static two-way fixed-effects regression from chapter four-point-one: denial rate on the treatment dummy, absorbing county and year fixed effects, clustered by state. In pie-fix-est that is one line — feols of denial-rate twiddle D, with county plus year after the bar, clustered on state. This is the regression a beginner reaches for, and on staggered data with dynamic effects it is the one chapter four-point-two warned you about. You run it first on purpose, to feel the failure rather than be told about it.
+:::
+
+## The Attenuation, and Why
+
+- TWFE beta-hat comes out around **minus 0.81** pp
+- Against a true mean ATT of minus 1.49 — only about **55%**
+- A policymaker would think the policy did half what it did
+- The cause: **forbidden comparisons** under staggering
+- Already-treated states wrongly used as controls
+
+::: notes
+What you expect: the two-way fixed-effects coefficient comes out around minus zero-point-eight-one percentage points, against a true mean effect of minus one-point-four-nine — the right sign, but only about fifty-five percent of the truth. It is attenuated, biased toward zero; a policymaker reading minus zero-point-eight-one would conclude the policy did barely more than half what it actually did. Why? Exactly the chapter four-point-two mechanism. With staggered adoption, two-way fixed effects forms forbidden comparisons — it uses already-treated states, the twenty-sixteen wave, as controls for newly-treated states, the twenty-twenty wave, during years when the twenty-sixteen wave's own effect is still deepening. That still-moving effect of the contaminated control gets subtracted, dragging the pooled coefficient toward zero. Here the sign survives only because genuine never-adopting controls dilute the forbidden comparisons; with no never-treated unit at all, the sign can flip outright.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Look first**: the cohort-means plot is the identification argument in one image — flat together before adoption, peeling apart after. Then TWFE comes out around **minus 0.81 pp**, only about 55% of the truth, **attenuated** by forbidden comparisons that use already-treated states as controls while their own effect is still building. Next: the event study, and stressing parallel trends on purpose.
+:::
+
+::: notes
+To summarize part six: you look before you estimate, because the cohort-means plot is the identification argument in one image — lines flat together before adoption, peeling apart after. The parallel-trends story is that adopters would have moved like controls absent the policy. Then you run static two-way fixed effects and watch it come out around minus zero-point-eight-one percentage points — only about fifty-five percent of the truth — attenuated by forbidden comparisons that use already-treated states as controls while their own effect is still building. In part seven we estimate the event study, then stress parallel trends and watch the leads tilt.
+:::

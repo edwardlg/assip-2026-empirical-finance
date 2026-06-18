@@ -1,0 +1,70 @@
+---
+title: "The Shape, and Where This Is Heading"
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+# The Shape, and Where This Is Heading {.title}
+
+::: notes
+Welcome back to Estimators and Their Sampling Distributions, part seven of seven, our finale. In part six we built the sampling distribution by simulation and saw it center on mu with spread sigma over root N. Now we look at its shape, name the two great theorems that explain everything we have observed, and send Priya off with a better sticky note.
+:::
+
+## Three Panels, Three Lessons
+
+- Plot the sampling distribution at $N=10,\,50,\,500$
+- All three centered on the same line at $\mu=\$8{,}000$
+- Growing $N$ never moves the center — unbiased at every $N$
+- Histograms get dramatically narrower as $N$ grows
+- They narrow at the $1/\sqrt{N}$ rate
+
+::: notes
+Now the part you cannot get from the formulas — the shape. We plot the sampling distribution at three sample sizes: ten, fifty, and five hundred. Three things jump out, and they are the takeaways of the whole lesson. First, all three histograms are centered on the same line at eight thousand dollars. Growing N does not move the center, because unbiasedness holds at every N — the recipe always aims true. Second, the histograms get dramatically narrower as N grows, at the one over root N rate. Going from N equals ten to five hundred is a fifty-fold jump in data, so the standard error should fall by the square root of fifty, about seven-fold — and it does. That visible collapse onto the line is consistency. You are watching x bar converge in probability to mu before your eyes.
+:::
+
+## The Shape Changes Too
+
+- At $N=10$, the histogram is still right-skewed
+- It remembers the shape of the underlying claims
+- By $N=500$ it is a clean, symmetric bell
+- True even though individual claims are not bell-shaped
+- *Why?* That is the **Central Limit Theorem**
+
+::: notes
+The third thing that jumps out is that the shape changes too. At N equals ten, drawing from a skewed loss distribution, the histogram of x bar is still noticeably right-skewed — it remembers the shape of the underlying claims. But by N equals five hundred it has become a clean, symmetric bell, no matter that the individual claims are anything but bell-shaped. That is not an accident, and not something we have earned yet. Why does the sampling distribution of a mean become normal, regardless of the ugly distribution you started from? That question is the Central Limit Theorem, the second headline result of the next chapter.
+:::
+
+## The Two Great Theorems Ahead
+
+- We *observed* two facts; we have not *explained* them
+- **Law of Large Numbers:** why it concentrates on $\mu$
+- **Central Limit Theorem:** why the shape becomes normal
+- Both are the entire subject of the next chapter
+- There $\sigma/\sqrt{N}$ becomes confidence intervals and tests
+
+::: notes
+Step back and notice what we did and did not do. We defined the sampling distribution and observed two stunning facts: as N grows it concentrates on the truth, and it becomes normal. We have not yet explained either. The Law of Large Numbers explains the concentration — why the distribution piles up on mu; it is the rigorous engine behind consistency. The Central Limit Theorem explains the bell shape — why the sampling distribution of x bar is approximately normal for large N even when the data are skewed. Both are the subject of the next chapter, where the sigma over root N standard error becomes the thing you build confidence intervals and hypothesis tests out of.
+:::
+
+## Priya's Better Sticky Note
+
+- The vocabulary that makes the next chapters possible
+- Estimator versus estimate; bias, variance, MSE
+- Consistency; and the sampling distribution tying it together
+- Old note: "\$8,410" — a rumor
+- New note: "\$8,410, standard error about \$850"
+
+::: notes
+For now you have the vocabulary that makes those chapters possible: estimator versus estimate, bias, variance, mean squared error and its decomposition, consistency, and the sampling distribution tying them all together. Priya now writes a better sticky note. Not eight thousand four hundred ten alone, but eight thousand four hundred ten, standard error about eight hundred fifty dollars. The first is a rumor; the second is an estimate that knows how much to trust itself. And in your own turn at the notebook, you will pick a population, a sample size, and a number of repetitions, then watch the mean, median, and a trimmed mean compete — ranking them by simulated mean squared error, the scorecard we built.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Across $N$, the sampling distribution stays centered on $\mu$, narrows at the $1/\sqrt{N}$ rate (consistency), and morphs into a bell. The **Law of Large Numbers** explains the concentration; the **Central Limit Theorem** explains the bell. Both come next chapter — where $\sigma/\sqrt{N}$ becomes confidence intervals and tests.
+:::
+
+::: notes
+To summarize part seven, and the whole lesson: as the sample grows, the sampling distribution stays centered on mu, narrows at the one over root N rate — consistency made visible — and morphs from skewed into a symmetric bell. The Law of Large Numbers explains the concentration, the Central Limit Theorem explains the bell, and both are the subject of the next chapter. You now own the full vocabulary: estimator versus estimate, bias, variance, mean squared error, consistency, and the sampling distribution that ties them together.
+:::

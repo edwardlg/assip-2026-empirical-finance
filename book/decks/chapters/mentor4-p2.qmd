@@ -1,0 +1,57 @@
+---
+title: "Over-Controlling and the Counterfactual Target"
+date: "2026-07-13"
+---
+
+# Over-Controlling and the Counterfactual Target {.title}
+
+::: notes
+Welcome back to the Week Four mentor session on detecting discrimination, part two of five. In part one we drew the line between a disparity and a finding of discrimination, and we saw that controlling for creditworthiness is necessary but never sufficient, because of omitted-variable bias. Now we attack the problem from the opposite side. It turns out you can also control for too much — and then we will write down the honest target that the whole session is built around: a counterfactual, not a coefficient.
+:::
+
+## The Other Trap: Over-Controlling
+
+- Don't just worry about **too few** controls
+- Adjusting for a **channel** of discrimination backfires
+- Example: control for the loan **terms** the lender steered you to
+- That regresses away the very effect you are hunting
+- A confounder you **should** control ≠ a channel you should **not**
+
+::: notes
+We spent part one worried about having too few controls. But there is a symmetric danger on the other side: over-controlling. Suppose you adjust for a variable that is itself a channel of discrimination. Concretely, imagine a lender discriminates by steering certain applicants toward worse loan products, and then you helpfully control for product type when you estimate the approval disparity. Adding that control can make the measured disparity shrink — even though the discrimination is completely real — because you just absorbed one of the pathways through which the discrimination operates. You regressed away the very effect you were hunting. This is the crucial distinction between a confounder, which you should control, and a channel, which you must not. Controlling is necessary; it is never sufficient; and which way it biases you is rarely obvious in advance.
+:::
+
+## The Honest Target: A Counterfactual
+
+- Not "a disparity after controls" — a **counterfactual**
+- Take one application of a given quality
+- Ask: what *would have* happened if **only** the trait differed?
+- Same income, same score, same collateral
+- Vary **only** the thing the law forbids the lender to weigh
+
+::: notes
+So the honest target is not a disparity after controls. It is a counterfactual, and it is the same counterfactual we built in Chapter Three-point-one, rewritten for this problem. Take a single application of a given quality and ask what would have happened to it had only the protected characteristic been different — same income, same credit score, same collateral, same everything that a fair underwriter is allowed to weigh, varying only the one thing the law forbids the lender to consider. The difference in outcomes between that applicant and her otherwise-unchanged self is the causal effect of the characteristic on the lender's decision. That, defined cleanly, is discrimination. Notice that this is a statement about potential outcomes for a single application, not about a coefficient averaged over a messy cross-section.
+:::
+
+## The Fundamental Problem Strikes Again
+
+- You never observe the **same** application treated both ways
+- This is the Fundamental Problem of Causal Inference
+- So you must **construct** the missing comparison
+- A longer list of controls does not construct it
+- **Design** does — that is this week's whole lesson
+
+::: notes
+And here the Fundamental Problem of Causal Inference applies in full force: you never get to observe the same application both ways at once. You see the same-sex couple's outcome, or you see the different-sex couple's outcome — never both for the identical application. This is exactly why a longer and longer list of controls is not the rescue people hope it is. Controls try to make the data honest after the fact; they do not construct the missing counterfactual. What constructs it is design. Stop asking the data to confess, and instead go find a comparison where the protected characteristic varies for reasons that have nothing to do with creditworthiness. That reflex — design over more controls — is the lesson of this entire week, and in part three we put it to work in real mortgage data.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+You can control too little (**omitted-variable bias**) or too much (regressing away a **channel**). The honest target is a **counterfactual** — same applicant, vary only the protected trait — and the Fundamental Problem means you must *construct* it. A **design**, not a longer covariate list, does that work.
+:::
+
+::: notes
+To summarize part two: controls fail in two directions. Too few, and unobserved creditworthiness leaks in as omitted-variable bias. Too many, and you absorb a channel of the discrimination itself, shrinking the very effect you want to measure. The honest target is the counterfactual from Chapter Three-point-one — the same applicant with only the protected trait flipped — and because you can never observe that applicant both ways, you have to construct the comparison rather than estimate it from controls alone. In part three we look at the three concrete ways this week's designs build that comparison in mortgage data: difference-in-differences, matched comparison, and regression discontinuity.
+:::

@@ -1,0 +1,58 @@
+---
+title: "The Identification Memo: The Page That Matters Most"
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+# The Identification Memo: The Page That Matters Most {.title}
+
+::: notes
+Welcome to Week Seven, Chapter seven-point-five, part one of nine. This lesson is about one page in your capstone that matters more than any other — not the abstract, not the headline table, not the conclusion. It is a page you write before you run the regression the paper is about, and if you write it honestly, it tells you in advance whether the project is worth finishing. It is called the identification memo. In this opening part we say what it is and write its central sentence.
+:::
+
+## One Page, Two Parts
+
+- Most important page: written *before* the headline regression
+- Tells you in advance if the project is worth finishing
+- Part one: one paragraph — your **identifying assumption**
+- Part two: one **threats-and-responses table**
+- No new machinery — you already have every design
+
+::: notes
+The identification memo has exactly two parts: one paragraph stating your identifying assumption, and one table listing every reason a skeptic might doubt you and what you intend to do about each. There is no new machinery here, because there is none. You already have every design from Weeks Three and Four. You already know how to read a paper's identification section against a checklist from Week Five. And you already filed a pre-analysis plan in Chapter seven-point-three that pins your primary specification. The memo is the bridge between that plan and the paper. It is where you stop saying "I will run a difference-in-differences" and start saying "my estimate is the causal effect as long as this one thing is true, and here is how I will convince you it is."
+:::
+
+## The Move The Chapter Turns On
+
+- The identifying assumption is **one sentence**
+- Your entire causal claim rests on it
+- Everything else serves to make that sentence believable
+- If the sentence is false, no robustness check saves you
+- Can't *state* it? You have a regression and a hope
+
+::: notes
+Here is the move the whole chapter turns on. The identifying assumption is the single sentence on which your entire causal claim rests. Everything else in the paper — the data work, the controls, the robustness checks — is in service of making that one sentence believable. If the sentence is false, no amount of clustering or winsorizing saves you. And if you cannot even state the sentence, you do not yet have a design; you have a regression and a hope. The memo forces you to write the sentence down, in public, before the data can seduce you into believing whatever the first significant coefficient happens to say. This is reveal-the-trick one last time, except now the trick is yours and the audience is a referee who has read a thousand of these and is not feeling charitable.
+:::
+
+## The Sentence Template
+
+- Fixed form — fill the three blanks literally
+- Our estimate of **[the effect]** is **causal / credible**
+- as long as **[the assumption]**
+- which we defend by **[the design feature or evidence]**
+- Name the *effect*, not the regression coefficient
+
+::: notes
+Start with the sentence, because everything hangs from it. The form is fixed, and you write it literally, filling three blanks. Our estimate of the effect is causal or credible, as long as the assumption holds, which we defend by the design feature or evidence. Three blanks, three jobs. The first names what you are estimating — not the regression, the effect. Say "the effect of a state fair-lending regulation on the mortgage-denial gap between minority and white applicants," not "the coefficient on the treatment dummy." We will fill the second and third blanks next, where the real discipline lives.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The **identification memo** is one page — a paragraph stating your identifying assumption, and a table of threats and responses. The identifying assumption is the one sentence your whole causal claim rests on. Next: how to fill the *assumption* and *defense* blanks without hand-waving.
+:::
+
+::: notes
+To summarize part one: the identification memo is a single page with two parts — a paragraph stating your identifying assumption and a threats-and-responses table. The identifying assumption is the one sentence your entire causal claim rests on, and the memo forces you to commit to it before the data can talk you into something else. You write it from a fixed template: our estimate of the effect is causal or credible, as long as the assumption holds, which we defend by the evidence. In part two we fill the hard blanks — the assumption and the defense — and watch a real sentence go from useless to airtight.
+:::

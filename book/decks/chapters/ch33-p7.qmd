@@ -1,0 +1,58 @@
+---
+title: "Doubly Robust: Two Shots at the Truth"
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+# Doubly Robust: Two Shots at the Truth {.title}
+
+::: notes
+Welcome back to Chapter three-point-three, part seven of ten. So far every method modeled treatment — the propensity score or the balancing weights. In part seven we add a completely different route, a model of the outcome, then combine the two into the augmented I-P-W estimator and explain the surprising "doubly" guarantee.
+:::
+
+## A Different Route: Model the Outcome
+
+- Regress $Y$ on $\mathbf{X}$ separately by group
+- Get $\hat\mu_1(\mathbf{X})$ and $\hat\mu_0(\mathbf{X})$
+- Impute each missing counterfactual; average the gap
+- This is **regression imputation** (g-computation)
+- Consistent under CIA — if the outcome model is right
+
+::: notes
+So far we have leaned entirely on a model of treatment. There is a completely different route to the counterfactual: a model of the outcome. Fit a regression of Y on X separately in the treated and control groups, getting predicted outcomes mu-hat-one of X — the conditional mean of Y given X among the treated — and mu-hat-zero of X among controls. Then impute each unit's missing counterfactual with the model's prediction and average the difference. This is regression imputation, sometimes called g-computation, and under the conditional-independence assumption it is also consistent — if the outcome model is correctly specified. So we now have two strategies, each consistent under the assumption but each leaning on a different model. Weighting is consistent if the propensity model is right and does not care whether the outcome is linear. Regression imputation is consistent if the outcome model is right and does not care whether you got the propensity score right. In real data you are never sure either is correct. Wouldn't it be nice to hedge?
+:::
+
+## The AIPW Estimator
+
+- $\hat\mu_1^{\text{DR}} = \frac{1}{N}\sum [\hat\mu_1 + \frac{D_i(Y_i - \hat\mu_1)}{\hat e}]$
+- First piece: the outcome-regression prediction
+- Second piece: IPW correction on the **residuals**
+- "Augmented" is literal — IPW augmented with an outcome model
+- Robins, Rotnitzky, and Zhao, 1994
+
+::: notes
+That hedge exists. It is the augmented inverse-probability-weighted estimator, also called doubly robust, developed by Robins, Rotnitzky, and Zhao in nineteen-ninety-four. For one arm, mu-hat-one doubly-robust is the average over units of two pieces. The first piece, mu-hat-one of X, is the outcome-regression prediction — the regression-imputation estimate. The second piece is an I-P-W correction applied to the regression's residuals: it takes the part the outcome model got wrong on the treated units, Y-i minus mu-hat-one, and reweights it by one over e-hat. So A-I-P-W starts from the outcome model's best guess and then patches it using inverse-probability-weighted residuals. The word augmented is literal: it is I-P-W augmented with an outcome model, or equivalently the outcome model augmented with an I-P-W correction. The symmetric formula gives mu-hat-zero, and their difference is the doubly-robust treatment effect.
+:::
+
+## Why "Doubly": Two Cases
+
+- Consistent if **either** model is right — not both
+- Case 1: outcome right — residuals vanish, killing bad weights
+- Case 2: propensity right — it reduces to consistent IPW
+- The wrong model's errors get **neutralized**
+- Statistical insurance: one of two claims must be valid
+
+::: notes
+Now the "doubly" — the surprising part. The estimator is consistent if either the propensity model or the outcome model is correct; you do not need both. Two independent shots at the truth, and you only have to hit with one. Case one: the outcome model is right, the propensity model wrong. Then mu-hat-one already estimates the conditional mean correctly, and the correction term has expectation zero, because with a correct outcome model the residual averages to zero within each value of X — so no matter what wrong weights you multiply those residuals by, they still average out. The first term carries the day. Case two: the propensity model is right, the outcome model wrong. Then the second term, with the correct e-of-X, is exactly the consistent I-P-W estimator applied to Y, minus a term that precisely cancels the wrong mu-hat-one in the first piece. The bad outcome model gets added in and subtracted back out, leaving the consistent I-P-W estimate standing. Either way, one correct model is enough; the other's errors get neutralized. That is the doubly-robust property — a kind of statistical insurance where you only need one of two claims to be valid.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**AIPW** starts from an outcome regression and patches it with an IPW correction on the residuals. Its famous property: it is consistent if **either** the propensity model **or** the outcome model is right — two shots at the truth, only one need land. Next: why doubly robust is more than a safety net.
+:::
+
+::: notes
+To summarize part seven: augmented I-P-W combines an outcome model and a propensity model — starting from the regression prediction and correcting it with inverse-probability-weighted residuals. Its remarkable guarantee is double robustness: consistent if either model is right. In part eight we see that doubly robust is not just defensive — it is often more efficient, and it is the seed of modern machine-learning causal inference.
+:::

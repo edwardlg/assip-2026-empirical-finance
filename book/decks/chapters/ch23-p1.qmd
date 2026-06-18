@@ -1,0 +1,43 @@
+---
+title: "FWL: What \"Controlling For\" Really Means"
+date: "2026-06-29"
+---
+
+# FWL: What "Controlling For" Really Means {.title}
+
+::: notes
+Welcome to Week Two, Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part one of eight. Over the next few minutes we attack one little word you have read a thousand times without questioning it: the word "controlling." Every finance paper reports a coefficient "controlling for firm size," or "controlling for industry and year." That word does enormous work, and it has almost stopped meaning anything — it sounds like a magic spray that removes contamination. This lesson is about what controlling actually does, mechanically, to the arithmetic. The answer is precise and a little surprising: controlling for the other variables means subtracting them out of everything first, and then running a plain simple regression on what is left over. That statement is the Frisch–Waugh–Lovell theorem — everyone just calls it F-W-L — and it is the single most useful interpretive fact in the whole course.
+:::
+
+## The Word "Controlling" Does Too Much
+
+- Every paper: "the effect of R&D, **controlling for** firm size"
+- Sounds like a magic spray that removes contamination
+- What does it actually do to the **arithmetic**?
+- FWL answer: **subtract the controls out, then run a simple regression**
+
+::: notes
+Here is the puzzle. When a researcher writes that the coefficient on research and development is the effect "controlling for firm size," beginners picture something physical — hold size fixed, wiggle R&D, watch patents respond. But the regression never held anything fixed; the firms in the data are whatever sizes they are. So what did it really do? Frisch–Waugh–Lovell gives the exact mechanical answer. Controlling for the other variables means: remove the linear influence of those variables from both your outcome and your key regressor, and then run an ordinary two-variable regression on the cleaned-up leftovers. Controlling is not a filter and not an experiment. It is a subtraction. That is the whole idea of this chapter, and everything else earns it.
+:::
+
+## FWL In One Plain Sentence
+
+- A multiple-regression coefficient = a **simple** slope
+- ...of the outcome, **after removing** the other regressors from it
+- ...on the key regressor, **after removing** them from it too
+- "Removing" = regress on the others, keep the **residual**
+
+::: notes
+Let me state the theorem in one plain sentence. A coefficient in a multiple regression is exactly the slope you would get from a simple regression — of the outcome, after removing the other regressors from it, on the key regressor, after removing the other regressors from it too. "Removing the other regressors" has a precise meaning: regress the thing on those other regressors and keep the residual. The residual is the part the other regressors cannot explain, the part left over, orthogonal to them. So Frisch–Waugh–Lovell says a multiple-regression coefficient lives entirely in the leftover parts. The bulk of the regressors are not even in the room when the key slope is decided; they have already done their job by being subtracted out.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+**Controlling for** a variable is not a filter or an experiment — it is a **subtraction**. FWL says: remove the other regressors from both the outcome and the key regressor, then take a simple two-variable slope of the leftovers. Next: why a big problem can collapse to a small one.
+:::
+
+::: notes
+To summarize part one: the word "controlling" names a subtraction, not a filter and not an experiment. Frisch–Waugh–Lovell tells you that any multiple-regression coefficient is secretly a simple two-variable slope — once both variables have been cleaned of the other regressors by regressing them out and keeping the residuals. In part two we ask why a multivariate problem can possibly collapse to a bivariate one, building the intuition of partialling-out, and then we meet a researcher named Leah and the tiny six-firm dataset we will work by hand.
+:::

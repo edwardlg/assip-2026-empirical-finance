@@ -1,0 +1,81 @@
+---
+title: "The Honest Deviations Log"
+date: "2026-08-10"
+---
+
+# The Honest Deviations Log {.title}
+
+::: notes
+Welcome back to The Execution and the Specification Curve, part six of six. In part five we named the four ways a curve can lie. Now we close the loop. Somewhere in your analysis, reality forced you off the plan. The deviations log records that honestly. We end by looking ahead to Week Eight's next chapter.
+:::
+
+## What the Deviations Log Is
+
+- A running, dated record of every departure from the PAP
+- What changed, and why
+- The crucial part: was it prompted by seeing the outcome?
+- A control turned collinear; a cluster variable was corrupted
+- Deviating is nearly inevitable — Olken's perils warned you
+
+::: notes
+Being forced off the plan is nearly inevitable, as Chapter seven-point-three warned via Olken's perils. A control you swore you would include turned out collinear and dropped out. A clustering variable was corrupted. The COVID year behaved strangely. The deviations log is the running, dated record of every departure from the plan — what changed, why, and, the crucial part, whether the change was prompted by seeing the outcome.
+:::
+
+## Deviating Is Not the Sin
+
+- **Hiding** the deviation is the sin
+- **Outcome-driven** deviation is the specific sin the apparatus catches
+- Every entry carries a verdict on one binary question
+- Was this forced by mechanical reality?
+- Or because I saw the coefficient and disliked it?
+
+::: notes
+Deviating is not the sin. Hiding the deviation is the sin, and outcome-driven deviation is the specific sin the apparatus exists to catch. So every entry carries a verdict on one binary question: was this change forced by a mechanical reality, or did I make it because I saw the coefficient and did not like it?
+:::
+
+## Two Kinds of Deviation
+
+- **Mechanical reality** — collinearity, a bug, corrupted IDs — is innocent
+- Note it, fix it, move on; nothing about the result steered it
+- **Prompted by the outcome** — a control added to lift a t-stat
+- Honest response: report both ways, flag the deviating version exploratory
+- Maya's region-cluster fix moved the ATT from $-1.89$ to $-1.91$ — immaterial
+
+::: notes
+A deviation forced by a mechanical reality — collinearity, a coding bug, a corrupted cluster identifier — is innocent. You note it, fix it, and move on; nothing about the result steered the change. For example: the state identifier was missing for four percent of cells, so Maya clustered by census region there and re-ran, and the effect moved from negative one point eight nine to negative one point nine one — immaterial. A deviation prompted by seeing the outcome — a control added after it improved your t-statistic, a year trimmed after it weakened the effect — is exactly the garden of forking paths. The honest response is to report both ways and flag the deviating version as exploratory.
+:::
+
+## One System With the Spec Curve
+
+- The PAP is no prison; the log is no confession booth
+- Together they draw the confirmatory-exploratory line, in public, after the fact
+- Every tempting fork is **already a point in your multiverse**
+- Don't silently switch — point: "that's spec 87; here it sits"
+- Olken's point: the reader sees where and why you deviated
+
+::: notes
+That last clause is the whole ethic of Week Eight. The plan is not a prison and the log is not a confession booth; together they draw the line between confirmatory and exploratory honestly, in public. A referee reads the log and trusts the paper more, because they see where the analysis was a test and where it became a search. And the log connects directly to the spec curve: every deviation you were tempted to make is already a fork in your multiverse. So the disciplined response is not to silently switch the primary specification; it is to point at the curve and say: that alternative is specification eighty-seven, here is where it sits, the headline does not depend on it. There is no fork left in the dark.
+:::
+
+## Where This Goes Next
+
+- You leave with three things on the page
+- A confirmatory result, a spec curve, an honest deviations log
+- But every spec in Maya's curve assumes parallel trends
+- If that fails, the curve is a confident wrong answer
+- Chapter 8.2 stress-tests the **assumption**: placebos and Oster's $\delta$
+
+::: notes
+You arrived with a frozen plan and a frozen notebook. You leave with three things on the page: a confirmatory result run exactly as pre-registered; a specification curve that tells you whether your headline is robust or a lucky branch; and an honest deviations log. But notice what the curve cannot tell you. Every specification in Maya's robust, all-negative curve assumes parallel trends. If that is false, the curve is a confident wrong answer. Chapter eight-point-two turns to inference validity: placebo tests that would have fired if the design were broken, and Oster's delta, which asks how much unobserved selection it would take to explain away your effect. The curve stress-tests your choices; eight-point-two stress-tests your assumption.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Deviating is not the sin — **hiding** it is. Log every departure with a verdict: mechanical or outcome-driven. Report outcome-driven deviations as labeled exploratory, with the pre-registered version as the headline. Every tempting fork already lives in your spec curve. Next: Chapter 8.2 stress-tests the *assumption*, not just the choices.
+:::
+
+::: notes
+To summarize part six, and this lesson: deviating is not the sin — hiding it is. Log every departure with a verdict, mechanical or outcome-driven, and report any outcome-driven deviation as labeled exploratory, with the pre-registered version as the headline. Every fork you were tempted to walk already lives in your spec curve. You now hold three honest artifacts: the confirmatory result, the specification curve, and the deviations log. Next, Chapter eight-point-two stress-tests not your choices but your identifying assumption, with placebos and Oster's delta.
+:::

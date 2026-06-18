@@ -1,0 +1,69 @@
+---
+title: "Why It Hid for Thirty Years — and the Smallest Broken World"
+date: "2026-07-13"
+---
+
+# Why It Hid — and the Smallest Broken World {.title}
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part four of thirteen. In part three we found the trap: demeaning the treatment lets ordinary least squares recruit already-treated units as controls. Now we explain why this bias stayed hidden for thirty years, and start building the smallest possible world in which the coefficient comes out with the wrong sign, with numbers you can check by hand.
+:::
+
+## Why It Hid for Thirty Years
+
+- Bias **vanishes** in two common cases
+- (1) **Not** staggered — one common date: no already-treated controls
+- (2) **Homogeneous** effect — contamination is just $\beta$, cancels
+- Disease needs **both** staggered timing **and** heterogeneous/dynamic effects
+
+::: notes
+The reason this stayed hidden for thirty years is that the bias vanishes in two very common situations. First, if treatment is not staggered — one common adoption date — there are no already-treated units to misuse as controls, and two-way fixed effects is fine. Second, if the treatment effect is homogeneous — the same constant beta for every unit at every horizon — then even when an already-treated unit is used as a control, the contamination it injects is itself just beta, which cancels cleanly. The disease requires both staggered timing and heterogeneous or dynamic effects to bite. Chapter four-point-one's worked examples had one or the other switched off. Priya's real problem has both at once — the most common situation in modern policy data, and exactly the case where the textbook breaks.
+:::
+
+## Building the Smallest Broken World
+
+- Two states, eight years, $t=1,\dots,8$
+- State E (early) adopts in year 2; State L (late) adopts in year 5
+- By year 5, **no never-treated state** remains
+- That "no never-treated" condition is what lets disaster run to completion
+
+::: notes
+Abstract warnings persuade no one, so let us build the smallest possible world in which two-way fixed effects gets the sign wrong. This is the example to keep in your pocket for the rest of your career. Priya has two states and eight years. State E, for early, adopts the disclosure rule in year two. State L, for late, adopts in year five. By year five every state has the rule — so in this stylized world there is no never-treated group at all, which, you will see, is precisely the condition that lets the disaster run to completion. We need that no-never-treated condition because it forces the regression to lean entirely on forbidden comparisons.
+:::
+
+## Construct It So the Policy Helps
+
+- Per-period effect: $-1,-2,-3,\dots$ — disclosure helps, and **builds**
+- Set baselines equal, turn off noise — see the mechanism nakedly
+- Untreated outcome $=10$ everywhere $\Rightarrow$ parallel trends holds **perfectly**
+
+::: notes
+Construct the data so the policy unambiguously helps, and helps by more the longer it has been in force. Let the per-period treatment effect at event time — years since adoption — be minus one in the first treated year, minus two in the second, minus three in the third, and so on: disclosure lowers non-renewals, and the bite deepens. This dynamic, building effect is the crucial ingredient. To see the mechanism nakedly, set all baselines equal and turn off random noise: the untreated outcome of every state is ten in every year, so parallel trends holds perfectly. Nothing in the lesson depends on the baselines or the noise.
+:::
+
+## The Data Table
+
+| Year $t$ | State E ($G{=}2$) | State L ($G{=}5$) |
+|:---:|:---:|:---:|
+| 2 | $10-1=9$ | $10$ |
+| 4 | $10-3=7$ | $10$ |
+| 5 | $10-4=6$ | $10-1=9$ |
+| 6 | $10-5=5$ | $10-2=8$ |
+| 8 | $10-7=3$ | $10-4=6$ |
+
+- Every treatment effect is **negative**; true average $\approx -3.5$
+
+::: notes
+Look at what is true by construction. State E starts at ten and falls from year two — nine, eight, seven, six, five, four, three — as its effect deepens from minus one toward minus seven. State L sits flat at ten until year five, then falls to nine, eight, seven, six as its own effect builds from minus one to minus four. Every treatment effect in the table is negative. The true average effect on the treated — averaging E's effects of minus one through minus seven and L's of minus one through minus four — is unambiguously and substantially negative, about minus three-point-five. Any honest estimator should return a clearly negative number.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The bias **vanishes** when timing is **common** or effects are **homogeneous** — which is why it hid for thirty years. To expose it, we build two states, eight years, a policy that helps in **every** treated cell (true average $\approx -3.5$), with **no** never-treated unit and **perfect** parallel trends. Next: run TWFE on this table and watch the sign flip.
+:::
+
+::: notes
+To summarize part four: the bias disappears whenever timing is common or effects are homogeneous — which is why it escaped notice for three decades — but bites the moment staggered timing and dynamic effects appear together. To see it, we built the smallest broken world: two states, eight years, State E adopting in year two and State L in year five, no never-treated unit, a policy that helps in every treated cell with a building effect, parallel trends holding perfectly, and a true average effect of about minus three-point-five. In part five we run the regression on this exact table and watch the coefficient come out positive — the sign flip, live.
+:::

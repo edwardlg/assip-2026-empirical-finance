@@ -1,0 +1,57 @@
+---
+title: "The Bag-of-Words Model"
+date: "2026-07-27"
+---
+
+# The Bag-of-Words Model {.title}
+
+::: notes
+Welcome back to Chapter six-point-three, part two of nine. In part one we framed a measurement paper: a general dictionary mislabels neutral accounting words as negative, and the choice of dictionary is the treatment. Now we open the engine. We state the bag-of-words model that turns a fifty-thousand-word filing into one number, then watch Loughran and McDonald build their finance-specific word list.
+:::
+
+## Bag-of-Words, Stated Plainly
+
+- Take a document; throw away word order and grammar
+- What remains is a *bag*: which words, how many times
+- "Company expects losses" equals "Losses company expects"
+- Score by counting words from a pre-set list
+- Negativity = share of words on the negative list
+
+::: notes
+The strategy has no instrument, no difference-in-differences, no randomized anything. It is construction plus validation, and it belongs to the bag-of-words era of textual analysis. Here is the model, stated plainly. Take a document; throw away word order, grammar, and sentence structure. What remains is a multiset, a bag, of the words that appeared and how many times each appeared. The company expects continued losses, and continued losses the company expects, are the same object to a bag-of-words model. You score the document by counting how many of its words fall into a pre-specified list. If you have a list of negative words, the document's negativity score is the count of negative-list words in the document, divided by the total number of words in the document. It is the share of the document made of negative-list words.
+:::
+
+## The Treatment Is the Word List
+
+- Every measure here is a count of this form
+- Harvard score and finance score share the formula
+- The *only* difference: which words are on the list
+- So the choice of dictionary *is* the treatment
+- Negation handled only crudely, as we will see
+
+::: notes
+Every sentiment measure in this paper, both the Harvard one and the finance one, is a count of this form: negative-list words over total words. The only thing that differs between two competing measures is which words are on the list. That is exactly why the choice of dictionary is the treatment. The construction step is where Loughran and McDonald earn their keep. They build word lists tailored to financial disclosure. The most important is the negative list: words that are negative when a company uses them about itself, like loss, litigation, deficiency, adverse, restated, termination, and going concern. They build these lists from the actual word frequencies in ten-Ks, keeping a word only if it is both plausibly negative in a financial setting and common enough in filings to matter. They also handle the awkward fact that the same word can flip with negation, like not profitable, though, as we will see later, bag-of-words handles negation only crudely.
+:::
+
+## Finance-Shaped Categories
+
+- **Negative** and **Positive** tone
+- **Uncertainty**: "approximate," "contingency," "may," "risk"
+- **Litigious**: "plaintiff," "tort," "settlement," "court"
+- **Strong-modal** vs **weak-modal**: "will, must" vs "may, might"
+- Categories exist because finance has lawsuits and forecasts
+
+::: notes
+They do not stop at negative, because finance cares about more than good-versus-bad mood. They release a family of categories. Negative and positive tone. Uncertainty: words like approximate, contingency, may, risk, and could, capturing how much the firm hedges about its own future. Litigious: words like plaintiff, tort, settlement, and court, capturing legal exposure. And strong-modal versus weak-modal: words signaling how firmly management commits, like will, must, and always, versus may, might, and possibly. Notice these categories are finance-shaped. Uncertainty and litigious are not standard psychology categories. They exist because finance has lawsuits and forward-looking statements. Good measurement is often good taxonomy.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A **bag-of-words** score is one number: negative-list words divided by total words. Since every measure uses that same formula, the *word list* is the only thing that varies — so it is the treatment. Loughran and McDonald build finance-shaped categories: negative, positive, uncertainty, litigious, and modal. Next: how a word list earns its keep against data.
+:::
+
+::: notes
+To summarize part two. A bag-of-words score is one number: the count of negative-list words divided by the total word count. Because every measure shares that formula, the word list is the only thing that varies, which makes it the treatment. Loughran and McDonald construct finance-shaped categories from real filing frequencies: negative, positive, uncertainty, litigious, and strong and weak modal. But a new word list is just an opinion until it earns its keep. In part three we cover the validation step, which is the real identification strategy of the paper.
+:::

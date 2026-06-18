@@ -1,0 +1,44 @@
+---
+title: "The CAPM as an Estimable Claim"
+date: "2026-06-29"
+---
+
+# The CAPM as an Estimable Claim {.title}
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, part two of eight. In part one we framed Sam's scaled-up question and met Fama and MacBeth's trick of running one cross-sectional regression per period. Now, before any code, get the procedure straight on paper. We have a panel: many stocks, indexed i from one to N, observed over many months, indexed t from one to T. We see each stock's monthly excess return — its return minus the risk-free rate — and a market excess return. In this part we write the CAPM as something estimable, and we see why one big panel regression is the wrong move.
+:::
+
+## The CAPM, Written to Estimate
+
+- $\mathbb{E}[r_{it}] = \gamma_0 + \gamma_1\,\beta_i$
+- $\gamma_1$ = **risk premium per unit of beta** — the number we want
+- Strict CAPM: $\gamma_0 = 0$ (no reward for diversifiable risk)
+- And $\gamma_1 = \mathbb{E}[r_{m,t}]$ — the market's own average excess return
+
+::: notes
+Write the CAPM claim as a relationship we can estimate: the expected excess return on stock i equals gamma-zero plus gamma-one times beta-i. Here beta-i is stock i's sensitivity to the market, and gamma-one is the risk premium per unit of beta — the number we want. Strict CAPM makes two sharp predictions. First, gamma-zero equals zero: there is no reward for bearing only diversifiable risk. Second, gamma-one equals the expected market excess return: the price of one unit of market risk is the market's own average excess return. Testing CAPM means estimating gamma-zero and gamma-one and asking whether they match those two predictions.
+:::
+
+## Why Not One Big Panel Regression?
+
+- Naive: pool every stock-month into one OLS of $r_{it}$ on $\beta_i$
+- Exactly the Ch 2.4 mistake — a **time effect**
+- One month's shock jolts **all** $N$ stocks together
+- Pooled OLS treats $N\times T$ rows as independent — they aren't
+- Standard error comes out **wildly too small**
+
+::: notes
+Why not just pool everything into one big regression? The naive thing is to stack every stock-month into one giant OLS of return on beta. That is exactly the mistake Chapter two-point-four warned you about. In any single month, every stock's return is jolted by the same market move, so the errors of all N stocks in month t are violently correlated — a time effect, in Petersen's language. Pooled OLS would treat your N-times-T stock-months as N-times-T independent observations, when on the cross-sectional dimension a single month's data is really closer to one draw. The standard error would come out wildly too small. Fama and MacBeth's design dissolves this problem instead of patching it.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+The CAPM, made estimable, is $\mathbb{E}[r_{it}] = \gamma_0 + \gamma_1\beta_i$, with $\gamma_1$ the premium we want. Pooling all stock-months into one regression is the Ch 2.4 **time-effect** trap — a wildly understated SE. Next: the two passes that dissolve it.
+:::
+
+::: notes
+To summarize part two: the CAPM, written to estimate, says the expected excess return on a stock equals gamma-zero plus gamma-one times its beta, with gamma-one the risk premium we want and strict CAPM predicting a zero intercept. Pooling every stock-month into one regression is exactly the time-effect trap from Chapter two-point-four — the common monthly shock correlates all the errors, and the standard error comes out wildly too small. In part three we lay out the two passes that dissolve that problem: time-series betas first, then a cross-sectional regression each month, and the average that delivers the estimate and its honest standard error.
+:::

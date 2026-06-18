@@ -1,0 +1,69 @@
+---
+title: "Path B — Building the Synthetic Panel"
+date: "2026-07-13"
+---
+
+# Path B — Building the Synthetic Panel {.title}
+
+::: notes
+Welcome back to Week Four, the Lab, part five of eight. In part four we built the denial-rate outcome and named the full real-data spec, ending on the parallel-trends assumption. Now we cross into Path B — the universe where you know the truth. We build a synthetic county-year panel that mimics aggregated HMDA, but with a planted, dynamic treatment effect, so we can check whether the pipeline recovers it.
+:::
+
+## The Design You Plant
+
+- 96 counties: 8 counties in each of 12 states
+- Observed across twelve years, two-thousand-twelve to twenty-twenty-three
+- Three waves adopt: twenty-sixteen, twenty-eighteen, twenty-twenty
+- Three states **never** adopt — the clean controls
+- Everything runs with no network, no credentials
+
+::: notes
+Here is the universe you build. Construct ninety-six counties — eight counties in each of twelve states — observed across twelve years, from two thousand twelve through two thousand twenty-three. Three waves of states adopt the fair-lending policy: one wave in twenty sixteen, one in twenty eighteen, one in twenty twenty. And three states never adopt — those are your clean controls. Because you built it, you know the answer, and you can check whether the event-study and Callaway–Sant'Anna pipeline recovers it. Everything in Path B runs with no network and no credentials, so it works anywhere.
+:::
+
+## The Planted Effect: Staggered Plus Dynamic
+
+- The policy **lowers** denial rates
+- Effect **builds** with event time
+- At event time $e \ge 0$: per-period effect is $(e{+}1)\times(-0.40)$ pp
+- So minus zero-point-four-zero in the adoption year
+- Minus zero-point-eight-zero the next year, and so on
+
+::: notes
+Now the planted effect, and it is deliberately the chapter four-point-two recipe. The policy lowers denial rates, and the effect builds with event time. At event time e greater than or equal to zero — that is years since adoption — the per-period effect is the quantity e plus one, times minus zero-point-four-zero percentage points. So it is minus zero-point-four-zero in the adoption year, minus zero-point-eight-zero the next year, minus one-point-two-zero the year after, and so on. This is staggered timing plus a dynamic, growing effect — exactly the combination chapter four-point-two proved breaks two-way fixed effects. Before any policy fires, the per-period effect is zero.
+:::
+
+## Realistic Trimmings That Don't Change the Lesson
+
+- Fixed county levels: baseline rates vary by place
+- A common downward drift: rates fell broadly in the 2010s
+- Gaussian noise on every cell
+- None of these changes the lesson
+- All make parallel trends hold **in expectation**
+
+::: notes
+On top of the planted effect, you add a few realistic trimmings. Each county gets a fixed level, so baseline denial rates vary by place — a state-level mean plus county heterogeneity. A common downward drift runs through every county, because denial rates fell broadly over the twenty-tens; in code that is minus zero-point-one-zero times years since two thousand twelve. And you add Gaussian noise to every cell. None of these changes the lesson. All of them make the contrast realistic and, crucially, make the parallel-trends assumption hold in expectation: every county, treated or control, shares the same drift and the same noise process, so absent the policy their denial rates would move together.
+:::
+
+## The Honest Target
+
+- A panel of one-thousand-one-hundred-fifty-two rows
+- True mean ATT of about **minus 1.49** percentage points
+- Average the planted effects over every treated county-year
+- Hold that number: every estimator is chasing it
+- Never-adopters carry $G = \text{NaN}$ — the differences convention
+
+::: notes
+What should you expect? A one-thousand-one-hundred-fifty-two-row panel, and a true mean average treatment effect on the treated of about minus one-point-four-nine percentage points — that is the mean of the planted effects averaged over every treated county-year cell. Hold that number: it is the truth every estimator below is chasing. And notice the cohort coding. Never-adopters carry a cohort value of not-a-number, written capital G equals N-a-N, which is exactly the convention the differences package reads as never-treated and eligible as a clean control. One honest note: because the panel has random noise, the recovered effect will not equal the planted effect to infinitely many decimals — it will land close, within sampling error, which is precisely what we mean when we say the estimator works.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Path B plants **staggered timing plus a dynamic effect**: three adoption waves, three never-adopters, and a per-period effect of $(e{+}1)\times(-0.40)$ pp that builds with event time. Realistic drift and noise make parallel trends hold **in expectation**. The honest target is a true mean ATT near **minus 1.49 pp** — the number every estimator chases. Next: inspect the design and run TWFE.
+:::
+
+::: notes
+To summarize part five: Path B is the universe where you know the truth. You plant staggered timing plus a dynamic effect — three adoption waves, three never-adopting clean controls, and a per-period effect of e-plus-one times minus zero-point-four-zero percentage points that builds with event time. Realistic county levels, a common downward drift, and Gaussian noise make the parallel-trends assumption hold in expectation without changing the lesson. The honest target is a true mean effect near minus one-point-four-nine percentage points — the number every estimator chases. In part six we inspect the design, state the identification argument out loud, then run two-way fixed effects and watch it fall short.
+:::

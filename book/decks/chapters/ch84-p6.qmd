@@ -1,0 +1,46 @@
+---
+title: "Devon Referees Maya: The Major Points"
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+# Devon Referees Maya: The Major Points {.title}
+
+::: notes
+Welcome back to peer review and revision, part six of twelve. In part five we learned the norm: tough on the work, kind to the person. Now we watch it all at once. Maya's draft asks whether state fair-lending examinations narrowed the county-level minority–white mortgage-denial gap, using a staggered difference-in-differences on HMDA data. Her classmate Devon, wearing his referee hat, has it on his desk. This part covers his summary and his three major points.
+:::
+
+## The Summary and Biggest Concern
+
+- Summary first: question, HMDA data, staggered DiD, headline
+- Headline: gap narrows about 1.4 points, significant at 1%
+- Biggest concern named specifically: anticipation and pre-trends
+- Programs debated a year — lenders may act in anticipation
+- Needs an event study; flat leads reassure, a downtrend is fatal
+
+::: notes
+Devon opens with a summary in his own words: the paper asks whether state fair-lending examination programs reduced the gap in mortgage-denial rates between minority and white applicants. Using HMDA loan-application data aggregated to county-year, the author estimates a staggered difference-in-differences comparing adopting states to not-yet and never-adopting states, with county and year fixed effects and standard errors clustered by state. The headline, Table Two, column three: examinations narrow the denial gap by about one point four percentage points, roughly a fifth of the pre-period mean gap, significant at the one percent level. Then his biggest concern, named specifically — anticipation and pre-trends. The causal claim rests on parallel trends, which he cannot assess because there is no event study. Fair-lending programs are debated in a legislature for a year or more before adoption, exactly when lenders might change behavior in anticipation, contaminating the pre-period. He asks for an event-study plot with at least four pre-period leads. Flat, insignificant leads would reassure him; a downward pre-trend in adopting states would be close to fatal, because the gap was already closing and the design mislabels a trend as an effect.
+:::
+
+## The Remaining Major Points
+
+- Major two: the forbidden comparison in staggered DiD
+- Already-treated counties serve as controls for later ones
+- Re-estimate with Callaway–Sant'Anna; compare the two numbers
+- Major three: the small-cell denominator of the denial gap
+- Drop or weight counties with very few minority applications
+
+::: notes
+Devon's second major point is the forbidden comparison. The design is staggered, and the methods section says two-way fixed effects without addressing the negative-weights problem from Chapter four-point-two: already-treated counties are serving as controls for later-treated ones, which can bias the estimate when the effect is dynamic — and an anticipation story makes dynamic effects likely. He wants the headline re-estimated with a heterogeneity-robust estimator, Callaway and Sant'Anna against clean controls only, and the two numbers compared. If they agree, the two-way fixed-effects number is safe; if they diverge, the robust one is the result. His third major point is the small-cell denominator. The county-year denial gap is built from raw HMDA application counts, but the text does not say whether counties with very few minority applications are dropped or winsorized. A handful of small counties where the gap is mechanically volatile could drive the estimate. A robustness column weighting by application volume, or dropping counties below a minimum threshold, would tell us whether the result is real or a small-cell artifact.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Devon summarized first, then led with the biggest concern named **precisely** — anticipation and pre-trends, not "endogeneity" — asking for the exact event study that would settle it. His other majors: the **forbidden comparison** (re-estimate with Callaway–Sant'Anna) and the **small-cell denominator** (weight or drop tiny counties). Each major carries the test that would move him. Next: his minors, his verdict, and what he did right.
+:::
+
+::: notes
+To summarize part six: Devon's report opens with a summary in his own words, proving he understood Maya's paper, then leads with his biggest concern, anticipation and pre-trends, named precisely and tied to the exact event study that would settle it — flat leads reassure, a downward pre-trend would be fatal. His remaining two majors are the forbidden comparison in staggered difference-in-differences, to be checked with the Callaway and Sant'Anna estimator, and the small-cell denominator, to be checked by weighting or dropping tiny counties. Each major comes with the test that would move him. In part seven we read his minor points, his verdict, and we tally what Devon did right against the skeleton.
+:::

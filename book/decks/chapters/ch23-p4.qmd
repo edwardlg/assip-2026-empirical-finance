@@ -1,0 +1,54 @@
+---
+title: "The Matrix Proof in Four Lines"
+date: "2026-06-29"
+---
+
+# The Matrix Proof in Four Lines {.title}
+
+::: notes
+Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part four of eight. In part three we reproduced a three-variable coefficient, one-point-eight-three-eight, using two simple regressions on Leah's six firms. Now we earn that result as a theorem. We will say it in matrix language, the way you will see it in a real econometrics text, and prove it in four lines using the residual-maker matrix we built in Chapter two-point-one. The proof uses nothing but three properties of that matrix and the orthogonality of the ordinary-least-squares residual.
+:::
+
+## Setup: Partition The Regressors
+
+- Split the design into two blocks of columns:
+$$\mathbf{y}=\mathbf{X}_1\boldsymbol{\beta}_1+\mathbf{X}_2\boldsymbol{\beta}_2+\boldsymbol{\varepsilon}$$
+- $\mathbf{X}_1$ = regressors you **care about** (R&D)
+- $\mathbf{X}_2$ = everything you **control for** (intercept, size, dummies)
+
+::: notes
+First the setup. Partition the regressor matrix into two blocks of columns. The model is y equals X-one beta-one plus X-two beta-two plus the error. Here X-one is the block of regressors you care about — in Leah's case the single column of R&D values — with coefficient vector beta-one. And X-two is the block of everything else you are controlling for: the intercept, firm size, industry dummies, whatever — in Leah's case the intercept column and the size column. The full ordinary-least-squares fit produces beta-one-hat and beta-two-hat jointly. Frisch–Waugh–Lovell is a statement about how to recover beta-one-hat without ever touching beta-two-hat.
+:::
+
+## The Residual-Maker For The Controls
+
+- $\mathbf{M}_2 = \mathbf{I}-\mathbf{X}_2(\mathbf{X}_2'\mathbf{X}_2)^{-1}\mathbf{X}_2'$
+- Multiplying by $\mathbf{M}_2$ returns the **residual** from regressing on $\mathbf{X}_2$
+- Residualized: $\tilde{\mathbf{y}}=\mathbf{M}_2\mathbf{y},\quad \tilde{\mathbf{X}}_1=\mathbf{M}_2\mathbf{X}_1$
+- These are Leah's $\tilde{y}$ and $\tilde{x}$ columns
+
+::: notes
+Now define the matrix that sweeps out everything in the column space of the controls. Call it M-two: it is the identity minus X-two times the inverse of X-two-transpose-X-two times X-two-transpose. This is exactly the residual maker from Chapter two-point-one, just built from the X-two block instead of the full design. Multiplying any vector by M-two returns the residual from regressing that vector on X-two. So define the residualized quantities: y-tilde equals M-two times y, and X-one-tilde equals M-two times X-one. These are precisely Leah's cleaned columns from part three — patents and R&D with size and the intercept netted out. The theorem says the coefficient beta-one-hat from the full regression equals the coefficient from the simple regression of y-tilde on X-one-tilde, and the residuals match too.
+:::
+
+## The Proof
+
+- $\mathbf{M}_2$ is **symmetric**, **idempotent**, and $\mathbf{M}_2\mathbf{X}_2=\mathbf{0}$
+- Hit the fitted equation with $\mathbf{M}_2$: middle term **dies**
+- $\tilde{\mathbf{y}}=\tilde{\mathbf{X}}_1\hat{\boldsymbol{\beta}}_1+\hat{\boldsymbol{\varepsilon}}$ — same $\hat{\boldsymbol{\beta}}_1$, same residual
+- Left-multiply by $\tilde{\mathbf{X}}_1'$: cross term is zero $\Rightarrow$ simple slope
+
+::: notes
+Here is the proof. Recall the three properties of any residual maker from Chapter two-point-one. It is symmetric — its transpose is itself. It is idempotent — applying it twice does nothing more than applying it once. And it annihilates its own block — M-two times X-two is the zero matrix, because there is no residual left when you regress X-two on itself. Those three facts are all we need. Start from the fitted model, y equals X-one beta-one-hat plus X-two beta-two-hat plus the residual, where that residual is orthogonal to every regressor. Now hit the whole equation on the left with M-two. The middle term dies, because M-two times X-two is zero — sweeping out the controls erases the entire beta-two contribution, controls and all. The residual survives untouched, because it is already orthogonal to X-two. What remains is y-tilde equals X-one-tilde times beta-one-hat plus the same residual. Finally, left-multiply by X-one-tilde transpose. The cross term with the residual is zero, by symmetry and the full-model orthogonality. That leaves the normal equation of a simple regression — beta-one-hat equals the inverse of X-one-tilde-transpose-X-one-tilde times X-one-tilde-transpose y-tilde. Done. Four lines, and we used only the three properties of M-two and one orthogonality fact.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+FWL falls out in four lines from three facts about the residual maker $\mathbf{M}_2$: symmetric, idempotent, and $\mathbf{M}_2\mathbf{X}_2=\mathbf{0}$. Sweeping out the controls erases the entire $\hat{\boldsymbol{\beta}}_2$ term, leaving a simple slope of the leftovers. Next: the geometry that makes it obvious.
+:::
+
+::: notes
+To summarize part four: the Frisch–Waugh–Lovell theorem is not magic, it is four lines of algebra resting on three properties of the residual maker — symmetric, idempotent, and it annihilates its own block — plus the orthogonality of the least-squares residual. Hitting the fitted equation with the residual maker kills the entire controls term and leaves the same coefficient and the same residual, now expressed as a simple regression. In part five we draw the one picture that makes this intuitive: the geometry of projecting off the plane spanned by the controls.
+:::

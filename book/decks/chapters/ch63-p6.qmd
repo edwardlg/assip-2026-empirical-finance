@@ -1,0 +1,69 @@
+---
+title: "What's Clever"
+date: "2026-07-27"
+---
+
+# What's Clever {.title}
+
+::: notes
+Welcome back to Chapter six-point-three, part six of nine. In part five we set the reading order: misclassification first, then the horse race, then weighting. Now we name what is genuinely clever here, because these are moves you will reuse in your own measurement work. There are four: domain-specificity, falsifying a popular tool, shipping a reusable public good, and inventing categories beyond good and bad.
+:::
+
+## Domain-Specificity Is the Whole Idea
+
+- Sentiment is not a property of a word
+- It is a property of a word *in its domain*
+- "Liability," "vice," "crude," "tax" shift across domains
+- A tool calibrated on one domain mismeasures another
+- Medical, legal, central-bank text each need their own
+
+::: notes
+First, domain-specificity as the whole idea. The intellectual core is a single, portable insight: the sentiment of a word is not a property of the word. It is a property of the word in its domain. Liability, vice, crude, and tax mean different things in finance than in general English, and a tool calibrated on one domain mismeasures the other. This sounds obvious once stated, which is exactly the mark of a good measurement paper: it makes an error everyone was making feel obvious in retrospect. The same logic generalizes. A sentiment tool for medical notes, legal briefs, or central-bank statements needs its own dictionary. Carry this as a law: never reuse a measurement instrument across domains without checking that the words still mean what the instrument assumes.
+:::
+
+## Falsifying a Widely-Used Tool
+
+- The Harvard dictionary was respectable and ubiquitous
+- Many published finance papers had used it
+- They did not argue abstractly that it *might* be wrong
+- They *counted*, and showed which words did the damage
+- Diagnosis by enumeration beats diagnosis by assertion
+
+::: notes
+Second, falsifying a widely-used tool. It takes nerve and care to show that a standard, widely-cited tool is wrong for your setting. The Harvard General Inquirer dictionary was respectable and ubiquitous; many published finance papers had used it. Loughran and McDonald did not argue abstractly that it might be miscalibrated. They counted, and showed precisely which words were doing the damage and how much. Diagnosis by enumeration is more convincing than diagnosis by assertion. When you suspect a standard tool is wrong for your problem, do not just claim it; build the table that shows exactly where and how it fails.
+:::
+
+## A Reusable Public Good
+
+- The deepest cleverness is strategic, not statistical
+- Releasing and maintaining the dictionary made it infrastructure
+- The next researcher downloads it instead of rebuilding
+- A tool everyone can use beats a private result
+- Ask whether your *instrument* is the real deliverable
+
+::: notes
+Third, a reusable public good. The deepest cleverness is strategic, not statistical. By releasing the Master Dictionary publicly and maintaining it, they turned a one-paper result into infrastructure. The marginal researcher no longer has to build a finance dictionary; she downloads theirs. This is why the paper's citation count dwarfs that of cleverer-but-private contributions: a tool everyone can use beats a result only the authors can reproduce. When you build your capstone measurement, ask whether the most useful thing you could ship is the instrument, not just the finding.
+:::
+
+## Categories Beyond Good and Bad
+
+- Negative, positive, uncertainty, litigious, modal
+- A real conceptual contribution, not a relabeling
+- "Uncertainty" predicts volatility better than raw negativity
+- *How sure* a firm is differs from *how bad* the news is
+- Good measurement is often good taxonomy
+
+::: notes
+Fourth, categories beyond good and bad. Splitting tone into negative, positive, uncertainty, litigious, and modal was a real conceptual contribution. Uncertainty in particular, counting hedging words, turned out to predict volatility better than raw negativity in much later work, because how sure a firm is about its future is different information from how bad the future is. Good measurement is often good taxonomy, the same lesson Petersen taught with standard errors. The right categories are not cosmetic; they let a single instrument carry several distinct signals at once.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+Four reusable moves: **domain-specificity** (a word's sentiment lives in its domain), **falsifying by enumeration** (count, don't assert), **shipping the instrument** as a public good, and **categories beyond good/bad** (uncertainty, litigious, modal). Good measurement is good taxonomy. Next: where the method is vulnerable.
+:::
+
+::: notes
+To summarize part six. Four clever moves you should reuse. Domain-specificity: a word's sentiment lives in its domain, so never transfer an instrument without re-checking the words. Falsifying by enumeration: count and show exactly which words break the tool, rather than asserting it is wrong. Shipping the instrument as a public good, which turned one paper into field infrastructure. And categories beyond good and bad, where uncertainty and litigious carry signals raw negativity misses. In part seven we turn critical and examine where bag-of-words itself is vulnerable.
+:::

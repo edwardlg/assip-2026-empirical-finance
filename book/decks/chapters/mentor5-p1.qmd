@@ -1,0 +1,44 @@
+---
+title: "A Paper Is a Chain, Not a Result"
+date: "2026-07-20"
+---
+
+# A Paper Is a Chain, Not a Result {.title}
+
+::: notes
+Welcome to Week Five, Mentor Session Five — the anatomy of a Journal of Finance paper — part one of four. All week you have been a reader. You ran the seven-part template on Fama and French, on Jegadeesh and Titman, on Petersen, on Bertrand, Duflo and Mullainathan. You learned to go to the tables first and the introduction last, to find the headline number, to state the identifying assumption in one sentence, and to name the one threat a referee would fire first. That is the skill of dissecting a finished paper. Today we turn the camera around. We watch a paper get built — from a vague itch of a question, through the search for a design that could actually earn the answer, to the tables that carry it. I will use one of my own working papers as the cadaver on the table, because the one thing a published paper hides best is the two years of false starts that produced it.
+:::
+
+## The Myth of the Surprising Result
+
+- Top journals are **not** won by a surprising finding
+- Surprising results nobody believes — the surprise is *why*
+- What wins: the **credibility of the argument** that produced it
+- A paper is a **chain**, only as strong as its weakest link
+
+::: notes
+There is a myth that a top-journal paper is one with a surprising result. It is not. Journals are full of surprising results that nobody believes, and the surprise is precisely why nobody believes them. What gets a paper into the Journal of Finance is not the size of the finding but the credibility of the argument that produced it. A publishable empirical paper is a chain, and the chain is only as strong as its weakest link. Referees attack the weakest link, and a paper lives or dies there — not on the headline. So reading well and writing well are the same act run in opposite directions. The seven-part anatomy you applied outward to strangers' papers is the same anatomy I apply inward when I decide whether a question of mine is even worth chasing.
+:::
+
+## The Four Links
+
+- A **sharp question** — one sentence, ending in a question mark
+- A **credible research design** — your isolation argument
+- **Transparent tables** — that hide nothing
+- **Honest robustness** — trying to kill your own result
+- The referee attacks the *weakest* one
+
+::: notes
+Four links matter, and they are exactly the four things you have been grading all week, now stated as construction advice rather than reading advice. First, a sharp question — not a topic, but a question, one sentence ending in a question mark. Second, a credible research design — the link referees break papers on. Third, transparent tables that hide nothing. Fourth, honest robustness — the months spent trying to kill your own result before a referee does. Keep one reflex sharp as we go: for every claim, what is the comparison, what is the threat, and what check would make a skeptic stop arguing? That reflex is the whole course in one sentence.
+:::
+
+## Key Takeaway {.title}
+
+::: callout-tip
+## Key takeaway
+A top-journal paper is a **chain** of four links — sharp question, credible design, transparent tables, honest robustness — and it dies at its weakest link, not at its headline. Reading well and writing well are the **same act run in opposite directions**.
+:::
+
+::: notes
+To summarize part one: a top-journal paper is not a surprising result, it is a credible argument — a chain of four links that dies at its weakest point, not at its headline. The four links are a sharp question, a credible research design, transparent tables, and honest robustness, and reading a paper outward is the same act as building one inward, just run in the opposite direction. In part two we start at the first link: the move from a vague itch to a sharp question, and then on to the link referees actually break papers on — the research design.
+:::
