@@ -1,10 +1,11 @@
 ---
-title: "Critical Limits: P-Hacking and Reproducibility"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Critical Limits: P-Hacking and Reproducibility {.title}
+## Critical Limits: P-Hacking and Reproducibility
+
+- Part 10 — prompt-induced p-hacking and stochastic-output reproducibility
 
 ::: notes
 Welcome back to the AI co-pilot for research, part ten of fourteen. In part nine we covered hallucinated citations and look-ahead bias. Now the remaining two critical limits: prompt-induced p-hacking, and the reproducibility of stochastic outputs.
@@ -58,7 +59,7 @@ The fourth limit: reproducibility of stochastic outputs. A regression is determi
 The practical consequence: you cannot rely on the model being deterministic, so make your pipeline reproducible by other means. Three things, and they bridge to the next part. First, pin and record the exact model version string — a model silently updated under the same name will change your labels, so version it like a CRSP snapshot date. Second, log every prompt and response so the labels you used are saved, not regenerated. Third, where determinism matters, run the classification once, save the output to disk, and treat that file as your data — never re-query the model inside an analysis meant to be reproducible. The labels are data; freeze them like data.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

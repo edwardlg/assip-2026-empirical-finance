@@ -1,10 +1,11 @@
 ---
-title: "Consistency: Getting It Right Eventually"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Consistency: Getting It Right Eventually {.title}
+## Consistency: Getting It Right Eventually
+
+- Part 5 — does more data home in on the truth?
 
 ::: notes
 Welcome back to Estimators and Their Sampling Distributions, part five of seven. So far everything has been about a fixed sample size. But there is a second, more aspirational virtue we want: as we pour in more and more data, the estimate should home in on the truth and stay there. That virtue is consistency, and you can already see it hiding inside the formulas we have.
@@ -46,7 +47,7 @@ You can actually see consistency hiding inside the two formulas we already have.
 Two warnings, so you do not over-learn the lesson. First, unbiased and consistent are different properties, and neither implies the other. A recipe can be unbiased at every N yet inconsistent — for instance, "just use the first claim and ignore the rest." That is unbiased, since the expected value of the first claim is mu, but its variance is sigma squared forever; pouring in more data never helps because the recipe ignores the new data. It never settles down. Conversely, a recipe can be biased at every finite N but consistent, if its bias shrinks to zero as N grows. Consistency is a statement about the limit; unbiasedness is a statement at each fixed N. Second, consistency does not save a broken sampling assumption. If Priya's claims systematically over-sample one county, more of the same bad data drives x bar toward the wrong number with ever greater confidence. A consistent estimator of the wrong thing is still wrong — just precisely, confidently wrong. Garbage in, garbage in.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

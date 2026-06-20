@@ -1,9 +1,10 @@
 ---
-title: "Reading the Tables in Argument Order"
 date: "2026-07-20"
 ---
 
-# Reading the Tables in Argument Order {.title}
+## Reading the Tables in Argument Order
+
+- Part 6 — factor summary, the grid, $R^2$ and loadings passes
 
 ::: notes
 Welcome back to lesson five-point-two, part six of nine. In part five we covered the data and the look-ahead guard. Now we read the tables. A professional does not read this paper top to bottom; you read it in the order the argument runs — factor definitions, then common variation, then pricing. We start with the first two tables and the first two passes through the regression results.
@@ -57,7 +58,7 @@ Third, and the heart of the paper, are the time-series regression tables. For ea
 Pass two is the loadings pass. Now read s-hat, the S-M-B loading, down the size dimension: small portfolios should load strongly positive on S-M-B, while big portfolios sit near zero or negative. Read h-hat, the H-M-L loading, across the book-to-market dimension: value portfolios load strongly positive on H-M-L, growth portfolios negative. The loadings should march monotonically with the sort — that orderliness is the model recognizing the very characteristics the portfolios were sorted on. This is what people mean when they say the loadings make sense. A loading that jumped around randomly would be a red flag; instead, they climb smoothly with size and with value, exactly as the construction predicts.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

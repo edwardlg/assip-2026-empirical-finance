@@ -1,9 +1,15 @@
 ---
-title: "When Is a Liability Not a Liability?"
 date: "2026-07-27"
 ---
 
-# When Is a Liability Not a Liability? {.title}
+## When Is a Liability Not a Liability?
+
+**Learning objectives.** By the end you can:
+
+- Explain why a general dictionary misreads financial tone
+- Score a document with the bag-of-words method
+- Validate a tone measure against market reactions
+- Name what bag-of-words cannot capture
 
 ::: notes
 Welcome to Week Six, Chapter six-point-three, part one of nine. For five weeks you turned numbers into evidence. This week the raw material itself changes: a firm's annual report, the SEC ten-K, is roughly fifty thousand words of prose. Today's paper is Loughran and McDonald, two thousand eleven, in the Journal of Finance. It is a measurement paper, and it taught the field how not to score financial text. In this opening part we frame the lesson and state the research question.
@@ -45,7 +51,7 @@ Liability, tax, cost, depreciation, capital, crude: to a general-English sentime
 The plain-English question is this. Does scoring financial text with a general-English sentiment dictionary misclassify the tone of that text, and can a finance-specific dictionary do better at relating to outcomes investors care about, like returns and volatility? Name the two pieces. The outcome here is not a stock return in the usual sense; it is a measurement, the sentiment or tone score we assign a document. The key right-hand-side variable, the thing whose effect we are really testing, is the choice of dictionary itself. Two analysts read the same ten-K. One scores it with the Harvard General Inquirer, the standard general-purpose dictionary of the era. The other scores it with words chosen because they are negative in a financial context. Do these two scores disagree, do they disagree systematically, and which one actually picks up signal in market data?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

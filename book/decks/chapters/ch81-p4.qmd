@@ -1,9 +1,10 @@
 ---
-title: "The Cautionary Curve and the Checklist"
 date: "2026-08-10"
 ---
 
-# The Cautionary Curve and the Checklist {.title}
+## The Cautionary Curve and the Checklist
+
+- Part 4 — Sam's flipping curve and the reading checklist
 
 ::: notes
 Welcome back to The Execution and the Specification Curve, part four of six. In part three we read Maya's robust curve, where the sign never flips. Now we read the picture that should terrify you — Sam's momentum anomaly — then build the four-point checklist, and close with the permutation test on the whole forest.
@@ -68,7 +69,7 @@ The general reading rule is a short checklist. One: where does the sign live? If
 A word on the formal inference, kept light because the picture is most of the value. Simonsohn, Simmons, and Nelson propose a permutation test on the whole curve. Under the sharp null that the effect is zero everywhere, you re-shuffle the treatment assignment, recompute all one hundred forty-four specifications on each shuffle, and ask whether the observed curve — say, the number of significant-and-correctly-signed specifications — is more extreme than the null curves produce. This tests the multiverse as a whole, the right unit of analysis once you admit that which specification was itself a choice. For the capstone, the descriptive curve plus the checklist is required; the permutation test is an optional extension.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Co-Pilot, Not Autopilot: Where It Helps"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Co-Pilot, Not Autopilot: Where It Helps {.title}
+## Co-Pilot, Not Autopilot: Where It Helps
+
+- Part 2 — the co-pilot framing: five safe uses, the hazards
 
 ::: notes
 Welcome back to the AI co-pilot for research, part two of fourteen. In part one we framed the stakes: the same fluency that makes a model useful makes it dangerous. Now the framing in one sentence: a model is a co-pilot — it accelerates work you could verify yourself, and it is a hazard exactly when you use it to replace judgment you cannot or do not check. Take the aviation metaphor literally. A co-pilot reduces the captain's workload and handles the tedious legs, but the captain signs the logbook and answers the inquiry. In research, you are the captain. The model never signs your paper.
@@ -34,7 +35,7 @@ Where does the co-pilot genuinely help? Five places, each sharing one property: 
 Now the dangerous places, stated just as plainly. A model is a hazard whenever you cannot cheaply verify the output and an error is costly. Three patterns recur. First, facts you can't check at a glance — what is the coefficient in such-and-such paper, what was the two-thousand-eight default rate on subprime adjustable-rate mortgages — where the model produces a specific, confident number that may be invented. Second, anything where the model may know your answer for the wrong reason, most insidiously knowing the future relative to your sample, which we will see is a fatal bias in backtests. Third, anything you would be tempted to keep only because you like the result: using the model to generate the framing, the hypothesis, and the supporting evidence is a closed loop with no contact with reality. The rest of the lesson is a set of techniques for staying in the safe column and detecting when you have drifted into the dangerous one.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Hierarchy of Bad Behavior"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Hierarchy of Bad Behavior {.title}
+## The Hierarchy of Bad Behavior
+
+- Part 8 — the Student's-$t$ dial from slow to broken
 
 ::: notes
 Welcome back to Chapter one-point-four, part eight of nine. In part seven fat tails broke Devon's confidence interval. Now we get precise. There is a hierarchy of bad behavior, controlled by a single dial — the degrees of freedom of the Student's t distribution — and we use it to locate exactly where slow becomes broken, then watch the bell refuse to form.
@@ -44,7 +45,7 @@ Walk down the dial. For nu greater than two — say nu equals five, a common fit
 The simulation that makes this unforgettable is the exact experiment from part five, rerun with a fat-tailed population in place of the exponential. Devon uses a Student's t at three degrees of freedom — heavy enough to misbehave, but with a finite variance so the comparison to the normal is at least defined. Compare the picture to Priya's. With the exponential, N equals thirty already matched the bell. Here, at N equals thirty, the histogram is far too peaked in the middle and too heavy in the tails — too much probability piled up past plus or minus three standard errors, because the occasional monster draw keeps throwing the mean far out. By N equals one hundred it is better but still visibly off. You have to push N into the thousands before the histogram finally agrees with the dashed normal curve. Same theorem, same standardization, drastically slower convergence — and the only thing that changed is the weight in the tails.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

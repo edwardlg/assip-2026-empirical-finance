@@ -1,10 +1,11 @@
 ---
-title: "The Threat Menu: RD, Synthetic Control, and Using It"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Threat Menu: RD, Synthetic Control, and Using It {.title}
+## The Threat Menu: RD, Synthetic Control, and Using It
+
+- Part 4 — RD and synthetic-control menus, then using them
 
 ::: notes
 Welcome back to the identification memo, part four of nine. In part three we walked the threat menus for OLS, instrumental variables, and difference-in-differences. Now we finish the menu with the last two designs — regression discontinuity and synthetic control — and then learn exactly how to turn the menu into your own starting list of threats.
@@ -46,7 +47,7 @@ Synthetic control assumes that a weighted average of untreated donor units repro
 Here is how you use the menu. You will use exactly one of these designs for your primary specification — the one you committed to in your pre-analysis plan. Pull its row off this menu and you have your starting list of threats. Then add any that are specific to your own data: a survivorship filter, a look-ahead leak from Chapter seven-point-four, a measurement-error problem from Week One. The menu guarantees you do not forget the obvious ones; your own data supplies the rest. These named failures are the recurring villains of Weeks Three and Four, and the memo is where you finally name them out loud against your own data.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

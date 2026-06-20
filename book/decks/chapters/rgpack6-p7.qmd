@@ -1,9 +1,10 @@
 ---
-title: "Capstone Rules — Disclose, Reproduce, Leakage"
 date: "2026-07-27"
 ---
 
-# Capstone Rules — Disclose, Reproduce, Leakage {.title}
+## Capstone Rules — Disclose, Reproduce, Leakage
+
+- Part 7 — capstone rules: disclose, reproduce, dodge leakage
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part seven of eight. In part six we finished the evaluation harness with precision, recall, F-one, and kappa. Now we close the week with the rules that keep your work honest, reproducible, and legal. The AI co-pilot is allowed in your Week Seven and Eight capstone — encouraged, even — but under a checklist a mentor will hold your draft to. This part covers three of the four commitments: disclose the assistance, make API-based work reproducible, and heed the look-ahead and leakage warning. Part eight covers the fourth, the data-governance rule that has actual legal teeth.
@@ -45,7 +46,7 @@ Second, make API-based work reproducible. A language model is a stochastic instr
 Third, heed the look-ahead and leakage warning — two distinct traps, both fatal. Look-ahead bias in your own pipeline: never let a feature for time t use information that did not exist until after t. The code-review prompt from part four is built to catch this, so run it. Training-data leakage is a trap unique to language models: the model was trained on text up to some cutoff, so if you ask it to predict twenty-nineteen outcomes, it may simply remember them from its training data rather than infer them, and your out-of-sample test is contaminated. State your model's training cutoff and make sure your prediction targets fall after it, or treat the model as a feature-extractor on text only — never as a forecaster of outcomes it could have memorized. An out-of-sample test the model has secretly seen is no test at all.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

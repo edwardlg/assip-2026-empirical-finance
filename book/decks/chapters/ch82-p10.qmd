@@ -1,10 +1,11 @@
 ---
-title: "Assembling the Battery: What a Survivor Looks Like"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Assembling the Battery: What a Survivor Looks Like {.title}
+## Assembling the Battery: What a Survivor Looks Like
+
+- Part 10 — line up every test; report non-survivors
 
 ::: notes
 Welcome to Chapter eight-point-two, part ten of ten, the finale. In part nine the Oster delta quantified robustness to the confounder we never measured. Now we step back and see the whole structure. Each test in this chapter answered one row of the threats table you wrote in Chapter seven-point-five. In this final part we line them up, ask what it means to survive the battery, and confront the real lesson — that a result which does not survive should be reported as not surviving.

@@ -1,12 +1,13 @@
 ---
-title: "Two of My Own Funnels"
 date: "2026-08-03"
 ---
 
-# Two of My Own Funnels {.title}
+## Two of My Own Funnels
+
+- Part 3 — two of my projects, where clean variation decided survival
 
 ::: notes
-Welcome back to Mentor Session seven, part three of four. In part two we built the kill toolkit — the so-what test and the fatal-flaw checklist. Now I'll show those tools at work on two of my own projects. The first is a paper where a clean source of variation made it viable at all. The second shows how a project evolves from a vague idea over years. I'll reason about selection, identification, and feasibility only — not magnitudes. Mark anything you'd confirm against the actual paper as a check.
+Welcome back to Mentor Session seven, part three of four. In part two we built the kill toolkit — the so-what test and the fatal-flaw checklist. Now I'll show those tools at work on two of my own projects. The first is a paper where a clean source of variation made it viable at all. The second shows how a project evolves from a vague idea over years. I'll reason about selection, identification, and feasibility only — not magnitudes.
 :::
 
 ## Funnel One: A Clean Shock Saves It
@@ -28,7 +29,7 @@ The first paper is Gao, He, and Wu, twenty-twenty-three, in the Journal of Finan
 - No clean shock? Redesign as **honest descriptive**, per CONVENTIONS §4
 
 ::: notes
-Why does non-fundamental pressure rescue the project? Because it moves the price for reasons unrelated to business prospects, the relationship you measure is no longer just good firms do good things. The identifying assumption, in one sentence: the non-fundamental variation affects C-S-R only through the price channel and is otherwise unrelated to anything that independently drives social engagement. That turns a hopeless correlation into a defensible design. Apply the funnel backwards: if you had the puzzle but no clean source of price variation, you needn't kill it — you could redesign it as honest descriptive work, allowed to claim an association but not a cause, per Conventions section four. Mark as a check the paper's actual source of pressure; reason about what kind of variation the design needs.
+Why does non-fundamental pressure rescue the project? Because it moves the price for reasons unrelated to business prospects, the relationship you measure is no longer just good firms do good things. The identifying assumption, in one sentence: the non-fundamental variation affects C-S-R only through the price channel and is otherwise unrelated to anything that independently drives social engagement. That turns a hopeless correlation into a defensible design. Apply the funnel backwards: if you had the puzzle but no clean source of price variation, you needn't kill it — you could redesign it as honest descriptive work, allowed to claim an association but not a cause, per Conventions section four. Reason about what kind of variation the design needs.
 :::
 
 ## Funnel Two: An Idea Travels Years
@@ -53,7 +54,7 @@ The second project is Gao, Liu, and Wang — The Rainbow of Credits: Evidence fr
 Name two narrower questions you might carve out — say, does a specific disclosure rule change costs, or does a particular intermediary explain the gap. For each, the likely killer differs: a missing data source, an unbreakable confounder, or an audience that doesn't exist. That triage is the furnace running. Now the long road: this went from idea to A-E-A presentation to a Journal of Finance target over years, not a summer. A multi-year project can afford two things your five-week capstone cannot — assemble a bespoke dataset over months, and iterate through several killed versions before one survives. Reason about the life cycle, not the contents.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

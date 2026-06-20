@@ -1,9 +1,10 @@
 ---
-title: "Gate Two — Big Enough to Matter?"
 date: "2026-06-22"
 ---
 
-# Gate Two — Big Enough to Matter? {.title}
+## Gate Two — Big Enough to Matter?
+
+- Part 3 — significance is precision; importance is magnitude
 
 ::: notes
 Welcome back to Mentor Session One, part three of five. In part two we opened gate one and saw that a t-statistic measures how far a number sits from zero in units of its own noise. Now we open gate two, and it catches a mistake that fools even careful people. A result can be statistically significant and economically trivial at the same time. Gate two is where you stop asking "can I tell this apart from zero?" and start asking "is it large enough that I would actually act on it?"
@@ -53,7 +54,7 @@ It helps to lay out all four combinations. First: significant and large — the 
 So here is the discipline gate two demands. Always report the estimate and its confidence interval, never just a verdict. A confidence interval is the most honest single object you can hand a reader, because it shows magnitude and precision at once — how big the effect plausibly is and how sure you are. A bare "significant at five percent" hides both. So train the reflex now: a finding comes with a number, in the units of the problem, and an honest range around it. Asterisks are not findings. The interval is the finding.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

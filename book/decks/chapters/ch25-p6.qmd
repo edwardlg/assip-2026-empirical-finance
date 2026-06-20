@@ -1,10 +1,11 @@
 ---
-title: "Measurement Error: Three Subtleties, and the Simulation"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Measurement Error: Three Subtleties, and the Simulation {.title}
+## Measurement Error: Three Subtleties, and the Simulation
+
+- Part 6 — three subtleties, then attenuation in live code
 
 ::: notes
 Welcome back to Chapter two-point-five, part six of nine. In part five we derived attenuation bias: classical noise in your regressor multiplies the coefficient by the reliability ratio, pulling it toward zero. Now we cover three subtleties that confuse people about measurement error, and then watch attenuation happen in code — a coefficient sliding from two toward zero exactly as the formula predicts.
@@ -58,7 +59,7 @@ Here is what running it produces, up to simulation noise. With no noise, lambda 
 And here is the punchline that ties the chapter together. No amount of additional data changes these numbers. Try five million observations instead of fifty thousand, and the estimates barely move, because attenuation is a bias in the probability limit, not sampling noise. More data shrinks the wobble; it does nothing to the bias, baked into where the estimate is centered. That single experiment is the cleanest demonstration of the distinction this chapter draws — between a problem you can drown in data and one you cannot. Measurement error in the regressor is firmly the second kind.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

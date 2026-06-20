@@ -1,10 +1,11 @@
 ---
-title: "Projection Algebra and Invertibility"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Projection Algebra and Invertibility {.title}
+## Projection Algebra and Invertibility
+
+- Part 6 — projection algebra and when $\mathbf{X}'\mathbf{X}$ inverts
 
 ::: notes
 Welcome back to Chapter two-point-one, part six of seven. In part five we named the hat matrix and the residual maker. Now we nail down the two properties that mark every projection — symmetric and idempotent — and harvest two more identities for free. Then we confront the assumption we have leaned on the whole lesson: that X-transpose-X has an inverse. We find exactly when it does, and what goes wrong when it does not.
@@ -43,7 +44,7 @@ Everything so far quietly assumed the inverse of X-transpose-X exists. When does
 This is exactly the wall chapter one-point-two warned about, met from the other side. There, a redundant asset made the covariance matrix Sigma singular. Here, a redundant regressor makes X-transpose-X — built the same way, as a matrix of cross-products, a close cousin of a covariance matrix — singular. Same event, same cure: do not feed the machine a redundant column. Two practical notes. First, full column rank requires at least as many observations as regressors, N at least K — you cannot fit more coefficients than you have data points. Second, real software almost never sees perfect collinearity; it usually comes from a coding mistake. The more insidious problem is near-collinearity, where X-transpose-X is invertible but barely, making beta-hat wildly sensitive to tiny data changes — a precision problem we quantify with standard errors in chapter two-point-four.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

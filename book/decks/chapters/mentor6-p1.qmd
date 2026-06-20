@@ -1,9 +1,15 @@
 ---
-title: "A Text Number Is a Measurement, Not a Fact"
 date: "2026-07-27"
 ---
 
-# A Text Number Is a Measurement, Not a Fact {.title}
+## A Text Number Is a Measurement, Not a Fact
+
+**Learning objectives.** By the end you can:
+
+- Treat a text-derived number as a noisy proxy
+- Explain how mismeasurement attenuates or biases coefficients
+- Validate an instrument with a held-out gold set
+- Disclose prompts and labels so referees can judge
 
 ::: notes
 Welcome to Mentor Session six, part one of five. All week the raw material changed under your feet. For five weeks, the word data meant numbers that arrived already numeric — a return, a leverage ratio, a yield. This week the data was prose: a ten-K running to fifty thousand words, a product description a firm wrote about itself, a risk-factor section a lawyer drafted to be read by no one. Hoberg and Phillips turned product descriptions into a map of who competes with whom. Loughran and McDonald showed that the most popular tool for scoring financial tone was counting the words liability and tax as gloom. And in Chapter six-point-five you met the newest and most dangerous instrument of all — a large language model that will read forty thousand filings overnight and hand back a confident column of labels, some quietly invented. Today we put those three things into one discipline.
@@ -42,7 +48,7 @@ Recall the idea from Week one. When you write down the variable tone, you are no
 And you already know what mismeasurement does to a regression. The instant that proxy enters as a variable, it is a mismeasured regressor. At best, classical measurement error attenuates your coefficient toward zero and inflates your standard errors. At worst, if the measurement error is correlated with something else in the model, it biases the estimate in a direction you cannot even sign — you do not know whether you are overstating or understating the truth. So the right question is never the abstract one, is the LLM accurate. The right question is sharper: how accurate is this instrument, on my data, against truth — and is my downstream result robust to the error I know is there?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

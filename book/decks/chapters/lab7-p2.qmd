@@ -1,9 +1,10 @@
 ---
-title: "Tools, and Where the Licensed Data Lives"
 date: "2026-08-03"
 ---
 
-# Tools, and Where the Licensed Data Lives {.title}
+## Tools, and Where the Licensed Data Lives
+
+- Part 2 — install the tools; the repo travels, licensed data stays home
 
 ::: notes
 Welcome back to Week Seven, the Lab, part two of eight. In part one we framed the repository as your capstone deliverable. Before we build it, we need three tools installed and one mental model fixed firmly in place: the repo travels freely, but the licensed data stays home. Get that boundary right and every later step falls into line.
@@ -33,7 +34,7 @@ You need three tools. Git, for version control. A GitHub account — you almost 
 Now the mental model. If your project touches licensed data — CRSP, Compustat, IBES, TRACE, anyone doing the equities or fundamentals capstones — the rule from our conventions, section five, and Chapter seven-point-two binds: the licensed bytes live only on GMU infrastructure, the WRDS Cloud or the Hopper cluster, never on a personal laptop. But your repository — the code, the README, the data cards, the logs, the pre-analysis plan — can live on your laptop and on GitHub, because none of those contain licensed data. The git-ignore you build later is what enforces that wall. So the mental model is this: the repo travels freely; the licensed data stays home; the repo's job is to be the recipe that reconstructs the data on GMU infrastructure for anyone who has the same access.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

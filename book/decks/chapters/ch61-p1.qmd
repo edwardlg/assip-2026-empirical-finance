@@ -1,9 +1,15 @@
 ---
-title: "KPSS: Measuring the Value of an Idea"
 date: "2026-07-27"
 ---
 
-# KPSS: Measuring the Value of an Idea {.title}
+## KPSS: Measuring the Value of an Idea
+
+**Learning objectives.** By the end you can:
+
+- Put a dollar value on a single patent
+- Read a grant-window stock reaction as an event study
+- Name the assumption that makes the measure valid
+- Spot the measurement and economics headlines apart
 
 ::: notes
 Welcome to Week Six, Chapter six-point-one, part one of seven. Last week handed you a lens — the seven-part reader's-guide anatomy — and four classic papers to practice it on. This week keeps the lens but turns it on a harder, modern problem: measurement. Every paper last week took its key variable as given. Returns came from CRSP, book equity from Compustat; nobody had to invent the number. This week's papers are different. Their central act is to build a variable that did not exist before, out of data never meant to measure the thing they want. That is the frontier skill, and the one your Week-Seven capstone lives or dies on. We open with the paper that taught empirical finance how to measure an idea: Kogan, Papanikolaou, Seru, and Stoffman, two thousand seventeen. We call it K-P-S-S.
@@ -33,7 +39,7 @@ Here is the shift. Last week, the central variable of each paper was handed to y
 Strip the paper to one sentence and it asks two questions stacked on top of each other. Keep them separate while you read, because the contribution is mostly in the first. The measurement question comes first: can we put a dollar value on each patent, in real time, the moment it is granted? Innovation drives long-run growth, but it is maddeningly hard to quantify. The two standard proxies both fail instructively. Patent counts weight every patent equally — a firm with a hundred trivial patents looks more innovative than a firm with the one patent that defined a decade. Citation counts, meaning how many later patents cite this one, are a real improvement and the workhorse of the literature. But they have two defects you should name: they are slow, accumulating over ten or more years, so you cannot value a recent patent in real time; and they are truncated, because recent patents look artificially uncited simply because the future has not happened yet. Neither proxy is denominated in money. The economics question rides on the answer: once you have a firm-by-year flow of innovation in dollars, does a surge of valuable innovation predict that the firm grows and rivals shrink? That second question is only as credible as the variable built to answer the first.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

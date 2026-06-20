@@ -1,10 +1,16 @@
 ---
-title: "When the Errors Misbehave: The Problem"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# When the Errors Misbehave: The Problem {.title}
+## When the Errors Misbehave: The Problem
+
+**Learning objectives.** By the end you can:
+
+- Explain why OLS estimates stay fine but standard errors lie
+- Choose robust, clustered, or HAC standard errors correctly
+- Diagnose heteroskedasticity, clustering, and serial correlation
+- Apply Petersen's taxonomy to panel data
 
 ::: notes
 Welcome to Week Two, Chapter two-point-four: When the Errors Misbehave — heteroskedasticity, clustering, and HAC. This lesson is built around one of the most important and most misunderstood facts in applied econometrics: your point estimate can be perfectly fine while your t-statistic lies to you. In this opening part we meet Maya, watch her clean-looking result wobble, and pin down exactly which number was wrong.
@@ -46,7 +52,7 @@ Then her mentor asks one question: are those nine thousand loans really nine tho
 Here is the unsettling part, and it is the whole chapter in one line: her point estimate never moved. The zero point four two was right the whole time. What was wrong was the zero point zero seven — the number that tells you how much to trust the zero point four two. In Chapter two-point-two we proved that O-L-S is unbiased and, under the Gauss–Markov assumptions, the best linear unbiased estimator. None of that breaks here. What breaks is the standard error, and therefore every t-statistic, every p-value, every confidence interval built on top of it. The cure is to replace the classical formula with a robust, clustered, or H-A-C formula that tells the truth.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

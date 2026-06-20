@@ -1,9 +1,10 @@
 ---
-title: "The Law of Total Variance"
 date: "2026-06-22"
 ---
 
-# The Law of Total Variance {.title}
+## The Law of Total Variance
+
+- Part 5 — the continuous case, then risk splits within and across
 
 ::: notes
 Welcome back to Chapter one-point-one, part five of seven. In part four we proved the Law of Iterated Expectations, which handles averages. But a trader cares about risk — the variance of returns — and, crucially, where the risk comes from. The Law of Total Variance answers exactly that. We also pause briefly on the continuous case, then state Sam's risk decomposition and the intuition behind it.
@@ -42,7 +43,7 @@ First, the variance of a random variable measures how spread out it is around it
 This is genuinely useful to Sam. If the across-regime piece dominates, the smart move is regime forecasting — predict the storm and you have killed most of the variance. If the within-regime piece dominates, knowing the regime barely helps, and Sam needs a different edge entirely. The decomposition tells Sam which kind of problem they have. That is the difference between a formula and a tool: the Law of Total Variance does not just balance an equation, it diagnoses where a strategy's uncertainty actually lives, and therefore where effort should go. In the next part we run the numbers on Sam's table and see which piece wins.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

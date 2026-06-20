@@ -1,10 +1,11 @@
 ---
-title: "One Idea Per Slide, and the Table-to-Figure Translation"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# One Idea Per Slide, and the Table-to-Figure Translation {.title}
+## One Idea Per Slide, and the Table-to-Figure Translation
+
+- Part 3 — what goes on each slide, and translating tables
 
 ::: notes
 Welcome back to Chapter eight-point-five, part three of nine. In part two we walked the four beats that carry the talk. Now we cover the two rules that govern what goes on each slide. Both respect the fact that a live audience reads with their ears, not their eyes. The first rule is one idea per slide; the second is the mechanical translation from a results table into a figure.
@@ -46,7 +47,7 @@ Here is the reveal that separates a paper from a talk. In your paper, your resul
 The translation is mechanical, and learning it is one of the highest-leverage skills in this chapter. A single coefficient with its confidence interval becomes a point with an error bar: one estimate, one whisker, and the eye reads "is it different from zero?" and "how precise?" instantly. A coefficient across several specifications becomes a coefficient plot, one dot-and-whisker per specification, lined up, with a reference line at zero. The audience sees stability as a shape, a tight vertical cluster, not as seven numbers to compare mentally. A difference-in-differences becomes an event-study plot, flat before treatment, jumping after, which is the parallel-trends defense made visible. A regression discontinuity becomes the binned scatter with the fitted jump at the cutoff. And a subgroup pattern becomes a small-multiples bar chart. Same number, two encodings, chosen for the medium. Strip the gridlines, the legend nobody reads, the third decimal; the figure has one job, which is to make one comparison obvious.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The LATE Theorem and the IV Table"
 date: "2026-07-06"
 ---
 
-# The LATE Theorem and the IV Table {.title}
+## The LATE Theorem and the IV Table
+
+- Part 8 — the LATE theorem and reading an IV table
 
 ::: notes
 Welcome back to Chapter three-point-four, part eight of ten. In part seven we sorted everyone into four types and saw that the instrument can only see compliers. Now we rule out the troublesome defiers, state the theorem that names exactly what I-V estimates, and confront its consequence. Then we install a reading habit — the three regressions every honest I-V table must report.
@@ -43,7 +44,7 @@ This is why "LATE, not A-T-E" is a mantra in modern applied work. The average tr
 Before weak instruments, install a habit. Every honest I-V analysis reports three regressions read as a set. First, the first stage — D on Z and controls — which establishes relevance; you want a large, precise coefficient on Z. Second, the reduced form — Y on Z and controls — the instrument's total effect on the outcome. Crucially, if the reduced form is a flat zero, your I-V estimate is built on nothing — a significant two-S-L-S number coming out of a null reduced form is a red flag. Third, the two-S-L-S estimate, which in the just-identified binary case is exactly the reduced form divided by the first stage. If a colleague shows you a two-S-L-S table without the first stage and reduced form, ask for them — they are where the design lives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

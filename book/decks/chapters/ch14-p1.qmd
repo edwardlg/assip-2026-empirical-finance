@@ -1,10 +1,16 @@
 ---
-title: "Stating the Law of Large Numbers"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Stating the Law of Large Numbers {.title}
+## Stating the Law of Large Numbers
+
+**Learning objectives** — by the end you can:
+
+- State the LLN and CLT precisely
+- Prove the LLN using Chebyshev's inequality
+- Explain why standardized means become normal
+- Recognize when the CLT is slow or fails
 
 ::: notes
 Welcome to Week One, Chapter one-point-four, part one of nine. Last chapter we built a sampling-distribution machine and watched it work, but we only described what we saw — we never said why it happened or what shape it formed. This chapter pays both debts with two great theorems. In this opening part we state the first one cleanly: the Law of Large Numbers.
@@ -45,7 +51,7 @@ Here is the statement. Take independent draws from some population with mean mu 
 Two cautions on the wording. First, the word weak distinguishes this from the Strong Law, which makes a subtly stronger promise about a single infinite sequence of draws settling down forever. The distinction is real, but it will not matter for anything we do, so we use the Weak Law and move on. Second, and more important, converges in probability — written with that little p over the arrow — is not the ordinary limit from calculus. The sample mean is random. It does not approach the true mean the way one over N approaches zero. Nothing about the sample mean is guaranteed to equal mu. What shrinks to zero is the probability of a meaningful miss — the chance of landing more than your chosen tolerance away. Keep that distinction sharp.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

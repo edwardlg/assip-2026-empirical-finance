@@ -1,9 +1,10 @@
 ---
-title: "Reading a Finance Table: Fixed Effects, Bottom Rows, and the SE Note"
 date: "2026-07-20"
 ---
 
-# Reading a Finance Table: Fixed Effects, Bottom Rows, and the SE Note {.title}
+## Reading a Finance Table: Fixed Effects, Bottom Rows, and the SE Note
+
+- Part 6 — finish the table: fixed-effects rows, bottom rows, the SE note
 
 ::: notes
 Welcome back to How to Read an Empirical Paper, part six of seven. In part five we read the columns, the cells, and the stars. Now we finish the table with the rows beginners skip over and the note they read last but should read first. These three things — the fixed-effects switches, the bottom-row reality check, and the standard-error note — decide whether you actually believe the coefficient at the top.
@@ -45,7 +46,7 @@ Second, the bottom rows are the reality check. Capital N is the number of observ
 Third, and most important, the standard-error note is load-bearing — read it first, not last. "Standard errors clustered by lender" tells you the authors let each lender's residuals correlate, the lesson of Chapter two-point-four and the Petersen paper you read this week. That single phrase decides whether the t-statistics are honest. If the data are a panel and the note says "robust" or is silent, be suspicious: un-clustered standard errors on persistent panel data are exactly the Bertrand, Duflo, and Mullainathan disease — too small, with t-statistics inflated. Always locate the standard-error note and ask: clustered by what, and is that the level at which the key variable varies?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

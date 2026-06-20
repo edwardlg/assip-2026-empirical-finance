@@ -1,9 +1,10 @@
 ---
-title: "Choosing the Weights: Matching the Pre-Period"
 date: "2026-07-13"
 ---
 
-# Choosing the Weights: Matching the Pre-Period {.title}
+## Choosing the Weights: Matching the Pre-Period
+
+- Part 3 — the optimization that picks weights, and its two constraints
 
 ::: notes
 Welcome back to Chapter four-point-four, part three of ten. In part two we wrote the estimator: the effect is the treated unit's observed outcome minus a synthetic counterfactual built from donor weights. Now we open the engine — the optimization that picks those weights to match the pre-period — and the two constraints hanging off it.
@@ -46,7 +47,7 @@ The diagonal matrix V holds weights on the characteristics. It lets predictors t
 Now notice the two restrictions hanging off the minimization. They look like fine print. They are the entire point. First, non-negativity: every weight is zero or positive. No donor can enter with a negative weight — you cannot say two parts California minus one part Florida. Second, sum to one: the weights are shares of a whole. Together with non-negativity, this means the synthetic control is a convex combination of the donors — a genuine weighted average, where the weights are like proportions of a portfolio that must add to one hundred percent. In the next part we see exactly what this convexity buys you, and what it costs.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

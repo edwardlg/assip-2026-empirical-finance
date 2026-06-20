@@ -1,9 +1,10 @@
 ---
-title: "Exclusion, Compliers, and Identification"
 date: "2026-07-06"
 ---
 
-# Exclusion, Compliers, and Identification {.title}
+## Exclusion, Compliers, and Identification
+
+- Part 2 — finish the referee's checklist: exclusion, compliers, identification
 
 ::: notes
 Welcome back to Week Three-point-five, part two of seven. In part one we covered the referee's first two questions: name the triple, and check relevance with the first-stage F. Now we finish the checklist with its three hardest questions — exclusion, compliers, and identification. These are the ones answered by argument and design, not by a single statistic.
@@ -45,7 +46,7 @@ Question four: who are the compliers? Recall that I-V does not estimate the aver
 Question five: just-identified or over-identified? Count the instruments and the endogenous regressors. One instrument per endogenous regressor is just-identified — exactly enough information to pin down the parameter, no more. More instruments than regressors is over-identified, and you get something extra: a testable implication. With surplus instruments, each implies its own I-V estimate; if they all point to the same place, that is reassuring, and if they disagree wildly, at least one is violating exclusion. That is the overidentification test, which we reach later. It is also where the many-instruments bias lurks. Just-identified I-V is cleaner to reason about but offers no internal check on exclusion; over-identified offers a check but introduces new ways to go wrong.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

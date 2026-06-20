@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable, Part One: Transaction Costs, Data-Snooping, and Seasonality"
 date: "2026-07-20"
 ---
 
-# What's Vulnerable: The First Three Threats {.title}
+## What's Vulnerable: The First Three Threats
+
+- Part 9 — transaction costs, data-snooping, and seasonality
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part nine of eleven. In part eight we admired what is clever. Now we turn the table over. This is where a referee earns their keep. There are five live threats to the result; this part covers the first three — transaction costs, data-snooping, and seasonality — and part ten covers the last two.
@@ -45,7 +46,7 @@ The second threat is data-snooping, the multiple-testing problem from Week One. 
 The third threat is the January, or seasonality, effect. Even though momentum is an anti-January phenomenon, the seasonality cuts both ways as a vulnerability. A strategy whose entire annual profit depends on eleven good months minus a January loss is exposed to anything that shifts that seasonal pattern — changes to tax-loss-selling rules, or the rise of index investing that alters who is trading small caps in January. So the seasonal structure is a clue to mechanism, telling you something about why the effect exists, rather than a clean robustness check you can simply wave away. When a result leans on a specific calendar pattern, you have to ask what would happen if that pattern eroded — and for momentum, that question is genuinely open.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,16 @@
 ---
-title: "Regression Discontinuity: The Jump Is the Effect"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# Regression Discontinuity: The Jump Is the Effect {.title}
+## Regression Discontinuity: The Jump Is the Effect
+
+**Learning objectives.** By the end you can:
+
+- Explain why near-cutoff units are as-good-as-randomly assigned
+- Distinguish sharp from fuzzy RD and write each estimand
+- Estimate the jump with local linear regression and a bandwidth
+- Audit an RD design for manipulation and other threats
 
 ::: notes
 Welcome to Week Four, Chapter four-point-three, part one of thirteen: regression discontinuity. Every design so far has been a fight to make treated and untreated units comparable, and each one bought that comparability with an assumption you mostly cannot test. This chapter introduces a design where comparability is almost handed to you by the world, and where the central assumption is, for once, partly checkable. In this opening part we meet the idea and state the result in one plain sentence.
@@ -46,7 +52,7 @@ Our guide this chapter is Sam, who trades on momentum and index effects, and who
 Here is the whole design in one sentence. When a treatment switches on at a known cutoff c in some running variable X, the causal effect of the treatment, for units right at the cutoff, is the size of the jump in the outcome as X crosses c. The running variable is also called the forcing variable or the score, and the treatment is assigned by which side of c you fall on. If the outcome Y varies smoothly with X everywhere except for a clean break exactly at c, then that break cannot be the smooth influence of X itself, which is continuous through c. The only thing that changes discontinuously at c is the treatment. So the vertical gap in the conditional mean of Y given X, right at c, is the treatment effect. Everything technical in this chapter is an elaboration of measure the jump.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

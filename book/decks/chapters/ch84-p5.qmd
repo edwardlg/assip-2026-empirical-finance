@@ -1,10 +1,11 @@
 ---
-title: "Tough on the Work, Kind to the Person"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Tough on the Work, Kind to the Person {.title}
+## Tough on the Work, Kind to the Person
+
+- Part 5 — the core norm: hard on the work, kind to the person
 
 ::: notes
 Welcome back to peer review and revision, part five of twelve. In part four we labeled points major or minor and rendered a calibrated verdict. Now we cover the norm that holds the whole enterprise together — the one worth stating as flatly as possible: criticize the paper as hard as the evidence demands, and never criticize the author at all.
@@ -46,7 +47,7 @@ The mechanics are concrete. Write about the paper, not the person: the identific
 None of this means going easy. The kindest thing you can do for a peer is to find the fatal flaw before the assessment grader does, and to find it so clearly that they can fix it. False reassurance is the true cruelty: a referee who waves through a broken design to spare someone's feelings has guaranteed that someone a harsher audience will break it later, when it costs more. Tough on the work is the kindness. Be precise, be specific, be relentless about the evidence — and never once make it about the person holding the pen.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Validation as Identification"
 date: "2026-07-27"
 ---
 
-# Validation as Identification {.title}
+## Validation as Identification
+
+- Part 3 — how a word list earns its keep against market data
 
 ::: notes
 Welcome back to Chapter six-point-three, part three of nine. In part two we built the bag-of-words score and watched Loughran and McDonald construct finance-shaped word lists. But a list is just an opinion until data tests it. This part covers the validation step, which is the real identification strategy: a dictionary earns trust only if its score moves with market reactions the way real bad news would move them.
@@ -45,7 +46,7 @@ The crucial move is to check whether the Harvard measure's apparent signal survi
 Step back and see the shape, because a good measurement paper always has it. Part A is diagnosis: how badly does the off-the-shelf tool mismeasure financial tone? Part B is repair and validation: if we build a domain-specific tool, does it carry more genuine signal? Does finance-specific negativity line up with lower returns around the filing, higher trading volume, and higher volatility, more cleanly than the general tool does? The answer to the diagnosis is, badly. The answer to the repair is, yes, and the finance dictionary has been the standard ever since. Hold this two-part template in mind. When you build your own measurement instrument, you will diagnose an existing tool's error and then validate your replacement against outcomes the tool should track.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

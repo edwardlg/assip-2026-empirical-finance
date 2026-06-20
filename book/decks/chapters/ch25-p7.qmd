@@ -1,10 +1,11 @@
 ---
-title: "Functional Form: When the Straight Line Is the Wrong Shape"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Functional Form: When the Straight Line Is the Wrong Shape {.title}
+## Functional Form: When the Straight Line Is the Wrong Shape
+
+- Part 7 — wrong functional form, and the fixes you own
 
 ::: notes
 Welcome back to Chapter two-point-five, part seven of nine. In part six we watched measurement error attenuate a coefficient toward zero in code. Now the third and final threat: wrong functional form, where you force a straight line through a curved world. We will see how the missing curvature behaves exactly like an omitted variable, then learn the fixes you already own — polynomials, logs, interactions.
@@ -43,7 +44,7 @@ The good news is you already own the variables — you just add the right transf
 Two more transformations round out the toolkit. Logs reshape the relationship and change interpretation to elasticities. With log y regressed on x, beta-one is a semi-elasticity — the approximate proportional change in y per unit of x. With log y on log x, beta-one is a full elasticity — the percent change in y per percent change in x. Logs also tame skewed, multiplicative financial variables like firm size and market cap, and stabilize variance. Then interactions: if the effect of x on y depends on another variable w, include the product x times w, so the slope on x becomes beta-one plus beta-three w, different for different w. Maya might interact loan size with income if the income effect is stronger for large loans. None of these are exotic — they are ordinary OLS with cleverly-constructed regressors — but they only dissolve the problem if you know the right shape. The harder question is diagnosing the problem at all.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

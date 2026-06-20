@@ -1,9 +1,15 @@
 ---
-title: "Reading BDM 2004: The Research Question"
 date: "2026-07-20"
 ---
 
-# Reading BDM 2004: The Research Question {.title}
+## Reading BDM 2004: The Research Question
+
+**Learning objectives.** By the end you can:
+
+- State BDM's central size question precisely
+- Explain how serial correlation shrinks DiD standard errors
+- Run the placebo-law experiment yourself
+- Apply the three fixes and their limits
 
 ::: notes
 Welcome to Week Five, Chapter five-point-five, part one of seven. This week we read a single paper the way a professional reads one: Bertrand, Duflo, and Mullainathan, two thousand four, How Much Should We Trust Differences-in-Differences Estimates, in the Quarterly Journal of Economics. You already met it as a footnote in Week Four, when Priya clustered her standard errors by state and watched her t-statistic fall from five point zero to one point eight. This week the footnote becomes an argument someone had to win. In this opening part we frame the paper and state its research question.
@@ -45,7 +51,7 @@ Too-small standard errors mean too-large t-statistics, which mean you reject the
 The researcher reports beta hat and a standard error, computes t as beta hat divided by its standard error, and declares significance if the absolute t exceeds one point nine six. Everything hinges on that standard error being honest. The conventional standard error assumes the residuals are independent across time within a state. The reality, for the slow-moving outcomes economists study, is that they are not: a state with high women's wages this year almost certainly had high women's wages last year. That is serial correlation, the within-unit autocorrelation you first met as a disease back in Chapter two-point-four. Notice the kind of question this is. It is a size question, in the exact sense of Week One. The size of a test is the probability it rejects a true null, the Type One error rate, the alpha you set to zero point zero five. BDM ask: when researchers say significant at five percent, is the true size really five percent, or something far worse?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

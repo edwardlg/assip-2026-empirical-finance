@@ -1,9 +1,10 @@
 ---
-title: "The Setup and the Estimator"
 date: "2026-07-13"
 ---
 
-# The Setup and the Estimator {.title}
+## The Setup and the Estimator
+
+- Part 2 — notation and the estimator in potential-outcomes language
 
 ::: notes
 Welcome back to Chapter four-point-four, part two of ten. In part one we met the core idea: with one treated unit, build a synthetic control as a weighted average of untreated donors, matched to the treated unit's pre-period. Now we put that idea in Week Four notation and write the estimator in potential-outcomes language.
@@ -46,7 +47,7 @@ $$\hat{\tau}_{1t} = Y_{1t} - \hat{Y}_{1t}^{N}, \qquad \hat{Y}_{1t}^{N} = \sum_{j
 Diff-in-diff fills the counterfactual by assuming parallel trends with a control group; synthetic control fills it with a tailor-made composite. The estimate is the treated state's observed premium minus an estimated untreated counterfactual, and that counterfactual is a weighted average of the donors' observed, untreated premiums — the weights w-j applied to each donor's premium and summed. It is built entirely from premiums we actually see, from states that were never treated. Pick the weights well in the pre-period and you have a credible stand-in for the treated state in the post-period. That is the whole estimator. The art is entirely in choosing the weight vector w — w-two through w-J-plus-one — which is where we turn next.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Intellectual Honesty: State the Residual, Don't Oversell"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Intellectual Honesty: State the Residual, Don't Oversell {.title}
+## Intellectual Honesty: State the Residual, Don't Oversell
+
+- Part 7 — the three honesty rules and the memo as thinking tool
 
 ::: notes
 Welcome back to the identification memo, part seven of nine. In part six we sorted threats into testable and arguable and matched each to the right kind of column-three response. Now we turn to the honesty rules — the discipline that keeps you from writing the whole memo backward, starting from the starred result you want and reverse-engineering an assumption that delivers it.
@@ -46,7 +47,7 @@ Three honesty rules, which double as the things a grader looks for. One: state t
 The deep point is that the identification memo is not a defensive document you write to survive review. It is a thinking tool you write to find out whether your project is real. If, while filling the table, you discover a threat for which column three is empty and column four is "this could be the entire effect," you have learned something invaluable before sinking Week Eight into a paper that cannot be saved — and the right response is to change the design, not to soften the language. The memo's first reader is you, and its first job is to talk you out of a project that will not survive contact with a skeptic.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

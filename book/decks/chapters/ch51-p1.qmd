@@ -1,9 +1,15 @@
 ---
-title: "Reading Fama–French 1992: The Research Question"
 date: "2026-07-20"
 ---
 
-# Reading Fama–French 1992: The Research Question {.title}
+## Reading Fama–French 1992: The Research Question
+
+**Learning objectives.** By the end you can:
+
+- Read a frontier paper the way a referee reads it
+- State the CAPM prediction that beta is the whole story
+- Frame Fama–French (1992) as the test of that null
+- Connect the paper to your Lab 2 Fama–MacBeth machine
 
 ::: notes
 Welcome to Week Five, Chapter five-point-one, part one of seven. For four weeks you were a producer of empirical work — you built ordinary least squares from the design matrix up, learned which standard errors lie, drew the line between correlation and cause, and assembled the causal toolkit. Week Five flips the verb: now you become a consumer. The skill that separates someone who has merely taken econometrics from someone who can do research is the ability to pick up a frontier paper, read it the way a referee reads it, and decide whether to believe it. We train that muscle on Fama and French's nineteen ninety-two paper, "The Cross-Section of Expected Stock Returns" — one of the most cited articles in finance, and one that runs on exactly the machine you built in Lab Two.
@@ -33,7 +39,7 @@ Why this paper? It is among the most cited articles in all of finance. It killed
 Strip the paper to one sentence: what explains why some stocks have higher average returns than others? To feel the force of that, you need the theory it attacked. The Capital Asset Pricing Model — the framework Sam met in Lab Two — gives a sharp answer. The only thing that should earn a stock a higher average return is its market beta, beta-sub-i, its sensitivity to swings in the overall market. Stock-specific risk earns you nothing, because you can diversify it away for free; only the move-with-the-market part deserves compensation. Written as the relationship Lab Two estimated, the expected return on stock i equals gamma-zero plus gamma-one times beta-sub-i. CAPM predicts gamma-one is positive — higher beta, higher reward — and in strict form that beta is the whole story: add any other firm characteristic and its slope should be zero. For twenty years this was the organizing fact of asset pricing, and it is the null hypothesis Sam walked in with.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

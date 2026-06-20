@@ -1,9 +1,10 @@
 ---
-title: "Measured Is Not Explained"
 date: "2026-06-22"
 ---
 
-# Measured Is Not Explained {.title}
+## Measured Is Not Explained
+
+- Part 5 — passing the gates makes a number real, not explained
 
 ::: notes
 Welcome back to Mentor Session One, part five of five. In part four we opened gate three and saw how the search that finds a number inflates the chance it is pure luck. Now we close the session with the most important caveat of all — passing all three gates tells you a number is real and large, but not why it is there — and then we name exactly what separates a finding from noise, and where the program heads next.
@@ -31,7 +32,7 @@ There is a fourth thing lurking behind all three gates, and it is worth naming e
 So here is what actually separates a finding from noise. A finding clears all three gates and arrives carrying three things: a magnitude in the units of the problem, an honest interval around it, and a search history you can defend. And notice that the same machine runs at every gate — the estimate, minus the null, divided by the standard error. That one ratio runs on a sample mean today, and it will run on a regression slope, beta-hat, in Week Two, and on far more elaborate estimates after that. Richard Feynman put the whole job in one sentence: the first principle is that you must not fool yourself, and you are the easiest person to fool. Your job this summer is to produce numbers you would defend to a skeptic who actively tried to break them.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

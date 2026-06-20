@@ -1,9 +1,10 @@
 ---
-title: "Inference With a Sample Size of One: The Placebo Test"
 date: "2026-07-13"
 ---
 
-# Inference With a Sample Size of One: The Placebo Test {.title}
+## Inference With a Sample Size of One: The Placebo Test
+
+- Part 7 — inference with one treated unit via placebo tests
 
 ::: notes
 Welcome back to Chapter four-point-four, part seven of ten. In part six we read the pre-period fit and learned a tight pre-RMSPE earns the post-period gap. Now the hardest and most distinctive part: deciding whether that gap is real when your effective number of treated units is one — not with a t-statistic, but with a placebo permutation test.
@@ -46,7 +47,7 @@ $$r_i = \frac{\text{RMSPE}_{\text{post},\,i}}{\text{RMSPE}_{\text{pre},\,i}}$$
 There is a wrinkle, and fixing it gives the workhorse statistic. Some donors fit their synthetic controls badly in the pre-period — for them, a big post-period gap means nothing, because they were already off-track before any pretend-treatment. Comparing raw post-period gaps would let those badly-fit donors masquerade as large effects. The fix is to scale each unit's post-period gap by its own pre-period fit. Define the post-over-pre RMSPE ratio, r-i: the post-period RMSPE divided by the pre-period RMSPE. A large ratio means the unit fit well before treatment — a small denominator — and diverged sharply after — a large numerator. That is exactly the signature of a real effect, and it is not contaminated by units that were never matched well to begin with.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

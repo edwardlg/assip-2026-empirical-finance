@@ -1,10 +1,11 @@
 ---
-title: "Disclosure, Responsibility, and the Capstone"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Disclosure, Responsibility, and the Capstone {.title}
+## Disclosure, Responsibility, and the Capstone
+
+- Part 14 — the responsible-use and disclosure checklist for your capstone
 
 ::: notes
 Welcome back to the AI co-pilot for research, part fourteen of fourteen — the close. In part thirteen we covered audit logging and the local fallback. Now we tie it together: your capstone must be honest about how AI was used and reproducible from your repository alone. Treat AI assistance like any other part of the method — disclose it, validate it, make it replicable. Here is the checklist the Week Six assessment holds you to.
@@ -45,7 +46,7 @@ Next, reproducibility — make it re-runnable. Commit the audit log, or a redact
 Carry three questions into the lab and into Mentor Session Six. First: when is an LLM label a measurement you can defend, and when is it a confident guess? Suppose a classifier has test-set precision zero-point-eight-eight and recall zero-point-six-one for the negative class, and your result depends on identifying negative filings. Would you use these labels, and what does the low recall do to your regression? Second: where, in your own capstone idea, does training-data leakage threaten you? Name one task where the model might know the future relative to your sample, and describe the cleanest defense, including how you would enforce a date filter in retrieval. Third: what in your workflow is irreproducible right now? Walk through your pipeline, find every place a re-run could produce different numbers, and for each write the one concrete change — freeze the labels, pin the version, validate, log — that would make your work survive replication.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

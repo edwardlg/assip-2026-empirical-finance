@@ -1,10 +1,16 @@
 ---
-title: "Gauss–Markov: Why Trust OLS?"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Gauss–Markov: Why Trust OLS? {.title}
+## Gauss–Markov: Why Trust OLS?
+
+**Learning objectives.** By the end you can:
+
+- State the five classical assumptions as testable claims
+- Prove OLS is unbiased and is BLUE
+- Read the variance formula $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$
+- Distinguish unbiasedness from consistency
 
 ::: notes
 Welcome to Week Two, Chapter two-point-two, part one of nine. In Chapter two-point-one you built the ordinary least squares machine. This lesson asks the honest follow-up question: why should anyone trust the number it prints? We frame Maya's loan problem, and we state the punchline that the rest of the lesson earns — that O L S is the Best Linear Unbiased Estimator.
@@ -46,7 +52,7 @@ Because Chapter one-point-three trained her to, she asks the only honest follow-
 Here is the punchline, stated once in plain English and then earned over the next several parts. There is a famous theorem — the Gauss–Markov theorem — that says O L S is BLUE: the Best Linear Unbiased Estimator. Best is a precise technical word, not a compliment, and it comes with a price tag: a list of assumptions you have to be willing to sign. The theorem is really a contract. If you accept five conditions about how your data were generated, then O L S is guaranteed to be the lowest-variance estimator in a specific club. The entire art of applied econometrics is reading that contract carefully: knowing which clause is most likely to be violated, what you see when it breaks, and which later chapter fixes it. So we spend most of this lesson interrogating the fine print.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

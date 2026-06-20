@@ -1,10 +1,11 @@
 ---
-title: "The DGP and the OLS Bias"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# The DGP and the OLS Bias {.title}
+## The DGP and the OLS Bias
+
+- Part 2 — build the tunable DGP and show OLS bias
 
 ::: notes
 Welcome back to Lab Three, part two of five. In part one we set the stage: a built world where the truth is zero, ordinary least squares is biased, and one knob controls instrument strength. Now we lay the first brick — the data-generating process — and confirm the disease it creates. By the end you will point at the term that biases ordinary least squares, and the term that makes instrumental variables work.
@@ -55,7 +56,7 @@ In code, the simulate function draws z, u, and v as standard normals, builds x a
 Before touching instrumental variables, confirm the disease. Regress y on x by ordinary least squares. Because x shares the shock u with y, the slope will not recover the true zero — it lands well above it, biased upward. This is the bias-and-consistency ledger of Chapter two-point-five made concrete: a correlated variable sits in the error, so the expected value of the error given x is not zero, and ordinary least squares is inconsistent. On this seed the single-draw slope is about plus zero-point-four-zero against a truth of zero. With endogeneity strength two strong and positive, the slope is dragged up. Keep plus zero-point-four in your head as the bias we are trying to escape — a weak instrument hands a big chunk of it right back.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

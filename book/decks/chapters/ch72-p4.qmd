@@ -1,9 +1,10 @@
 ---
-title: "SEC EDGAR — Filings, Text, and XBRL"
 date: "2026-08-03"
 ---
 
-# SEC EDGAR — Filings, Text, and XBRL {.title}
+## SEC EDGAR — Filings, Text, and XBRL
+
+- Part 4 — SEC EDGAR: filings, full-text search, XBRL
 
 ::: notes
 Welcome back to Data Acquisition in Practice, part four of eight. In part three we covered WRDS — the licensed datasets that stay on GMU. Now we turn to the public workhorse of text-based finance research: S-E-C EDGAR. It is free, has no license restriction, and powers Priya's ten-K climate language and Devon's exchange S-one.
@@ -45,7 +46,7 @@ Key identifiers. The C-I-K, or Central Index Key, is EDGAR's permanent company i
 The S-E-C fair-access rule is the gotcha that bites everyone once. The S-E-C requires no key, but it does require that every request carry a user-agent header identifying you — your name and email. A request with no user-agent, or a generic one, gets a four-oh-three Forbidden or is blocked outright. This is the fair-access policy: anonymous scraping is banned, identified use is welcome. Read the identifying string from an environment variable so it is not baked into committed code. Rate limits: the documented ceiling is at most ten requests per second, aggregated across all your scripts. Exceed it and you are throttled or temporarily banned by I-P. For any loop over many filings, sleep between requests — about a seventh of a second keeps you comfortably under — and back off on errors. The reproducible pull: the pin that matters is the accession number, because a ten-K can be amended, so Apple's twenty-twenty-three ten-K is ambiguous but a specific accession number is exact. Cache the raw document, parse from the saved copy, and log the URL and a hash.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

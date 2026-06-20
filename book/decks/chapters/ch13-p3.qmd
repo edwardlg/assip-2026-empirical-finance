@@ -1,10 +1,11 @@
 ---
-title: "Variance and the Standard Error"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Variance and the Standard Error {.title}
+## Variance and the Standard Error
+
+- Part 3 — how jumpy is the recipe, sample to sample?
 
 ::: notes
 Welcome back to Estimators and Their Sampling Distributions, part three of seven. In part two we proved the sample mean aims true: unbiased for any sample size. But aiming true on average is cold comfort if any single sample can be wildly off. This part is about the spread of a recipe from sample to sample — its variance — and the square-root law that governs it.
@@ -58,7 +59,7 @@ The standard error shrinks like one over the square root of N — not like one o
 Make it concrete. Suppose the population standard deviation of claims is twelve thousand dollars — losses are volatile, most small, a few enormous. With N equal to two hundred, the standard error is twelve thousand over the square root of two hundred, roughly eight hundred forty-nine dollars. So Priya's estimate carries a standard error of about eight hundred fifty dollars — a different draw could easily have nudged her note by several hundred dollars. That is the honest, quantitative answer to her boss. With five thousand claims it falls to about one hundred seventy. Now, the clean formula leaned on one assumption: independence. A single wildfire files hundreds of correlated claims. When observations are positively correlated, extra positive covariance terms appear and the true variance exceeds sigma squared over N — the naive standard error understates the real wobble. That is the leak clustered standard errors plug.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

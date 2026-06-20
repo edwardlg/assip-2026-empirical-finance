@@ -1,10 +1,11 @@
 ---
-title: "Major, Minor, and the Verdict"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Major, Minor, and the Verdict {.title}
+## Major, Minor, and the Verdict
+
+- Part 4 — sort points major or minor, render a calibrated verdict
 
 ::: notes
 Welcome back to peer review and revision, part four of twelve. In part three we finished the report skeleton — identification, specification, exposition. Now, inside that report, we sort every point into major or minor, attach a cure to each major one, and render an honest verdict the editor can act on.
@@ -46,7 +47,7 @@ A rule that separates a generous referee from a lazy one: for every major point,
 Separate from the report comes your confidential note to the editor with the verdict. In the camp workshop, this is the line at the top of your report: is this a reject, a major revision, a minor revision, or near-ready? Be honest, and be calibrated. A student paper that ran a clean design on real data, found a result, and stress-tested it is a major or even minor revision even if you found ten things to fix — the bones are sound. A paper whose headline rests on a design that cannot identify the claimed effect is a reject as currently identified, no matter how clean the prose, and saying so plainly is kinder than a vague promising but needs work that wastes the author's next month.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

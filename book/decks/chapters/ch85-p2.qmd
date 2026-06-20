@@ -1,10 +1,11 @@
 ---
-title: "The Talk's Spine: Design, Result, Robustness, Contribution"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Talk's Spine: Design, Result, Robustness, Contribution {.title}
+## The Talk's Spine: Design, Result, Robustness, Contribution
+
+- Part 2 — the four beats that carry the argument
 
 ::: notes
 Welcome back to Chapter eight-point-five, part two of nine. In part one we framed the lesson and walked the question and the stakes. Now we walk the four beats that carry the argument: the design and identification slide, the headline result, the robustness check, and the closing contribution. The design slide is the one students underweight, so we spend the most time there.
@@ -46,7 +47,7 @@ The headline result slide is one number with its uncertainty, shown as a picture
 The robustness slide has exactly one job: show that the headline did not depend on a single arbitrary choice. This is the visual answer to "is your result fragile?", typically a specification curve or a small grid of alternatives, all clustering near the headline. You do not narrate every check; you show they exist and agree, and say one sentence: the result is stable across the three choices I worried about most. The contribution slide closes by naming what the room now knows that it did not eight minutes ago, in one sentence, and, crucially, what you are not claiming. We show X, under assumption Y; we do not show Z. That last clause is not weakness; it is the single most credibility-building sentence in the talk, because it signals you know exactly where your own claim stops. Then stop talking.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

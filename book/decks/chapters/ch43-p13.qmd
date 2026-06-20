@@ -1,10 +1,11 @@
 ---
-title: "The Russell Wrinkle, the Code, and Takeaways"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Russell Wrinkle, the Code, and Takeaways {.title}
+## The Russell Wrinkle, the Code, and Takeaways
+
+- Part 13 — the Russell wrinkle, the code, and takeaways
 
 ::: notes
 Welcome back to Chapter four-point-three, part thirteen of thirteen, the finale. In part twelve we walked the validity checklist. Now we face an honest subtlety in Sam's Russell design, make the whole idea runnable in one block, and gather the five takeaways to carry forward.
@@ -46,7 +47,7 @@ Here is the whole sharp-regression-discontinuity idea in one runnable block. Sim
 Five things from this chapter will do real work later. First, the regression-discontinuity idea: the jump in the conditional mean at the cutoff is the causal effect for the local population, identified by continuity of the potential-outcome means — weaker than the conditional-independence assumption and, unlike it, checkable. Second, sharp versus fuzzy: sharp reads the effect straight off the outcome jump, while fuzzy is instrumental variables, the jump in the outcome over the jump in the treatment, a local average treatment effect for compliers at the cutoff. Third, stay local and stay low-order: local linear regression with a triangular kernel, not a global high-order polynomial. Fourth, bandwidth is a bias-variance trade-off, so automate it with Imbens-Kalyanaraman and report Calonico-Cattaneo-Titiunik robust intervals. Fifth, audit the design: the McCrary test, covariate-balance regressions, donut and bandwidth checks, and an institutional argument that no other policy changes at the cutoff.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

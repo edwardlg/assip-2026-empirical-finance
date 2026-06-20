@@ -1,10 +1,11 @@
 ---
-title: "Seeing the LLN, and Standardizing for the CLT"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Seeing the LLN, and Standardizing for the CLT {.title}
+## Seeing the LLN, and Standardizing for the CLT
+
+- Part 3 — watch a running mean, then standardize
 
 ::: notes
 Welcome back to Chapter one-point-four, part three of nine. In part two we proved the Law of Large Numbers with Chebyshev. Now we watch it happen on screen with a single running mean, and then we pivot to the second great theorem by building the one quantity it is all about — the standardized sample mean.
@@ -45,7 +46,7 @@ $$z_N=\frac{\bar{x}-\mu}{\sigma/\sqrt{N}}$$
 We already know the sample mean has mean mu and standard deviation sigma over root N. Now we standardize it — subtract its mean and divide by its standard deviation — so what is left is measured in standard errors away from the truth. Call that standardized quantity z-sub-N: the sample mean minus mu, all over sigma divided by root N. Standardizing is just re-centering and rescaling so the object has mean zero and standard deviation one, no matter what N is. That fixed center and fixed width is exactly what lets us ask a clean shape question and compare the answer to a single universal curve. In the next part the Central Limit Theorem tells us what that shape converges to.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

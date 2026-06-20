@@ -1,9 +1,10 @@
 ---
-title: "Synthetic DiD: The Best of Both Worlds"
 date: "2026-07-13"
 ---
 
-# Synthetic DiD: The Best of Both Worlds {.title}
+## Synthetic DiD: The Best of Both Worlds
+
+- Part 9 — synthetic DiD combines unit and time reweighting
 
 ::: notes
 Welcome back to Chapter four-point-four, part nine of ten. In part eight we did inference with a placebo permutation test and its honest limits. Now we stitch synthetic control and diff-in-diff together into synthetic diff-in-differences, where each method's strength patches the other's hole.
@@ -46,7 +47,7 @@ The recipe, in words. Synthetic diff-in-diff computes two sets of weights. Unit 
 The practical payoffs. Synthetic diff-in-diff is more robust — it does not crash when no convex combination matches the treated unit's level, because it only asks for a matched trend. It is more precise — Arkhangelsky and coauthors show it typically has smaller variance than either parent. And crucially it comes with a principled inference procedure, placebo-based or jackknife variance estimators they derive, so you are not stuck with synthetic control's single-unit permutation ceiling when you have a handful of treated units. When you have one treated unit and an excellent pre-period fit, classic synthetic control with placebo inference is clean and transparent — use it, and you get a weight vector you can name in a sentence. When the level match is poor but the trend match is good, or when you have a few treated units and want a variance estimate with coverage guarantees, reach for synthetic diff-in-diff. They are not rivals; it is the more general tool, and Abadie's synthetic control is the special, maximally interpretable case you should still prefer when its assumptions hold.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

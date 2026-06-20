@@ -1,9 +1,10 @@
 ---
-title: "Table-by-Table Reading Order"
 date: "2026-07-27"
 ---
 
-# Table-by-Table Reading Order {.title}
+## Table-by-Table Reading Order
+
+- Part 6 — reading the tables in two passes
 
 ::: notes
 Welcome back to Chapter six-point-two, part six of nine. In part five we covered the data and the public library. Now we read the paper in the right order. It has two halves, so we read in two passes — and, as always, we do not start at the front. We start where the measure proves itself.
@@ -45,7 +46,7 @@ The heart of pass one is the horse-race tables: does T-N-I-C explain things S-I-
 Pass two asks: what does the measure find? Only after the measure earns trust do you read what it teaches. First, product similarity and differentiation — tables linking how crowded a firm's product space is, meaning high average similarity to rivals, to its margins and its incentive to differentiate. The economics: dense neighborhoods mean tougher competition, and differentiation, moving your description away from rivals, is the strategic response. Second, the dynamic, competitive-response tables. Because T-N-I-C is time-varying, the authors watch firms move in product space as rivals enter or mergers reshape a neighborhood. This is what a yearly-updating network buys that a fixed code cannot. Read these last: most novel, least essential to believing the core claim.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

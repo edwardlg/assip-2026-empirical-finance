@@ -1,9 +1,10 @@
 ---
-title: "DiD as One Regression Coefficient"
 date: "2026-07-13"
 ---
 
-# DiD as One Regression Coefficient {.title}
+## DiD as One Regression Coefficient
+
+- Part 3 — DiD as the two-way fixed-effects coefficient
 
 ::: notes
 Welcome back to Chapter four-point-one, part three of six. In part two, DiD imputed the treated state's missing counterfactual by adding the control's change to the treated's pre level, valid under parallel trends. The two-by-two table is transparent, but it does not scale and it gives no standard error. This part fixes both by writing the difference-in-differences estimate as a single regression coefficient — the two-way fixed-effects model that the rest of Week Four builds on.
@@ -47,7 +48,7 @@ A point of vocabulary that matters next chapter. The older way to write the same
 Stated in the empirical-spec discipline from the Conventions, Priya's design is short. The outcome is the state-year average homeowner premium. The treatment is the wildfire-pricing regulation: D-i-t equals one for the treated state in post years. No controls are needed beyond the fixed effects. The fixed effects are state, alpha-i, and year, lambda-t. The standard errors are clustered by state — we will see why in part five. The sample is all states, all years in the window. And the identifying assumption is parallel trends — that absent the regulation, the treated state's premiums would have moved like the controls'. Every DiD paper you read can, and should, be reduced to a spec exactly this explicit. When you read one, hunt for these six lines; if the author has not stated them, you state them yourself before you trust the result.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

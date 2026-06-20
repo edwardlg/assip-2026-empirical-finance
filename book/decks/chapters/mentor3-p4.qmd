@@ -1,9 +1,10 @@
 ---
-title: "Pillar Three: Compliers, and How to Read a Design"
 date: "2026-07-06"
 ---
 
-# Pillar Three: Compliers, and How to Read a Design {.title}
+## Pillar Three: Compliers, and How to Read a Design
+
+- Part 4 — compliers, never/always-takers, reading a design
 
 ::: notes
 Welcome back to Mentor Session three, part four of five. In part three we wrestled with the exclusion restriction — the untestable claim that the assignment reaches the outcome only through the treatment. Now the third pillar, the one people forget to state honestly: the complier population. From the LATE theorem in Chapter three-point-four, an instrument identifies the effect only for the units the lever actually moved. So we ask who those units are, why two valid designs can disagree, and then we assemble the whole checklist for reading and running a natural experiment.
@@ -53,7 +54,7 @@ Here is a consequence that surprises people. Two valid natural experiments aimed
 Now assemble the whole checklist. First, name the assignment mechanism in a single sentence — what force assigned the treatment, to whom, and why. Then run the three pillars as questions: was the assignment blind, what else might it have done, and whose effect are you estimating? When you report, show three things: the balance check that supports as-if-random; the first stage, whether the rule actually moved the treatment; and the reduced form, whether the rule moved the outcome. Their relationship identifies the effect. And if the lever is weak, you reach for the weak-instrument-robust tools from Chapter three-point-five, not a confident-looking t-statistic.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

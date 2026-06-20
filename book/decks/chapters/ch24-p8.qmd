@@ -1,10 +1,11 @@
 ---
-title: "Panels, Petersen, and the Checklist"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Panels, Petersen, and the Checklist {.title}
+## Panels, Petersen, and the Checklist
+
+- Part 8 — panels, Petersen's taxonomy, and the checklist
 
 ::: notes
 Welcome back to When the Errors Misbehave, part eight of eight, the finale. In part seven we handled correlation across time with H-A-C. Now the hard case Maya and Priya live in — a panel, where both diseases can strike at once — Petersen's two-thousand-nine taxonomy, and the checklist that ties the lesson together.
@@ -58,7 +59,7 @@ How do you tell which effect dominates? Petersen offers a diagnostic you can run
 Here is the mental checklist. One: could the error variance differ across observations? In finance, essentially always — so never use classical standard errors as your final answer; use at least robust, or H-C-three when N is small. Two: are observations grouped with correlated errors inside a group? Then cluster on that group, and check you have enough clusters. Three: a pure time series with serial correlation? Use H-A-C, Newey–West. Four: a panel? Diagnose à la Petersen — firm effect, cluster by firm; time effect, time fixed effects or cluster by time; both, two-way cluster. The whole checklist is one question in plain clothes: what does Omega look like?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

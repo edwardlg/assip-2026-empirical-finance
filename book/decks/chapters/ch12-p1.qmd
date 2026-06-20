@@ -1,9 +1,15 @@
 ---
-title: "Linearity of Expectation"
 date: "2026-06-22"
 ---
 
-# Linearity of Expectation {.title}
+## Linearity of Expectation
+
+**Learning objectives.** By the end you can:
+
+- Compute a portfolio's variance by hand
+- See why mixing assets can lower risk
+- Draw correlation as an angle between vectors
+- Write the covariance matrix $\mathbf{\Sigma}$
 
 ::: notes
 Welcome to Week One, Chapter one-point-two, part one of eight. Last chapter we met the expectation operator, conditioning, and the two laws of iterated expectation and total variance. This chapter is narrower and, in the long run, more useful. We nail down the algebra of expectation, variance, and covariance, and then reveal that this algebra is secretly geometry. We anchor everything in a question Maya keeps asking: she has money to split between two investments, and she wants to know how risky the blend is. The answer lives in one term, the covariance. We start with the one rule that never asks permission.
@@ -42,7 +48,7 @@ Why is it true? Think of expectation as a weighted average, where the weights ar
 Now contrast variance. The variance of X plus X is the variance of two X, which is four times the variance of X — emphatically not two times the variance of X. Expectation forgives dependence; variance does not. That contrast is the hinge of the whole chapter. A number for Maya: suppose asset one has expected return eight percent and asset two has expected return four percent. If she puts a fraction w in asset one and the rest in asset two, her portfolio return is the weighted sum. At an even split, linearity gives expected return six percent, no matter how the assets are related. Expected return is easy; it is a straight line in the weight. The trap is assuming the same free pass extends to nonlinear functions. The expected value of X times Y need not equal the product of the expected values, and the expected value of a nonlinear function need not equal that function of the mean — that gap is Jensen's inequality. Variance involves a square, so the next part is not a one-liner.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

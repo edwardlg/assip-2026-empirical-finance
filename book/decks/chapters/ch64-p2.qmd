@@ -1,9 +1,10 @@
 ---
-title: "Two Bets on Identification"
 date: "2026-07-27"
 ---
 
-# Two Bets on Identification {.title}
+## Two Bets on Identification
+
+- Part 2 — two identification bets that get past a raw disparity
 
 ::: notes
 Welcome back to Chapter six-point-four, part two of seven. In part one we framed the two papers — Bartlett et al. on pricing, B-H-R on acceptance. Now we reach the heart of any empirical paper: the identification strategy. Both face the threat Mentor Four drilled into Maya: a raw disparity confounds the same rule applied to groups that differ in legitimate factors with a different rule applied to the same factors, and only the second is discrimination. Bartlett et al. bet on a clean institutional benchmark; B-H-R bet on getting the data that closes the gap.
@@ -53,7 +54,7 @@ B-H-R's bet is the opposite and just as instructive. Where the classic disclosur
 The masterstroke is the race-blind automated underwriting benchmark. The government's engine produces an approve-or-refer recommendation from risk inputs without seeing race, so it is a literal mechanical counterfactual for what a rule that cannot discriminate would decide. Comparing actual denials to the recommendations separates what the risk model says from what the human did on top of it. Tie this back to the spine of the course. The whole exercise is the selection-on-observables logic of Week Three: both papers bet they conditioned on enough of creditworthiness that the residual race coefficient is causal. Week Two named the danger — omitted-variable bias from the unobserved score. Neither runs a difference-in-differences or a regression discontinuity, and that is itself a reading lesson.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

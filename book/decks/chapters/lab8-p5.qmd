@@ -1,9 +1,10 @@
 ---
-title: "Reading the Build, and the Printed Proof"
 date: "2026-08-10"
 ---
 
-# Reading the Build, and the Printed Proof {.title}
+## Reading the Build, and the Printed Proof
+
+- Part 5 — reading the build output, and the printed proof
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part five of ten. In part four we compiled the poster two ways. Now a short but important segment: how to read the build output without panicking, and the one physical step that has never failed to be worth the time — printing a proof before the symposium. This closes Part One of the lab, the poster, and sets up Part Two, the replication packet.
@@ -33,7 +34,7 @@ A note from verifying this lab, so you do not panic. A first latexmk run on a fr
 And one step that has never failed to be worth the time: print a tabloid-sized eleven-by-seventeen-inch proof of the PDF at least forty-eight hours before August twelfth. It catches typography that looks fine on screen but is illegible on the printed board — and you want to catch it with two days to fix it, not at the easel. The rough targets at full forty-eight-by-thirty-six scale are a title at least seventy-two points and body text at least twenty-four points; hold the tabloid proof at arm's length and any text that disappears there will disappear on the board. For remote interns who will present on the virtual breakout track, the equivalent is exporting to a nineteen-twenty-by-ten-eighty image at full scale and previewing it on a second monitor at one hundred percent. Either way, you are checking legibility at the size the audience actually sees.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

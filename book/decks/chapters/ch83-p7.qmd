@@ -1,10 +1,11 @@
 ---
-title: "Tables That Stand Alone and a Worked Intro"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Tables That Stand Alone and a Worked Intro {.title}
+## Tables That Stand Alone and a Worked Intro
+
+- Part 7 — stand-alone tables and a worked intro skeleton
 
 ::: notes
 Welcome back to Writing the Empirical Paper, part seven of seven. In part six we finished the argument with robustness, conclusion, and the calibrated-verb discipline. Now we close with two things: why your tables must stand alone, and a worked introduction that assembles every move into five paragraphs. Then we hand off to the notebook that builds your tables.
@@ -46,7 +47,7 @@ Let us assemble the four moves into an introduction skeleton, for Maya's stagger
 For your turn, open the notebook on publication-quality tables and figures. It takes the regression objects you produced earlier — your fixed-effects results, your event-study coefficients — and renders them into a regression table and an event-study plot, both exported to LaTeX, both built to the style-guide standard. You will not hand-format a single table; the notebook does it reproducibly from the frozen results, so the tables can never silently drift from the numbers they report. Three reflection prompts: write your one-sentence contribution and stress-test it on a classmate who has not seen your project; audit your verbs against your weakest assumption, forcing each down to what the design permits; and cover the prose around your headline table to check it stands alone, fixing every gap in the notes. That is the discipline of this whole lesson.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

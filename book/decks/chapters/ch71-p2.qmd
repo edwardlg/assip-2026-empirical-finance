@@ -1,10 +1,11 @@
 ---
-title: "The Four-Slot Hypothesis Grammar"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Four-Slot Hypothesis Grammar {.title}
+## The Four-Slot Hypothesis Grammar
+
+- Part 2 — the four-slot grammar of a sharp hypothesis
 
 ::: notes
 Welcome back to Chapter seven-point-one, part two of eight. In part one we sharpened a puzzle into a falsifiable hypothesis — Devon's depeg idea named a trigger, an outcome, a timing, and a direction. Now we make that structure explicit as a grammar with four slots, because you will run every project idea through it, and because it connects directly to the empirical-spec discipline this whole book runs on.
@@ -34,7 +35,7 @@ The first slot is an outcome — call it y — a thing you can measure, ideally 
 The third slot is a direction or magnitude — the prediction. Up or down. Larger for group A than for group B. This is the slot that makes the hypothesis falsifiable; without a committed direction, no observation can contradict you. The fourth slot is a unit and a window — whose outcome, over what period. U.S. mortgage applicants, 2018 to 2022. ERC-20 stablecoins, 2022 to 2024. S&P 500 firms, monthly, 2010 to 2024. You met this grammar before without it being labeled. CONVENTIONS section four — the empirical-spec discipline this whole book runs on — demands that every regression name its outcome, treatment, controls, fixed effects, clustering, sample, and identifying assumption. A sharp hypothesis is just the first, second, and last of those, written down before you have any data. The rest of Week Seven fills in the middle slots.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

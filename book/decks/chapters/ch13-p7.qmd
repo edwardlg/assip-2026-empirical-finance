@@ -1,10 +1,11 @@
 ---
-title: "The Shape, and Where This Is Heading"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Shape, and Where This Is Heading {.title}
+## The Shape, and Where This Is Heading
+
+- Part 7 — the bell shape, and the two theorems ahead
 
 ::: notes
 Welcome back to Estimators and Their Sampling Distributions, part seven of seven, our finale. In part six we built the sampling distribution by simulation and saw it center on mu with spread sigma over root N. Now we look at its shape, name the two great theorems that explain everything we have observed, and send Priya off with a better sticky note.
@@ -58,7 +59,7 @@ Step back and notice what we did and did not do. We defined the sampling distrib
 For now you have the vocabulary that makes those chapters possible: estimator versus estimate, bias, variance, mean squared error and its decomposition, consistency, and the sampling distribution tying them all together. Priya now writes a better sticky note. Not eight thousand four hundred ten alone, but eight thousand four hundred ten, standard error about eight hundred fifty dollars. The first is a rumor; the second is an estimate that knows how much to trust itself. And in your own turn at the notebook, you will pick a population, a sample size, and a number of repetitions, then watch the mean, median, and a trimmed mean compete — ranking them by simulated mean squared error, the scorecard we built.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

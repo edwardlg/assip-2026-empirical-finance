@@ -1,10 +1,11 @@
 ---
-title: "API Knobs, Model Tiers, and the Azure Gateway"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# API Knobs, Model Tiers, and the Azure Gateway {.title}
+## API Knobs, Model Tiers, and the Azure Gateway
+
+- Part 12 — call knobs, three model tiers, GMU's Azure gateway
 
 ::: notes
 Welcome back to the AI co-pilot for research, part twelve of fourteen. In part eleven we set the non-negotiable key rule and built the Anthropic Messages call with prompt caching. Now the remaining call knobs, the three model tiers, and G-M-U's Azure gateway — which is not just a backup but a robustness check on your results.
@@ -44,7 +45,7 @@ Anthropic offers three model tiers. The most capable is the default and the most
 G-M-U also provides OpenAI-family models through an Azure A-P-I management gateway. The pattern is the same shape — read the key from the environment, never hard-code it — using the OpenAI SDK's Azure client. The endpoint is fixed; the key is read from the environment and appears nowhere in the source. The deployment name and the A-P-I version are configuration you confirm against G-M-U's portal before running, since a wrong deployment name or version is the most common reason a first Azure call fails. Having two providers is not redundancy for its own sake — it is a robustness check. If your headline result holds up when you re-label your corpus with a different model from a different vendor, that is real evidence your finding is about the documents and not an artifact of one model's quirks. If it flips, you have learned something important before a referee does.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

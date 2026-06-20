@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Reading the Exhibits in Order"
 date: "2026-07-27"
 ---
 
-# KPSS: Reading the Exhibits in Order {.title}
+## KPSS: Reading the Exhibits in Order
+
+- Part 5 — read the exhibits: validation first, economics second
 
 ::: notes
 Welcome back to Chapter six-point-one, part five of ten. In part four we covered the data — patents, daily returns, and the public value panel. Now we read the exhibits, and for this paper there is a specific order dictated by the two-questions structure: read the measure-validation evidence first, the economics second. If the measure is not credible, nothing downstream matters.
@@ -45,7 +46,7 @@ Step two: the asset-pricing exhibits. Having validated the measure, K-P-S-S show
 How do you spot the headline in a table you have never seen? For this paper the headline is split. The measurement headline is the validation table where the market-based value predicts forward citations and future profits — point to the value coefficient and read its sign and t-statistic. The economics headline is the reallocation table where one firm's innovation predicts rivals' decline. If the first broke, the paper is a non-starter; if the second broke, the paper would still stand as a measurement contribution. Knowing which table carries which claim is most of reading K-P-S-S well.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

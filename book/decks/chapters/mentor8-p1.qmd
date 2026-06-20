@@ -1,9 +1,15 @@
 ---
-title: "The Referee Wants a Reason Not to Believe You"
 date: "2026-08-10"
 ---
 
-# The Referee Wants a Reason Not to Believe You {.title}
+## The Referee Wants a Reason Not to Believe You
+
+### Learning objectives
+
+- Read a referee's question as a hunt for doubt
+- Sort hard questions into three families by danger
+- Answer identification in four disciplined beats
+- Concede a fatal critique and retreat honestly
 
 ::: notes
 Welcome to Mentor Session eight, part one of six, the final mentor session before the symposium. Eight weeks ago you computed an average return and thought you had an answer. Today you have a result — a number you can defend sentence by sentence, with a design behind it and an uncertainty attached. So we close the arc by teaching the last skill the camp owes you: what happens after the result exists. The place a result is actually judged is live, in a room, when someone who wants to disbelieve you starts asking questions and you have six seconds to answer.
@@ -42,7 +48,7 @@ Here is the thing nobody tells you until you have published a few papers, so I w
 So if there is almost always a more boring explanation waiting, what is the defense? It is not to deny that the candidate exists. The defense is to show you found that candidate first, looked it in the eye, and either ruled it out or honestly bounded how much it could matter. That word bounded is important — you do not always get to eliminate the alternative, but you can often say "even in the worst case it could only move my number by this much." A researcher who walks in having already located their own weakest point looks completely different from one who is surprised by it. The first is reading a script they wrote in advance. The second is improvising in front of people who do this for a living.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

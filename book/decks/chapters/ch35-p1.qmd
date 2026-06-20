@@ -1,9 +1,15 @@
 ---
-title: "Reading an IV Paper: The First Two Questions"
 date: "2026-07-06"
 ---
 
-# Reading an IV Paper: The First Two Questions {.title}
+## Reading an IV Paper: The First Two Questions
+
+**Learning objectives.** By the end you can:
+
+- Read an IV paper by **interrogating the instrument**
+- Name the **triple**: instrument, treatment, outcome
+- Diagnose the **weak-instrument pathology** and its bias
+- Apply **Anderson–Rubin** inference and read its shape
 
 ::: notes
 Welcome to Week Three-point-five, part one of seven. Devon is reading his first real instrumental-variables paper. It studies whether holding crypto changes how much you trade other assets, and it instruments crypto-holding with the distance from your home to the nearest crypto A-T-M. The abstract is confident: the I-V estimate is three times the O-L-S estimate, the standard error is tight, the stars are dense. Devon's instinct is to be impressed — surely a small standard error means a reliable answer. This is the chapter where that instinct gets dismantled. Today we start learning to read an I-V paper like a referee.
@@ -42,7 +48,7 @@ Question one: what is the instrument, exactly? This sounds trivial; it is not. P
 Question two: is it relevant? Does z actually move x? This is the one question the data can answer cleanly, and the paper must report the answer: the first-stage regression of x on z, plus controls, and its strength. The single number to hunt for is the first-stage F-statistic on the excluded instrument. From earlier you know the rough rule of thumb — F comfortably above ten, the old Staiger–Stock benchmark, or above the relevant critical value. An F in the single digits is a klaxon. If a paper does not report a first-stage F, or reports the first-stage R-squared instead — which is not the right object — and hopes you will not notice, be very suspicious. The first-stage strength is the load-bearing diagnostic of the entire enterprise, and this whole chapter is about what happens when it is weak.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "A Worked Number and Why Wald Beats OLS"
 date: "2026-07-06"
 ---
 
-# A Worked Number and Why Wald Beats OLS {.title}
+## A Worked Number and Why Wald Beats OLS
+
+- Part 5 — a numeric Wald estimate, and why it beats OLS
 
 ::: notes
 Welcome back to Chapter three-point-four, part five of eight. In part four we built the Wald estimator — reduced form over first stage — for Maya's random mailer. Now we put real numbers through it, get a concrete effect, and then see exactly why this estimator beats ordinary least squares, along with the price we pay for that cleanliness.
@@ -34,7 +35,7 @@ Put numbers on it. Among mailed households, forty percent completed the course a
 Why does this beat ordinary least squares? O-L-S would compare all completers to all non-completers — including the highly motivated people who would have completed the course no matter what, and whose great debt outcomes have nothing to do with the course. The Wald estimator never makes that contaminated comparison. It only ever compares the mailed group to the unmailed group, and since mailing was random, those two groups are identical in motivation. The contrast is clean. The price — and it is the central subtlety of all I-V — is that three hundred dollars is the effect for a specific subpopulation: the people the mailer actually moved. We unpack exactly who they are in part seven. For now, one more reading: the instrument delivers a dose of treatment, and the Wald ratio strips the offer back down to the effect of that dose.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

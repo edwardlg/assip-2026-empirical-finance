@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Three Moves That Make It Clever"
 date: "2026-07-27"
 ---
 
-# KPSS: Three Moves That Make It Clever {.title}
+## KPSS: Three Moves That Make It Clever
+
+- Part 6 — three moves: market price, speed, public data
 
 ::: notes
 Welcome back to Chapter six-point-one, part six of ten. In part five we read the exhibits in referee order — validation first, economics second. Now we step back and name the three moves that separate K-P-S-S from the long line of innovation papers that merely counted patents and citations. Each move is a lesson you can carry into your own work.
@@ -45,7 +46,7 @@ Move two: turn a slow, truncated proxy into a fast, real-time one. Citations tak
 Move three: release the dataset as public infrastructure. This is the move with the longest half-life. By publishing the patent-level value estimates and keeping them updated, the authors made their measure a common good the whole profession builds on. The cleverness is strategic as much as technical: a public dataset compounds. Every paper that uses the K-P-S-S measure validates it again by using it, and the measure becomes a standard the way CRSP returns are a standard. When you reach your capstone, notice the lesson — a well-constructed, well-documented, openly shared variable can be a larger contribution than any single regression.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

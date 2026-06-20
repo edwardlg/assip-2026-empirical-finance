@@ -1,10 +1,11 @@
 ---
-title: "IK and CCT: Choosing the Bandwidth"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# IK and CCT: Choosing the Bandwidth {.title}
+## IK and CCT: Choosing the Bandwidth
+
+- Part 9 — IK and CCT choose the bandwidth automatically
 
 ::: notes
 Welcome back to Chapter four-point-three, part nine of thirteen. In part eight the bias-variance trade-off warned against eyeballing the bandwidth. Now we meet the two data-driven procedures that choose it for you: Imbens and Kalyanaraman's mean-squared-error-optimal rule, and the Calonico-Cattaneo-Titiunik robust bias correction that fixes a subtle coverage problem the optimal bandwidth creates.
@@ -46,7 +47,7 @@ Here is the subtlety. The mean-squared-error-optimal bandwidth is, by design, la
 A discipline note. Pick your bandwidth procedure before you look at the estimate, report it, and show that the result survives reasonable alternatives. A standard robustness check is to halve and double the chosen bandwidth and confirm the jump does not vanish or explode. Bandwidth-shopping until the stars appear is one of the easiest ways to fool yourself and your reader. When you report a regression-discontinuity estimate today, the expectation is a data-driven bandwidth in the Imbens-Kalyanaraman or Calonico-Cattaneo-Titiunik style, local linear with a triangular kernel, and robust bias-corrected confidence intervals.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

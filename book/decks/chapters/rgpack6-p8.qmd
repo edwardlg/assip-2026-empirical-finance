@@ -1,9 +1,10 @@
 ---
-title: "Data Governance & Week Wrap-Up"
 date: "2026-07-27"
 ---
 
-# Data Governance & Week Wrap-Up {.title}
+## Data Governance & Week Wrap-Up
+
+- Part 8 — data governance with legal teeth, plus week wrap-up
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part eight of eight. In part seven we covered three capstone commitments: disclose the assistance, make API work reproducible, and guard against leakage. Now we cover the fourth and most consequential rule, the one with actual legal teeth — data governance — and then we pull the whole week together. This is the rule a mentor will not bend on, because breaking it is not a quality problem, it is a license violation that can put the program's data access at risk.
@@ -30,7 +31,7 @@ Fourth, obey the data-governance rule — this one has legal teeth. Per conventi
 - External API? Send only **public** text — EDGAR 10-K yes, joined CRSP no
 
 ::: notes
-So how do you use a model on sensitive data safely? Run it locally. Use Ollama on your own machine, or a GMU Hopper A-one-hundred node using the SLURM template in Appendix B-point-four, where the data and the model both stay inside the licensed perimeter. The GMU Azure APIM gateway is the in-perimeter option for hosted models when GMU's agreement covers it. And a check tag here, verbatim from the manual: confirm with GMU IT and WRDS exactly which data classes the GMU Azure APIM endpoint is contractually cleared to process before routing any licensed data through it. When you must use an external API, send only non-licensed public text — a ten-K from EDGAR is public and fine; the CRSP return you joined to it is not, so strip to the public columns first before anything leaves the perimeter.
+So how do you use a model on sensitive data safely? Run it locally. Use Ollama on your own machine, or a GMU Hopper A-one-hundred node using the SLURM template in Appendix B-point-four, where the data and the model both stay inside the licensed perimeter. The GMU Azure APIM gateway is the in-perimeter option for hosted models when GMU's agreement covers it. When you must use an external API, send only non-licensed public text — a ten-K from EDGAR is public and fine; the CRSP return you joined to it is not, so strip to the public columns first before anything leaves the perimeter.
 :::
 
 ## The Whole Week in One Thread
@@ -45,7 +46,7 @@ So how do you use a model on sensitive data safely? Run it locally. Use Ollama o
 Let me pull the whole week into one thread. A result is only as good as your ability to reproduce it and defend it. A language model does not change that standard; it raises the bar, because it adds a stochastic, opaque, license-sensitive instrument to your toolkit. So log it, pin it, validate it, disclose it, and keep the licensed data home — and the co-pilot makes you faster without making you wrong. Read the five Week-Six papers asking is the measure valid, not is the effect causal. Build your retrieval system over public ten-Ks. Write prompts that constrain and cite. Score every LLM label against a held-out gold set with precision, recall, F-one, and kappa. And carry all of it into a capstone you can hand a skeptic and defend line by line.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

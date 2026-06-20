@@ -1,10 +1,11 @@
 ---
-title: "Reading the Oster δ, and Three Honesty Rules"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Reading the Oster δ, and Three Honesty Rules {.title}
+## Reading the Oster δ, and Three Honesty Rules
+
+- Part 9 — use δ two ways; three honesty rules
 
 ::: notes
 Welcome back to Chapter eight-point-two, part nine of ten. In part eight we reframed the unobserved-confounder threat into Oster's how-much question and met its three ingredients. Now we put delta to work — there are two ways to use it, and you should report both — then read Maya's actual number and close with three honesty rules, because this test is easy to abuse.
@@ -46,7 +47,7 @@ Plug in Maya's numbers: an uncontrolled A-T-T of minus two-point-two that moves 
 Three honesty rules specific to Oster, because the test is easy to abuse. First, report your maximum R-squared and defend it. Delta-hat is mechanically sensitive to it: assume the controls explain everything and the test is vacuous; assume R-max equals one and it is harshest. State you used the one-point-three default, and show how delta-hat moves if you push R-max to one. Second, delta is not a p-value. It measures robustness to a specific, untestable threat, not significance. A result can be wildly significant and have a delta-hat of zero-point-three, fragile to confounding; another can have a modest t and a delta-hat of five, hard to confound. Report both kinds of evidence — they answer different questions. Third, a failing delta is information, not an embarrassment. If delta-hat is zero-point-four, the test has told you, honestly, that a confounder weaker than your observables could be the whole story. That belongs in your limitations, stated plainly.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

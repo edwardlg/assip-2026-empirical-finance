@@ -1,9 +1,10 @@
 ---
-title: "The Checklist, Assessment 8, and the Capstone"
 date: "2026-08-10"
 ---
 
-# The Checklist, Assessment 8, and the Capstone {.title}
+## The Checklist, Assessment 8, and the Capstone
+
+- Part 10 — the checklist, Assessment 8, and the capstone
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part ten of ten — the final segment of the lab and the camp. In part nine we prepared for the questions and the fatal-versus-survivable triage. Now we close: the submission checklist a reviewer would run, how this lab maps onto Assessment Eight, and the single sentence the eight weeks existed to let you say.
@@ -45,7 +46,7 @@ The last boxes are the talk and the handover. The talk fits in seven minutes, re
 This lab is the build bench; Assessment Eight is the capstone. Assessment Seven graded the design half; Assessment Eight grades the execution half on that same two-hundred-point rubric — the analysis, the robustness battery, the poster and abstract, the peer review, and the two surfaces this lab built. So treat the checklist as a pre-grade audit: does make-all on a fresh clone reproduce your headline number and abstract? Then read the capstone gallery — five finished exemplars, each with a talk and a packet. Read one not for its result but for its seams: find its identification section, the residual its threats table admits, run its make-all, imagine its six poster panels. That translation is the work of this lab. And for a journal-shaped artifact, the optional companion appendix preserves the full LaTeX manuscript — same generated abstract, an article class instead of a poster.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

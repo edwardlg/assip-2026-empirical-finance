@@ -1,9 +1,10 @@
 ---
-title: "The Covariance Matrix Σ"
 date: "2026-06-22"
 ---
 
-# The Covariance Matrix $\mathbf{\Sigma}$ {.title}
+## The Covariance Matrix $\mathbf{\Sigma}$
+
+- Part 8 — stack covariances into $\mathbf{\Sigma}$; the bridge to Week 2
 
 ::: notes
 Welcome back to Chapter one-point-two, part eight of eight, the final part. In part seven we saw that the bound on correlation is Cauchy–Schwarz and that risk adds like vectors. Two assets needed just three numbers. But a real portfolio holds dozens of assets, and Maya's lender tracks thousands of loans. We collect all the pairwise covariances into one matrix, capital Sigma — and that matrix is not just storage; it is the object Week Two multiplies.
@@ -43,7 +44,7 @@ Two structural facts come along automatically, and both matter later. First, Sig
 Now the failure mode to flag. If two assets are perfectly correlated, or one is a linear combination of others, the columns of Sigma become linearly dependent, the matrix is singular, and it has no inverse. That sounds abstract until Week Two, where the ordinary least squares estimator, beta hat, equals the inverse of X transpose X, times X transpose y — and X transpose X is a close cousin of a covariance matrix. When regressors are perfectly collinear, that inverse does not exist and the regression cannot separate their effects: the same singular-matrix wall, met from the other side. One practical note for the notebook: we rarely know Sigma exactly; we estimate it, and we usually look at the correlation matrix — Sigma rescaled so the diagonal is all ones and every off-diagonal entry is a correlation between minus one and one. That rescaled matrix is what a correlation heatmap draws: a grid of cosines, hot where assets move together and cool where they move apart.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

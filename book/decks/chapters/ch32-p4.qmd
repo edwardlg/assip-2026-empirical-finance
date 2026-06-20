@@ -1,9 +1,10 @@
 ---
-title: "Compare Like With Like, Then Average"
 date: "2026-07-06"
 ---
 
-# Compare Like With Like, Then Average {.title}
+## Compare Like With Like, Then Average
+
+- Part 4 — average cells into the ATT, two-cell example
 
 ::: notes
 Welcome back to Chapter three-point-two, part four of eleven. In part three we proved that, under CIA, the within-cell difference is a clean causal effect. Now we average those cells into the ATT, state the one-line slogan of the whole method, and make it concrete with a two-cell worked example on Maya's data.
@@ -45,7 +46,7 @@ A number before the Greek letters, to make this concrete. Suppose Maya's only co
 The naive comparison ignores the cells. Enrollee approval is six hundred times point-eight plus two hundred times point-five, all over eight hundred — that is point-seven-two-five. Non-enrollee approval is point-four-eight-three. The gap is point-two-four-two. But that gap is inflated, because enrollees are disproportionately account-holders, the higher-baseline cell. The exact-matching estimate instead takes each within-cell effect and averages it with weights equal to the treated counts, since the ATT averages over the treated's covariate distribution. That is six hundred times point-one-five plus two hundred times point-one-zero, over eight hundred, which gives point-one-three-seven-five — about thirteen-point-seven-five percentage points, barely half the naive twenty-four-point-two. The difference, roughly point-one-zero, is the selection bias, removed by conditioning on the one confounder.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

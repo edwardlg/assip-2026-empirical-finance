@@ -1,9 +1,10 @@
 ---
-title: "The Problem IV Solves"
 date: "2026-07-06"
 ---
 
-# The Problem IV Solves {.title}
+## The Problem IV Solves
+
+- Part 2 — what makes Maya's regressor endogenous
 
 ::: notes
 Welcome back to Chapter three-point-four, part two of eight. In part one we saw that an instrument imports clean variation to escape an unobserved confounder. Now let us get exact about what is actually broken in Maya's regression, and why endogeneity is a disease with three different faces — all of which a valid instrument can cure.
@@ -44,7 +45,7 @@ Run O-L-S and the estimate converges not to beta-one but to beta-one plus a bias
 Endogeneity wears three classic faces, and you have met all three. First, unobserved confounding, Maya's case: a variable hiding in the error drives both treatment and outcome. Second, simultaneity or reverse causality, where Y also causes D — for example, a firm's crash risk might itself change how much investors want to short it, so short interest and crash risk are jointly determined, and regression alone cannot tell which way the arrow points. Third, measurement error: classical noise in a regressor mechanically correlates it with the error and attenuates the slope toward zero, and a valid instrument for the true value undoes that attenuation, because the instrument is correlated with the truth but not with the noise. In all three, the fix is identical: find variation in D that is not contaminated. That clean variation is exactly what an instrument supplies.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

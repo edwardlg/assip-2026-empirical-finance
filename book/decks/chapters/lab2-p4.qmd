@@ -1,9 +1,10 @@
 ---
-title: "Why It Works: Clustering by Time"
 date: "2026-06-29"
 ---
 
-# Why It Works: Clustering by Time {.title}
+## Why It Works: Clustering by Time
+
+- Part 4 — why averaging works; FM clusters by time
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, part four of eight. In part three we laid out the two passes and the standard error that is just the scatter of the monthly slopes over the square root of T. Now stare at why that average works, because it is genuinely clever. The disease was correlation across stocks within a month. The cure is to let each month produce one number that already digests all the within-month structure — and then quantify only how those monthly numbers scatter. This is exactly clustering by time from Chapter two-point-four.
@@ -45,7 +46,7 @@ This is exactly the clustering idea from Chapter two-point-four, viewed from a d
 The flip side is also straight from Chapter two-point-four, and you must internalize it: Fama–MacBeth does not fix a firm effect. If a stock's residuals are correlated over time — this year's mispricing predicts next year's — then the Fama–MacBeth standard error, which assumes the monthly slopes are roughly independent across time, is too small. That is the same way White standard errors were too small in the presence of clustering. Petersen flagged this exactly. The honest fix is a Newey–West, or HAC, correction applied to the time series of monthly slopes, which you will add as an extension. For now, hold the headline: Fama–MacBeth clusters by time, not by firm.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Two Data Paths and the Synthetic Build"
 date: "2026-06-29"
 ---
 
-# Two Data Paths and the Synthetic Build {.title}
+## Two Data Paths and the Synthetic Build
+
+- Part 5 — Path A real CRSP, Path B synthetic build
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, part five of eight. In part four we saw why the method works — it clusters by time, one vote per month. Now we get concrete about the data. Path A is the real CRSP pull on WRDS, run only on GMU infrastructure. Path B is a seeded synthetic universe with a planted premium that every student builds. Both paths feed the exact same two-pass code, because we give the synthetic panel the same column names as the real one. First, the reproducibility rules.
@@ -57,7 +58,7 @@ Now Path B, the version every student runs. We build a one-factor universe with 
 Here is the planted truth. Three hundred stocks, three hundred sixty months — thirty years of data. The true monthly market risk premium, lambda-true, is zero-point-zero-zero-six, six-tenths of a percent per month. The true zero-beta rate is one-tenth of a percent. Each stock's true beta is drawn from a normal distribution centered at one with standard deviation zero-point-three-five, then clipped between zero-point-one and two-point-five. We build the returns from the CAPM equation and reshape into a tidy panel — three hundred times three hundred sixty, one hundred eight thousand stock-months. Off to the side sit the secret truths the procedure is not allowed to see. Time to estimate.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

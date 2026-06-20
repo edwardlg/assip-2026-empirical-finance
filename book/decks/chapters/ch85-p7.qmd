@@ -1,10 +1,11 @@
 ---
-title: "The One-Click Replication Packet: Data, Code, README"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The One-Click Replication Packet: Data, Code, README {.title}
+## The One-Click Replication Packet: Data, Code, README
+
+- Part 7 — the packet's bar and its first three parts
 
 ::: notes
 Welcome back to Chapter eight-point-five, part seven of nine. In part six we sorted fatal critiques from survivable ones. Now we turn to the second surface the skeptic touches, alone: the replication packet. The bar is exact and unforgiving, and we cover the first three of its six load-bearing parts: the data or data-access script, code in run-order, and the README.
@@ -46,7 +47,7 @@ The first part is the data, or a data-access script. Public data ships in the pa
 The second part is code in run-order: the scripts and notebooks named or numbered so the order is unambiguous — zero-one pull, zero-two build, zero-three analysis, or whatever ordering your run-all enforces. The rule holds: logic in the source folder, story in the notebooks. A reviewer should never have to guess which script runs first. The third part is a README, the what, why, and how-to-run document — but now the "how to run" section has collapsed to almost nothing, because the whole point of the packet is that the answer is one command. The README still names the data sources, the secrets a user must export, and the licensed-versus-public split, but the run instructions are now a single line.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

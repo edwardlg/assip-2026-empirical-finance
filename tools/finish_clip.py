@@ -23,11 +23,18 @@ def run(cmd: list[str], check: bool = True):
     return subprocess.run(cmd, check=check)
 
 
-def normalize_encode(src: Path, dst: Path) -> None:
+def normalize_encode(src: Path, dst: Path, srt: Path | None = None) -> None:
     if not have("ffmpeg"):
         raise SystemExit("ffmpeg not found (load the ffmpeg module / apt install).")
     dst.parent.mkdir(parents=True, exist_ok=True)
+    vf = []
+    if srt and Path(srt).exists():
+        # Burn the transcript in: white text in a semi-opaque box, bottom-center.
+        style = ("FontSize=15,PrimaryColour=&H00FFFFFF,BorderStyle=3,Outline=1,"
+                 "Shadow=0,BackColour=&HA0000000,Alignment=2,MarginV=22")
+        vf = ["-vf", f"subtitles='{srt}':force_style='{style}'"]
     run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
+         *vf,
          "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
          "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(dst)])
@@ -62,13 +69,14 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", required=True)
     ap.add_argument("--output", required=True)
-    ap.add_argument("--vtt", default=None)
+    ap.add_argument("--srt", default=None,
+                    help="Transcript SRT to burn in (default: <input>.srt if present).")
     args = ap.parse_args()
     src, dst = Path(args.input), Path(args.output)
-    normalize_encode(src, dst)
-    if args.vtt:
-        make_captions(dst, Path(args.vtt))
-    print(f"finished -> {dst}")
+    # Prefer the transcript .srt that make_video_hopper emits next to the raw mp4.
+    srt = Path(args.srt) if args.srt else src.with_suffix(".srt")
+    normalize_encode(src, dst, srt if srt.exists() else None)
+    print(f"finished -> {dst}" + (f" (captions burned from {srt.name})" if srt.exists() else ""))
 
 
 if __name__ == "__main__":

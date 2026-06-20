@@ -1,10 +1,11 @@
 ---
-title: "Anatomy of a Report: Summary and Lead"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Anatomy of a Report: Summary and Lead {.title}
+## Anatomy of a Report: Summary and Lead
+
+- Part 2 — the report's opening: summary, then biggest concern
 
 ::: notes
 Welcome back to peer review and revision, part two of twelve. In part one we asked what a referee is for: gatekeeping, and more importantly, improvement, without hijacking the author's project. Now we build the report. It has a fixed skeleton, and the order is load-bearing in the way the Week-Five reading order was: you read tables-first, you write the report concern-first. This part covers the opening two moves — the summary and the biggest concern.
@@ -34,7 +35,7 @@ Step zero: a summary, in your own words. Open with one paragraph — three to si
 Step one: the single biggest concern, stated first. After the summary, lead with the one issue that most threatens the paper — the thing that, if the author cannot answer it, sinks the result. Do not bury it; do not build to it; do not soften it with five smaller points first. A report that opens with Table Three's caption has a typo and reaches the broken identifying assumption on page two has mis-ranked its own concerns and wasted the author's attention. Put the dagger on the table first. In almost every empirical paper, this biggest concern is an identification threat — the alternative explanation for the headline result that the design did not rule out. Naming it well is the highest-value sentence you will write as a referee.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

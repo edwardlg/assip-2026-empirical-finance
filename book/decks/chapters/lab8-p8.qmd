@@ -1,9 +1,10 @@
 ---
-title: "The Eight-Minute Talk: The Timed Rehearsal"
 date: "2026-08-10"
 ---
 
-# The Eight-Minute Talk: The Timed Rehearsal {.title}
+## The Eight-Minute Talk: The Timed Rehearsal
+
+- Part 8 — the eight-minute talk: the timed rehearsal protocol
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part eight of ten. In part seven we wired the one-click packet and ran the honesty test. Now the third and final artifact: the eight-minute poster talk. The poster and the packet are surfaces a skeptic touches alone; the talk is the surface they touch with you in the room, or on the symposium's virtual breakout track if you are a remote intern — and it is where the work is actually judged. Chapter Eight-point-five gave you the six-beat arc; Part Three of the lab turns it into a rehearsal protocol you run against a clock. Your slides are the six panels of your poster, and your pointer is your hand on the board. Each beat maps to one panel; you point as you speak.
@@ -33,7 +34,7 @@ A budget you have not tested out loud is a wish. Rehearse the full talk, timed, 
 A bare timer is enough — your phone, a tablet propped on the easel, or a dead-simple one-liner on the container that you press Enter to advance and it prints elapsed seconds per slide and a running total. Watch where the time goes, not just the total. If the design panel is under a minute, you are rushing the spine of the talk; if the motivation panel is over ninety seconds, cut it. And the discipline that saves you live: pre-decide your cut line. Before the symposium opens, name the one panel you will skim if you reach minute six still on the headline — almost always the second robustness detail or the third motivation point, never the design panel and never the headline. When you cut on the fly without a plan, you cut badly; when you have pre-decided, you cut cleanly and the next visitor in line never notices.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

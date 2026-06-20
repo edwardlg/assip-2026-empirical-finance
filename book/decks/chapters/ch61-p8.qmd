@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Vulnerable Joints — Selection, Efficiency, Causation"
 date: "2026-07-27"
 ---
 
-# KPSS: Vulnerable Joints — Selection, Efficiency, Causation {.title}
+## KPSS: Vulnerable Joints — Selection, Efficiency, Causation
+
+- Part 8 — three joints: selection, efficiency, associations
 
 ::: notes
 Welcome back to Chapter six-point-one, part eight of ten. In part seven we covered the first two vulnerable joints — expectations versus realized value, and confounding news in the window. Now we take the remaining three: selection screens that bound the population, market efficiency baked into the measure, and the fact that the growth results are associations rather than experiments.
@@ -45,7 +46,7 @@ The fourth joint: efficient markets is baked in, and it cuts both ways. The meas
 The fifth and last joint connects to Weeks Three and Four. Even granting a perfect measure, the reallocation and growth findings are predictive — innovating firms grow and rivals shrink on average — not identified causal effects. There is no random assignment of patents, no instrument for innovation, no discontinuity. The creative-destruction reading is consistent with the correlations but not pinned down by them. Reverse causality, where growing firms innovate more, and common drivers, where a demand shock lifts both innovation and growth, are live alternatives. K-P-S-S are measured about this, and you should be too: accept the measure, accept the correlations, and reserve judgment on the precise causal story.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

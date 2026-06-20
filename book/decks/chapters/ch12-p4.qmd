@@ -1,9 +1,10 @@
 ---
-title: "Maya's Two-Asset Budget: Three Scenarios"
 date: "2026-06-22"
 ---
 
-# Maya's Two-Asset Budget: Three Scenarios {.title}
+## Maya's Two-Asset Budget: Three Scenarios
+
+- Part 4 — split one dollar, watch risk bend with covariance
 
 ::: notes
 Welcome back to Chapter one-point-two, part four of eight. In part three we built the weighted variance formula with its all-important cross-term. Now we watch it work. Maya has one dollar to split between two assets, and the entire story of diversification will play out as we change a single number — the covariance between them. We run three scenarios at an even split and see risk fall below the average, and even below the safer asset alone.
@@ -52,7 +53,7 @@ for cov12 in (0.02, 0.0, -0.01):
 The code makes it concrete. We fix the two variances, set the weight to one half, and loop over the three covariances: together, uncorrelated, and opposed. For each we evaluate the weighted variance formula and take its square root. The printed volatilities march downward — zero point one five, then zero point one one two, then zero point zero eight seven — exactly the hand computations. The punchline of diversification lives entirely in the sign of the covariance term: the lower it goes, the more risk cancels when you combine the assets.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,15 @@
 ---
-title: "Your Data, Reproducibly: The Repository Is the Deliverable"
 date: "2026-08-03"
 ---
 
-# Your Data, Reproducibly: The Repository Is the Deliverable {.title}
+## Your Data, Reproducibly: The Repository Is the Deliverable
+
+**Learning objectives.** By the end you can:
+
+- Lay out a research repository from a template
+- Pin a conda environment that rebuilds anywhere
+- Verify `.gitignore` blocks licensed data and secrets
+- File the pre-analysis plan as a tagged commit
 
 ::: notes
 Welcome to Week Seven, the Lab, part one of eight. This is where your project stops being a pile of notebooks on your laptop and becomes a research repository — a single, version-controlled folder a stranger could clone and understand. Over these eight parts we build that repository step by step: a sensible layout, a pinned environment, a README and data cards, a git-ignore that makes leaks impossible, and a pre-analysis plan tagged with an immutable timestamp. This opening part frames why the repository itself is your capstone deliverable.
@@ -33,7 +39,7 @@ Everything Week Seven has built points here. Chapter seven-point-two taught you 
 The discipline this lab drills is the one a referee, a replication team, or future-you cares about most: reproducibility is a property of the repository, not of any single script. A brilliant analysis whose data pull cannot be re-run, whose environment cannot be reconstructed, or whose pre-registration cannot be dated is, to a skeptic, just an assertion. We are going to make your project the opposite of an assertion. There is no synthetic-data simulation here and no estimator to recover. The result you are checking is operational: can a fresh clone of your repo, on a machine that has never seen your project, reconstruct the environment, read what the project does, and verify that the licensed bytes and the secrets never left your control? That is a yes-or-no you can actually test.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

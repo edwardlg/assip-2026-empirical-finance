@@ -1,9 +1,10 @@
 ---
-title: "Reading the Answer, and Proving the Law"
 date: "2026-06-22"
 ---
 
-# Reading the Answer, and Proving the Law {.title}
+## Reading the Answer, and Proving the Law
+
+- Part 7 — interpret the 81/19 split, prove the law in three lines
 
 ::: notes
 Welcome back to Chapter one-point-one, part seven of eight. In part six the decomposition came out exact on Sam's table. Now we do two things: read off what that split actually means for the strategy, then prove the Law of Total Variance in three honest lines of algebra — iterated expectations applied twice, with one term cancelling.
@@ -42,7 +43,7 @@ The proof is just iterated expectations applied twice, plus the definition of va
 Now add the two terms. The middle quantity — the expectation of the conditional mean squared — appears once with a plus and once with a minus, and cancels exactly. What survives is the expectation of X squared minus the expectation of X, squared, which is precisely the variance of X. That cancellation is the law. The within piece gives up the shared term and the across piece claims it; together they reconstruct the total variance with nothing left over. That is the entire proof — a beautiful, almost bookkeeping-level cancellation that nonetheless carries real meaning about where risk lives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

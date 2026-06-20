@@ -1,9 +1,10 @@
 ---
-title: "The PSM Workflow on Maya's Program"
 date: "2026-07-06"
 ---
 
-# The PSM Workflow on Maya's Program {.title}
+## The PSM Workflow on Maya's Program
+
+- Part 9 — run the full pipeline, recover the true effect
 
 ::: notes
 Welcome back to Chapter three-point-two, part nine of eleven. In part eight we set up nearest-neighbor and caliper matching. Now we run the whole pipeline on a simulated version of Maya's question, where we know the truth by construction, and watch propensity-score matching recover it from a badly contaminated naive number.
@@ -42,7 +43,7 @@ Running it, the true average treatment effect on the treated is zero-point-three
 Now the workflow, four steps. Step one: estimate the propensity score by logistic regression of treatment on credit, income, and age. Step two: do one-to-one nearest-neighbor matching on the score, with replacement, with a caliper at zero-point-two times the score's standard deviation, dropping any treated unit whose nearest control is too far. Step three: the ATT estimate is the mean within-pair outcome difference, which comes out to about zero-point-three-one — essentially the true zero-point-three-two-two, and a world away from the naive zero-point-six-two-nine. Matching on the single number stripped out the selection bias, because it compared each enrollee to a non-enrollee just as likely to have enrolled, and so just as likely to be approved anyway. Step four, not optional and the subject of the next part: check that matching actually balanced the covariates. And notice — the outcome never entered the matching.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

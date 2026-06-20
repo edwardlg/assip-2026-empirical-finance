@@ -1,10 +1,11 @@
 ---
-title: "When the LLN Fails, and What Devon Should Do"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# When the LLN Fails, and What Devon Should Do {.title}
+## When the LLN Fails, and What Devon Should Do
+
+- Part 9 — when the LLN fails, and Devon's fix
 
 ::: notes
 Welcome back to Chapter one-point-four, part nine of nine — the final part. In part eight we ranked the hierarchy of bad behavior. Now we watch the Law of Large Numbers itself fail with the Cauchy, settle on what Devon should do, and preview the next chapter.
@@ -56,7 +57,7 @@ The point is not to make Devon give up; it is to make him honest about what his 
 Let me point ahead. You now have the two pillars. The Law of Large Numbers guarantees that with enough honest data the sample mean lands on the truth. The Central Limit Theorem guarantees the misses, properly rescaled by sigma over root N, follow the standard bell — provided the data are not so fat-tailed that the bell never forms. Hold onto that standardized quantity, the sample mean minus mu over sigma over root N, because the next chapter is built entirely on it. In chapter one-point-five we confront the one thing we have been quietly cheating on: in real life we do not know sigma, and have to estimate it from the same sample. Replacing the true sigma with an estimate turns that normal into a slightly fatter-tailed cousin — the Student's t distribution, the very family we just used to break the Central Limit Theorem — and from it we derive the t-test and the confidence interval.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

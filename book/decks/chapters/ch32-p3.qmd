@@ -1,9 +1,10 @@
 ---
-title: "The Conditional Independence Assumption"
 date: "2026-07-06"
 ---
 
-# The Conditional Independence Assumption {.title}
+## The Conditional Independence Assumption
+
+- Part 3 — state CIA, prove within-cell differences are causal
 
 ::: notes
 Welcome back to Chapter three-point-two, part three of eleven. In part two we named selection bias as the gap in the untreated outcome between the groups. Now we state the assumption that erases it — the Conditional Independence Assumption — read its symbols carefully, and prove that, under it, the within-cell comparison is a clean causal effect.
@@ -42,7 +43,7 @@ Treatment may be wildly correlated with potential outcomes overall — savvier p
 Why does CIA deliver the effect? Pick a value little-x of the covariates and look only at applicants with X-i equal to little-x. Among them, the average untreated outcome of the treated equals the average untreated outcome of the untreated — that equality is exactly CIA. And the right-hand side is something we can measure, because for the untreated we actually observe the untreated outcome. So inside the cell, the untreated group's average is a valid stand-in — a valid counterfactual — for what the treated would have looked like untreated. The within-cell treated-minus-untreated difference is therefore the expected Y of one minus Y of zero in that cell: a clean causal effect. The selection-bias gap in Y of zero has been zeroed out within the cell.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

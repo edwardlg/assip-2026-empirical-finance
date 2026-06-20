@@ -1,10 +1,11 @@
 ---
-title: "Watching the Bell Emerge"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Watching the Bell Emerge {.title}
+## Watching the Bell Emerge
+
+- Part 5 — watch the bell emerge from a skewed population
 
 ::: notes
 Welcome back to Chapter one-point-four, part five of nine. In part four we stated the Central Limit Theorem and built the intuition. Now we honor the spirit of the whole book — shown, not asserted — by starting from a population that looks nothing like a bell, an insurance-claims distribution, and watching the bell appear anyway as the sample grows.
@@ -46,7 +47,7 @@ Describe to yourself what comes out, panel by panel, because this sequence of pi
 One warning before we move on. N at least thirty is a teaching crutch, not a theorem. How fast the bell arrives depends on how skewed and heavy-tailed the original population is. For a symmetric, well-behaved population, N equals five might already look normal. For Priya's mildly skewed exponential, thirty is comfortable. But for a savagely skewed population — one rare giant value among thousands of zeros — you might need thousands of observations before the standardized mean looks normal. The folk rule quietly assumes your data are not too wild. Later in this chapter we meet a character, Devon, for whom that assumption is not just strained but outright false — and we will watch the bell refuse to form no matter how much data he gathers.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "2SLS as Frisch–Waugh–Lovell"
 date: "2026-07-06"
 ---
 
-# 2SLS as Frisch–Waugh–Lovell {.title}
+## 2SLS as Frisch–Waugh–Lovell
+
+- Part 6 — 2SLS as FWL with an instrument swapped in
 
 ::: notes
 Welcome back to Chapter three-point-four, part six of eight. In part five we computed Maya's Wald estimate — minus three hundred dollars per completer — for a binary instrument with no controls. Real problems have continuous treatments and many controls, so we need the general workhorse: two-stage least squares. The cleanest way to understand it, having done Chapter two-point-three, is as Frisch-Waugh-Lovell with an instrument swapped in for the contaminated regressor.
@@ -43,7 +44,7 @@ Here is the connection to Chapter two-point-three. Recall Frisch-Waugh-Lovell: a
 A non-negotiable warning that students learn the hard way: never run the two stages by hand and trust the standard errors. The second-stage regression on D-hat produces the correct point estimate, but its reported standard errors are wrong, because the software thinks D-hat is data when really it is an estimate carrying its own sampling noise. The right standard errors account for the first-stage uncertainty. Always use a dedicated two-S-L-S routine — linear-models' I-V-two-S-L-S — which gets the point estimate and the standard errors right in one call. Hand-rolling the two stages is for understanding, never for reporting.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

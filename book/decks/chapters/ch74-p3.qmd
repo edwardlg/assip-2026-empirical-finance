@@ -1,10 +1,11 @@
 ---
-title: "Survivorship Bias: The Firms That Vanished"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Survivorship Bias: The Firms That Vanished {.title}
+## Survivorship Bias: The Firms That Vanished
+
+- Part 3 — survivorship bias: keep the firms that died
 
 ::: notes
 Welcome back to Building the Analysis Dataset, part three of seven. In part two we made every merge assert its cardinality and report its match rate. Now we turn to content errors no syntax checker can catch. The first is survivorship bias — a flagged hazard in the Week Five reading guides — and now we see exactly where it enters: at the merge, when you accidentally analyze only the firms that lived to the end of your sample.
@@ -58,7 +59,7 @@ The fix is conceptual before it is technical. Your sample must include every uni
 In code the smell test is simple: count your firms per year, not just in total. Group the panel by year and count unique PERMNOs in each. A real CRSP universe has firms entering through new listings and exiting through delistings every year, so the count wobbles. The red flag is a firm count that only ever grows, ending exactly at today's universe with no exits — that means you dropped the firms that died. A healthy panel churns: listings arrive, delistings depart, the count moves up and down. Maya's mortgage work has a cousin — if she studies only lenders still operating today, she misses the subprime originators that failed in two thousand eight, precisely the ones her question is about.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

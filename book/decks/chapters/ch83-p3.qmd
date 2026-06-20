@@ -1,10 +1,11 @@
 ---
-title: "The One-Sentence Contribution"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The One-Sentence Contribution {.title}
+## The One-Sentence Contribution
+
+- Part 3 — build and calibrate the paper's reason for existing
 
 ::: notes
 Welcome back to Writing the Empirical Paper, part three of seven. In part two we laid out the four moves of the introduction. Now we stop and build just one of them on its own, because it is the reason the paper exists: the one-sentence contribution. If you cannot write it, you do not yet have a paper — you have a regression and a hope. Let us learn what job it does, and how to calibrate it honestly.
@@ -46,7 +47,7 @@ A good contribution sentence does one of a small number of recognizable jobs, an
 Calibrate the verb to the evidence — the causal-language discipline previewed here because it bites first in this sentence. If your design is a clean staggered difference-in-differences with flat pre-trends, you have earned "credibly estimate." If your design is ordinary least squares on observables with a plausible omitted variable you could not rule out, you have not, and your sentence says "document a robust association," "provide suggestive evidence," or "establish a new stylized fact" — never "show that X causes Y." The reading guides of Week Five trained you to catch authors who overclaim in exactly this sentence; your grader runs the same check. Here is a practical test: hand the sentence to a classmate who has not seen your project. If they can tell you what you did and why it matters, it works. If they ask "wait, what's the question?" or "is that causal?", the sentence is doing the introduction's whole job badly.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

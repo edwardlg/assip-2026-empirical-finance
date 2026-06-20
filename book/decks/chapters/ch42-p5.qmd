@@ -1,9 +1,10 @@
 ---
-title: "The Sign Flip, Live"
 date: "2026-07-13"
 ---
 
-# The Sign Flip, Live {.title}
+## The Sign Flip, Live
+
+- Part 5 — run TWFE on the broken table; trace the wrong sign by hand
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part five of thirteen. In part four we built the smallest broken world — two states, a policy that helps in every treated cell with a building effect, no never-treated unit, perfect parallel trends, and a true effect of about minus three-point-five. Now we run the regression on that table, watch the coefficient come out positive, and trace by hand exactly why.
@@ -64,7 +65,7 @@ One more crucial point. Add even one never-treated state and the catastrophe is 
 That is the entire crisis in one table. Hold the mechanism: two-way fixed effects used an already-treated unit, State E, whose own effect was still changing, as a control for a newly-treated unit, State L, and that changing effect got subtracted from the thing you were trying to measure. Everything that follows is a precise accounting of when and how badly this happens — first Goodman-Bacon, then de Chaisemartin and D'Haultfœuille's negative-weights result, and finally the estimators that route around the whole problem.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

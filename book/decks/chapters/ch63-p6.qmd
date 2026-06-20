@@ -1,9 +1,10 @@
 ---
-title: "What's Clever"
 date: "2026-07-27"
 ---
 
-# What's Clever {.title}
+## What's Clever
+
+- Part 6 — four reusable moves behind the paper's success
 
 ::: notes
 Welcome back to Chapter six-point-three, part six of nine. In part five we set the reading order: misclassification first, then the horse race, then weighting. Now we name what is genuinely clever here, because these are moves you will reuse in your own measurement work. There are four: domain-specificity, falsifying a popular tool, shipping a reusable public good, and inventing categories beyond good and bad.
@@ -57,7 +58,7 @@ Third, a reusable public good. The deepest cleverness is strategic, not statisti
 Fourth, categories beyond good and bad. Splitting tone into negative, positive, uncertainty, litigious, and modal was a real conceptual contribution. Uncertainty in particular, counting hedging words, turned out to predict volatility better than raw negativity in much later work, because how sure a firm is about its future is different information from how bad the future is. Good measurement is often good taxonomy, the same lesson Petersen taught with standard errors. The right categories are not cosmetic; they let a single instrument carry several distinct signals at once.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

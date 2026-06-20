@@ -1,9 +1,10 @@
 ---
-title: "Two Shots at One Assumption, and the Code"
 date: "2026-07-13"
 ---
 
-# Two Shots at One Assumption, and the Code {.title}
+## Two Shots at One Assumption, and the Code
+
+- Part 9 — two shots at exclusion; the runnable code
 
 ::: notes
 Welcome back to Chapter four-point-five, part nine of ten. In part eight we covered the Adão, Kolesár and Morales standard-error warning and mapped the chapter back onto relevance and exclusion. Now we draw out the deep lesson that resolves the two views and walk the runnable code that builds and decomposes an instrument. The headline idea: exclusion for a constructed instrument can be sourced from whichever ingredient you can most credibly call exogenous.
@@ -45,7 +46,7 @@ Here is the chapter in one runnable block. We simulate four hundred regions and 
 Two things to watch in the output. First, OLS and two-stage least squares disagree, and the gap — minus one-point-zero-six versus minus one-point-five — is the regional endogeneity made visible, the reason for the exercise. Second, the Goldsmith-Pinkham lesson in code: the decomposition shows the estimate is not spread evenly — a handful of industries carry most of the Rotemberg weight, and those are the shares whose exogeneity you must defend hardest. In this clean baseline the shares were independent of the confounder, so every per-industry estimate hovers near minus one-point-five. The notebook, nb4.5, then stresses it by tying the shares to the confounder, so the high-weight industries become exactly the ones whose share-exogeneity is violated — and you watch the headline drift from the truth even while the F-statistic still looks reassuring. The notebook also adds the exact formula, AKM-robust standard errors, and walks the full decomposition table.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

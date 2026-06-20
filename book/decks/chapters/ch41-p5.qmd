@@ -1,9 +1,10 @@
 ---
-title: "Pre-Trends and Clustered Inference"
 date: "2026-07-13"
 ---
 
-# Pre-Trends and Clustered Inference {.title}
+## Pre-Trends and Clustered Inference
+
+- Part 5 — why flat leads fall short, and clustered standard errors
 
 ::: notes
 Welcome back to Chapter four-point-one, part five of six. In part four we unpacked DiD into an event study, whose leads check pre-trends. Now the caution separating a sophisticated DiD reader from a naive one: flat leads do not prove parallel trends. Then the standard errors, easy to get wrong in DiD.
@@ -60,7 +61,7 @@ Now inference. Bertrand, Duflo, and Mullainathan, two thousand four, asked wheth
 The fix, the default ever since, is the cluster-robust standard error, clustered by the unit of treatment — here, by state — letting each state's residuals be arbitrarily correlated across its years. The table tells the story. The point estimate is seventy dollars throughout; only the standard error moves. Classical and robust both ignore serial correlation and give a dishonest t-stat near five. Clustering by state more than doubles the standard error, dragging the t-stat to a sobering one-point-eight. But the catch returns: cluster-robust errors need many clusters, thirty to fifty. Priya has one treated state, as did Card and Krueger. You cannot cluster your way out of one treated cluster. There you lean on placebo inference — assign the fake treatment to each control in turn and see how unusual the real estimate is.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

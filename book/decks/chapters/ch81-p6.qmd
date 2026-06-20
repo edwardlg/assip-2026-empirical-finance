@@ -1,9 +1,10 @@
 ---
-title: "The Honest Deviations Log"
 date: "2026-08-10"
 ---
 
-# The Honest Deviations Log {.title}
+## The Honest Deviations Log
+
+- Part 6 — the deviations log and the road to 8.2
 
 ::: notes
 Welcome back to The Execution and the Specification Curve, part six of six. In part five we named the four ways a curve can lie. Now we close the loop. Somewhere in your analysis, reality forced you off the plan. The deviations log records that honestly. We end by looking ahead to Week Eight's next chapter.
@@ -69,7 +70,7 @@ That last clause is the whole ethic of Week Eight. The plan is not a prison and 
 You arrived with a frozen plan and a frozen notebook. You leave with three things on the page: a confirmatory result run exactly as pre-registered; a specification curve that tells you whether your headline is robust or a lucky branch; and an honest deviations log. But notice what the curve cannot tell you. Every specification in Maya's robust, all-negative curve assumes parallel trends. If that is false, the curve is a confident wrong answer. Chapter eight-point-two turns to inference validity: placebo tests that would have fired if the design were broken, and Oster's delta, which asks how much unobserved selection it would take to explain away your effect. The curve stress-tests your choices; eight-point-two stress-tests your assumption.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Null and the Alternative"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Null and the Alternative {.title}
+## The Null and the Alternative
+
+- Part 2 — the two competing hypotheses, $H_0$ vs. $H_1$
 
 ::: notes
 Welcome back to Chapter one-point-five, part two of ten. In part one we met Sam's rule and the one question every test answers: could pure luck have produced this? Now we write that question down formally as two competing claims about the world — the null and the alternative — and emphasize three things about how they work.
@@ -34,7 +35,7 @@ A test starts with two competing claims about the world — not about your sampl
 Three things deserve emphasis, because this is where the logic lives. First, the hypotheses are statements about mu, the unobservable population mean — not about x-bar, the sample average Sam computed. We know x-bar equals zero point zero eight percent with certainty; there is nothing to test about a number we already hold. The whole exercise is what x-bar lets us infer about mu. Second, the test is deliberately asymmetric. We do not treat the null and the alternative as equally matched contestants. We grant the null the benefit of the doubt and ask whether the data can overturn it — the way a courtroom presumes innocence. Third, the null is almost always a point — a single value like mu equals zero — because a point gives us something concrete to compute with. If we assume mu equals zero is exactly true, we can ask exactly how surprising Sam's eight basis points would be. We cannot do that with a vague the rule is bad.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

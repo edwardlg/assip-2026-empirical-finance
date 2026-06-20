@@ -1,9 +1,10 @@
 ---
-title: "Aggregating the Grid — and Recovering the Truth"
 date: "2026-07-13"
 ---
 
-# Aggregating the Grid {.title}
+## Aggregating the Grid
+
+- Part 11 — aggregate to a robust event study; recover the truth
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part eleven of thirteen. In part ten we built Callaway and Sant'Anna's central object — the group-time effect, each an honest two-by-two against clean controls. Now we take the whole grid, aggregate it into the heterogeneity-robust event study, and watch it recover the true answer where two-way fixed effects failed.
@@ -54,7 +55,7 @@ Now run this on the two-state world from earlier, but notice the catch that worl
 So restore a genuine never-treated state N — Priya's real data has plenty of non-adopters — and watch it work on the six-year version. The group-time effect for cohort two, State E, uses State N, and before year five the not-yet-treated State L, as clean controls, and recovers E's true effects of minus one through minus five. The group-time effect for cohort five, State L, uses State N — never the already-treated State E — and recovers L's true effects of minus one and minus two. Aggregate by event time and the overall clean effect comes out at the true minus two-point-five-seven, versus the attenuated minus one-point-two-three that pooled two-way fixed effects returns on the very same data. No forbidden comparison, no contamination, no sign flip. The estimator returns the answer the data actually contain.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

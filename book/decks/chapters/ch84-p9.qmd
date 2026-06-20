@@ -1,10 +1,11 @@
 ---
-title: "Concede, Defend, or Bound"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Concede, Defend, or Bound {.title}
+## Concede, Defend, or Bound
+
+- Part 9 — the three moves for any comment: concede, defend, bound
 
 ::: notes
 Welcome back to peer review and revision, part nine of twelve. In part eight we built the response memo — quote, change, evidence — and the norm to do exactly what you said. Now we cover the judgment inside it. Not every comment is right, and a memo that caves to all of them is as weak as one that fights all of them. For each comment you decide consciously: concede, defend, or bound. The rule running through the whole book guides you: follow the evidence, not the ego.
@@ -46,7 +47,7 @@ Defend when the referee is wrong — respectfully, with evidence, never with att
 There is also the comment you can neither fully fix nor fully rebut — the untestable threat, like the exclusion restriction in an instrumental variable or the parallel-trends counterfactual itself. Here you neither concede the paper is broken nor pretend the concern is gone. You bound it: acknowledge the threat is real and untestable, present every piece of indirect evidence you have, and state the residual concern honestly in the paper's limitations — the fourth column of the threats-and-responses table from Chapter seven-point-five, promoted into the memo. The referee is correct that anticipation cannot be ruled out by the data alone; you present the event study with flat leads as the best available evidence against it. A referee trusts the author who says here is what still worries me far more than one who claims a clean sweep.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

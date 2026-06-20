@@ -1,9 +1,10 @@
 ---
-title: "Demeaning Is the Within Transformation"
 date: "2026-06-29"
 ---
 
-# Demeaning Is the Within Transformation {.title}
+## Demeaning Is the Within Transformation
+
+- Part 6 — controlling's honest limit, and demeaning as dummies
 
 ::: notes
 Welcome back to Chapter two-point-three, part six of eight. In part five we saw that "holding constant" is a subtraction confined to residual variation. Now we face the honest limit of that subtraction — it only nets out the columns you included — and then meet the theorem's most consequential special case: subtracting group means equals adding a dummy for every group.
@@ -53,7 +54,7 @@ Now make the control richer. Suppose data come in groups — firms by industry, 
 Putting Frisch–Waugh–Lovell together with this fact gives a clean equivalence. Regressing y on x plus a full set of group dummies produces exactly the same slope on x as regressing within-group-demeaned y on within-group-demeaned x. The number is identical — the theorem guarantees it, because the dummies are the control block and demeaning is their residual maker. Watch it on Leah's six firms, grouped by industry: firms one through three are biotech, firms four through six are hardware. Subtract each firm's own industry mean from each variable, then run a no-intercept simple regression of demeaned patents on demeaned R&D. The slope is forty-nine-point-six-seven over thirteen-point-three-three, which is three-point-seven-two-five. And if instead you regress patents on R&D plus a biotech-versus-hardware dummy, the R&D coefficient is three-point-seven-two-five as well — agreeing to the last digit. Notice the slope differs from the one-point-eight-three-eight before: controlling for industry asks a different question than controlling for size.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Beyond the Safety Net: Efficiency and ML"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Beyond the Safety Net: Efficiency and ML {.title}
+## Beyond the Safety Net: Efficiency and ML
+
+- Part 8 — why AIPW is more efficient and ML-ready
 
 ::: notes
 Welcome back to Chapter three-point-three, part eight of ten. In part seven we proved the doubly-robust guarantee. Now we see that doubly robust is not merely defensive — it is usually more efficient, and it is the seed of the most active methodology in modern empirical economics and finance.
@@ -46,7 +47,7 @@ There is a deeper modern reason A-I-P-W is everywhere now. Because the estimator
 This is the engine behind double-slash-debiased machine learning, from Chernozhukov and coauthors in twenty-eighteen, published in The Econometrics Journal — the dominant framework for high-dimensional causal estimation in current empirical economics and finance. You will not implement that this week, but it is worth knowing that the humble bracket from part seven — the outcome prediction plus the inverse-probability-weighted residual correction — is the seed of the field's most active methodology. When your covariate set is large and you cannot trust a simple linear specification, this is the path. A-I-P-W is where selection-on-observables grows up.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

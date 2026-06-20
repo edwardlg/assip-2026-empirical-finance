@@ -1,10 +1,11 @@
 ---
-title: "2SLS by Hand on a Single Draw"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# 2SLS by Hand on a Single Draw {.title}
+## 2SLS by Hand on a Single Draw
+
+- Part 3 — run 2SLS by hand; one weak draw swings wildly
 
 ::: notes
 Welcome back to Lab Three, part three of five. In part two we built the world and confirmed that ordinary least squares is biased upward, landing near plus zero-point-four against a truth of zero. Now we instrument. We will run just-identified two-stage least squares by hand — the projection formula — so nothing is hidden, cross-check it against the linearmodels package to machine precision, and grab the conventional standard error, the one the textbook reports and the one that is about to lie to us. The headline of this part is a warning: a single weak-I-V draw can land almost anywhere, so we will refuse to draw any conclusion from it.
@@ -43,7 +44,7 @@ You confirm your code is right by matching the linearmodels package to machine p
 Three things on this single draw. First, your hand-rolled coefficient matches linearmodels to about ten-to-the-minus-sixteen, so the machine is correct. Second, on this seed the single-draw two-stage least-squares estimate lands around plus zero-point-four-two with a first-stage F near one-and-a-half — that is above the ordinary-least-squares number of zero-point-four-zero, not below it, which is your first taste of how violently a single weak-I-V draw can swing. A weak instrument's estimate is a fat-tailed ratio, and one draw can land almost anywhere. Third, the reported standard error of about zero-point-one-eight looks reassuringly tight — and that tightness is exactly the lie Chapter three-point-five warned about. Do not draw any conclusion from this one number. If you went back and re-ran with the strong setting, this same single draw would land near the true zero with a large F. That contrast is the experiment — but to make it rigorous, you must repeat it thousands of times.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The Event Study, and Stressing Parallel Trends"
 date: "2026-07-13"
 ---
 
-# The Event Study, and Stressing Parallel Trends {.title}
+## The Event Study, and Stressing Parallel Trends
+
+- Part 7 — the event study, and stressing parallel trends
 
 ::: notes
 Welcome back to Week Four, the Lab, part seven of eight. In part six we looked at the design and watched two-way fixed effects come out attenuated, around minus zero-point-eight-one percentage points. Now two things: estimate the naive event study to read the pre-trends, and then deliberately stress the design — dial a differential pre-trend into the treated states and watch the leads tilt, reproducing in your own data the failure the chapter described.
@@ -57,7 +58,7 @@ Now stress the design on purpose. You write a function that injects a differenti
 What does the stressed panel show? Now the leads slope. The pre-period coefficients drift away from zero, because the treated cohorts were already moving differently before any policy. This is the visible signature of a parallel-trends violation, the thing the event-study plot exists to catch. And here is the lesson, sharpened because you built both cases: a tilting pre-trend is a red flag you can see; a clean pre-trend is reassurance you cannot fully bank. One subtlety — when you inject the pre-trend, the lag coefficients also shift, because the spurious trend keeps running into the post-period and gets mislabeled as a growing effect. And with only a few states, you might fail to detect even this planted pre-trend — the low-power problem — which is why you report the leads honestly rather than asserting the pre-trends look fine.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

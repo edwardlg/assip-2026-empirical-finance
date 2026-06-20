@@ -1,9 +1,10 @@
 ---
-title: "Tables That Hide Nothing, Robustness That Kills"
 date: "2026-07-20"
 ---
 
-# Tables That Hide Nothing, Robustness That Kills {.title}
+## Tables That Hide Nothing, Robustness That Kills
+
+- Part 3 — links three and four: transparent tables, honest robustness
 
 ::: notes
 Welcome back to the anatomy of a Journal of Finance paper, part three of four. In part two we built the first two links — sharpening an itch into a question, and the design that isolates your variable from a thicket of confounds with a one-sentence identifying assumption. Now we build the two links that carry the result onto the page: transparent tables that hide nothing, and honest robustness that tries to kill your own finding before a referee does.
@@ -42,7 +43,7 @@ Why does the march across columns matter so much? Because it is the whole credib
 The difference between a working paper and a published one is mostly the robustness section — the months spent trying to kill your own result before a referee does. You re-run with different controls, a different sample window, a different standard-error flavor. You run a placebo where the effect should be zero, and check that it is. You confront the most threatening alternative explanation head-on and show the data does not support it. Honest robustness is not decoration. It is you, the author, doing the referee's job to yourself first, in public, and reporting the checks that failed as well as the ones that passed. That honesty is what makes the headline believable. The honesty is the credibility.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,16 @@
 ---
-title: "The Eight-Minute Poster Talk: Question and Stakes"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Eight-Minute Poster Talk: Question and Stakes {.title}
+## The Eight-Minute Poster Talk: Question and Stakes
+
+**Learning objectives.** By the end you can:
+
+- Structure an eight-minute talk as six clean beats
+- Open with the question, then one concrete stake
+- Translate a results table into a legible figure
+- Defend identification and ship a one-click packet
 
 ::: notes
 Welcome to Week Eight, Chapter eight-point-five, part one of nine. This is the last chapter of the camp, and it is about what happens after the work is done. You stand beside your research poster and defend it for eight minutes at the symposium, and you hand someone a folder that lets them rebuild every number you claimed. Both are acts of credibility. In this part we frame the lesson and walk the first two beats of the talk: the question and the stakes.
@@ -46,7 +52,7 @@ Eight minutes is not a short version of a long talk. It is a different object wi
 The question slide states, in one sentence a smart sixteen-year-old could repeat back, what you are asking. Not the literature, not the motivation, the question. Devon's reads: does the launch of a spot Bitcoin exchange-traded fund reduce the volatility of the underlying token? The temptation is to open with three paragraphs of crypto-market history. Resist it. The room cannot hold context it has not been given a reason to want. Then the why-it-matters slide earns the question its airtime, and you spend it after the question, not before. One concrete stake. Priya's climate-insurance talk opens with: if wildfire risk is mispriced, insurers either go insolvent or abandon whole counties. That is a stake a stranger feels. The discipline is concrete before abstract, a number before a Greek letter. A talk that opens abstract loses the room in the first thirty seconds and never gets it back.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

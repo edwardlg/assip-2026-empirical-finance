@@ -1,9 +1,15 @@
 ---
-title: "FWL: What \"Controlling For\" Really Means"
 date: "2026-06-29"
 ---
 
-# FWL: What "Controlling For" Really Means {.title}
+## FWL: What "Controlling For" Really Means
+
+**Learning objectives.** By the end you can:
+
+- Read any control coefficient as a simple slope
+- Explain what "holding constant" really subtracts
+- Prove FWL from the residual-maker matrix
+- See demeaning as dummies — fixed effects early
 
 ::: notes
 Welcome to Week Two, Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part one of eight. Over the next few minutes we attack one little word you have read a thousand times without questioning it: the word "controlling." Every finance paper reports a coefficient "controlling for firm size," or "controlling for industry and year." That word does enormous work, and it has almost stopped meaning anything — it sounds like a magic spray that removes contamination. This lesson is about what controlling actually does, mechanically, to the arithmetic. The answer is precise and a little surprising: controlling for the other variables means subtracting them out of everything first, and then running a plain simple regression on what is left over. That statement is the Frisch–Waugh–Lovell theorem — everyone just calls it F-W-L — and it is the single most useful interpretive fact in the whole course.
@@ -31,7 +37,7 @@ Here is the puzzle. When a researcher writes that the coefficient on research an
 Let me state the theorem in one plain sentence. A coefficient in a multiple regression is exactly the slope you would get from a simple regression — of the outcome, after removing the other regressors from it, on the key regressor, after removing the other regressors from it too. "Removing the other regressors" has a precise meaning: regress the thing on those other regressors and keep the residual. The residual is the part the other regressors cannot explain, the part left over, orthogonal to them. So Frisch–Waugh–Lovell says a multiple-regression coefficient lives entirely in the leftover parts. The bulk of the regressors are not even in the room when the key slope is decided; they have already done their job by being subtracted out.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Path A — Pinning a Vintage and Querying HMDA"
 date: "2026-07-13"
 ---
 
-# Path A — Pinning a Vintage and Querying HMDA {.title}
+## Path A — Pinning a Vintage and Querying HMDA
+
+- Part 3 — Path A: pin the vintage, query the CFPB API
 
 ::: notes
 Welcome back to Week Four, the Lab, part three of eight. In part two we laid out the two paths and the reproducible setup. Now we work Path A — real HMDA. You do not have to run it to finish the lab, but you should understand it, because this is how you would build the panel for the capstone. We start where every reproducible pull must: pinning a vintage and respecting the register's size.
@@ -30,7 +31,7 @@ First, what HMDA is. The Home Mortgage Disclosure Act Loan Application Register 
 - Never present a figure without naming its vintage
 
 ::: notes
-Now the discipline. Pin the data vintage first. HMDA is revised: a given application year is published, then re-published with corrections, and the schema has changed across reform years — the twenty-eighteen expansion under Dodd-Frank added many fields. So any reproducible pull must state which year and which snapshot it used. For this lab we pin a recent multi-year window of the register as published in the CFPB Data Browser snapshot current at the camp container build — and you record that exact string. Confirm the snapshot date on the container before you cite any number from it, because the interface serves whatever vintage CFPB currently hosts. Never present a figure without naming its vintage.
+Now the discipline. Pin the data vintage first. HMDA is revised: a given application year is published, then re-published with corrections, and the schema has changed across reform years — the twenty-eighteen expansion under Dodd-Frank added many fields. So any reproducible pull must state which year and which snapshot it used. For this lab we pin a recent multi-year window of the register as published in the CFPB Data Browser snapshot current at the camp container build — and you record that exact string. Never present a figure without naming its vintage.
 :::
 
 ## Respect the Size: Two Disciplined Options
@@ -57,7 +58,7 @@ The register is too large to pull whole — a single year's nationwide file is m
 Here is the query pattern. The CFPB HMDA Data Browser exposes an HTTP interface that returns either raw records or server-side aggregations. For a panel, the aggregation endpoint is what you want: you ask CFPB to count actions by the dimensions you care about, so you never move the microdata. The pattern is a base address plus query parameters naming the years, the states, and the variables to group by. In the example function you loop over years, pass the states as a comma-joined list, and request actions-taken codes one and three — one meaning loan originated, three meaning denied. The server returns a tidy table you normalize, one row per state, year, and action-taken cell, with a count. One caution: confirm the live parameter names against the API docs for your pinned vintage, because CFPB has renamed fields across releases. The snippet is the pattern, not a guaranteed-stable contract.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

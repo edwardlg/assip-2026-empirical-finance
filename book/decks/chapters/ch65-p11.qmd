@@ -1,10 +1,11 @@
 ---
-title: "The APIs: Keys and the Anthropic Messages Call"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# The APIs: Keys and the Anthropic Messages Call {.title}
+## The APIs: Keys and the Anthropic Messages Call
+
+- Part 11 — the key-secret rule and the Anthropic Messages call
 
 ::: notes
 Welcome back to the AI co-pilot for research, part eleven of fourteen. In part ten we covered prompt-induced p-hacking and the reproducibility of stochastic outputs. Now the code. A chat window is fine for exploration, but a research pipeline that labels forty thousand filings runs through an A-P-I — an application programming interface — so you send the model text with a program and get structured responses back, and the whole process is scripted, logged, and reproducible. We cover two providers you will actually use: Anthropic's A-P-I directly, and OpenAI-family models through G-M-U's Azure gateway. This part covers the key rule and the Anthropic call.
@@ -33,7 +34,7 @@ First, the non-negotiable rule, stated once and meant absolutely: an A-P-I key i
 The Anthropic Messages A-P-I. The Python SDK reads your key from the environment variable automatically — you never name it in code. A classification call creates a client, then sends a request with two parts. The stable rubric goes in the system field with a cache-control marker; the volatile filing text goes in the messages field. Prompt caching is the payoff for the discipline from earlier: the A-P-I caches a prefix of the request. Your rubric might be fifteen hundred tokens, identical for all forty thousand filings; without caching you pay to re-process it forty thousand times. With the cache-control breakpoint after the rubric, the A-P-I stores the processed rubric after the first call and reuses it on every subsequent call — much cheaper and faster. This is exactly why we insisted on stable instruction first, volatile input last: any change to the cached prefix invalidates the cache, so the filing text must come after the breakpoint. Verify it works by reading the usage field — cache-read input tokens above zero means the rubric was cached. If it stays zero across repeated calls, something is silently invalidating the prefix, and you are paying full price.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

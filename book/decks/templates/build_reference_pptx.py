@@ -152,11 +152,17 @@ def stamp_master(prs, logo: Path | None):
                 print(f"WARN: logo stamp failed ({exc!r}); template built without logo.")
 
 
-def build(out: Path, logo: Path | None):
-    prs = Presentation()  # default template: Pandoc-compatible layout names
-    # 16:9 widescreen (13.333 x 7.5 in) so rendered video is native 1080p, no pillarbox
-    prs.slide_width = Inches(13.333)
-    prs.slide_height = Inches(7.5)
+def build(out: Path, logo: Path | None, base: Path | None = None):
+    # IMPORTANT: start from PANDOC's own reference.pptx (its layout/placeholder
+    # internals are what pandoc populates). Building from python-pptx's default
+    # template yields a deck pandoc cannot place content into -> 0 slides.
+    # Generate the base once with:  pandoc --print-default-data-file reference.pptx
+    if base is not None:
+        prs = Presentation(str(base))  # pandoc reference is already 16:9 (10 x 5.625)
+    else:
+        prs = Presentation()
+        prs.slide_width = Inches(13.333)   # 16:9 fallback for the bare default
+        prs.slide_height = Inches(7.5)
     # rewrite every theme part in the package
     n_themes = 0
     for part in prs.part.package.iter_parts():
@@ -187,10 +193,13 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(Path(__file__).with_name("assip-reference.pptx")))
     ap.add_argument("--logo", default=None, help="path to GMU logo PNG (optional)")
+    ap.add_argument("--base", default=None,
+                    help="pandoc reference.pptx to brand (pandoc --print-default-data-file reference.pptx)")
     args = ap.parse_args()
     out = Path(args.out)
     logo = Path(args.logo) if args.logo else None
-    n = build(out, logo)
+    base = Path(args.base) if args.base else None
+    n = build(out, logo, base)
     a1, a2, maj = verify(out)
     print(f"wrote {out}  ({n} theme part(s) rebranded)")
     print(f"verify -> accent1(green)={a1}  accent2(gold)={a2}  headingFont={maj}")

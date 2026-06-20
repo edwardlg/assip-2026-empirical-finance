@@ -1,9 +1,10 @@
 ---
-title: "Over-Controlling and the Counterfactual Target"
 date: "2026-07-13"
 ---
 
-# Over-Controlling and the Counterfactual Target {.title}
+## Over-Controlling and the Counterfactual Target
+
+- Part 2 — over-controlling, and the counterfactual that defines the target
 
 ::: notes
 Welcome back to the Week Four mentor session on detecting discrimination, part two of five. In part one we drew the line between a disparity and a finding of discrimination, and we saw that controlling for creditworthiness is necessary but never sufficient, because of omitted-variable bias. Now we attack the problem from the opposite side. It turns out you can also control for too much — and then we will write down the honest target that the whole session is built around: a counterfactual, not a coefficient.
@@ -45,7 +46,7 @@ So the honest target is not a disparity after controls. It is a counterfactual, 
 And here the Fundamental Problem of Causal Inference applies in full force: you never get to observe the same application both ways at once. You see the same-sex couple's outcome, or you see the different-sex couple's outcome — never both for the identical application. This is exactly why a longer and longer list of controls is not the rescue people hope it is. Controls try to make the data honest after the fact; they do not construct the missing counterfactual. What constructs it is design. Stop asking the data to confess, and instead go find a comparison where the protected characteristic varies for reasons that have nothing to do with creditworthiness. That reflex — design over more controls — is the lesson of this entire week, and in part three we put it to work in real mortgage data.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

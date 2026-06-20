@@ -1,10 +1,11 @@
 ---
-title: "OLS as Projection: the Hat Matrix"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# OLS as Projection: the Hat Matrix {.title}
+## OLS as Projection: the Hat Matrix
+
+- Part 5 — OLS as projection; naming the hat matrix
 
 ::: notes
 Welcome back to Chapter two-point-one, part five of seven. In part four we solved the normal equations for beta-hat equals the inverse of X-transpose-X times X-transpose-y. Now we see what that formula does as a picture: it projects the outcome y onto the flat space the regressors can reach. Then we package the projection into a matrix — the hat matrix — and its complement, the residual maker.
@@ -45,7 +46,7 @@ $$\mathbf{M} = \mathbf{I}-\mathbf{H},\qquad \hat{\mathbf{e}} = \mathbf{M}\mathbf
 The residuals get their own operator. Since e-hat equals y minus y-hat, which is y minus H-y, which is the quantity I minus H, times y, we define M equals I minus H, so that e-hat equals M-y. M is the residual maker, sometimes called the annihilator: hand it y and it returns the residual vector, the part of y perpendicular to the regressors. Together H and M split any vector into its two orthogonal pieces — y equals H-y plus M-y, which is y-hat plus e-hat. These two matrices appear in every remaining chapter of this week. M runs the partialling-out of Frisch-Waugh-Lovell in chapter two-point-three, and the diagonal entries of H — the leverages — drive the robust standard errors of chapter two-point-four. So it is worth knowing their defining properties cold, which is part six.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

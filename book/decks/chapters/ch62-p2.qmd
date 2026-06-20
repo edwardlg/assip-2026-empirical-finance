@@ -1,9 +1,10 @@
 ---
-title: "The Research Question"
 date: "2026-07-27"
 ---
 
-# The Research Question {.title}
+## The Research Question
+
+- Part 2 — stating the research question, two stacked halves
 
 ::: notes
 Welcome back to Chapter six-point-two, part two of nine. In part one we framed the paper: it replaces fixed government industry codes with a measure built from the words firms use. Now we state the research question precisely — and notice that two questions are stacked inside it, which you must hold apart.
@@ -45,7 +46,7 @@ Name the outcome and the key variable, as the Week-Five pack drilled you. In the
 Why care that economists dislike S-I-C codes? Because the system has a defect you can feel: it is transitive and time-invariant. Transitive means if A shares a box with B and B with C, then A, B, and C are all declared mutual competitors — clean partitions, no overlaps. Time-invariant means a firm's code rarely changes even as the firm reinvents itself. Both are false about real competition. Netflix fought Blockbuster, then HBO, then Disney — a moving neighborhood, not a fixed box — and its rival set overlaps but does not coincide with Disney's. Hoberg and Phillips ask: what if we let the data draw the neighborhoods, and let them overlap, and let them move?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

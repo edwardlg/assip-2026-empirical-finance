@@ -1,9 +1,10 @@
 ---
-title: "The Few-Clusters Trap & Thinking Like the Referee"
 date: "2026-06-29"
 ---
 
-# The Few-Clusters Trap & Thinking Like the Referee {.title}
+## The Few-Clusters Trap & Thinking Like the Referee
+
+- Part 4 — too few clusters, and reporting like a referee
 
 ::: notes
 Welcome back to Mentor Session Two, "Why your standard error is the whole ballgame," part four of four. In part three we sorted out the panel — firm effects, time effects, two-way clustering, and the rule that fixed effects and clustering do different jobs. Now we close two loops. First, the trap where clustering, the supposed cure, quietly reintroduces the overconfidence it was meant to fix. Second, what it actually means to report and defend a standard error the way a referee thinks. This is the empirical-spec discipline made concrete.
@@ -42,7 +43,7 @@ What do you do when you are stuck with only a couple dozen clusters? Petersen an
 Two real references anchor this. Petersen's two-thousand-nine paper in the Review of Financial Studies turned "which standard error?" from folklore into a discipline. And one of Prof. Gao's own studies — Gao, Han, Kim and Pan, two-thousand-twenty-four, in the Journal of Corporate Finance — relates a supplier firm's earnings management to overlapping institutional ownership along its supply chain. There the residuals can hold hands along several dimensions: the same firm over many years, firms tied through a shared institutional owner, and a common shock in a given year. Each dimension implies a clustering or fixed-effect choice, and ignoring any pushes the standard error in the dangerous, too-small direction — which is why two-way clustering is natural to consider here. Naming your clustering level is not a technicality; it is an economic claim about where Omega's off-diagonals actually live.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

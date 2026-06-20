@@ -1,9 +1,10 @@
 ---
-title: "Path B — Building the Synthetic Panel"
 date: "2026-07-13"
 ---
 
-# Path B — Building the Synthetic Panel {.title}
+## Path B — Building the Synthetic Panel
+
+- Part 5 — Path B: build the synthetic panel with a known effect
 
 ::: notes
 Welcome back to Week Four, the Lab, part five of eight. In part four we built the denial-rate outcome and named the full real-data spec, ending on the parallel-trends assumption. Now we cross into Path B — the universe where you know the truth. We build a synthetic county-year panel that mimics aggregated HMDA, but with a planted, dynamic treatment effect, so we can check whether the pipeline recovers it.
@@ -57,7 +58,7 @@ On top of the planted effect, you add a few realistic trimmings. Each county get
 What should you expect? A one-thousand-one-hundred-fifty-two-row panel, and a true mean average treatment effect on the treated of about minus one-point-four-nine percentage points — that is the mean of the planted effects averaged over every treated county-year cell. Hold that number: it is the truth every estimator below is chasing. And notice the cohort coding. Never-adopters carry a cohort value of not-a-number, written capital G equals N-a-N, which is exactly the convention the differences package reads as never-treated and eligible as a clean control. One honest note: because the panel has random noise, the recovered effect will not equal the planted effect to infinitely many decimals — it will land close, within sampling error, which is precisely what we mean when we say the estimator works.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Identification, Specification, Exposition"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Identification, Specification, Exposition {.title}
+## Identification, Specification, Exposition
+
+- Part 3 — finishing the skeleton: identification, then exposition last
 
 ::: notes
 Welcome back to peer review and revision, part three of twelve. In part two we opened the report with a summary in our own words and the single biggest concern. Now we finish the skeleton — the three remaining tiers, in order: identification threats, then specification and robustness, then exposition last. The ranking is the whole point.
@@ -46,7 +47,7 @@ Step three: specification and robustness. Below identification sit the questions
 Step four: exposition, last. Last come the writing issues — an introduction that overclaims relative to the tables, a contribution sentence you cannot find, a results section that narrates the coefficients instead of interpreting them, tables that violate the Appendix D conventions, a figure with no axis labels. Exposition matters — a paper a reader cannot follow is a paper a reader will not believe — but it goes last because fixing prose on a paper with a fatal design is rearranging deck chairs. Put it last so the author reads it last, after they have absorbed what actually matters. Notice this is the exact inversion of how the author experiences the paper: they spent the most time on prose and the least on naming their own worst threat. A good report reverses that ranking and hands it back. That reversal is the gift.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

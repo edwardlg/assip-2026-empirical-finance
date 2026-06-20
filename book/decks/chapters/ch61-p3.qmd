@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Scale to Dollars and State the Assumption"
 date: "2026-07-27"
 ---
 
-# KPSS: Scale to Dollars and State the Assumption {.title}
+## KPSS: Scale to Dollars and State the Assumption
+
+- Part 3 — scale to dollars and state the validating assumption
 
 ::: notes
 Welcome back to Chapter six-point-one, part three of ten. In part two we filtered out the market to keep the firm-specific abnormal return. Now we finish the recipe: scale that reaction into dollars, adjust for the fact that grants are only partly a surprise, and then state the one assumption that makes the entire measure valid — the assumption the critics will later attack.
@@ -33,7 +34,7 @@ The second refinement scales and adjusts for surprise. A one percent jump means 
 Now state the assumption that makes this valid, in one sentence, Week-Five style: the abnormal stock return in the grant window equals the market's unbiased estimate of the patent's economic value — as long as markets are efficient enough to impound the patent's value at grant, and no other value-relevant news contaminates the window. That single sentence is where our vulnerabilities section will aim its fire. Note what it is not. It is not a claim that the patent caused the firm to grow. The growth and reallocation results in the back half of the paper are correlational associations built on top of the measure, and K-P-S-S are appropriately careful about how strongly to read them. The one-line spec, in Week-One discipline: the constructed outcome is dollar value per patent; the raw input is the idiosyncratic stock return in a short window around the grant date; the adjustments are market-filtered, scaled by market cap, and inflated for grant-anticipation; the sample is patents granted to CRSP-listed firms; and the validating assumption is market efficiency over the short window with no confounding news.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

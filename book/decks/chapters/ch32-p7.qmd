@@ -1,9 +1,10 @@
 ---
-title: "Estimating the Score: Two Disciplines"
 date: "2026-07-06"
 ---
 
-# Estimating the Score: Two Disciplines {.title}
+## Estimating the Score: Two Disciplines
+
+- Part 7 — fit by logistic regression; judge balance, hide $Y$
 
 ::: notes
 Welcome back to Chapter three-point-two, part seven of eleven. In part six we learned the propensity score collapses matching to one dimension. Now we estimate it in practice with logistic regression, and meet two disciplines that overturn what Week Two taught about fitting models: judge by balance, not prediction; and never let the outcome in.
@@ -42,7 +43,7 @@ First discipline: the propensity model is judged by the balance it produces, not
 Second discipline: the outcome Y never appears in this regression. The score is a function of treatment and covariates alone. That is what makes the whole procedure honest, and we return to it forcefully when we discuss the firewall between design and outcome. One subtlety to flag now, because the next chapter exploits it. In real data you do not know the true score; you estimate it, usually with the logistic regression just described. The balancing property is a property of the true score, so after matching on the estimated score you must check that covariates actually balanced — the estimated score is only useful insofar as it produced balance. Estimate it well here, and you have built the foundation Chapter three-point-three will reweight by, rather than match on.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

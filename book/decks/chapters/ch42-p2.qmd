@@ -1,9 +1,10 @@
 ---
-title: "The Result in One Plain Sentence"
 date: "2026-07-13"
 ---
 
-# The Result in One Plain Sentence {.title}
+## The Result in One Plain Sentence
+
+- Part 2 — state the crisis in one sentence; name the forbidden comparison
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part two of thirteen. In part one we framed the problem: the pooled two-way fixed-effects coefficient can be biased or even wrong-signed under staggered timing with heterogeneous or dynamic effects, and we met Priya's climate-disclosure rollout. Now we state the whole crisis in a single sentence, name the phrase that explains it, and preview the cure — which is surprisingly trivial once you see it.
@@ -53,7 +54,7 @@ Hold onto this through the gloom of the next few parts: the disease has a clean 
 Here is how the chapter unfolds, following a reveal-the-trick pattern. First the plain statement, which we just gave. Then why two-way fixed effects breaks, with a worked example where the sign actually flips. Then the Goodman-Bacon decomposition, which names the culprit exactly. Then the negative-weights result, which generalizes it. And finally the modern estimators — Callaway and Sant'Anna, Sun and Abraham, and Borusyak, Jaravel, and Spiess — that route around the whole problem. Keep the forbidden comparison in mind the entire way; it is the single thread that ties every section together.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Reading the Tables Column by Column"
 date: "2026-07-20"
 ---
 
-# Reading the Tables Column by Column {.title}
+## Reading the Tables Column by Column
+
+- Part 4 — read simulation tables column by column on the true-SE ruler
 
 ::: notes
 Welcome back to Chapter five-point-four, part four of seven. In part three we met the workhorse fabricated data and the firm-effect, time-effect, both taxonomy that is your panel diagnostic. Now we put it to work. A professional does not read this paper front to back; there is an order that gets you to the argument fastest. The core skill is reading the simulation tables column by column, anchored on a single row, and we practice it now.
@@ -18,7 +19,7 @@ Welcome back to Chapter five-point-four, part four of seven. In part three we me
 - Ratio often $\approx \tfrac12$ $\Rightarrow$ t-stats inflated by $\sqrt{2}$ or more
 
 ::: notes
-Read the simulation tables column by column, anchoring on a single row and reading across. Step one: find the true SE column. This is your ruler; every other number is judged by how close it comes. Step two: find the OLS column. Under a firm effect, the OLS standard error sits far below the true SE — the canonical, well-established result that OLS errors are badly biased downward when a firm or time effect is present. The ratio of estimated to true is often around one-half or worse, which means your t-statistics are inflated by roughly the square root of two or more. A CHECK tag: read the precise ratios off his tables, do not quote a number from memory.
+Read the simulation tables column by column, anchoring on a single row and reading across. Step one: find the true SE column. This is your ruler; every other number is judged by how close it comes. Step two: find the OLS column. Under a firm effect, the OLS standard error sits far below the true SE — the canonical, well-established result that OLS errors are badly biased downward when a firm or time effect is present. The ratio of estimated to true is often around one-half or worse, which means your t-statistics are inflated by roughly the square root of two or more. The precise ratios are read directly off his tables.
 :::
 
 ## "Robust" Does Not Mean Robust to Everything
@@ -45,7 +46,7 @@ Step three: find the White, or heteroskedasticity-robust, column. The crucial an
 Step five: read the time-effect panel of the tables the same way — there, clustering by firm is the one that fails and clustering by time is the one that matches. That symmetry is the heart of the argument. Second, compare the historical fixes. Petersen also evaluates Fama–MacBeth, which you build in Lab Two, and Newey–West. Fama–MacBeth corrects for a time effect — it averages period-by-period cross-sectional estimates — but it does not correct for a firm effect, so it is the wrong tool when the firm effect dominates, the common corporate-finance case. Reading this teaches you why the profession's chaos produced contradictory standard errors: each method silently assumes a different shape for Omega. Last, the guidance synthesis. The final tables collapse everything into the decision rule — identify the effect, cluster on that dimension; if both, cluster two ways. Read this after the simulations, so it lands as a conclusion you watched being proven.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

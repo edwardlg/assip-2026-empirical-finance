@@ -1,10 +1,11 @@
 ---
-title: "Look-Ahead Bias and Point-in-Time Discipline"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Look-Ahead Bias and Point-in-Time Discipline {.title}
+## Look-Ahead Bias and Point-in-Time Discipline
+
+- Part 4 — look-ahead bias: merge point-in-time, never peek forward
 
 ::: notes
 Welcome back to Building the Analysis Dataset, part four of seven. In part three we kept the firms that died, defeating survivorship bias. Now we meet the deadliest error of all, the most seductive: look-ahead bias. Your code sees the whole dataset at once, but an investor acting in real time could not see the future. This part shows where look-ahead sneaks in and the point-in-time discipline that locks it out.
@@ -58,7 +59,7 @@ Here is the lag done explicitly. Compute an available-date column equal to the f
 The assertion is a tripwire because look-ahead is invisible in your output — it just makes results better, raising the mean return and the Sharpe ratio and tightening the t-statistic. Connect this to Week Five: when the momentum reading guide warned you to skip the most recent month and lag your signals, this is the enforcing machinery. And connect it to Week Two: a mis-dated regressor is mismeasurement, except here the noise is not random — it is the future leaking into the past, biasing you in a predictable, flattering, fake direction.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

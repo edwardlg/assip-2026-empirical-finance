@@ -1,10 +1,11 @@
 ---
-title: "The Out-of-Sample Validation Protocol"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Out-of-Sample Validation Protocol {.title}
+## The Out-of-Sample Validation Protocol
+
+- Part 8 — gold set, held-out split, precision, recall, F1
 
 ::: notes
 Welcome back to the AI co-pilot for research, part eight of fourteen. In part seven we established that an LLM label is a measurement that must be calibrated. Now the procedure, step by step. It is not optional and it is not hard. You build a gold set by hand, hold part of it out, run the model, build a confusion matrix, and report precision, recall, and F-one on data you never tuned against.
@@ -46,7 +47,7 @@ Step three: run the model on the gold set and build a confusion matrix. For a bi
 Why not just report accuracy — the fraction of all labels correct? Because accuracy lies under class imbalance, and financial text is almost always imbalanced. Suppose only five percent of filings are truly negative. A lazy classifier that labels everything not-negative scores ninety-five percent accuracy and is useless, because its recall on the class you care about is zero. Precision and recall expose the lie accuracy hides; report them with confidence intervals. Step five: report performance on the held-out test set, honestly. Tune the rubric on the development set as much as you like, but the numbers in your paper are precision, recall, and F-one on the fifty test documents, evaluated exactly once after the prompt is frozen. The deepest point: never trust a raw accuracy claim, including a model's claim about itself. Produce your own out-of-sample numbers on your own gold set, and report them next to your main result so the referee can judge how much label error your conclusion tolerates.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

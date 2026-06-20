@@ -1,9 +1,10 @@
 ---
-title: "The So-What Test and the Fatal-Flaw Checklist"
 date: "2026-08-03"
 ---
 
-# The So-What Test and the Fatal-Flaw Checklist {.title}
+## The So-What Test and the Fatal-Flaw Checklist
+
+- Part 2 — the so-what test and fatal flaws that end a project
 
 ::: notes
 Welcome back to Mentor Session seven, part two of four. In part one we framed the research funnel as a furnace that burns ten ideas per survivor, and we met the first enemy of cheap killing — sunk cost. Now we meet the other two. The second is the inert project, caught with the so-what test pointed at your own work. The third is the fatal flaw — a crack that means stop now, not a weakness you can patch. By the end you'll have a checklist of failures that end a project, every one diagnosable before you run a single regression.
@@ -43,7 +44,7 @@ The third tool is a checklist of fatal flaws — failure modes that do not merel
 First: no variation in the treatment. If your key regressor barely moves across units — every firm got the same shock on the same day, every county is treated — there is nothing to compare, and no design rescues a comparison that doesn't exist. Second: the outcome can't be measured. If you can't say what number goes in the y column, you have a mood, not a study; investor confidence is not an outcome until you have named the series. Third: unbreakable confounding. If your treatment varies for reasons hopelessly tangled with the outcome, and there's no cutoff, no dated policy, no clean event, and no defensible instrument, the causal version is dead — though the descriptive version may live, if you say so honestly, per Conventions section four. Fourth, the most common killer of all: the data doesn't exist, or you can't get it in time — a paywall, an I-R-B you can't clear, an approval longer than the camp. And fifth: reverse causality you can't break, or a sample so small the standard errors swallow any effect. Both are diagnoses you can make before running anything.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

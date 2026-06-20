@@ -1,10 +1,11 @@
 ---
-title: "Effective F and the Strong-Instrument Contrast"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Effective F and the Strong-Instrument Contrast {.title}
+## Effective F and the Strong-Instrument Contrast
+
+- Part 5 — effective $F$ flags weakness; strong instrument fixes all
 
 ::: notes
 Welcome to Lab Three, part five of five. In part four the Monte Carlo exposed the disaster: the conventional interval covered only about eighty percent of the time while Anderson–Rubin recovered honest coverage. Now we finish the toolkit with the Olea–Pflueger effective F, learn the Bound–Jaeger–Baker lesson that significance is not strength, and flip the knob to a strong instrument to watch every pathology evaporate.
@@ -54,7 +55,7 @@ The machinery is not broken in general — it is broken by weakness. Re-run the 
 You have now reproduced, with your own hands, the disaster Bound, Jaeger, and Baker made famous: a valid but weak instrument that drags two-stage least squares back toward the ordinary-least-squares bias it was meant to cure, reports a confidence interval far too narrow to be honest, and clears the bar by luck just often enough to fool someone. And you watched the two cures work — the effective F that flags the weakness, and the Anderson–Rubin interval that stays honest however weak the first stage is, even when honesty means confessing, through an unbounded interval, that the data cannot answer the question. The habit underneath it runs through every lab in this camp: when unsure whether a tool does what it claims, build a universe where you know the truth and check — and read the answer by averaging over many draws, never one.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

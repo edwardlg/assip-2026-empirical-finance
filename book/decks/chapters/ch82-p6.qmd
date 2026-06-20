@@ -1,10 +1,11 @@
 ---
-title: "Sensitivity Analysis: Which Knob Is Your Result Hostage To?"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Sensitivity Analysis: Which Knob Is Your Result Hostage To? {.title}
+## Sensitivity Analysis: Which Knob Is Your Result Hostage To?
+
+- Part 6 — wiggle each arbitrary knob across its range
 
 ::: notes
 Welcome back to Chapter eight-point-two, part six of ten. In part five we finished the placebo battery — fake units and fake outcomes — with the rule that a failed placebo must always be reported. Now a different attack. Every analysis has knobs: tuning parameters and judgment calls that are individually defensible but together give you enormous freedom to land on a number you like. Sensitivity analysis wiggles each knob across its defensible range and reports how much the estimate moves. The sharper question is not "is my result stable across all forks?" but "is my result hostage to this particular arbitrary choice?"
@@ -34,7 +35,7 @@ Three knobs matter most. First, bandwidth, for the regression-discontinuity crow
 Now a related but distinct trap. Maya does not have one outcome. Like most real projects she has a family: the denial gap overall, but also the gap in approval rates, in interest-rate spreads, in loan amounts, broken out by minority subgroup. Suppose she tests eight outcomes and two come back significant at the five percent level. How impressed should you be? Recall the hard lesson of Chapter one-point-five: the false-positive rate of a single test does not protect a search across many tests. If all eight outcomes were truly null, the chance that at least one clears the five percent bar is one minus zero-point-nine-five to the eighth power, which is about zero-point-three-four — a one-in-three chance of a false discovery from pure noise. Run enough outcomes and a significant result is expected, not impressive. Maya owes the reader an adjustment for the size of her family, and that adjustment is the subject of part seven.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

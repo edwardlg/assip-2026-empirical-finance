@@ -1,10 +1,11 @@
 ---
-title: "The p-Value, Defined Correctly"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# The p-Value, Defined Correctly {.title}
+## The p-Value, Defined Correctly
+
+- Part 8 — the p-value, and the most common error in statistics
 
 ::: notes
 Welcome back to Chapter one-point-five, part eight of ten. In part seven we set where the rejection region sits with one-sided versus two-sided tests. Now we define the p-value — a richer, continuous measure of how extreme the data are — and then confront the single most common error in all of applied statistics.
@@ -34,7 +35,7 @@ Critical values give a yes-or-no verdict at a fixed alpha. The p-value reports s
 Now the correction that matters more than almost anything else in this book. The p-value is not the probability that the null hypothesis is true. Sam's p of zero point zero four six does not mean there is a four point six percent chance the rule has no edge. The p-value is the probability of data this extreme given the null is true. The thing students want it to be is the probability the null is true given the data. These are different conditional probabilities, and swapping the two sides of the bar is a basic error — the same as confusing the probability of wet given rain with the probability of rain given wet. To even speak of the probability the null is true you would need a prior and Bayes' rule; a p-value contains no prior. A second caution: the p-value is itself a random variable. When the null is true, the p-value is uniformly distributed on zero to one — every value equally likely — which is exactly why a true null still produces p below zero point zero five a full five percent of the time. That is the seed of the multiple-testing problem.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

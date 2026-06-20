@@ -1,9 +1,10 @@
 ---
-title: "Why |ρ| ≤ 1 Is Cauchy–Schwarz"
 date: "2026-06-22"
 ---
 
-# Why $|\rho|\le 1$ Is Cauchy–Schwarz {.title}
+## Why $|\rho|\le 1$ Is Cauchy–Schwarz
+
+- Part 7 — the correlation bound is Cauchy–Schwarz, drawn as angles
 
 ::: notes
 Welcome back to Chapter one-point-two, part seven of eight. In part six we learned that correlation is the cosine of an angle between two variables. A cosine never exceeds one in size, so the absolute value of correlation can never exceed one. In this part we see that this bound is exactly the Cauchy–Schwarz inequality, prove it with a single-knob trick, and then draw Maya's three scenarios as three angles between two arrows.
@@ -44,7 +45,7 @@ Expand that variance. The variance of X minus t Y equals the variance of X, minu
 Back to Maya, now with a picture. Her two assets have volatilities zero point two zero and zero point one zero, so by Cauchy–Schwarz the covariance is boxed into an absolute value of at most zero point zero two. That is why Scenario A used exactly zero point zero two — it is the most the assets can possibly move together, correlation plus one, angle zero degrees. Her three scenarios are three angles between two arrows of length zero point two zero and zero point one zero. Scenario A, correlation plus one, angle zero: arrows aligned, the combined arrow as long as it can be, maximum risk. Scenario B, correlation zero, angle ninety degrees: perpendicular arrows, combined length given by the Pythagorean theorem, shorter than adding the lengths — the free risk reduction. Scenario C, covariance minus zero point zero one, so correlation minus zero point five, angle one hundred twenty degrees: arrows splay past a right angle and partly cancel, shorter still.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

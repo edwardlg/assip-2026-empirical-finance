@@ -1,10 +1,11 @@
 ---
-title: "An LLM Label Is a Measurement"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# An LLM Label Is a Measurement {.title}
+## An LLM Label Is a Measurement
+
+- Part 7 — why an LLM label is a measurement, not truth
 
 ::: notes
 Welcome back to the AI co-pilot for research, part seven of fourteen. In part six we grounded answers in retrieved sources with R-A-G. Now the heart of the lesson, and the single most important sentence in it: an LLM-produced label is a measurement, not the truth — so before any label enters a regression, you must validate it against a hand-labeled gold standard and report its error rate on held-out data. If you remember nothing else from Week Six, remember that an LLM classifier is a measurement instrument, and an instrument that has not been calibrated against ground truth is just a confident guess.
@@ -34,7 +35,7 @@ Why is a label a measurement? Recall the idea of measurement error. When you lab
 You met the benign, transparent version of this instrument earlier: the Loughran–McDonald finance sentiment dictionary, which labels tone by counting words from a fixed, published list. The Loughran–McDonald rubric is just a word list anyone can inspect. An LLM's rubric is your prompt plus an opaque model. The LLM may be more accurate, but it is far less transparent, which raises the bar on validation, not lowers it. So the question is never "is the LLM accurate?" in the abstract. The question is: how accurate is this classifier, on my data, measured against truth — and is it accurate enough that my downstream result is not an artifact of label error? You answer it the way you would validate any instrument: against a gold standard, out of sample.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

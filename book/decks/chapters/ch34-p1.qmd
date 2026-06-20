@@ -1,9 +1,15 @@
 ---
-title: "Instrumental Variables: The Escape Hatch"
 date: "2026-07-06"
 ---
 
-# Instrumental Variables: The Escape Hatch {.title}
+## Instrumental Variables: The Escape Hatch
+
+**Learning objectives.** By the end you can:
+
+- Explain why IV escapes an unobserved confounder
+- State the relevance and exclusion conditions
+- Read IV's estimand as the complier LATE
+- Diagnose a weak first stage and its bias
 
 ::: notes
 Welcome to Week Three, Chapter three-point-four, part one of eight: instrumental variables. For three chapters we have lived inside one generous assumption — the conditional independence assumption, or C-I-A — that once you condition on enough observed covariates, treatment is as good as randomly assigned. Matching, propensity scores, balancing all squeeze that idea dry. And all of them die the same death the moment a confounder you did not measure walks in. This chapter is the escape hatch. Our guide is Maya, who wants to know whether financial-literacy training actually helps people manage debt.
@@ -31,7 +37,7 @@ $$\frac{\text{how } Y \text{ moves with } Z}{\text{how } D \text{ moves with } Z
 Here is the whole idea in one sentence. If you can find a variable Z that shoves the treatment D around but has no other path to the outcome Y, then the causal effect of D on Y is the ratio of two things you can measure: how much Y moves with Z, divided by how much D moves with Z. Read it as leverage. You cannot move D yourself cleanly — every natural shove on D drags the confounder along. But Z can shove D cleanly, and the only way that shove can reach Y is through D. So whatever response you see in Y when Z changes must have traveled the one open road: Z to D to Y. Divide the Y-response by the D-response, the units of Z cancel, and you are left with the effect of D on Y. The instrument is a lever; the denominator says how hard it pushed the treatment; the numerator says how far the outcome moved; the ratio is the mechanical advantage.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

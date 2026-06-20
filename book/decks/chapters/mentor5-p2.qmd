@@ -1,9 +1,10 @@
 ---
-title: "From Itch to Question to Design"
 date: "2026-07-20"
 ---
 
-# From Itch to Question to Design {.title}
+## From Itch to Question to Design
+
+- Part 2 — building links one and two: sharp question, credible design
 
 ::: notes
 Welcome back to the anatomy of a Journal of Finance paper, part two of four. In part one we framed a paper as a chain of four links — sharp question, credible design, transparent tables, honest robustness — that dies at its weakest point. Now we build the first two links. We turn a vague itch into a sharp question, and then we go to the link referees actually break papers on: the research design. Having a question, it turns out, is not the same as having an answer.
@@ -42,7 +43,7 @@ Here is the catch. Having a question is not having an answer, because the thing 
 A design is a concrete strategy for isolation: a portfolio sort, a panel regression with the right fixed effects, an instrument, a difference-in-differences off a policy shock, or a discontinuity at a cutoff. But the design is not just the strategy — it is the strategy plus one more sentence, the identifying assumption: the condition under which your estimate equals the causal effect and not a confound wearing its coat. You write it in the form "this estimate is the causal effect as long as blank." If you cannot write that sentence, you do not have a design. You have a correlation with ambitions. That is the exact line I apply to my own projects, pointed at my own data, before I commit two years to chasing them.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

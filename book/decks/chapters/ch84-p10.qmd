@@ -1,10 +1,11 @@
 ---
-title: "Maya Answers Devon: Bound and Concede"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Maya Answers Devon: Bound and Concede {.title}
+## Maya Answers Devon: Bound and Concede
+
+- Part 10 — Maya's memo: a bounded threat and a concession
 
 ::: notes
 Welcome back to peer review and revision, part ten of twelve. In part nine we learned the three moves: concede, defend, and bound the untestable. Now we read Maya's actual memo answering Devon, and watch the moves in real responses. This part covers her first two major points — a bounded threat and a concession. Each response quotes the comment, states the change, and points to a specific new table or figure with a specific number.
@@ -34,7 +35,7 @@ Maya opens by thanking the referee for an unusually constructive report, noting 
 Major point two, the forbidden comparison. Devon's quoted comment: the design is staggered, already-treated counties are serving as controls, and I would want the headline re-estimated with a heterogeneity-robust estimator and the two numbers compared. Maya's response: we agree this was a real gap. We re-estimated the headline using the Callaway and Sant'Anna estimator against never- and not-yet-treated controls only, new Table Three. The robust estimate is negative one point five percentage points, very close to the negative one point four two-way fixed-effects estimate, suggesting the negative-weights problem is not material here — consistent with effects that, while dynamic, are similarly signed across cohorts. We now report both numbers and note the agreement in Section five-point-one. We retain two-way fixed effects as the headline for comparability but flag the robust estimate as the one we would defend if the two diverged. This is a clean concession: she granted the gap, ran the estimator, and because the numbers agree, the concession cost her nothing and bought enormous credibility.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

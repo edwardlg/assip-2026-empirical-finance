@@ -1,10 +1,11 @@
 ---
-title: "Few Clusters and the Wild Cluster Bootstrap"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Few Clusters and the Wild Cluster Bootstrap {.title}
+## Few Clusters and the Wild Cluster Bootstrap
+
+- Part 3 — when too few treated clusters fake significance
 
 ::: notes
 Welcome back to Chapter eight-point-two, part three of ten. In part two we re-clustered Maya's standard errors at every defensible level and watched the t-stat fall from seven-point-eight to two-point-five — and it still excluded zero. But that table hides a threat: what if the number of clusters that actually matters is small? That is the row Maya wrote as "few-treated-cluster inference," and it is what the wild cluster bootstrap was built to answer.
@@ -58,7 +59,7 @@ Here is the procedure. You re-impose the null — beta equals zero — when comp
 How do you read it? Pass: the wild-cluster p-value is small and roughly agrees with your conventional clustered p-value. Your significance was not an artifact of too few clusters. Fail: the wild-cluster p-value is much larger — say your table said p equals zero-point-zero-one but the bootstrap says zero-point-one-eight. That is the few-clusters illusion exposed, and the honest report is brutal: the point estimate is minus one-point-four points, but with few treated clusters, inference is too imprecise to reject zero; report it as suggestive, not significant. You do not keep the three stars once the bootstrap calls them fake. For designs with few treated clusters, the bootstrap — not the default clustered standard error — is the honest inference. If they disagree, believe the bootstrap.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

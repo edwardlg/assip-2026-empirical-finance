@@ -1,10 +1,11 @@
 ---
-title: "The Fix: Local Linear Regression"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Fix: Local Linear Regression {.title}
+## The Fix: Local Linear Regression
+
+- Part 7 — the fix: local linear regression with a kernel
 
 ::: notes
 Welcome back to Chapter four-point-three, part seven of thirteen. In part six we saw why a global high-order polynomial corrupts the boundary estimate. Now the fix: throw away distant data and fit a simple straight line in a narrow window on each side, weighted by a triangular kernel. We lay out the recipe and the principle — stay local, stay low-order.
@@ -34,7 +35,7 @@ The fix is local polynomial estimation, and the recommended workhorse is local l
 A line is a good local approximation to almost any smooth curve over a short enough interval — it is just the first-order Taylor expansion you know from calculus — so within a narrow window the linear fit captures the trend faithfully, without the wild extrapolation a high-order polynomial commits. You can go to local quadratic if you have a lot of data and want to reduce bias from curvature, but the field's consensus, following Gelman and Imbens, is: stay local, stay low-order. Local linear with a good bandwidth and a triangular kernel is the default for a reason.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

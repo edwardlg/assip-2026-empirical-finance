@@ -1,9 +1,10 @@
 ---
-title: "Reading the Sorts: Watch Beta Die"
 date: "2026-07-20"
 ---
 
-# Reading the Sorts: Watch Beta Die {.title}
+## Reading the Sorts: Watch Beta Die
+
+- Part 4 — reading tables first and watching beta go flat
 
 ::: notes
 Welcome back to Chapter five-point-one, part four of seven. In part three we built the machinery — sorts and Fama–MacBeth — and the data underneath. Now we learn the most practical referee habit in the whole chapter: how to read a paper through its tables. New readers go front to back and drown in the introduction. Experienced readers read tables first. The prose is the author's argument; the tables are the evidence, and a good paper's tables tell the whole story if you know the order to take them in.
@@ -45,7 +46,7 @@ So go into the size-beta table. Pick a row of roughly constant size and slide ac
 Now read the size–book-to-market sort. Slide across the book-to-market columns and watch average return rise — value, meaning high book-to-market, beats growth, meaning low book-to-market. Then slide down the size dimension and watch average return rise as you move toward small firms. Two live patterns: value and size both move returns. And from the first table, one dead one: beta. You now know the entire result of the paper before reading a single word of regression output. That is the payoff of reading tables first — the sorts have already told you the story, and the regressions that follow are there to quantify it and to let the characteristics fight each other in one specification.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

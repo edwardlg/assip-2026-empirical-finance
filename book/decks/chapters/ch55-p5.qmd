@@ -1,9 +1,10 @@
 ---
-title: "What's Clever About BDM"
 date: "2026-07-20"
 ---
 
-# What's Clever About BDM {.title}
+## What's Clever About BDM
+
+- Part 5 — three compounding strokes that changed the field
 
 ::: notes
 Welcome back to Chapter five-point-five, part five of seven. In part four we read the tables in story order: symptom, mechanism, cure. Now we step back and ask what makes this paper a classic. Three things, and they compound, turning a technical complaint into a paper that changed how a whole field reports its results.
@@ -45,7 +46,7 @@ The second cleverness is quantifying the over-rejection rather than merely warni
 The third cleverness is that they did not just break things; they offered fixes that work and that practitioners could actually adopt. Block bootstrap, cluster-by-state, collapse-to-two-periods: all are implementable with the tools of the day, and they each demonstrably pull the rejection rate back toward five percent. A critique with a remedy attached is one people will use, and they did. Clustering by the unit of treatment is now so standard that omitting it is treated as an error, which is precisely why it was non-negotiable for Priya last week. The three cleavernesses compound. The placebo design makes the problem visible, the number makes it urgent, and the fixes make it solvable, so the field had both a reason and a way to change, and it did.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

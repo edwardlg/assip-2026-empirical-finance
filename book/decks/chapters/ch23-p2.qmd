@@ -1,9 +1,10 @@
 ---
-title: "Partialling-Out and Leah's Six Firms"
 date: "2026-06-29"
 ---
 
-# Partialling-Out and Leah's Six Firms {.title}
+## Partialling-Out and Leah's Six Firms
+
+- Part 2 — why one regressor does two jobs, plus our dataset
 
 ::: notes
 Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part two of eight. In part one we learned the claim: controlling for a variable means subtracting it out, and any multiple-regression coefficient is really a simple slope of the cleaned-up leftovers. Now we first build the intuition for why that can possibly be true, and then meet the dataset we will use to see it happen — a tiny set of six firms studied by a researcher named Leah.
@@ -49,7 +50,7 @@ Now meet Leah. She studies innovation, and she has a hunch she has heard stated 
 Here are Leah's six firms, small enough to do entirely by hand. The outcome y is patents per year. The key regressor x is R&D spending in millions of dollars. The control z is firm size, say log assets. Notice that R&D and size are positively related across these firms — bigger firms tend to spend more on R&D. That is exactly the entanglement Leah worries about, the size signal riding along inside R&D. In part three we run the full three-variable regression to get a target number, and then reproduce that exact number using only two simple regressions and a single scalar division — no matrix inversion bigger than a number.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

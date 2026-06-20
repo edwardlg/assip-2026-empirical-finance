@@ -1,10 +1,11 @@
 ---
-title: "Why Entropy Balancing Is Steadier"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Why Entropy Balancing Is Steadier {.title}
+## Why Entropy Balancing Is Steadier
+
+- Part 6 — exact balance, tame weights, Maya and Priya applied
 
 ::: notes
 Welcome back to Chapter three-point-three, part six of ten. In part five we set up the entropy-balancing optimization. Now we see why it has become a workhorse in empirical finance — exact balance with tame weights — and watch it work for Maya's loans and Priya's climate insurance.
@@ -46,7 +47,7 @@ The practical contrast with matching is just as sharp. Matching discards units �
 Back to Maya. She wants the A-T-T: the effect of enrolling, for the kind of student who enrolled. She reweights her non-enrollees so their weighted means of income, starting credit, age, and prior-account count exactly match the enrollees' means, while keeping the weights flat. Her balance table is perfect — every covariate difference is mechanically zero — and her effective sample size among controls is about four-hundred-ten out of six-hundred, a mild and honest cost. The reweighted control mean rate is nine-point-one; the enrollee mean is eight-point-four; her entropy-balanced A-T-T is eight-point-four minus nine-point-one, equals minus zero-point-seven points. Crucially, when she re-runs adding variance matching, the number barely moves — a reassurance the I-P-W wobble never gave her. A Priya variant shows it generalizes. Priya studies climate insurance: did buying parametric drought insurance change a farm's irrigation investment? Insured and uninsured farms differ on rainfall variability, size, distance to a bank, and prior losses. She entropy-balances the uninsured farms to share the insured farms' means and variances, then compares irrigation spending. The weights stay tame even though a few insured farms sit in unusual rainfall zones — the units that would have blown up an I-P-W estimator — precisely because the entropy objective refuses to let any one weight run away.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

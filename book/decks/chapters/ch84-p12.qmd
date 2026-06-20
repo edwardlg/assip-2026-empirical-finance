@@ -1,10 +1,11 @@
 ---
-title: "The Same Skill as Week 5"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Same Skill as Week 5 {.title}
+## The Same Skill as Week 5
+
+- Part 12 — close the loop to Week 5; set up the workshop
 
 ::: notes
 Welcome back to peer review and revision, part twelve of twelve — the close. In part eleven we finished Maya's memo and saw why it earns recommend acceptance. Now we close the loop explicitly, because the symmetry is the whole point of the chapter, and then we set up the Week-Eight workshop where you will do both jobs in one session.
@@ -46,7 +47,7 @@ The student who internalizes this stops experiencing peer review as a hazing rit
 This chapter is the engine of the Week-Eight peer-review workshop and of Problem Set eight-point-four, where you will be assigned a classmate's capstone draft, write a full referee report on it, and then — after receiving the report someone else wrote on yours — produce an R and R memo responding point by point. Bring your draft from chapters eight-point-one through eight-point-three, and come ready to be both referee and author in the same session. Mentor Session Eight, Defending a result: what a referee actually asks, rehearses the live version — the questions a referee fires in a seminar — tied to Prof. Gao's work on disclosure, Elnahas, Gao, Hossain, and Kim, in the Journal of Financial and Quantitative Analysis, two thousand twenty-four. When you referee, work the skeleton in order. When you write your memo, work each comment quote-change-evidence, deciding consciously whether you concede, defend, or bound.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Primary Specification"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Primary Specification {.title}
+## The Primary Specification
+
+- Part 3 — pinning the primary regression by naming seven slots
 
 ::: notes
 Welcome back to Chapter seven-point-three, part three of eight. In part two we stated Maya's hypotheses directionally and numbered them, H1 primary. Now we write the heart of the plan: Component two, the primary specification — the single regression that tests H1, the one number that if it broke would sink the paper. The discipline here is to name all seven slots so precisely that there is no fork left to walk. This is where the book's empirical spec-discipline earns its keep.
@@ -46,7 +47,7 @@ $$\texttt{denied}_i=\beta_0+\beta_1\texttt{minority}_i+\mathbf{x}_i'\boldsymbol{
 Clustering is a notorious fork. Clustering by lender versus county versus tract can change your t-statistic materially, and choosing the level after seeing which gives significance is p-hacking on the standard error. Maya commits to clustering by lender, because the plausible correlation in errors is at the lender level — a lender's underwriting style affects all its loans. The model is the one you built since Week Two: denied for application i equals beta-zero, plus beta-one times the minority indicator, plus the control vector times gamma, plus a lender fixed effect, plus a tract fixed effect, plus the error — with beta one the single coefficient H1 is about. Finally, the identifying assumption in one sentence: conditional on the named controls and the two fixed effects, the minority indicator is uncorrelated with the unobserved creditworthiness — the missing credit score — that the lender legitimately prices. That assumption is imperfect, which is exactly why Maya's headline is a bound, not a clean causal effect.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Correlation as a Cosine"
 date: "2026-06-22"
 ---
 
-# Correlation as a Cosine {.title}
+## Correlation as a Cosine
+
+- Part 6 — random variables are vectors; correlation is a cosine
 
 ::: notes
 Welcome back to Chapter one-point-two, part six of eight. So far we have treated covariance as a number. In part five we found Maya's minimum-risk blend and saw the same quadratic that Week Two's regression will use. Now comes the reveal that reorganizes the whole subject: centered random variables behave exactly like vectors, covariance is their inner product, and correlation is the cosine of the angle between them. Once you see it, the bound on correlation stops being a rule to memorize.
@@ -47,7 +48,7 @@ That last row gives the definition of correlation: it is covariance rescaled by 
 Now read the angles. Two perfectly correlated variables, correlation plus one, point the same way, angle zero degrees. Two perfectly anti-correlated variables, correlation minus one, point opposite, angle one hundred eighty degrees. Uncorrelated variables sit at ninety degrees — geometrically perpendicular. Uncorrelated and orthogonal are the same word in two languages, and this is not an analogy to file away as cute. It is the engine of Week Two. Ordinary least squares works by projecting the outcome onto the space spanned by the regressors and keeping the perpendicular residual, and perpendicular there means exactly uncorrelated here. The geometry you are building now is the machinery of regression.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

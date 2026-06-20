@@ -1,10 +1,11 @@
 ---
-title: "The Full Validity Checklist"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Full Validity Checklist {.title}
+## The Full Validity Checklist
+
+- Part 12 — the full RD validity checklist of threats
 
 ::: notes
 Welcome back to Chapter four-point-three, part twelve of thirteen. The McCrary test polices one threat — manipulation — but a careful analyst runs a whole checklist, because regression discontinuity's credibility rests on one claim: the cutoff is the only thing that changes. Lee and Lemieux, in two-thousand-ten, systematized this discipline. We walk the threats, including the deadliest one that leaves no fingerprint.
@@ -34,7 +35,7 @@ Beyond manipulation, several threats leave statistical fingerprints. First, cova
 The most insidious threat passes the density test and the covariate-balance test and still breaks the design. The danger is that the same threshold triggers more than one thing at once. Cutoffs are administratively convenient, so institutions love to reuse them: a credit score of six-sixty might flip not only loan approval but also the interest-rate tier, the required down payment, and whether the loan is eligible for securitization — all at six-sixty. Then your jump in default rates is the combined effect of all those changes bundled together, and you cannot attribute it to loan approval alone. The estimand is a real causal effect of crossing the threshold, but it is the effect of a compound treatment, not the clean single treatment you wanted. This one cannot be tested statistically — it must be argued from institutional knowledge, exactly like the exclusion restriction in Week three. You must establish, from how the rule actually works, that the cutoff you study governs only the treatment you claim. For fuzzy regression discontinuity this is literally the exclusion restriction.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

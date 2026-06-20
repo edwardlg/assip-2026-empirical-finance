@@ -1,10 +1,11 @@
 ---
-title: "The Build Script: Raw to Analysis, with Row-Count Logging"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Build Script: Raw to Analysis, with Row-Count Logging {.title}
+## The Build Script: Raw to Analysis, with Row-Count Logging
+
+- Part 7 — build script: a reproducible, row-count-logged pipeline
 
 ::: notes
 Welcome back to Building the Analysis Dataset, part seven of seven, the finale. Across the last six parts we made a dozen decisions — which links to trust, whether to keep delisted firms, what lag to impose, whether to winsorize, how to handle missing income. Now we make those decisions reproducible and auditable. They belong in a script, not a notebook's scrollback. We close by seeing why the panel is the foundation of the whole argument.
@@ -58,7 +59,7 @@ Running it produces a log that reads like the autobiography of your dataset, eac
 Step back. Sam started with two clean files and a simple question, and we spent a chapter turning them into one panel. We made a dozen decisions: which link codes to trust, whether to keep delisted firms, what lag to impose, whether to winsorize book-to-market, whether to leave Priya's catastrophe losses alone. None of these is cleaning in the janitorial sense. Each can change the sign of a result, and a hostile referee will ask about every one. That is why this chapter sits between the acquisition of Chapter seven-point-two and the identification memo of Chapter seven-point-five. Identification assumptions are claims about the data you built. If the panel is contaminated by survivorship or look-ahead, the cleverest identification strategy estimates an artifact.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

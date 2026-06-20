@@ -1,9 +1,10 @@
 ---
-title: "Why the Naive Comparison Fails"
 date: "2026-07-06"
 ---
 
-# Why the Naive Comparison Fails {.title}
+## Why the Naive Comparison Fails
+
+- Part 2 — decompose the naive difference, name selection bias
 
 ::: notes
 Welcome back to Chapter three-point-two, part two of eleven. In part one we set the target — the average treatment effect on the treated — and wrote each applicant's two potential outcomes. Now we show why the obvious comparison fails, decompose the naive difference exactly, and name the villain: selection bias. We close by setting up the strategy for the whole chapter.
@@ -42,7 +43,7 @@ That second term is the selection bias. If the enrollees are the financially-sav
 This chapter is the first of two on how to kill selection bias when the thing driving it is observable. The strategy has a name — selection on observables — and a tool: matching, refined into propensity-score matching. The plan is to state the assumption that makes it work, show on real numbers why comparing look-alikes recovers tau-A-T-T, watch it break, and write the code. But hold one warning from the first page: matching is not a different beast from regression with controls. It is the same bet — the bet that you have measured the confounders — dressed in better clothes. The omitted-variable bias of Week Two is waiting here under a new name. We will earn that warning, not just assert it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Normal Equations, by Calculus"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Normal Equations, by Calculus {.title}
+## The Normal Equations, by Calculus
+
+- Part 3 — deriving the normal equations by calculus
 
 ::: notes
 Welcome back to Chapter two-point-one, part three of seven. In part two we set up the least-squares objective — minimize the sum of squared residuals, the squared length of y minus X-b. Now we minimize it the way you minimize anything: expand it, differentiate it, and set the derivative to zero. The result is a clean linear system called the normal equations, and getting comfortable with two matrix-calculus facts is all it takes.
@@ -45,7 +46,7 @@ $$\mathbf{v}'\mathbf{X}'\mathbf{X}\mathbf{v} = \lVert\mathbf{X}\mathbf{v}\rVert^
 We have only verified the gradient vanishes here, which marks a flat point. Is it a minimum? Yes, decisively. The second derivative — the Hessian — is two X-transpose-X, and X-transpose-X is positive semidefinite. Here is why: for any vector v, v-transpose-X-transpose-X-v equals the squared length of X-v, which is never negative. That is the same "a squared length is never negative" argument that made the covariance matrix Sigma positive semidefinite last week. A quadratic with a non-negative-definite Hessian is a bowl opening upward, so the flat point is its bottom — no competing maxima, no saddles. Least squares has a unique honest minimum, provided we can actually solve the system, which we will check later.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

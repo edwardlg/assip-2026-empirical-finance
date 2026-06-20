@@ -1,9 +1,15 @@
 ---
-title: "A Paper Is a Chain, Not a Result"
 date: "2026-07-20"
 ---
 
-# A Paper Is a Chain, Not a Result {.title}
+## A Paper Is a Chain, Not a Result
+
+**Learning objectives**
+
+- Sharpen a topic into a one-sentence research question
+- Name a design's identifying assumption in one sentence
+- Read whether a coefficient survives across table columns
+- Demand the robustness check that convinces a skeptic
 
 ::: notes
 Welcome to Week Five, Mentor Session Five — the anatomy of a Journal of Finance paper — part one of four. All week you have been a reader. You ran the seven-part template on Fama and French, on Jegadeesh and Titman, on Petersen, on Bertrand, Duflo and Mullainathan. You learned to go to the tables first and the introduction last, to find the headline number, to state the identifying assumption in one sentence, and to name the one threat a referee would fire first. That is the skill of dissecting a finished paper. Today we turn the camera around. We watch a paper get built — from a vague itch of a question, through the search for a design that could actually earn the answer, to the tables that carry it. I will use one of my own working papers as the cadaver on the table, because the one thing a published paper hides best is the two years of false starts that produced it.
@@ -32,7 +38,7 @@ There is a myth that a top-journal paper is one with a surprising result. It is 
 Four links matter, and they are exactly the four things you have been grading all week, now stated as construction advice rather than reading advice. First, a sharp question — not a topic, but a question, one sentence ending in a question mark. Second, a credible research design — the link referees break papers on. Third, transparent tables that hide nothing. Fourth, honest robustness — the months spent trying to kill your own result before a referee does. Keep one reflex sharp as we go: for every claim, what is the comparison, what is the threat, and what check would make a skeptic stop arguing? That reflex is the whole course in one sentence.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

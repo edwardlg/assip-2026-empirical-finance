@@ -1,10 +1,16 @@
 ---
-title: "The Identification Memo: The Page That Matters Most"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Identification Memo: The Page That Matters Most {.title}
+## The Identification Memo: The Page That Matters Most
+
+**Learning objectives.** By the end you can:
+
+- State your identifying assumption in one sentence
+- Name the specific threat, never "endogeneity"
+- Build a four-column threats-and-responses table
+- Match each response: test it or argue it
 
 ::: notes
 Welcome to Week Seven, Chapter seven-point-five, part one of nine. This lesson is about one page in your capstone that matters more than any other — not the abstract, not the headline table, not the conclusion. It is a page you write before you run the regression the paper is about, and if you write it honestly, it tells you in advance whether the project is worth finishing. It is called the identification memo. In this opening part we say what it is and write its central sentence.
@@ -46,7 +52,7 @@ Here is the move the whole chapter turns on. The identifying assumption is the s
 Start with the sentence, because everything hangs from it. The form is fixed, and you write it literally, filling three blanks. Our estimate of the effect is causal or credible, as long as the assumption holds, which we defend by the design feature or evidence. Three blanks, three jobs. The first names what you are estimating — not the regression, the effect. Say "the effect of a state fair-lending regulation on the mortgage-denial gap between minority and white applicants," not "the coefficient on the treatment dummy." We will fill the second and third blanks next, where the real discipline lives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

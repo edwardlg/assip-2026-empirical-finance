@@ -1,10 +1,11 @@
 ---
-title: "Entropy Balancing: Solve for the Weights"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Entropy Balancing: Solve for the Weights {.title}
+## Entropy Balancing: Solve for the Weights
+
+- Part 5 — skip the propensity model; solve for exact balance
 
 ::: notes
 Welcome back to Chapter three-point-three, part five of ten. In part four we saw I-P-W weights explode under thin overlap. Now a method that fixes that at the root: entropy balancing, which skips the propensity model and solves directly for weights that force exact balance.
@@ -46,7 +47,7 @@ Skip the propensity model. State the balance conditions you want — the reweigh
 Set up to estimate the A-T-T. We reweight the control units to look like the treated group, then compare. Let w-i be the weight on control unit i. We minimize the sum of w-i times the log of w-i over q-i, subject to balance and normalization constraints, where q-i is a base weight, uniform unless you have reason otherwise. That objective is the Kullback–Leibler divergence of the weights from uniform — a standard measure of how far one distribution is from another. Minimizing it maximizes entropy: it keeps the weights as flat as possible, and flat weights mean no single unit dominates — exactly the explosion problem I-P-W could not control. The constraints say what balance means: for each covariate, the weighted mean among controls must exactly equal the treated-group mean. You can add a second moment to match variances, or cross-moments for covariances, plus normalization that the weights sum to one and non-negativity. Two things make this powerful. Balance is exact, not approximate — the means come out equal by construction, so there is no post-hoc check that can fail. And you choose which moments to balance, making it transparent and tunable where the black-box logit is not. The solution has a tidy closed form: the optimal weights are exponential in the covariates, with one Lagrange multiplier per balance condition, found by a small convex optimization.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

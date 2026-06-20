@@ -1,10 +1,11 @@
 ---
-title: "Time-Stamping, Deviations, and Maya's Plan"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Time-Stamping, Deviations, and Maya's Plan {.title}
+## Time-Stamping, Deviations, and Maya's Plan
+
+- Part 6 — time-stamping, deviation logs, and Maya's assembled plan
 
 ::: notes
 Welcome back to Chapter seven-point-three, part six of eight. In part five we wrote the falsification and robustness components and split the data with a hold-out. Now we finish the registration discipline — time-stamping the plan so its contents are provably fixed, and logging the deviations that reality will force on you. Then we read Maya's whole assembled plan and watch it disarm her dangerous afternoon.
@@ -46,7 +47,7 @@ Here is where Olken's perils become operational. You will deviate from the plan.
 Here is the whole thing assembled — the plan Maya files as her pap-filed tagged commit, compact, with the discipline in the precision, not the length. Section one: hypotheses, directional. H1 primary and one-sided — conditional on observables, lender, and neighborhood, minority applicants face a higher denial rate, beta one greater than zero. H2 secondary, the gap is smaller for FinTech lenders. H3 an exploratory subgroup family, two-sided. Section two: the primary specification in full, the denied equation with all seven slots named, including the deliberately excluded loan-product type. Section three: the multiple-testing plan — Family A is H1 alone at five percent, Family B the FinTech interaction, Family C the subgroup gaps under Benjamini-Hochberg control, labeled exploratory. Section four: falsification for H1 and H2. Section five: planned robustness, reported either way. Section six: the thirty-seventy hold-out, split on hash of loan-id, with deviations logged in a deviations file.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

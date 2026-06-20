@@ -1,9 +1,10 @@
 ---
-title: "What's Clever in Each Paper"
 date: "2026-07-27"
 ---
 
-# What's Clever in Each Paper {.title}
+## What's Clever in Each Paper
+
+- Part 5 — the one genuinely good idea in each paper
 
 ::: notes
 Welcome back to Chapter six-point-four, part five of seven. In part four we read both papers table by table and watched the same shape emerge twice: a large raw gap, a decomposition that explains much of it with legitimate risk, and a residual that survives benchmarking to the machine. Now we name the one genuinely good idea in each paper — because naming cleverness is how Maya learns to be clever herself. In part six we will push back like a referee; here we give credit where it is due.
@@ -31,7 +32,7 @@ Bartlett et al.'s cleverness is using a formula-priced market to manufacture a c
 B-H-R's cleverness is twofold. First, simply observing the credit score is a contribution, because it lets them measure the omitted-variable bias the whole disclosure-only literature could only fear — turning Mentor Four's "you can never see the score" into "here is what happens to the coefficient when you finally can." Second, the race-blind automated underwriting system is a found experiment: a real, deployed decision rule that by design cannot use race, serving as the "same-quality applicant, vary only the protected trait" counterfactual that Chapter three-point-one says you can never directly observe. They did not have to build the counterfactual in a lab — the mortgage system built one for them. The deepest shared cleverness across both papers is separating pricing discrimination from acceptance discrimination using big loan-level data. Audit studies, like Mentor Four's Bertrand–Mullainathan résumés, randomize the trait but observe only a callback. These papers cannot randomize, but they observe millions of real loans on both margins, so they can ask where in the process the disparity lives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Replication Exercises and the Referee's Questions"
 date: "2026-07-20"
 ---
 
-# Replication and the Referee's Questions {.title}
+## Replication and the Referee's Questions
+
+- Part 11 — three replication exercises and the referee's questions
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part eleven of eleven — the final part. We framed the paper, dissected its construction and data, read its tables in order, and weighed what is clever against what is vulnerable. Now we close with the three replication exercises that feed the problem set, and the three questions a referee would write back with. This is where you turn reading into doing.
@@ -55,7 +56,7 @@ Exercise three addresses out-of-sample survival and the snooping defense. Re-est
 Finally, the three referee questions. One: are the reported t-statistics corrected for the serial correlation from overlapping holding periods? Report Newey-West standard errors at lag at least K minus one alongside the originals, and say how much the inference changes. Two: what is the profit net of realistic transaction and short-sale costs, separately for the long and short legs? Given that the losers are small, illiquid, low-priced stocks, a gross-return result is not yet an efficiency violation. Three: how do you rule out data-snooping across the sixteen cells, and will you commit to an out-of-sample test? Now open the notebook and rebuild the grid. The moment your Newey-West t-stats print next to the naive ones, you will understand why Week Two came before Week Five.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

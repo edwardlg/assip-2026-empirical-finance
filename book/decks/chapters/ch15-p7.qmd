@@ -1,10 +1,11 @@
 ---
-title: "One-Sided vs. Two-Sided Tests"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# One-Sided vs. Two-Sided Tests {.title}
+## One-Sided vs. Two-Sided Tests
+
+- Part 7 — where the rejection region sits, and the sidedness trap
 
 ::: notes
 Welcome back to Chapter one-point-five, part seven of ten. In part six we saw the four levers of power and watched Sam's rule barely clear the bar. Now we pin down where that bar sits — which depends on the shape of the alternative — and confront the temptation that sidedness creates.
@@ -34,7 +35,7 @@ The shape of the alternative decides where the rejection region sits, and you mu
 This creates an obvious temptation and an absolute rule. The temptation: run a two-sided test, see the effect is positive, then retroactively claim you always meant the one-sided test to get the easier one point six five cutoff. That is cheating — it secretly doubles your true Type One rate from five percent to effectively ten percent, because you gave yourself two bites at the apple. So choose the sidedness from the science before you see the data. When in genuine doubt, use two-sided; it is the honest default, and most published finance results are reported two-sided for exactly this reason. Sam can justify one-sided only because the reversal hypothesis was directional from the start — and even then, reporting both is the cautious move.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

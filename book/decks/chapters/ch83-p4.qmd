@@ -1,10 +1,11 @@
 ---
-title: "The Literature Review That Positions"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Literature Review That Positions {.title}
+## The Literature Review That Positions
+
+- Part 4 — draw a map that makes your gap visible
 
 ::: notes
 Welcome back to Writing the Empirical Paper, part four of seven. In part three we built the one-sentence contribution, the claim everything serves. But a claim of novelty is only credible if the reader can see the empty space you fill. That is the literature review's one job. Here we learn how most student papers fail it, what the section actually does, and three rules that keep it honest.
@@ -46,7 +47,7 @@ A literature review does exactly one job: it draws a map of what is known so tha
 Three rules keep the section honest. First, every paper you cite should be load-bearing — it either builds part of the map's wall or marks the edge of the hole. If a citation could be deleted without changing where the gap appears, delete it; a padded review signals you are counting references rather than building an argument. Second, be generous to the work you build on and precise about its limits, never dismissive. "Prior work was wrong" is the voice of someone about to be refereed by the author they just insulted. "Prior work established X under conditions Y; we extend to where Y fails" is the voice of someone who belongs in the conversation. Third, position, do not summarize — the reader needs each paper's coordinate on your map, one sentence, often less. And cite primary sources with full bibliographic information. If you cannot verify a citation, do not fabricate it: a hallucinated reference is the one error a referee can catch in ten seconds and never forgive.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

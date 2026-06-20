@@ -1,9 +1,15 @@
 ---
-title: "How to Read an Empirical Paper: The Skill of Week 5"
 date: "2026-07-20"
 ---
 
-# How to Read an Empirical Paper: The Skill of Week 5 {.title}
+## How to Read an Empirical Paper: The Skill of Week 5
+
+**Learning objectives** — by the end you can:
+
+- State what an unseen paper claims in twenty minutes
+- Judge whether to believe a result and where it is soft
+- Read a paper with a checklist, not front-to-back
+- Find the real paper: its tables, not its prose
 
 ::: notes
 Welcome to Week Five, the reading guide, part one of seven. This week the textbook stops teaching you methods and starts teaching you judgment. Weeks one through four built the toolkit, and you can run all of it. What you cannot yet do is pick up a paper you have never seen, in a journal you have never opened, and in twenty minutes know what it claims, whether to believe it, and where it is soft. That is the skill of Week Five, and this pack is the procedure, stated once, so you can carry it to any paper.
@@ -45,7 +51,7 @@ The five chapters this week each apply the same fixed procedure to one famous pa
 A warning before the trick. Papers are not written to be read; they are written to be cited. The introduction oversells. The literature review flatters. The prose hides the one assumption everything hangs on inside a subordinate clause on page fourteen. The professional reader is not impressed and not fooled. She has a checklist, she reads in a deliberate order that is not front-to-back, and she knows that the real paper lives in the tables. Over the next several parts we will hand you her checklist, her reading order, and the conventions that make a forbidding table readable. Start with the mindset: skeptical, table-first, and never sold by the framing.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

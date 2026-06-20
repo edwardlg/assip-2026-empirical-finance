@@ -1,9 +1,10 @@
 ---
-title: "The Reader's-Guide Template: Tables, Cleverness, Vulnerability, Replication"
 date: "2026-07-20"
 ---
 
-# The Reader's-Guide Template: Tables, Cleverness, Vulnerability, Replication {.title}
+## The Reader's-Guide Template: Tables, Cleverness, Vulnerability, Replication
+
+- Part 3 — the last four boxes: reading order, clever, vulnerable, replication
 
 ::: notes
 Welcome back to How to Read an Empirical Paper, part three of seven. In part two we covered the first three boxes: question, identification, and data. Now we finish the seven-part template with the last four — the table-reading order, what's clever, what's vulnerable, and three replication exercises. These are the boxes where you stop describing the paper and start judging it.
@@ -57,7 +58,7 @@ Box six: what's vulnerable. Every paper also has a soft spot — the assumption 
 Box seven: three replication exercises. Three concrete things a student could actually do, on real data, on a laptop, to test or extend the paper. The first should re-create a number from the headline table. The second should stress an assumption — re-run with different controls, a different sample window, or a different standard-error flavor. The third should extend the idea to a new setting — a new asset class, a more recent decade, a different country. These become your problem-set and notebook tasks, and they are also the seed of a capstone project.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

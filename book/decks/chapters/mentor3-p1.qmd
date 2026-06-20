@@ -1,9 +1,15 @@
 ---
-title: "Natural Experiments: Finding the Lever Nature Pulled"
 date: "2026-07-06"
 ---
 
-# Natural Experiments: Finding the Lever Nature Pulled {.title}
+## Natural Experiments: Finding the Lever Nature Pulled
+
+**Learning objectives — by the end you can:**
+
+- Recognize a natural experiment in the historical record
+- Argue as-if-random assignment, not just compute it
+- State and stress-test the exclusion restriction
+- Name the complier population your design measures
 
 ::: notes
 Welcome to Week Three, Mentor Session three, part one of five. This week you learned the framework that organizes all of causal inference — potential outcomes, the selection-bias term that contaminates the easy comparison, and the four designs that chase it down: matching, weighting, and the one we live inside today, instrumental variables. Chapter three-point-four taught you that an instrument is a lever that shoves the treatment around for reasons unrelated to the confounder. Today we ask where these levers actually come from. You almost never get to flip the coin yourself, so the empiricist's real craft is finding the coin someone else already flipped. That is a natural experiment, and over the next few minutes we frame what makes one credible.
@@ -42,7 +48,7 @@ A natural experiment is a piece of the real world that behaves like a randomized
 The entire value of the design rests on one phrase: as-if random. If that claim holds, the comparison between treated and control units is clean, and the coefficient you compute is causal. If it fails, no amount of careful regression saves you. So a credible natural experiment is one where you can defend three things in plain language, out loud, to a skeptic. First, that assignment was as good as random. Second, the exclusion restriction — that the assignment reaches the outcome only through the treatment. Third, an honest account of the complier population — whose effect you actually measured. We will take these three in order over the next three parts. The lesson to carry: in a natural experiment, the design is the finding, and the coefficient is just what falls out once the lever is shown to be clean.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Identification: Running the Catalog Backwards"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Identification: Running the Catalog Backwards {.title}
+## Identification: Running the Catalog Backwards
+
+- Part 5 — identification by running the design catalog backwards
 
 ::: notes
 Welcome back to Chapter seven-point-one, part five of eight. In part four we finished the three filters with the novelty test. Now we get specific about the second slot, the treatment, because that is where Weeks Three and Four come back with full force. A sharp, consequential, novel hypothesis is necessary but not sufficient. The thing that turns it into empirical research, rather than a plausible story with a regression attached, is identification — a credible argument that the correlation you measure is the causal effect you claim, and not the confounding, reverse causality, or selection that Week Three taught you to fear.
@@ -34,7 +35,7 @@ Recall the spine of Weeks Three and Four. Chapter three-point-one posed the fund
 The practical move for project design is to run this catalog backwards. Do not pick a method and go looking for a question — that is the beginner's mistake, and it produces a tool in search of a problem. Instead, pick a question, then ask: where, in the world that generates my data, is there a source of variation in my treatment that is plausibly unrelated to the confounders I fear? That source of variation is your identification, and finding it is the single highest-leverage thing you will do all of Week Seven. Everything downstream — the cleaning, the regressions, the standard errors — is mechanical once you have located a clean source of variation. Without one, no amount of mechanical care produces a credible causal claim.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

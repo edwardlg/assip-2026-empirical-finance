@@ -1,9 +1,10 @@
 ---
-title: "The Geometry, and What \"Holding Constant\" Means"
 date: "2026-06-29"
 ---
 
-# The Geometry, and What "Holding Constant" Means {.title}
+## The Geometry, and What "Holding Constant" Means
+
+- Part 5 — the projection picture, and what "holding constant" subtracts
 
 ::: notes
 Welcome back to Chapter two-point-three, part five of eight. In part four we proved the theorem in four lines of matrix algebra. Now we make it intuitive with one picture, and cash that picture in — asking what "holding constant" really means once you know controlling is a subtraction. This is the heart of the chapter, and it changes how you read every empirical table for the rest of your life.
@@ -42,7 +43,7 @@ Now cash the picture in. When a paper says the coefficient is one-point-eight-th
 This reframing settles several things at once. First, why adding an irrelevant control barely moves a coefficient. If a control is unrelated to your regressor, residualizing changes your regressor hardly at all, so the coefficient barely budges. But a relevant control — like size, strongly related to R&D — strips out a big chunk of the regressor, and the coefficient can move a lot. Second, why a control with almost no independent variation is dangerous: if the controls together can predict your regressor almost perfectly, the leftover is nearly the zero vector, the denominator is tiny, and the slope becomes wildly sensitive to noise. That is multicollinearity, and the theorem shows exactly where it bites. Third, what omitting a control does. If Leah had run the short regression — patents on R&D alone, leaving size out — she would have gotten about four-point-six-five, more than double the one-point-eight-three-eight she gets with size partialled out. The raw R&D still carries the size signal inside it, so patents respond to both the genuine R&D effect and the size effect traveling with it. That gap is the omitted-variable bias, and Chapter two-point-five turns it into a formula.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

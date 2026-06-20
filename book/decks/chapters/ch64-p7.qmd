@@ -1,9 +1,10 @@
 ---
-title: "Replicate It Yourself on HMDA"
 date: "2026-07-27"
 ---
 
-# Replicate It Yourself on HMDA {.title}
+## Replicate It Yourself on HMDA
+
+- Part 7 — rebuild both papers yourself on public HMDA data
 
 ::: notes
 Welcome back to Chapter six-point-four, part seven of seven, the final part. In part six we named what is vulnerable in both papers. Now we put it all to work. These three replication exercises are scaffolded toward notebook six-point-four, the mortgage-disparity decomposition on public disclosure data — keeping front of mind the one thing it cannot show you: the credit score.
@@ -52,7 +53,7 @@ Exercise three extends to the pricing margin and the technology split — the Ba
 Carry three referee questions into the lab. First: B-H-R's residual shrinks once the credit score enters — but the score may itself encode historical discrimination. Is conditioning on it controlling for legitimate risk, or controlling away a channel of disparate impact? Second: Bartlett et al. find algorithmic lending reduces but does not eliminate the rate gap. If the residual comes from the algorithm pricing on geography that proxies for race, is that discrimination, and would removing the proxy fix it or merely hide it? Third: both papers identify off a conditioning set, not a natural experiment. If a state changed fair-lending enforcement at a known date, could you turn either design into the difference-in-differences of Chapter four-point-one — and what would parallel trends mean for a pricing gap rather than an approval gap?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

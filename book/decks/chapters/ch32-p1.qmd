@@ -1,9 +1,15 @@
 ---
-title: "Matching and Propensity Scores: The Setup"
 date: "2026-07-06"
 ---
 
-# Matching and Propensity Scores: The Setup {.title}
+## Matching and Propensity Scores: The Setup
+
+### Learning objectives
+
+- State the Conditional Independence Assumption and overlap
+- Use propensity scores to beat the curse of dimensionality
+- Match on the score, then audit covariate balance
+- See why CIA is untestable and matching can fail
 
 ::: notes
 Welcome to Week Three, Chapter three-point-two, part one of eleven. This lesson is the first of two on killing selection bias when the thing driving it is observable. We open with Maya's new question: does a free financial-literacy program actually raise loan-approval odds, or do the people who choose to enroll just look better already? In this part we set up the problem in potential-outcomes language and name the target we want to estimate.
@@ -42,7 +48,7 @@ Let D-i equal one if applicant i enrolled in the program, and zero if not. Each 
 The causal effect we want here is the average treatment effect on the treated, written tau-A-T-T. In symbols it is the expectation of Y-i of one minus Y-i of zero, conditional on D-i equal to one. In words: the average benefit of the program for the kind of person who actually enrolls. Note we target the treated, not everyone. The average treatment effect on the treated, the ATT, is the natural target for matching, not the average treatment effect over everyone, the ATE. We will say a word later about why, once we have seen the workflow. For now, hold the target in mind: the average gain among enrollees.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

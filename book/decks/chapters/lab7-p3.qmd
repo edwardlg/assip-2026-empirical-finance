@@ -1,9 +1,10 @@
 ---
-title: "Lay Out the Research Repository"
 date: "2026-08-03"
 ---
 
-# Lay Out the Research Repository {.title}
+## Lay Out the Research Repository
+
+- Part 3 — lay out the repository, one directory per job
 
 ::: notes
 Welcome back to Week Seven, the Lab, part three of eight. In part two we fixed the boundary: the repo travels, the licensed data stays home. Now we build the layout. A research repo has a small number of directories, each with one job, and putting things in the right place from day one is what keeps a six-month project navigable. Start from a layout, not a blank folder.
@@ -33,7 +34,7 @@ Here is the shape. At the root sit the README, the environment file, the git-ign
 Build it with plain shell commands. Make the directory, run git init, and scaffold the tree with one make-directory command, then touch a placeholder in each data subfolder. Git init turns the folder into a repository — it creates the hidden dot-git directory where Git stores every version of every file. The git-keep trick is small but important: Git tracks files, not directories, so an empty raw folder would simply not exist in a fresh clone. A zero-byte git-keep file — the name is convention, not magic — gives Git something to track, so the folder is recreated when someone clones. That matters because your code writes its cache into the raw folder and would fail if the folder were missing. The cohort also distributes a template repository so you need not assemble this scaffolding by hand a second time.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

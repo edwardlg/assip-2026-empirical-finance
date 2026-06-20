@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Three Sources, Stitched Together"
 date: "2026-07-27"
 ---
 
-# KPSS: Three Sources, Stitched Together {.title}
+## KPSS: Three Sources, Stitched Together
+
+- Part 4 — the data: patents, daily returns, public panel
 
 ::: notes
 Welcome back to Chapter six-point-one, part four of ten. In part three we finished the recipe — scaling the reaction into dollars and stating the validating assumption. Now we look at the data that feeds the machine: three sources, stitched together, where the stitching is itself a contribution. We also flag the filter that bounds everything the panel can describe.
@@ -45,7 +46,7 @@ The third piece is what made the paper infrastructure rather than just a result.
 The unit of observation depends on which part you are reading. The measure is built at the patent level — one row per granted patent, with its dollar value. The economic analysis is at the firm-year level, aggregating patents to firms, and for growth, at the aggregate or economy level. Watch which unit a given table uses, because it changes what the standard errors should be clustered on. Finally, a filter worth flagging now, because filters are levers: the value measure exists only for patents granted to public firms with usable CRSP returns around the grant date. Private firms, universities, and foreign assignees without a U.S. listing drop out. That is not a bug the authors hid — it is intrinsic to a market-based measure — but it bounds the population the panel describes, and you must say so out loud when you use it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

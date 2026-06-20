@@ -1,9 +1,10 @@
 ---
-title: "Reading Order, Part One: The Returns Matrix and the Risk Adjustment"
 date: "2026-07-20"
 ---
 
-# Reading Order: Returns Matrix and Risk {.title}
+## Reading Order: Returns Matrix and Risk
+
+- Part 6 — read the returns matrix, then the risk table
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part six of eleven. In part five we covered the data and the J-by-K grid. Now we read the tables — but a professional does not read this paper top to bottom. There is an order that gets you to the truth fastest. This part covers the first two stops: the returns matrix and the risk-adjustment table.
@@ -18,7 +19,7 @@ Welcome back to the reader's guide for Jegadeesh and Titman, part six of eleven.
 - Quote it as roughly one percent, not a memorized decimal
 
 ::: notes
-First, the J-by-K returns matrix. This is the heart of the paper — a single table of average monthly winner-minus-loser spreads across the sixteen formation-and-holding combinations, each with a t-statistic. Read it as a surface, not a list. Check the sign and significance of the diagonal: are the spreads positive and significant across the grid, especially at six-six, nine-nine, and twelve-three? The qualitative finding is that medium-horizon momentum profits are positive and on the order of roughly one percent per month for the classic six-six strategy — a big number once you annualize it. Describe it as order-of-magnitude one percent per month, and do not quote a specific decimal from memory; confirm the exact figure against the table when you have it in front of you.
+First, the J-by-K returns matrix. This is the heart of the paper — a single table of average monthly winner-minus-loser spreads across the sixteen formation-and-holding combinations, each with a t-statistic. Read it as a surface, not a list. Check the sign and significance of the diagonal: are the spreads positive and significant across the grid, especially at six-six, nine-nine, and twelve-three? The qualitative finding is that medium-horizon momentum profits are positive and on the order of roughly one percent per month for the classic six-six strategy — a big number once you annualize it. Describe it as order-of-magnitude one percent per month.
 :::
 
 ## Reading the Surface
@@ -44,7 +45,7 @@ Two more things to read off the surface. First, note where the profit strengthen
 Second, the risk-adjustment table. Having shown the raw spreads are positive, the authors ask whether risk explains them. They adjust returns for market exposure — CAPM beta — and report that winners are not meaningfully riskier than losers. If anything, the beta and size differences run the wrong way to rescue efficiency: the winners look less risky, not more, so risk cannot be quietly paying for the profit. The momentum alpha survives the risk controls available in nineteen ninety-three. Read this table asking two questions: what risk model is being used, and what is left unexplained? The honest answer, from later work, is that the standard factor models of the era simply cannot price momentum — which is why a dedicated momentum factor, called U-M-D or W-M-L, eventually gets bolted onto the Fama-French machinery, the Carhart four-factor model.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

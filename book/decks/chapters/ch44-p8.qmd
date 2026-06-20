@@ -1,9 +1,10 @@
 ---
-title: "The Permutation p-Value and Its Honest Limits"
 date: "2026-07-13"
 ---
 
-# The Permutation p-Value and Its Honest Limits {.title}
+## The Permutation p-Value and Its Honest Limits
+
+- Part 8 — the permutation p-value and its honest limits
 
 ::: notes
 Welcome back to Chapter four-point-four, part eight of ten. In part seven we built the placebo distribution and the post-over-pre RMSPE ratio. Now we turn that ratio into a permutation p-value, look at the visual companion, and state precisely what null this test is actually testing.
@@ -46,7 +47,7 @@ There is a floor worth knowing. With only twenty donors the smallest possible p-
 One honest caveat about what this p-value is and is not. It is a test of the sharp null that the policy had no effect on any unit at any time — the same flavor of null you met in Fisher-style randomization inference — re-imagined for a setting where treatment is reassigned across units rather than across coin flips. It does not assume the donors were randomly chosen to be untreated; the reference distribution is simply what the procedure does to units we know were not treated, which is why it is sometimes called a permutation or placebo test rather than a true randomization test. That distinction matters when you write it up: you are claiming the treated unit's gap is implausibly large relative to the donors you assembled, not that treatment was randomly assigned across states. The strength of the claim therefore rests, once more, on the quality and comparability of the donor pool — bad donors make both the point estimate and the inference untrustworthy at the same time.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

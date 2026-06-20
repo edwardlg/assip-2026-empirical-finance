@@ -1,9 +1,10 @@
 ---
-title: "The Code and What to Carry Forward"
 date: "2026-07-13"
 ---
 
-# The Code and What to Carry Forward {.title}
+## The Code and What to Carry Forward
+
+- Part 10 — the code end to end and four lessons forward
 
 ::: notes
 Welcome back to Chapter four-point-four, part ten of ten. In part nine we built synthetic diff-in-diff by reweighting units and times on top of diff-in-diff differencing. Now we watch the code run end to end, then gather the four lessons that will do real work for the rest of the camp.
@@ -45,7 +46,7 @@ Two things to internalize. First, the estimate is a gap, not a coefficient with 
 Four things from this chapter will do real work for the rest of the camp. First, build the counterfactual, don't assume it: with one treated unit, parallel trends is a wish, so synthetic control replaces it with a convex-weighted construction and makes the match visible. Second, the convexity constraint is the method's conscience: non-negative weights summing to one cannot extrapolate and cannot fake a fit with offsetting coefficients; you pay in fit, and that refusal to lie is the feature, while the sparse weights give you a sentence you can defend. Third, inference is permutation, not asymptotics: with one treated unit there is no honest standard error, so the placebo test scales every unit's gap by its own pre-fit and asks whether the real unit is an outlier, with a p-value floored at one over J-plus-one. Fourth, synthetic diff-in-diff generalizes the toolkit: unit and time weights plus differencing need only a matched trend and bring principled variance estimators. Next chapter, four-point-five, leaves the single-treated-unit world for shift-share designs, where the identifying variation hides in exposure weights.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

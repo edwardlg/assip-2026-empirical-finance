@@ -1,9 +1,10 @@
 ---
-title: "Reading the Specification Curve"
 date: "2026-08-10"
 ---
 
-# Reading the Specification Curve {.title}
+## Reading the Specification Curve
+
+- Part 3 — read the two-panel figure of a robust curve
 
 ::: notes
 Welcome back to The Execution and the Specification Curve, part three of six. In part two we enumerated Maya's one hundred forty-four specifications and ran them all. Now we draw the signature figure and learn to read it — because the reading is the skill. We start with the two panels, then read Maya's robust curve.
@@ -69,7 +70,7 @@ Let us read Maya's curve concretely. Suppose her estimates run from about negati
 That is a robust result, and the curve is what licenses the word. The sign never flips; the magnitude is stable around the pre-registered estimate; and the pre-registered specification, negative one point nine, sits near the center. Loss of significance is confined to the least powerful specifications, for reasons the bottom panel makes legible. Maya's honest paragraph reports all of this: the effect is negative across every defensible specification, with a median of negative one point eight; it is significant in one hundred thirty-two of one hundred forty-four; the twelve exceptions sit in the lowest-power corner and never change sign. A referee cannot accuse her of cherry-picking, because she has shown the entire orchard and pointed to which trees bear less fruit, and why.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

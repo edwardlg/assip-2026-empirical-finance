@@ -1,9 +1,10 @@
 ---
-title: "The Propensity Score and the Rosenbaum–Rubin Reduction"
 date: "2026-07-06"
 ---
 
-# The Propensity Score and the Rosenbaum–Rubin Reduction {.title}
+## The Propensity Score and the Rosenbaum–Rubin Reduction
+
+- Part 6 — define the score, why conditioning on it suffices
 
 ::: notes
 Welcome back to Chapter three-point-two, part six of eleven. In part five, exact matching died of the curse of dimensionality. Now comes the rescue: the propensity score, a single number, and the surprising Rosenbaum–Rubin result that conditioning on that one scalar is enough. We define it, state the theorem, and sketch why it works.
@@ -42,7 +43,7 @@ Why does this work? The intuition is that the propensity score is a balancing sc
 And once the covariates are balanced, the part of CIA that says potential outcomes do not differ by treatment status given the covariates transfers automatically to the score, because potential outcomes relate to treatment only through X in the first place. Two applicants, one treated and one untreated, with the same enrollment probability look the same on X on average — so comparing them is, under CIA, comparing like with like. That is the whole payoff. We replace a hopeless high-dimensional search for twins with matching on one number, and the math guarantees that units sharing that number are balanced on everything that mattered.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

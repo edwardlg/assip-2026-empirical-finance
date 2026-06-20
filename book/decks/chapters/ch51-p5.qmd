@@ -1,9 +1,10 @@
 ---
-title: "The Horse Race and What's Clever"
 date: "2026-07-20"
 ---
 
-# The Horse Race and What's Clever {.title}
+## The Horse Race and What's Clever
+
+- Part 5 — the regression horse races and three clever moves
 
 ::: notes
 Welcome back to Chapter five-point-one, part five of seven. In part four we read the sorts and watched beta go flat while size and value rose. Now we go to the regression tables, which quantify what the sorts showed and let the characteristics fight in one specification. Then we name the three moves that separate this paper from the anomaly papers before it.
@@ -57,7 +58,7 @@ Three moves separate this paper from the anomaly papers before it. The first is 
 The second clever move is putting book-to-market on the marquee. It is a single ratio, computable from two numbers any firm reports, and it does enormous work — arguably more than size. Elevating it to a headline variable, and showing it survives alongside size when beta does not, gave the field a durable, cheap-to-compute predictor. The nineteen ninety-three sequel built the famous three-factor model directly on these two variables. The third move is the framing — beta is dead. Few papers have the nerve to say the reigning variable does not work. Fama and French stage the result as a direct execution of CAPM's central prediction, with the field's own preferred weapon, the Fama–MacBeth regression. You cannot dismiss the method as an outsider's gimmick when it is the discipline's house technique. The cleverness is as much in the framing of the contest as in any single estimate.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

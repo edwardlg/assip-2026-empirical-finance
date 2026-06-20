@@ -1,10 +1,11 @@
 ---
-title: "Writing the Identifying-Assumption Sentence"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Writing the Identifying-Assumption Sentence {.title}
+## Writing the Identifying-Assumption Sentence
+
+- Part 2 — fill the assumption and defense blanks
 
 ::: notes
 Welcome back to the identification memo, part two of nine. In part one we met the page and its fixed sentence template: our estimate of the effect is causal or credible, as long as the assumption holds, which we defend by the evidence. Now we fill the two hard blanks — the assumption and the defense — and watch a real sentence improve from useless to airtight.
@@ -46,7 +47,7 @@ Notice the asymmetry baked into "causal or credible." Some designs let you say c
 A worked contrast makes the discipline concrete. Maya drafts her sentence three times. Draft one: "We estimate the causal effect of fair-lending regulation on denial rates, controlling for endogeneity." No. No threat is named, and "controlling for endogeneity" is the exact phrase the Conventions forbid; this sentence could front any paper on any topic. Draft two: "Our estimate of the regulation's effect on the minority-white denial gap is credible as long as treated and control states had parallel trends." Closer — it names the assumption — but it does the third blank no work; a reader cannot tell whether parallel trends is asserted or earned. Draft three names the effect precisely, then defends parallel trends three ways: flat pre-treatment leads in the event study, a Callaway-Sant'Anna comparison against never- and not-yet-treated states only, and the institutional fact that adoption timing was driven by legislative calendars unrelated to local lending. That sentence is a contract. It tells the referee exactly what to attack, exactly what evidence you are betting on, and exactly what would falsify you. It is long, and that is correct — the identifying-assumption sentence is allowed to be the longest sentence in your paper.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

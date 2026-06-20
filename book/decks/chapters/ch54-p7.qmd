@@ -1,9 +1,10 @@
 ---
-title: "Replicate It Yourself, and What to Ask Next"
 date: "2026-07-20"
 ---
 
-# Replicate It Yourself, and What to Ask Next {.title}
+## Replicate It Yourself, and What to Ask Next
+
+- Part 7 — run the harness and three referee questions
 
 ::: notes
 Welcome back to Chapter five-point-four, part seven of seven — the last segment of our reader's guide to Petersen. Part six named the paper's three edges. Now we stop reading and start doing. The deepest way to believe a methods result is to make it happen on your own screen. These three exercises, run in notebook five-point-four, hand you a panel-simulation harness to play the author's own game.
@@ -57,7 +58,7 @@ Exercise three: turn on both effects, then break the few-clusters case. Set the 
 This guide is the deep version of Week Two, Chapter two-point-four, where you met the taxonomy as a recipe — and saw, in notebook two-point-four, a beta-hat of zero-point-three-zero carry a classical t of five-point-seven-zero that collapsed to a firm-clustered t of two-point-one-nine. There you used the result; here you watched it proved. Carry three referee questions into the notebook. One: how many clusters is enough, and how would you know in a paper that does not say? Two: is "robust" a trap word? White errors are sold as robust, yet fail under a firm effect — what claim do they make, and not make, about Omega? Three: does your real dependence match a shape Petersen simulated? If your firms are linked by a supply-chain network, does any clustering choice in his taxonomy capture it — and if not, what then?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

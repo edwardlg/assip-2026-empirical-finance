@@ -1,9 +1,10 @@
 ---
-title: "Reproducing the Disaster in Code"
 date: "2026-07-06"
 ---
 
-# Reproducing the Disaster in Code {.title}
+## Reproducing the Disaster in Code
+
+- Part 8 — a known-truth simulation where 2SLS lies and AR catches it
 
 ::: notes
 Welcome back to Week Three-point-five, part eight of nine. In part seven, many-instruments bias dragged two-stage least squares toward O-L-S. Now we do what Bound, Jaeger, and Baker did in spirit: build a world with a known true effect, plant a weak instrument, and watch two-stage least squares lie — then watch Anderson–Rubin and the effective F catch it. This is the pathology of Lab three and notebook nb-three-point-five.
@@ -55,7 +56,7 @@ Now the cure. We compute the Anderson–Rubin interval by inverting the test ove
 Now flip the experiment to see the system work when it should. Set pi to zero-point-eight — a strong instrument — and re-run. The first-stage F is now large, well above any critical value; two-stage least squares lands near the true zero, purging O-L-S's bias; the conventional and Anderson–Rubin intervals nearly coincide, both tight; and the effective F clears its threshold. The machinery is not broken in general — only by weakness, and I-V then delivers. The discipline is to check first-stage F, effective F, and the A-R interval before believing any two-stage least squares number, your own or a published paper's.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

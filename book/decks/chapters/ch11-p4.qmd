@@ -1,9 +1,10 @@
 ---
-title: "The Law of Iterated Expectations"
 date: "2026-06-22"
 ---
 
-# The Law of Iterated Expectations {.title}
+## The Law of Iterated Expectations
+
+- Part 4 — the conditional expectation as a random variable
 
 ::: notes
 Welcome back to Chapter one-point-one, part four of seven. In part three we computed the conditional expectation in each regime — two numbers. Now the conceptual jump everything depends on: because the regime itself is random, the conditional expectation is a random variable. From that single idea falls the first of our two great laws, the Law of Iterated Expectations, the formal license for the phrase "control for Y."
@@ -44,7 +45,7 @@ Here is the law. The Law of Iterated Expectations, sometimes called the tower pr
 Take the conditional means and average them over the regime frequencies. Plus zero point seven one four percent times zero point seven, plus minus zero point six six seven percent times zero point three, equals zero point five percent minus zero point two percent, which is zero point three percent. That is exactly the expectation of X we got the direct way — not a coincidence, a theorem. The proof is three honest lines: write the outer expectation as a sum over the values of Y, substitute the definition of conditional expectation, then use the multiplication rule to collapse the product back into the joint and sum away Y. Why will you use this constantly? It is the formal license for the most common phrase in econometrics: control for Y. It is the engine behind regression's claim to estimate the conditional expectation, and behind the no-omitted-variable-bias arguments of Week Two. It fails essentially only when the expectation of X does not exist — heavy tails, which you will meet in Chapter one-point-four.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

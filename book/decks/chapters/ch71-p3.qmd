@@ -1,10 +1,11 @@
 ---
-title: "So What? Who Cares?"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# So What? Who Cares? {.title}
+## So What? Who Cares?
+
+- Part 3 — the first two filters: so-what and who-cares
 
 ::: notes
 Welcome back to Chapter seven-point-one, part three of eight. In part two we built the four-slot hypothesis grammar — outcome, treatment, direction, and unit-and-window. But a sharp, answerable hypothesis can still be a bad project, because being answerable is not the same as being worth answering. Before you spend a week acquiring data, you run the idea through three questions, in order, and you must survive all three. This part covers the first two: so what, and who cares. Their job is to kill weak ideas cheaply, today, instead of expensively three weeks from now.
@@ -33,7 +34,7 @@ First filter: so what — the consequence test. If you found the answer, either 
 Second filter: who cares — the audience test, different from "so what." A result can have consequences in principle but an audience of zero. "Does the closing price of one obscure micro-cap stock follow a hidden pattern?" might be falsifiable and even consequential to a single day-trader, but there is no community — no regulator, no literature, no class of investors — who would read it. A good question sits inside a conversation. Weeks Five and Six were, secretly, training for exactly this. You read Kelly and Pruitt, Hoberg and Phillips, Loughran and McDonald, the Bartlett and Bhutta fair-lending work, precisely so you would know which conversations exist and where the live arguments are. A project that extends, tests, or challenges something in one of those conversations has an audience built in. A project floating in empty space does not.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

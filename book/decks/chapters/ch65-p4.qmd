@@ -1,10 +1,11 @@
 ---
-title: "Prompt Patterns: Code Review and Rubrics"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Prompt Patterns: Code Review and Rubrics {.title}
+## Prompt Patterns: Code Review and Rubrics
+
+- Part 4 — code review, rubrics, and separating stable from volatile
 
 ::: notes
 Welcome back to the AI co-pilot for research, part four of fourteen. In part three we built two prompt patterns — precise extraction and cite-or-decline — both making "nothing to report" an acceptable answer. Now the last two patterns, and the discipline that ties all four together. Code review and rubric-based classification both fight the same enemy: a model tuned to be agreeable, which leans toward saying yes and inventing things to seem useful.
@@ -45,7 +46,7 @@ Pattern four: rubric-based classification — the one your capstone leans on har
 One discipline applies to all four patterns: keep the stable instruction separate from the volatile input. The rubric is the same for all forty thousand filings; only the filing text changes. Writing the prompt so the fixed part comes first and the variable part comes last is not just tidy — it is what makes prompt caching work, which we will see later saves real money, and, more importantly, it is what guarantees every document is judged by identical instructions.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The .gitignore Discipline"
 date: "2026-08-03"
 ---
 
-# The .gitignore Discipline {.title}
+## The .gitignore Discipline
+
+- Part 7 — git-ignore licensed data and secrets, then verify it
 
 ::: notes
 Welcome back to Week Seven, the Lab, part seven of eight. In part six we pinned the environment and wrote the README and data cards. Now the step that, done wrong, can get a student into genuine trouble — a license violation or a leaked key — and, done right, makes those failures impossible rather than merely unlikely. The tool is a git-ignore file, and it has two non-negotiable rules.
@@ -45,7 +46,7 @@ Create the git-ignore in the repo root. The pattern that ignores everything insi
 Now verify it, because an untested git-ignore is a hope, not a guarantee. Git ships a tool that tells you exactly whether a path is ignored. Create a couple of dummy files that should be blocked — a fake CRSP Parquet file and an environment file — and confirm Git refuses them. The check-ignore tool, with the verbose flag, prints any path that is ignored along with the rule that caught it. But the real proof is to stage everything with add-all and then look at the short status: you should see the git-ignore and the placeholders staged, and neither the CRSP file nor the environment file anywhere in the list. If either appears, stop — your git-ignore has a hole, and you fix it before you ever push. This two-minute check is the cheapest insurance in the entire camp. The automatic guard is the git-ignore; the deliberate guard is still staging files by name.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

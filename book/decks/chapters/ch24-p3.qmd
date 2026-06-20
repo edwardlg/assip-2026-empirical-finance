@@ -1,10 +1,11 @@
 ---
-title: "The Sandwich That Never Went Away"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Sandwich That Never Went Away {.title}
+## The Sandwich That Never Went Away
+
+- Part 3 — the honest sandwich formula, done by hand
 
 ::: notes
 Welcome back to When the Errors Misbehave, part three of eight. In part two we found that the classical formula rests on one assumption: Omega equals sigma squared times the identity. Now the liberating idea — we never actually needed that assumption to write down the variance. The honest formula is the full sandwich, and we will do a tiny version of it by hand.
@@ -58,7 +59,7 @@ Abstract matrices hide the mechanism, so collapse the sandwich to the smallest c
 World B is heteroskedastic: the scatter grows with x, say sigma-i squared equals x-i squared, so the variances are one, four, nine, sixteen. The numerator is now one plus sixteen plus eighty-one plus two hundred fifty-six, which is three hundred fifty-four, so the variance is three hundred fifty-four over nine hundred, about zero point three nine three — almost twelve times larger. The classical formula would still report one over thirty here, because it averages the variances and forgets that the big-variance points are also the high-x, high-leverage points. It understates the true standard error by a factor of about three point five. A reported t-stat of three point five would really be a t-stat of one. That is the entire heteroskedasticity problem in four data points — no calculus, no asymptotics.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

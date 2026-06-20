@@ -1,9 +1,15 @@
 ---
-title: "The Point Estimate Is the Easy Part"
 date: "2026-06-29"
 ---
 
-# The Point Estimate Is the Easy Part {.title}
+## The Point Estimate Is the Easy Part
+
+**Learning objectives**
+
+- See why the standard error decides the verdict
+- Read the variance sandwich behind every SE
+- Match the SE flavor to the error structure
+- Report clustering and cluster count honestly
 
 ::: notes
 Welcome to Week Two, Mentor Session Two, part one of four. The title of this whole session is "Why your standard error is the whole ballgame." Last week you asked when a number is a finding. This week you learned the machinery that turns a regression into a claim — ordinary least squares in matrix form, the Gauss-Markov guarantees, the Frisch-Waugh-Lovell trick, and the chapter on what happens to your standard error when the errors misbehave. Today we put the two weeks together and stare at one uncomfortable fact. In empirical finance, computing the point estimate, beta hat, is usually the easy part. Your laptop hands it to you in milliseconds. The credibility of your work lives almost entirely in the standard error. We argue, not lecture.
@@ -42,7 +48,7 @@ Recall Maya's fair-lending result from Chapter two-point-four. She regressed loa
 So here is the mental shift for today. Stop thinking of the standard error as a small technical afterthought you append to a result. The standard error is the result, in the sense that it is the only thing standing between "I computed a number" and "I am entitled to believe it." A referee will spend thirty seconds on your point estimate and thirty minutes on how you computed its uncertainty — what level you clustered at, whether you had enough clusters, whether you confused fixed effects with clustering. Today we learn to think the way that referee thinks, by making the same beta hat tell two different stories and deciding which one is honest.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk"
 date: "2026-07-06"
 ---
 
-# A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk {.title}
+## A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk
+
+- Part 5 — the short-sale pilot run through all three pillars
 
 ::: notes
 Welcome back to Mentor Session three, part five of five. Across the last three parts we built the three pillars of a credible natural experiment: as-good-as-random assignment, the exclusion restriction, and the complier population. Now we put all three to work on a real regulatory pilot my coauthors and I actually used: short-sale constraints and stock price crash risk, the setting Chapter three-point-four section seven previewed. We reason about identification and method only — we will not recite reported magnitudes, because the point is to practice the judgment, not to quote results.
@@ -53,7 +54,7 @@ A U.S. regulatory pilot supplied exactly the variation we needed. The regulator 
 Now run the design through everything we built. The three-regression anatomy from Chapter three-point-four section seven: the first stage asks whether the pilot actually changed short-selling for treated stocks; the reduced form asks whether it changed crash risk; their relationship identifies the effect. Then exclusion: the pilot must affect crash risk only through short-sale constraints, and a hostile referee will propose side doors — maybe pilot stocks drew more analyst attention, or managers behaved differently knowing their stock was in the experiment. You defend each with institutional facts and placebo checks. Finally compliers: the effect speaks for stocks whose binding constraint the pilot relaxed — silent about never-takers and always-takers.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "A Live Paper, and Your Capstone in Miniature"
 date: "2026-07-20"
 ---
 
-# A Live Paper, and Your Capstone in Miniature {.title}
+## A Live Paper, and Your Capstone in Miniature
+
+- Part 4 — all four links run on one live working paper
 
 ::: notes
 Welcome back to the anatomy of a Journal of Finance paper, part four of four. In the first three parts we built the chain — a sharp question, a credible design, transparent tables, and honest robustness. Now I run that whole chain inward on one of my own working papers, still being built, so you see a real one mid-flight rather than a museum piece — and then I show you why this session is your capstone in miniature.
@@ -28,7 +29,7 @@ The live case is a paper my coauthors and I are still building: Gao, Liu and Wan
 - The placebo: real factor $\rightarrow$ effect appears; confound $\rightarrow$ effect vanishes
 
 ::: notes
-The data comes from municipal-bond issuance and secondary-market trade records, assembled from the M-S-R-B, Bloomberg, and bond-deal databases — and I mark that with a bracketed CHECK: confirm the exact sources and sample window in the current draft before quoting them. The thicket is real — income, industry, demographics, tax treatment, default history — any of which could move both the social factor and the yield, so clustering the standard errors by state is non-negotiable; that is Petersen, this week. Now suppose I hand you the main results table and you have sixty seconds. Look at the column headers, the rows, the one coefficient on the social factor that carries the paper, then the sample size. Watch it march across columns as issuer-finance controls and state fixed effects are added: if it stays stable, that is a result surviving; if it shrinks toward zero, that was an artifact of what was omitted. The check I would demand is a placebo where, if the factor is real, the effect appears, and if it is a confound, it vanishes.
+The data comes from municipal-bond issuance and secondary-market trade records, assembled from the M-S-R-B, Bloomberg, and bond-deal databases. The thicket is real — income, industry, demographics, tax treatment, default history — any of which could move both the social factor and the yield, so clustering the standard errors by state is non-negotiable; that is Petersen, this week. Now suppose I hand you the main results table and you have sixty seconds. Look at the column headers, the rows, the one coefficient on the social factor that carries the paper, then the sample size. Watch it march across columns as issuer-finance controls and state fixed effects are added: if it stays stable, that is a result surviving; if it shrinks toward zero, that was an artifact of what was omitted. The check I would demand is a placebo where, if the factor is real, the effect appears, and if it is a confound, it vanishes.
 :::
 
 ## Why This Is Your Capstone in Miniature
@@ -42,7 +43,7 @@ The data comes from municipal-bond issuance and secondary-market trade records, 
 Here is why this session is your capstone in miniature. The Rainbow of Credits is a live paper still being built — you saw a real one mid-flight, not a museum piece. In Weeks Seven and Eight you write your own paper: a real question, real data from C-R-S-P, Compustat, EDGAR or municipal sources, a design you can defend, and tables you build yourself. It is bound for the ASSIP Research Symposium on Wednesday, August twelfth, twenty twenty-six — a poster, with a virtual breakout for our remote interns — and an abstract in the Journal of Student-Scientists' Research, G-M-U Mason Publishing. The seven-part template you read outward this week is what I run inward before committing two years to a project.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Critical Limits: Fake Citations and Leakage"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Critical Limits: Fake Citations and Leakage {.title}
+## Critical Limits: Fake Citations and Leakage
+
+- Part 9 — hallucinated citations and look-ahead training-data leakage
 
 ::: notes
 Welcome back to the AI co-pilot for research, part nine of fourteen. In part eight we ran the validation protocol. Now: even with good prompts, grounding, and validation, four failure modes can wreck an AI-assisted study, each having produced retracted or embarrassing results. This part covers the first two — hallucinated citations and look-ahead bias from training-data leakage.
@@ -45,7 +46,7 @@ The second limit: look-ahead bias and training-data leakage — subtle, specific
 How to defend against leakage. First, know your model's training cutoff and treat any earlier sample period as suspected contaminated for forward-looking tasks. Second, classifying contemporaneous attributes — what tone does this text have — is far safer than predicting future outcomes; labeling a twenty-nineteen filing's tone does not require knowing twenty-twenty's returns, whereas predicting those returns from the filing is exactly where leakage bites. Third, the cleanest defense is out-of-sample testing on data created after the model's cutoff, where it cannot have peeked. Fourth, in R-A-G, enforce it mechanically: filter retrieval to chunks dated less than or equal to the question's date — never let a twenty-nineteen query retrieve a twenty-twenty-one filing. This is why we insisted every chunk carry a date.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

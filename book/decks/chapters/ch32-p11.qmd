@@ -1,9 +1,10 @@
 ---
-title: "When It Fails: CIA Is Untestable"
 date: "2026-07-06"
 ---
 
-# When It Fails: CIA Is Untestable {.title}
+## When It Fails: CIA Is Untestable
+
+- Part 11 — CIA is untestable; matching is omitted-variable bias
 
 ::: notes
 Welcome back to Chapter three-point-two, part eleven of twelve. In part ten we earned belief with a balance table. Now the part the brochures leave out: CIA is fundamentally untestable, beautiful balance cannot save you from an unobserved confounder, and matching is exactly the omitted-variable bias of Week Two in a new costume.
@@ -42,7 +43,7 @@ This is where the warning from page one comes due. Suppose Maya's data lack a ke
 Map this onto Week Two and the equivalence becomes exact. A confounder omitted from X is precisely an omitted variable, and the bias it creates is the omitted-variable bias of Chapter two-point-five — the product of the omitted variable's effect on the outcome, beta-two, and its association with treatment, delta-one. Motivation has beta-two positive, since it raises approval, and is positively associated with enrolling, so delta-one is positive. By the two-sign rule, the program effect is biased upward: matching on observables alone would overstate the course. CIA is just the potential-outcomes name for "no omitted confounders" — for the zero-conditional-mean condition that Chapter two-point-two demanded. Matching does not buy you anything that controlling for X in a regression does not also buy. Both are selection-on-observables; both die the same death from the same omitted confounder.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

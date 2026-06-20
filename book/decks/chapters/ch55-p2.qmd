@@ -1,9 +1,10 @@
 ---
-title: "The Placebo-Law Experiment"
 date: "2026-07-20"
 ---
 
-# The Placebo-Law Experiment {.title}
+## The Placebo-Law Experiment
+
+- Part 2 — the placebo-law trick that measures true size
 
 ::: notes
 Welcome back to Chapter five-point-five, part two of seven. In part one we framed BDM as asking one size question: is a five-percent test really firing at five percent? Now we meet their answer, the identification strategy at the heart of the paper. It is the placebo-law experiment, and it is so clean you will be able to run it yourself by the end of the week.
@@ -45,7 +46,7 @@ Now invent a fake law. Pick a random subset of states and declare they were trea
 So the fraction of runs that come back significant is a direct, brute-force estimate of the true size of the test. This is exactly the simulation logic from the Week One coin-flip lab, where you built a universe with a genuinely fair coin and counted how often your test wrongly called it biased. BDM build a universe with a genuinely null law and count how often difference-in-differences wrongly calls it real. Here is the punchline. If the standard errors were honest, the placebo rejection rate would come back at about five percent, because that is what five percent means. Reject five percent of the time on data you know is null, and the machinery works. Reject far more than five percent, and you have caught the standard error red-handed: it is too small, the t-stats are inflated, and the test is crying wolf. The placebo design converts an abstract worry into a single number, the empirical size of the test.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

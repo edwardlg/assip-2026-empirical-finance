@@ -1,10 +1,11 @@
 ---
-title: "The McCrary Density Test"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# The McCrary Density Test {.title}
+## The McCrary Density Test
+
+- Part 11 — the McCrary test for manipulation at the cutoff
 
 ::: notes
 Welcome back to Chapter four-point-three, part eleven of thirteen. In part ten we learned to read an RD plot. Now we face the local-randomization story's fatal enemy — manipulation — and the formal check for it: the McCrary density test, which hunts for a tell-tale cliff in the histogram of the running variable at the cutoff.
@@ -34,7 +35,7 @@ The local-randomization story has one fatal enemy: manipulation. If units can pr
 The fingerprint of manipulation is a discontinuity in the density of the running variable at the cutoff. If borrowers are sneaking from just-below to just-above six-sixty, you will see too few observations piled up just below and too many just above — a cliff in the histogram of X exactly at the cutoff. Under the clean, no-manipulation story, the density should be smooth through the cutoff, because people do not bunch at a threshold they cannot see or control. This is what the McCrary density test checks. McCrary, in two-thousand-eight, proposed estimating the density on each side and testing whether the two agree at the boundary. The null hypothesis is that the density is continuous at the cutoff — no sorting — and that is what you hope to see. Rejecting the null means a jump in the density: evidence of manipulation and a serious threat. Mechanically it is a local-linear density estimator on each side; a modern, more robust implementation by Cattaneo, Jansson, and Ma is what most packages ship. A failed test is often fatal. A passed test is necessary but not sufficient: it rules out the crudest sorting but cannot by itself prove the design is clean.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

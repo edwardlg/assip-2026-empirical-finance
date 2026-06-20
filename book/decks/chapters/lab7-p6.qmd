@@ -1,9 +1,10 @@
 ---
-title: "Pin the Environment, README, and Data Cards"
 date: "2026-08-03"
 ---
 
-# Pin the Environment, README, and Data Cards {.title}
+## Pin the Environment, README, and Data Cards
+
+- Part 6 — pin the environment, write the README and data cards
 
 ::: notes
 Welcome back to Week Seven, the Lab, part six of eight. In part five we walked the commit loop and saw that pushed history is forever. Now we make your results rebuildable. This part covers two things a stranger needs: a pinned environment that reconstructs your software stack exactly, and the documents — a README and a data card per source — that make the repo legible.
@@ -45,7 +46,7 @@ Create the environment and activate it. Then the subtle, professional step: free
 Two documents make your repo legible. The README, in the repo root, is the first thing GitHub shows; keep it short and answer three questions — what is this project, why does it exist, and how do I run it, with the exact commands. Notice what it does not do: it does not paste API keys, it tells the reader to export them, and it does not promise a reader can re-pull licensed data — it points them at the data cards. Then write one data card per source, following the same six-field structure Chapter seven-point-two used: coverage, key identifiers, access path, license, rate limits and gotchas, and the reproducibility pin. For a licensed source the card adds the snapshot date and the non-negotiable line: licensed to GMU, analyzed only on GMU infrastructure, raw data never committed.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Fast Scan, AI Co-Pilot on a Leash"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Fast Scan, AI Co-Pilot on a Leash {.title}
+## The Fast Scan, AI Co-Pilot on a Leash
+
+- Part 8 — the fast literature scan, AI on a leash
 
 ::: notes
 Welcome back to Chapter seven-point-one, part eight of ten. In part seven we covered feasibility's four constraints — data, scope, time, and skills. Now the fast literature scan that answers "what's new" in a few hours, and the one tool that helps you do it and will also hurt you if you trust it: the AI co-pilot. This is where Chapter six-point-five earns its place in Week Seven.
@@ -34,7 +35,7 @@ You cannot answer "what's new" from your armchair, and you cannot afford a six-w
 Now the AI co-pilot. An LLM is genuinely excellent at literature triage. Paste twenty abstracts and ask it to sort them into "directly on my question, adjacent, or off-topic" and summarize each method in one line; you lose almost nothing if it miscategorizes one, because you were going to skim the borderline cases anyway. It is excellent at explaining a method you half-remember, parsing a data dictionary, and suggesting search terms you hadn't thought of. A good prompt borrows the cite-or-decline discipline: ask it to summarize only the abstracts you paste, and to say so rather than guess if one is off-topic — constraining it to the text you supply, not its blurry parametric memory. But here is the non-negotiable rule, lifted straight from Chapter six-point-five: an LLM will fabricate citations that look perfect and do not exist. Ask it for papers on stablecoin depegs and it hands you authors, titles, years, and journals in flawless format — some real, some pure invention, and you cannot tell which from the page. This has already embarrassed lawyers and students who trusted the output. So, per CONVENTIONS section six: verify every single citation against a real index — Google Scholar, the journal's site, a DOI lookup — before it enters your proposal. If you cannot find the paper, it does not exist, no matter how confident the model sounded. Treat the LLM as a suggestion engine for what to verify, never the citation itself, and never the source of a specific number. If you cannot verify a claim, tag it bracket-CHECK and move on rather than letting a fabrication stand. The whole point of a leash is that the dog still does the hunting; you just decide what's real.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

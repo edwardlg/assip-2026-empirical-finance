@@ -1,10 +1,11 @@
 ---
-title: "Fuzzy RD Is Instrumental Variables"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# Fuzzy RD Is Instrumental Variables {.title}
+## Fuzzy RD Is Instrumental Variables
+
+- Part 5 — fuzzy RD is IV: a ratio of two jumps
 
 ::: notes
 Welcome back to Chapter four-point-three, part five of thirteen. In part four we saw that the cutoff often only nudges the treatment probability — fuzzy regression discontinuity. Now we show that fuzzy RD is exactly the instrumental-variables problem from Week three: the effect is a ratio of two jumps, everything from Week three transfers, and in practice one function call does it all.
@@ -46,7 +47,7 @@ Three lessons transfer. Relevance is the jump in the treatment probability, the 
 So you do not need new machinery for fuzzy regression discontinuity; you need to estimate two jumps instead of one and take their ratio, with standard errors that respect the ratio. That is the same warning as Week three: never hand-divide two regressions and trust the naive standard error. Let the software propagate the uncertainty. In practice the rdrobust package does both jumps and the ratio in one call, which is exactly what the notebook for this chapter will use.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

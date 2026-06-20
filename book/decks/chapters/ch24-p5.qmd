@@ -1,10 +1,11 @@
 ---
-title: "A Number, and the Symptoms to Watch"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# A Number, and the Symptoms to Watch {.title}
+## A Number, and the Symptoms to Watch
+
+- Part 5 — a concrete number, and symptoms to watch
 
 ::: notes
 Welcome back to When the Errors Misbehave, part five of eight. In part four we built the robust estimator and the H-C flavors. Now we make it concrete with Priya's numbers, watch the four flavors fan out, and then name the three symptoms that let you catch heteroskedasticity in your own work rather than only in a textbook.
@@ -14,7 +15,11 @@ Welcome back to When the Errors Misbehave, part five of eight. In part four we b
 
 - 60 claims, error scatter grows with insured value
 - One \$5M estate among \$200K cabins — creates leverage
-- SEs: $0.085$, $0.121$, $0.127$, $0.140$, $0.169$ (classical→HC3)
+
+| Classical | HC0 | HC1 | HC2 | HC3 |
+|-----------|-----|-----|-----|-----|
+| 0.085 | 0.121 | 0.127 | 0.140 | 0.169 |
+
 - Classical understates true uncertainty by about half
 - If $\hat\beta = 0.30$: classical t $= 3.5$, HC3 t $= 1.8$
 
@@ -58,7 +63,7 @@ Three tells, in increasing order of formality. First, the residual plot. Plot th
 Third, the standard errors themselves disagree. If classical and robust standard errors are nearly identical, your errors are roughly homoskedastic and nothing was at stake. If they differ materially — as in Priya's table — heteroskedasticity is real and the robust number is the one to report. The disagreement is the diagnostic. And note the direction: there is no general rule for which way the overall t-stat moves, but in finance it is usually wrong in the direction of overconfidence — the classical formula tells you that you know more than you do.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

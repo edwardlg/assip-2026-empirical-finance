@@ -1,9 +1,10 @@
 ---
-title: "The Code and What to Carry Forward"
 date: "2026-07-06"
 ---
 
-# The Code and What to Carry Forward {.title}
+## The Code and What to Carry Forward
+
+- Part 10 — the full code, and what to carry forward
 
 ::: notes
 Welcome back to Chapter three-point-four, part ten of ten — our final part. In part nine we saw the three pathologies of a weak instrument and learned to report the Olea-Pflueger effective F. Now we run the whole chapter in one block of code, watch the endogeneity bias appear and vanish, and gather the four ideas that will do real work for the rest of the camp — then point you to Chapter three-point-five.
@@ -39,7 +40,7 @@ Here is the whole chapter in one runnable idea. We simulate a world with an unob
 Four things from this chapter will do real work for the rest of the camp. First, the escape from C-I-A: when an unobserved confounder makes treatment endogenous and matching cannot help because the confounder is unmeasured, an instrument identifies a causal effect anyway by importing exogenous variation from outside the system. Second, the two conditions and their asymmetry: relevance — the covariance of Z and D is nonzero — is testable, so check and report the first stage; exclusion — no path from Z to Y except through D — is untestable and must be argued from institutions and logic. Random assignment, as in Maya's mailer, buys the hardest half of exclusion for free. Third, LATE, not A-T-E: I-V identifies the effect for compliers — the units the instrument moved — made exact by the Imbens-Angrist theorem under monotonicity. Fourth, strength is everything: a weak first stage drags two-S-L-S back toward O-L-S bias, corrupts your standard errors, and amplifies any exclusion violation, so report the Olea-Pflueger effective F, not a casual F greater than ten.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

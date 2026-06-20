@@ -1,9 +1,10 @@
 ---
-title: "Alternatives, the Tell, and the Honest Retreat"
 date: "2026-08-10"
 ---
 
-# Alternatives, the Tell, and the Honest Retreat {.title}
+## Alternatives, the Tell, and the Honest Retreat
+
+- Part 4 — alternative explanations, the tell, and the honest retreat
 
 ::: notes
 Welcome back to Mentor Session eight, part four of six. In part three we covered the four-beat answer, the selection version, and robustness. Now we finish the survivable families with alternative explanations, learn the tell that separates a wound from a death, and face the hardest moment of any defense — when the critique is fatal and the attacker is right.
@@ -52,7 +53,7 @@ Sometimes the critique is fatal and the attacker is right. It happens. The insti
 Know your retreat position before you walk in — that is exactly what the residual-concern column of your Chapter seven-point-five threats table was for. A conceded fatal critique leaves you a wounded paper but an intact scientist, and that trade is always worth making. One more weapon for the survivable questions about a number: the strongest sentence you can say is "the exact code that produces it is in the packet — clone it and you get the same figure, seed and all." You invite verification instead of asking for trust. That is the posture of someone with nothing to hide.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Omitted Variable Bias: The Intuition"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Omitted Variable Bias: The Intuition {.title}
+## Omitted Variable Bias: The Intuition
+
+- Part 2 — the intuition behind omitted variable bias
 
 ::: notes
 Welcome back to Chapter two-point-five, part two of nine. In part one we drew the line between bias and wobble, and saw that all three threats are the same failure of the zero-conditional-mean assumption. Now we take the first and most important threat: omitted variable bias. The result, in one sentence — when you leave out a variable that belongs in the model and is correlated with a variable you kept, the coefficient on the variable you kept absorbs part of the omitted variable's effect. In this part we build the intuition and watch it forge a fake finding on Maya's own numbers.
@@ -32,7 +33,7 @@ Start with the intuition before the algebra. Maya regresses approval on the demo
 Let me fix ideas with a number before the algebra. Imagine the true effect of being in group D-equals-one on approval is exactly zero — no discrimination at all. But suppose creditworthiness raises the approval probability by zero-point-three-zero per standard deviation of credit; call that beta-two equals zero-point-three. And suppose group D-equals-one has, on average, creditworthiness half a standard deviation lower than group D-equals-zero, so the slope of credit on D is delta-one equals negative zero-point-five. Then the short regression's coefficient on D converges to beta-one plus beta-two times delta-one, which is zero plus zero-point-three times negative zero-point-five — that is negative zero-point-one-five. Maya would read a fifteen-percentage-point approval penalty against group D-equals-one, a damning-looking, highly significant number, in a world with literally zero discrimination. The entire effect is borrowed from creditworthiness through the correlation. That is omitted variable bias in a single line, and it is why we now derive the formula carefully.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Pillar Two: The Exclusion Restriction"
 date: "2026-07-06"
 ---
 
-# Pillar Two: The Exclusion Restriction {.title}
+## Pillar Two: The Exclusion Restriction
+
+- Part 3 — clean offer vs. treatment, side doors, defending exclusion
 
 ::: notes
 Welcome back to Mentor Session three, part three of five. In part two we defended the first pillar — as-good-as-random assignment — and saw that balance checks the observables but never the unobservables. Now we face the harder half of the design, and it is the same untestable claim that haunted instrumental variables back in Chapter three-point-four: the exclusion restriction. As-if-random assignment buys you a clean offer of treatment. But that is not yet the effect of the treatment itself. To get there, the assignment must reach the outcome through one channel only, and arguing that there is no second channel is the part of the job where careful empiricists earn their keep.
@@ -42,7 +43,7 @@ Let me make the failure concrete. Suppose the rule that relaxed a short-sale con
 And here is the part students resist: there is no test for exclusion. No statistic confirms it. Instead you defend it with institutional knowledge — what exactly did the rule do, and did it do anything else? — and then you stress-test that defense against every alternative channel a skeptic can name. You play hostile referee against your own paper. One more piece of protection comes from Chapter three-point-five: a strong first stage is your buffer. If the lever moved the treatment a lot, then any tiny exclusion violation washes out. But a faint lever amplifies even a small violation — a weak instrument turns a minor side door into a major bias. So strength in the first stage and a clean exclusion argument work together.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Why OLS Wins, and Seeing It in Code"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Why OLS Wins, and Seeing It in Code {.title}
+## Why OLS Wins, and Seeing It in Code
+
+- Part 7 — the proof sketch and a Monte Carlo confirmation
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part seven of nine. In part six we stated the theorem: under assumptions one through four, O L S is the Best Linear Unbiased Estimator. Now we sketch why it must be true, see where homoskedasticity does the load-bearing work, and confirm the whole story with a Monte Carlo.
@@ -46,7 +47,7 @@ That extra piece, sigma squared times D times D transpose, is a sum of squares: 
 Before naming the efficiency property, let's confirm the part-four and part-five facts by faking Maya's universe. We set the true beta, draw many samples that obey all four assumptions, and check two things: that the O L S estimates center on the truth, and that their spread matches sigma squared times the inverse of X transpose X. In code we fix a true intercept of twelve and a true slope of negative zero point four two, an error standard deviation of one point five, and four hundred loans. We draw twenty thousand alternate universes and collect twenty thousand slope estimates. The mean of those twenty thousand slopes lands on negative zero point four two — unbiasedness, seen rather than just proven. And the empirical variance of the slopes matches the bottom-right entry of sigma squared times the inverse of X transpose X to two or three decimals. The formula and the histogram are two views of the same object.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

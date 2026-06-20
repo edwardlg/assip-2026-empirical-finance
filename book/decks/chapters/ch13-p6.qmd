@@ -1,10 +1,11 @@
 ---
-title: "Seeing the Sampling Distribution by Simulation"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Seeing the Sampling Distribution by Simulation {.title}
+## Seeing the Sampling Distribution by Simulation
+
+- Part 6 — fake the universe to see the distribution
 
 ::: notes
 Welcome back to Estimators and Their Sampling Distributions, part six of seven. We have talked about the distribution of x bar across all possible samples as if it were a real object. It is, and it has a name. In this part we name it, then fake the universe on a computer to see it directly.
@@ -58,7 +59,7 @@ Let us build it. We model individual claims with a right-skewed distribution —
 Two lines of that output deserve a standing ovation. First, the mean of the ten thousand x bar values lands essentially on eight thousand dollars: the sampling distribution is centered on mu, exactly as the unbiasedness proof promised — now seen, not just derived. Second, the standard deviation of those ten thousand estimates matches sigma over the square root of N from part three. That standard deviation of the sampling distribution has its own famous name — the standard error — and the simulation shows you literally what it measures: the typical sample-to-sample wobble of your estimate. The formula and the histogram are two views of the same object. The algebra we did earlier and the picture on the screen are describing one and the same thing.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

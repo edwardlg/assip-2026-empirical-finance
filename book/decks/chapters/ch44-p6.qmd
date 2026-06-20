@@ -1,9 +1,10 @@
 ---
-title: "When It Fails: Reading the Pre-Period Fit"
 date: "2026-07-13"
 ---
 
-# When It Fails: Reading the Pre-Period Fit {.title}
+## When It Fails: Reading the Pre-Period Fit
+
+- Part 6 — what failure looks like: reading the pre-period fit
 
 ::: notes
 Welcome back to Chapter four-point-four, part six of ten. In part five we curated the donor pool and defended no-interference and no-anticipation. Now we ask what failure looks like. Synthetic control is unusually honest, because its central diagnostic is staring at you the whole time: the pre-treatment fit.
@@ -44,7 +45,7 @@ Quantify the fit with the root mean squared prediction error over the pre-period
 Three failure modes to watch for. First, bad fit: large pre-RMSPE, no credible counterfactual. The honest move is to report it and abandon the design, not to crank the predictors until something fits. Second, interpolation bias: a treated unit at the edge of the donor distribution — the highest-premium state, say — cannot be matched by a convex average of donors all below it, because the constraint forbids reaching past the most extreme donor, so the synthetic systematically falls short. Third, the short pre-period trap: with only a few pre-periods, you can match them by luck, the way an unconstrained regression overfits. A convincing study has a long pre-period, so that tracking through it is genuinely hard to fake. The longer the pre-period the synthetic control survives, the more the post-period divergence deserves to be read as causal.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

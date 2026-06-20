@@ -1,9 +1,10 @@
 ---
-title: "The Self-Check Rubric and the Road to Your Capstone"
 date: "2026-07-20"
 ---
 
-# The Self-Check Rubric and the Road to Your Capstone {.title}
+## The Self-Check Rubric and the Road to Your Capstone
+
+- Part 7 — the eight-question self-check rubric and the road to your capstone
 
 ::: notes
 Welcome back to How to Read an Empirical Paper, part seven of seven, the last part. In part six we finished reading the table. Now we close the pack with two things: a self-check rubric you run after applying the seven-part template, and the reason this whole week sits where it does — the road to your capstone. These are the questions your mentor and a seminar audience will fire at you.
@@ -42,7 +43,7 @@ The last four questions. The spec: can I write the headline specification in the
 You may have noticed this pack and the conventions file say the same thing from two directions. The conventions section four spec-discipline demands that every specification this book writes name its outcome, treatment or key regressor, controls, fixed effects, clustering, sample, and the identifying assumption in one sentence — with no hand-wavy appeals to controlling for endogeneity. That rule keeps us, the authors, from fooling you. The seven-part template is the same rule pointed outward: it is how you hold other authors to the standard we hold ourselves to. Box one is the outcome and key regressor; box two is the identifying assumption; box three is the sample. Reading a paper well and writing a defensible spec are the same act, performed in opposite directions. The skeptic and the honest author are the same person.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

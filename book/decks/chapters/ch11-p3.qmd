@@ -1,9 +1,10 @@
 ---
-title: "Independence and Conditional Expectation"
 date: "2026-06-22"
 ---
 
-# Independence and Conditional Expectation {.title}
+## Independence and Conditional Expectation
+
+- Part 3 — independence, then conditional expectation per regime
 
 ::: notes
 Welcome back to Chapter one-point-one, part three of seven. In part two we learned to condition — restrict the table to a row and rescale. Now two ideas. First, independence: the special case where conditioning changes nothing. Second, we combine conditioning with averaging to build the conditional expectation — the single most useful object in the whole course, and quite literally the thing regression will estimate.
@@ -44,7 +45,7 @@ One subtle trap. Independence is strictly stronger than uncorrelated. Two variab
 Now combine conditioning with averaging. The expectation of a discrete random variable is its probability-weighted average value. For Sam's portfolio, the unconditional expected daily return is minus two times zero point two, plus zero times zero point four five, plus two times zero point three five, which equals zero point three percent. On an average day Sam earns zero point three percent. But Sam never trades on an average day; Sam sees the regime. So the relevant object is the conditional expectation of X given Y equals y — the mean of X computed inside the conditional distribution. On calm days it works out to plus zero point seven one four percent. On stormy days it works out to minus zero point six six seven percent. This is a real finding stated cleanly: the strategy earns about plus zero point seven one percent on a calm day and loses about zero point six seven percent on a stormy day. The single unconditional number, zero point three percent, was a blend that hid two opposite stories.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "What to Carry Forward — and Your Turn"
 date: "2026-07-13"
 ---
 
-# What to Carry Forward {.title}
+## What to Carry Forward
+
+- Part 13 — the four takeaways and the lab
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part thirteen of thirteen — the finale. Across this lesson we exposed how the pooled coefficient breaks under staggered adoption, named the forbidden comparison, proved it with Goodman-Bacon and de Chaisemartin–D'Haultfœuille, and built the clean estimators that route around it. Now we gather the four things that should change how you read every difference-in-differences result, and point you to the lab.
@@ -64,7 +65,7 @@ Fourth, report the diagnostics, not just the estimate. Before trusting any stagg
 Now it is your turn. Open notebook four-point-two, "Staggered DiD: TWFE versus Callaway–Sant'Anna." You will rebuild Priya's staggered climate-disclosure panel — California in twenty-seventeen, a twenty-nineteen wave, a twenty-twenty-one wave, and never-adopters — with a building treatment effect, and confirm the pooled coefficient is biased and, in the sharp version, wrong-signed. You will run the Goodman-Bacon decomposition, read off how much of the coefficient comes from clean versus forbidden comparisons, and find the negative weight. Then you will estimate the Callaway–Sant'Anna group-time effects with never-treated controls, aggregate to a heterogeneity-robust event study, verify the pre-trends are flat and the dynamics match the truth, and compare its overall effect to the broken number side by side.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

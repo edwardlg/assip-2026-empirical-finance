@@ -1,10 +1,11 @@
 ---
-title: "Audit Logging and the Local Fallback"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Audit Logging and the Local Fallback {.title}
+## Audit Logging and the Local Fallback
+
+- Part 13 — audit-logging every call and the licensed-data local fallback
 
 ::: notes
 Welcome back to the AI co-pilot for research, part thirteen of fourteen. In part twelve we covered the call knobs, model tiers, and G-M-U's Azure gateway. Now two pieces that make AI-assisted work auditable and license-safe: logging every A-P-I call, and running a model locally when the text you classify is licensed data that must not leave G-M-U infrastructure.
@@ -45,7 +46,7 @@ Second, the local fallback for licensed data. The book's conventions and your WR
 The privacy rationale is the whole point: a local or on-cluster model keeps WRDS and TRACE text inside the walls the license requires. The cost is capability — an eight-billion-parameter local model is weaker than a frontier A-P-I model, so its classifier needs the same out-of-sample validation from earlier: a gold set, a held-out split, and precision, recall, and F-one. You may find you need the larger Hopper model to clear your F-one bar. Validation is what tells you whether the privacy-preserving choice is also an accurate-enough one. The discipline does not change because the model is local; if anything, a weaker model makes validation more important, not less.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

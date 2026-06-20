@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Let the Market Value the Patent"
 date: "2026-07-27"
 ---
 
-# KPSS: Let the Market Value the Patent {.title}
+## KPSS: Let the Market Value the Patent
+
+- Part 2 — the event-study move and filtering out the market
 
 ::: notes
 Welcome back to Chapter six-point-one, part two of ten. In part one we set up the measurement problem: patent counts and citations both fail to value a patent in dollars in real time. Now we meet the clever move that solves it — an event study on the patent-grant date — and the first refinement that filters out the market. This is the heart of the paper.
@@ -33,7 +34,7 @@ First, name the kind of claim. The headline contribution of K-P-S-S is not a cau
 The first refinement turns that intuition into something usable: filter out the market. A stock can move during the window for reasons that have nothing to do with the patent — the whole market rallied, or the firm's sector moved. The raw window return is therefore contaminated. So K-P-S-S strip out the market's contribution, leaving the idiosyncratic, firm-specific component of the window return — the abnormal return in the language of Week Four. This is the same discipline as the market model: the firm's return on day t equals a-sub-i plus b-sub-i times the market return on day t, plus a residual epsilon-sub-i-t, where that residual is the firm-specific surprise. The patent's value lives in the residual epsilon, not in the raw return. Keep that picture: we are not reading the whole stock move, only the part the market could not have explained on its own.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

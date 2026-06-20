@@ -1,9 +1,10 @@
 ---
-title: "Fixed Effects Four Weeks Early, and Fast"
 date: "2026-06-29"
 ---
 
-# Fixed Effects Four Weeks Early, and Fast {.title}
+## Fixed Effects Four Weeks Early, and Fast
+
+- Part 7 — within transformation as fixed effects, fast and plottable
 
 ::: notes
 Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part seven of eight. In part six we proved that regressing on group dummies is identical to subtracting group means — the within transformation. Now we see why that single equivalence is the entire idea of fixed effects, which run Weeks three and four of the camp, and why it lets fixed-effects software run in milliseconds instead of failing entirely. We also get a diagnostic bonus: the ability to plot any coefficient.
@@ -42,7 +43,7 @@ Frisch–Waugh–Lovell is mostly an interpretive theorem, but it has a practica
 There is a quieter, diagnostic edge too. Because Frisch–Waugh–Lovell collapses any multivariate coefficient down to a bivariate slope of cleaned patents on cleaned R&D, you can plot it. The scatter of residualized outcome against residualized regressor, with the slope drawn through it, is the honest two-dimensional picture of a coefficient that otherwise lives in K dimensions. That plot is called a partial-regression, or added-variable, plot — the single best way to see whether a control coefficient is driven by the bulk of the data or by one or two influential firms hiding in a high-dimensional regression. It is exactly what you will build in the notebook.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

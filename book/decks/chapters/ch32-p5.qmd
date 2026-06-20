@@ -1,9 +1,10 @@
 ---
-title: "Overlap and the Curse of Dimensionality"
 date: "2026-07-06"
 ---
 
-# Overlap and the Curse of Dimensionality {.title}
+## Overlap and the Curse of Dimensionality
+
+- Part 5 — the overlap assumption, why exact matching collapses
 
 ::: notes
 Welcome back to Chapter three-point-two, part five of eleven. In part four we ran exact matching on two cells. Now we surface the second assumption — overlap, or common support — then watch exact matching collapse when the covariates multiply, a failure called the curse of dimensionality.
@@ -42,7 +43,7 @@ Overlap does the real work in practice, and unlike CIA it is partly checkable: y
 Now add realism. Maya's confounders are credit score, income, age, debt-to-income ratio, employment status, prior banking relationship, and ZIP-code median income. Coarsen each into a few bins — credit into five buckets, income into five, age into four, debt-to-income into four, employment into three, prior-relationship into two, ZIP into five. The distinct cells number five times five times four times four times three times two times five, which is twelve thousand. With about four thousand applicants across twelve thousand cells, the average cell holds well under one person. Most cells are empty; most occupied ones hold a lone treated applicant with no untreated twin, or the reverse. Exact matching breaks down completely — not because the idea is wrong, but because in high dimensions nobody has an exact twin. That is the curse of dimensionality.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

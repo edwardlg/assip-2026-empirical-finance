@@ -1,10 +1,11 @@
 ---
-title: "One Sandwich, Many Standard Errors"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# One Sandwich, Many Standard Errors {.title}
+## One Sandwich, Many Standard Errors
+
+- Part 2 — re-cluster Maya's SE and watch it move
 
 ::: notes
 Welcome back to Chapter eight-point-two, part two of ten. In part one we framed the adversarial turn: trying to kill your own result, starting with the cheapest attack — a standard error that is too small and fakes significance. Now we make that concrete. One estimator, the sandwich, unifies every flavor of standard error, and the only thing that changes between flavors is what you assume about how the errors are correlated. The robustness exercise is to re-run Maya's headline under each plausible flavor and watch the standard error move.
@@ -37,7 +38,7 @@ The sandwich estimator from Chapter two-point-four is the unifying object. The v
 The deceptively simple question is: at what level are the errors correlated? The Petersen two-thousand-nine rule says cluster at the level of the correlation, and since treatment varies at the state level, you must cluster at the state level. The honest move is to report a small table. Read it top to bottom and you see the whole drama of Chapter two-point-four in one column. The classical standard error is a fantasy — it treats every county-year as independent information and reports a t of seven-point-eight that no one should believe. As you move to coarser, more honest clustering — county, then state, then two-way by state and year — the standard error roughly triples and the t falls from absurd to merely solid. Maya's result passes, because even under the most conservative defensible clustering, the two-way row, the interval still excludes zero. Had two-way crossed zero, the honest report would be: significant under state clustering but not two-way — and then the result is fragile, and you say so. Note also: clustering by the unit already absorbs arbitrary within-unit serial correlation, so a panel clustered by state is generally serial-correlation-robust without a separate H-A-C step.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

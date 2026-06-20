@@ -1,9 +1,10 @@
 ---
-title: "Defining Variance and Covariance"
 date: "2026-06-22"
 ---
 
-# Defining Variance and Covariance {.title}
+## Defining Variance and Covariance
+
+- Part 2 — define variance and covariance, read covariance like a story
 
 ::: notes
 Welcome back to Chapter one-point-two, part two of eight. In part one we saw that expectation is linear and forgives any dependence between variables. Now we meet the two quantities that do not forgive: variance, which measures spread, and covariance, which measures how two variables move together. We define them both, read the covariance like a story, and work one number by hand before any Greek letters pile up.
@@ -47,7 +48,7 @@ The covariance of X and Y is the natural two-variable cousin: the expected produ
 A number first, before any Greek. Suppose two assets each return either plus ten percent or minus ten percent in a period, with the four-cell joint table shown — the probability of each combination. Each asset is up half the time and down half the time, so both expected returns are zero, and each variance is the expected value of the return squared, which is ten percent squared, or zero point zero one. For the covariance we need the expected value of R one times R two. The two same-direction cells contribute plus zero point zero zero eight, and the two opposite-direction cells contribute minus zero point zero zero two, for a total of zero point zero zero six. Since the means are zero, the covariance is zero point zero zero six, which is positive: the table's diagonal weight makes the assets move together. We reuse exactly this computation when we estimate covariances from real return histories — there the probabilities become observed frequencies.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

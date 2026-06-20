@@ -1,10 +1,11 @@
 ---
-title: "Doubly Robust: Two Shots at the Truth"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Doubly Robust: Two Shots at the Truth {.title}
+## Doubly Robust: Two Shots at the Truth
+
+- Part 7 — model the outcome, combine, get the "doubly" guarantee
 
 ::: notes
 Welcome back to Chapter three-point-three, part seven of ten. So far every method modeled treatment — the propensity score or the balancing weights. In part seven we add a completely different route, a model of the outcome, then combine the two into the augmented I-P-W estimator and explain the surprising "doubly" guarantee.
@@ -46,7 +47,7 @@ That hedge exists. It is the augmented inverse-probability-weighted estimator, a
 Now the "doubly" — the surprising part. The estimator is consistent if either the propensity model or the outcome model is correct; you do not need both. Two independent shots at the truth, and you only have to hit with one. Case one: the outcome model is right, the propensity model wrong. Then mu-hat-one already estimates the conditional mean correctly, and the correction term has expectation zero, because with a correct outcome model the residual averages to zero within each value of X — so no matter what wrong weights you multiply those residuals by, they still average out. The first term carries the day. Case two: the propensity model is right, the outcome model wrong. Then the second term, with the correct e-of-X, is exactly the consistent I-P-W estimator applied to Y, minus a term that precisely cancels the wrong mu-hat-one in the first piece. The bad outcome model gets added in and subtracted back out, leaving the consistent I-P-W estimate standing. Either way, one correct model is enough; the other's errors get neutralized. That is the doubly-robust property — a kind of statistical insurance where you only need one of two claims to be valid.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

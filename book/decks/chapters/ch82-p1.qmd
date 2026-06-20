@@ -1,10 +1,16 @@
 ---
-title: "Stress-Testing Your Own Result: The Adversarial Turn"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Stress-Testing Your Own Result: The Adversarial Turn {.title}
+## Stress-Testing Your Own Result: The Adversarial Turn
+
+**Learning objectives.** By the end you can:
+
+- Attack your own inference, not just your specifications
+- Design the tests a hostile referee would run
+- Run each test on yourself before submission
+- Report a failed robustness test as a finding
 
 ::: notes
 Welcome to Week Eight, Chapter eight-point-two, part one of ten. Last chapter you wrapped your pre-registered estimate in a specification curve — every defensible analytic choice plotted so a reader could see your headline number was not one lucky fork in the garden. That was about the many regressions you could have run. This chapter is more adversarial. Here you stop varying your choices and start attacking your inference itself. The question is no longer "is my estimate stable across reasonable specifications?" It is "is my estimate even real, or have I been fooled?" The discipline has an ugly name and a beautiful purpose: you are going to try to kill your own result — design the tests a hostile referee would design, run them on yourself first, and report what they find whether you like the answer or not.
@@ -46,7 +52,7 @@ We continue with Maya's project from Week Seven: the staggered difference-in-dif
 Start with the cheapest attack, because it is also the most common cause of a result that evaporates: the standard error is too small, so the t-statistic is too big, and the significance is an illusion. Recall the central lesson of Chapter two-point-four. Ordinary least squares gives you the right point estimate even when the errors misbehave; what misbehaving errors corrupt is the variance of that estimate — the standard error, hence the t-stat, hence the p-value. A robustness check on standard errors does not touch your beta-hat at all. It re-asks the question "how uncertain is this number?" under a less convenient, and often more honest, set of assumptions about how the errors are correlated.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

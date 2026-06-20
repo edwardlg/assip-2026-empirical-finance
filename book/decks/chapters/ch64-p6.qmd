@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable — Pushing Back Like a Referee"
 date: "2026-07-27"
 ---
 
-# What's Vulnerable — Pushing Back Like a Referee {.title}
+## What's Vulnerable — Pushing Back Like a Referee
+
+- Part 6 — push back like a referee; find the soft spots
 
 ::: notes
 Welcome back to Chapter six-point-four, part six of seven. In part five we gave each paper credit for its one good idea — the formula-priced benchmark, and the found race-blind counterfactual. Now we do the other half of careful reading: push back the way a referee will, and find the soft spots Mentor Four promised would be attacked first. There are four, and they come in two pairs — two bias traps, then two questions about what the result even means and how far it travels.
@@ -31,7 +32,7 @@ The first soft spot is omitted creditworthiness, the perennial threat. For Bartl
 Two more vulnerabilities. First, definitional issues in the word discrimination. B-H-R's race-blind benchmark measures disparate treatment — a different rule applied to the same inputs. But fair-lending law also recognizes disparate impact: a facially neutral rule that produces worse outcomes for a protected group can be unlawful if not justified by business necessity. A small residual after conditioning on the score is reassuring about disparate treatment and says little about disparate impact — and a credit score shaped by historical inequities may be a channel, not a clean control. The two papers can both be right and still disagree about whether the market is fair, because they answer different legal questions. Second, external validity. Bartlett et al.'s FinTech contrast is tied to particular lenders, products and years; the conforming, formula-priced segment is the cleanest part of the market and may be the least discriminatory. Jumbo, non-conforming and subprime segments, where pricing is more discretionary, could look worse. Both papers' magnitudes should be read as of their era, not as constants. The qualitative lessons travel; the precise basis points and percentage-point gaps do not.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

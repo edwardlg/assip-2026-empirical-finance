@@ -1,9 +1,10 @@
 ---
-title: "The Data: CRSP Monthly Returns and the J-by-K Grid"
 date: "2026-07-20"
 ---
 
-# The Data: CRSP Monthly Returns {.title}
+## The Data: CRSP Monthly Returns
+
+- Part 5 — the return tape, exchanges, sample, and grid
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part five of eleven. In part four we covered the overlapping-portfolio trick and its serial-correlation cost. Now we look at the data itself: which return tape the authors used, which exchanges, which sample period, and the J-by-K grid you will spend the most time staring at. This is a short part, but the data choices shape everything downstream.
@@ -44,7 +45,7 @@ The sample period is nineteen sixty-five to nineteen eighty-nine — twenty-five
 The J-by-K grid is the data object you will spend the most time on. Formation J takes values three, six, nine, and twelve months, crossed with holding K taking values three, six, nine, and twelve months. The portfolios are equal-weighted deciles — each stock counts the same, not value-weighted — with the overlapping monthly re-formation we described. For our notebook we will swap in modern CRSP and extend the sample forward, and you should expect the magnitudes to shift. The post-nineteen-ninety period is not kind to the strategy, especially the two thousand nine momentum crash, when beaten-down losers rocketed in the recovery. Do not expect modern numbers to match the original sample exactly.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

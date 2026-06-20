@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Read Like a Referee"
 date: "2026-07-27"
 ---
 
-# KPSS: Read Like a Referee {.title}
+## KPSS: Read Like a Referee
+
+- Part 10 — three referee margin questions to close
 
 ::: notes
 Welcome back to Chapter six-point-one, part ten of ten — the last part. In part nine you built a piece of the measure in the notebook: inspecting the panel, rebuilding one patent's value, and breaking a validation. Now we close by reading K-P-S-S one final time like a referee — three questions of the kind a referee writes in the margin, the kind your capstone will need you to ask.
@@ -45,7 +46,7 @@ Question two: confounds in the window. A skeptic says the grant-window return is
 Question three: whose innovation does this panel describe? Given the three selection screens — granted patents, public firms, and survivors — write one sentence stating the population the firm-year value panel actually represents, and one sentence on a growth or reallocation conclusion you would not be willing to extend to the whole economy on this evidence, and why. The panel describes large, public, surviving U.S. firms, so any claim about start-ups, private innovators, or the aggregate economy reaches past what the data can support. That completes Chapter six-point-one and Week Six's opener. Next stop is notebook six-point-one, where you stop reading about the patent-value panel and build it — first inspecting the public dataset, then reconstructing a single patent's value from a grant-window event study of your own.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

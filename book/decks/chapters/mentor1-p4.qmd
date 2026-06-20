@@ -1,9 +1,10 @@
 ---
-title: "Gate Three — Surviving the Search"
 date: "2026-06-22"
 ---
 
-# Gate Three — Surviving the Search {.title}
+## Gate Three — Surviving the Search
+
+- Part 4 — would the effect survive the search that found it?
 
 ::: notes
 Welcome back to Mentor Session One, part four of five. In part three we opened gate two and separated statistical significance from effect size. Now we reach the gate that sends most so-called findings to the graveyard. Gate three asks: would this effect survive the search that found it? How many things did you try before you landed on the one you are reporting? This is the question a serious reader asks first, and it changes how you read every result in finance.
@@ -42,7 +43,7 @@ Let me put a number on it. Suppose you test twenty worthless rules — twenty si
 And it is worse than counting tests, because of something called the garden of forking paths. Even a single analysis that looks like one test hides dozens of silent choices: which time window you used, which subsample you kept, which control variables you included, where you set a cutoff. Each choice was a fork in the road, and you only walked one path — but you might have walked a different one if the data had nudged you. So you can face the twenty-test problem without ever consciously running twenty tests. The defenses we build later in the program are pre-registration, the Bonferroni correction, and the false discovery rate. For now, the habit to build is simple: always ask, of any result, how many things were probably tried before this one surfaced.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

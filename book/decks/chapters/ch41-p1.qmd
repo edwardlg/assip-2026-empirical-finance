@@ -1,9 +1,15 @@
 ---
-title: "Difference-in-Differences: The 2×2"
 date: "2026-07-13"
 ---
 
-# Difference-in-Differences: The 2×2 {.title}
+## Difference-in-Differences: The 2×2
+
+**Learning objectives** — by the end you can:
+
+- Compute a difference-in-differences from four cell means
+- Write DiD as a potential-outcomes ATT estimand
+- Run DiD as a two-way fixed-effects regression
+- State and probe the parallel-trends assumption
 
 ::: notes
 Welcome to Week Four, Chapter four-point-one, part one of six. This is the chapter where a clean natural experiment finally lets us measure a causal effect without apology. Our character Priya studies climate risk in insurance markets, and a tidy thing happened: on January first of one year, one state changed how home insurers may price wildfire risk, while every other state left its rules alone. Priya has annual data on the average homeowner premium in every state, several years before and after. Her question is the one a regulator would ask — did the regulation change premiums, and by how much? Over these five parts we build difference-in-differences three ways and, more importantly, name the single assumption it all leans on.
@@ -48,7 +54,7 @@ Here is the trick, and it is one of the most useful in all of applied economics.
 The double difference is symmetric — you can take it the other way and get the same answer. The treated-minus-control gap after is three hundred seventy dollars; the same gap before is three hundred. The difference of those gaps is seventy again. The first order removes the time trend, then compares groups; the second removes the fixed group difference, then compares over time. Notice what each operation kills. Differencing over time within a group removes anything fixed about that group — its permanently higher fire risk, its baseline price level. Differencing across groups within a period removes anything hitting both groups equally — the nationwide shock, the common inflation. What DiD cannot remove is anything varying across both group and time together. That is the crack we will return to.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

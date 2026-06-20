@@ -1,9 +1,10 @@
 ---
-title: "The Machinery and the Data"
 date: "2026-07-20"
 ---
 
-# The Machinery and the Data {.title}
+## The Machinery and the Data
+
+- Part 3 — portfolio sorts, Fama–MacBeth, and the CRSP+Compustat data
 
 ::: notes
 Welcome back to Chapter five-point-one, part three of seven. In part two we settled the genre — descriptive, not causal — and previewed the famous result that beta goes flat. Now we open the engine room. Two pieces of machinery drive the whole paper, and you have already built both. Then we look at the data they run on, and at one timing trick that protects the paper from a classic mistake.
@@ -45,7 +46,7 @@ You average each monthly slope to get the point estimate: gamma-hat-sub-j equals
 Now the data — two databases stitched together. Returns come from CRSP, the Center for Research in Security Prices, with monthly returns for essentially every stock on the major U.S. exchanges. Book equity comes from Compustat, the accounting database. Size needs only price and shares, so it comes from CRSP; book-to-market needs both. The sample is nonfinancial firms on the New York, American, and NASDAQ exchanges, over roughly nineteen sixty-three to nineteen ninety. Financials are dropped because their high leverage makes book-to-market non-comparable. And here is the heart of it: returns from July of year t through June of year t-plus-one are matched to accounting data from the fiscal year ending in year t-minus-one. That deliberate gap protects against look-ahead bias. A December annual report is not public until months later, so matching it to that same December's return would use information no investor could have had, manufacturing predictability that does not exist in real time. The lag forces every explanatory variable to be knowable before the returns it explains.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

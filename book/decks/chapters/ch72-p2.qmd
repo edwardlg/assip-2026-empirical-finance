@@ -1,9 +1,10 @@
 ---
-title: "Three Rules for Every Source"
 date: "2026-08-03"
 ---
 
-# Three Rules for Every Source {.title}
+## Three Rules for Every Source
+
+- Part 2 — three cross-cutting rules before any source
 
 ::: notes
 Welcome back to Data Acquisition in Practice, part two of eight. In part one we framed the gap between a question and a dataset, and laid out the six-question template. Now, before any specific source, we cover three rules that cut across all of them. They come straight from our CONVENTIONS, and they are the difference between a pull a referee trusts and one they cannot.
@@ -45,7 +46,7 @@ Rule two: licensed data stays on GMU infrastructure. This is the rule most likel
 Rule three: a pull is reproducible only if it is pinned, cached, and logged. Pin a snapshot or date — live data changes. C-R-S-P gets re-stated, FRED revises G-D-P, firms refile amended ten-Ks. A pinned pull says not the latest data but the data as it stood on a specific date. Cache the raw data — pull once, write the untouched response to disk, and have every downstream step read that cached file, never re-hitting the API. The raw cache is your ground truth, and it freezes the input so a re-run gives identical numbers. Log the query — write down exactly what you asked for: the SQL or URL, the date, the row count, and a hash of the result. We fold all three into a tiny helper called log-pull. It stores the request, never a key, so the log is safe to commit. And the content hash is the trick: if two pulls produce the same hash, they are byte-identical; if not, something upstream moved.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

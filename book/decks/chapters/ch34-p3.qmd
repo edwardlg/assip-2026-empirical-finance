@@ -1,9 +1,10 @@
 ---
-title: "Relevance and Exclusion"
 date: "2026-07-06"
 ---
 
-# Relevance and Exclusion {.title}
+## Relevance and Exclusion
+
+- Part 3 — the two conditions a valid instrument needs
 
 ::: notes
 Welcome back to Chapter three-point-four, part three of eight. In part two we saw Maya's treatment was endogenous, with motivation buried in the error. Now we meet the two conditions that earn a variable the name "instrument": relevance and exclusion. They are not symmetric in how you defend them, and learning that asymmetry is half of becoming a competent empiricist.
@@ -43,7 +44,7 @@ Condition two is exclusion, sometimes called exogeneity: the instrument must aff
 Hold this asymmetry firmly, because it organizes everything that follows. Relevance is testable; exclusion is arguable. A weak instrument is a statistical problem you can measure and partly fix. An invalid instrument — one that violates exclusion — is a logical problem that no amount of data will ever reveal, and it poisons your estimate without leaving a fingerprint. This is why I-V papers spend pages, not paragraphs, justifying their instrument: the credibility of the entire result rests on a claim the data can never confirm. When you read any I-V design, train yourself to ask two separate questions every single time — what is the relevance evidence, and what is the exclusion argument?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

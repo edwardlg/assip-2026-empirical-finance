@@ -1,10 +1,11 @@
 ---
-title: "Where This Goes Next — and Your Plan"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Where This Goes Next {.title}
+## Where This Goes Next
+
+- Part 8 — the project arc, the notebook, and lab takeaways
 
 ::: notes
 Welcome back to Chapter seven-point-three, part eight of eight — our final segment. In part seven we saw the reveal and confronted Olken's perils, ending on the deepest point: pre-registration buys the honesty of your inference, not its validity. Now we close the lesson by placing the pre-analysis plan in the arc of your project, and pointing you to the notebook where you write your own.
@@ -46,7 +47,7 @@ Your turn. Open notebook seven-point-three, the pre-analysis-plan companion — 
 Three reflections to carry into the lab and Mentor Session Seven. First, name your three most dangerous forks — the choices where, if you peeked first, you would be most tempted to pick the branch that helps your hypothesis. For each, write the one sentence you will put in your plan to nail it down. Second, write your falsification sentence, then sit with it — the exact coefficient-and-interval pattern that would make you abandon your primary hypothesis. Would you actually report that null if it came? If your honest answer is I would keep looking, your plan is not yet protecting you; find the fork you are still leaving open. Third, power before peeking. Suppose your power calculation reveals that detecting the smallest effect you care about, at eighty percent power, would need three times the sample you have. What are your options before you run the confirmation regression — and why is run it anyway and hope the one option a pre-registered researcher has already foreclosed?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

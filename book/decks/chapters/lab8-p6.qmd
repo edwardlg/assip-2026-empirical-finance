@@ -1,9 +1,10 @@
 ---
-title: "The Packet: One Seed, Code in Run-Order"
 date: "2026-08-10"
 ---
 
-# The Packet: One Seed, Code in Run-Order {.title}
+## The Packet: One Seed, Code in Run-Order
+
+- Part 6 — the packet: one seed, code in run-order
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part six of ten. In part five we finished the poster and printed a proof. Now we begin the second artifact — the one-click replication packet. The packet is not new; it is the Lab Seven repository, finished. Lab Seven gave you the layout, the pinned environment, the README, the data cards, the verified gitignore, and the pre-analysis-plan tag. Part Two of the lab adds the last load-bearing piece from Chapter Eight-point-five: a single entry point that regenerates every artifact from raw inputs, under one fixed seed, so a fresh clone goes from raw bytes to a compiled poster and abstract with no human in the loop. That is exactly what the QR code on your poster promises.
@@ -33,7 +34,7 @@ Anywhere randomness enters your analysis — a bootstrap, a train-test split, a 
 Your source folder holds the pipeline as numbered scripts, so the order is unambiguous — Lab Seven's rule: logic in source, story in notebooks. Three steps, each consuming the previous step's output. Script oh-one pulls or loads the raw inputs; public data caches to data-slash-raw, and licensed data is reconstructed by a pinned query on GMU infrastructure, never shipped. Script oh-two builds the analysis dataset from that raw cache — no look-ahead, no leakage, a pure function of the raw inputs, with a dot-copy to avoid chained assignment. Script oh-three estimates and writes every table to paper-slash-tables and every figure to paper-slash-figures, deterministic via the single seed, nothing ever pasted by hand. In your real capstone, that third script is your notebook logic — your pyfixest regressions, your etable LaTeX, your event-study figure. The synthetic mini-analysis in the lab is just a stand-in so the skeleton runs end to end; the artifact-writing discipline is what transfers unchanged.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

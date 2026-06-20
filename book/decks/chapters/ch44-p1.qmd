@@ -1,9 +1,15 @@
 ---
-title: "Synthetic Control: When You Have One Treated Unit"
 date: "2026-07-13"
 ---
 
-# Synthetic Control: When You Have One Treated Unit {.title}
+## Synthetic Control: When You Have One Treated Unit
+
+**Learning objectives** — by the end you can:
+
+- Build a synthetic control from a donor pool
+- Explain why convexity forbids extrapolation
+- Run a placebo permutation test for inference
+- Choose between synthetic control and synthetic DiD
 
 ::: notes
 Welcome to Week Four, Chapter four-point-four, part one of ten: synthetic control and synthetic difference-in-differences. In Chapter four-point-one we built difference-in-differences, and it came with a warning. Diff-in-diff compares the change in a treated group to the change in a control group, and it only identifies the causal effect if the two groups would have moved in parallel had the policy never happened. That parallel-trends assumption is the entire engine. With dozens of treated units and controls whose pre-treatment trends lie on top of one another, parallel trends is a bet you can defend. This chapter is about what to do when the world hands you just one treated unit.
@@ -45,7 +51,7 @@ The central idea, due to Abadie and Gardeazabal in two-thousand-three and develo
 Throughout this chapter, Priya is our guide. She is chasing one event: a single state — call it the treated state — that in twenty-eighteen passed a first-in-the-nation climate-risk disclosure mandate, forcing home insurers to publish wildfire- and flood-exposure pricing. Her question is direct: did the mandate change average homeowner premiums? One treated state. No clean twin. The spirit of the method, stated plainly: build a fake control unit as a weighted average of the units that were not treated, choosing the weights so the fake unit matches the treated unit's pre-treatment outcomes; then read the effect off how far the real unit drifts from its fake twin after treatment. Parallel trends does not disappear — it is engineered. The weights are picked precisely so the pre-trends are nearly identical, by construction. The leap of faith shrinks from "these two groups would have moved together" to "this carefully matched composite would have kept moving together for a few more years."
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

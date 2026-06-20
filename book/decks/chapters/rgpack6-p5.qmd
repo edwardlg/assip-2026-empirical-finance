@@ -1,9 +1,10 @@
 ---
-title: "An LLM Label Is a Measurement — The Gold Set"
 date: "2026-07-27"
 ---
 
-# An LLM Label Is a Measurement — The Gold Set {.title}
+## An LLM Label Is a Measurement — The Gold Set
+
+- Part 5 — validate LLM labels with a gold set and confusion matrix
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part five of eight. In part four we built a catalog of prompt patterns and noticed that classification produces labels. This part ties the AI module back to the science. When you ask a language model to classify ten thousand eight-Ks as layoff or not-layoff, you have not measured anything yet — you have produced ten thousand guesses from an instrument of unknown accuracy. Treating those guesses as ground truth is exactly the error Loughran and McDonald exposed in the off-the-shelf sentiment dictionary, reborn in a fancier tool. The fix is the same one Week One taught for any estimator: validate it against a standard.
@@ -48,7 +49,7 @@ Here is the discipline that makes the whole thing honest: split the gold set int
 Now score the model's labels against the held-out human labels with a confusion matrix. For a binary layoff classifier, lay out a two-by-two table. Model says layoff and human agrees: a true positive. Model says layoff but human says not: a false positive. Model says not but human says layoff: a false negative, a missed layoff. Both say not: a true negative. Those four counts are everything you need. Every summary number we report in the next part is built from these four cells, so getting the matrix right is the foundation of the whole evaluation. Tally the four cells and you are ready to compute the numbers that decide whether this instrument is good enough to use.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

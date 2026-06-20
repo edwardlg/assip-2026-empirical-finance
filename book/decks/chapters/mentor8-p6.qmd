@@ -1,9 +1,10 @@
 ---
-title: "Stealing the Interpretation, and Your Defense Brief"
 date: "2026-08-10"
 ---
 
-# Stealing the Interpretation, and Your Defense Brief {.title}
+## Stealing the Interpretation, and Your Defense Brief
+
+- Part 6 — the interpretation-stealing alternative and your defense brief
 
 ::: notes
 Welcome back to Mentor Session eight, part six of six — the last part of the last mentor session. In part five we worked the disclosure paper through measurement and selection. Now we face the alternative explanation that steals the interpretation, write the defense brief that goes with you into Assessment eight and the symposium, and close the whole arc that started eight weeks ago with an eight-percent average.
@@ -17,7 +18,7 @@ Welcome back to Mentor Session eight, part six of six — the last part of the l
 - Selection can't be killed with observational data — claim the **robust association**
 
 ::: notes
-Now the alternative explanation, imagined at the revise-and-resubmit stage: "this isn't about politics at all — it's risk tolerance. Conservative-leaning executives are simply more risk-averse, and risk-averse managers disclose differently. You relabeled risk aversion as politics." That is more dangerous than a robustness complaint precisely because it doesn't attack the design — it grants your number and steals your interpretation. The convincing answer, which you should CHECK against the paper rather than invent, has the shape from our rule: find a place where "it's politics" and "it's just risk aversion" make different predictions, and let the data choose. And tie it to honesty — selection can rarely be killed completely with observational data, so the most a defensible version should claim is a robust association that survives the obvious selection stories, not a clean causal sweep. Claiming the second honestly is stronger than overclaiming the first.
+Now the alternative explanation, imagined at the revise-and-resubmit stage: "this isn't about politics at all — it's risk tolerance. Conservative-leaning executives are simply more risk-averse, and risk-averse managers disclose differently. You relabeled risk aversion as politics." That is more dangerous than a robustness complaint precisely because it doesn't attack the design — it grants your number and steals your interpretation. The convincing answer has the shape from our rule: find a place where "it's politics" and "it's just risk aversion" make different predictions, and let the data choose. And tie it to honesty — selection can rarely be killed completely with observational data, so the most a defensible version should claim is a robust association that survives the obvious selection stories, not a clean causal sweep. Claiming the second honestly is stronger than overclaiming the first.
 :::
 
 ## Now Write Your Defense Brief
@@ -42,7 +43,7 @@ So here is the reflection prompt, the one that goes with you into Assessment eig
 One reminder about how this is scored. Your capstone is graded on the defense, not the cleverness — that is Assessment eight. In the eight-minute talk, the eight minutes are the easy part; the question period is where the result is actually judged. And here is the reassuring part: the questions are not a mystery. They are your own threats-table rows, fired back at you. If you did the work in Chapter seven-point-five, you already wrote the questions. The reflection prompt makes you draft the answers before the conference, when you are calm, instead of inventing them under pressure in front of a roving photographer from Mason News. Bring the brief to your defense and read your own script back.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

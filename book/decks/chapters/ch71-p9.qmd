@@ -1,10 +1,11 @@
 ---
-title: "The Cast's Five Projects, and Devon's Pipeline"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Cast's Five Projects, and Devon's Pipeline {.title}
+## The Cast's Five Projects, and Devon's Pipeline
+
+- Part 9 — five cast projects and Devon's worked pipeline
 
 ::: notes
 Welcome back to Chapter seven-point-one, part nine of ten. In part eight we covered the fast scan and kept the AI on a leash. Now the payoff: five feasible, fully open-data projects mapped to the cast you have followed since Week One, and the first of two fully worked examples — Devon's — running the whole machine from a mood to a defensible spec. Each pairing is chosen so the data is obtainable for free, the scope fits five weeks, and a design from Weeks Three and Four is available. Use these as templates.
@@ -12,11 +13,13 @@ Welcome back to Chapter seven-point-one, part nine of ten. In part eight we cove
 
 ## Five Students, Five Real Datasets
 
-- **Maya** — HMDA → denial rates by race after controls? (DiD or RD)
-- **Devon** — Etherscan + CoinGecko → DEX volume on a depeg? (event study)
-- **Priya** — NOAA + FEMA + FRED → insurance costs vs. disasters? (DiD)
-- **Sam** — `yfinance` / CRSP → momentum winners next month? (portfolio sort)
-- **Leah** — PatentsView → grant winners' forward citations? (RD / matching)
+| Student | Dataset (open) | Feasible question | Design |
+|---|---|---|---|
+| **Maya** | HMDA | Denial rates by race after controls? | DiD or RD |
+| **Devon** | Etherscan + CoinGecko | DEX volume spike on a depeg? | Event study |
+| **Priya** | NOAA + FEMA + FRED | Insurance costs rise with disasters? | DiD |
+| **Sam** | `yfinance` / CRSP | Momentum winners outperform next month? | Portfolio sort |
+| **Leah** | PatentsView | Grant winners get more citations? | RD / matching |
 
 ::: notes
 Here is the payoff table. Maya, on fair lending, uses HMDA — the CFPB loan and application register — to ask whether denial rates differ by applicant race after controlling for legitimate underwriting factors, with a difference-in-differences around a policy date or a regression discontinuity at a credit-score cutoff. Devon, on crypto, combines the Etherscan and CoinGecko APIs to ask whether decentralized-exchange trading volume spikes when a stablecoin depegs, using an event study. Priya, on climate and insurance, links NOAA storm events, FEMA disaster declarations, and FRED to ask whether homeowner-insurance costs rise faster in counties with more billion-dollar disasters, using difference-in-differences. Sam, on momentum, uses yfinance or CRSP to ask whether past-twelve-month winners outperform losers next month, with a portfolio sort. Leah, on patents, uses the USPTO PatentsView API to ask whether firms that win a grant receive more forward citations than near-miss applicants, with regression discontinuity or matching. Maya starts with home-field advantage — HMDA is the same dataset from the Week Four fair-lending lab. Sam's question is deliberately descriptive-leaning. And each dataset gets its own data card under data-cards as you acquire it in Chapter seven-point-two.
@@ -34,7 +37,7 @@ Here is the payoff table. Maya, on fair lending, uses HMDA — the CFPB loan and
 Watch the full pipeline run on Devon. The puzzle, a mood: crypto crashes seem to feed on themselves. Run the filters. So what — if volume spikes predictably at depegs, that informs risk managers, exchanges sizing circuit-breakers, and regulators worried about contagion; both answers inform someone. Who cares — there is a live academic and policy conversation on stablecoin runs. What's new — high-frequency on-chain DEX volume around specific depeg events is data that did not exist a few years ago; that is the new-data flavor. The refined question: when an ERC-20 stablecoin loses its dollar peg by more than five percent, how does same-day DEX trading volume in that token respond? The testable hypothesis, with a direction: DEX volume rises sharply on the day of a depeg relative to the prior thirty-day average; the null is no change. Now Devon can be wrong. The identifying variation is an event study — the depeg is a dated shock with a precise on-chain timestamp; he measures volume in a tight window around it against the pre-event baseline. The threat — was the depeg caused by something that independently moved volume? — is named and addressed by the tight window and a pre-trend check, exactly as Chapter four-point-one insisted. The spec: outcome is daily log DEX volume; treatment is the depeg indicator; window is minus-thirty to plus-five days; unit is stablecoin by day; sample is major ERC-20 stablecoins, 2022 to 2024; data from Etherscan and CoinGecko; identifying assumption, in one sentence: absent the depeg, the token's volume would have continued on its pre-event path.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

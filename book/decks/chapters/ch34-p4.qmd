@@ -1,9 +1,10 @@
 ---
-title: "Maya's Mailer and the Wald Estimator"
 date: "2026-07-06"
 ---
 
-# Maya's Mailer and the Wald Estimator {.title}
+## Maya's Mailer and the Wald Estimator
+
+- Part 4 — a real instrument and the Wald ratio
 
 ::: notes
 Welcome back to Chapter three-point-four, part four of eight. In part three we learned the two conditions: relevance, which is testable, and exclusion, which is arguable. Now we give Maya a real instrument — a randomly assigned mailer — check both conditions on it, and then turn the conditions into an actual number using the simplest formula in all of I-V: the Wald estimator.
@@ -42,7 +43,7 @@ Now the simplest possible estimate. With a binary instrument Z, a binary treatme
 Random assignment of the instrument is the gold standard precisely because it secures the hardest half of exclusion — independence from the confounder — for free. The classic natural-experiment instruments work the same way, by borrowing randomness from the world. Rainfall as an instrument for crop income: rain is as-good-as-random and plausibly affects the local economy only through agriculture. Quarter of birth as an instrument for years of schooling: compulsory-schooling laws tied to birthdates create exogenous variation in how long students stay enrolled. Each lives or dies on the same untestable exclusion claim — rainfall must not affect the outcome except through income; birth-quarter must not affect earnings except through schooling. Train yourself to ask, every time, what is the relevance evidence and what is the exclusion argument.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

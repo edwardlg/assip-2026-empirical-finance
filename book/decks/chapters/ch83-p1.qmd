@@ -1,10 +1,16 @@
 ---
-title: "From Folder to Paper: The Core Reveal"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# From Folder to Paper: The Core Reveal {.title}
+## From Folder to Paper: The Core Reveal
+
+**Learning objectives.** By the end you can:
+
+- Turn a folder of results into a believable argument
+- Write an introduction's four moves in order
+- Craft and calibrate a one-sentence contribution
+- Match every verb to your weakest assumption
 
 ::: notes
 Welcome to Week Eight, Chapter eight-point-three, part one of seven: Writing the Empirical Paper. By now you have a folder full of tables, a frozen point estimate, a defensible identifying assumption, and a pile of robustness checks that survived. What you do not yet have is a paper. This lesson is about the last transformation: turning that folder into prose a skeptical referee reads in one sitting and comes away believing. In this opening part we state the reveal everything turns on, and learn the fixed shape of the paper.
@@ -46,7 +52,7 @@ Here is the reveal the whole chapter turns on, stated before the details. A pape
 Empirical-finance papers have a fixed skeleton, and the fixedness is a gift, not a constraint. A referee knows exactly where to look for each thing. The standard order is: introduction, literature, data, empirical design, results, robustness, conclusion. Top journals vary the labels, but the load each section carries is invariant, so learn the loads, not the labels. The proportions matter too. A rookie writes a one-paragraph introduction and a six-page data section. Invert that instinct: the introduction is the most-read and most-rewritten part, and the data section should be efficient. One principle unifies the whole document: say the important thing first, at every scale. The paper leads with its contribution, the introduction with the hook, the results with the headline table, each paragraph with its topic sentence. Suspense is a bug. The reader is your judge; front-load every verdict.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

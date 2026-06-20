@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable"
 date: "2026-07-27"
 ---
 
-# What's Vulnerable {.title}
+## What's Vulnerable
+
+- Part 8 — four measurement soft spots, and the defense
 
 ::: notes
 Welcome back to Chapter six-point-two, part eight of nine. In part seven we praised four clever moves. Now we press the other way. A measurement paper has measurement vulnerabilities, different from Week Five's causal threats. The right skeptical question is not "what confounds the treatment?" but "what makes the text a noisy or biased signal of what the firm actually does?" Four soft spots.
@@ -45,7 +46,7 @@ The third soft spot: bag-of-words ignores meaning. The representation throws awa
 None of these sinks the paper. The pass-one validation is the defense: it shows the measure out-predicts S-I-C despite all this noise. The vulnerabilities do not kill the paper — they locate it. This is a genuinely better industry measure, built from a signal that is informative but self-reported, vocabulary-based, and parser-dependent, with limits the next generation of text methods is built to push against. That is precisely the bridge into the rest of Week Six.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

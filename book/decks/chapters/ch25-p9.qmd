@@ -1,10 +1,11 @@
 ---
-title: "The Bias Ledger and the Bridge to Causal Inference"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Bias Ledger and the Bridge to Causal Inference {.title}
+## The Bias Ledger and the Bridge to Causal Inference
+
+- Part 9 — the bias ledger and the bridge to causal inference
 
 ::: notes
 Welcome back to Chapter two-point-five, part nine of nine — the finale. In part eight the RESET diagnostic completed our tour of the three threats. Now we assemble everything into one table — the bias-consistency ledger — that sorts every threat into bias versus standard error, and names its fix. Then we cross the bridge this chapter was built to reach: into causal inference, the reason Weeks Three and Four exist.
@@ -54,7 +55,7 @@ Step back and see what happened to the regression you trusted. This chapter has 
 Here is where it goes. Week Three starts over from the potential-outcomes framework, where a causal effect is the difference between what would happen to a unit under treatment versus no treatment — confronting the fundamental problem of causal inference, that we never see both. From there, randomization in Week Three and quasi-experimental designs in Week Four — instruments, difference-in-differences, regression discontinuity — manufacture the exogenous variation the threats destroy. Maya's fair-lending question returns in Week Four with the tools to identify the effect of D holding creditworthiness fixed, using Prof. Gao's own research. And your lab, notebook two-point-five, has you simulate omitted variable bias, watch attenuation drive the estimate toward beta-one times lambda, and rebuild Maya's spurious gap — then break it with a noisily-measured control.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

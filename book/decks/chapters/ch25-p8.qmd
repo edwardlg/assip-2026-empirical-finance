@@ -1,10 +1,11 @@
 ---
-title: "The RESET Test: Is My Line the Wrong Shape?"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The RESET Test: Is My Line the Wrong Shape? {.title}
+## The RESET Test: Is My Line the Wrong Shape?
+
+- Part 8 — RESET, a diagnostic for neglected curvature
 
 ::: notes
 Welcome back to Chapter two-point-five, part eight of nine. In part seven we saw that wrong functional form dumps curvature into the error, and we collected the fixes — polynomials, logs, interactions. But all of them require knowing the right shape in advance. This part gives you the diagnostic that flags a wrong shape without you having to guess: Ramsey's Regression Equation Specification Error Test, RESET.
@@ -43,7 +44,7 @@ In code it is four lines. We simulate Priya's convex truth — y equals one plus
 One caution worth stating loudly. RESET is a test for functional form, not for omitted variable bias or measurement error. A model can sail through RESET and still be hopelessly confounded by an omitted variable, because RESET only looks at curvature among the variables you actually have — it cannot see a confounder that is not in your data at all. Passing RESET means the shape looks right, not that the coefficient is causal. Do not let a clean RESET lull you into trusting a number that omitted variable bias has quietly poisoned. This is exactly the kind of confusion the next part is built to prevent — sorting which diagnostics speak to which threat.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The Data: A Perfect Crime Scene"
 date: "2026-07-20"
 ---
 
-# The Data: A Perfect Crime Scene {.title}
+## The Data: A Perfect Crime Scene
+
+- Part 3 — why long, persistent panels are the crime scene
 
 ::: notes
 Welcome back to Chapter five-point-five, part three of seven. In part two we built the placebo-law experiment, which measures the true size of a difference-in-differences test by assigning fake laws to random states. Now we look at the data BDM ran it on, and see why their choice of panel makes the indictment land on real research practice rather than a strawman.
@@ -45,7 +46,7 @@ Two features of this data make it the perfect crime scene. First, it is a long p
 Second, the outcomes are economically persistent in exactly the way that matters. Wages, employment, and similar variables move slowly: this year looks a lot like last year, so a state's residuals are positively autocorrelated. That persistence is not a data-cleaning artifact you can scrub away; it is the genuine time-series structure of the economy, and it is precisely what the conventional difference-in-differences standard error ignores. BDM also note that the treatment dummy D-s-t is itself extremely persistent within a state: off for years, then on for years. And Week Four taught you, via the Moulton intuition, that a highly persistent regressor combined with serially correlated errors is the worst possible case for naive standard errors. Both ingredients of the disaster are present, and they reinforce each other.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The Reading-Order Heuristic: Tables First, Prose Last"
 date: "2026-07-20"
 ---
 
-# The Reading-Order Heuristic: Tables First, Prose Last {.title}
+## The Reading-Order Heuristic: Tables First, Prose Last
+
+- Part 4 — the deliberate reading order, and why tables come before prose
 
 ::: notes
 Welcome back to How to Read an Empirical Paper, part four of seven. We have the seven-part template in hand. Now comes the move that most surprises beginners and the single most useful habit in this pack: a professional does not read a paper front-to-back. She reads it in a deliberate order, and that order puts the exhibits first and the salesmanship last. Let us walk through her five steps.
@@ -45,7 +46,7 @@ Why tables first? The first reason: the table is the part of the paper the autho
 The second reason: the table tells you instantly whether the paper is even about what you think it is. The dependent variable sits at the top of the columns. The key regressor sits in the rows. The sample size sits at the bottom. That is the paper's skeleton, visible in thirty seconds, before you have spent an hour on an introduction that may have promised something the data could not deliver. This is exactly how Devon should attack a new crypto-adoption paper, how Priya should attack a climate-insurance study, and how Sam should read the latest momentum paper: skeleton first, framing last.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

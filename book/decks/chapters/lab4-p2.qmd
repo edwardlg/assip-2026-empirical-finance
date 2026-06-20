@@ -1,9 +1,10 @@
 ---
-title: "Two Paths, Goals, and Setup"
 date: "2026-07-13"
 ---
 
-# Two Paths, Goals, and Setup {.title}
+## Two Paths, Goals, and Setup
+
+- Part 2 — the two paths, the skills, and reproducible setup
 
 ::: notes
 Welcome back to Week Four, the Lab, part two of eight. In part one we framed the mission: a clean difference-in-differences on real HMDA mortgage data. Now we lay out the lab's two paths — real data and a synthetic check — the concrete skills you will gain, and the reproducible setup.
@@ -57,7 +58,7 @@ Here are the concrete skills. You will pull and aggregate real HMDA from the CFP
 Now setup. Per the conventions, every code block runs end to end on a fresh environment. The two estimators that matter are pie-fix-est, for fast two-way fixed effects and the naive event study, and the differences package, the Python implementation of Callaway–Sant'Anna's group-time effects. Path A also needs requests and pie-arrow. Then two reproducibility rules you follow without exception. First, pin the seed: use NumPy's modern generator — r-n-g equals n-p dot random dot default-generator of SEED — never the legacy global seed. Second, draw all randomness from that one generator. A single source of randomness makes the synthetic panel replayable bit for bit. The numbers quoted later are what the seed twenty-twenty-six-oh-five-two-eight produces.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

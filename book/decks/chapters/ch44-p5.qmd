@@ -1,9 +1,10 @@
 ---
-title: "The Donor Pool and the Assumptions That Protect It"
 date: "2026-07-13"
 ---
 
-# The Donor Pool and the Assumptions That Protect It {.title}
+## The Donor Pool and the Assumptions That Protect It
+
+- Part 5 — choosing the donor pool and the assumptions protecting it
 
 ::: notes
 Welcome back to Chapter four-point-four, part five of ten. In part four we saw convexity forbid extrapolation and yield sparse, nameable weights. But the weighted average is only as good as the units it draws from. Now we choose the donor pool and state the assumptions that protect it.
@@ -45,7 +46,7 @@ Now two more assumptions, both subtle. First, no-interference — the stable-uni
 Second, no-anticipation, shared with diff-in-diff. The pre-treatment fit assumes the treated unit's pre-period outcomes are genuinely untreated. If insurers, anticipating the twenty-eighteen mandate, started repricing in twenty-seventeen — the last pre year — then that year's premium is already partly treated, the synthetic control is matched to a contaminated target, and the estimated effect is biased toward zero, because some of the effect has leaked backward into the matching window. The fix is the same as in event studies: define T-naught at the moment expectations could first have moved — often the announcement date, not the effective date — and inspect the last pre-periods for a suspicious early divergence. A clean synthetic-control study, like a clean event study, shows a flat gap right up to T-naught and a break only after.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

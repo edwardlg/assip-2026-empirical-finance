@@ -1,9 +1,10 @@
 ---
-title: "Fabricated Data and the Taxonomy"
 date: "2026-07-20"
 ---
 
-# Fabricated Data and the Taxonomy {.title}
+## Fabricated Data and the Taxonomy
+
+- Part 3 — fabricated panels and the firm/time/both taxonomy
 
 ::: notes
 Welcome back to Chapter five-point-four, part three of seven. In part two we saw Petersen's identification strategy: build simulated worlds where he sets the true beta and error structure, then check whether each method's standard error matches the known truth. Now we look at the data, which for a methods paper is unusual — the workhorse dataset is fabricated on purpose. And we meet the taxonomy that the whole paper, and the rest of your empirical life, turns on.
@@ -18,7 +19,7 @@ Welcome back to Chapter five-point-four, part three of seven. In part two we saw
 - Known process $\Rightarrow$ every table reports **true SE** beside estimated SE
 
 ::: notes
-For a methods paper, the data section is unusual: the workhorse dataset is fabricated on purpose, and that is a feature, not a flaw. The simulated panels are the heart. Each is a balanced panel of N firms over T years, and Petersen explores a range of dimensions to show the conclusions are not knife-edge. A CHECK tag: the exact baseline grid — firms, years, and replications S — should be pulled from his tables; a common configuration is hundreds-to-thousands of firms over roughly ten years, but verify before citing. The data-generating process is transparent: a true slope beta, plus an error built from a firm component, a time component, and idiosyncratic noise — those three variances are the knobs he turns. Because the process is known, every table reports the true standard error beside each method's estimate.
+For a methods paper, the data section is unusual: the workhorse dataset is fabricated on purpose, and that is a feature, not a flaw. The simulated panels are the heart. Each is a balanced panel of N firms over T years, and Petersen explores a range of dimensions to show the conclusions are not knife-edge. The baseline grid spans hundreds-to-thousands of firms over roughly ten years, with many replications. The data-generating process is transparent: a true slope beta, plus an error built from a firm component, a time component, and idiosyncratic noise — those three variances are the knobs he turns. Because the process is known, every table reports the true standard error beside each method's estimate.
 :::
 
 ## Real Panels Show the Stakes in the Wild
@@ -29,7 +30,7 @@ For a methods paper, the data section is unusual: the workhorse dataset is fabri
 - The same regression, very different conclusions about significance
 
 ::: notes
-Alongside the simulations, Petersen shows the methods on actual finance data, so the reader sees the stakes in the wild — the same beta-hat, standard errors that swing by a factor of two as you change the method. Another CHECK tag in our source: confirm exactly which real datasets and regressions he uses before describing them specifically. The point of pairing real panels with the simulations is to prove the lessons are not an artifact of toy data. On real regressions, the same point estimate carries wildly different conclusions about significance depending on which standard error you report — which is exactly the chaos that motivated the paper in the first place.
+Alongside the simulations, Petersen shows the methods on actual finance data, so the reader sees the stakes in the wild — the same beta-hat, standard errors that swing by a factor of two as you change the method. The point of pairing real panels with the simulations is to prove the lessons are not an artifact of toy data. On real regressions, the same point estimate carries wildly different conclusions about significance depending on which standard error you report — which is exactly the chaos that motivated the paper in the first place.
 :::
 
 ## The Taxonomy Is the Real "Data Structure"
@@ -46,7 +47,7 @@ Alongside the simulations, Petersen shows the methods on actual finance data, so
 But the conceptual payload of this section is the firm-effect versus time-effect distinction itself — the lens through which you classify your own panel before you ever choose a standard error. If the correlation lives in a firm's residuals over time, it is a firm effect, and you cluster by firm. If it lives across firms within a period — a common shock hitting everyone — it is a time effect, and you cluster by time, or use time fixed effects. If it lives in both directions at once, you cluster by firm and time, two-way. Memorize that table. It is Week Two's recipe, and it is the diagnostic you will apply for the rest of your empirical life. Everything else in the paper is in service of proving that this one table is the right way to choose.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

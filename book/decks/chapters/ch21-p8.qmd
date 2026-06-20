@@ -1,10 +1,11 @@
 ---
-title: "Verifying the Fit and What Comes Next"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Verifying the Fit and What Comes Next {.title}
+## Verifying the Fit and What Comes Next
+
+- Part 8 — verifying orthogonality and looking ahead
 
 ::: notes
 Welcome back to Chapter two-point-one, part eight of eight — the finale. In part seven we recovered Sam's coefficients by hand: a baseline of one and a beta of seven-sixths, about one-point-one-seven. Now we close the loop by checking that the residuals behave exactly as the projection geometry promised, and then we look ahead to the rest of the week.
@@ -32,7 +33,7 @@ Let us verify the orthogonality we promised. The fitted values are y-hat-sub-i e
 Step back and see what one line of algebra now carries: beta-hat equals the inverse of X-transpose-X times X-transpose-y handles every linear regression you will ever run, from Sam's four days to thousands of observations and dozens of regressors, without a symbol changing. But the question we answered was narrow. We asked only what the best-fitting line is — not whether it is good, unbiased, or how much to trust it. Those need assumptions about where the data came from, and they are chapter two-point-two, where we meet the classical regression assumptions, prove ordinary least squares is unbiased, and state the Gauss-Markov theorem — the result that, among a whole class of estimators, least squares is best. Before that, head to the lab: notebook two-point-one, OLS from scratch with NumPy versus statsmodels. You will build X and y for Sam's data and a larger real return series, compute beta-hat by hand, form the hat matrix and residual maker, verify symmetry and idempotency, and check that your from-scratch coefficients match statsmodels to machine precision.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

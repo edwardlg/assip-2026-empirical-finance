@@ -1,10 +1,11 @@
 ---
-title: "Falsification, Robustness, and the Hold-Out"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Falsification, Robustness, and the Hold-Out {.title}
+## Falsification, Robustness, and the Hold-Out
+
+- Part 5 — falsification, planned robustness, and the hold-out split
 
 ::: notes
 Welcome back to Chapter seven-point-three, part five of eight. In part four we governed the army of tests with a primary hierarchy and the Benjamini-Hochberg procedure. Now the last two components — falsification and planned robustness — and the discipline that makes the plan work: registering before you peek, starting with the hold-out sample. These are the parts beginners skip.
@@ -46,7 +47,7 @@ Component five lists the robustness checks you plan to run, labeled as planned t
 The five components are what you write; the discipline is when — before you have looked at your outcomes. The cleanest way to stay honest is to never let the confirmatory data touch your eyes during design. Two routes. If your study is prospective — you write the plan before the data even exist — the future is your hold-out. Maya's HMDA data already exist and she could peek, so she uses the second route, a hold-out sample. She partitions her extract — say thirty percent exploration and seventy percent confirmation — splitting on a hash of the loan identifier, so the split is reproducible and pinned. She is free to play in the exploration set: run regressions, tune the specification, even p-hack, because nothing there is confirmatory. Then she freezes the plan, files it, and only then runs the frozen primary specification once on the untouched seventy percent. The hold-out converts don't-peek from superhuman willpower into a mechanical fact — she never saw the confirmation data to tune against it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

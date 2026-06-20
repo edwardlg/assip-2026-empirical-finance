@@ -1,9 +1,10 @@
 ---
-title: "A Prompt-Pattern Catalog for Research"
 date: "2026-07-27"
 ---
 
-# A Prompt-Pattern Catalog for Research {.title}
+## A Prompt-Pattern Catalog for Research
+
+- Part 4 — five reusable prompt patterns that constrain and ground
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part four of eight. In part three we finished RAG, the pipeline that grounds a model in your documents with citations. Now we sharpen the prompts themselves. A prompt is not a wish; it is a specification. The patterns here are the reusable ones for empirical work, and the recurring move is the same: constrain the output and demand grounding. Get this habit and your output stops being a paragraph you hope is right and becomes a column you can verify.
@@ -11,11 +12,13 @@ Welcome back to Reading Guide Pack Six and the AI Lab Manual, part four of eight
 
 ## Five Patterns, One Move
 
-- **Extraction** — pull structured fields from messy text → a dataframe column
-- **Classification-with-rubric** — label items into categories → a measure to validate
-- **Cite-or-abstain** — any RAG question → kills hallucination
-- **Code review** — check your own script → catch look-ahead and leakage bugs
-- **Summarize-with-quotes** — digest a long filing → every claim anchored to a quote
+| Pattern | When to use | What it buys you |
+|---|---|---|
+| **Extraction** | Pull structured fields from messy text | Prose becomes a checkable dataframe column |
+| **Classification-with-rubric** | Label items into categories | Reproducible labels — a measure to validate |
+| **Cite-or-abstain** | Any RAG question over your documents | Kills hallucination: quote a source or abstain |
+| **Code review** | Check your own analysis script | A second reader for look-ahead, leakage |
+| **Summarize-with-quotes** | Digest a long filing or paper | Every claim anchored to a verbatim quote |
 
 ::: notes
 Here is the catalog at a glance. Extraction pulls structured fields from messy text — the auditor, the going-concern flag, every guidance figure — turning prose into a checkable dataframe column. Classification-with-rubric labels each item into categories, but produces only a measure to be validated, which is the point of the next two parts. Cite-or-abstain is the non-negotiable pattern for any RAG question, and it kills hallucination. Code review uses the model as a second reader for look-ahead bugs, off-by-one merges, and leakage. And summarize-with-quotes digests a long filing without losing traceability. Five patterns, one move underneath: constrain and ground.
@@ -57,7 +60,7 @@ Three more. Cite-or-abstain wraps around every RAG question: answer using only t
 Two cross-cutting rules tie the catalog together. First, always give the model an exit — UNCLEAR, or null, or "Not supported." A model with no permission to abstain will fabricate to comply: asked for a label it cannot justify, it invents one. A forced wrong label is worse than an honest blank, because the blank you route to a human and the wrong label silently poisons your data. Second, always constrain the output format — JSON, a fixed label set, a required quote — so the result is machine-parseable. A free-text answer you cannot parse is one you cannot validate at scale, and at ten thousand filings, validation at scale is the only validation that matters.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

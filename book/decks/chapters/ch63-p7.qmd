@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable: Context and Drift"
 date: "2026-07-27"
 ---
 
-# What's Vulnerable: Context and Drift {.title}
+## What's Vulnerable: Context and Drift
+
+- Part 7 — lost context and dictionary drift
 
 ::: notes
 Welcome back to Chapter six-point-three, part seven of nine. In part six we praised four clever moves. Now we find the paper's edges, which are mostly the edges of bag-of-words itself. This part covers the two deepest cracks: counting words throws away context, and context is meaning; and a fixed dictionary goes stale as language and disclosure drift. The authors would grant both.
@@ -45,7 +46,7 @@ The honest way to state the limitation is this. Word-counting is not meaning; it
 Second, dictionaries are static, but language and disclosure drift. A fixed word list is frozen at the moment it was built. New financial vocabulary arrives, like crypto, S-P-A-C, and pandemic-era boilerplate; old words shift connotation; and firms learn which words the algorithms flag and adjust their writing to game the score. A dictionary built on filings from the late nineteen-nineties and two-thousands may misread filings from twenty-twenty-six, and a measure everyone uses is a measure firms have an incentive to manage. The public list is updated over time, which helps, but the underlying fragility, that the meaning of the instrument can decay, is structural to dictionary methods.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

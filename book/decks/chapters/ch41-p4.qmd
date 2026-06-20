@@ -1,9 +1,10 @@
 ---
-title: "Event Studies: Letting the Effect Breathe"
 date: "2026-07-13"
 ---
 
-# Event Studies: Letting the Effect Breathe {.title}
+## Event Studies: Letting the Effect Breathe
+
+- Part 4 — leads and lags: dynamic effects and pre-trend checks
 
 ::: notes
 Welcome back to Chapter four-point-one, part four of six. In part three we wrote difference-in-differences as the single two-way fixed-effects coefficient beta. That one number collapses all of "before" into one value and all of "after" into another. But real data usually has several periods on each side, and that extra structure is a gift. The event study uses it to ask two questions the single beta cannot: does the effect grow or fade, and were the groups already drifting apart before treatment? This is the canonical DiD figure.
@@ -44,7 +45,7 @@ Plot the estimated beta-k against event time, with confidence intervals. Look fi
 Now look at the leads — k below zero. This is the half of the plot that earns the event study its keep. Under parallel trends, the groups should not have been diverging before treatment, since no treatment yet existed to cause divergence. So the lead coefficients — beta-minus-two, beta-minus-three, and so on — should all be statistically indistinguishable from zero, hugging the horizontal axis. If they do, the groups moved together in the pre-period — a visible parallel trend, which is reassuring. If instead the leads slope steadily upward toward k equals zero, that is a pre-trend: the groups were already pulling apart before anything happened, and the parallel-trends story is in trouble. A divergence already underway gets mistaken for a treatment effect.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

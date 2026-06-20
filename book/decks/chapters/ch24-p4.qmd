@@ -1,10 +1,11 @@
 ---
-title: "White / HC Robust Standard Errors"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# White / HC Robust Standard Errors {.title}
+## White / HC Robust Standard Errors
+
+- Part 4 — White's robust SEs for heteroskedastic errors
 
 ::: notes
 Welcome back to When the Errors Misbehave, part four of eight. In part three we saw that the honest variance is always the sandwich, and the whole job is estimating its filling. Now we meet the first recipe — Halbert White's, from nineteen-eighty — for the case where the errors have different variances but stay uncorrelated across observations.
@@ -58,7 +59,7 @@ Plug that estimated filling back into the sandwich and you get the heteroskedast
 H-C-zero is consistent — right as N goes to infinity — but in finite samples it has a flaw: O-L-S residuals are systematically too small. Fitting bends the line toward each point, so the residual understates the true error, making H-C-zero too small — overconfident again. The fix is to inflate the squared residuals. H-C-one applies a flat degrees-of-freedom factor, N over N minus K; it is Stata's default and fine for moderate N. H-C-two divides each squared residual by one minus h-i-i, the leverage of observation i — the hat-matrix diagonal, between zero and one. H-C-three divides by one minus h-i-i, squared, inflating high-leverage points hardest. When N is small or leverage is high, H-C-three is the recommended default.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

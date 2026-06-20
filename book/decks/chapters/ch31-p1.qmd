@@ -1,10 +1,16 @@
 ---
-title: "Potential Outcomes: Two Worlds, One Person"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Potential Outcomes: Two Worlds, One Person {.title}
+## Potential Outcomes: Two Worlds, One Person
+
+**Learning objectives.** By the end you can:
+
+- Define a causal effect with potential outcomes
+- Explain why individual effects are never observed
+- Locate the selection bias in a naive comparison
+- Name the design that cleans it: randomization
 
 ::: notes
 Welcome to Week Three, Chapter three-point-one, part one of five. This chapter builds the language the rest of the camp speaks: the potential-outcomes model, also called the Rubin causal model. Here is the story. Maya volunteers at a community credit union that runs a free financial-literacy program. She pulls the records: among people who came through the program, sixty-two percent had their next loan approved; among non-enrollees, only forty-one percent. That is a twenty-one-percentage-point gap, wildly significant. The program seems to cause a twenty-one-point jump. But Maya is about to make a mistake more dangerous than anything in Week Two, because there is no control she can add, no standard error she can robustify, no test that will warn her. Over the next few minutes we build the machinery to say exactly what went wrong.
@@ -46,7 +52,7 @@ To get precise, forget samples and averages; start with one person, unit i. Ther
 Now define the treatment indicator D-sub-i: one if unit i enrolls, zero if not. It acts like a switch selecting which of the two parallel worlds actually happens. The outcome we observe, the one that lands in Maya's dataset, is whichever potential outcome the switch points to. In symbols, observed Y-sub-i equals D-sub-i times Y-of-one plus one-minus-D-sub-i times Y-of-zero. If D is one, this collapses to her treated outcome; if D is zero, to her untreated outcome. This is not an assumption; it is the definition of how what we observe relates to the two worlds we imagine. And now the causal effect on this one person writes itself: tau-sub-i equals Y-of-one minus Y-of-zero, the gap between what happens to her with the program and without it. No regression, no error term, just two numbers and their difference. And now the trap springs.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Reading the Paper in the Right Order"
 date: "2026-07-27"
 ---
 
-# Reading the Paper in the Right Order {.title}
+## Reading the Paper in the Right Order
+
+- Part 5 — a table-by-table reading order for the paper
 
 ::: notes
 Welcome back to Chapter six-point-three, part five of nine. In part four we covered the data and the public Master Dictionary. Now the reading plan. Do not read this paper front to back. Read the misclassification evidence first, because it is the whole point, then the validation horse race, then the construction summary and the weighting refinements. This part walks that order table by table.
@@ -57,7 +58,7 @@ Third, the validation regressions, the horse race. Now the comparative tests: re
 Last, the robustness and weighting tables. The paper also explores term weighting: instead of counting raw word frequencies, it weights words by how distinctive they are using a scheme called t-f-i-d-f, term frequency times inverse document frequency. That scheme down-weights words appearing in almost every filing and up-weights words that are rare across filings but frequent in this one. Read this last, as a refinement of the core message: how you count, not just what you count, affects the signal. This is also the seam that connects to Chapter six-point-two's text-similarity work and, eventually, to the dense vector representations of Chapter six-point-five.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "SUTVA: The Assumption Hiding in the Notation"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# SUTVA: The Assumption Hiding in the Notation {.title}
+## SUTVA: The Assumption Hiding in the Notation
+
+- Part 4 — the assumption the whole framework quietly rests on
 
 ::: notes
 Welcome back to Chapter three-point-one, part four of five. In part three we decomposed Maya's naive difference into the ATT plus selection bias, and pinned the week's mission as zeroing that bias. But before we meet the tool that zeroes it, we expose an assumption the framework has leaned on since the first line, basic enough to miss yet load-bearing for everything. It is called SUTVA, and finance is unusually good at breaking it.
@@ -46,7 +47,7 @@ Finance is unusually good at breaking SUTVA, because financial actors are connec
 The second part fails in Priya's case. She evaluates whether adopting an ESG disclosure standard lowers a firm's cost of capital. But adopting the standard is not one thing: one firm publishes an audited, detailed report; another files a vague two-paragraph statement to check the box. Coding both as treated violates SUTVA's second part, because there is no single Y-of-one; treated hides a spectrum of intensities, and her estimate becomes an uninterpretable blend. The practical upshot: every causal claim sits on a SUTVA assumption, and you should state it out loud. I am assuming no spillovers between units, and that treatment is the same well-defined thing for everyone. Often it is fine; a small pilot with unconnected participants rarely moves markets or leaks across people. Sometimes it is fatally wrong. Either way, name it. And note: SUTVA failures cannot be fixed by randomization, the tool we turn to next. Randomizing who gets treated does nothing about treatments spilling across units or meaning different things. SUTVA must hold before randomization can do its job.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

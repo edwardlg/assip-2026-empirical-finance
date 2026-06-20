@@ -1,9 +1,15 @@
 ---
-title: "The Confirmatory Run"
 date: "2026-08-10"
 ---
 
-# The Confirmatory Run {.title}
+## The Confirmatory Run
+
+**Learning objectives** — by the end you can:
+
+- Execute the pre-registered confirmatory run as filed
+- Make the garden of forking paths visible
+- Read a specification curve as fragile or robust
+- See when the curve itself lies
 
 ::: notes
 Welcome to Week Eight, Chapter eight-point-one, part one of six. Maya filed her pre-analysis plan two weeks ago. It sits frozen as a tagged commit — one primary specification, a deviation log waiting empty beside it. What remains feels like it should be easy: run the thing. This lesson is about that moment, where most honest projects quietly go wrong. We start with the first job of Week Eight: execute the pre-registered confirmatory result exactly as filed, and report it whatever it shows.
@@ -69,7 +75,7 @@ When she ran it, exactly once, the pre-registered estimator returned an average 
 Now the part that separates a researcher from a result-shopper. Maya must commit, in advance, to reporting that number whichever way it came out. Suppose the run had returned negative zero point three points with an interval straddling zero. Her falsification clause already told her what to do: a wide interval that includes zero is a power failure, reported as inconclusive; a tight interval hugging zero would be a genuine, publishable null. Either way she reports it. The temptation is enormous, because she wants the effect to be real. To treat a disappointing confirmatory number as a problem to be debugged rather than a result to be reported — that instinct is the disease.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

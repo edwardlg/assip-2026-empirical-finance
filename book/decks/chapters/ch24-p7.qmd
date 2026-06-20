@@ -1,10 +1,11 @@
 ---
-title: "HAC / Newey–West: Correlation Across Time"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# HAC / Newey–West: Correlation Across Time {.title}
+## HAC / Newey–West: Correlation Across Time
+
+- Part 7 — HAC for serial correlation across time
 
 ::: notes
 Welcome back to When the Errors Misbehave, part seven of eight. In part six we handled clustering — correlation within groups. Now the same disease across time. Sam's residuals echo from month to month, and we will see why that inflates his t-statistic and how Newey and West repair it.
@@ -58,7 +59,7 @@ The one knob you must set is the bandwidth L — how many lags to include. Too s
 It is worth pinning down why serial correlation inflates naive standard errors, because the mechanism is the clustering one in a time-series costume. When errors are positively correlated, each new observation carries less fresh information than the naive formula assumes, because part of it echoes what you already saw. If Sam has one hundred twenty monthly returns but each month's residual is, say, zero point four correlated with the previous month's, his effective sample size is well below one hundred twenty. The naive formula divides by the wrong, too-large effective T, so it reports a standard error too small and a t-stat too big. H-A-C repairs this by counting the lagged cross-products. Positive autocorrelation, the usual case in finance, is the dangerous direction; negative autocorrelation would make naive t-stats too conservative instead.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

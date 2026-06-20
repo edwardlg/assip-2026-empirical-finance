@@ -1,10 +1,16 @@
 ---
-title: "Why Pre-Registration Exists"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Why Pre-Registration Exists {.title}
+## Why Pre-Registration Exists
+
+**Learning objectives.** By the end you can:
+
+- Separate confirmatory from exploratory analysis
+- Write a five-component short-form pre-analysis plan
+- Pin a primary specification by naming every slot
+- Register before you peek using a hold-out
 
 ::: notes
 Welcome to Week Seven, Chapter seven-point-three, part one of eight: the pre-analysis plan. Over this lesson we build the single document that protects an honest researcher from their own worst instincts. Our character Maya has a question about mortgage discrimination, a real HMDA dataset she pulled last chapter, and a problem she has not noticed. She is excited — and that excitement is the danger. In this part we watch how a good student can p-hack an honest project without a single dishonest thought, and we name the device that stops it. The frame is Benjamin Olken's two-thousand-fifteen paper, Promises and Perils of Pre-Analysis Plans — the most balanced thing on the topic.
@@ -46,7 +52,7 @@ Go back to the cold arithmetic of Chapter one-point-five. When the null is true,
 The mechanism is almost embarrassingly simple, and it is the whole trick. You cannot fish in a pond whose boundaries you nailed down before you knew where the fish were. If Maya writes, in a dated committed file — my primary outcome is the denial indicator, my specification clusters by lender, my sample is purchase loans only — before seeing a single coefficient, then the thirty-two forks collapse to one. There is exactly one confirmatory test, and its p-value means what Chapter one-point-five said it means. Everything she tries afterward is still allowed and valuable, but now honestly labeled exploratory: a generator of new hypotheses, not a test of this one. This is the same defense you met last week against prompt-induced p-hacking — freeze the rubric before you look at the downstream coefficient. A pre-analysis plan generalizes it to your entire design.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Two-Sign Rule, and Why Controls Are a Bet"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Two-Sign Rule, and Why Controls Are a Bet {.title}
+## The Two-Sign Rule, and Why Controls Are a Bet
+
+- Part 4 — sign the bias direction; why controls are a bet
 
 ::: notes
 Welcome back to Chapter two-point-five, part four of nine. In part three we derived that omitted variable bias equals beta-two times delta-one, a product of two slopes. You rarely know its magnitude, but you can almost always reason about its sign — enough to know whether your estimate is too big or too small. This part gives you the two-sign rule, works Maya's case and a finance example, then dismantles the belief that you can control your way to the truth.
@@ -12,10 +13,14 @@ Welcome back to Chapter two-point-five, part four of nine. In part three we deri
 
 ## The Two-Sign Rule
 
-- Bias sign = sign of $\beta_2$ times sign of $\delta_1$
-- $(+)(+)\to$ up, $(+)(-)\to$ down, $(-)(+)\to$ down, $(-)(-)\to$ up
+| Sign $\beta_2$ | Sign $\delta_1$ | Bias $\beta_2\delta_1$ | Effect on $\hat{\tilde\beta}_1$ |
+|:---:|:---:|:---:|:---|
+| $+$ | $+$ | $+$ | biased **up** |
+| $+$ | $-$ | $-$ | biased **down** |
+| $-$ | $+$ | $-$ | biased **down** |
+| $-$ | $-$ | $+$ | biased **up** |
+
 - "Same signs push up, opposite signs push down"
-- Sign of effect on $y$, times sign of correlation with $x$
 
 ::: notes
 The sign of the bias, beta-two times delta-one, is just the product of two signs. Find the sign of the omitted variable's effect on the outcome, beta-two, and the sign of its correlation with your regressor, delta-one, then multiply. Same signs give positive bias, pushing your estimate too high. Opposite signs give negative bias, pushing it too low. The mnemonic: same signs push up, opposite signs push down. That is the entire rule, and it gives the direction of contamination even when you cannot measure the size.
@@ -54,7 +59,7 @@ A second example flips the mechanics. Sam regresses a stock's next-month return 
 Here is the seductive trap. Fine, you say — bias comes from omitting variables, so I will include everything. Maya adds creditworthiness, employment, ten more controls. Does that fix it? It fixes the bias from those variables, and only if they are measured well and shaped right. It does nothing about what you still omit — unobserved motivation, soft information the loan officer saw, local shocks. The formula does not care whether you omitted a variable because you forgot it or because it is unmeasurable. So controlling-for-it is a bet that the variables you added were the important confounders and nothing comparable remains — and the regression cannot tell you whether you won. No diagnostic, no R-squared, no standard error reveals bias from a variable not in your data. That is the wall pure regression hits, and why Weeks Three and Four turn to designs that make the assumption credible by construction.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

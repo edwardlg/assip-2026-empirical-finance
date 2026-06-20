@@ -1,9 +1,10 @@
 ---
-title: "The Reader's-Guide Template: Question, Identification, Data"
 date: "2026-07-20"
 ---
 
-# The Reader's-Guide Template: Question, Identification, Data {.title}
+## The Reader's-Guide Template: Question, Identification, Data
+
+- Part 2 — the first three Reader's-Guide boxes: question, identification, data
 
 ::: notes
 Welcome back to How to Read an Empirical Paper, part two of seven. In part one we set the mindset: skeptical, table-first, checklist in hand. Now we open the checklist itself. Every Reader's Guide this week has the same seven parts, in the same order, and the order is not decoration — it is the order in which a claim has to survive scrutiny. This part covers the first three boxes: the question, the identification strategy, and the data.
@@ -57,7 +58,7 @@ Box two: the identification strategy. How does the paper claim to isolate the ef
 Box three: the data. What is the unit of observation — a firm-month, a person, a state-year? What is the sample period, the source, and the number of observations? Sources you will see include C R S P, Compustat, the S E C's EDGAR system, and survey data. Note any sample filters, like "we drop financial firms" or "we require two years of prior data," because filters are decisions, and decisions can be levers. Note look-ahead and survivorship traps you suspect, even when the paper itself stays silent about them. The data box is where quiet choices hide.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

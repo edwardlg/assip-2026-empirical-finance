@@ -1,9 +1,10 @@
 ---
-title: "Three Families and the One That Kills"
 date: "2026-08-10"
 ---
 
-# Three Families and the One That Kills {.title}
+## Three Families and the One That Kills
+
+- Part 2 — the three question families and identification, the fatal one
 
 ::: notes
 Welcome back to Mentor Session eight, part two of six. In part one we learned the referee is hunting for the more boring explanation, and the best move is to find it first. Now we sort the hard questions into three families ranked by danger, warm up with three Socratic questions you should write before the room, and meet the deadliest family — identification. This is the row at the top of your Chapter seven-point-five threats table, and it is the question I will ask first.
@@ -42,7 +43,7 @@ Three warm-ups, and you should arrive with a written sentence or two for each. F
 Identification, in everyday clothes, is the question "isn't this just picking up some confounder?" It is the question that kills papers, because if the comparison was never clean, no amount of careful estimation rescues it. Let me say the line I want you to remember: a precise standard error on a confounded coefficient is a precise estimate of nothing. You can compute the tightest, most beautifully clustered standard error in the world, and if the underlying comparison was contaminated, all that precision is measuring the wrong thing exactly. That is why identification always sits above robustness in the ranking. Robustness asks whether your number wobbles. Identification asks whether your number was ever meaningful in the first place.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The One-Click: Makefile, run_all, Honesty Test"
 date: "2026-08-10"
 ---
 
-# The One-Click: Makefile, run_all, Honesty Test {.title}
+## The One-Click: Makefile, run_all, Honesty Test
+
+- Part 7 — the one-click: Makefile, run_all, and the honesty test
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part seven of ten. In part six we set the single seed and laid out the numbered pipeline scripts. Now we wire those scripts into one command — the Makefile and the make-free run-all script — and run the make-clean, make-all honesty test that proves the packet is real.
@@ -45,7 +46,7 @@ Here is the test that proves the packet is real. Make-clean and make-all: delete
 The packet is the repository, so finishing it is a commit, not an upload. Add config-dot-py, the three source scripts, the Makefile, run-all-dot-py, and poster-dot-tex, then commit and push. Do not commit the derived outputs — the poster PDF, the abstract, the tables, the figures — if they are generated; they come back from make-all, and committing them invites exactly the drift the packet prevents, so add them to gitignore alongside the data folder. The one nuance some advisors prefer for ASSIP: commit the final poster PDF as a released artifact, so a visitor who scans the QR sees the rendered poster without installing LaTeX — but treat it as a build output you refresh, never a source. And the rule from Lab Seven still governs: no secrets, no licensed data, ever. Your config holds a seed, not an API key; keys come from the environment; the gitignore you verified in Lab Seven is the wall.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

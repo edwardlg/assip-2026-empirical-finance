@@ -1,10 +1,11 @@
 ---
-title: "Clustering: When Errors Hold Hands"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Clustering: When Errors Hold Hands {.title}
+## Clustering: When Errors Hold Hands
+
+- Part 6 — clustering, the failure robust SEs miss
 
 ::: notes
 Welcome back to When the Errors Misbehave, part six of eight. In part five we finished heteroskedasticity. Now the failure robust standard errors cannot fix: errors correlated within groups — the single most expensive mistake in empirical finance, and exactly what wrecked Maya's t-statistic in part one.
@@ -70,7 +71,7 @@ The fix is the same sandwich, with a middle built from whole clusters instead of
 There is a catch that bites hard in finance. The cluster-robust estimator is consistent as the number of clusters G goes to infinity, not as N does. The asymptotics live in G. Cluster by state, and Maya has at most fifty clusters; by industry, maybe twelve. With few clusters the standard error is itself noisy and biased downward — overconfident again, the very disease we are treating. The rough rule of thumb: you want at least thirty to fifty clusters before trusting the normal-approximation t-test. Below that, reach for fixes — the small-sample t-distribution with G minus one degrees of freedom, or the wild cluster bootstrap of Cameron, Gelbach, and Miller, two thousand eight, which resamples whole clusters.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

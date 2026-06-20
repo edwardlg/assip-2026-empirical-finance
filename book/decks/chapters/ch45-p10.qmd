@@ -1,9 +1,10 @@
 ---
-title: "Carry Forward & Closing the Causal Arc"
 date: "2026-07-13"
 ---
 
-# Carry Forward & Closing the Causal Arc {.title}
+## Carry Forward & Closing the Causal Arc
+
+- Part 10 — four carry-forward lessons; closing the causal arc
 
 ::: notes
 Welcome back to Chapter four-point-five, part ten of ten — the finale. In part nine we drew out the two-shots lesson and walked the code that builds, biases, recovers, and decomposes a shift-share instrument. Now we gather the four things from this chapter that will do real work in the weeks ahead, and then step all the way back to close the causal-inference arc of the entire camp and open the next one.
@@ -33,7 +34,7 @@ Four things carry forward. First, a shift-share instrument is built, not found �
 Now step all the way back. Weeks Three and Four built you a causal-inference toolkit from the ground up: potential outcomes and SUTVA; the conditional-independence family of matching, propensity scores and doubly-robust; the escape from conditional independence via instruments; and the design-based methods that exploit structure — difference-in-differences and the staggered-adoption crisis, regression discontinuity, synthetic control, and now shift-share. You now own the modern empiricist's full kit and, more importantly, the reflex that matters more than any single estimator: for every design, name the threat, name the assumption that addresses it, separate what the data can test from what you must argue, and bring the diagnostic that shows where the result is fragile. That reflex is the whole point, because Weeks Five and Six turn from building tools to reading the frontier work that uses them. You will stop deriving estimators and start decoding published empirical papers, tables-first, the way professionals read, including papers by Prof. Gao.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

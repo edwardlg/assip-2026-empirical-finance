@@ -1,10 +1,11 @@
 ---
-title: "The Monte Carlo — Coverage Fails, AR Rescues"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Monte Carlo — Coverage Fails, AR Rescues {.title}
+## The Monte Carlo — Coverage Fails, AR Rescues
+
+- Part 4 — Monte Carlo: conventional CIs under-cover, AR rescues
 
 ::: notes
 Welcome back to Lab Three, part four of five — the heart of the lab. In part three we ran two-stage least squares by hand on one draw and saw it swing violently, with a tight standard error we were told to distrust. Now we average. We build the Anderson–Rubin interval, then run a Monte Carlo over more than a thousand draws. Coverage is the fraction of draws whose interval contained the true zero. We will watch the conventional interval fail that test badly, and Anderson–Rubin pass it honestly.
@@ -54,7 +55,7 @@ Read every number, because this output is the lesson. The median ordinary-least-
 Notice the mean two-stage least-squares estimate is minus zero-point-five-six-one — on the wrong side of zero and nowhere near the median of plus zero-point-two-six. That is the fat-tail subtlety. Two-stage least squares is a ratio with a near-zero denominator, so a few draws where the first stage nearly vanishes throw enormous values into the average and yank the mean around. The mean is not the honest summary; the median is. And the deeper moral: the conventional interval looks like a perfectly normal ninety-five percent interval on any single draw — tight, symmetric, often excluding zero — yet it covers only eighty percent of the time, because the true sampling distribution is fat-tailed, not the normal the formula assumes. The diagnostics that could warn you live outside the point estimate; the standard error itself never can.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

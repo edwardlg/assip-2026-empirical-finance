@@ -1,9 +1,10 @@
 ---
-title: "Many-Instruments Bias: When More Is Worse"
 date: "2026-07-06"
 ---
 
-# Many-Instruments Bias: When More Is Worse {.title}
+## Many-Instruments Bias: When More Is Worse
+
+- Part 7 — why adding instruments makes the bias worse, not better
 
 ::: notes
 Welcome back to Week Three-point-five, part seven of nine. In part six we covered the Sargan and Hansen J overidentification tests and their severe limits. Now we confront the genuine surprise of the chapter: that adding more instruments, far from rescuing a weak design, can make your bias worse. This is many-instruments bias, and it is one of the genuinely counterintuitive results in econometrics.
@@ -43,7 +44,7 @@ The intuition runs straight through the first-stage fitting. Recall that two-sta
 This sharpens the rule of thumb. A strong first stage is not about piling up instruments until the F-test is significant; a high F achieved by stuffing in many weak instruments is exactly the trap. A few strong instruments beat many weak ones, always. The right diagnostic is the Olea–Pflueger effective F from Chapter three-point-four, which is built to flag weak identification honestly under heteroskedasticity and many-instrument settings — it does not reward you for adding junk. If your effective F is low, the fix is a better instrument, not more of them. Devon, if his paper has interacted A-T-M distance with a dozen demographics to boost the first stage, should treat the resulting estimate with more suspicion, not less.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

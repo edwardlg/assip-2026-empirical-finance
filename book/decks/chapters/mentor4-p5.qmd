@@ -1,9 +1,10 @@
 ---
-title: "The Missing Score, and Why Design Wins"
 date: "2026-07-13"
 ---
 
-# The Missing Score, and Why Design Wins {.title}
+## The Missing Score, and Why Design Wins
+
+- Part 5 — the missing credit score, and why design beats more controls
 
 ::: notes
 Welcome back to the Week Four mentor session on detecting discrimination, part five of five. In part four we set up the same-sex-borrower case in HMDA data and saw that the raw approval gap is contaminated by unobserved creditworthiness and by selection into applying. Now we confront a sharp feature of this particular dataset — there is no credit score in HMDA — and we turn that apparent weakness into the argument for why a clean design beats more controls. Then we close by stating the difference-in-differences setup and the discipline you will carry into Lab Four and Capstone One.
@@ -45,7 +46,7 @@ Now set up the design. Imagine a state or federal change that altered fair-lendi
 Two final cautions, both non-negotiable when a number is headed for Congressional testimony. First, if the policy rolls out at different dates across states, you are in the staggered-adoption world of Chapter Four-point-two, where a naive two-way fixed-effects regression can give you the wrong sign through contaminated comparisons — so you reach for the robust estimator your Lab Four uses instead. Second, get the standard errors right: cluster by state, following Chapter Four-point-one, section seven, because treatment is assigned at the state level and ignoring that understates your uncertainty. A credible fair-lending estimate has to survive a hostile referee, and then a regulator and a court. The same checklist you run on any design — what is the comparison, what is the threat, what is untestable — is exactly what makes a discrimination finding stand up in that arena.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable, Part Two: Risk vs. Behavioral, and Overlapping Inference"
 date: "2026-07-20"
 ---
 
-# What's Vulnerable: The Last Two Threats {.title}
+## What's Vulnerable: The Last Two Threats
+
+- Part 10 — risk-versus-behavioral debate and overlapping inference
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part ten of eleven. In part nine we covered transaction costs, data-snooping, and seasonality. Now we finish the vulnerabilities with the last two — the genuinely unresolved risk-versus-behavioral debate, and the overlapping-portfolio inference problem one more time. These two are different in kind: one is about interpretation, the other about the arithmetic of the standard errors.
@@ -43,7 +44,7 @@ The fifth threat brings us back to Week Two one more time: overlapping-portfolio
 Step back and adopt the honest reader's posture. The momentum anomaly is real and replicable — concede that plainly; it is one of the most robust patterns in all of asset pricing. But its survival net of realistic costs is contested and depends on which leg you weight, especially the expensive small-cap short side. And the mechanism — whether it is a missing risk factor or a behavioral underreaction-then-overreaction story — is genuinely open. The right stance is to report the effect cleanly, quantify the costs, and refuse to oversell the interpretation. You take a side only with evidence you can show, and you flag honestly where the evidence runs out. That posture is what separates a finding from a sales pitch.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

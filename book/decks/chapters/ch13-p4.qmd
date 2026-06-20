@@ -1,10 +1,11 @@
 ---
-title: "Mean Squared Error and the Bias-Variance Tradeoff"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Mean Squared Error and the Bias-Variance Tradeoff {.title}
+## Mean Squared Error and the Bias-Variance Tradeoff
+
+- Part 4 — one scorecard combining bias and variance
 
 ::: notes
 Welcome back to Estimators and Their Sampling Distributions, part four of seven. Bias asked "do you aim true?" and variance asked "are you steady?" You usually trade them off, so you need one scorecard respecting both. This part builds it — the mean squared error — and scores two recipes head to head.
@@ -58,7 +59,7 @@ Let us put numbers on the tradeoff. Keep the true mean at eight thousand dollars
 Recipe B is biased and yet wins decisively — four hundred ninety thousand beats seven hundred twenty thousand — because the variance it saved, three hundred twenty thousand, dwarfs the bias-squared it paid, ninety thousand. Had the bias been a fat seven hundred dollars, the penalty would be four hundred ninety thousand and B would lose. The whole game is in that arithmetic: a little bias is a bargain only when it buys enough variance. This explains a fact that confuses people — sometimes a biased estimator beats an unbiased one. On a skewed distribution, the extreme claims make the plain mean jump around, so trimming slashes the variance, and if that drop beats the bias-squared, the trimmed mean wins. This tradeoff is the engine behind regularization, shrinkage, and essentially all of machine learning, which we meet again in Week Four.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

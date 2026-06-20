@@ -1,9 +1,10 @@
 ---
-title: "WRDS Cloud — The Licensed Datasets"
 date: "2026-08-03"
 ---
 
-# WRDS Cloud — The Licensed Datasets {.title}
+## WRDS Cloud — The Licensed Datasets
+
+- Part 3 — WRDS Cloud and the licensed crown jewels
 
 ::: notes
 Welcome back to Data Acquisition in Practice, part three of eight. In part two we set the three rules: secrets in the environment, licensed data on GMU, and every pull pinned, cached, and logged. Now we apply the six-question template to WRDS Cloud — the front door to the licensed datasets that define empirical finance.
@@ -46,7 +47,7 @@ Access path. WRDS runs a PostgreSQL database you query with the w-r-d-s Python p
 Licensing. WRDS data is the reason Rule two exists. The connection is read-only, and the data is licensed to GMU. On WRDS Cloud itself the data never leaves Wharton's servers, the cleanest place to work; on GMU's Hopper cluster it stays inside GMU's licensed environment. What you must not do is pull C-R-S-P to your laptop and push it to GitHub. So the data-frame is cached to data-raw on GMU infrastructure, that directory is git-ignored, and only your query code and pull log are committed. Gotchas: WRDS publishes no hard rate limit but enforces practical ones — a reckless select-star is antisocial on a shared cluster, so pull in bounded chunks by year or exchange. The subtlest gotcha is which variable: capital-R-E-T includes dividends and is what you usually want for a total-return study, while R-E-T-X excludes them — the wrong one silently biases every return-based result. And delisting returns live in a separate table; ignoring them is the survivorship bias of Chapter seven-point-four. For the pull: pin the snapshot date, cache to Parquet, and log.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

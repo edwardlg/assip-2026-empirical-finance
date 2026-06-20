@@ -1,9 +1,15 @@
 ---
-title: "A Disparity Is Not a Finding of Discrimination"
 date: "2026-07-13"
 ---
 
-# A Disparity Is Not a Finding of Discrimination {.title}
+## A Disparity Is Not a Finding of Discrimination
+
+**Learning objectives.** By the end you can:
+
+- Tell a **disparity** apart from a finding of **discrimination**
+- Say why controlling for creditworthiness is necessary, never sufficient
+- Define discrimination as a **counterfactual**, not a coefficient
+- Use a **design** to construct the missing comparison
 
 ::: notes
 Welcome to the Week Four mentor session: detecting discrimination with a clean design, part one of five. This week you learned a family of designs that manufacture comparability out of the structure of the world — difference-in-differences, regression discontinuity, and their staggered and synthetic-control cousins. Today we point all of that machinery at a question that is harder than it looks: does a lender treat two otherwise-identical applicants differently because of who they are? This is the heart of Professor Gao's own fair-lending work, and a wonderful teacher, because the naive approach to it is so tempting and so wrong. We start with the single most important distinction in the field — the gap between a disparity and a finding of discrimination.
@@ -46,7 +52,7 @@ The standard fix is to control for creditworthiness. You regress the outcome —
 Here is the catch. The control-for-creditworthiness regression can only adjust for variables you actually measured. But there is almost always something the underwriter sees that you do not — a thin-file applicant's explanatory letter, a banker's soft assessment of character, a piece of collateral that never made it into your dataset. If that unobserved factor is correlated with both the protected characteristic and the outcome, then your residual disparity is part real differential treatment and part omitted-variable bias, and no amount of controls you happen to have can separate the two. This is precisely the failure of selection-on-observables we diagnosed in Week Three, now wearing a fair-lending costume. Controlling is necessary. As we will see, it is never sufficient.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Feasibility — What You Can Actually Finish"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Feasibility — What You Can Actually Finish {.title}
+## Feasibility — What You Can Actually Finish
+
+- Part 7 — feasibility: what you can actually finish
 
 ::: notes
 Welcome back to Chapter seven-point-one, part seven of ten. In part six we named the three designs — cutoff, dated policy, timestamped event — and the honest descriptive out. Now we hit the filter students always skip and then regret: feasibility. An idea can be sharp, consequential, novel, and well-identified, and still be impossible for you to finish now. Feasibility is not a lack of ambition; it is the discipline of matching scope to the resources you actually have — five weeks, a laptop, free or program-provided data, and an AI co-pilot whose limits you learned in Chapter six-point-five. Four constraints bind.
@@ -34,7 +35,7 @@ First constraint: data access — the most common project-killer. Before you fal
 Three more constraints. Scope: a first project should answer one question, not five. The beginner's instinct is to widen — "and I'll check it by firm size, and across countries, and over three decades." Each "and" multiplies the data you must clean and the ways the analysis can break. The professional instinct is the opposite: find the smallest version of the question that is still interesting, answer that cleanly, and only then add. You can always extend a tight project; you can rarely rescue a sprawling one. Time: five weeks is short, and a third of it goes to acquiring and cleaning data — always more than you expect. Budget backward from the presentation: results a week before, analysis the week before that, a clean dataset before that, which leaves about a week from today to lock the question and start pulling data. And everything must be reproducible — every snippet runs fresh, secrets via environment variables, licensed data stays put. Finally, your own skills: be honest about the gap between a method's elegance and your ability to execute it under time pressure. A clean difference-in-differences you fully understand beats a fragile structural model you half-understand, because in Phase Two someone will ask.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

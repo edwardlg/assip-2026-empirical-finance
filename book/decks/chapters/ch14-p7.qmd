@@ -1,10 +1,11 @@
 ---
-title: "Devon's Crypto Returns and Fat Tails"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Devon's Crypto Returns and Fat Tails {.title}
+## Devon's Crypto Returns and Fat Tails
+
+- Part 7 — how fat tails poison the average
 
 ::: notes
 Welcome back to Chapter one-point-four, part seven of nine. In part six we saw the two laws form the engine of inference, resting on one load-bearing assumption: finite variance. Now we meet Devon, who pulls crypto data off-chain, confidently builds a confidence interval, and discovers that averaging crypto returns is nothing like averaging coin flips. The culprit is fat tails.
@@ -45,7 +46,7 @@ The culprit is fat tails — a distribution whose extreme values are far more pr
 Sit with why this is so corrosive. In a fat-tailed return series, the typical day tells you almost nothing about the average. On most days the return is a small wiggle, but every so often one monster day arrives whose magnitude is comparable to the sum of everything around it. A handful of catastrophic or euphoric days do most of the work in determining the average. So the averaging never gets to do its noise-cancelling job, because one term refuses to be small relative to the rest. The cancellation we relied on in the Law of Large Numbers — independent deviations offsetting each other — is overwhelmed whenever a giant arrives. Any statistic that hopes to summarize the series has to reckon with those giants honestly, rather than pretending the bell has already formed.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

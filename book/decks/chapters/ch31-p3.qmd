@@ -1,10 +1,11 @@
 ---
-title: "The Naive Estimator and Selection Bias"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Naive Estimator and Selection Bias {.title}
+## The Naive Estimator and Selection Bias
+
+- Part 3 — decompose Maya's 21 points into effect plus bias
 
 ::: notes
 Welcome back to Chapter three-point-one, part three of five. In part two we proved we can never see an individual effect, so we chase averages, and we named three estimands. Now the central derivation: take Maya's naive twenty-one-point comparison and decompose it exactly into a causal piece and a contamination piece. Then we put real numbers on it and watch two-thirds of her effect evaporate.
@@ -57,7 +58,7 @@ Read what that bias term is: the expected Y-of-zero among the treated minus the 
 Let us put numbers on it, and we can only suppose, because the counterfactual is unobserved. The enrollees' approval with the program is zero-point-six-two, observed. Had they not enrolled, their average would have been zero-point-five-five, unobserved. The non-enrollees' approval is zero-point-four-one, observed. The ATT, the true effect, is zero-point-six-two minus zero-point-five-five, which is zero-point-zero-seven. Run the decomposition: seven points of real effect, plus zero-point-five-five minus zero-point-four-one, fourteen points of bias, summing to twenty-one. Two-thirds is not the program; enrollees were already fourteen points more approvable before it did anything. And nothing in her data reveals the split. She sees zero-point-six-two and zero-point-four-one; the hidden zero-point-five-five is missing by the Fundamental Problem. A bigger sample sharpens the wrong number. This is identification, not estimation.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

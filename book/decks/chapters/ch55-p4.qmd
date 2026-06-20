@@ -1,9 +1,10 @@
 ---
-title: "Reading the Tables: Symptom, Mechanism, Cure"
 date: "2026-07-20"
 ---
 
-# Reading the Tables: Symptom, Mechanism, Cure {.title}
+## Reading the Tables: Symptom, Mechanism, Cure
+
+- Part 4 — read the tables in story order: symptom, mechanism, cure
 
 ::: notes
 Welcome back to Chapter five-point-five, part four of seven. In part three we saw why long, persistent panels are the perfect crime scene. Now we read the paper itself, and a professional does not read it front to back. You read it tables-first, in the order that tells the story: symptom, then mechanism, then cure.
@@ -45,7 +46,7 @@ Then read the table that varies the panel length. Having established that over-r
 Then read the fixes tables, the cures. Having diagnosed the disease, BDM test remedies and report the rejection rate each one delivers. Read every row asking one question: did this fix bring the rejection rate back down to roughly five percent? First, the block bootstrap: resample whole states, entire time series kept intact, so the bootstrap preserves each state's serial-correlation structure instead of shattering it. Second, clustering at the state level: the cluster-robust standard error of Chapter two-point-four, with the cluster set to the unit at which treatment is assigned. It lets each state's residuals be arbitrarily correlated across all its years, which is exactly the serial-correlation pattern the disease consists of. This became the field's default, and the reason Priya clustered by state. Third, collapsing to pre and post: average each state into one before number and one after number, leaving effectively two periods, with no internal serial correlation left to misread.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

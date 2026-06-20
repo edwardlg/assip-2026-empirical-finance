@@ -1,10 +1,11 @@
 ---
-title: "Writing a One-Proportion Test From Scratch"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Writing a One-Proportion Test From Scratch {.title}
+## Writing a One-Proportion Test From Scratch
+
+- Part 4 — code a one-proportion z-test from scratch
 
 ::: notes
 Welcome back to Lab one, part four of seven. In part three you built the sampling distribution of p-hat and watched it tighten and go normal. Now you build the decision machine of the hypothesis-testing chapter with your own hands, specialized to a proportion. Sam's question is simple: is the coin fair? You will frame it as a formal test, write the z-statistic, compute a p-value, and check yourself against a library.
@@ -60,7 +61,7 @@ Now write it. The function takes the array of flips and the null value p-naught.
 What to expect. The fair coin should usually return a large, insignificant p-value; the rigged coin, with true p of zero point six two and N of two hundred, should usually reject. Now the reflection. You used p-naught in the standard error, not p-hat. Why? Argue from the definition of a p-value: it is the probability of a result this extreme, computed assuming the null is true. If you assume the null is true, the standard error must be the one the null implies — built from p-naught. That is exactly what distinguishes a test's standard error, which uses the null value, from a confidence interval's, which uses p-hat. Same data, different question, different denominator.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

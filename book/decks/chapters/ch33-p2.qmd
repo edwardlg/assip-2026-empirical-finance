@@ -1,10 +1,11 @@
 ---
-title: "Inverse-Probability Weighting: The Trick"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Inverse-Probability Weighting: The Trick {.title}
+## Inverse-Probability Weighting: The Trick
+
+- Part 2 — the IPW reweighting idea and its one-line proof
 
 ::: notes
 Welcome back to Chapter three-point-three, part two of ten. In part one we framed three tools and the theme of stability. Now we open the first tool — inverse-probability weighting — with the one image that makes it click, and then the one line of algebra that proves it works.
@@ -46,7 +47,7 @@ Weight each treated unit by one over e-of-X and each control by one over one-min
 Why does dividing by the propensity score recover the right average? One line of expectation algebra. We want the expected outcome if everyone were treated, but observe Y only for treated units. Consider the expected value of D-i times Y-i divided by e-of-X-i. The factor D-i zeroes out every control, so the expectation runs only over treated units, where Y equals Y-of-one. Now condition on X-i first using the law of iterated expectations. Inside, e-of-X-i is a constant and comes out front. Under the conditional-independence assumption, D-i is independent of Y-of-one given X-i, so the expectation of their product factors into the expected value of D given X — which is exactly e-of-X — times the conditional mean of Y-of-one. The e-of-X in front cancels the e-of-X from the denominator. That cancellation is the whole trick: dividing by the probability of selection exactly undoes the over- or under-sampling that selection created. What remains is the conditional mean of Y-of-one, whose outer expectation over X is the unconditional mean of Y-of-one. The same argument with one-minus-D over one-minus-e recovers the mean of Y-of-zero. Subtract, and you have the average treatment effect.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

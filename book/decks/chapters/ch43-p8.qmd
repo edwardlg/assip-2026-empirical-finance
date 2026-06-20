@@ -1,10 +1,11 @@
 ---
-title: "Bandwidth: The Bias–Variance Trade-off"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# Bandwidth: The Bias–Variance Trade-off {.title}
+## Bandwidth: The Bias–Variance Trade-off
+
+- Part 8 — bandwidth as a bias–variance trade-off
 
 ::: notes
 Welcome back to Chapter four-point-three, part eight of thirteen. In part seven we settled on local linear regression in a window of width h. Now: how wide should that window be? The bandwidth is the single most consequential choice in a regression-discontinuity analysis, and it is governed by a tension you have met before — the bias-variance trade-off, which we then watch print itself in numbers.
@@ -34,7 +35,7 @@ Make h large and you include lots of data far from the cutoff. Your two fitted l
 You can watch this trade-off in numbers. With a true jump of zero-point-six, the local-linear estimate at bandwidth four comes in around zero-point-five-six — close to the truth, but with a wide standard error of about zero-point-one-eight. At bandwidth thirty-two it drifts to about zero-point-four-one — a much tighter standard error of about zero-point-zero-seven, but now badly biased, because the wide window let the curvature on the treated side bend the fit. The narrow window is honest but noisy; the wide window is precise but wrong. That is the trade-off made numerical, and it warns you against eyeballing a bandwidth or, worse, p-hacking by trying bandwidths until the result you want appears.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

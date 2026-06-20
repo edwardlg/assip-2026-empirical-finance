@@ -1,9 +1,10 @@
 ---
-title: "What's Clever About Petersen"
 date: "2026-07-20"
 ---
 
-# What's Clever About Petersen {.title}
+## What's Clever About Petersen
+
+- Part 5 — four transferable moves that make the paper land
 
 ::: notes
 Welcome back to Chapter five-point-four, part five of seven. In part four we read the simulation tables column by column and watched OLS and White undercover while the matching clustering recovered nominal coverage. Now we name what is genuinely clever about this paper. These are four transferable moves you will reuse for the rest of your career — not just facts about standard errors, but a model of how to make a contested methodological claim land.
@@ -44,7 +45,7 @@ Second, the clean taxonomy. Before this paper, "which standard error?" felt like
 Fourth, diagnosing your own panel without knowing the truth. The practical gem is the self-diagnostic that notebook two-point-four walks you through. In your real data you do not know the true Omega, but you can still let the methods tell on themselves. Cluster by firm and look at the standard error; cluster by time and look again. Whichever clustering moves your standard error more, away from the White number, is pointing at the bigger source of correlation. He turned "which cluster?" from a guess into something you read directly off your own output. That is the difference between a paper that hands you a rule and a paper that hands you an instrument you can use on data the author never saw.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Deriving the t-Test"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Deriving the t-Test {.title}
+## Deriving the t-Test
+
+- Part 4 — estimating $\sigma$ with $s$, and the $t$-distribution
 
 ::: notes
 Welcome back to Chapter one-point-five, part four of ten. In part three we built the idealized test statistic but found it still hides the unknown true standard deviation sigma. Now we fix that — estimating sigma from the same sample — and meet the t-distribution that this estimation forces, then put Sam's numbers through it.
@@ -34,7 +35,7 @@ The idealized statistic contains sigma, the true population standard deviation o
 The t-distribution is shaped like the normal — symmetric, centered at zero — but with heavier tails that account for the extra uncertainty in s. The fewer the degrees of freedom, the fatter the tails. And here is the clean bridge back to Chapter one-point-four: as N grows, s converges in probability to sigma, so the random denominator stops being random, and the t-distribution converges to the standard normal the Central Limit Theorem promised. This is why practitioners use t-statistic, z-statistic, and the rule of two almost interchangeably for large samples. The distinction earns its keep in small samples — twelve firms, twenty patients — where the tail correction genuinely changes the answer. Now Sam's numbers. With sample standard deviation zero point seven five percent over two hundred fifty-two days, the estimated standard error is zero point seven five percent divided by fifteen point eight seven, giving zero point zero four seven three percent. So t equals zero point zero eight percent over that, about one point six nine. Sam's average sits about one point six nine standard errors above zero.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

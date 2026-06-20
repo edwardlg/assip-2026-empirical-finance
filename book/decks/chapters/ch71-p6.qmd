@@ -1,10 +1,11 @@
 ---
-title: "Three Designs, and the Honest Descriptive Out"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Three Designs, and the Honest Descriptive Out {.title}
+## Three Designs, and the Honest Descriptive Out
+
+- Part 6 — three realistic designs and the descriptive out
 
 ::: notes
 Welcome back to Chapter seven-point-one, part six of eight. In part five we learned to run the catalog backwards — start from your question, search for variation in the treatment unrelated to your confounders. Now we name the realistic patterns that variation usually takes for a high-schooler's project, the one riskier pattern to handle with care, and the honest path when none of them is available.
@@ -35,7 +36,7 @@ Three patterns are realistic for a high-schooler's project. First, a sharp rule 
 A fourth pattern, a found or built instrument — instrumental variables and shift-share — is real but the hardest to pull off well in five weeks, because a valid instrument is something you find rarely and defend with difficulty, and the weak-instrument pathology of Chapter three-point-five can quietly poison your inference. Reach for it only if the instrument is so clean you could explain it to a skeptic in one sentence; otherwise prefer a cutoff, a policy date, or an event, where the identifying assumption is closer to the surface. And if none of these is available — your treatment varies for reasons hopelessly tangled with the outcome, no cutoff, no policy date, no clean event, no instrument — then be honest: your project is descriptive, not causal. That is allowed, and for a first project often wise. A careful description of a new phenomenon is a real contribution. What is not allowed is a descriptive correlation dressed up in causal language. CONVENTIONS section four forbids exactly that: name the threat and the design that addresses it, or do not make the causal claim.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

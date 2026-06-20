@@ -1,10 +1,16 @@
 ---
-title: "Bias vs. Wobble: Why a Sharp Estimate Can Be Wrong"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Bias vs. Wobble: Why a Sharp Estimate Can Be Wrong {.title}
+## Bias vs. Wobble: Why a Sharp Estimate Can Be Wrong
+
+**Learning objectives.** By the end you can:
+
+- Distinguish bias from standard-error wobble
+- Name the three classic threats to $\hat\beta$
+- Explain why bias survives any sample size
+- Trace each threat to $\mathbb{E}[\varepsilon \mid x] = 0$ failing
 
 ::: notes
 Welcome to Week Two, Chapter two-point-five, part one of nine. This is the chapter where the regression you spent four chapters learning to trust gets a hard, honest look. Our character Maya has a clean dataset and a clean fair-lending question, and she is about to make the single most expensive mistake in all of empirical work. Over these nine parts we meet the three classic ways a coefficient can be biased — pointed at the wrong target — no matter how much data you collect. This is the bridge from regression mechanics to causal inference.
@@ -54,7 +60,7 @@ Let us be precise about what bias means. Write the true data-generating process 
 Every threat in this chapter is a story about how the zero-conditional-mean assumption breaks. Omitted variable bias breaks it by stuffing a relevant, correlated variable into epsilon. Measurement error breaks it by making the x you regress on differ from the true x, mechanically correlating your regressor with the error. Functional-form error breaks it by dumping unmodeled curvature into epsilon, where it again correlates with x. Same disease, three vectors. For each, we follow the reveal-the-trick structure: state the result, see it on real numbers, derive the algebra, see which direction it pushes, and write the code to watch it happen.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

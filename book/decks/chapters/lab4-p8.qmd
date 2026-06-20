@@ -1,9 +1,10 @@
 ---
-title: "Callaway–Sant'Anna Recovers the Effect"
 date: "2026-07-13"
 ---
 
-# Callaway–Sant'Anna Recovers the Effect {.title}
+## Callaway–Sant'Anna Recovers the Effect
+
+- Part 8 — Callaway–Sant'Anna recovers the planted effect
 
 ::: notes
 Welcome back to Week Four, the Lab, part eight of eight — the finish. In part seven we read the event study and stressed parallel trends until the leads tilted. Now the cure: estimate Callaway–Sant'Anna group-time effects against clean controls, recover the planted effect that two-way fixed effects could not, put the three numbers side by side, and close the whole week. Then a look ahead to Mentor Session Four and Capstone One.
@@ -57,7 +58,7 @@ One honest subtlety. The Callaway–Sant'Anna overall, minus one-point-three-two
 Finally, make the contrast unmissable with one figure. On the left, plot the event-study curves over the planted-truth profile: the Callaway–Sant'Anna curve hugs the dashed planted-truth line, while the naive two-way fixed-effects curve drifts off it in the post-period — cohort-bleed, made visible. On the right, three headline bars: the planted truth, the Callaway–Sant'Anna overall, and the attenuated two-way fixed-effects coefficient. The Callaway–Sant'Anna bar reaches most of the way to the truth; the two-way fixed-effects bar falls short. One picture, the whole week. The credibility comes from the design, not from a pile of controls.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

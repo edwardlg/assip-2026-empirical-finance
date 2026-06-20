@@ -1,9 +1,10 @@
 ---
-title: "The Weak-Instrument Pathology"
 date: "2026-07-06"
 ---
 
-# The Weak-Instrument Pathology {.title}
+## The Weak-Instrument Pathology
+
+- Part 3 — why a weak first stage biases 2SLS toward OLS
 
 ::: notes
 Welcome back to Week Three-point-five, part three of seven. In part two we finished the referee's checklist and singled out relevance — the first-stage F — as the load-bearing diagnostic. Now we open it up and find the deepest failure in instrumental variables. The result, in one sentence: when the first stage is weak, two-stage least squares is biased toward the very O-L-S estimate it was supposed to rescue you from, and its conventional standard error is too small. So you get a confidence interval that is both centered on the wrong place and falsely narrow about it.
@@ -54,7 +55,7 @@ Two catastrophes follow. First, the sampling distribution of a ratio whose denom
 There is an exact, memorable way to summarize the bias. The bias of two-stage least squares relative to the bias of O-L-S is approximately one over the quantity F plus one — the engine behind the famous F-greater-than-ten rule. When the first-stage F is enormous, one over F-plus-one is about zero and two-stage least squares has shed essentially all of O-L-S's bias. When F equals one, the ratio is about one-half: it carries half of O-L-S's bias, and the sign is toward O-L-S. This is why a weak instrument is worse than no instrument at all: no instrument leaves you with honest O-L-S and an honest worry; a weak instrument gives you contaminated O-L-S dressed up as a clean estimate.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

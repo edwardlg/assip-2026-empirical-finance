@@ -1,10 +1,11 @@
 ---
-title: "Size and Power: Two Ways to Be Wrong"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Size and Power: Two Ways to Be Wrong {.title}
+## Size and Power: Two Ways to Be Wrong
+
+- Part 5 — the two error types, size $\alpha$, and power
 
 ::: notes
 Welcome back to Chapter one-point-five, part five of ten. In part four we built Sam's t-statistic and found it sits about one point six nine standard errors above zero. Now we ask how surprised we must be before we act — which means naming the two ways a test can be wrong: size and power.
@@ -12,8 +13,11 @@ Welcome back to Chapter one-point-five, part five of ten. In part four we built 
 
 ## Two Ways to Be Wrong
 
-- Type I error: reject a true null (false positive)
-- Type II error: fail to reject a false null (false negative)
+| | $H_0$ true (no edge) | $H_1$ true (real edge) |
+|---|---|---|
+| **Reject $H_0$** | Type I error (false positive) | Correct (a "hit") |
+| **Fail to reject $H_0$** | Correct | Type II error (false negative) |
+
 - Size $\alpha$: the ceiling we set on Type I errors
 - Convention $\alpha=0.05$: cry victory wrongly at most 5 percent
 - $\alpha$ is set *before* the data — a property of the rule
@@ -34,7 +38,7 @@ Any decision rule based on noisy data can be wrong in two distinct ways. A Type 
 For Sam's one-sided alternative — mu greater than zero — at alpha equals zero point zero five with two hundred fifty-one degrees of freedom, the critical value is the point cutting off the top five percent of the t-distribution, about one point six five. The rule is: reject if t exceeds one point six five. Now the second error. A Type Two error — missing a real effect — has probability written beta. The quantity we usually care about is its complement, power, which equals one minus beta. Power is the probability of rejecting the null given that the alternative is true — the probability of catching a real effect when one exists. A test with low power is a metal detector that stays silent over buried treasure. It protects you from false alarms with a small alpha by almost never alarming at all, which is useless.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,15 @@
 ---
-title: "The Funnel Is Mostly a Furnace"
 date: "2026-08-03"
 ---
 
-# The Funnel Is Mostly a Furnace {.title}
+## The Funnel Is Mostly a Furnace
+
+**Learning objectives — by the end you can:**
+
+- See the research funnel as a **furnace**, not a filter
+- Kill ideas cheaply on paper, **without grief**
+- Spot **sunk cost** arguing for a project's survival
+- Decide forward — *best use of the weeks left?*
 
 ::: notes
 Welcome to Mentor Session seven of Week seven, part one of four. Yesterday's chapter handed you a machine for turning a vague mood into a sharp research sentence — the puzzle, the so-what filter, the hypothesis grammar, the scoring rubric. I use a version of it every week. But it leaves out the part of the job no rubric can do for you, because it is emotional rather than technical. That part is the killing. By the time a paper of mine reaches a journal, I have abandoned somewhere between ten and thirty ideas — most of them ideas I liked, several already half-built. Today is the unglamorous half of the funnel: not how to pick a project, but how to kill one.
@@ -42,7 +48,7 @@ So the discipline I want you to learn is not how to fall in love — you already
 The first enemy of cheap killing is a bias you'll recognize from any decision you've regretted: sunk cost. Once you've spent a week scraping a dataset, the dataset starts arguing for its own survival — I can't quit now, I've already cleaned forty thousand rows. But those rows are gone whether you continue or not. They are not a reason to continue; they are a reason you wish you had a reason. The only honest question at every checkpoint is forward-looking: given what I know now, and ignoring everything I've already spent, is this still the best use of the weeks I have left? I make myself answer that on purpose, because my instincts will not ask it — they will defend the work I've done. Write the cost off. Decide from here.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

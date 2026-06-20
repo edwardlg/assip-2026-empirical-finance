@@ -1,9 +1,10 @@
 ---
-title: "Two Roads to the PDF: Overleaf and Local Compile"
 date: "2026-08-10"
 ---
 
-# Two Roads to the PDF: Overleaf and Local Compile {.title}
+## Two Roads to the PDF: Overleaf and Local Compile
+
+- Part 4 — two roads to the PDF: Overleaf and local compile
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part four of ten. In part three we covered the skim-traps and the GMU and PowerPoint paths. Now we turn poster-dot-tex into an actual PDF. There are two roads, and both end at the same file. The first is Overleaf — a browser LaTeX editor that needs nothing on your machine. The second is a local compile on the camp container with latexmk or tectonic. Pick whichever fits the machine you are on; the discipline that matters is identical on both.
@@ -33,7 +34,7 @@ The Overleaf workflow is three moves. First, create a new project and upload you
 On the camp container you skip the upload and compile in place. The simplest robust command is latexmk, which figures out how many passes are needed to resolve cross-references and the QR code and runs them for you: latexmk, dash-pdf, dash-interaction-nonstopmode, poster-dot-tex. The dash-pdf flag selects PDF output via pdflatex under the hood; nonstopmode means a recoverable warning does not stop the build to wait for keyboard input — important when this runs unattended inside make. If you prefer the self-contained engine, tectonic needs no separate driver and downloads any missing packages on first use — just tectonic, poster-dot-tex, a single command that resolves the passes internally and writes the PDF. Either way you get paper-slash-poster-dot-pdf. To start clean — which you will do constantly while debugging — latexmk dash-capital-C deletes every auxiliary file and the PDF, so the next build is from nothing.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

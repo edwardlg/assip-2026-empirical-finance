@@ -1,9 +1,10 @@
 ---
-title: "Balance Diagnostics and the Firewall"
 date: "2026-07-06"
 ---
 
-# Balance Diagnostics and the Firewall {.title}
+## Balance Diagnostics and the Firewall
+
+- Part 10 — audit with SMD; check balance, never the outcome
 
 ::: notes
 Welcome back to Chapter three-point-two, part ten of eleven. In part nine, matching recovered the true effect. Now we audit it: did the treated and control groups actually become comparable on the covariates? We meet the standardized mean difference, read Maya's balance table, and learn the sacred rule — check balance, never the outcome.
@@ -46,7 +47,7 @@ Here are Maya's standardized mean differences, before and after matching, from t
 This balance table — not the regression output — is what a referee reads first in a matching paper. It is the evidence the zero-point-three-one deserves to be believed. Now the rule that trips up everyone the first time: you check balance, never the outcome. You tune your propensity model, your caliper, your number of neighbors, looking only at how well the covariates balance, and you keep the outcome hidden from yourself until the design is locked. Why? Because the credibility of selection-on-observables rests on the design being chosen independently of the answer it produces. If you fiddle with the recipe while watching the estimate, you are selecting the specification that gives the effect you like — the specification-search pathology from Chapter one-point-five, aimed straight at your causal conclusion. Treat that firewall as sacred: balance is what you optimize, the effect is what you report once, at the end.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

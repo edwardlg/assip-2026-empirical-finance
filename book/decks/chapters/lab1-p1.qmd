@@ -1,10 +1,16 @@
 ---
-title: "Lab 1: Building a Coin-Flip Universe"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Lab 1: Building a Coin-Flip Universe {.title}
+## Lab 1: Building a Coin-Flip Universe
+
+**Learning objectives.** By the end you can:
+
+- Build a Bernoulli universe with known $p$
+- Construct $\hat p$'s sampling distribution by Monte Carlo
+- Write and check a one-proportion z-test
+- Measure a test's size, power, and p-hacking
 
 ::: notes
 Welcome to Week One, Lab one, part one of seven. This lab is the capstone of Week One. Everything across the chapters — estimators, sampling distributions, the Law of Large Numbers, the Central Limit Theorem, and the hypothesis test — was about quantities you cannot see. In a real study you get one sample and must reason about the infinity of samples you did not get. A simulation lets you cheat: build the universe yourself, fix its true parameter, and draw freely. In this opening part we set up the mission and the running object — a coin.
@@ -46,7 +52,7 @@ The running object is the simplest random thing there is: a coin. Sam wants to k
 Here are the learning goals. By the end of this lab you will be able to build a Bernoulli population with a known parameter p and draw repeated samples from it reproducibly. You will construct the sampling distribution of the estimator p-hat by Monte Carlo, and show empirically that its spread falls like one over the square root of N and its shape converges to a normal — the Central Limit Theorem for a proportion. You will write a one-proportion z-test from scratch — test statistic, decision rule, p-value — and check it against a library. You will measure the empirical size of your test, its actual false-positive rate, and confirm it lands near the alpha you chose. You will measure the empirical power under an alternative and trace a power curve. And as a stretch, you will demonstrate how reporting only the winner from many tests inflates the false-positive rate.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Sharp RD: The Estimand"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# Sharp RD: The Estimand {.title}
+## Sharp RD: The Estimand
+
+- Part 3 — sharp RD as a difference of one-sided limits
 
 ::: notes
 Welcome back to Chapter four-point-three, part three of thirteen. In part two we built the local-randomization story and the continuity assumption. Now we make the cleanest case concrete: sharp regression discontinuity, where treatment is a perfect step function of the running variable. We state its estimand and flag the one interpretive subtlety.
@@ -46,7 +47,7 @@ Under continuity, the sharp-RD estimand is the jump in the conditional-mean func
 There is one subtlety in the interpretation, and it is the regression-discontinuity analog of the local average treatment effect. The estimand tau-S-R-D is the average treatment effect for units with X equal to c — the firms right at rank one thousand, the borrowers right at score six-sixty. It is not the average effect for all borrowers, nor for the treated, nor for anyone whose score is far from the cutoff. If the effect of a loan is large for marginal borrowers but small for deep-subprime applicants far below the line, regression discontinuity will report only the marginal number, because the marginal units are the only ones whose treatment status the cutoff actually pins down. For policy questions about where to set the cutoff — should the threshold be six-sixty or six-forty? — the effect at the margin is exactly the right number, which is part of why regression discontinuity is beloved by regulators.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

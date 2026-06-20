@@ -1,10 +1,11 @@
 ---
-title: "Multiple-Testing Corrections, Done Right"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Multiple-Testing Corrections, Done Right {.title}
+## Multiple-Testing Corrections, Done Right
+
+- Part 7 — correct for the whole family of outcomes
 
 ::: notes
 Welcome back to Chapter eight-point-two, part seven of ten. In part six we saw that with a family of eight outcomes, pure noise gives a one-in-three chance of a false discovery, so Maya owes the reader a correction for her family size. Now we meet the two corrections you must know. They answer two different questions, and using the wrong one is a common error. We will work Maya's eight outcomes all the way through.
@@ -50,7 +51,7 @@ Here is Maya's family worked, with m equals eight and alpha equals five percent.
 How do you stay honest? The non-negotiable rule: declare your family in advance — ideally in the pre-analysis plan of Chapter seven-point-three — so you cannot gerrymander it after the fact. The cardinal sin is to run twenty outcomes, find one significant, and report it alone as if it were the only test; that is the garden of forking paths from Chapter one-point-five, which the correction exists to disarm. The honest report names m, names the correction, and states the surviving set: of the eight pre-specified outcomes, two survive Benjamini–Hochberg false-discovery-rate control at five percent. If your headline result fails to survive, you say so, and your contribution becomes suggestive on secondary outcomes, robust only on the primary. A reader trusts a corrected family far more than an uncorrected lone star.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

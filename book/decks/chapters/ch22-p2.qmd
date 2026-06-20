@@ -1,10 +1,11 @@
 ---
-title: "The Contract, Part One: Linearity and Full Rank"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Contract, Part One: Linearity and Full Rank {.title}
+## The Contract, Part One: Linearity and Full Rank
+
+- Part 2 — the first two assumptions: linearity and full rank
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part two of nine. In part one we stated the punchline: O L S is BLUE under a five-clause contract. Now we read the contract itself, stating each clause as a falsifiable claim about Maya's loan data. This part covers the first two assumptions: linearity in the parameters, and full-rank regressors.
@@ -46,7 +47,7 @@ Assumption one is linearity in the parameters. The true relationship is y equals
 Assumption two bundles two ideas. First, the N loans are a representative draw from the population Maya cares about — the analogue of Priya's two hundred claims coming from the population whose mean she wants. Second, and this part is genuinely mechanical rather than statistical: the matrix X has full column rank, which we met in Chapter two-point-one. No column is a constant multiple of another, and no column is an exact linear combination of the others. This is what lets the inverse of X transpose X exist in the first place. Without it, the O L S formula is not biased — it is undefined, like dividing by zero. What goes wrong if it fails: if Maya accidentally includes income in both dollars and thousands of dollars as two columns, one is exactly one thousand times the other, X transpose X is singular, and the software either errors out or silently drops a column. Near failure — two highly but not perfectly correlated regressors — is multicollinearity, which doesn't bias anything but inflates variances; we diagnose it in Chapter two-point-three.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

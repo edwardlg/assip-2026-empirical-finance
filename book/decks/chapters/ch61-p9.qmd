@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Build a Piece of the Measure"
 date: "2026-07-27"
 ---
 
-# KPSS: Build a Piece of the Measure {.title}
+## KPSS: Build a Piece of the Measure
+
+- Part 9 — three exercises that rebuild the measure yourself
 
 ::: notes
 Welcome back to Chapter six-point-one, part nine of ten. In part eight we finished the referee's critique — selection, baked-in efficiency, and associations. Now we stop critiquing and start building. You do not understand a constructed measure until you have built a piece of it yourself. Three escalating exercises live in notebook six-point-one, all runnable on your laptop with a seeded synthetic fallback.
@@ -45,7 +46,7 @@ Exercise two: rebuild a single patent's value from a grant-window event study. R
 Exercise three: validate the measure, then break a validation. Reproduce the spirit of the paper's headline validation — in the firm-year panel, regress a future outcome, next year's profitability or growth, on this year's innovation value, and confirm the positive, significant association that earns the measure its credibility. Then inject a confound: contaminate a subset of grant windows with simulated earnings-announcement returns, rebuild the value measure on the contaminated windows, and watch the validation degrade. You will see directly how confounding news in the window eats into the measure's predictive power — and why the short window and aggregation are the defenses.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

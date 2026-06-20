@@ -1,9 +1,10 @@
 ---
-title: "The Matrix Proof in Four Lines"
 date: "2026-06-29"
 ---
 
-# The Matrix Proof in Four Lines {.title}
+## The Matrix Proof in Four Lines
+
+- Part 4 — prove FWL from the residual-maker matrix
 
 ::: notes
 Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part four of eight. In part three we reproduced a three-variable coefficient, one-point-eight-three-eight, using two simple regressions on Leah's six firms. Now we earn that result as a theorem. We will say it in matrix language, the way you will see it in a real econometrics text, and prove it in four lines using the residual-maker matrix we built in Chapter two-point-one. The proof uses nothing but three properties of that matrix and the orthogonality of the ordinary-least-squares residual.
@@ -42,7 +43,7 @@ Now define the matrix that sweeps out everything in the column space of the cont
 Here is the proof. Recall the three properties of any residual maker from Chapter two-point-one. It is symmetric — its transpose is itself. It is idempotent — applying it twice does nothing more than applying it once. And it annihilates its own block — M-two times X-two is the zero matrix, because there is no residual left when you regress X-two on itself. Those three facts are all we need. Start from the fitted model, y equals X-one beta-one-hat plus X-two beta-two-hat plus the residual, where that residual is orthogonal to every regressor. Now hit the whole equation on the left with M-two. The middle term dies, because M-two times X-two is zero — sweeping out the controls erases the entire beta-two contribution, controls and all. The residual survives untouched, because it is already orthogonal to X-two. What remains is y-tilde equals X-one-tilde times beta-one-hat plus the same residual. Finally, left-multiply by X-one-tilde transpose. The cross term with the residual is zero, by symmetry and the full-model orthogonality. That leaves the normal equation of a simple regression — beta-one-hat equals the inverse of X-one-tilde-transpose-X-one-tilde times X-one-tilde-transpose y-tilde. Done. Four lines, and we used only the three properties of M-two and one orthogonality fact.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

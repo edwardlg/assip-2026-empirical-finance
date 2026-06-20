@@ -1,10 +1,11 @@
 ---
-title: "The Test Statistic: A Single Ruler"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Test Statistic: A Single Ruler {.title}
+## The Test Statistic: A Single Ruler
+
+- Part 3 — distance from the null, in units of noise
 
 ::: notes
 Welcome back to Chapter one-point-five, part three of ten. In part two we wrote down Sam's two hypotheses: the skeptic's null, mu equals zero, against the alternative, mu greater than zero. Now we build the test statistic — a single ruler that measures how far the data sit from the null, in units of their own noise.
@@ -34,7 +35,7 @@ The result in one sentence: a test statistic rescales your estimate into units o
 Now do the one move that defines a test. Assume the null is true and substitute mu equals zero into the Central Limit Theorem expression. Under the null, x-bar minus zero, over sigma divided by root N, converges to a standard normal. This is the test statistic in its idealized form: take your estimate, subtract the null value, divide by the standard error. The result is a pure number — Sam's eight basis points expressed in standard errors above zero. A test statistic of zero point three means the data sit less than a third of a standard error from the null: utterly unremarkable. A test statistic of four means four standard errors out: a place the null almost never visits. There is one honest problem left, and fixing it gives us the t.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

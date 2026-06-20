@@ -1,9 +1,15 @@
 ---
-title: "Reading Petersen as a Paper: The Question"
 date: "2026-07-20"
 ---
 
-# Reading Petersen as a Paper: The Question {.title}
+## Reading Petersen as a Paper: The Question
+
+**Learning objectives.** By the end you can:
+
+- Explain why a **methods** paper needs a known-truth world
+- Read a panel SE method as a claim about **estimators**
+- State Petersen's two questions: **coverage** and cost of error
+- Diagnose why classical OLS SEs fail in panels
 
 ::: notes
 Welcome to Week Five, Chapter five-point-four, part one of seven — a reader's guide to Petersen, two-thousand-nine, "Estimating Standard Errors in Finance Panel Data Sets." You met this paper back in Week Two, where we used its conclusions as a recipe — firm effect, cluster by firm; time effect, cluster by time; both, cluster two ways. This week we do something harder: we read the paper as a paper. What question did it set out to answer, how did it argue its case, and where could a referee still push? The recipe is the output. This guide is about the machine that produced it.
@@ -42,7 +48,7 @@ The plain-English question: in a finance panel, which standard-error method is c
 - "Which is right?" decided **which published results to believe**
 
 ::: notes
-Petersen's framing was sociological as much as statistical. He surveyed published finance papers and found authors using a chaos of incompatible methods — OLS, White errors, Fama–MacBeth, Newey–West, clustering by firm or time — often with no stated reason, getting standard errors that differed by factors of two or more on identical data. A CHECK tag in our source: Petersen reports the specific count of papers and the method breakdown in his survey of recent Journal of Finance, J-F-E, and Review of Financial Studies issues — verify the exact figures before quoting. The stakes: if one dataset can produce a t-statistic of five under one method and one-point-eight under another, half the profession's significance stars were decorative.
+Petersen's framing was sociological as much as statistical. He surveyed published finance papers and found authors using a chaos of incompatible methods — OLS, White errors, Fama–MacBeth, Newey–West, clustering by firm or time — often with no stated reason, getting standard errors that differed by factors of two or more on identical data. He surveyed recent Journal of Finance, J-F-E, and Review of Financial Studies issues and found this method chaos widespread. The stakes: if one dataset can produce a t-statistic of five under one method and one-point-eight under another, half the profession's significance stars were decorative.
 :::
 
 ## Two Questions, Both Answered
@@ -57,7 +63,7 @@ Petersen's framing was sociological as much as statistical. He surveyed publishe
 So the question has two parts. Part a is diagnosis: which method has correct coverage — when it builds a ninety-five percent confidence interval, does that interval actually contain the true beta about ninety-five percent of the time? Part b is the cost of error: if a method's assumptions are violated, by how much does your standard error mislead you, and which way? The answer is almost always the same — too small, so you are overconfident. That is the dangerous direction: an overconfident error makes you publish a false result with a confident star next to it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

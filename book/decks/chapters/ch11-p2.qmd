@@ -1,9 +1,10 @@
 ---
-title: "Conditioning: Using What You Know"
 date: "2026-06-22"
 ---
 
-# Conditioning: Using What You Know {.title}
+## Conditioning: Using What You Know
+
+- Part 2 — restrict the table to one row, rescale, both directions
 
 ::: notes
 Welcome back to Chapter one-point-one, part two of seven. In part one we built Sam's joint table and read off the marginals. Now we make the central move: conditioning. A marginal answers "what does a random day look like?" A conditional answers a sharper question — "given that today is stormy, what does the return look like?" That second question is the one a trader, a lender, or a risk manager actually asks. You rarely act on the unconditional average; you act on what you know right now. Conditioning is the mathematical name for using what you know.
@@ -43,7 +44,7 @@ Dividing the stormy row gives conditional probabilities of zero point five, zero
 We conditioned return on regime because that matched Sam's decision: see the regime, forecast the return. But the same table answers the reverse, and the reverse is often what a risk manager wants. Suppose Sam observes a bad day, X equals minus two percent, and asks how likely the market was actually stormy. That is the probability of Y equals two given X equals minus two percent — reading up a column instead of across a row. The recipe is identical, but now divide by the column total. From the table, the probability of X equals minus two percent is zero point two, so the answer is zero point one five over zero point two, which is zero point seven five. Three-quarters of Sam's bad days are stormy, even though stormy days are only thirty percent overall. Conditioning updated Sam's belief from thirty percent up to seventy-five. That flip is exactly Bayes' rule in table form. One caution: the definition divides by the marginal of Y, so it is silent when that marginal is zero — you cannot condition on an event that never happens.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

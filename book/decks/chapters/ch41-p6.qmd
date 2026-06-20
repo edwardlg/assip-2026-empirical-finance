@@ -1,9 +1,10 @@
 ---
-title: "The Crack in the 2×2"
 date: "2026-07-13"
 ---
 
-# The Crack in the 2×2 {.title}
+## The Crack in the 2×2
+
+- Part 6 — where the clean 2×2 breaks under staggered adoption
 
 ::: notes
 Welcome back to Chapter four-point-one, part six of six, the last segment. In part five we saw why flat leads never prove parallel trends, and why DiD inference must cluster by the treatment unit. Now we close by being honest about the boundary. Everything we built assumed a very particular world — one treated group, one control group, one moment when treatment switches on. In that world DiD is beautiful. Step outside it, and the clean story develops a crack that the entire next chapter is devoted to repairing.
@@ -44,7 +45,7 @@ Now step into the world empirical finance usually hands you. Suppose the regulat
 Before we close, your lab. Open notebook four-point-one, built on Priya's climate-insurance shock. Because it is a simulation, you again play God — you generate state-year premiums with a known true effect and a tunable differential trend, so you can compare what DiD recovers to the truth. Four things. First, build the two-by-two: simulate one treated state and several controls, compute the four cell means and the double difference by hand, and confirm it matches the two-way fixed-effects coefficient. Second, run the event study: replace the single dummy with leads and lags, normalize to k equals minus one, and plot the coefficients with confidence bands. Third, break parallel trends on purpose: dial up a differential pre-trend and watch the leads tilt from zero while the estimated effect inflates. Fourth, stress the inference: compare classical, robust, and state-clustered standard errors, and reproduce Bertrand, Duflo, and Mullainathan with random placebo treatments.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

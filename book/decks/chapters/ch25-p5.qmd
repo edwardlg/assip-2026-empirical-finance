@@ -1,10 +1,11 @@
 ---
-title: "Measurement Error and Attenuation Toward Zero"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Measurement Error and Attenuation Toward Zero {.title}
+## Measurement Error and Attenuation Toward Zero
+
+- Part 5 — measurement error and attenuation toward zero
 
 ::: notes
 Welcome back to Chapter two-point-five, part five of nine. In part four we learned the two-sign rule and saw that adding controls is only a bet. Now the second threat, which strikes even when you have omitted nothing at all: measurement error. The result, in one sentence — when your key regressor is a noisy version of the true variable, with noise that is just random static, the OLS coefficient is biased toward zero. That is attenuation bias, and the shrinkage factor is the share of your regressor's variance that is real signal rather than noise.
@@ -33,7 +34,7 @@ $$\hat{\beta}_1 \xrightarrow{p} \beta_1 \cdot \underbrace{\frac{\sigma_{x^*}^2}{
 Now compute the consequence. The probability limit of the OLS slope is the covariance of x and y over the variance of x. Under the classical assumptions, the numerator is beta-one times the variance of x-star, because m is uncorrelated with both x-star and epsilon, killing every cross term. The denominator splits cleanly into the variance of x-star plus the variance of m. Divide, and the slope converges not to beta-one but to beta-one times a factor lambda, which equals the variance of x-star over the variance of x-star plus the variance of m. Because variances are non-negative, lambda lies strictly between zero and one whenever there is any noise. So the estimate is pulled toward zero — smaller in magnitude than the truth, regardless of sign. That is attenuation bias. And lambda has a beautiful name: the reliability ratio, the fraction of your observed regressor's variance that is genuine signal. If half the variance is noise, lambda is one-half and your coefficient is exactly half its true size. Unlike omitted variable bias, the direction here is always known — toward zero. A real effect looks weaker than it is, and you may miss a relationship that genuinely exists. For Maya, self-reported income is exactly this: noisy, so its coefficient understates how much true income matters for approval.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

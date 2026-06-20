@@ -1,9 +1,10 @@
 ---
-title: "Nearest-Neighbor and Caliper Matching"
 date: "2026-07-06"
 ---
 
-# Nearest-Neighbor and Caliper Matching {.title}
+## Nearest-Neighbor and Caliper Matching
+
+- Part 8 — three matching knobs that trade bias against variance
 
 ::: notes
 Welcome back to Chapter three-point-two, part eight of eleven. In part seven we estimated the propensity score and met its two disciplines. Now we implement the comparison: nearest-neighbor matching on the score, with three design knobs — number of neighbors, replacement, and the caliper — that each trade bias against variance.
@@ -42,7 +43,7 @@ How many neighbors? The simplest is one-to-one matching — one nearest control 
 The caliper. What if a treated applicant's nearest neighbor is still far away on the score — say a treated unit with estimated score point-nine-five whose closest control sits at point-six-zero? Forcing that match manufactures a bad comparison and reintroduces bias; it is a quiet overlap violation at the level of a single unit. The fix is a caliper: a maximum allowed distance. If the nearest neighbor lies outside the caliper, the treated unit is dropped rather than badly matched. A common rule of thumb, from Austin two-thousand-eleven, sets the caliper at zero-point-two times the standard deviation of the estimated score, or of its logit. The caliper enforces common support unit by unit: it is overlap as a runtime check.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Why It Hid for Thirty Years — and the Smallest Broken World"
 date: "2026-07-13"
 ---
 
-# Why It Hid — and the Smallest Broken World {.title}
+## Why It Hid — and the Smallest Broken World
+
+- Part 4 — why the bias hid; build the smallest world that breaks
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part four of thirteen. In part three we found the trap: demeaning the treatment lets ordinary least squares recruit already-treated units as controls. Now we explain why this bias stayed hidden for thirty years, and start building the smallest possible world in which the coefficient comes out with the wrong sign, with numbers you can check by hand.
@@ -57,7 +58,7 @@ Construct the data so the policy unambiguously helps, and helps by more the long
 Look at what is true by construction. State E starts at ten and falls from year two — nine, eight, seven, six, five, four, three — as its effect deepens from minus one toward minus seven. State L sits flat at ten until year five, then falls to nine, eight, seven, six as its own effect builds from minus one to minus four. Every treatment effect in the table is negative. The true average effect on the treated — averaging E's effects of minus one through minus seven and L's of minus one through minus four — is unambiguously and substantially negative, about minus three-point-five. Any honest estimator should return a clearly negative number.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

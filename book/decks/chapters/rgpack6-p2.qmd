@@ -1,9 +1,10 @@
 ---
-title: "RAG — Building the Index"
 date: "2026-07-27"
 ---
 
-# RAG — Building the Index {.title}
+## RAG — Building the Index
+
+- Part 2 — build the offline index: chunk, embed, store
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part two of eight. In part one we learned that the validation table is where a measurement paper lives or dies. Now we build a tool. The first thing students want to do with a language model is paste a ten-K into the chat box and ask questions. That works for one short document and fails for everything real: filings are too long for the context window, you have thousands of them, and the model will happily answer from its training data — stale, wrong, or invented — rather than from the document in front of it. Retrieval-augmented generation, or RAG, is the standard fix.
@@ -57,7 +58,7 @@ Second, embed. An embedding model turns each chunk into a vector of numbers — 
 Third, the vector store. You save all the chunk vectors, alongside their text and source IDs, in a database built for one operation: given a query vector, return the nearest chunk vectors fast. You can run FAISS or Chroma locally. The key thing is that this index is built once per corpus and reused for every question — that is why it lives in the offline phase. Embedding ten thousand filings is slow and you do it once; answering a single question against that index is fast. With the index built, we are ready for the online half: taking a question and producing a grounded, cited answer. That is part three.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

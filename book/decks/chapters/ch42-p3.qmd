@@ -1,9 +1,10 @@
 ---
-title: "Why TWFE Looks Innocent — and Where the Trap Is Set"
 date: "2026-07-13"
 ---
 
-# Why TWFE Looks Innocent {.title}
+## Why TWFE Looks Innocent
+
+- Part 3 — trace the algebra; see how an already-treated unit becomes a control
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part three of thirteen. In part two we stated the crisis in one sentence and named the forbidden comparison. Now we slow down and ask why the pooled regression looks like exactly the right thing to do — because the trap is set by something that looks like a virtue — and we trace, in the algebra, exactly how an already-treated unit gets pressed into control duty.
@@ -53,7 +54,7 @@ Here is the trap. To identify beta, ordinary least squares removes the unit mean
 In the algebra, an already-treated unit gets pressed into service as a comparison group for a not-yet-treated unit. Ordinary least squares does not know the difference between untreated-and-informative and already-treated-and-contaminated. It sees only numbers, and it uses every scrap of variation it can find — including the forbidden kind. This is the crucial mechanical fact: the very demeaning that makes fixed effects so convenient is also what recruits already-treated units as controls, silently, with no warning in the output. The estimator is not being malicious; it is being literal, optimizing fit over whatever variation remains after demeaning.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

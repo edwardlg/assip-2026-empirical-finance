@@ -1,10 +1,11 @@
 ---
-title: "What's New? — Novelty and Order"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# What's New? — Novelty and Order {.title}
+## What's New? — Novelty and Order
+
+- Part 4 — the novelty filter, and running all three in order
 
 ::: notes
 Welcome back to Chapter seven-point-one, part four of eight. In part three we ran ideas through the first two filters — so what, the consequence test, and who cares, the audience test. Now the third and hardest filter, what's new — the novelty test — and the reason all three must be run in a specific order.
@@ -34,7 +35,7 @@ Third filter: what's new — the novelty test, the hardest for a beginner. "New"
 The order matters. Run "so what" first, because it is cheap and kills the most ideas before you invest anything. Run "who cares" second, because it tells you which literature you need to scan. Run "what's new" last, after the scan, because you literally cannot know what is new until you know what already exists. An idea that survives all three is not guaranteed to be a good project — feasibility can still kill it, and that is later in the chapter. But an idea that fails any one of these is not worth carrying further, no matter how clever the econometrics would be. This is triage: spend your scarce five weeks only on ideas that have already cleared the cheap, fast tests.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

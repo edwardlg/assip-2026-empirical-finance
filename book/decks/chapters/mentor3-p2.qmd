@@ -1,9 +1,10 @@
 ---
-title: "Pillar One: As-Good-As-Random Assignment"
 date: "2026-07-06"
 ---
 
-# Pillar One: As-Good-As-Random Assignment {.title}
+## Pillar One: As-Good-As-Random Assignment
+
+- Part 2 — selection bias, the as-if-random bet, and balance
 
 ::: notes
 Welcome back to Mentor Session three, part two of five. In part one we framed the natural experiment as a real-world force that assigns treatment as-if at random, defended across three pillars. Now we take the first pillar head on: as-good-as-random assignment. This is where the design borrows its whole logic from Chapter three-point-one — the master decomposition that splits a naive comparison into the causal effect plus a selection-bias term. Randomization is special because it zeroes that term. A natural experiment has to zero it too, but without a coin, so let us see exactly how it makes that bet, and how you check yourself afterward.
@@ -42,7 +43,7 @@ A natural experiment makes the same bet without a coin. It claims that whatever 
 You do not just assert as-if-random; you check it. The check is called balance. If the assignment really were a lottery, then treated and control units should look alike on observables measured before treatment — same size distribution, same leverage, same industry mix, same past returns. So you put those pre-treatment characteristics side by side and ask whether the two groups are statistically indistinguishable. If they are, your as-if-random story gains real credibility. But hold onto an important caution: balance is necessary, not sufficient. It checks only the observables — the things you can measure. The unobservables — governance quality, a manager's appetite for hiding losses, the firm's true opacity — could still differ between the groups, and no balance table can see them. Passing balance is reassuring; it is not proof. The unobservables remain an act of faith in the design itself.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

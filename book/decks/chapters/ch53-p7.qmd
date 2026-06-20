@@ -1,9 +1,10 @@
 ---
-title: "Reading Order, Part Two: Sub-Periods, Seasonality, and Long-Horizon Reversal"
 date: "2026-07-20"
 ---
 
-# Reading Order: Robustness and Reversal {.title}
+## Reading Order: Robustness and Reversal
+
+- Part 7 — sub-periods, the January surprise, long-run reversal
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part seven of eleven. In part six we read the returns matrix and the risk-adjustment table. Now we finish the reading order with the robustness checks — sub-periods and seasonality — and then the optional last table on long-horizon reversal. The seasonality result is the surprising one, so we spend most of our time there.
@@ -43,7 +44,7 @@ Now the crucial check: seasonality. Break the profits out by calendar month. Thi
 Last, and optional, is the longer-horizon and post-holding behavior. Here you look at what happens after the holding period ends. The evidence is that the medium-horizon momentum profits eventually reverse if you hold long enough. This is important for the story: it reconciles momentum with the De Bondt and Thaler long-run reversal we met earlier, and it hints at the overreaction interpretation. The picture becomes continuation for a few months to a year, driven perhaps by underreaction to news, followed by eventual reversal as prices overshoot and then correct. You do not need this table to establish that momentum exists, but it is what links the short-horizon anomaly to the broader behavioral story about how prices process information.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

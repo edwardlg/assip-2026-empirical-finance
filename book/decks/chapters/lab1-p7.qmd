@@ -1,10 +1,11 @@
 ---
-title: "P-Hacking and Where This Connects"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# P-Hacking and Where This Connects {.title}
+## P-Hacking and Where This Connects
+
+- Part 7 — p-hacking, then connect to Week 2
 
 ::: notes
 Welcome back to Lab one, part seven of seven, our last. In part six you traced power curves and saw why a non-rejection at low power proves little. Now you turn a warning into an experiment: run many honest tests on truly worthless signals and report only the winner. You will measure how often a worthless signal looks significant, then close the lab by connecting every skill to Week Two.
@@ -58,7 +59,7 @@ Now the fix. Re-run with the per-test bar tightened to alpha divided by m. The f
 You have now done, with your own hands, the thing the chapters could only describe. The sampling distribution became a histogram you built; the Central Limit Theorem became a bell that assembled itself on your screen; size and power became fractions you counted. Most importantly, you learned the simulation habit that runs through the program: when unsure whether a tool does what it claims, build a universe where you know the truth and check. In Week Two the object under test changes from a proportion to a regression coefficient, beta hat, and the statistic becomes t equals beta hat minus zero, over the estimated standard error of beta hat — the same machine you just built and audited.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

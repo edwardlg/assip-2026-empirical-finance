@@ -1,10 +1,11 @@
 ---
-title: "The Introduction That Promises"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Introduction That Promises {.title}
+## The Introduction That Promises
+
+- Part 2 — the introduction's four promise-making moves
 
 ::: notes
 Welcome back to Writing the Empirical Paper, part two of seven. In part one we learned that a paper is an argument, not a transcript, and that you say the important thing first at every scale. Now we open the most-read, most-rewritten section of all: the introduction. It is a promise machine, and it makes its promise through four near-canonical moves. Follow them mechanically until you have earned the right to deviate.
@@ -46,7 +47,7 @@ The hook is the first paragraph. It names the question and makes the reader care
 Having promised a contribution, you must immediately pay a deposit: tell the reader the answer. A paragraph beginning literally "We find that" or "Our main result is" previews the headline number, its sign, its rough magnitude, and the key robustness fact. For example: we find that adopting an examination program reduces the denial gap by about one point eight percentage points, roughly a fifth of the pre-period gap; the effect emerges within two years, is robust to alternative controls and clustering, and survives a placebo test. Students resist this, feeling they are spoiling the ending. Reread part one: there is no ending to spoil. A referee who hunts nine pages for your finding is already annoyed. The roadmap is the last paragraph: a short, functional map of the sections, no drama. And a discipline spanning all four moves: the introduction should be readable by someone who will never read the rest of the paper.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Multiple-Testing Plan"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Multiple-Testing Plan {.title}
+## The Multiple-Testing Plan
+
+- Part 4 — governing many tests with primary hierarchy and FDR
 
 ::: notes
 Welcome back to Chapter seven-point-three, part four of eight. In part three we pinned Maya's primary specification slot by slot. But she will compute more than one number — a primary gap, a FinTech interaction, subgroups by income band, separate coefficients for Black and Hispanic applicants. Each is a test, and part one showed where unmanaged tests lead: the sixty-four percent trap. Component three, the multiple-testing plan, decides in advance how the army of tests is governed so the headline is not a lucky draw from a crowd.
@@ -46,7 +47,7 @@ Second, group your secondary tests into families and control the false discovery
 Here it is in numbers. Maya has five income-band p-values: zero-point-zero-zero-eight, zero-point-zero-one-two, zero-point-zero-three-nine, zero-point-zero-four-one, and zero-point-three-three, at five percent. The thresholds, k over five times zero-point-zero-five, are zero-point-zero-one through zero-point-zero-five. Compare top down. Rank five, zero-point-three-three exceeds zero-point-zero-five, no. Rank four, zero-point-zero-four-one exceeds zero-point-zero-four, no. Rank three, zero-point-zero-three-nine exceeds zero-point-zero-three, no. Rank two, zero-point-zero-one-two is at most zero-point-zero-two, yes — so k equals two, and you declare the two smallest bands as discoveries. Bonferroni would have held every band to zero-point-zero-one and declared only the smallest, throwing away the zero-point-zero-one-two effect that Benjamini-Hochberg keeps. Third and crucial: state the families and procedure now, before you have the p-values, or you could shrink or grow a family until your favorite effect survives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

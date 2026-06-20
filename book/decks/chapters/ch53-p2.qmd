@@ -1,9 +1,10 @@
 ---
-title: "The Research Question: Do Past Winners Keep Winning?"
 date: "2026-07-20"
 ---
 
-# The Research Question: Do Past Winners Keep Winning? {.title}
+## The Research Question: Do Past Winners Keep Winning?
+
+- Part 2 — the precise question and why the horizon is everything
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part two of eleven. In part one we framed why this paper broke the efficient-markets story open. Now we state the precise question it asks. The plain-English version is simple: do past winners keep winning? But the precise version pins the result to a specific horizon, and that horizon is the whole game.
@@ -45,7 +46,7 @@ The horizon is the whole game. Jegadeesh and Titman are precise: they study form
 The implication is the title's second half: implications for stock market efficiency. Recall the weak-form efficient-markets hypothesis from Week One. Prices already reflect all information in past prices, so past returns should carry no usable signal about future returns. A profitable rule built only from past returns is a direct strike at weak-form efficiency. So the paper has a methodological burden it cannot dodge. It must show the profits are not just compensation for risk. If buying winners is really just loading up on some risk factor, then there is no anomaly — you are being paid for bearing danger, exactly as efficiency predicts. The authors therefore spend much of the paper trying to kill their own result with risk adjustment, and reporting that it survives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,15 @@
 ---
-title: "Reader's Guide: Jegadeesh and Titman 1993 — The Paper That Named Momentum"
 date: "2026-07-20"
 ---
 
-# Reader's Guide: Jegadeesh and Titman 1993 {.title}
+## Reader's Guide: Jegadeesh and Titman 1993
+
+**Learning objectives.** By the end you can:
+
+- Explain what the **momentum** effect is
+- Say why its simplicity is the strongest evidence
+- Read the paper tables-first, hunting for breakage
+- Name where a skeptic still pushes back
 
 ::: notes
 Welcome to Week Five, lesson three, part one of eleven. This lesson is a reader's guide to one of the most consequential papers in empirical finance: Jegadeesh and Titman, nineteen ninety-three, "Returns to Buying Winners and Selling Losers," published in the Journal of Finance. Yesterday's guides put a price on risk — Fama and French said average returns line up with size and book-to-market. Those are efficient-markets papers. Today's paper broke that story open. It takes a strategy a teenage day-trader would scribble on a napkin — buy the stocks that went up, short the ones that went down — and shows it makes money, robustly, for decades. In this opening part we frame why this matters.
@@ -32,7 +38,7 @@ This is the paper that named momentum. It matters not because the strategy is ex
 We read this paper the professional way: tables first, in a deliberate order, hunting for where the result could break before we let ourselves believe it. The fixed reader's-guide anatomy from the Week Five reading pack drives the sections that follow. We start with the research question, then the identification strategy, then the data, then a table-by-table reading order. After that we ask what is clever about the design and, just as important, what is vulnerable about it. Finally we lay out replication exercises and the questions a referee would write back with. By the end you should be able to explain not just what momentum is, but why its very simplicity is the strongest part of the evidence — and where a skeptic would still push back hard.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

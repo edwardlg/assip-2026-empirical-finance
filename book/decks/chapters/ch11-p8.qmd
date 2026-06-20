@@ -1,9 +1,10 @@
 ---
-title: "Why These Two Laws Run Everything"
 date: "2026-06-22"
 ---
 
-# Why These Two Laws Run Everything {.title}
+## Why These Two Laws Run Everything
+
+- Part 8 — interpretation caveats, then why the laws run everything
 
 ::: notes
 Welcome back to Chapter one-point-one, part eight of eight, our final part. In part seven we proved the Law of Total Variance and read off Sam's risk split. Now we close the chapter: flag the one place interpretation goes wrong, then step back to see why conditioning and these two laws are the structural backbone of everything you will build over the next eight weeks.
@@ -43,7 +44,7 @@ Step back. Conditioning is the act of using information. The conditional expecta
 Where do we go from here? Chapter one-point-two takes the next step: it formalizes expectation, variance, and covariance as geometry — expectation as a kind of projection, covariance as an inner product, correlation as the cosine of an angle. That will turn the algebra you saw flickering through these proofs into pictures you can reason with directly. And in the notebook for this chapter, you will rebuild Sam's regime table as a simulation: draw a few hundred thousand return-and-regime pairs from the joint distribution, estimate the conditional means and variances by simple grouping, and watch the within-plus-across sum converge to the directly computed total variance as the sample grows. That is the bridge to the sampling-distribution ideas coming later in Week One.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

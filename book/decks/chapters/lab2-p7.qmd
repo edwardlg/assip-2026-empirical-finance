@@ -1,9 +1,10 @@
 ---
-title: "Aggregating to the Fama–MacBeth Estimate"
 date: "2026-06-29"
 ---
 
-# Aggregating to the Fama–MacBeth Estimate {.title}
+## Aggregating to the Fama–MacBeth Estimate
+
+- Part 7 — aggregate slopes into the FM estimate and SE
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, part seven of eight. In part six we ran pass one and pass two — a beta for every stock and a jagged series of monthly slopes. Now step three: collapse those monthly slopes into the Fama–MacBeth point estimate and its standard error, and watch the recovered premium land near the planted truth. This is just the standard error of a sample mean, applied to a series of regression coefficients — and it is the whole replication in one table.
@@ -33,7 +34,7 @@ Step three aggregates into the Fama–MacBeth estimate and standard error. Colla
 One more thing to understand about what you recovered. The Fama–MacBeth estimate is the average realized market excess return over your three hundred sixty months, which differs from the theoretical zero-point-zero-zero-six by sampling error — and the standard error is the size of that very gap. Here is the cleanest way to see it: re-run the whole thing with a different seed, and the point estimate wobbles by about one Fama–MacBeth standard error. That wobble matching the standard error is the best confirmation it is calibrated. You planted the truth, recovered it up to a known amount of noise, and the procedure correctly told you how much noise to expect. That is what it means for a standard error to be honest.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

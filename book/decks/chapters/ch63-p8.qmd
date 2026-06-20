@@ -1,9 +1,10 @@
 ---
-title: "Look-Ahead, Parsing, and the Bridge to LLMs"
 date: "2026-07-27"
 ---
 
-# Look-Ahead, Parsing, and the Bridge to LLMs {.title}
+## Look-Ahead, Parsing, and the Bridge to LLMs
+
+- Part 8 — look-ahead, parsing choices, and the bridge to LLMs
 
 ::: notes
 Welcome back to Chapter six-point-three, part eight of nine. In part seven we found two cracks: lost context and dictionary drift. This part finishes the critique with two more, look-ahead in tuning the word list and parsing as researcher choices, then builds the bridge to the embeddings and large language models of Chapter six-point-five. Every vulnerability reduces to one complaint: meaning lives in context.
@@ -45,7 +46,7 @@ Fourth, parsing decisions are researcher degrees of freedom. Stripping tables, e
 Now the bridge to Chapter six-point-five. Every one of these vulnerabilities is, at root, the same complaint: a word is not an atom of meaning; meaning lives in context. The next decade of text-as-data is the story of putting context back in. Word embeddings, like word-two-vec and GloVe, represent each word as a dense vector learned from the company it keeps, so good and great land near each other in space, the cosine-similarity geometry you meet in Chapter six-point-two. Contextual models and large language models, the transformers behind Chapter six-point-five, go further: they represent each word as a function of the whole sentence around it, so not a good year and a good year get genuinely different representations. Negation, sarcasm, and long-range dependence become at least partly learnable rather than invisible. But carry the hardest lesson forward: a fancier model is also just an instrument, only as trustworthy as its out-of-sample validation.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

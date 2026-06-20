@@ -1,10 +1,16 @@
 ---
-title: "Lab 3 — Build the Weak-IV Disaster"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Lab 3 — Build the Weak-IV Disaster {.title}
+## Lab 3 — Build the Weak-IV Disaster
+
+**Learning objectives — by the end you can:**
+
+- Build an endogenous-regressor DGP with tunable instrument strength
+- Show OLS is biased, and run just-identified 2SLS by hand
+- Measure that conventional CIs under-cover while AR recovers 95%
+- Compute the effective $F$; contrast weak vs. strong instruments
 
 ::: notes
 Welcome to Week Three, Lab Three, part one of five. This is the capstone of the whole week. In Chapter three-point-four you built instrumental variables from the ground up — relevance, exclusion, the Wald ratio, two-stage least squares, and the first-stage F. Then Chapter three-point-five turned on the lights and showed you the dark room I-V can become: when the first stage is weak, two-stage least squares does not just get noisy, it gets biased back toward the very ordinary-least-squares estimate you reached for I-V to escape — and its textbook confidence interval gets too narrow. Confidently, precisely wrong. Bound, Jaeger, and Baker taught the profession this the hard way. In this lab you will not read about that disaster. You will build it with your own hands.
@@ -43,7 +49,7 @@ The single most important habit this lab drills is the one Chapter three-point-f
 A word on setup. This lab is pure simulation — no licensed data, no credentials, no W-R-D-S. It runs anywhere, because you are the one building the universe. Create a conda environment with numpy, pandas, scipy, statsmodels, linearmodels, and matplotlib. Then follow two reproducibility rules. First, pin the seed using numpy's modern generator — r-n-g equals np-dot-random-dot-default-generator of seed — not the legacy global seed. Second, draw all randomness from that one generator, in order. That is what makes a Monte Carlo replayable bit-for-bit. This lab uses the seed two-zero-two-six-zero-five-two-eight. One honest caveat: Monte Carlo estimates are themselves random, so when a coverage rate comes out as zero-point-eight-zero-one instead of a clean round number, that is measurement noise, not a bug.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

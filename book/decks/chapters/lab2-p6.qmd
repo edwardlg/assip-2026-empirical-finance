@@ -1,9 +1,10 @@
 ---
-title: "Pass 1 Betas and Pass 2 Cross-Sections"
 date: "2026-06-29"
 ---
 
-# Pass 1 Betas and Pass 2 Cross-Sections {.title}
+## Pass 1 Betas and Pass 2 Cross-Sections
+
+- Part 6 — run Pass 1 betas, check truth, Pass 2 slopes
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, part six of eight. In part five we built the synthetic panel with a planted premium of six-tenths of a percent per month. Now we run the first two passes. Pass one estimates a beta for every stock, and we check those betas against the planted truth — something you could never do on real CRSP. Pass two runs a cross-sectional regression every month, producing the jagged slope series whose roughness becomes our standard error.
@@ -45,7 +46,7 @@ Now check it against the planted truth. Because this is synthetic data, you can 
 Step two is pass two: a cross-sectional regression every month. For each month, run one OLS of return on estimated beta across all stocks in that month, and keep both coefficients — the intercept gamma-zero-t and the slope gamma-one-t. The output is a T-by-two table, one row per month. Group the panel by month and apply the cross-sectional function. Then look at what you got: plot the time series of monthly slopes. You will see it swing wildly between positive and negative — in some months high-beta stocks crushed it, in others they got crushed. That month-to-month volatility is not noise to be embarrassed about; it is the realized market return showing through, and it is exactly the scatter that the Fama–MacBeth standard error is about to turn into honest uncertainty. The average of this jagged series is your premium; its roughness is your standard error.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Sam's Risk Decomposition, Worked"
 date: "2026-06-22"
 ---
 
-# Sam's Risk Decomposition, Worked {.title}
+## Sam's Risk Decomposition, Worked
+
+- Part 6 — run the three ingredients, check against the direct total
 
 ::: notes
 Welcome back to Chapter one-point-one, part six of eight. In part five we stated the Law of Total Variance — total risk equals within-regime plus across-regime. Now we run the numbers on Sam's table, step by step, and check the answer against a direct calculation. This is the payoff the whole chapter was building toward.
@@ -41,7 +42,7 @@ Step two: the within-regime piece is the regime-weighted average of those two co
 Add the two pieces: one point seven one zero plus zero point four zero zero equals two point one one zero. Now check against the direct calculation. Compute the variance of X straight from the marginal of X — probabilities zero point two, zero point four five, and zero point three five on returns minus two, zero, and plus two, with mean zero point three. The mean of X squared is four times zero point two plus four times zero point three five, which is two point two. Subtracting zero point three squared, or zero point zero nine, gives a total variance of two point one one. It matches: two point one one equals one point seven one plus zero point four. The decomposition is exact. The whole thing is a few lines of NumPy once you treat the table as data — and because we use the true probabilities rather than a sample, there is no simulation noise; the law is verified to the digit.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

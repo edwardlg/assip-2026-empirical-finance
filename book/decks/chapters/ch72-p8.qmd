@@ -1,9 +1,10 @@
 ---
-title: "The Anatomy of a Defensible Pull"
 date: "2026-08-03"
 ---
 
-# The Anatomy of a Defensible Pull {.title}
+## The Anatomy of a Defensible Pull
+
+- Part 8 — one eight-step skeleton for every source
 
 ::: notes
 Welcome back to Data Acquisition in Practice, part eight of eight, the finale. Across parts three through seven we toured every source — WRDS, EDGAR, FRED, H-M-D-A, thirteen-F, PatentsView, and the free alternatives. Now we step back: every one of them, however different its access path, fits the same skeleton. That skeleton is the real deliverable of this chapter.
@@ -46,7 +47,7 @@ The directory layout falls right out of the skeleton, and your capstone repo sho
 One closing reframe. The novice thinks data acquisition is a one-time chore to rush through on the way to the interesting modeling. The researcher knows it is part of the method — every pin, every cache, every logged query is a reproducibility claim your results stand or fall on, as much as your choice of standard errors or fixed effects. The data card tells you what is possible; the eight-step skeleton tells you how to do it defensibly; and the log on disk is the evidence that you did. Get this right, and the rest of Week Seven is built on rock. Your turn: open notebook seven-point-two, the multi-source data-pull harness, and build a data-raw folder, a log with content hashes, and a gitignore that keeps the licensed bytes where the license requires.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

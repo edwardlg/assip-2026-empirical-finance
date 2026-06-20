@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable About BDM"
 date: "2026-07-20"
 ---
 
-# What's Vulnerable About BDM {.title}
+## What's Vulnerable About BDM
+
+- Part 6 — soft spots in the cures, not the diagnosis
 
 ::: notes
 Welcome back to Chapter five-point-five, part six of seven. In part five we admired what is clever: the placebo design, the number, and the working fixes. Now a good reader pushes back. There are real soft spots, and notably most of them are about the cures, not the diagnosis. The indictment itself is robust; the remedies come with fine print.
@@ -45,7 +46,7 @@ The second vulnerability is the power cost of collapsing to two periods. Averagi
 The third vulnerability is dependence on the panel's length and structure. BDM's headline numbers are tied to the specific autocorrelation and the specific length of the Current Population Survey panels they used. A different outcome with weaker serial correlation, a shorter panel, or a different treatment-timing structure would over-reject by a different amount, so the precise figure is not a universal constant but a property of this data-generating process. The qualitative lesson, that ignoring serial correlation inflates significance and that the longer and more persistent the panel the worse it gets, is robust. The exact magnitude travels less well, and a careful reader should treat any single number as illustrative of a mechanism rather than a law of nature. Hold the lesson firmly and the specific percentage loosely.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

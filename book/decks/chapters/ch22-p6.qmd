@@ -1,10 +1,11 @@
 ---
-title: "The Gauss–Markov Theorem: OLS Is BLUE"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Gauss–Markov Theorem: OLS Is BLUE {.title}
+## The Gauss–Markov Theorem: OLS Is BLUE
+
+- Part 6 — stating the theorem and what "best" buys you
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part six of nine. In part five we found the O L S variance, sigma squared times the inverse of X transpose X, but couldn't yet say it was the smallest possible. Now we state the theorem that compares O L S against the whole field of linear unbiased rivals — and crowns it the champion.
@@ -46,7 +47,7 @@ Put it together. The Gauss–Markov theorem: under assumptions one through four 
 Here is the intuition for what best buys you. Every linear unbiased estimator is unbiased — they all center on beta, like a roomful of archers all aiming true. Gauss–Markov says O L S is the archer with the tightest cluster. In Chapter one-point-three language: since all contestants have zero bias, mean squared error equals variance for every one of them, so minimum variance is minimum mean squared error within the club. O L S gives you the most precise estimate, the narrowest confidence intervals, and the most powerful t-tests available — without leaving the world of linear, unbiased recipes. You cannot do better on precision without either accepting bias or going nonlinear. That is the whole content of the word best, and also its whole limit.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

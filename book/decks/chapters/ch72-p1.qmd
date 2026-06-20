@@ -1,9 +1,15 @@
 ---
-title: "A Question Is Not a Dataset"
 date: "2026-08-03"
 ---
 
-# A Question Is Not a Dataset {.title}
+## A Question Is Not a Dataset
+
+**Learning objectives**
+
+- Apply one six-question template to every data source
+- Read secrets from the environment, never from code
+- Keep licensed data on GMU infrastructure, out of git
+- Make every pull pinned, cached, and logged
 
 ::: notes
 Welcome to Week Seven, Chapter seven-point-two, Data Acquisition in Practice, part one of eight. Last chapter, each of our five students walked out of the idea workshop with a sharpened question and a named dataset. This part frames the gap between wanting data and having a file you can defend, and lays out the six-question template we will use for every source.
@@ -46,7 +52,7 @@ Five questions, eight or nine sources, and one problem they all share: a questio
 For each source we state the same six things, in the same order, so you can compare sources at a glance. Coverage: what is in it, over what time span. Key identifiers: the codes you use to find and later merge a record. Access path: the package or API and a short workflow pattern. Licensing and the GMU-infrastructure rule: who owns it, and whether it may leave the building. Rate limits and gotchas: how to get blocked, and how not to. And the reproducible pull: how to pin a snapshot, cache the raw data, and log the query. We stop the moment a clean raw file sits on disk with a log beside it; merging and cleaning is Chapter seven-point-four.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

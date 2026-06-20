@@ -1,9 +1,10 @@
 ---
-title: "The CAPM as an Estimable Claim"
 date: "2026-06-29"
 ---
 
-# The CAPM as an Estimable Claim {.title}
+## The CAPM as an Estimable Claim
+
+- Part 2 — write the CAPM to estimate; why pooling fails
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, part two of eight. In part one we framed Sam's scaled-up question and met Fama and MacBeth's trick of running one cross-sectional regression per period. Now, before any code, get the procedure straight on paper. We have a panel: many stocks, indexed i from one to N, observed over many months, indexed t from one to T. We see each stock's monthly excess return — its return minus the risk-free rate — and a market excess return. In this part we write the CAPM as something estimable, and we see why one big panel regression is the wrong move.
@@ -32,7 +33,7 @@ Write the CAPM claim as a relationship we can estimate: the expected excess retu
 Why not just pool everything into one big regression? The naive thing is to stack every stock-month into one giant OLS of return on beta. That is exactly the mistake Chapter two-point-four warned you about. In any single month, every stock's return is jolted by the same market move, so the errors of all N stocks in month t are violently correlated — a time effect, in Petersen's language. Pooled OLS would treat your N-times-T stock-months as N-times-T independent observations, when on the cross-sectional dimension a single month's data is really closer to one draw. The standard error would come out wildly too small. Fama and MacBeth's design dissolves this problem instead of patching it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

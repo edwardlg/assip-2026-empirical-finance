@@ -1,9 +1,10 @@
 ---
-title: "The Overlapping-Portfolio Trick and Its Serial-Correlation Cost"
 date: "2026-07-20"
 ---
 
-# The Overlapping-Portfolio Trick {.title}
+## The Overlapping-Portfolio Trick
+
+- Part 4 — the overlap trick and the serial-correlation it creates
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part four of eleven. In part three we built the J-K sort and the winner-minus-loser trade. Now we examine the move that makes the methodology efficient and also makes the statistics subtle: the overlapping-holding-period trick. This is the same overlapping-observations problem we built in Week Two, showing up in a famous paper.
@@ -55,7 +56,7 @@ Here is why it matters and how to fix it. When you regress an overlapping series
 One more design choice worth flagging. Many momentum implementations skip the most recent week or month between formation and holding. For example, rank on months t minus six through t minus one, and start holding at t plus one. The purpose is to dodge the short-horizon reversal and the bid-ask bounce that would otherwise contaminate the winner and loser definitions. The exact skip convention varies across papers, so attribute it carefully: the clean one-month skip is more strongly associated with later momentum work than with this paper's main tables. When you compare results across the literature, always check whether a skip was applied, because it changes who lands in the winner and loser deciles.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

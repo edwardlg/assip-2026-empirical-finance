@@ -1,9 +1,10 @@
 ---
-title: "One Sandwich, Many Fillings"
 date: "2026-06-29"
 ---
 
-# One Sandwich, Many Fillings {.title}
+## One Sandwich, Many Fillings
+
+- Part 2 — the variance sandwich and three shapes for Omega
 
 ::: notes
 Welcome back to Mentor Session Two, "Why your standard error is the whole ballgame," part two of four. In part one we watched the same beta hat of zero-point-four-two earn two opposite verdicts, just from a choice about the error matrix Omega. Now we open up the machine. The honest variance of an ordinary-least-squares estimator always has the same shape — a sandwich — and every standard-error flavor you have ever heard of is just a different guess about what goes in the middle. Once you see the sandwich, the whole zoo of robust, clustered, and HAC standard errors stops being a list of recipes and becomes one idea with three fillings.
@@ -42,7 +43,7 @@ In finance the fantasy that Omega equals sigma-squared I is essentially always f
 Why does ignoring this make the naive standard error wrong, and in which direction? Because positive within-group correlation means each observation carries less independent information than the raw count N pretends. The Moulton-style arithmetic from Chapter two-point-four is brutal: the true variance is approximately the naive variance times the quantity one plus, in parentheses, n minus one, times rho-x times rho-epsilon — where n is the cluster size and the two rhos measure correlation in the regressor and in the errors. The damage scales with cluster size. So the naive standard error is almost always too small, and the t-statistic too big. A t-statistic of six-point-zero can honestly be a one-point-eight. Overconfidence is the default failure mode. And notice the consequence: more observations stuffed inside your existing clusters do not buy you evidence — only more clusters do.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

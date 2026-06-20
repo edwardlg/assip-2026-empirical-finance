@@ -1,9 +1,10 @@
 ---
-title: "Identification by Building the Truth"
 date: "2026-07-20"
 ---
 
-# Identification by Building the Truth {.title}
+## Identification by Building the Truth
+
+- Part 2 — how Petersen manufactures a known-truth world via simulation
 
 ::: notes
 Welcome back to Chapter five-point-four, part two of seven. In part one we framed the question — which standard-error method is correct in a finance panel — and noted that a methods paper can only be judged where the truth is known. Now we see how Petersen manufactures such a world. The word "identification" here means something unusual. In Weeks Three and Four, identification meant causal identification — that a coefficient measures a treatment effect rather than a correlation. Petersen's paper is not causal. There is no treatment, no counterfactual, no exclusion restriction. So what is being identified?
@@ -57,7 +58,7 @@ Petersen runs this under three correlation structures, which form the taxonomy t
 Crucially, he also varies whether the regressor x has a persistent firm component — because, recall the Moulton logic from Week Two, the damage from ignored correlation scales with the product of the within-cluster correlation of the errors and of the regressor. If x is pure noise within a firm, even a strong firm effect barely biases the OLS standard error. The bias bites only when both are persistent — exactly the corporate-finance case. To complete the argument, Petersen pairs the simulations with re-analysis of real finance panels — showing the lessons are not an artifact of toy data, but change real standard errors by the predicted amounts.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

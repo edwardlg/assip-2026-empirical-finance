@@ -1,10 +1,11 @@
 ---
-title: "Data, Design, and Results"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Data, Design, and Results {.title}
+## Data, Design, and Results
+
+- Part 5 — redeem the promise with the paper's body
 
 ::: notes
 Welcome back to Writing the Empirical Paper, part five of seven. In part four we built the literature review that makes your gap visible. Now we reach the body of the paper, where the introduction's promise is redeemed with actual evidence. Three sections — data, design, and results — each carry a specific load and each have a specific failure mode to avoid. We take them in turn.
@@ -47,7 +48,7 @@ The empirical design section puts the identifying assumption front and center. I
 The results section leads with the headline table. Open with the single table containing your main estimate — for Maya, the overall average treatment effect and the event-time profile from the clean Callaway and Sant'Anna estimator. Walk the reader through it in prose: point at the coefficient, state its sign, its magnitude in units a human can feel — one point eight percentage points, a fifth of the pre-period gap — and its precision. The cardinal sin here is the data dump: a section presenting eight tables with equal weight, letting the reader find the important one. You found it for them in the introduction; do it again here. Lead with the headline, interpret it economically — is the effect big enough to matter, not just significant? — and only then present supporting results. Significance is not importance: a coefficient can be three-starred and economically trivial, and your prose must carry the economic interpretation the stars cannot.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

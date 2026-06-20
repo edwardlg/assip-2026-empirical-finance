@@ -1,9 +1,10 @@
 ---
-title: "When the Outcome Itself Is a Measured Construct"
 date: "2026-07-27"
 ---
 
-# When the Outcome Itself Is a Measured Construct {.title}
+## When the Outcome Itself Is a Measured Construct
+
+- Part 4 — validating a continuous proxy and clustering a panel
 
 ::: notes
 Welcome back to Mentor Session six, part four of five. In part three we named the three ways AI fools you and the guardrail for each: post-cutoff tests for leakage, freeze-the-prompt for p-hacking, and save-the-labels for reproducibility. Now we ground all of it in the first of Professor Gao's two papers — a live worked case. Its lesson is that the measurement discipline we built today applies even when there is no text at all, because the outcome of a regression can itself be a proxy, not a fact.
@@ -28,7 +29,7 @@ The first paper is Gao, Han, Kim, and Pan, twenty-twenty-four, in the Journal of
 - Report whether the headline holds across **Jones vs. modified-Jones**
 
 ::: notes
-Validation looks different here because the outcome is continuous, not a binary label — there is no gold set of hand-labeled yes-or-no earnings managers. So you substitute for one. You simulate a panel in which you plant a known amount of discretionary accruals in a known subset of firm-years, then check whether your sensor recovers the planted truth. That is Lab four's slogan: when you cannot ground-truth in the real world, build a universe where you can. The two numbers you report are how closely the recovered residual tracks the planted truth and how much of the planted effect the sensor captures. Then re-run under an alternative accruals model and report whether the headline correlation moves. Showing the coefficient is similar across Jones and modified-Jones is the continuous analogue of the precision-and-recall move on labels. Mark as a CHECK anything about the paper's actual measure you would confirm against the published version.
+Validation looks different here because the outcome is continuous, not a binary label — there is no gold set of hand-labeled yes-or-no earnings managers. So you substitute for one. You simulate a panel in which you plant a known amount of discretionary accruals in a known subset of firm-years, then check whether your sensor recovers the planted truth. That is Lab four's slogan: when you cannot ground-truth in the real world, build a universe where you can. The two numbers you report are how closely the recovered residual tracks the planted truth and how much of the planted effect the sensor captures. Then re-run under an alternative accruals model and report whether the headline correlation moves. Showing the coefficient is similar across Jones and modified-Jones is the continuous analogue of the precision-and-recall move on labels.
 :::
 
 ## Panel Dependence Forces the SE Choice
@@ -39,10 +40,10 @@ Validation looks different here because the outcome is continuous, not a binary 
 - RHS measurement error + optimistic SEs = double-barreled self-deception
 
 ::: notes
-Because this is a panel — the same firms over many years, linked into supplier–customer pairs — the standard-error question from Pack five, Petersen, is not optional. Residuals for the same supplier firm across years are correlated, and may also be correlated across the linked supplier and customer. So you must defend a clustering choice — by firm, by supplier–customer pair, by industry, or two-way — naming what dependence each absorbs. Get it wrong and your t-statistics look more significant than they deserve, because clustered standard errors are usually larger than classical ones. And tie it to today's theme: your key regressor, common ownership, is itself a measured network variable. Measurement error on the right-hand side, combined with an over-optimistic standard error, is a double-barreled way to fool yourself — and clustering fixes the standard error, not the measurement error. CHECK the paper's actual fixed-effects and clustering before asserting them.
+Because this is a panel — the same firms over many years, linked into supplier–customer pairs — the standard-error question from Pack five, Petersen, is not optional. Residuals for the same supplier firm across years are correlated, and may also be correlated across the linked supplier and customer. So you must defend a clustering choice — by firm, by supplier–customer pair, by industry, or two-way — naming what dependence each absorbs. Get it wrong and your t-statistics look more significant than they deserve, because clustered standard errors are usually larger than classical ones. And tie it to today's theme: your key regressor, common ownership, is itself a measured network variable. Measurement error on the right-hand side, combined with an over-optimistic standard error, is a double-barreled way to fool yourself — and clustering fixes the standard error, not the measurement error.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

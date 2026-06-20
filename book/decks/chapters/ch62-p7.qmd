@@ -1,9 +1,10 @@
 ---
-title: "What's Clever"
 date: "2026-07-27"
 ---
 
-# What's Clever {.title}
+## What's Clever
+
+- Part 7 — four clever, transferable moves
 
 ::: notes
 Welcome back to Chapter six-point-two, part seven of nine. In part six we set the reading order. Now we name what is clever about the paper — four moves, each one transferable to your own capstone, not just admirable in this one.
@@ -45,7 +46,7 @@ The second move: firm-specific, time-varying, intransitive networks. S-I-C's thr
 The third move: cosine similarity as the bridge from words to numbers. The whole apparatus reduces to one operation you already knew — the cosine between two vectors. Chapter one-point-two said correlation is a cosine; this paper shows the cosine does not care whether the vectors hold returns or word counts. That generality is why this paper launches the A-I module in Chapter six-point-five: modern language models represent text as vectors and compare them with cosine similarity, so the embedding you will meet there is the grown-up cousin of the bag-of-words vector you build in the notebook. The fourth move is the most consequential, and it is sociological. By publishing the T-N-I-C library, the authors made their measure a public good — hundreds of later papers use these industries without re-deriving them, the way you use Fama-French factors without re-sorting portfolios. Infrastructure compounds: every paper built on it is, indirectly, evidence for it. Designing a capstone, ask not only "what do I find?" but "could what I build be useful to the next person?"
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

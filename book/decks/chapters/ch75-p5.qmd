@@ -1,10 +1,11 @@
 ---
-title: "The Threats-and-Responses Table"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Threats-and-Responses Table {.title}
+## The Threats-and-Responses Table
+
+- Part 5 — the four-column table and test-or-argue split
 
 ::: notes
 Welcome back to the identification memo, part five of nine. In part four we finished the threat menu and learned to pull our design's row as a starting list. Now we build the table that holds those threats — the operational heart of the memo — and we learn the single most important conceptual distinction in the chapter: some threats you can test, and some you can only argue.
@@ -12,11 +13,12 @@ Welcome back to the identification memo, part five of nine. In part four we fini
 
 ## Four Columns That Force Honesty
 
-- **Threat:** the named failure, one phrase — *not* "endogeneity"
-- **Why it's plausible:** the concrete story making it real here
-- **What we do about it:** the test or design choice, with expected result
-- **Residual concern:** the honest leftover after you've done everything
-- Blank residual column = you are not being honest
+| Column | What goes in it |
+|---|---|
+| **Threat** | The named failure of the assumption, one phrase. *Not* "endogeneity." |
+| **Why it's plausible** | One sentence on the concrete story making it real here. |
+| **What we do about it** | The specific test or design choice, with the reassuring result. |
+| **Residual concern** | The honest leftover. Blank means you are not being honest. |
 
 ::: notes
 Build the table as a literal Markdown table, because its rigid shape forces honesty. It has exactly four columns. Column one, the threat: the named failure of your identifying assumption, in one phrase, pulled from the menu — not the word endogeneity. Column two, why it's plausible: one sentence on the concrete story under which this threat is real in your setting; if you cannot tell a plausible story, the threat is a strawman and does not belong. Column three, what we do about it: the specific test, design choice, or robustness check, with the expected result that would reassure a reader. Column four, residual concern: what still worries you after you have done everything in column three. The honest leftover. If that fourth column is blank, you are not being honest.
@@ -46,7 +48,7 @@ The fourth column is the one students want to leave empty, and it is the one a g
 Here is the distinction that organizes the entire third and fourth columns, and it is the most important conceptual point in the chapter. Some threats leave fingerprints in the data, and some do not. The ones that do, you test. The ones that do not, you argue. Confusing the two — running a test for something fundamentally untestable, or arguing your way around something you could simply have checked — is the most common error in a weak identification memo. So for every threat in your table, decide first whether it is testable or arguable, and put the right kind of thing in column three. A memo that runs a clever test against an untestable threat advertises that the author does not understand their own design. A memo that argues past a threat it could have tested looks lazy.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

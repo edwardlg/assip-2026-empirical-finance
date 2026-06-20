@@ -1,9 +1,10 @@
 ---
-title: "The Cohort GitHub Workflow"
 date: "2026-08-03"
 ---
 
-# The Cohort GitHub Workflow {.title}
+## The Cohort GitHub Workflow
+
+- Part 4 — create a private repo from the cohort template
 
 ::: notes
 Welcome back to Week Seven, the Lab, part four of eight. In part three we laid out the directory skeleton on disk. Now we take it to GitHub. You do not invent a repo name on the fly — you create one private repo from the cohort's template, and that single repo is the home for everything you build over the next two weeks. Let us walk the whole workflow, including what the instructor sees.
@@ -33,7 +34,7 @@ Prof. Gao posts the URL of the cohort's template repo. On that page, click Use t
 Because the repo is private, Prof. Gao and your pod sub-leader cannot see it until you grant access. On the repo page, go to Settings, Collaborators, Add people, and add the GitHub usernames your sub-leader gives you — typically Prof. Gao plus your pod's sub-leader, both at Read permission. They need to see your commits and clone your repo; they do not need to push to it. If your repo lives inside the cohort organization, an org-level team may already handle this — confirm with your sub-leader. Either way, before you push anything sensitive, verify that the right people, and only the right people, can see the repo. Then clone it to the machine where you will work — the ASSIP container, or GMU infrastructure if you touch licensed data.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

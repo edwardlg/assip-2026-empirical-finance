@@ -1,9 +1,10 @@
 ---
-title: "The Two Passes and the FM Standard Error"
 date: "2026-06-29"
 ---
 
-# The Two Passes and the FM Standard Error {.title}
+## The Two Passes and the FM Standard Error
+
+- Part 3 — two passes plus an average, and the SE
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, part three of eight. In part two we wrote the CAPM as an estimable claim and saw why pooling everything fails. Now the heart of the method: two passes plus an average. Pass one gives a time-series beta for every stock. Pass two runs a cross-sectional regression each month, producing a time series of slopes. Then we average — and the average is where the magic lives, because the standard error falls out as nothing more than the standard error of a mean.
@@ -44,7 +45,7 @@ $$\widehat{\operatorname{se}}=\frac{1}{\sqrt{T}}\sqrt{\tfrac{1}{T-1}\sum_t(\hat\
 Now aggregate. Collapse each time series to its mean. The Fama–MacBeth point estimate is simply the average of the period-by-period slopes — gamma-one-FM equals one over T times the sum of the monthly slopes — and likewise for the intercept. And here is the move that makes the whole thing work. Because gamma-one-FM is just the sample mean of T numbers, its standard error is the ordinary standard error of a mean: the sample standard deviation of those monthly slopes divided by the square root of T. The Fama–MacBeth t-statistic is then the estimate divided by that standard error, compared against a t-distribution with T minus one degrees of freedom. No sandwich matrix, no covariance estimation — just the standard error of an average.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

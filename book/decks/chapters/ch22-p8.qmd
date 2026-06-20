@@ -1,10 +1,11 @@
 ---
-title: "Efficiency: The Word for Smallest Variance"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Efficiency: The Word for Smallest Variance {.title}
+## Efficiency: The Word for Smallest Variance
+
+- Part 8 — naming efficiency and three cautions about it
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part eight of nine. In part seven we proved why O L S wins — any rival adds a non-negative variance penalty — and saw it in a Monte Carlo. Now we give that smallest-variance property its proper name, efficiency, and stack three cautions that keep the word from being oversold.
@@ -58,7 +59,7 @@ Second caution: efficiency dies with homoskedasticity. When assumption four fail
 Third caution: efficiency presumes unbiasedness, and that presumption can be a trap. The whole Gauss–Markov tournament only admitted unbiased contestants in the first place. But some of the most useful estimators in this book are deliberately biased — and in large samples they can be the right choice anyway. That is the bridge to the chapter's last and subtlest idea, the distinction between unbiased and consistent, which reorders the entire contract by how much each clause should keep you up at night. We take that up in part nine.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

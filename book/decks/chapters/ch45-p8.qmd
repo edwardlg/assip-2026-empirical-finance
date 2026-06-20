@@ -1,9 +1,10 @@
 ---
-title: "AKM Inference & Back to IV"
 date: "2026-07-13"
 ---
 
-# AKM Inference & Back to IV {.title}
+## AKM Inference & Back to IV
+
+- Part 8 — AKM standard errors; mapping back to IV conditions
 
 ::: notes
 Welcome back to Chapter four-point-five, part eight of ten. In part seven we met the second identification view — Borusyak, Hull and Jaravel put the burden on quasi-random shifts across many industries. Now the third paper, which concerns inference rather than identification and bites under both views, and then we map the whole chapter back onto the instrumental-variables vocabulary of Week Three: relevance, exclusion, and the two strategies for arguing the same untestable restriction.
@@ -33,7 +34,7 @@ There is a third paper you must know, because it concerns inference, not identif
 Now map the chapter onto the two IV conditions, because a shift-share instrument earns no exemptions. Relevance is exactly as before, and exactly as testable. The first stage regresses the realized local shock — employment growth, or credit growth — on the constructed instrument and the controls; you want a large, precisely-estimated coefficient and a healthy first-stage F. Regions predicted to be hit hard should actually have been hit hard. But heed Chapter three-point-five's warning: significance is not strength, so use robust and effective-F diagnostics. A weak shift-share first stage drags two-stage least squares back toward OLS just as surely as any weak instrument. Exclusion is where the structure earns its keep. The shift-share exclusion restriction is that the instrument affects the outcome only through the realized local shock and is uncorrelated with the error. Since the instrument is shares times shifts, that covariance can be made to vanish by making either ingredient exogenous. The Goldsmith-Pinkham route assumes the shares are exogenous, so any shifts will do as weights, and you defend it region-by-region. The Borusyak, Hull and Jaravel route assumes the shifts are exogenous, so any shares will do as exposure, and you defend it industry-by-industry.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

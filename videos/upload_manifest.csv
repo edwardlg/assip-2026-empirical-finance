@@ -1,0 +1,915 @@
+file,youtube_title,playlist,description
+ch11-p1.mp4,[MEF W1.1 P1] Joint and Marginal Distributions,Week 1 — Probability & Inference,"Joint and Marginal Distributions — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p2.mp4,[MEF W1.1 P2] Conditioning: Using What You Know,Week 1 — Probability & Inference,"Conditioning: Using What You Know — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p3.mp4,[MEF W1.1 P3] Independence and Conditional Expectation,Week 1 — Probability & Inference,"Independence and Conditional Expectation — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p4.mp4,[MEF W1.1 P4] The Law of Iterated Expectations,Week 1 — Probability & Inference,"The Law of Iterated Expectations — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p5.mp4,[MEF W1.1 P5] The Law of Total Variance,Week 1 — Probability & Inference,"The Law of Total Variance — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p6.mp4,"[MEF W1.1 P6] Sam's Risk Decomposition, Worked",Week 1 — Probability & Inference,"Sam's Risk Decomposition, Worked — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p7.mp4,"[MEF W1.1 P7] Reading the Answer, and Proving the Law",Week 1 — Probability & Inference,"Reading the Answer, and Proving the Law — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch11-p8.mp4,[MEF W1.1 P8] Why These Two Laws Run Everything,Week 1 — Probability & Inference,"Why These Two Laws Run Everything — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p1.mp4,[MEF W1.2 P1] Linearity of Expectation,Week 1 — Probability & Inference,"Linearity of Expectation — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p2.mp4,[MEF W1.2 P2] Defining Variance and Covariance,Week 1 — Probability & Inference,"Defining Variance and Covariance — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p3.mp4,[MEF W1.2 P3] The Variance Algebra You Will Use,Week 1 — Probability & Inference,"The Variance Algebra You Will Use — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p4.mp4,[MEF W1.2 P4] Maya's Two-Asset Budget: Three Scenarios,Week 1 — Probability & Inference,"Maya's Two-Asset Budget: Three Scenarios — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p5.mp4,[MEF W1.2 P5] The Minimum-Risk Blend,Week 1 — Probability & Inference,"The Minimum-Risk Blend — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p6.mp4,[MEF W1.2 P6] Correlation as a Cosine,Week 1 — Probability & Inference,"Correlation as a Cosine — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p7.mp4,[MEF W1.2 P7] Why |ρ| ≤ 1 Is Cauchy–Schwarz,Week 1 — Probability & Inference,"Why |ρ| ≤ 1 Is Cauchy–Schwarz — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch12-p8.mp4,[MEF W1.2 P8] The Covariance Matrix Σ,Week 1 — Probability & Inference,"The Covariance Matrix Σ — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p1.mp4,[MEF W1.3 P1] Estimator Versus Estimate,Week 1 — Probability & Inference,"Estimator Versus Estimate — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p2.mp4,[MEF W1.3 P2] Bias: Aiming at the Right Target,Week 1 — Probability & Inference,"Bias: Aiming at the Right Target — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p3.mp4,[MEF W1.3 P3] Variance and the Standard Error,Week 1 — Probability & Inference,"Variance and the Standard Error — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p4.mp4,[MEF W1.3 P4] Mean Squared Error and the Bias-Variance Tradeoff,Week 1 — Probability & Inference,"Mean Squared Error and the Bias-Variance Tradeoff — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p5.mp4,[MEF W1.3 P5] Consistency: Getting It Right Eventually,Week 1 — Probability & Inference,"Consistency: Getting It Right Eventually — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p6.mp4,[MEF W1.3 P6] Seeing the Sampling Distribution by Simulation,Week 1 — Probability & Inference,"Seeing the Sampling Distribution by Simulation — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch13-p7.mp4,"[MEF W1.3 P7] The Shape, and Where This Is Heading",Week 1 — Probability & Inference,"The Shape, and Where This Is Heading — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p1.mp4,[MEF W1.4 P1] Stating the Law of Large Numbers,Week 1 — Probability & Inference,"Stating the Law of Large Numbers — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p2.mp4,[MEF W1.4 P2] Why the Law of Large Numbers Works,Week 1 — Probability & Inference,"Why the Law of Large Numbers Works — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p3.mp4,"[MEF W1.4 P3] Seeing the LLN, and Standardizing for the CLT",Week 1 — Probability & Inference,"Seeing the LLN, and Standardizing for the CLT — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p4.mp4,[MEF W1.4 P4] Stating the Central Limit Theorem,Week 1 — Probability & Inference,"Stating the Central Limit Theorem — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p5.mp4,[MEF W1.4 P5] Watching the Bell Emerge,Week 1 — Probability & Inference,"Watching the Bell Emerge — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p6.mp4,[MEF W1.4 P6] Reading the Two Laws Together,Week 1 — Probability & Inference,"Reading the Two Laws Together — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p7.mp4,[MEF W1.4 P7] Devon's Crypto Returns and Fat Tails,Week 1 — Probability & Inference,"Devon's Crypto Returns and Fat Tails — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p8.mp4,[MEF W1.4 P8] The Hierarchy of Bad Behavior,Week 1 — Probability & Inference,"The Hierarchy of Bad Behavior — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch14-p9.mp4,"[MEF W1.4 P9] When the LLN Fails, and What Devon Should Do",Week 1 — Probability & Inference,"When the LLN Fails, and What Devon Should Do — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p1.mp4,[MEF W1.5 P1] Hypothesis Testing: Sam's Trading Rule,Week 1 — Probability & Inference,"Hypothesis Testing: Sam's Trading Rule — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p2.mp4,[MEF W1.5 P2] The Null and the Alternative,Week 1 — Probability & Inference,"The Null and the Alternative — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p3.mp4,[MEF W1.5 P3] The Test Statistic: A Single Ruler,Week 1 — Probability & Inference,"The Test Statistic: A Single Ruler — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p4.mp4,[MEF W1.5 P4] Deriving the t-Test,Week 1 — Probability & Inference,"Deriving the t-Test — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p5.mp4,[MEF W1.5 P5] Size and Power: Two Ways to Be Wrong,Week 1 — Probability & Inference,"Size and Power: Two Ways to Be Wrong — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p6.mp4,[MEF W1.5 P6] Four Levers and Power Made Concrete,Week 1 — Probability & Inference,"Four Levers and Power Made Concrete — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p7.mp4,[MEF W1.5 P7] One-Sided vs. Two-Sided Tests,Week 1 — Probability & Inference,"One-Sided vs. Two-Sided Tests — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p8.mp4,"[MEF W1.5 P8] The p-Value, Defined Correctly",Week 1 — Probability & Inference,"The p-Value, Defined Correctly — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p9.mp4,[MEF W1.5 P9] Confidence Intervals and Effect Size,Week 1 — Probability & Inference,"Confidence Intervals and Effect Size — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch15-p10.mp4,"[MEF W1.5 P10] Three Mistakes, p-Hacking, and Where This Goes",Week 1 — Probability & Inference,"Three Mistakes, p-Hacking, and Where This Goes — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p1.mp4,[MEF W1.L P1] Lab 1: Building a Coin-Flip Universe,Week 1 — Probability & Inference,"Lab 1: Building a Coin-Flip Universe — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p2.mp4,[MEF W1.L P2] Setup and Your First Coin Universe,Week 1 — Probability & Inference,"Setup and Your First Coin Universe — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p3.mp4,[MEF W1.L P3] The Sampling Distribution and the CLT,Week 1 — Probability & Inference,"The Sampling Distribution and the CLT — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p4.mp4,[MEF W1.L P4] Writing a One-Proportion Test From Scratch,Week 1 — Probability & Inference,"Writing a One-Proportion Test From Scratch — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p5.mp4,[MEF W1.L P5] Measuring the Size of Your Test,Week 1 — Probability & Inference,"Measuring the Size of Your Test — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p6.mp4,[MEF W1.L P6] Measuring Power and Tracing a Power Curve,Week 1 — Probability & Inference,"Measuring Power and Tracing a Power Curve — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab1-p7.mp4,[MEF W1.L P7] P-Hacking and Where This Connects,Week 1 — Probability & Inference,"P-Hacking and Where This Connects — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor1-p1.mp4,[MEF W1.M P1] A Number Is Not a Finding,Week 1 — Probability & Inference,"A Number Is Not a Finding — ASSIP Empirical Finance Camp. Part 1 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor1-p2.mp4,[MEF W1.M P2] Gate One — Too Big to Be Noise?,Week 1 — Probability & Inference,"Gate One — Too Big to Be Noise? — ASSIP Empirical Finance Camp. Part 2 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor1-p3.mp4,[MEF W1.M P3] Gate Two — Big Enough to Matter?,Week 1 — Probability & Inference,"Gate Two — Big Enough to Matter? — ASSIP Empirical Finance Camp. Part 3 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor1-p4.mp4,[MEF W1.M P4] Gate Three — Surviving the Search,Week 1 — Probability & Inference,"Gate Three — Surviving the Search — ASSIP Empirical Finance Camp. Part 4 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor1-p5.mp4,[MEF W1.M P5] Measured Is Not Explained,Week 1 — Probability & Inference,"Measured Is Not Explained — ASSIP Empirical Finance Camp. Part 5 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p1.mp4,[MEF W2.1 P1] Stacking Regression into Matrix Form,Week 2 — OLS & Inference,"Stacking Regression into Matrix Form — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p2.mp4,[MEF W2.1 P2] The Least-Squares Objective,Week 2 — OLS & Inference,"The Least-Squares Objective — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p3.mp4,"[MEF W2.1 P3] The Normal Equations, by Calculus",Week 2 — OLS & Inference,"The Normal Equations, by Calculus — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p4.mp4,"[MEF W2.1 P4] The Same Equations, by Orthogonality",Week 2 — OLS & Inference,"The Same Equations, by Orthogonality — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p5.mp4,[MEF W2.1 P5] OLS as Projection: the Hat Matrix,Week 2 — OLS & Inference,"OLS as Projection: the Hat Matrix — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p6.mp4,[MEF W2.1 P6] Projection Algebra and Invertibility,Week 2 — OLS & Inference,"Projection Algebra and Invertibility — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p7.mp4,"[MEF W2.1 P7] Sam's Beta, Computed by Hand",Week 2 — OLS & Inference,"Sam's Beta, Computed by Hand — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch21-p8.mp4,[MEF W2.1 P8] Verifying the Fit and What Comes Next,Week 2 — OLS & Inference,"Verifying the Fit and What Comes Next — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p1.mp4,[MEF W2.2 P1] Gauss–Markov: Why Trust OLS?,Week 2 — OLS & Inference,"Gauss–Markov: Why Trust OLS? — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p2.mp4,"[MEF W2.2 P2] The Contract, Part One: Linearity and Full Rank",Week 2 — OLS & Inference,"The Contract, Part One: Linearity and Full Rank — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p3.mp4,"[MEF W2.2 P3] The Contract, Part Two: Zero Mean, Same Scatter, Normality",Week 2 — OLS & Inference,"The Contract, Part Two: Zero Mean, Same Scatter, Normality — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p4.mp4,[MEF W2.2 P4] Unbiasedness: The Recipe Aims at the Truth,Week 2 — OLS & Inference,"Unbiasedness: The Recipe Aims at the Truth — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p5.mp4,[MEF W2.2 P5] The Variance of OLS,Week 2 — OLS & Inference,"The Variance of OLS — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p6.mp4,[MEF W2.2 P6] The Gauss–Markov Theorem: OLS Is BLUE,Week 2 — OLS & Inference,"The Gauss–Markov Theorem: OLS Is BLUE — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p7.mp4,"[MEF W2.2 P7] Why OLS Wins, and Seeing It in Code",Week 2 — OLS & Inference,"Why OLS Wins, and Seeing It in Code — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p8.mp4,[MEF W2.2 P8] Efficiency: The Word for Smallest Variance,Week 2 — OLS & Inference,"Efficiency: The Word for Smallest Variance — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch22-p9.mp4,[MEF W2.2 P9] Unbiased Versus Consistent: The Lesson That Reorders Everything,Week 2 — OLS & Inference,"Unbiased Versus Consistent: The Lesson That Reorders Everything — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p1.mp4,"[MEF W2.3 P1] FWL: What \""Controlling For\"" Really Means",Week 2 — OLS & Inference,"FWL: What \""Controlling For\"" Really Means — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p2.mp4,[MEF W2.3 P2] Partialling-Out and Leah's Six Firms,Week 2 — OLS & Inference,"Partialling-Out and Leah's Six Firms — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p3.mp4,[MEF W2.3 P3] FWL by Hand: Reproducing the Coefficient,Week 2 — OLS & Inference,"FWL by Hand: Reproducing the Coefficient — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p4.mp4,[MEF W2.3 P4] The Matrix Proof in Four Lines,Week 2 — OLS & Inference,"The Matrix Proof in Four Lines — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p5.mp4,"[MEF W2.3 P5] The Geometry, and What \""Holding Constant\"" Means",Week 2 — OLS & Inference,"The Geometry, and What \""Holding Constant\"" Means — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p6.mp4,[MEF W2.3 P6] Demeaning Is the Within Transformation,Week 2 — OLS & Inference,"Demeaning Is the Within Transformation — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p7.mp4,"[MEF W2.3 P7] Fixed Effects Four Weeks Early, and Fast",Week 2 — OLS & Inference,"Fixed Effects Four Weeks Early, and Fast — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch23-p8.mp4,"[MEF W2.3 P8] Pitfalls, the Code, and the Handoff",Week 2 — OLS & Inference,"Pitfalls, the Code, and the Handoff — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p1.mp4,[MEF W2.4 P1] When the Errors Misbehave: The Problem,Week 2 — OLS & Inference,"When the Errors Misbehave: The Problem — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p2.mp4,[MEF W2.4 P2] The Classical Variance and Its One Assumption,Week 2 — OLS & Inference,"The Classical Variance and Its One Assumption — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p3.mp4,[MEF W2.4 P3] The Sandwich That Never Went Away,Week 2 — OLS & Inference,"The Sandwich That Never Went Away — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p4.mp4,[MEF W2.4 P4] White / HC Robust Standard Errors,Week 2 — OLS & Inference,"White / HC Robust Standard Errors — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p5.mp4,"[MEF W2.4 P5] A Number, and the Symptoms to Watch",Week 2 — OLS & Inference,"A Number, and the Symptoms to Watch — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p6.mp4,[MEF W2.4 P6] Clustering: When Errors Hold Hands,Week 2 — OLS & Inference,"Clustering: When Errors Hold Hands — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p7.mp4,[MEF W2.4 P7] HAC / Newey–West: Correlation Across Time,Week 2 — OLS & Inference,"HAC / Newey–West: Correlation Across Time — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch24-p8.mp4,"[MEF W2.4 P8] Panels, Petersen, and the Checklist",Week 2 — OLS & Inference,"Panels, Petersen, and the Checklist — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p1.mp4,[MEF W2.5 P1] Bias vs. Wobble: Why a Sharp Estimate Can Be Wrong,Week 2 — OLS & Inference,"Bias vs. Wobble: Why a Sharp Estimate Can Be Wrong — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p2.mp4,[MEF W2.5 P2] Omitted Variable Bias: The Intuition,Week 2 — OLS & Inference,"Omitted Variable Bias: The Intuition — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p3.mp4,[MEF W2.5 P3] Deriving the OVB Formula: A Product of Two Slopes,Week 2 — OLS & Inference,"Deriving the OVB Formula: A Product of Two Slopes — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p4.mp4,"[MEF W2.5 P4] The Two-Sign Rule, and Why Controls Are a Bet",Week 2 — OLS & Inference,"The Two-Sign Rule, and Why Controls Are a Bet — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p5.mp4,[MEF W2.5 P5] Measurement Error and Attenuation Toward Zero,Week 2 — OLS & Inference,"Measurement Error and Attenuation Toward Zero — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p6.mp4,"[MEF W2.5 P6] Measurement Error: Three Subtleties, and the Simulation",Week 2 — OLS & Inference,"Measurement Error: Three Subtleties, and the Simulation — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p7.mp4,[MEF W2.5 P7] Functional Form: When the Straight Line Is the Wrong Shape,Week 2 — OLS & Inference,"Functional Form: When the Straight Line Is the Wrong Shape — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p8.mp4,[MEF W2.5 P8] The RESET Test: Is My Line the Wrong Shape?,Week 2 — OLS & Inference,"The RESET Test: Is My Line the Wrong Shape? — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch25-p9.mp4,[MEF W2.5 P9] The Bias Ledger and the Bridge to Causal Inference,Week 2 — OLS & Inference,"The Bias Ledger and the Bridge to Causal Inference — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p1.mp4,[MEF W2.L P1] Fama–MacBeth on CRSP: The Question,Week 2 — OLS & Inference,"Fama–MacBeth on CRSP: The Question — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p2.mp4,[MEF W2.L P2] The CAPM as an Estimable Claim,Week 2 — OLS & Inference,"The CAPM as an Estimable Claim — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p3.mp4,[MEF W2.L P3] The Two Passes and the FM Standard Error,Week 2 — OLS & Inference,"The Two Passes and the FM Standard Error — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p4.mp4,[MEF W2.L P4] Why It Works: Clustering by Time,Week 2 — OLS & Inference,"Why It Works: Clustering by Time — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p5.mp4,[MEF W2.L P5] Two Data Paths and the Synthetic Build,Week 2 — OLS & Inference,"Two Data Paths and the Synthetic Build — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p6.mp4,[MEF W2.L P6] Pass 1 Betas and Pass 2 Cross-Sections,Week 2 — OLS & Inference,"Pass 1 Betas and Pass 2 Cross-Sections — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p7.mp4,[MEF W2.L P7] Aggregating to the Fama–MacBeth Estimate,Week 2 — OLS & Inference,"Aggregating to the Fama–MacBeth Estimate — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab2-p8.mp4,[MEF W2.L P8] Reading the SE and Wrapping Up,Week 2 — OLS & Inference,"Reading the SE and Wrapping Up — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor2-p1.mp4,[MEF W2.M P1] The Point Estimate Is the Easy Part,Week 2 — OLS & Inference,"The Point Estimate Is the Easy Part — ASSIP Empirical Finance Camp. Part 1 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor2-p2.mp4,"[MEF W2.M P2] One Sandwich, Many Fillings",Week 2 — OLS & Inference,"One Sandwich, Many Fillings — ASSIP Empirical Finance Camp. Part 2 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor2-p3.mp4,[MEF W2.M P3] The Panel Case — Petersen's Taxonomy,Week 2 — OLS & Inference,"The Panel Case — Petersen's Taxonomy — ASSIP Empirical Finance Camp. Part 3 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor2-p4.mp4,[MEF W2.M P4] The Few-Clusters Trap & Thinking Like the Referee,Week 2 — OLS & Inference,"The Few-Clusters Trap & Thinking Like the Referee — ASSIP Empirical Finance Camp. Part 4 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch31-p1.mp4,"[MEF W3.1 P1] Potential Outcomes: Two Worlds, One Person",Week 3 — Causal Inference,"Potential Outcomes: Two Worlds, One Person — ASSIP Empirical Finance Camp. Part 1 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch31-p2.mp4,[MEF W3.1 P2] The Fundamental Problem and the Estimands,Week 3 — Causal Inference,"The Fundamental Problem and the Estimands — ASSIP Empirical Finance Camp. Part 2 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch31-p3.mp4,[MEF W3.1 P3] The Naive Estimator and Selection Bias,Week 3 — Causal Inference,"The Naive Estimator and Selection Bias — ASSIP Empirical Finance Camp. Part 3 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch31-p4.mp4,[MEF W3.1 P4] SUTVA: The Assumption Hiding in the Notation,Week 3 — Causal Inference,"SUTVA: The Assumption Hiding in the Notation — ASSIP Empirical Finance Camp. Part 4 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch31-p5.mp4,[MEF W3.1 P5] Randomization and the Bridge to Controlling for X,Week 3 — Causal Inference,"Randomization and the Bridge to Controlling for X — ASSIP Empirical Finance Camp. Part 5 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p1.mp4,[MEF W3.2 P1] Matching and Propensity Scores: The Setup,Week 3 — Causal Inference,"Matching and Propensity Scores: The Setup — ASSIP Empirical Finance Camp. Part 1 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p2.mp4,[MEF W3.2 P2] Why the Naive Comparison Fails,Week 3 — Causal Inference,"Why the Naive Comparison Fails — ASSIP Empirical Finance Camp. Part 2 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p3.mp4,[MEF W3.2 P3] The Conditional Independence Assumption,Week 3 — Causal Inference,"The Conditional Independence Assumption — ASSIP Empirical Finance Camp. Part 3 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p4.mp4,"[MEF W3.2 P4] Compare Like With Like, Then Average",Week 3 — Causal Inference,"Compare Like With Like, Then Average — ASSIP Empirical Finance Camp. Part 4 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p5.mp4,[MEF W3.2 P5] Overlap and the Curse of Dimensionality,Week 3 — Causal Inference,"Overlap and the Curse of Dimensionality — ASSIP Empirical Finance Camp. Part 5 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p6.mp4,[MEF W3.2 P6] The Propensity Score and the Rosenbaum–Rubin Reduction,Week 3 — Causal Inference,"The Propensity Score and the Rosenbaum–Rubin Reduction — ASSIP Empirical Finance Camp. Part 6 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p7.mp4,[MEF W3.2 P7] Estimating the Score: Two Disciplines,Week 3 — Causal Inference,"Estimating the Score: Two Disciplines — ASSIP Empirical Finance Camp. Part 7 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p8.mp4,[MEF W3.2 P8] Nearest-Neighbor and Caliper Matching,Week 3 — Causal Inference,"Nearest-Neighbor and Caliper Matching — ASSIP Empirical Finance Camp. Part 8 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p9.mp4,[MEF W3.2 P9] The PSM Workflow on Maya's Program,Week 3 — Causal Inference,"The PSM Workflow on Maya's Program — ASSIP Empirical Finance Camp. Part 9 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p10.mp4,[MEF W3.2 P10] Balance Diagnostics and the Firewall,Week 3 — Causal Inference,"Balance Diagnostics and the Firewall — ASSIP Empirical Finance Camp. Part 10 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p11.mp4,[MEF W3.2 P11] When It Fails: CIA Is Untestable,Week 3 — Causal Inference,"When It Fails: CIA Is Untestable — ASSIP Empirical Finance Camp. Part 11 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch32-p12.mp4,"[MEF W3.2 P12] What Matching Buys, and What to Carry Forward",Week 3 — Causal Inference,"What Matching Buys, and What to Carry Forward — ASSIP Empirical Finance Camp. Part 12 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p1.mp4,"[MEF W3.3 P1] Past Matching: Three Tools, One Theme",Week 3 — Causal Inference,"Past Matching: Three Tools, One Theme — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p2.mp4,[MEF W3.3 P2] Inverse-Probability Weighting: The Trick,Week 3 — Causal Inference,"Inverse-Probability Weighting: The Trick — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p3.mp4,[MEF W3.3 P3] Two Estimators and a Worked Number,Week 3 — Causal Inference,"Two Estimators and a Worked Number — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p4.mp4,[MEF W3.3 P4] When IPW Explodes — and the Defenses,Week 3 — Causal Inference,"When IPW Explodes — and the Defenses — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p5.mp4,[MEF W3.3 P5] Entropy Balancing: Solve for the Weights,Week 3 — Causal Inference,"Entropy Balancing: Solve for the Weights — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p6.mp4,[MEF W3.3 P6] Why Entropy Balancing Is Steadier,Week 3 — Causal Inference,"Why Entropy Balancing Is Steadier — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p7.mp4,[MEF W3.3 P7] Doubly Robust: Two Shots at the Truth,Week 3 — Causal Inference,"Doubly Robust: Two Shots at the Truth — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p8.mp4,[MEF W3.3 P8] Beyond the Safety Net: Efficiency and ML,Week 3 — Causal Inference,"Beyond the Safety Net: Efficiency and ML — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p9.mp4,[MEF W3.3 P9] The Code: Three Methods Side by Side,Week 3 — Causal Inference,"The Code: Three Methods Side by Side — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch33-p10.mp4,"[MEF W3.3 P10] Choosing a Method, and the Ceiling",Week 3 — Causal Inference,"Choosing a Method, and the Ceiling — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p1.mp4,[MEF W3.4 P1] Instrumental Variables: The Escape Hatch,Week 3 — Causal Inference,"Instrumental Variables: The Escape Hatch — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p2.mp4,[MEF W3.4 P2] The Problem IV Solves,Week 3 — Causal Inference,"The Problem IV Solves — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p3.mp4,[MEF W3.4 P3] Relevance and Exclusion,Week 3 — Causal Inference,"Relevance and Exclusion — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p4.mp4,[MEF W3.4 P4] Maya's Mailer and the Wald Estimator,Week 3 — Causal Inference,"Maya's Mailer and the Wald Estimator — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p5.mp4,[MEF W3.4 P5] A Worked Number and Why Wald Beats OLS,Week 3 — Causal Inference,"A Worked Number and Why Wald Beats OLS — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p6.mp4,[MEF W3.4 P6] 2SLS as Frisch–Waugh–Lovell,Week 3 — Causal Inference,"2SLS as Frisch–Waugh–Lovell — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p7.mp4,[MEF W3.4 P7] LATE: The Four Types,Week 3 — Causal Inference,"LATE: The Four Types — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p8.mp4,[MEF W3.4 P8] The LATE Theorem and the IV Table,Week 3 — Causal Inference,"The LATE Theorem and the IV Table — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p9.mp4,[MEF W3.4 P9] Weak Instruments: When the Lever Barely Moves,Week 3 — Causal Inference,"Weak Instruments: When the Lever Barely Moves — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch34-p10.mp4,[MEF W3.4 P10] The Code and What to Carry Forward,Week 3 — Causal Inference,"The Code and What to Carry Forward — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p1.mp4,[MEF W3.5 P1] Reading an IV Paper: The First Two Questions,Week 3 — Causal Inference,"Reading an IV Paper: The First Two Questions — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p2.mp4,"[MEF W3.5 P2] Exclusion, Compliers, and Identification",Week 3 — Causal Inference,"Exclusion, Compliers, and Identification — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p3.mp4,[MEF W3.5 P3] The Weak-Instrument Pathology,Week 3 — Causal Inference,"The Weak-Instrument Pathology — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p4.mp4,[MEF W3.5 P4] Quarter of Birth and the Anderson–Rubin Idea,Week 3 — Causal Inference,"Quarter of Birth and the Anderson–Rubin Idea — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p5.mp4,[MEF W3.5 P5] Anderson–Rubin: Why It Works and Its Weird Shapes,Week 3 — Causal Inference,"Anderson–Rubin: Why It Works and Its Weird Shapes — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p6.mp4,[MEF W3.5 P6] The Overidentification Test,Week 3 — Causal Inference,"The Overidentification Test — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p7.mp4,[MEF W3.5 P7] Many-Instruments Bias: When More Is Worse,Week 3 — Causal Inference,"Many-Instruments Bias: When More Is Worse — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p8.mp4,[MEF W3.5 P8] Reproducing the Disaster in Code,Week 3 — Causal Inference,"Reproducing the Disaster in Code — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch35-p9.mp4,[MEF W3.5 P9] The IV Reader's Ledger and What Comes Next,Week 3 — Causal Inference,"The IV Reader's Ledger and What Comes Next — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab3-p1.mp4,[MEF W3.L P1] Lab 3 — Build the Weak-IV Disaster,Week 3 — Causal Inference,"Lab 3 — Build the Weak-IV Disaster — ASSIP Empirical Finance Camp. Part 1 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab3-p2.mp4,[MEF W3.L P2] The DGP and the OLS Bias,Week 3 — Causal Inference,"The DGP and the OLS Bias — ASSIP Empirical Finance Camp. Part 2 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab3-p3.mp4,[MEF W3.L P3] 2SLS by Hand on a Single Draw,Week 3 — Causal Inference,"2SLS by Hand on a Single Draw — ASSIP Empirical Finance Camp. Part 3 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab3-p4.mp4,"[MEF W3.L P4] The Monte Carlo — Coverage Fails, AR Rescues",Week 3 — Causal Inference,"The Monte Carlo — Coverage Fails, AR Rescues — ASSIP Empirical Finance Camp. Part 4 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab3-p5.mp4,[MEF W3.L P5] Effective F and the Strong-Instrument Contrast,Week 3 — Causal Inference,"Effective F and the Strong-Instrument Contrast — ASSIP Empirical Finance Camp. Part 5 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor3-p1.mp4,[MEF W3.M P1] Natural Experiments: Finding the Lever Nature Pulled,Week 3 — Causal Inference,"Natural Experiments: Finding the Lever Nature Pulled — ASSIP Empirical Finance Camp. Part 1 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor3-p2.mp4,[MEF W3.M P2] Pillar One: As-Good-As-Random Assignment,Week 3 — Causal Inference,"Pillar One: As-Good-As-Random Assignment — ASSIP Empirical Finance Camp. Part 2 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor3-p3.mp4,[MEF W3.M P3] Pillar Two: The Exclusion Restriction,Week 3 — Causal Inference,"Pillar Two: The Exclusion Restriction — ASSIP Empirical Finance Camp. Part 3 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor3-p4.mp4,"[MEF W3.M P4] Pillar Three: Compliers, and How to Read a Design",Week 3 — Causal Inference,"Pillar Three: Compliers, and How to Read a Design — ASSIP Empirical Finance Camp. Part 4 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor3-p5.mp4,[MEF W3.M P5] A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk,Week 3 — Causal Inference,"A Real Regulatory Pilot: Short-Sale Constraints and Crash Risk — ASSIP Empirical Finance Camp. Part 5 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch41-p1.mp4,[MEF W4.1 P1] Difference-in-Differences: The 2×2,Week 4 — Quasi-Experiments,"Difference-in-Differences: The 2×2 — ASSIP Empirical Finance Camp. Part 1 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch41-p2.mp4,[MEF W4.1 P2] Potential Outcomes and Parallel Trends,Week 4 — Quasi-Experiments,"Potential Outcomes and Parallel Trends — ASSIP Empirical Finance Camp. Part 2 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch41-p3.mp4,[MEF W4.1 P3] DiD as One Regression Coefficient,Week 4 — Quasi-Experiments,"DiD as One Regression Coefficient — ASSIP Empirical Finance Camp. Part 3 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch41-p4.mp4,[MEF W4.1 P4] Event Studies: Letting the Effect Breathe,Week 4 — Quasi-Experiments,"Event Studies: Letting the Effect Breathe — ASSIP Empirical Finance Camp. Part 4 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch41-p5.mp4,[MEF W4.1 P5] Pre-Trends and Clustered Inference,Week 4 — Quasi-Experiments,"Pre-Trends and Clustered Inference — ASSIP Empirical Finance Camp. Part 5 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch41-p6.mp4,[MEF W4.1 P6] The Crack in the 2×2,Week 4 — Quasi-Experiments,"The Crack in the 2×2 — ASSIP Empirical Finance Camp. Part 6 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p1.mp4,[MEF W4.2 P1] The Staggered-Adoption Crisis: Framing,Week 4 — Quasi-Experiments,"The Staggered-Adoption Crisis: Framing — ASSIP Empirical Finance Camp. Part 1 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p2.mp4,[MEF W4.2 P2] The Result in One Plain Sentence,Week 4 — Quasi-Experiments,"The Result in One Plain Sentence — ASSIP Empirical Finance Camp. Part 2 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p3.mp4,[MEF W4.2 P3] Why TWFE Looks Innocent — and Where the Trap Is Set,Week 4 — Quasi-Experiments,"Why TWFE Looks Innocent — and Where the Trap Is Set — ASSIP Empirical Finance Camp. Part 3 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p4.mp4,[MEF W4.2 P4] Why It Hid for Thirty Years — and the Smallest Broken World,Week 4 — Quasi-Experiments,"Why It Hid for Thirty Years — and the Smallest Broken World — ASSIP Empirical Finance Camp. Part 4 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p5.mp4,"[MEF W4.2 P5] The Sign Flip, Live",Week 4 — Quasi-Experiments,"The Sign Flip, Live — ASSIP Empirical Finance Camp. Part 5 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p6.mp4,[MEF W4.2 P6] Goodman-Bacon: The Four Kinds of 2x2,Week 4 — Quasi-Experiments,"Goodman-Bacon: The Four Kinds of 2x2 — ASSIP Empirical Finance Camp. Part 6 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p7.mp4,[MEF W4.2 P7] Goodman-Bacon: The Weights and the Punchline,Week 4 — Quasi-Experiments,"Goodman-Bacon: The Weights and the Punchline — ASSIP Empirical Finance Camp. Part 7 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p8.mp4,"[MEF W4.2 P8] The Negative-Weights Problem, in Full Generality",Week 4 — Quasi-Experiments,"The Negative-Weights Problem, in Full Generality — ASSIP Empirical Finance Camp. Part 8 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p9.mp4,[MEF W4.2 P9] The Shared Fix: Clean Controls and Transparent Aggregation,Week 4 — Quasi-Experiments,"The Shared Fix: Clean Controls and Transparent Aggregation — ASSIP Empirical Finance Camp. Part 9 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p10.mp4,[MEF W4.2 P10] Callaway–Sant'Anna: The Group-Time ATT,Week 4 — Quasi-Experiments,"Callaway–Sant'Anna: The Group-Time ATT — ASSIP Empirical Finance Camp. Part 10 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p11.mp4,[MEF W4.2 P11] Aggregating the Grid — and Recovering the Truth,Week 4 — Quasi-Experiments,"Aggregating the Grid — and Recovering the Truth — ASSIP Empirical Finance Camp. Part 11 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p12.mp4,"[MEF W4.2 P12] Two More Routes, and the Code",Week 4 — Quasi-Experiments,"Two More Routes, and the Code — ASSIP Empirical Finance Camp. Part 12 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch42-p13.mp4,[MEF W4.2 P13] What to Carry Forward — and Your Turn,Week 4 — Quasi-Experiments,"What to Carry Forward — and Your Turn — ASSIP Empirical Finance Camp. Part 13 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p1.mp4,[MEF W4.3 P1] Regression Discontinuity: The Jump Is the Effect,Week 4 — Quasi-Experiments,"Regression Discontinuity: The Jump Is the Effect — ASSIP Empirical Finance Camp. Part 1 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p2.mp4,[MEF W4.3 P2] Local Randomization and the Continuity Assumption,Week 4 — Quasi-Experiments,"Local Randomization and the Continuity Assumption — ASSIP Empirical Finance Camp. Part 2 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p3.mp4,[MEF W4.3 P3] Sharp RD: The Estimand,Week 4 — Quasi-Experiments,"Sharp RD: The Estimand — ASSIP Empirical Finance Camp. Part 3 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p4.mp4,"[MEF W4.3 P4] A Worked Number, and When the Cutoff Only Nudges",Week 4 — Quasi-Experiments,"A Worked Number, and When the Cutoff Only Nudges — ASSIP Empirical Finance Camp. Part 4 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p5.mp4,[MEF W4.3 P5] Fuzzy RD Is Instrumental Variables,Week 4 — Quasi-Experiments,"Fuzzy RD Is Instrumental Variables — ASSIP Empirical Finance Camp. Part 5 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p6.mp4,[MEF W4.3 P6] Why Global Polynomials Are a Trap,Week 4 — Quasi-Experiments,"Why Global Polynomials Are a Trap — ASSIP Empirical Finance Camp. Part 6 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p7.mp4,[MEF W4.3 P7] The Fix: Local Linear Regression,Week 4 — Quasi-Experiments,"The Fix: Local Linear Regression — ASSIP Empirical Finance Camp. Part 7 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p8.mp4,[MEF W4.3 P8] Bandwidth: The Bias–Variance Trade-off,Week 4 — Quasi-Experiments,"Bandwidth: The Bias–Variance Trade-off — ASSIP Empirical Finance Camp. Part 8 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p9.mp4,[MEF W4.3 P9] IK and CCT: Choosing the Bandwidth,Week 4 — Quasi-Experiments,"IK and CCT: Choosing the Bandwidth — ASSIP Empirical Finance Camp. Part 9 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p10.mp4,[MEF W4.3 P10] How to Read an RD Plot,Week 4 — Quasi-Experiments,"How to Read an RD Plot — ASSIP Empirical Finance Camp. Part 10 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p11.mp4,[MEF W4.3 P11] The McCrary Density Test,Week 4 — Quasi-Experiments,"The McCrary Density Test — ASSIP Empirical Finance Camp. Part 11 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p12.mp4,[MEF W4.3 P12] The Full Validity Checklist,Week 4 — Quasi-Experiments,"The Full Validity Checklist — ASSIP Empirical Finance Camp. Part 12 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch43-p13.mp4,"[MEF W4.3 P13] The Russell Wrinkle, the Code, and Takeaways",Week 4 — Quasi-Experiments,"The Russell Wrinkle, the Code, and Takeaways — ASSIP Empirical Finance Camp. Part 13 of 13
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p1.mp4,[MEF W4.4 P1] Synthetic Control: When You Have One Treated Unit,Week 4 — Quasi-Experiments,"Synthetic Control: When You Have One Treated Unit — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p2.mp4,[MEF W4.4 P2] The Setup and the Estimator,Week 4 — Quasi-Experiments,"The Setup and the Estimator — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p3.mp4,[MEF W4.4 P3] Choosing the Weights: Matching the Pre-Period,Week 4 — Quasi-Experiments,"Choosing the Weights: Matching the Pre-Period — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p4.mp4,"[MEF W4.4 P4] Why Convexity: No Extrapolation, Sparse Weights",Week 4 — Quasi-Experiments,"Why Convexity: No Extrapolation, Sparse Weights — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p5.mp4,[MEF W4.4 P5] The Donor Pool and the Assumptions That Protect It,Week 4 — Quasi-Experiments,"The Donor Pool and the Assumptions That Protect It — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p6.mp4,[MEF W4.4 P6] When It Fails: Reading the Pre-Period Fit,Week 4 — Quasi-Experiments,"When It Fails: Reading the Pre-Period Fit — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p7.mp4,[MEF W4.4 P7] Inference With a Sample Size of One: The Placebo Test,Week 4 — Quasi-Experiments,"Inference With a Sample Size of One: The Placebo Test — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p8.mp4,[MEF W4.4 P8] The Permutation p-Value and Its Honest Limits,Week 4 — Quasi-Experiments,"The Permutation p-Value and Its Honest Limits — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p9.mp4,[MEF W4.4 P9] Synthetic DiD: The Best of Both Worlds,Week 4 — Quasi-Experiments,"Synthetic DiD: The Best of Both Worlds — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch44-p10.mp4,[MEF W4.4 P10] The Code and What to Carry Forward,Week 4 — Quasi-Experiments,"The Code and What to Carry Forward — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p1.mp4,[MEF W4.5 P1] Building a Shift-Share Instrument,Week 4 — Quasi-Experiments,"Building a Shift-Share Instrument — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p2.mp4,"[MEF W4.5 P2] The Construction, With Numbers",Week 4 — Quasi-Experiments,"The Construction, With Numbers — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p3.mp4,"[MEF W4.5 P3] The Endogeneity Disease, in Regional Form",Week 4 — Quasi-Experiments,"The Endogeneity Disease, in Regional Form — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p4.mp4,[MEF W4.5 P4] The Finance Flavor: Bank-Lending Shocks,Week 4 — Quasi-Experiments,"The Finance Flavor: Bank-Lending Shocks — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p5.mp4,[MEF W4.5 P5] View I — It's the Shares (GPSS),Week 4 — Quasi-Experiments,"View I — It's the Shares (GPSS) — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p6.mp4,[MEF W4.5 P6] Defending Shares & Rotemberg Weights,Week 4 — Quasi-Experiments,"Defending Shares & Rotemberg Weights — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p7.mp4,[MEF W4.5 P7] View II — It's the Shifts (BHJ),Week 4 — Quasi-Experiments,"View II — It's the Shifts (BHJ) — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p8.mp4,[MEF W4.5 P8] AKM Inference & Back to IV,Week 4 — Quasi-Experiments,"AKM Inference & Back to IV — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p9.mp4,"[MEF W4.5 P9] Two Shots at One Assumption, and the Code",Week 4 — Quasi-Experiments,"Two Shots at One Assumption, and the Code — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch45-p10.mp4,[MEF W4.5 P10] Carry Forward & Closing the Causal Arc,Week 4 — Quasi-Experiments,"Carry Forward & Closing the Causal Arc — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p1.mp4,[MEF W4.L P1] Lab 4 — A Clean DiD on Real Fair-Lending Data,Week 4 — Quasi-Experiments,"Lab 4 — A Clean DiD on Real Fair-Lending Data — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p2.mp4,"[MEF W4.L P2] Two Paths, Goals, and Setup",Week 4 — Quasi-Experiments,"Two Paths, Goals, and Setup — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p3.mp4,[MEF W4.L P3] Path A — Pinning a Vintage and Querying HMDA,Week 4 — Quasi-Experiments,"Path A — Pinning a Vintage and Querying HMDA — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p4.mp4,"[MEF W4.L P4] From Counts to a Denial-Rate Panel, and the Spec",Week 4 — Quasi-Experiments,"From Counts to a Denial-Rate Panel, and the Spec — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p5.mp4,[MEF W4.L P5] Path B — Building the Synthetic Panel,Week 4 — Quasi-Experiments,"Path B — Building the Synthetic Panel — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p6.mp4,"[MEF W4.L P6] Inspect the Design, Then Watch TWFE Fall Short",Week 4 — Quasi-Experiments,"Inspect the Design, Then Watch TWFE Fall Short — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p7.mp4,"[MEF W4.L P7] The Event Study, and Stressing Parallel Trends",Week 4 — Quasi-Experiments,"The Event Study, and Stressing Parallel Trends — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab4-p8.mp4,[MEF W4.L P8] Callaway–Sant'Anna Recovers the Effect,Week 4 — Quasi-Experiments,"Callaway–Sant'Anna Recovers the Effect — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor4-p1.mp4,[MEF W4.M P1] A Disparity Is Not a Finding of Discrimination,Week 4 — Quasi-Experiments,"A Disparity Is Not a Finding of Discrimination — ASSIP Empirical Finance Camp. Part 1 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor4-p2.mp4,[MEF W4.M P2] Over-Controlling and the Counterfactual Target,Week 4 — Quasi-Experiments,"Over-Controlling and the Counterfactual Target — ASSIP Empirical Finance Camp. Part 2 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor4-p3.mp4,[MEF W4.M P3] Clean Designs in Mortgage Data,Week 4 — Quasi-Experiments,"Clean Designs in Mortgage Data — ASSIP Empirical Finance Camp. Part 3 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor4-p4.mp4,[MEF W4.M P4] A Worked Case: Same-Sex Borrowers in HMDA Data,Week 4 — Quasi-Experiments,"A Worked Case: Same-Sex Borrowers in HMDA Data — ASSIP Empirical Finance Camp. Part 4 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor4-p5.mp4,"[MEF W4.M P5] The Missing Score, and Why Design Wins",Week 4 — Quasi-Experiments,"The Missing Score, and Why Design Wins — ASSIP Empirical Finance Camp. Part 5 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p1.mp4,[MEF W5.1 P1] Reading Fama–French 1992: The Research Question,Week 5 — Reading the Canon,"Reading Fama–French 1992: The Research Question — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p2.mp4,"[MEF W5.1 P2] The Twist, and What Kind of Claim This Is",Week 5 — Reading the Canon,"The Twist, and What Kind of Claim This Is — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p3.mp4,[MEF W5.1 P3] The Machinery and the Data,Week 5 — Reading the Canon,"The Machinery and the Data — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p4.mp4,[MEF W5.1 P4] Reading the Sorts: Watch Beta Die,Week 5 — Reading the Canon,"Reading the Sorts: Watch Beta Die — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p5.mp4,[MEF W5.1 P5] The Horse Race and What's Clever,Week 5 — Reading the Canon,"The Horse Race and What's Clever — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p6.mp4,[MEF W5.1 P6] What's Vulnerable: Four Lines of Attack,Week 5 — Reading the Canon,"What's Vulnerable: Four Lines of Attack — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch51-p7.mp4,[MEF W5.1 P7] Rebuild It Yourself: Three Replications & Three Referee Questions,Week 5 — Reading the Canon,"Rebuild It Yourself: Three Replications & Three Referee Questions — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p1.mp4,[MEF W5.2 P1] From the Cross-Section to a Factor Model,Week 5 — Reading the Canon,"From the Cross-Section to a Factor Model — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p2.mp4,[MEF W5.2 P2] Why Time-Series Buys You an Alpha,Week 5 — Reading the Canon,"Why Time-Series Buys You an Alpha — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p3.mp4,[MEF W5.2 P3] Manufacturing the Factors as Portfolios,Week 5 — Reading the Canon,"Manufacturing the Factors as Portfolios — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p4.mp4,[MEF W5.2 P4] The Test Portfolios and the Regression,Week 5 — Reading the Canon,"The Test Portfolios and the Regression — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p5.mp4,[MEF W5.2 P5] The Data and the Look-Ahead Guard,Week 5 — Reading the Canon,"The Data and the Look-Ahead Guard — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p6.mp4,[MEF W5.2 P6] Reading the Tables in Argument Order,Week 5 — Reading the Canon,"Reading the Tables in Argument Order — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p7.mp4,[MEF W5.2 P7] The Intercept Pass and What's Clever,Week 5 — Reading the Canon,"The Intercept Pass and What's Clever — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p8.mp4,[MEF W5.2 P8] Where the Model Is Vulnerable,Week 5 — Reading the Canon,"Where the Model Is Vulnerable — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch52-p9.mp4,[MEF W5.2 P9] Replication Exercises and Referee Questions,Week 5 — Reading the Canon,"Replication Exercises and Referee Questions — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p1.mp4,[MEF W5.3 P1] Reader's Guide: Jegadeesh and Titman 1993 — The Paper That Named Momentum,Week 5 — Reading the Canon,"Reader's Guide: Jegadeesh and Titman 1993 — The Paper That Named Momentum — ASSIP Empirical Finance Camp. Part 1 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p2.mp4,[MEF W5.3 P2] The Research Question: Do Past Winners Keep Winning?,Week 5 — Reading the Canon,"The Research Question: Do Past Winners Keep Winning? — ASSIP Empirical Finance Camp. Part 2 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p3.mp4,[MEF W5.3 P3] Identification: The J/K Sort and the Winner-Minus-Loser Trade,Week 5 — Reading the Canon,"Identification: The J/K Sort and the Winner-Minus-Loser Trade — ASSIP Empirical Finance Camp. Part 3 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p4.mp4,[MEF W5.3 P4] The Overlapping-Portfolio Trick and Its Serial-Correlation Cost,Week 5 — Reading the Canon,"The Overlapping-Portfolio Trick and Its Serial-Correlation Cost — ASSIP Empirical Finance Camp. Part 4 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p5.mp4,[MEF W5.3 P5] The Data: CRSP Monthly Returns and the J-by-K Grid,Week 5 — Reading the Canon,"The Data: CRSP Monthly Returns and the J-by-K Grid — ASSIP Empirical Finance Camp. Part 5 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p6.mp4,"[MEF W5.3 P6] Reading Order, Part One: The Returns Matrix and the Risk Adjustment",Week 5 — Reading the Canon,"Reading Order, Part One: The Returns Matrix and the Risk Adjustment — ASSIP Empirical Finance Camp. Part 6 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p7.mp4,"[MEF W5.3 P7] Reading Order, Part Two: Sub-Periods, Seasonality, and Long-Horizon Reversal",Week 5 — Reading the Canon,"Reading Order, Part Two: Sub-Periods, Seasonality, and Long-Horizon Reversal — ASSIP Empirical Finance Camp. Part 7 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p8.mp4,"[MEF W5.3 P8] What's Clever: Simplicity, Data Squeezing, and Doing the Skeptic's Work",Week 5 — Reading the Canon,"What's Clever: Simplicity, Data Squeezing, and Doing the Skeptic's Work — ASSIP Empirical Finance Camp. Part 8 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p9.mp4,"[MEF W5.3 P9] What's Vulnerable, Part One: Transaction Costs, Data-Snooping, and Seasonality",Week 5 — Reading the Canon,"What's Vulnerable, Part One: Transaction Costs, Data-Snooping, and Seasonality — ASSIP Empirical Finance Camp. Part 9 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p10.mp4,"[MEF W5.3 P10] What's Vulnerable, Part Two: Risk vs. Behavioral, and Overlapping Inference",Week 5 — Reading the Canon,"What's Vulnerable, Part Two: Risk vs. Behavioral, and Overlapping Inference — ASSIP Empirical Finance Camp. Part 10 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch53-p11.mp4,[MEF W5.3 P11] Replication Exercises and the Referee's Questions,Week 5 — Reading the Canon,"Replication Exercises and the Referee's Questions — ASSIP Empirical Finance Camp. Part 11 of 11
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p1.mp4,[MEF W5.4 P1] Reading Petersen as a Paper: The Question,Week 5 — Reading the Canon,"Reading Petersen as a Paper: The Question — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p2.mp4,[MEF W5.4 P2] Identification by Building the Truth,Week 5 — Reading the Canon,"Identification by Building the Truth — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p3.mp4,[MEF W5.4 P3] Fabricated Data and the Taxonomy,Week 5 — Reading the Canon,"Fabricated Data and the Taxonomy — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p4.mp4,[MEF W5.4 P4] Reading the Tables Column by Column,Week 5 — Reading the Canon,"Reading the Tables Column by Column — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p5.mp4,[MEF W5.4 P5] What's Clever About Petersen,Week 5 — Reading the Canon,"What's Clever About Petersen — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p6.mp4,[MEF W5.4 P6] What's Vulnerable: The Paper's Edges,Week 5 — Reading the Canon,"What's Vulnerable: The Paper's Edges — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch54-p7.mp4,"[MEF W5.4 P7] Replicate It Yourself, and What to Ask Next",Week 5 — Reading the Canon,"Replicate It Yourself, and What to Ask Next — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p1.mp4,[MEF W5.5 P1] Reading BDM 2004: The Research Question,Week 5 — Reading the Canon,"Reading BDM 2004: The Research Question — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p2.mp4,[MEF W5.5 P2] The Placebo-Law Experiment,Week 5 — Reading the Canon,"The Placebo-Law Experiment — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p3.mp4,[MEF W5.5 P3] The Data: A Perfect Crime Scene,Week 5 — Reading the Canon,"The Data: A Perfect Crime Scene — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p4.mp4,"[MEF W5.5 P4] Reading the Tables: Symptom, Mechanism, Cure",Week 5 — Reading the Canon,"Reading the Tables: Symptom, Mechanism, Cure — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p5.mp4,[MEF W5.5 P5] What's Clever About BDM,Week 5 — Reading the Canon,"What's Clever About BDM — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p6.mp4,[MEF W5.5 P6] What's Vulnerable About BDM,Week 5 — Reading the Canon,"What's Vulnerable About BDM — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch55-p7.mp4,[MEF W5.5 P7] Replicating BDM in nb5.5,Week 5 — Reading the Canon,"Replicating BDM in nb5.5 — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor5-p1.mp4,"[MEF W5.M P1] A Paper Is a Chain, Not a Result",Week 5 — Reading the Canon,"A Paper Is a Chain, Not a Result — ASSIP Empirical Finance Camp. Part 1 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor5-p2.mp4,[MEF W5.M P2] From Itch to Question to Design,Week 5 — Reading the Canon,"From Itch to Question to Design — ASSIP Empirical Finance Camp. Part 2 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor5-p3.mp4,"[MEF W5.M P3] Tables That Hide Nothing, Robustness That Kills",Week 5 — Reading the Canon,"Tables That Hide Nothing, Robustness That Kills — ASSIP Empirical Finance Camp. Part 3 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor5-p4.mp4,"[MEF W5.M P4] A Live Paper, and Your Capstone in Miniature",Week 5 — Reading the Canon,"A Live Paper, and Your Capstone in Miniature — ASSIP Empirical Finance Camp. Part 4 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p1.mp4,[MEF W5.R P1] How to Read an Empirical Paper: The Skill of Week 5,Week 5 — Reading the Canon,"How to Read an Empirical Paper: The Skill of Week 5 — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p2.mp4,"[MEF W5.R P2] The Reader's-Guide Template: Question, Identification, Data",Week 5 — Reading the Canon,"The Reader's-Guide Template: Question, Identification, Data — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p3.mp4,"[MEF W5.R P3] The Reader's-Guide Template: Tables, Cleverness, Vulnerability, Replication",Week 5 — Reading the Canon,"The Reader's-Guide Template: Tables, Cleverness, Vulnerability, Replication — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p4.mp4,"[MEF W5.R P4] The Reading-Order Heuristic: Tables First, Prose Last",Week 5 — Reading the Canon,"The Reading-Order Heuristic: Tables First, Prose Last — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p5.mp4,"[MEF W5.R P5] Reading a Finance Table: Columns, Cells, and Stars",Week 5 — Reading the Canon,"Reading a Finance Table: Columns, Cells, and Stars — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p6.mp4,"[MEF W5.R P6] Reading a Finance Table: Fixed Effects, Bottom Rows, and the SE Note",Week 5 — Reading the Canon,"Reading a Finance Table: Fixed Effects, Bottom Rows, and the SE Note — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack5-p7.mp4,[MEF W5.R P7] The Self-Check Rubric and the Road to Your Capstone,Week 5 — Reading the Canon,"The Self-Check Rubric and the Road to Your Capstone — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p1.mp4,[MEF W6.1 P1] KPSS: Measuring the Value of an Idea,"Week 6 — Text, AI & Alt-Data","KPSS: Measuring the Value of an Idea — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p2.mp4,[MEF W6.1 P2] KPSS: Let the Market Value the Patent,"Week 6 — Text, AI & Alt-Data","KPSS: Let the Market Value the Patent — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p3.mp4,[MEF W6.1 P3] KPSS: Scale to Dollars and State the Assumption,"Week 6 — Text, AI & Alt-Data","KPSS: Scale to Dollars and State the Assumption — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p4.mp4,"[MEF W6.1 P4] KPSS: Three Sources, Stitched Together","Week 6 — Text, AI & Alt-Data","KPSS: Three Sources, Stitched Together — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p5.mp4,[MEF W6.1 P5] KPSS: Reading the Exhibits in Order,"Week 6 — Text, AI & Alt-Data","KPSS: Reading the Exhibits in Order — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p6.mp4,[MEF W6.1 P6] KPSS: Three Moves That Make It Clever,"Week 6 — Text, AI & Alt-Data","KPSS: Three Moves That Make It Clever — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p7.mp4,[MEF W6.1 P7] KPSS: Vulnerable Joints — Expectations and Confounds,"Week 6 — Text, AI & Alt-Data","KPSS: Vulnerable Joints — Expectations and Confounds — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p8.mp4,"[MEF W6.1 P8] KPSS: Vulnerable Joints — Selection, Efficiency, Causation","Week 6 — Text, AI & Alt-Data","KPSS: Vulnerable Joints — Selection, Efficiency, Causation — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p9.mp4,[MEF W6.1 P9] KPSS: Build a Piece of the Measure,"Week 6 — Text, AI & Alt-Data","KPSS: Build a Piece of the Measure — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch61-p10.mp4,[MEF W6.1 P10] KPSS: Read Like a Referee,"Week 6 — Text, AI & Alt-Data","KPSS: Read Like a Referee — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p1.mp4,[MEF W6.2 P1] What Industry Is a Company In?,"Week 6 — Text, AI & Alt-Data","What Industry Is a Company In? — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p2.mp4,[MEF W6.2 P2] The Research Question,"Week 6 — Text, AI & Alt-Data","The Research Question — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p3.mp4,[MEF W6.2 P3] From Filings to Vectors,"Week 6 — Text, AI & Alt-Data","From Filings to Vectors — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p4.mp4,[MEF W6.2 P4] The Cosine and the TNIC Network,"Week 6 — Text, AI & Alt-Data","The Cosine and the TNIC Network — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p5.mp4,[MEF W6.2 P5] The Data Behind the Measure,"Week 6 — Text, AI & Alt-Data","The Data Behind the Measure — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p6.mp4,[MEF W6.2 P6] Table-by-Table Reading Order,"Week 6 — Text, AI & Alt-Data","Table-by-Table Reading Order — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p7.mp4,[MEF W6.2 P7] What's Clever,"Week 6 — Text, AI & Alt-Data","What's Clever — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p8.mp4,[MEF W6.2 P8] What's Vulnerable,"Week 6 — Text, AI & Alt-Data","What's Vulnerable — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch62-p9.mp4,[MEF W6.2 P9] Replication and Where Week 6 Goes,"Week 6 — Text, AI & Alt-Data","Replication and Where Week 6 Goes — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p1.mp4,[MEF W6.3 P1] When Is a Liability Not a Liability?,"Week 6 — Text, AI & Alt-Data","When Is a Liability Not a Liability? — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p2.mp4,[MEF W6.3 P2] The Bag-of-Words Model,"Week 6 — Text, AI & Alt-Data","The Bag-of-Words Model — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p3.mp4,[MEF W6.3 P3] Validation as Identification,"Week 6 — Text, AI & Alt-Data","Validation as Identification — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p4.mp4,[MEF W6.3 P4] The Data and the Public Dictionary,"Week 6 — Text, AI & Alt-Data","The Data and the Public Dictionary — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p5.mp4,[MEF W6.3 P5] Reading the Paper in the Right Order,"Week 6 — Text, AI & Alt-Data","Reading the Paper in the Right Order — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p6.mp4,[MEF W6.3 P6] What's Clever,"Week 6 — Text, AI & Alt-Data","What's Clever — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p7.mp4,[MEF W6.3 P7] What's Vulnerable: Context and Drift,"Week 6 — Text, AI & Alt-Data","What's Vulnerable: Context and Drift — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p8.mp4,"[MEF W6.3 P8] Look-Ahead, Parsing, and the Bridge to LLMs","Week 6 — Text, AI & Alt-Data","Look-Ahead, Parsing, and the Bridge to LLMs — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch63-p9.mp4,[MEF W6.3 P9] Replication Exercises and What to Ask Next,"Week 6 — Text, AI & Alt-Data","Replication Exercises and What to Ask Next — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p1.mp4,[MEF W6.4 P1] Does the Algorithm Cure Discrimination?,"Week 6 — Text, AI & Alt-Data","Does the Algorithm Cure Discrimination? — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p2.mp4,[MEF W6.4 P2] Two Bets on Identification,"Week 6 — Text, AI & Alt-Data","Two Bets on Identification — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p3.mp4,[MEF W6.4 P3] The Data — and the Missing Credit Score,"Week 6 — Text, AI & Alt-Data","The Data — and the Missing Credit Score — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p4.mp4,[MEF W6.4 P4] Reading Both Papers Table by Table,"Week 6 — Text, AI & Alt-Data","Reading Both Papers Table by Table — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p5.mp4,[MEF W6.4 P5] What's Clever in Each Paper,"Week 6 — Text, AI & Alt-Data","What's Clever in Each Paper — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p6.mp4,[MEF W6.4 P6] What's Vulnerable — Pushing Back Like a Referee,"Week 6 — Text, AI & Alt-Data","What's Vulnerable — Pushing Back Like a Referee — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch64-p7.mp4,[MEF W6.4 P7] Replicate It Yourself on HMDA,"Week 6 — Text, AI & Alt-Data","Replicate It Yourself on HMDA — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p1.mp4,[MEF W6.5 P1] The AI Co-Pilot for Research: The Stakes,"Week 6 — Text, AI & Alt-Data","The AI Co-Pilot for Research: The Stakes — ASSIP Empirical Finance Camp. Part 1 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p2.mp4,"[MEF W6.5 P2] Co-Pilot, Not Autopilot: Where It Helps","Week 6 — Text, AI & Alt-Data","Co-Pilot, Not Autopilot: Where It Helps — ASSIP Empirical Finance Camp. Part 2 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p3.mp4,[MEF W6.5 P3] Prompt Patterns: Extraction and Citing Sources,"Week 6 — Text, AI & Alt-Data","Prompt Patterns: Extraction and Citing Sources — ASSIP Empirical Finance Camp. Part 3 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p4.mp4,[MEF W6.5 P4] Prompt Patterns: Code Review and Rubrics,"Week 6 — Text, AI & Alt-Data","Prompt Patterns: Code Review and Rubrics — ASSIP Empirical Finance Camp. Part 4 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p5.mp4,[MEF W6.5 P5] Retrieval-Augmented Generation: Chunk and Embed,"Week 6 — Text, AI & Alt-Data","Retrieval-Augmented Generation: Chunk and Embed — ASSIP Empirical Finance Camp. Part 5 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p6.mp4,"[MEF W6.5 P6] RAG: Retrieve, Ground, and Its Limits","Week 6 — Text, AI & Alt-Data","RAG: Retrieve, Ground, and Its Limits — ASSIP Empirical Finance Camp. Part 6 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p7.mp4,[MEF W6.5 P7] An LLM Label Is a Measurement,"Week 6 — Text, AI & Alt-Data","An LLM Label Is a Measurement — ASSIP Empirical Finance Camp. Part 7 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p8.mp4,[MEF W6.5 P8] The Out-of-Sample Validation Protocol,"Week 6 — Text, AI & Alt-Data","The Out-of-Sample Validation Protocol — ASSIP Empirical Finance Camp. Part 8 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p9.mp4,[MEF W6.5 P9] Critical Limits: Fake Citations and Leakage,"Week 6 — Text, AI & Alt-Data","Critical Limits: Fake Citations and Leakage — ASSIP Empirical Finance Camp. Part 9 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p10.mp4,[MEF W6.5 P10] Critical Limits: P-Hacking and Reproducibility,"Week 6 — Text, AI & Alt-Data","Critical Limits: P-Hacking and Reproducibility — ASSIP Empirical Finance Camp. Part 10 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p11.mp4,[MEF W6.5 P11] The APIs: Keys and the Anthropic Messages Call,"Week 6 — Text, AI & Alt-Data","The APIs: Keys and the Anthropic Messages Call — ASSIP Empirical Finance Camp. Part 11 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p12.mp4,"[MEF W6.5 P12] API Knobs, Model Tiers, and the Azure Gateway","Week 6 — Text, AI & Alt-Data","API Knobs, Model Tiers, and the Azure Gateway — ASSIP Empirical Finance Camp. Part 12 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p13.mp4,[MEF W6.5 P13] Audit Logging and the Local Fallback,"Week 6 — Text, AI & Alt-Data","Audit Logging and the Local Fallback — ASSIP Empirical Finance Camp. Part 13 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch65-p14.mp4,"[MEF W6.5 P14] Disclosure, Responsibility, and the Capstone","Week 6 — Text, AI & Alt-Data","Disclosure, Responsibility, and the Capstone — ASSIP Empirical Finance Camp. Part 14 of 14
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor6-p1.mp4,"[MEF W6.M P1] A Text Number Is a Measurement, Not a Fact","Week 6 — Text, AI & Alt-Data","A Text Number Is a Measurement, Not a Fact — ASSIP Empirical Finance Camp. Part 1 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor6-p2.mp4,[MEF W6.M P2] From Transparent to Opaque — and How to Validate,"Week 6 — Text, AI & Alt-Data","From Transparent to Opaque — and How to Validate — ASSIP Empirical Finance Camp. Part 2 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor6-p3.mp4,[MEF W6.M P3] Three Ways AI Fools You — and the Guardrail for Each,"Week 6 — Text, AI & Alt-Data","Three Ways AI Fools You — and the Guardrail for Each — ASSIP Empirical Finance Camp. Part 3 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor6-p4.mp4,[MEF W6.M P4] When the Outcome Itself Is a Measured Construct,"Week 6 — Text, AI & Alt-Data","When the Outcome Itself Is a Measured Construct — ASSIP Empirical Finance Camp. Part 4 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor6-p5.mp4,[MEF W6.M P5] Using AI Responsibly — Your Capstone's Integrity Section,"Week 6 — Text, AI & Alt-Data","Using AI Responsibly — Your Capstone's Integrity Section — ASSIP Empirical Finance Camp. Part 5 of 5
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p1.mp4,[MEF W6.R P1] Reading a Measurement Paper,"Week 6 — Text, AI & Alt-Data","Reading a Measurement Paper — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p2.mp4,[MEF W6.R P2] RAG — Building the Index,"Week 6 — Text, AI & Alt-Data","RAG — Building the Index — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p3.mp4,[MEF W6.R P3] RAG — Answering with Citations,"Week 6 — Text, AI & Alt-Data","RAG — Answering with Citations — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p4.mp4,[MEF W6.R P4] A Prompt-Pattern Catalog for Research,"Week 6 — Text, AI & Alt-Data","A Prompt-Pattern Catalog for Research — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p5.mp4,[MEF W6.R P5] An LLM Label Is a Measurement — The Gold Set,"Week 6 — Text, AI & Alt-Data","An LLM Label Is a Measurement — The Gold Set — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p6.mp4,"[MEF W6.R P6] Precision, Recall, F1, and Kappa","Week 6 — Text, AI & Alt-Data","Precision, Recall, F1, and Kappa — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p7.mp4,"[MEF W6.R P7] Capstone Rules — Disclose, Reproduce, Leakage","Week 6 — Text, AI & Alt-Data","Capstone Rules — Disclose, Reproduce, Leakage — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+rgpack6-p8.mp4,[MEF W6.R P8] Data Governance & Week Wrap-Up,"Week 6 — Text, AI & Alt-Data","Data Governance & Week Wrap-Up — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p1.mp4,[MEF W7.1 P1] From Puzzle to Researchable Question,Week 7 — Your Project I,"From Puzzle to Researchable Question — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p2.mp4,[MEF W7.1 P2] The Four-Slot Hypothesis Grammar,Week 7 — Your Project I,"The Four-Slot Hypothesis Grammar — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p3.mp4,[MEF W7.1 P3] So What? Who Cares?,Week 7 — Your Project I,"So What? Who Cares? — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p4.mp4,[MEF W7.1 P4] What's New? — Novelty and Order,Week 7 — Your Project I,"What's New? — Novelty and Order — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p5.mp4,[MEF W7.1 P5] Identification: Running the Catalog Backwards,Week 7 — Your Project I,"Identification: Running the Catalog Backwards — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p6.mp4,"[MEF W7.1 P6] Three Designs, and the Honest Descriptive Out",Week 7 — Your Project I,"Three Designs, and the Honest Descriptive Out — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p7.mp4,[MEF W7.1 P7] Feasibility — What You Can Actually Finish,Week 7 — Your Project I,"Feasibility — What You Can Actually Finish — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p8.mp4,"[MEF W7.1 P8] The Fast Scan, AI Co-Pilot on a Leash",Week 7 — Your Project I,"The Fast Scan, AI Co-Pilot on a Leash — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p9.mp4,"[MEF W7.1 P9] The Cast's Five Projects, and Devon's Pipeline",Week 7 — Your Project I,"The Cast's Five Projects, and Devon's Pipeline — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch71-p10.mp4,"[MEF W7.1 P10] Priya's Pipeline, the Rubric, and Your Turn",Week 7 — Your Project I,"Priya's Pipeline, the Rubric, and Your Turn — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p1.mp4,[MEF W7.2 P1] A Question Is Not a Dataset,Week 7 — Your Project I,"A Question Is Not a Dataset — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p2.mp4,[MEF W7.2 P2] Three Rules for Every Source,Week 7 — Your Project I,"Three Rules for Every Source — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p3.mp4,[MEF W7.2 P3] WRDS Cloud — The Licensed Datasets,Week 7 — Your Project I,"WRDS Cloud — The Licensed Datasets — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p4.mp4,"[MEF W7.2 P4] SEC EDGAR — Filings, Text, and XBRL",Week 7 — Your Project I,"SEC EDGAR — Filings, Text, and XBRL — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p5.mp4,[MEF W7.2 P5] FRED and HMDA — Macro Series and Fair Lending,Week 7 — Your Project I,"FRED and HMDA — Macro Series and Fair Lending — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p6.mp4,[MEF W7.2 P6] 13F and PatentsView — Holdings and Patents,Week 7 — Your Project I,"13F and PatentsView — Holdings and Patents — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p7.mp4,"[MEF W7.2 P7] Free Alternatives — yfinance, Stooq, Tiingo",Week 7 — Your Project I,"Free Alternatives — yfinance, Stooq, Tiingo — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch72-p8.mp4,[MEF W7.2 P8] The Anatomy of a Defensible Pull,Week 7 — Your Project I,"The Anatomy of a Defensible Pull — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p1.mp4,[MEF W7.3 P1] Why Pre-Registration Exists,Week 7 — Your Project I,"Why Pre-Registration Exists — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p2.mp4,[MEF W7.3 P2] Directional Hypotheses,Week 7 — Your Project I,"Directional Hypotheses — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p3.mp4,[MEF W7.3 P3] The Primary Specification,Week 7 — Your Project I,"The Primary Specification — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p4.mp4,[MEF W7.3 P4] The Multiple-Testing Plan,Week 7 — Your Project I,"The Multiple-Testing Plan — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p5.mp4,"[MEF W7.3 P5] Falsification, Robustness, and the Hold-Out",Week 7 — Your Project I,"Falsification, Robustness, and the Hold-Out — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p6.mp4,"[MEF W7.3 P6] Time-Stamping, Deviations, and Maya's Plan",Week 7 — Your Project I,"Time-Stamping, Deviations, and Maya's Plan — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p7.mp4,"[MEF W7.3 P7] The Reveal, and Olken's Perils",Week 7 — Your Project I,"The Reveal, and Olken's Perils — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch73-p8.mp4,[MEF W7.3 P8] Where This Goes Next — and Your Plan,Week 7 — Your Project I,"Where This Goes Next — and Your Plan — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p1.mp4,[MEF W7.4 P1] Building the Analysis Dataset: The Crosswalk Problem,Week 7 — Your Project I,"Building the Analysis Dataset: The Crosswalk Problem — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p2.mp4,[MEF W7.4 P2] Merge Discipline: Cardinality Is a Claim,Week 7 — Your Project I,"Merge Discipline: Cardinality Is a Claim — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p3.mp4,[MEF W7.4 P3] Survivorship Bias: The Firms That Vanished,Week 7 — Your Project I,"Survivorship Bias: The Firms That Vanished — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p4.mp4,[MEF W7.4 P4] Look-Ahead Bias and Point-in-Time Discipline,Week 7 — Your Project I,"Look-Ahead Bias and Point-in-Time Discipline — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p5.mp4,"[MEF W7.4 P5] Outliers: Winsorize, Trim, or Neither",Week 7 — Your Project I,"Outliers: Winsorize, Trim, or Neither — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p6.mp4,[MEF W7.4 P6] Missing Data: Why It Is Missing Matters Most,Week 7 — Your Project I,"Missing Data: Why It Is Missing Matters Most — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch74-p7.mp4,"[MEF W7.4 P7] The Build Script: Raw to Analysis, with Row-Count Logging",Week 7 — Your Project I,"The Build Script: Raw to Analysis, with Row-Count Logging — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p1.mp4,[MEF W7.5 P1] The Identification Memo: The Page That Matters Most,Week 7 — Your Project I,"The Identification Memo: The Page That Matters Most — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p2.mp4,[MEF W7.5 P2] Writing the Identifying-Assumption Sentence,Week 7 — Your Project I,"Writing the Identifying-Assumption Sentence — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p3.mp4,"[MEF W7.5 P3] The Threat Menu: OLS, IV, and DiD",Week 7 — Your Project I,"The Threat Menu: OLS, IV, and DiD — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p4.mp4,"[MEF W7.5 P4] The Threat Menu: RD, Synthetic Control, and Using It",Week 7 — Your Project I,"The Threat Menu: RD, Synthetic Control, and Using It — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p5.mp4,[MEF W7.5 P5] The Threats-and-Responses Table,Week 7 — Your Project I,"The Threats-and-Responses Table — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p6.mp4,[MEF W7.5 P6] Testable Threats and Arguable Threats,Week 7 — Your Project I,"Testable Threats and Arguable Threats — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p7.mp4,"[MEF W7.5 P7] Intellectual Honesty: State the Residual, Don't Oversell",Week 7 — Your Project I,"Intellectual Honesty: State the Residual, Don't Oversell — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p8.mp4,"[MEF W7.5 P8] Maya's Worked Memo, End to End",Week 7 — Your Project I,"Maya's Worked Memo, End to End — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch75-p9.mp4,[MEF W7.5 P9] The Bridge to Week 8,Week 7 — Your Project I,"The Bridge to Week 8 — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p1.mp4,"[MEF W7.L P1] Your Data, Reproducibly: The Repository Is the Deliverable",Week 7 — Your Project I,"Your Data, Reproducibly: The Repository Is the Deliverable — ASSIP Empirical Finance Camp. Part 1 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p2.mp4,"[MEF W7.L P2] Tools, and Where the Licensed Data Lives",Week 7 — Your Project I,"Tools, and Where the Licensed Data Lives — ASSIP Empirical Finance Camp. Part 2 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p3.mp4,[MEF W7.L P3] Lay Out the Research Repository,Week 7 — Your Project I,"Lay Out the Research Repository — ASSIP Empirical Finance Camp. Part 3 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p4.mp4,[MEF W7.L P4] The Cohort GitHub Workflow,Week 7 — Your Project I,"The Cohort GitHub Workflow — ASSIP Empirical Finance Camp. Part 4 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p5.mp4,[MEF W7.L P5] The Commit Loop and the Instructor View,Week 7 — Your Project I,"The Commit Loop and the Instructor View — ASSIP Empirical Finance Camp. Part 5 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p6.mp4,"[MEF W7.L P6] Pin the Environment, README, and Data Cards",Week 7 — Your Project I,"Pin the Environment, README, and Data Cards — ASSIP Empirical Finance Camp. Part 6 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p7.mp4,[MEF W7.L P7] The .gitignore Discipline,Week 7 — Your Project I,"The .gitignore Discipline — ASSIP Empirical Finance Camp. Part 7 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab7-p8.mp4,[MEF W7.L P8] File the Pre-Analysis Plan as a Tagged Commit,Week 7 — Your Project I,"File the Pre-Analysis Plan as a Tagged Commit — ASSIP Empirical Finance Camp. Part 8 of 8
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor7-p1.mp4,[MEF W7.M P1] The Funnel Is Mostly a Furnace,Week 7 — Your Project I,"The Funnel Is Mostly a Furnace — ASSIP Empirical Finance Camp. Part 1 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor7-p2.mp4,[MEF W7.M P2] The So-What Test and the Fatal-Flaw Checklist,Week 7 — Your Project I,"The So-What Test and the Fatal-Flaw Checklist — ASSIP Empirical Finance Camp. Part 2 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor7-p3.mp4,[MEF W7.M P3] Two of My Own Funnels,Week 7 — Your Project I,"Two of My Own Funnels — ASSIP Empirical Finance Camp. Part 3 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor7-p4.mp4,[MEF W7.M P4] Now Kill Your Own — and Commit,Week 7 — Your Project I,"Now Kill Your Own — and Commit — ASSIP Empirical Finance Camp. Part 4 of 4
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch81-p1.mp4,[MEF W8.1 P1] The Confirmatory Run,Week 8 — Your Project II,"The Confirmatory Run — ASSIP Empirical Finance Camp. Part 1 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch81-p2.mp4,"[MEF W8.1 P2] The Garden of Forking Paths, Made Visible",Week 8 — Your Project II,"The Garden of Forking Paths, Made Visible — ASSIP Empirical Finance Camp. Part 2 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch81-p3.mp4,[MEF W8.1 P3] Reading the Specification Curve,Week 8 — Your Project II,"Reading the Specification Curve — ASSIP Empirical Finance Camp. Part 3 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch81-p4.mp4,[MEF W8.1 P4] The Cautionary Curve and the Checklist,Week 8 — Your Project II,"The Cautionary Curve and the Checklist — ASSIP Empirical Finance Camp. Part 4 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch81-p5.mp4,[MEF W8.1 P5] When the Specification Curve Lies,Week 8 — Your Project II,"When the Specification Curve Lies — ASSIP Empirical Finance Camp. Part 5 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch81-p6.mp4,[MEF W8.1 P6] The Honest Deviations Log,Week 8 — Your Project II,"The Honest Deviations Log — ASSIP Empirical Finance Camp. Part 6 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p1.mp4,[MEF W8.2 P1] Stress-Testing Your Own Result: The Adversarial Turn,Week 8 — Your Project II,"Stress-Testing Your Own Result: The Adversarial Turn — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p2.mp4,"[MEF W8.2 P2] One Sandwich, Many Standard Errors",Week 8 — Your Project II,"One Sandwich, Many Standard Errors — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p3.mp4,[MEF W8.2 P3] Few Clusters and the Wild Cluster Bootstrap,Week 8 — Your Project II,"Few Clusters and the Wild Cluster Bootstrap — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p4.mp4,[MEF W8.2 P4] Placebo Tests: Fake Treatment Dates,Week 8 — Your Project II,"Placebo Tests: Fake Treatment Dates — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p5.mp4,[MEF W8.2 P5] Placebo Tests: Fake Units and Fake Outcomes,Week 8 — Your Project II,"Placebo Tests: Fake Units and Fake Outcomes — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p6.mp4,[MEF W8.2 P6] Sensitivity Analysis: Which Knob Is Your Result Hostage To?,Week 8 — Your Project II,"Sensitivity Analysis: Which Knob Is Your Result Hostage To? — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p7.mp4,"[MEF W8.2 P7] Multiple-Testing Corrections, Done Right",Week 8 — Your Project II,"Multiple-Testing Corrections, Done Right — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p8.mp4,[MEF W8.2 P8] The Oster δ: Reframing the Confounder You Can't Measure,Week 8 — Your Project II,"The Oster δ: Reframing the Confounder You Can't Measure — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p9.mp4,"[MEF W8.2 P9] Reading the Oster δ, and Three Honesty Rules",Week 8 — Your Project II,"Reading the Oster δ, and Three Honesty Rules — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch82-p10.mp4,[MEF W8.2 P10] Assembling the Battery: What a Survivor Looks Like,Week 8 — Your Project II,"Assembling the Battery: What a Survivor Looks Like — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p1.mp4,[MEF W8.3 P1] From Folder to Paper: The Core Reveal,Week 8 — Your Project II,"From Folder to Paper: The Core Reveal — ASSIP Empirical Finance Camp. Part 1 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p2.mp4,[MEF W8.3 P2] The Introduction That Promises,Week 8 — Your Project II,"The Introduction That Promises — ASSIP Empirical Finance Camp. Part 2 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p3.mp4,[MEF W8.3 P3] The One-Sentence Contribution,Week 8 — Your Project II,"The One-Sentence Contribution — ASSIP Empirical Finance Camp. Part 3 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p4.mp4,[MEF W8.3 P4] The Literature Review That Positions,Week 8 — Your Project II,"The Literature Review That Positions — ASSIP Empirical Finance Camp. Part 4 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p5.mp4,"[MEF W8.3 P5] Data, Design, and Results",Week 8 — Your Project II,"Data, Design, and Results — ASSIP Empirical Finance Camp. Part 5 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p6.mp4,"[MEF W8.3 P6] Robustness, Conclusion, and Calibrated Verbs",Week 8 — Your Project II,"Robustness, Conclusion, and Calibrated Verbs — ASSIP Empirical Finance Camp. Part 6 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch83-p7.mp4,[MEF W8.3 P7] Tables That Stand Alone and a Worked Intro,Week 8 — Your Project II,"Tables That Stand Alone and a Worked Intro — ASSIP Empirical Finance Camp. Part 7 of 7
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p1.mp4,[MEF W8.4 P1] What a Referee Is Actually For,Week 8 — Your Project II,"What a Referee Is Actually For — ASSIP Empirical Finance Camp. Part 1 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p2.mp4,[MEF W8.4 P2] Anatomy of a Report: Summary and Lead,Week 8 — Your Project II,"Anatomy of a Report: Summary and Lead — ASSIP Empirical Finance Camp. Part 2 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p3.mp4,"[MEF W8.4 P3] Identification, Specification, Exposition",Week 8 — Your Project II,"Identification, Specification, Exposition — ASSIP Empirical Finance Camp. Part 3 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p4.mp4,"[MEF W8.4 P4] Major, Minor, and the Verdict",Week 8 — Your Project II,"Major, Minor, and the Verdict — ASSIP Empirical Finance Camp. Part 4 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p5.mp4,"[MEF W8.4 P5] Tough on the Work, Kind to the Person",Week 8 — Your Project II,"Tough on the Work, Kind to the Person — ASSIP Empirical Finance Camp. Part 5 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p6.mp4,[MEF W8.4 P6] Devon Referees Maya: The Major Points,Week 8 — Your Project II,"Devon Referees Maya: The Major Points — ASSIP Empirical Finance Camp. Part 6 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p7.mp4,"[MEF W8.4 P7] Devon's Verdict, and What He Did Right",Week 8 — Your Project II,"Devon's Verdict, and What He Did Right — ASSIP Empirical Finance Camp. Part 7 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p8.mp4,[MEF W8.4 P8] Responding to a Referee: The R&R Memo,Week 8 — Your Project II,"Responding to a Referee: The R&R Memo — ASSIP Empirical Finance Camp. Part 8 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p9.mp4,"[MEF W8.4 P9] Concede, Defend, or Bound",Week 8 — Your Project II,"Concede, Defend, or Bound — ASSIP Empirical Finance Camp. Part 9 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p10.mp4,[MEF W8.4 P10] Maya Answers Devon: Bound and Concede,Week 8 — Your Project II,"Maya Answers Devon: Bound and Concede — ASSIP Empirical Finance Camp. Part 10 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p11.mp4,"[MEF W8.4 P11] Maya's Defense, and Why the Memo Works",Week 8 — Your Project II,"Maya's Defense, and Why the Memo Works — ASSIP Empirical Finance Camp. Part 11 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch84-p12.mp4,[MEF W8.4 P12] The Same Skill as Week 5,Week 8 — Your Project II,"The Same Skill as Week 5 — ASSIP Empirical Finance Camp. Part 12 of 12
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p1.mp4,[MEF W8.5 P1] The Eight-Minute Poster Talk: Question and Stakes,Week 8 — Your Project II,"The Eight-Minute Poster Talk: Question and Stakes — ASSIP Empirical Finance Camp. Part 1 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p2.mp4,"[MEF W8.5 P2] The Talk's Spine: Design, Result, Robustness, Contribution",Week 8 — Your Project II,"The Talk's Spine: Design, Result, Robustness, Contribution — ASSIP Empirical Finance Camp. Part 2 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p3.mp4,"[MEF W8.5 P3] One Idea Per Slide, and the Table-to-Figure Translation",Week 8 — Your Project II,"One Idea Per Slide, and the Table-to-Figure Translation — ASSIP Empirical Finance Camp. Part 3 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p4.mp4,[MEF W8.5 P4] Time Budgeting and the Rehearsal That Proves It,Week 8 — Your Project II,"Time Budgeting and the Rehearsal That Proves It — ASSIP Empirical Finance Camp. Part 4 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p5.mp4,[MEF W8.5 P5] Defending Identification: Confounds and Honest Uncertainty,Week 8 — Your Project II,"Defending Identification: Confounds and Honest Uncertainty — ASSIP Empirical Finance Camp. Part 5 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p6.mp4,"[MEF W8.5 P6] Fatal Versus Survivable Critiques, and How to Concede",Week 8 — Your Project II,"Fatal Versus Survivable Critiques, and How to Concede — ASSIP Empirical Finance Camp. Part 6 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p7.mp4,"[MEF W8.5 P7] The One-Click Replication Packet: Data, Code, README",Week 8 — Your Project II,"The One-Click Replication Packet: Data, Code, README — ASSIP Empirical Finance Camp. Part 7 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p8.mp4,"[MEF W8.5 P8] Pinned Environment, Fixed Seed, and the One-Click Build",Week 8 — Your Project II,"Pinned Environment, Fixed Seed, and the One-Click Build — ASSIP Empirical Finance Camp. Part 8 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+ch85-p9.mp4,[MEF W8.5 P9] Reproducibility Is the Credibility: Closing the Camp,Week 8 — Your Project II,"Reproducibility Is the Credibility: Closing the Camp — ASSIP Empirical Finance Camp. Part 9 of 9
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p1.mp4,[MEF W8.L P1] The Capstone Bench: Three Artifacts and One Test,Week 8 — Your Project II,"The Capstone Bench: Three Artifacts and One Test — ASSIP Empirical Finance Camp. Part 1 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p2.mp4,[MEF W8.L P2] The Poster: A Chain That Cannot Drift,Week 8 — Your Project II,"The Poster: A Chain That Cannot Drift — ASSIP Empirical Finance Camp. Part 2 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p3.mp4,"[MEF W8.L P3] Three Skim-Traps, the GMU Theme, and PowerPoint",Week 8 — Your Project II,"Three Skim-Traps, the GMU Theme, and PowerPoint — ASSIP Empirical Finance Camp. Part 3 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p4.mp4,[MEF W8.L P4] Two Roads to the PDF: Overleaf and Local Compile,Week 8 — Your Project II,"Two Roads to the PDF: Overleaf and Local Compile — ASSIP Empirical Finance Camp. Part 4 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p5.mp4,"[MEF W8.L P5] Reading the Build, and the Printed Proof",Week 8 — Your Project II,"Reading the Build, and the Printed Proof — ASSIP Empirical Finance Camp. Part 5 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p6.mp4,"[MEF W8.L P6] The Packet: One Seed, Code in Run-Order",Week 8 — Your Project II,"The Packet: One Seed, Code in Run-Order — ASSIP Empirical Finance Camp. Part 6 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p7.mp4,"[MEF W8.L P7] The One-Click: Makefile, run_all, Honesty Test",Week 8 — Your Project II,"The One-Click: Makefile, run_all, Honesty Test — ASSIP Empirical Finance Camp. Part 7 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p8.mp4,[MEF W8.L P8] The Eight-Minute Talk: The Timed Rehearsal,Week 8 — Your Project II,"The Eight-Minute Talk: The Timed Rehearsal — ASSIP Empirical Finance Camp. Part 8 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p9.mp4,[MEF W8.L P9] Questions: Fatal vs. Survivable Triage,Week 8 — Your Project II,"Questions: Fatal vs. Survivable Triage — ASSIP Empirical Finance Camp. Part 9 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+lab8-p10.mp4,"[MEF W8.L P10] The Checklist, Assessment 8, and the Capstone",Week 8 — Your Project II,"The Checklist, Assessment 8, and the Capstone — ASSIP Empirical Finance Camp. Part 10 of 10
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor8-p1.mp4,[MEF W8.M P1] The Referee Wants a Reason Not to Believe You,Week 8 — Your Project II,"The Referee Wants a Reason Not to Believe You — ASSIP Empirical Finance Camp. Part 1 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor8-p2.mp4,[MEF W8.M P2] Three Families and the One That Kills,Week 8 — Your Project II,"Three Families and the One That Kills — ASSIP Empirical Finance Camp. Part 2 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor8-p3.mp4,[MEF W8.M P3] The Four-Beat Answer and the Robustness Strike,Week 8 — Your Project II,"The Four-Beat Answer and the Robustness Strike — ASSIP Empirical Finance Camp. Part 3 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor8-p4.mp4,"[MEF W8.M P4] Alternatives, the Tell, and the Honest Retreat",Week 8 — Your Project II,"Alternatives, the Tell, and the Honest Retreat — ASSIP Empirical Finance Camp. Part 4 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor8-p5.mp4,[MEF W8.M P5] A Worked Case — Measurement and Selection,Week 8 — Your Project II,"A Worked Case — Measurement and Selection — ASSIP Empirical Finance Camp. Part 5 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."
+mentor8-p6.mp4,"[MEF W8.M P6] Stealing the Interpretation, and Your Defense Brief",Week 8 — Your Project II,"Stealing the Interpretation, and Your Defense Brief — ASSIP Empirical Finance Camp. Part 6 of 6
+Prof. Lei Gao, George Mason University. A research-grade empirical-finance lesson for advanced high-school students."

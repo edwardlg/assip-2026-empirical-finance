@@ -1,9 +1,10 @@
 ---
-title: "Inspect the Design, Then Watch TWFE Fall Short"
 date: "2026-07-13"
 ---
 
-# Inspect the Design, Then Watch TWFE Fall Short {.title}
+## Inspect the Design, Then Watch TWFE Fall Short
+
+- Part 6 — inspect the design, then watch TWFE fall short
 
 ::: notes
 Welcome back to Week Four, the Lab, part six of eight. In part five we built the synthetic panel with a planted, dynamic effect and an honest target near minus one-point-four-nine percentage points. Now, before estimating anything, we look at the design and state the identification argument out loud — then we run static two-way fixed effects first, so you can feel exactly why it is suspect here.
@@ -57,7 +58,7 @@ Now run the static two-way fixed-effects regression from chapter four-point-one:
 What you expect: the two-way fixed-effects coefficient comes out around minus zero-point-eight-one percentage points, against a true mean effect of minus one-point-four-nine — the right sign, but only about fifty-five percent of the truth. It is attenuated, biased toward zero; a policymaker reading minus zero-point-eight-one would conclude the policy did barely more than half what it actually did. Why? Exactly the chapter four-point-two mechanism. With staggered adoption, two-way fixed effects forms forbidden comparisons — it uses already-treated states, the twenty-sixteen wave, as controls for newly-treated states, the twenty-twenty wave, during years when the twenty-sixteen wave's own effect is still deepening. That still-moving effect of the contaminated control gets subtracted, dragging the pooled coefficient toward zero. Here the sign survives only because genuine never-adopting controls dilute the forbidden comparisons; with no never-treated unit at all, the sign can flip outright.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

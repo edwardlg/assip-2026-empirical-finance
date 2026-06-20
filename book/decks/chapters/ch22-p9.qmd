@@ -1,10 +1,11 @@
 ---
-title: "Unbiased Versus Consistent: The Lesson That Reorders Everything"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Unbiased Versus Consistent: The Lesson That Reorders Everything {.title}
+## Unbiased Versus Consistent: The Lesson That Reorders Everything
+
+- Part 9 — unbiased versus consistent, and the chapter's architecture
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part nine of nine, the finale. In part eight we named the smallest-variance property efficiency and warned that it presumes unbiasedness. Now we follow that trap to the chapter's deepest lesson — the distinction between unbiased and consistent — and see why it reorders the whole contract.
@@ -58,7 +59,7 @@ Here is a number that should frighten you. Suppose rates depend on income only t
 Step back and see the architecture. We signed a five-clause contract paying out in three tiers: assumptions one through three gave unbiasedness, adding four gave the BLUE guarantee, adding five gives exact inference. The unbiased-versus-consistent distinction tells us which violations are annoying and which are existential. A failure of homoskedasticity costs efficiency and honest standard errors — fixable in Chapter two-point-four. A failure of zero conditional mean costs the truth itself, and no data fixes it. Best is a promise about the tightness of your arrows, not whether you aim at the right target. The rest of Week Two tours the broken clauses: Chapter two-point-three relaxes functional form, Chapter two-point-four confronts heteroskedasticity, Chapter two-point-five stares down the master fault.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

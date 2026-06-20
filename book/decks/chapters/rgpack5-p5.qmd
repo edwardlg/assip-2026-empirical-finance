@@ -1,9 +1,10 @@
 ---
-title: "Reading a Finance Table: Columns, Cells, and Stars"
 date: "2026-07-20"
 ---
 
-# Reading a Finance Table: Columns, Cells, and Stars {.title}
+## Reading a Finance Table: Columns, Cells, and Stars
+
+- Part 5 — read a finance table: columns, cells, and significance stars
 
 ::: notes
 Welcome back to How to Read an Empirical Paper, part five of seven. In part four we learned to go to the tables first. Now we learn to actually read one. Empirical-finance tables look forbidding the first time and identical to each other ever after, because they obey strict, unwritten conventions. Learn them once. We will use a mock table for Maya, who is asking whether a borrower's debt-to-income ratio predicts loan default, controlling for credit score, with loans organized within lenders.
@@ -11,11 +12,19 @@ Welcome back to How to Read an Empirical Paper, part five of seven. In part four
 
 ## A Mock Table for Maya
 
-- Outcome: default within 24 months (1 = defaulted)
-- Key regressor: **debt-to-income** ratio
-- Columns (1)–(3) add controls and fixed effects
-- Standard errors clustered by lender, in parentheses
-- $R^2$ and $N$ along the bottom
+| | (1) | (2) | (3) |
+|---|---|---|---|
+| **Debt-to-income** | 0.042*** | 0.038*** | 0.021** |
+| | (0.011) | (0.010) | (0.009) |
+| **Credit score** | | −0.015*** | −0.012*** |
+| | | (0.004) | (0.004) |
+| **Constant** | 0.118*** | 0.640*** | |
+| Lender FE | No | No | Yes |
+| Year FE | No | No | Yes |
+| $R^2$ | 0.04 | 0.11 | 0.19 |
+| $N$ | 18,402 | 18,402 | 18,402 |
+
+*DV: default (1 = defaulted within 24 months). SEs clustered by lender. \*\*\* p<0.01, \*\* p<0.05, \* p<0.10.*
 
 ::: notes
 Here is the setup. The dependent variable is default — coded one if the loan defaulted within twenty-four months. The key regressor is the debt-to-income ratio. There are three columns, numbered one through three, each adding controls or fixed effects as you move right. Standard errors are clustered by lender and printed in parentheses. And along the bottom run the R-squared and the number of observations, capital N. With that skeleton in mind, let us read the table the way a professional does, top to bottom and corner to corner.
@@ -57,7 +66,7 @@ Second convention: each cell is a coefficient with its standard error stacked un
 Third convention: stars are significance shorthand. The asterisks encode the p-value against the threshold given in the note: here three stars means p below zero-point-zero-one, two stars means p below zero-point-zero-five, and one star means p below zero-point-one-zero. But the exact mapping varies by journal — sometimes one star means ten percent, sometimes five — so the rule is iron: read the note, never assume the stars. And remember Week Two's discipline: stars measure statistical significance, not economic importance. A three-star coefficient of zero-point-zero-zero-zero-two may be precisely estimated and economically trivial.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

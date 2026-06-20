@@ -1,10 +1,11 @@
 ---
-title: "Missing Data: Why It Is Missing Matters Most"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Missing Data: Why It Is Missing Matters Most {.title}
+## Missing Data: Why It Is Missing Matters Most
+
+- Part 6 — missing data: ask why, not how much
 
 ::: notes
 Welcome back to Building the Analysis Dataset, part six of seven. In part five we handled outliers by letting their source decide the fix. Now we switch to Maya's mortgage-disclosure work, the better teacher for the second content hazard: missing data. Many fields are blank, and the tempting move is to drop every incomplete row and move on. This part shows why that one keystroke is the single most common way to silently bias a study, and what to do instead.
@@ -46,7 +47,7 @@ The taxonomy. Missing completely at random, MCAR, means missingness is independe
 So what do you actually do? Two honest options, plus one rule. Listwise deletion — dropping any row with a missing value in a variable your regression uses — is fine if you have argued the missingness is plausibly completely-at-random or at-random given controls, and you report how many rows you lost and check that the survivors are not systematically different. Imputation — filling missing values with a model-based estimate, the column mean or a regression prediction — keeps your N but injects assumptions, and a naive mean-imputation distorts variances and correlations. Whichever you choose, the rule is absolute: never silently drop. Probe first — group by whether income is missing and compare denial rates. If applications with missing income are denied at a wildly different rate, missingness is informative, not random, and dropping those rows changes the population you study. Then decide deliberately and log it. That is the difference between cleaning and hiding.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

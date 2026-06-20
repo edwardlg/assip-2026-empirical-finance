@@ -1,9 +1,10 @@
 ---
-title: "The Cosine and the TNIC Network"
 date: "2026-07-27"
 ---
 
-# The Cosine and the TNIC Network {.title}
+## The Cosine and the TNIC Network
+
+- Part 4 — cosine similarity, then the TNIC network
 
 ::: notes
 Welcome back to Chapter six-point-two, part four of nine. In part three we turned each firm's product description into a word vector. Now comes the payoff — the moment Chapter one-point-two cashes in. We measure similarity with the cosine, then assemble those similarities into the network that names the paper.
@@ -46,7 +47,7 @@ Step four: build the network. Compute that cosine for every pair of firms in a y
 The third property is the most important: the network is intransitive. A can be similar to B and B similar to C without A being similar to C — the Amazon case, neighbor to both Microsoft on cloud and Walmart on groceries, even though those two are not neighbors of each other. S-I-C cannot represent any of this; T-N-I-C is built to. So the identifying logic of a measurement paper is its validation logic: a text-based definition beats S-I-C and NAICS if it explains outcomes competition should drive — return co-movement, profit margins, competitive responses — that the official codes explain less well, on the same firms in the same years. That is a horse race, not a causal claim. Reading the tables, you are watching that race.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

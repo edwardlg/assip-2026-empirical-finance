@@ -1,9 +1,10 @@
 ---
-title: "Precision, Recall, F1, and Kappa"
 date: "2026-07-27"
 ---
 
-# Precision, Recall, F1, and Kappa {.title}
+## Precision, Recall, F1, and Kappa
+
+- Part 6 — turn four counts into precision, recall, $F_1$, kappa
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part six of eight. In part five we built a hand-labeled gold set, split it into a dev set and a held-out test set, and scored the model with a confusion matrix of four counts. Now we turn those four counts into the numbers you actually report — precision, recall, and F-one — and then add the one number beginners skip but a careful researcher never does: Cohen's kappa, which measures agreement above chance. These are the numbers that decide whether an LLM label is good enough to put into a regression.
@@ -50,7 +51,7 @@ $$\kappa=\frac{p_o-p_e}{1-p_e}$$
 One number more, the one beginners skip. Accuracy and F-one compare the model to humans as if the humans were infallible — but if your two human labelers only agreed seventy percent of the time, a model that agrees with the gold set seventy-five percent of the time is barely better than the noise floor. So report inter-rater agreement with Cohen's kappa, which measures agreement above what you would get by chance. Kappa equals p-observed minus p-expected, all over one minus p-expected, where p-observed is the fraction of items two raters labeled the same and p-expected is the fraction they would match by chance given each rater's label frequencies. Kappa of one is perfect; kappa of zero is chance-level. Compute it twice: between the two humans, to know whether your rubric is even well-defined; and between the LLM and a human, to know whether the model is as reliable as a second annotator. If human-human kappa is zero-point-five, the task is ambiguous — fix the rubric before blaming the model. If LLM-human kappa approaches human-human kappa, the model is a credible annotator.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "How to Read an RD Plot"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# How to Read an RD Plot {.title}
+## How to Read an RD Plot
+
+- Part 10 — reading an RD plot like a referee
 
 ::: notes
 Welcome back to Chapter four-point-three, part ten of thirteen. In part nine we automated the bandwidth and learned to report robust intervals. Now the most visual part of the design: a good RD plot is half the argument. We cover its three layers, then how to read one like a skeptical referee.
@@ -34,7 +35,7 @@ Regression discontinuity is the most visual design in this book, and a good plot
 How do you read it like a referee? First, is there a visible jump at the cutoff, and only at the cutoff? A jump somewhere other than the cutoff is a warning that your effect might be an artifact of functional form. Second, are the trends on each side smooth and gentle, or is a high-order wiggle being fit? Gentle near-linear trends are reassuring; a curve doing gymnastics to hit the boundary is the Gelman-Imbens pathology made visible. Third, for a fuzzy design, plot the treatment too — make a second plot with the treatment probability on the vertical axis and confirm there is a real jump at the cutoff, which is your first stage. Fourth, plot pre-determined covariates the same way: they should not jump. A good regression-discontinuity paper is a wall of these plots, and learning to read them is learning to audit the design.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

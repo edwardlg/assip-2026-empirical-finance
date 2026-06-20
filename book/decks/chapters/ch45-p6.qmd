@@ -1,9 +1,10 @@
 ---
-title: "Defending Shares & Rotemberg Weights"
 date: "2026-07-13"
 ---
 
-# Defending Shares & Rotemberg Weights {.title}
+## Defending Shares & Rotemberg Weights
+
+- Part 6 — when exogenous shares holds; Rotemberg-weight diagnostic
 
 ::: notes
 Welcome back to Chapter four-point-five, part six of ten. In part five we saw the Goldsmith-Pinkham, Sorkin and Swift reframing: the Bartik is a recipe over share-instruments, so exogeneity falls on the shares. Now we ask when that assumption is credible, where it fails for Maya, and the one diagnostic you must remember — Rotemberg weights — which tell you exactly which shares are driving the estimate and therefore where to aim your skepticism.
@@ -35,7 +36,7 @@ $$\hat{\beta}_1^{\text{Bartik}} = \sum_j \hat{\alpha}_j\, \hat{\beta}_{1,j}, \qq
 Here is the diagnostic you must remember. If the Bartik instrument is secretly a weighted combination of share-instruments, then some industries get more weight than others — and the whole estimate could be riding on just a few. Goldsmith-Pinkham, Sorkin and Swift show how to compute Rotemberg weights, one per industry, that decompose the Bartik estimate as a weighted average of the just-identified estimates you would get from each industry-share instrument alone. The headline beta equals the sum over industries of alpha-sub-j times beta-sub-one-j, where the alphas sum to one and beta-sub-one-j is the IV estimate using only industry j's share. The weight alpha-sub-j measures how much that industry's share contributes to and can move the headline number; a few high-magnitude weights typically dominate. This is the shift-share cousin of the negative-weights story you saw in difference-in-differences — a headline estimate is a weighted average of building-block estimates, and you had better look at the weights. The recipe: rank industries by the absolute weight; for the top few, check that the share is plausibly exogenous, that its estimate is not an outlier driving everything, and that the result survives dropping it. Rotemberg weights tell you where to aim your skepticism.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

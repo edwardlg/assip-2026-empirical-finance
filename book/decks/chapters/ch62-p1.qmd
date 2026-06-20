@@ -1,9 +1,15 @@
 ---
-title: "What Industry Is a Company In?"
 date: "2026-07-27"
 ---
 
-# What Industry Is a Company In? {.title}
+## What Industry Is a Company In?
+
+**Learning objectives.** By the end you can:
+
+- Explain why fixed SIC/NAICS codes mislabel real firms
+- Read this as a *measurement* paper, not a causal one
+- Define industries from firms' own 10-K product text
+- Connect text similarity to the Chapter 1.2 cosine
 
 ::: notes
 Welcome to Week Six, Chapter six-point-two, part one of nine. This is our reader's guide to Hoberg and Phillips, two thousand sixteen, "Text-Based Network Industries and Endogenous Product Differentiation," published in the Journal of Political Economy. In this opening part we frame the whole lesson: a deceptively simple question that the paper answers in a radically new way, and one warning that changes how you read it.
@@ -45,7 +51,7 @@ The official answer is a four-digit S-I-C code or a six-digit NAICS code — a n
 One warning before the anatomy. The Week-Five papers were causal — they claimed X causes Y and lived or died on an identifying assumption. This paper is mostly not causal. Its central contribution is a measurement: a new way to define an industry. A measurement paper is judged differently. Not "is the identifying assumption true?" but "is the measure better than what we had, and better at what?" Keep that distinction live; it is the thing most first-time readers get wrong about this paper.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

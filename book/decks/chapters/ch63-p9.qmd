@@ -1,9 +1,10 @@
 ---
-title: "Replication Exercises and What to Ask Next"
 date: "2026-07-27"
 ---
 
-# Replication Exercises and What to Ask Next {.title}
+## Replication Exercises and What to Ask Next
+
+- Part 9 — three replication exercises and questions to carry forward
 
 ::: notes
 Welcome back to Chapter six-point-three, part nine of nine, the finale. In part eight we finished the critique and bridged to large language models. Now we make the paper concrete with three replication exercises, then carry forward the laws and referee questions.
@@ -57,7 +58,7 @@ Exercise three validates out-of-sample, then breaks the method. Split your match
 Carry forward two laws. First, measurement instruments do not transfer across domains without re-validation. Second, every text model, dictionary or transformer, is only as honest as its out-of-sample test. And carry three referee questions. One: is the dictionary's apparent power genuinely out-of-sample, or did the test set help build it? Two: how much of the result is sentiment versus disclosure style, length, and parsing rules, and which controls would you demand? Three: where does bag-of-words break, with negation and conditionals, and over a long filing do those errors average out or bias the score? Go now and run exercise one. Seeing tax and liability dominate a filing's negative word count is the moment the title stops being a riddle and becomes a method.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

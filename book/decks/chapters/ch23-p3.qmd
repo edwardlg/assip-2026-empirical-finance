@@ -1,9 +1,10 @@
 ---
-title: "FWL by Hand: Reproducing the Coefficient"
 date: "2026-06-29"
 ---
 
-# FWL by Hand: Reproducing the Coefficient {.title}
+## FWL by Hand: Reproducing the Coefficient
+
+- Part 3 — hit the multiple-regression coefficient with two simple regressions
 
 ::: notes
 Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part three of eight. In part two we met Leah's six firms, with R&D and firm size deliberately entangled. Now we put the theorem to work on those numbers. We will run the full three-variable regression to get a target, then reproduce its R&D coefficient exactly — using only two simple regressions and one scalar division, never putting R&D and size in the same regression.
@@ -53,7 +54,7 @@ Now the punchline. Run a simple regression of the residualized outcome on the re
 One detail worth pausing on before we prove it. You must residualize both patents and R&D against size. A common mistake is to clean size out of R&D only, then regress raw patents on the cleaned R&D. As it happens, that also gives the right slope here, because the cleaned R&D is orthogonal to size. So you can get away with residualizing only the regressor for the point estimate. But you must residualize both to get the right residuals, the right standard error, and the right R-squared. The clean, symmetric statement — clean both sides — is the one to memorize, and the one the proof in part four delivers.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

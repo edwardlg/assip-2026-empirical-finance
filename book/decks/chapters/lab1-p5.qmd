@@ -1,10 +1,11 @@
 ---
-title: "Measuring the Size of Your Test"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Measuring the Size of Your Test {.title}
+## Measuring the Size of Your Test
+
+- Part 5 — measure the test's empirical size
 
 ::: notes
 Welcome back to Lab one, part five of seven. In part four you wrote a one-proportion z-test and checked it against a library. Now comes the payoff of owning a simulator. The size of a test is its probability of a Type One error — rejecting the null when the null is true. The chapter defined that as alpha; here you stop taking it on faith and measure it.
@@ -58,7 +59,7 @@ Do not be alarmed if the size sits a hair above zero point zero five. The normal
 Now stress the test. Re-measure with a small sample and an off-center null — N equal to twenty-five and p-naught equal to zero point one. The empirical size drifts from zero point zero five, often below it and sometimes erratically. This is the normal approximation breaking down where part three warned, when N times p-naught is small. Finally, a reflection that seeds the last part. Under a true null, the chapter proved the p-value is uniform on zero to one. Histogram the p-values from the fair-coin runs: expect a flat, uniform shape — and a uniform distribution makes the fraction below any threshold alpha exactly alpha. That is why a true null fires at rate alpha by construction.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

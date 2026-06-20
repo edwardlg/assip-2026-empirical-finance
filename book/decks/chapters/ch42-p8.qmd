@@ -1,9 +1,10 @@
 ---
-title: "The Negative-Weights Problem, in Full Generality"
 date: "2026-07-13"
 ---
 
-# The Negative-Weights Problem {.title}
+## The Negative-Weights Problem
+
+- Part 8 — de Chaisemartin-D'Haultfœuille generalize the disease to negative weights
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part eight of thirteen. In part seven, Goodman-Bacon's weights revealed that forbidden comparisons can enter the pooled coefficient with negative weight. Now we generalize that with de Chaisemartin and D'Haultfœuille, in twenty-twenty, who prove the same disease in a far broader setting and state it in the form that became the rallying cry of the literature — the negative-weights problem. Their result strips the problem to its essence.
@@ -53,7 +54,7 @@ Two consequences make this more alarming than Goodman-Bacon's already-bad news. 
 It helps to see these two results as two views of one object. Goodman-Bacon decomposes beta-hat by pairs of cohorts and shows the forbidden later-versus-already-treated pairs are the culprits. de Chaisemartin and D'Haultfœuille decompose the same beta-hat by individual treated cells and show the culprits manifest as negative cell weights. Same disease, two diagnostics. Both point to the identical cause — already-treated units doing control duty — and both point to the identical cure, which is the subject of the rest of the chapter. You can run either diagnostic on real data; together they give you a pair-level picture and a cell-level count of just how contaminated your pooled coefficient is.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

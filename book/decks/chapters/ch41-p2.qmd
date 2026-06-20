@@ -1,9 +1,10 @@
 ---
-title: "Potential Outcomes and Parallel Trends"
 date: "2026-07-13"
 ---
 
-# Potential Outcomes and Parallel Trends {.title}
+## Potential Outcomes and Parallel Trends
+
+- Part 2 — DiD's counterfactual and the parallel-trends assumption
 
 ::: notes
 Welcome to Chapter four-point-one, part two of six. In part one we found the double difference of seventy dollars. Now we do what Week Three trained you to do — refuse to trust a number until it is written in potential outcomes with the assumption that makes it causal. We are now in a panel: each state is observed at each time, so potential outcomes carry two subscripts, unit and time.
@@ -54,7 +55,7 @@ Here is the identifying assumption — the load-bearing wall — parallel trends
 But underline this: parallel trends is an assumption about a counterfactual, and the counterfactual is unobservable. Every left-hand-side term is Y-of-zero for the treated group, including the post period — the world where the regulation never passed. So it can never be tested there. No data confirms the treated state would have tracked the control, because "would have" never occurred — the same un-testability as conditional independence in Week Three. When it fails, you see the wreckage. Suppose the treated state was already on a steeper trajectory, its fire risk worsening faster, unrelated to the regulation. Then absent treatment its premiums would have risen by more than one hundred ten dollars — say one hundred sixty. The true ATT would be only twenty dollars, our seventy-dollar estimate too big by fifty — a pre-existing divergence masquerading as treatment.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

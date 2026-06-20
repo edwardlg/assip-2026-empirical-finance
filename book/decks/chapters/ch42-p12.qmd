@@ -1,9 +1,10 @@
 ---
-title: "Two More Routes, and the Code"
 date: "2026-07-13"
 ---
 
-# Two More Routes to the Same Fix {.title}
+## Two More Routes to the Same Fix
+
+- Part 12 — Sun-Abraham and Borusyak-Jaravel-Spiess; the code
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part twelve of thirteen. In part eleven we aggregated Callaway and Sant'Anna's grid into a robust event study that recovered the truth. Now we see the other two leading estimators reach the same destination by different roads, then run the code that shows the crisis and its cure side by side.
@@ -53,7 +54,7 @@ Three estimators, one principle. Callaway and Sant'Anna assemble clean two-by-tw
 The notebook builds two worlds. World A is the sign-flip world — two states, no never-treated unit — where two-way fixed effects comes out positive, plus zero-point-four-zero, on data where the true effect is negative in every treated cell. That is the sign flip, live, driven by the forbidden comparison that is the only one available when no never-treated unit exists. World B adds a genuine never-treated state N, which lets the clean estimator identify every cohort. There, two-way fixed effects is tamed to a merely attenuated minus one-point-two-three, while the clean two-by-twos recover State E's and State L's effects exactly, for an overall clean effect of minus two-point-five-seven-one — the truth to the decimal. The key line is the clean-control filter: the function compares cohort g only to units whose adoption year is strictly greater than t — never the already-treated.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

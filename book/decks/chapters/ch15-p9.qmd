@@ -1,10 +1,11 @@
 ---
-title: "Confidence Intervals and Effect Size"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Confidence Intervals and Effect Size {.title}
+## Confidence Intervals and Effect Size
+
+- Part 9 — inverting the test, and significance vs. effect size
 
 ::: notes
 Welcome back to Chapter one-point-five, part nine of ten. In part eight we defined the p-value correctly. Now we turn the test inside out into a confidence interval — often the more honest object to report — and then draw the line every empirical scientist must keep straight: statistical significance versus economic significance.
@@ -34,7 +35,7 @@ A p-value answers one question — can I reject this particular null? A confiden
 Here is a scenario that should bother you. Suppose Sam scales the backtest up to one hundred thousand days of simulated data, and finds the same average — but now eight ten-thousandths of a percent — with the standard error tiny because root N is huge. The t-statistic could be five, the p-value microscopic, the result wildly significant. And it would be worthless. Eight ten-thousandths of a percent per day does not survive a single basis point of trading costs. It is a real, detectable, economically meaningless effect. This is the distinction every empirical scientist must keep straight. Statistical significance asks: can I distinguish this effect from zero? It is a statement about precision, largely controlled by sample size. With enough data, almost any effect — however trivial — becomes statistically significant. Effect size, also called economic or practical significance, asks: is the effect large enough to matter? Is the edge big enough, after costs, to be worth trading? That is a question about magnitude, in the units of the problem — and no p-value can answer it. Always report the estimate and its interval, never just stars. Asterisks are not findings.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

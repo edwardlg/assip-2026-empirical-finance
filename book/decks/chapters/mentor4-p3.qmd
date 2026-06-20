@@ -1,9 +1,10 @@
 ---
-title: "Clean Designs in Mortgage Data"
 date: "2026-07-13"
 ---
 
-# Clean Designs in Mortgage Data {.title}
+## Clean Designs in Mortgage Data
+
+- Part 3 — audit studies, DiD, matched comparison, and RD in mortgage data
 
 ::: notes
 Welcome back to the Week Four mentor session on detecting discrimination, part three of five. In part two we settled on the honest target — a counterfactual where only the protected trait flips — and we said that a design, not a longer list of controls, is what constructs it. Now we make that concrete. We will walk through the three ways this week's toolkit builds the missing comparison in real mortgage data, and we will ask of each one the same disciplining question: what same-quality applicant is this design comparing her to, and what makes the comparison clean?
@@ -45,7 +46,7 @@ The first workhorse is difference-in-differences. Suppose you can find a policy 
 The second workhorse is matched comparison. Instead of throwing creditworthiness variables into a linear regression and trusting the functional form, you pair each same-sex application with a different-sex application that looks the same on income, score, loan-to-value, and location — so the pair differs as nearly as possible only in the protected trait. Matching buys you local, like-for-like balance that a linear regression simply assumes into existence; it shrinks the role of observed creditworthiness so the residual disparity is sharper and more credible. The third workhorse is regression discontinuity, from Chapter Four-point-three: at an underwriting cutoff — a hard line on a score or a ratio — applicants just above and just below are near-identical, so the jump in outcomes at the line reads off a treatment effect. Each of these answers the same question: what same-quality applicant are we comparing her to, and why is that comparison clean?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

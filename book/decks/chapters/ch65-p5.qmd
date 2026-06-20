@@ -1,10 +1,11 @@
 ---
-title: "Retrieval-Augmented Generation: Chunk and Embed"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# Retrieval-Augmented Generation: Chunk and Embed {.title}
+## Retrieval-Augmented Generation: Chunk and Embed
+
+- Part 5 — the RAG pipeline: chunk filings, then embed each chunk
 
 ::: notes
 Welcome back to the AI co-pilot for research, part five of fourteen. In part four we finished the four prompt patterns, including cite-or-decline. But that pattern has an obvious hole: it only works if the model has the right source text in front of it. A model's parametric knowledge — the facts baked into its weights during training — is a blurry, lossy compression, with no clean way to separate what it knows from what it confabulates. So instead of asking the model to recall, we hand it the relevant source text at query time and ask it to answer from that. This is retrieval-augmented generation, or R-A-G, the standard architecture for question-answering over a private document collection like a folder of ten-K filings.
@@ -34,7 +35,7 @@ Here is the pipeline in four stages; this part covers the first two. Stage one, 
 Stage two, embed. You convert each chunk into an embedding — a vector of a few hundred to a few thousand numbers that represents the chunk's meaning, produced by an embedding model. The key property, which you met in spirit when you computed cosine similarity between ten-K texts: passages about similar topics land near each other in this vector space, even if they use different words. "We face significant litigation exposure" and "pending lawsuits could materially harm us" sit close together because they mean similar things. You embed every chunk once and store the vectors in a vector index — a data structure built for fast nearest-neighbor search, whether that is a dedicated library or even a plain array for a small corpus.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

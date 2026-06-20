@@ -1,10 +1,11 @@
 ---
-title: "Measuring Power and Tracing a Power Curve"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Measuring Power and Tracing a Power Curve {.title}
+## Measuring Power and Tracing a Power Curve
+
+- Part 6 — measure power and trace a power curve
 
 ::: notes
 Welcome back to Lab one, part six of seven. In part five you measured the size of your test — how often it cries wolf with no wolf. Now the opposite question: when there really is a wolf, how often do you catch it? That is power. You will measure it on a biased coin, then sweep the true p across a grid and trace a whole power curve.
@@ -70,7 +71,7 @@ Read the curves. As the true p moves away from one-half, power climbs toward one
 Finally, connect the curve to the rule that failing to reject is not the same as accepting. Suppose Sam runs the N equal to fifty test on a coin that is truly p equal to zero point five four and fails to reject. The correct sentence is not the coin is fair, but rather, we did not find enough evidence to call it unfair. At N equal to fifty the power against a bias that small is low, so a miss was the likely outcome even though the coin really is biased. A non-rejection at low power is almost uninformative. No evidence of an effect is not evidence of no effect.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

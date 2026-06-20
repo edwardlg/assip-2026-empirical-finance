@@ -1,9 +1,10 @@
 ---
-title: "The Shared Fix: Clean Controls and Transparent Aggregation"
 date: "2026-07-13"
 ---
 
-# The Shared Fix {.title}
+## The Shared Fix
+
+- Part 9 — the one cure: clean controls plus transparent aggregation
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part nine of thirteen. In part eight, de Chaisemartin and D'Haultfœuille proved the negative-weights problem in full generality. Both that result and Goodman-Bacon point to one cure. This part states it: the single idea shared by every modern heterogeneity-robust estimator, plus the two phrases and the spec discipline that carry the load.
@@ -53,7 +54,7 @@ Two phrases carry the whole load. Clean control means a unit that is untreated a
 When you write up a staggered design, the spec checklist gains two lines. First, name the control group: are your clean comparisons against never-treated units, not-yet-treated units, or both? Never-treated units may differ systematically from adopters — a state that never regulates insurers is a different animal — whereas not-yet-treated units are eventual adopters, often a more credible counterfactual, but using them shrinks your control pool as more cohorts switch on. Second, name the aggregation weights: an event-time average, a calendar-time average, and a single overall effect can be genuinely different numbers, and the reader must know which your headline reports. The identifying assumption is still parallel trends — but now stated per cohort: each adopting cohort's untreated outcome would have moved parallel to its clean control's.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

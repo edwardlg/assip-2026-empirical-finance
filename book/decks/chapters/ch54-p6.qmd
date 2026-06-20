@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable: The Paper's Edges"
 date: "2026-07-20"
 ---
 
-# What's Vulnerable: The Paper's Edges {.title}
+## What's Vulnerable: The Paper's Edges
+
+- Part 6 — three edges a careful referee can still push
 
 ::: notes
 Welcome back to Chapter five-point-four, part six of seven. In part five we named the four clever moves — simulation as proof, a clean taxonomy, legibility, and a self-diagnostic. A good reader does not just admire a paper; she finds its edges. Petersen is unusually honest about his own, so this part is partly a guide to his caveats and partly a note on what the field learned after him. None of these sink the paper — they locate it.
@@ -45,7 +46,7 @@ Second, the gap to two-way clustering — a temporal vulnerability, a thing the 
 Third, reliance on the assumed correlation structure. The simulations are only as informative as the data-generating processes Petersen chose. He models the firm and time effects as additive variance components — a firm component gamma-i, plus a time component delta-t, plus noise. Real financial dependence can be richer: correlation that decays with time, so clustering, which allows arbitrary within-firm correlation, may be less efficient than a structured estimator; spatial or network dependence, where firms are linked by supply chains or common ownership, fitting neither the firm nor the time box; and dependence that changes over the sample. The method's validity is robust, but its power and the comparison verdicts inherit the shapes he simulated. A skeptical reader asks: is my real dependence one of the shapes he tested, or something his Monte Carlo never saw?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

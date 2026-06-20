@@ -1,9 +1,10 @@
 ---
-title: "File the Pre-Analysis Plan as a Tagged Commit"
 date: "2026-08-03"
 ---
 
-# File the Pre-Analysis Plan as a Tagged Commit {.title}
+## File the Pre-Analysis Plan as a Tagged Commit
+
+- Part 8 — file the pre-analysis plan as an immutable tagged commit
 
 ::: notes
 Welcome back to Week Seven, the Lab, part eight of eight, the final part. In part seven you verified a git-ignore that blocks data and secrets. Now the step that ties this lab to Chapter seven-point-three and turns your repo into an instrument of scientific honesty. Recall the argument: a pre-analysis plan only constrains you if its contents are fixed before you analyze, and the only proof of that to a skeptic is a credible timestamp.
@@ -45,7 +46,7 @@ Why this is a cryptographic promise and not just a sticky note. Git names every 
 The discipline that follows is the order of operations. The plan is tagged first. Only after pap-filed do you run the confirmatory regressions — notebook seven-point-five is frozen until exactly this moment. When you inevitably deviate — a control drops out for collinearity, a year needs special handling — you do not silently edit the tagged plan; you cannot, honestly, because the tag points at the old version. Instead you record every departure, dated, in the deviations file, and commit it after pap-filed. The commit history now tells the honest story by construction: here is the plan, tagged and immutable, and here, in commits that provably come after, is everything that changed and why. A referee reading that history trusts you more, not less, because the seams are visible.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

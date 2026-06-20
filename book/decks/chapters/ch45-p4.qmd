@@ -1,9 +1,10 @@
 ---
-title: "The Finance Flavor: Bank-Lending Shocks"
 date: "2026-07-13"
 ---
 
-# The Finance Flavor: Bank-Lending Shocks {.title}
+## The Finance Flavor: Bank-Lending Shocks
+
+- Part 4 — bank-lending shocks; many vs. few concentrated shocks
 
 ::: notes
 Welcome back to Chapter four-point-five, part four of ten. In part three we saw why the shift-share instrument was invented — it imports the demand piece from national tides to fix an endogenous local regression. Now a second, finance flavor worth seeing because it makes the share-shift logic vivid and sets up the two identification views: bank-lending shocks. We will build a bank-mix instrument for a region's credit supply, then draw the contrast that decides everything later — many shocks versus few concentrated shares.
@@ -33,7 +34,7 @@ Banks are not evenly spread. A region's credit supply depends on which banks ope
 Maya can now ask whether a predicted credit-supply contraction raises household delinquency, instrumenting realized local credit growth with the bank-mix prediction — because realized local credit is endogenous, since a town with deteriorating households both borrows differently and gets lent to differently. This is the household-credit cousin of the labor-demand story. Now keep both finance examples in view, because they sharpen the two identification views coming up. In the labor version there are a few hundred industries; in the bank version there might be only a handful of banks that dominate a region's deposits. As we will see, how many shocks you have, and how concentrated the shares are, is precisely what decides which identification story you are allowed to tell. That is the question we carry into the rest of the chapter.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

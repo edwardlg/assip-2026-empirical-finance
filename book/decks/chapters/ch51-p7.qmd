@@ -1,9 +1,10 @@
 ---
-title: "Rebuild It Yourself: Three Replications & Three Referee Questions"
 date: "2026-07-20"
 ---
 
-# Rebuild It Yourself: Three Replications & Three Referee Questions {.title}
+## Rebuild It Yourself: Three Replications & Three Referee Questions
+
+- Part 7 — rebuild the paper and leave with referee questions
 
 ::: notes
 Welcome back to Chapter five-point-one, part seven of seven — the last segment. In part six we attacked the paper at its four weakest joints. Now we close the loop. You do not understand a paper until you have rebuilt a piece of it. So we walk through three replication exercises, from the gentlest sort to the full Fama–MacBeth horse race, then leave you with three referee questions. Everything lives in notebook five-point-one, which ships a seeded synthetic fallback with the same schema, so every step runs on your laptop, with a Path-A pull for Hopper.
@@ -57,7 +58,7 @@ Exercise three: run the Fama–MacBeth horse race, reusing your Lab Two machine.
 Before you leave the paper, sit with three margin questions. First, snooping: if size and book-to-market survived a field-wide search, what evidence would convince you they are real and not two lucky winners of a multiple-testing lottery? Second, mechanism: the paper shows value and small stocks earn more but cannot say why. Design, in words, a test that would push you toward the risk story over the mispricing story — and explain why a descriptive design can never fully settle this. Third, the dog that didn't bark: beta's premium should be large under CAPM and isn't. List every reason it could be near zero — beta truly doesn't matter, measurement error attenuating it, or the sort and sample masking it — and say what you would check to tell those apart.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

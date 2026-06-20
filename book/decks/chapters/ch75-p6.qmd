@@ -1,10 +1,11 @@
 ---
-title: "Testable Threats and Arguable Threats"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Testable Threats and Arguable Threats {.title}
+## Testable Threats and Arguable Threats
+
+- Part 6 — the canonical tests and the canonical arguments
 
 ::: notes
 Welcome back to the identification memo, part six of nine. In part five we built the four-column table and learned its organizing question: is each threat testable or arguable? Now we name the canonical members of each list — the four classic tests, one per design, and the classic threats that no test can reach, so that for every row you put the right kind of thing in column three.
@@ -46,7 +47,7 @@ Threats you can only argue have no fingerprint — the data are logically incapa
 The discipline is simple to state and hard to live by: for every threat, decide first whether it is testable or arguable, and put the right kind of thing in column three. A memo that runs a clever test against an untestable threat — claiming a balance table shows the exclusion restriction holds, which it cannot — advertises that the author does not understand their own design. A memo that argues its way past a threat it could have simply tested looks lazy. Match the response to the nature of the threat, every time.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

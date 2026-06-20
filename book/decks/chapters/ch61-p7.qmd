@@ -1,9 +1,10 @@
 ---
-title: "KPSS: Vulnerable Joints — Expectations and Confounds"
 date: "2026-07-27"
 ---
 
-# KPSS: Vulnerable Joints — Expectations and Confounds {.title}
+## KPSS: Vulnerable Joints — Expectations and Confounds
+
+- Part 7 — two joints: expected-not-realized, confounds in window
 
 ::: notes
 Welcome back to Chapter six-point-one, part seven of ten. In part six we named the three moves that make K-P-S-S clever. Now we turn referee and attack the paper at its weakest joints. They are mostly in the measure — which is exactly where the soft spots should be in a measurement paper. Part seven takes the first two: the measure captures expectations, not realized value, and the window can carry confounding news.
@@ -33,7 +34,7 @@ The single most important caveat, and the authors are explicit about it: the gra
 The second joint connects to Week Four — event-study identification. The whole design assumes the only value-relevant news in the short window is the patent grant. But firms release earnings, announce deals, and get analyst revisions on ordinary days too. If such news clusters near grant dates, or just lands in the window by chance, the abnormal return mixes the patent's value with the other news, and the measure is contaminated. The short window helps, because there is less time for confounds, and aggregating over many patents averages out idiosyncratic confounds. But systematic contamination would not wash out. The right skeptical question is: what evidence rules out that grant-window returns are driven by something other than the patent? Check how hard the paper works to answer it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

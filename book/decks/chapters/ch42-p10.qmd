@@ -1,9 +1,10 @@
 ---
-title: "Callaway–Sant'Anna: The Group-Time ATT"
 date: "2026-07-13"
 ---
 
-# Callaway–Sant'Anna: Group-Time ATTs {.title}
+## Callaway–Sant'Anna: Group-Time ATTs
+
+- Part 10 — the group-time ATT, each an honest clean-control 2x2
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part ten of thirteen. In part nine we landed on the shared cure — clean controls plus transparent aggregation of a group-time grid. Callaway and Sant'Anna, in twenty-twenty-one, give the cleanest statement of that fix, and it is the estimator paired with two-way fixed effects in this chapter's notebook, so we spend the most time here. This part introduces their central object and shows that each piece of it is just an honest two-by-two.
@@ -53,7 +54,7 @@ The control group C is either the never-treated units or the not-yet-treated uni
 In practice Callaway and Sant'Anna let you make the comparison conditional on covariates, using a doubly-robust difference-in-differences that marries the outcome-regression and propensity-score ideas from Chapter three-point-three. This lets you relax parallel trends so it needs to hold only after conditioning on those covariates — useful when adopters and non-adopters differ in observable ways. The doubly-robust machinery gives you two chances to get the counterfactual right: you are protected if either the outcome model or the propensity model is correctly specified. But the clean-control principle is unchanged — covariates refine the counterfactual, they never license using an already-treated unit as a control.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

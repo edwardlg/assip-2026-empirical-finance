@@ -1,10 +1,11 @@
 ---
-title: "Why the Law of Large Numbers Works"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Why the Law of Large Numbers Works {.title}
+## Why the Law of Large Numbers Works
+
+- Part 2 — proving the LLN via Chebyshev's inequality
 
 ::: notes
 Welcome back to Chapter one-point-four, part two of nine. In part one we stated the Weak Law: the sample mean converges in probability to mu. Now we make it feel inevitable using a single tool you can carry for the rest of your life — Chebyshev's inequality — and we see the engine underneath: averaging cancels noise.
@@ -45,7 +46,7 @@ Now apply Chebyshev to the sample mean itself. We already know — this was the 
 One consequence worth burning into reflex. The standard deviation of the sample mean is sigma over the square root of N. That square root is the same fact you have seen attached to every standard error, wearing different clothes. Because of it, to halve your uncertainty you must quadruple your sample. Diminishing returns are baked into the mathematics — so when someone says they doubled their sample and expected their error bars to halve, you already know they will be disappointed. One more caveat. The cancellation relies on independence. If draws were strongly correlated — every observation echoing the last, as in a trending time series — deviations would reinforce instead of cancel, the one-over-N rate would degrade, and the Law would arrive far more slowly or not at all. That is why time-series data demand special standard errors, which we tackle in Week Two.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

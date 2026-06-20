@@ -1,10 +1,11 @@
 ---
-title: "Reproducibility Is the Credibility: Closing the Camp"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Reproducibility Is the Credibility: Closing the Camp {.title}
+## Reproducibility Is the Credibility: Closing the Camp
+
+- Part 9 — reproducibility is credibility; closing the camp
 
 ::: notes
 Welcome back to Chapter eight-point-five, part nine of nine, the last part of the last chapter. In part eight we finished the replication packet. Now we state the thesis as bluntly as it deserves, connect the talk and the packet, and trace the arc the eight weeks walked, from a single average to a defensible, reproducible paper.
@@ -46,7 +47,7 @@ Trace the arc the eight weeks actually walked. Week One turned a number into a n
 Look back at where Week One started. The first thing you did was compute an average: the mean return was about eight percent a year, and that felt like an answer. It was not an answer; it was the first question. What you have at the end is not "the average return was eight percent." It is a question nobody had cleanly answered, attacked with a design you can defend sentence by sentence, estimated with honest uncertainty, robust to the choices you worried about, written so a referee believes it, and reproducible with one command. That is an original empirical paper. The single sentence this whole camp existed to let you say truthfully is: here is what I found, here is exactly why you should believe it, and here is the command that lets you check me. You can say it now. Go say it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

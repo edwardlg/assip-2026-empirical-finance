@@ -1,9 +1,10 @@
 ---
-title: "Questions: Fatal vs. Survivable Triage"
 date: "2026-08-10"
 ---
 
-# Questions: Fatal vs. Survivable Triage {.title}
+## Questions: Fatal vs. Survivable Triage
+
+- Part 9 — questions: the fatal-vs-survivable triage
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part nine of ten. In part eight we built the timed rehearsal and the cut line. Now we prepare for the question period — the part most students fear and the part you can actually control. The questions you will get are not a surprise; they are the rows of the threats-and-responses table you wrote weeks ago. This segment turns that table into prepared answers and gives you the single distinction that keeps you composed when a question lands hard.
@@ -33,7 +34,7 @@ The questions you will get are the rows of your threats-and-responses table from
 This is the distinction that lets you keep composure: a survivable critique attacks a number; a fatal critique attacks the comparison. A survivable critique asks whether a choice changes the answer — cluster differently, winsorize at one percent not five, control for firm size. You answer "we checked; it doesn't," point at the robustness panel, or say "fair — let me re-run it and report back." The estimate might move a little; it does not vanish. A fatal critique attacks the identifying assumption itself — your treated and control groups were already diverging before treatment, your instrument plausibly affects the outcome directly. If the attacker is right, no amount of re-clustering saves you. The hardest discipline in the camp: do not defend the indefensible. Concede at the level the critique was made and retreat to what survives — this is a strong association consistent with the mechanism, not the clean causal estimate I'd hoped for, and that's a real limitation. A conceded fatal critique is a wounded paper but an intact scientist, and the retreat almost always lands somewhere real — a robust pattern future work should test causally is a genuine contribution. Know your retreat position before you walk in. And for the question you genuinely cannot answer, say "I don't know" with structure — that's outside what my design can speak to; my guess is this direction, but I'd want this specific check first. A located "I don't know" proves the rest of your "I know"s are trustworthy.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

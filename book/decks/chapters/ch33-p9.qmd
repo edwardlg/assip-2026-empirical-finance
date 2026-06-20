@@ -1,10 +1,11 @@
 ---
-title: "The Code: Three Methods Side by Side"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Code: Three Methods Side by Side {.title}
+## The Code: Three Methods Side by Side
+
+- Part 9 — one runnable script puts all three side by side
 
 ::: notes
 Welcome back to Chapter three-point-three, part nine of ten. In part eight we saw why doubly robust is efficient and machine-learning-ready. Now one runnable script ties the methods together on simulated data where we know the true effect — so you can watch which estimators land near it and which wander.
@@ -46,7 +47,7 @@ The script computes four numbers. The naive difference in means is biased by sel
 Run it and the naive difference comes out badly biased toward zero — selection makes enrollees and non-enrollees differ for reasons unrelated to the program — while both I-P-W and A-I-P-W land close to the true minus zero-point-eight. To feel the double-robustness property, change the outcome models to a deliberately wrong specification — drop credit — and watch A-I-P-W stay near minus zero-point-eight because the propensity model is still right. Then instead corrupt the propensity formula while keeping the outcome models correct, and watch A-I-P-W still stay near the truth. Break both at once and it finally drifts. That experiment — one model wrong is survivable, both wrong is not — is the whole "doubly" in one screen. The entropy-balancing comparison lives in notebook three-point-three, where you will see entropy weights deliver exact balance with a smaller max weight than I-P-W on the very same data.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Bias: Aiming at the Right Target"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Bias: Aiming at the Right Target {.title}
+## Bias: Aiming at the Right Target
+
+- Part 2 — does the recipe aim at the right target on average?
 
 ::: notes
 Welcome back to Estimators and Their Sampling Distributions, part two of seven. In part one we separated the recipe from the number it produces, and met the three judging words: bias, variance, and mean squared error. Now we take the first. Bias asks a simple question: across all the samples the universe could have handed you, does a recipe aim at the right target, or does it systematically miss?
@@ -46,7 +47,7 @@ Let us prove the sample mean is unbiased. Suppose each claim is drawn from a pop
 Contrast that with a biased recipe. Suppose Priya, worried about a budget meeting, quietly drops the three biggest claims before averaging. Insurance losses are skewed right — a few catastrophic fires, lots of small claims — so this systematically discards the right tail. Across all possible samples it lands below mu on average. It is biased downward, and the bias is baked into the recipe; it would persist no matter how much data she collected. Notice the assumption behind the proof: it used exactly one thing, that the expected value of each claim is mu. That quietly assumes the claims come from the same population whose mean Priya cares about. If her spreadsheet over-represents one high-risk county whose broker files more diligently, the claims are not all draws from the target population, the expected value is no longer mu, and the proof collapses. The math did not break; the assumption did. Estimators are only as good as the sampling assumption behind them.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

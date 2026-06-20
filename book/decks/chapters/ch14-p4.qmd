@@ -1,10 +1,11 @@
 ---
-title: "Stating the Central Limit Theorem"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Stating the Central Limit Theorem {.title}
+## Stating the Central Limit Theorem
+
+- Part 4 — state the CLT and why the bell is inevitable
 
 ::: notes
 Welcome back to Chapter one-point-four, part four of nine. In part three we built the standardized sample mean and asked what shape it converges to. Now we answer: the Central Limit Theorem. We state it, then build the intuition for why the bell must appear — and why it is the only possible destination.
@@ -45,7 +46,7 @@ Why should this be true? A full proof uses a device called the characteristic fu
 A second angle explains why the bell is the unique destination, not one of many. Suppose you average N draws, then separately average another N draws, then combine the two groups into one average of two-N. The shape of the sampling distribution should not care whether you did it in one batch or two — averaging is averaging. The normal distribution is essentially the only shape with finite variance that is stable under this kind of self-combination: a normal averaged with a normal is again normal, just narrower. Any distribution flexible enough to be the limit of repeated averaging is forced, by this self-consistency, into the normal form. You do not have to make that rigorous to feel its pull — the bell is the only fixed point the algebra of summing-and-rescaling will tolerate. And hold onto that phrase, no single one dominates: it is exactly the clause crypto returns will violate later in this chapter.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

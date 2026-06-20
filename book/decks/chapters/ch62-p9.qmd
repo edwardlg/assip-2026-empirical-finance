@@ -1,9 +1,10 @@
 ---
-title: "Replication and Where Week 6 Goes"
 date: "2026-07-27"
 ---
 
-# Replication and Where Week 6 Goes {.title}
+## Replication and Where Week 6 Goes
+
+- Part 9 — three replication exercises, and what comes next
 
 ::: notes
 Welcome back to Chapter six-point-two, part nine of nine — the last part. In part eight we mapped the paper's vulnerabilities. Now we make the magic mechanical: three replication exercises you run in notebook six-point-two, then where this chapter connects and what to ask next.
@@ -45,7 +46,7 @@ Exercise two: stress the construction and show the measure depends on your choic
 Where does this connect? Chapter one-point-two said correlation is the cosine of an angle between two vectors — pure geometry. Here the same cosine, pointed at word vectors, redraws the map of American industry. It sets up the rest of Week Six. Chapter six-point-three, Loughran and McDonald, stays in the bag-of-words world but asks a different question of the same text — tone, via finance-specific word lists. And Chapter six-point-five, the A-I Co-Pilot, is where bag-of-words gives way to learned embeddings that capture meaning, answering this paper's "bag-of-words ignores meaning" vulnerability. Read in order, Week Six is one long argument about turning words into numbers responsibly. Go now to notebook six-point-two and do exercise one. The instant your own code scores two oil firms as near-twins and an oil firm and an airline as strangers — with you having defined no industries at all — the abstraction collapses into something you know, and you never again read a ten-K as merely a legal document.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

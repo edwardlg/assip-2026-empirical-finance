@@ -1,10 +1,11 @@
 ---
-title: "Three Mistakes, p-Hacking, and Where This Goes"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Three Mistakes, p-Hacking, and Where This Goes {.title}
+## Three Mistakes, p-Hacking, and Where This Goes
+
+- Part 10 — three mistakes, p-hacking, and the road to Week 2
 
 ::: notes
 Welcome back to Chapter one-point-five, part ten of ten — the finale. In part nine we built confidence intervals and separated statistical from economic significance. Now we name the three mistakes nearly every beginner makes, preview the multiple-testing trap that manufactures false discoveries, and connect this whole machine to the regression engine of Week Two.
@@ -46,7 +47,7 @@ Now a warning Week One only previews. Suppose Sam did not test one rule. Sam tes
 Step back and see what you built. A test statistic is an estimate divided by its standard error. The t-statistic is that idea made operational when the variance must itself be estimated. Size and power are the two ways to be wrong. The p-value measures extremeness under the null and nothing else. A confidence interval is the whole family of un-rejectable nulls. And effect size — not significance — tells you whether any of it matters. Now look at the t-statistic one more time: estimate, minus null value, divided by standard error. In Week Two we build the ordinary-least-squares regression engine, whose core output is a coefficient beta hat estimating how one variable moves with another. To ask does X actually move with Y, you compute t equals beta hat minus zero, over the standard error of beta hat — the exact same machine, pointed at a slope instead of a mean. Well done — this closes Week One.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

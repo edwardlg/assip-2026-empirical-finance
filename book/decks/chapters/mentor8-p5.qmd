@@ -1,9 +1,10 @@
 ---
-title: "A Worked Case — Measurement and Selection"
 date: "2026-08-10"
 ---
 
-# A Worked Case — Measurement and Selection {.title}
+## A Worked Case — Measurement and Selection
+
+- Part 5 — a real disclosure paper, attacked on measurement and selection
 
 ::: notes
 Welcome back to Mentor Session eight, part five of six. In part four we finished the survivable families and the honest retreat. Now we work a real published paper through the referee families, starting with measurement and selection. It is offered as a live worked case in exactly the spot where a referee presses hardest: a result about CEO behavior where the CEOs plainly did not get their characteristics assigned at random.
@@ -30,7 +31,7 @@ The citation, used verbatim, is Elnahas, Gao, Hossain, and Kim, two thousand twe
 - Cheapest reply: result holds across *several* measures with no shared flaw
 
 ::: notes
-Before a referee can attack identification, they attack measurement, because if information disclosure isn't a real number there is nothing to defend. Disclosure is a concept, not a series, so propose two distinct, defensible ways to turn "how forthcoming is this firm" into a firm-year variable — and for each, name one thing a referee would worry it secretly captures instead of disclosure: firm size, industry reporting norms, litigation exposure. The classic challenge is "your disclosure measure and your politics measure could both just be proxying for something else." That belongs to the identification family, and the cheapest convincing response is not a single better measure but showing the result holds across several different disclosure measures that share no common mechanical flaw. And please mark as a CHECK the paper's actual measures and its proxy for CEO orientation before describing either as fact.
+Before a referee can attack identification, they attack measurement, because if information disclosure isn't a real number there is nothing to defend. Disclosure is a concept, not a series, so propose two distinct, defensible ways to turn "how forthcoming is this firm" into a firm-year variable — and for each, name one thing a referee would worry it secretly captures instead of disclosure: firm size, industry reporting norms, litigation exposure. The classic challenge is "your disclosure measure and your politics measure could both just be proxying for something else." That belongs to the identification family, and the cheapest convincing response is not a single better measure but showing the result holds across several different disclosure measures that share no common mechanical flaw.
 :::
 
 ## The Selection Problem, Stated and Attacked
@@ -41,10 +42,10 @@ Before a referee can attack identification, they attack measurement, because if 
 - For each move: say what it kills and what it leaves standing
 
 ::: notes
-The deadliest question: CEOs don't get their politics randomly assigned, so isn't your effect just selection — conservative-leaning CEOs end up at a different kind of firm, and it's the firm doing the disclosing? State the identifying assumption in one plain sentence: what would have to be true about how CEOs sort into firms for the comparison to be fair? Then name the moves a referee would demand — controlling richly for firm and CEO characteristics, remembering that "we control for it" is a claim, not a spell, the omitted-variable ghost from Week two; firm fixed effects so the comparison is within-firm; or the strongest move, finding variation in CEO politics that arrives for reasons plausibly unrelated to disclosure, like a turnover event. For each, say what threat it kills and what it leaves standing. CHECK the paper's actual strategy before asserting which it used.
+The deadliest question: CEOs don't get their politics randomly assigned, so isn't your effect just selection — conservative-leaning CEOs end up at a different kind of firm, and it's the firm doing the disclosing? State the identifying assumption in one plain sentence: what would have to be true about how CEOs sort into firms for the comparison to be fair? Then name the moves a referee would demand — controlling richly for firm and CEO characteristics, remembering that "we control for it" is a claim, not a spell, the omitted-variable ghost from Week two; firm fixed effects so the comparison is within-firm; or the strongest move, finding variation in CEO politics that arrives for reasons plausibly unrelated to disclosure, like a turnover event. For each, say what threat it kills and what it leaves standing.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

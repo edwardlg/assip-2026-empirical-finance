@@ -1,10 +1,11 @@
 ---
-title: "Devon Referees Maya: The Major Points"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Devon Referees Maya: The Major Points {.title}
+## Devon Referees Maya: The Major Points
+
+- Part 6 — a worked report: Devon's summary and three majors
 
 ::: notes
 Welcome back to peer review and revision, part six of twelve. In part five we learned the norm: tough on the work, kind to the person. Now we watch it all at once. Maya's draft asks whether state fair-lending examinations narrowed the county-level minority–white mortgage-denial gap, using a staggered difference-in-differences on HMDA data. Her classmate Devon, wearing his referee hat, has it on his desk. This part covers his summary and his three major points.
@@ -34,7 +35,7 @@ Devon opens with a summary in his own words: the paper asks whether state fair-l
 Devon's second major point is the forbidden comparison. The design is staggered, and the methods section says two-way fixed effects without addressing the negative-weights problem from Chapter four-point-two: already-treated counties are serving as controls for later-treated ones, which can bias the estimate when the effect is dynamic — and an anticipation story makes dynamic effects likely. He wants the headline re-estimated with a heterogeneity-robust estimator, Callaway and Sant'Anna against clean controls only, and the two numbers compared. If they agree, the two-way fixed-effects number is safe; if they diverge, the robust one is the result. His third major point is the small-cell denominator. The county-year denial gap is built from raw HMDA application counts, but the text does not say whether counties with very few minority applications are dropped or winsorized. A handful of small counties where the gap is mechanically volatile could drive the estimate. A robustness column weighting by application volume, or dropping counties below a minimum threshold, would tell us whether the result is real or a small-cell artifact.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

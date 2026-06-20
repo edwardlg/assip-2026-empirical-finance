@@ -1,9 +1,10 @@
 ---
-title: "View II — It's the Shifts (BHJ)"
 date: "2026-07-13"
 ---
 
-# View II — It's the Shifts (BHJ) {.title}
+## View II — It's the Shifts (BHJ)
+
+- Part 7 — identification view two: quasi-random shifts
 
 ::: notes
 Welcome back to Chapter four-point-five, part seven of ten. In part six we finished the shares view, diagnosed with Rotemberg weights. Now the second lens, which at first sounds like a flat contradiction. Borusyak, Hull and Jaravel, in twenty twenty-two, locate identification not in the shares but in the shifts — and they are also right. The two papers simply make exogeneity assumptions about different ingredients, credible in different data regimes. We will see the quasi-experiment in the shocks, its assumption, and how many shocks you must have.
@@ -45,7 +46,7 @@ State the assumption precisely. The national industry shocks are as-good-as-rand
 When is quasi-random shifts credible? Precisely when the Goldsmith-Pinkham assumption is shaky, and vice versa — a beautiful complementarity. It is most defensible when there are many industries, so the exposure-weighted average has a law-of-large-numbers logic. With hundreds of industries, a single endogenous shock washes out. But with a handful — Maya's bank version, where two banks hold most deposits — there is no many to invoke; one big bank's shock dominates, the law of large numbers fails, and you should not lean on this story. So the how-many-shocks question decides your strategy: many industries means the shifts view is natural; few concentrated shares means the shares view is your only honest defense. It also needs exposure dispersed across regions, and the shocks plausibly random — auto swings driven by oil prices, not handpicked to hurt auto-heavy regions. The diagnostic is the effective number of shocks: if a few industries carry all the exposure weight, your many shocks is an illusion.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

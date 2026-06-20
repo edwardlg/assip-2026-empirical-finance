@@ -1,10 +1,11 @@
 ---
-title: "Unbiasedness: The Recipe Aims at the Truth"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Unbiasedness: The Recipe Aims at the Truth {.title}
+## Unbiasedness: The Recipe Aims at the Truth
+
+- Part 4 — proving OLS is unbiased from Assumption 3
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part four of nine. In part three we finished the five-clause contract and sorted its payoffs into tiers. Now we cash in the first tier. Using only assumption three, we prove that O L S is unbiased — that Maya's recipe aims at the true beta.
@@ -58,7 +59,7 @@ Now take the conditional expectation given X. Conditioning on X lets us treat th
 Three things to notice. First, the proof used exactly one assumption — number three. Linearity was used silently in the true model, and full rank so the inverse exists, but homoskedasticity and normality played no role. Unbiasedness is cheap. This is why heteroskedasticity leaves beta hat unbiased and only damages the standard errors. Second, unbiasedness has nothing to do with sample size: O L S is unbiased at N equals five and at five million, given assumption three. What changes with N is the variance. Third, when assumption three fails, the proof collapses at a visible spot — the leftover contamination term is the omitted-variable bias formula, which Chapter two-point-five reads straight off this line. The math didn't break; the assumption did.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

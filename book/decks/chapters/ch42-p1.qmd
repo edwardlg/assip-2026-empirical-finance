@@ -1,9 +1,15 @@
 ---
-title: "The Staggered-Adoption Crisis: Framing"
 date: "2026-07-13"
 ---
 
-# The Staggered-Adoption Crisis {.title}
+## The Staggered-Adoption Crisis
+
+**Learning objectives** — by the end you can:
+
+- Explain why pooled TWFE breaks under staggered adoption
+- Name the forbidden comparison and its negative weights
+- Read the Goodman-Bacon decomposition of $\hat\beta$
+- Apply clean-control estimators (Callaway-Sant'Anna)
 
 ::: notes
 Welcome to Week Four, Chapter four-point-two, part one of thirteen. In Chapter four-point-one you built the two-way fixed-effects regression for difference-in-differences and trusted the single coefficient beta as the effect of a policy. This chapter is where that tool stops working — and the reason is not a coding bug, not a violated parallel-trends assumption, but a flaw in the estimator itself that hid in plain sight for thirty years. Around twenty-eighteen to twenty-twenty-one a cluster of papers exposed what applied econometricians now simply call the staggered-adoption crisis. This first part just frames the problem and meets the example we will carry through the whole chapter.
@@ -43,7 +49,7 @@ The headline result is genuinely unsettling. When units adopt treatment at diffe
 Priya is our guide again. A wave of states is adopting a climate-risk-disclosure regulation for property insurers — a rule requiring insurers to publish how exposed their books are to wildfire, flood, and storm losses. The hope is that disclosure disciplines underwriting and lowers the share of policies that get non-renewed in high-risk ZIP codes — her outcome, the non-renewal rate in state i, year t. In Chapter four-point-one she imagined a single adoption date. Reality is messier: California adopts in twenty-seventeen, a cluster of states in twenty-nineteen, another wave in twenty-twenty-one, and some states never adopt at all. That is staggered adoption. And the effect plausibly builds — insurers re-underwrite slowly, so the policy bites harder in year three than in year one. Staggered timing plus dynamic effects: that is the exact recipe for the crisis, and Priya is about to run straight into it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

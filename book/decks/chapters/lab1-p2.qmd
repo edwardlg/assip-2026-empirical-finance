@@ -1,10 +1,11 @@
 ---
-title: "Setup and Your First Coin Universe"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# Setup and Your First Coin Universe {.title}
+## Setup and Your First Coin Universe
+
+- Part 2 — pin a seed and draw your first sample
 
 ::: notes
 Welcome back to Lab one, part two of seven. In part one we framed the mission — build a universe where you know the truth — and met the coin, a Bernoulli trial with mean p. Now we get our hands dirty: install the tools, pin a random seed for reproducibility, and write the one function that draws a coin sample and returns its proportion.
@@ -58,7 +59,7 @@ Now Step One. Write a function that draws one sample of N Bernoulli trials with 
 Watch what happens. With p equal to one-half, a single p-hat from N equal to ten might be zero point three or zero point seven — wildly off. At N equal to one hundred it should sit within a few hundredths of one-half. At N equal to ten thousand it should pin one-half to two or three decimal places. You are watching the Law of Large Numbers in a single line of code: p-hat converges in probability to p as N grows. The estimator is consistent for the true proportion. And here is the reflection that matters. P-hat is an estimator — a random rule — and each number you printed is one realized estimate. Before you ran the code, p-hat had a whole distribution; afterward it is a single value. It matters that the N equal to ten result could have been something else.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

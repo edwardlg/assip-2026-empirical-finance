@@ -1,10 +1,11 @@
 ---
-title: "Maya's Defense, and Why the Memo Works"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Maya's Defense, and Why the Memo Works {.title}
+## Maya's Defense, and Why the Memo Works
+
+- Part 11 — Maya's defense, and why the whole memo works
 
 ::: notes
 Welcome back to peer review and revision, part eleven of twelve. In part ten we read Maya bound the untestable pre-trend and concede the staggered-design gap. Now we read her third response — a respectful defense — and then tally what makes the whole memo work, response by response.
@@ -34,7 +35,7 @@ Major point three, the small-cell denominator. Devon's quoted comment: a handful
 Look at what the memo does as a whole. Point one bounded the untestable threat — the actual joint-test p-value, plus an honest note that flat leads cannot confirm the counterfactual. Point two conceded the gap was real, ran the requested estimator, and reported both numbers side by side; because they agree, the concession cost nothing and bought credibility. Point three was a respectful defense that did the requested work first and then stated the conclusion. Every response quotes, states the change, and points to a specific new table or figure with a specific number. And every change Maya claims is a change the revised paper actually contains — the do-exactly-what-you-said norm, honored. Devon, re-reading, can verify each one in under a minute, and his next report to the editor will say the author addressed every point; recommend acceptance.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

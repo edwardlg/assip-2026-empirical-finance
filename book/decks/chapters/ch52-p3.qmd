@@ -1,9 +1,10 @@
 ---
-title: "Manufacturing the Factors as Portfolios"
 date: "2026-07-20"
 ---
 
-# Manufacturing the Factors as Portfolios {.title}
+## Manufacturing the Factors as Portfolios
+
+- Part 3 — building SMB and HML as real portfolios
 
 ::: notes
 Welcome back to lesson five-point-two, part three of nine. In part two we set the bar: high R-squared for common variation, near-zero alpha for pricing. Now we open the machinery. Everything technical here is built from one idea you already own — ordinary least squares on a time series. The cleverness is entirely in what goes on the right-hand side. We start by manufacturing the factors as real portfolios.
@@ -47,7 +48,7 @@ $$\text{HML} = \tfrac{1}{2}(\text{S-High}+\text{B-High}) - \tfrac{1}{2}(\text{S-
 Now mix the six into two factors. S-M-B equals one-third of the sum of the three small portfolios — small-low, small-medium, small-high — minus one-third of the sum of the three big portfolios. H-M-L equals one-half of the sum of the two high book-to-market portfolios — small-high and big-high — minus one-half of the sum of the two low portfolios. Read those slowly, because the design is deliberate. S-M-B averages across the three value buckets before differencing small minus big, so it is a clean size bet roughly neutral to value. H-M-L averages across the two size buckets before differencing value minus growth, so it is a clean value bet roughly neutral to size. The averaging is how you keep the two factors from contaminating each other — the same instinct as Frisch-Waugh-Lovell from chapter two-point-three: to isolate one effect, partial the other one out.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "What's Vulnerable: Four Lines of Attack"
 date: "2026-07-20"
 ---
 
-# What's Vulnerable: Four Lines of Attack {.title}
+## What's Vulnerable: Four Lines of Attack
+
+- Part 6 — a referee attacks the paper's four weakest joints
 
 ::: notes
 Welcome back to Chapter five-point-one, part six of seven. In part five we read the regression horse races and named the paper's three clever moves. Now we turn adversarial. A referee's job is not to admire; it is to attack the paper at its weakest joints and see if it holds. Four lines of attack, each connecting to something you already know from earlier weeks.
@@ -57,7 +58,7 @@ Third, the interpretation debate: risk versus mispricing. Suppose you fully beli
 Fourth, the subtle one: errors-in-variables in beta, from Weeks Two and Three — and it cuts in the paper's favor while still deserving scrutiny. Beta is not observed; it is estimated in pass one, with noise. A regressor measured with random error suffers attenuation bias — its slope is pulled toward zero. So a skeptic objects: maybe beta's flat slope is just attenuation, and beta really does matter. Fama and French anticipate this — it is the very reason they assign betas via portfolios rather than individual stocks, since portfolio betas are far less noisy. A careful referee asks whether that fix is enough. The honest reading: portfolio grouping shrinks the problem a lot, and the premium is so close to zero that attenuation alone is a strained rescue — but see why the objection is the right one to raise before you decide it fails.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

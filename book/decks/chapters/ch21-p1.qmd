@@ -1,10 +1,16 @@
 ---
-title: "Stacking Regression into Matrix Form"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# Stacking Regression into Matrix Form {.title}
+## Stacking Regression into Matrix Form
+
+**Learning objectives.** By the end you can:
+
+- Write the regression $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$
+- Derive $\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$ two ways
+- See OLS as dropping a perpendicular
+- Recover Sam's beta by hand
 
 ::: notes
 Welcome to Week Two, Chapter two-point-one, part one of seven. This week we take regression — a tool you have probably met only as a black box, where you type two columns into a stats package and get back a slope — and rebuild it in the language that makes everything afterward tractable: matrix algebra. By the end you will write the whole procedure on one line, and see that it does one thing: drop a perpendicular. We anchor everything in Sam's question. Sam trades momentum, and notices that when the market jumps, his stock jumps too — but not one-to-one. He wants a number: if the market moves up one percent, how much does his stock move, on average? That number is called beta, and estimating it is a regression of the stock's return on the market's.
@@ -46,7 +52,7 @@ $$\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$$
 Here is the one mildly clever move. Stack the N outcomes into a column vector y, stack the errors the same way, and build a matrix X whose first column is all ones and whose second holds the market returns. Why does the column of ones belong? Multiply the first row of X by beta: you get beta-zero plus beta-one x-one, the first equation exactly. That column is the intercept's regressor, equal to one for everyone, so its coefficient adds the same baseline to every prediction. So X-beta reproduces all N equations at once: y equals X-beta plus epsilon. Now fix the shapes. We have N observations and K regressors including the intercept, so Sam has K equals two. y is the N-by-one outcome vector. X is the N-by-K design matrix: row i is observation i, column j is regressor j. Beta is K-by-one, the coefficients; epsilon N-by-one, the unobserved errors. Add controls later and the equation does not change a symbol — the whole reason we work this way.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

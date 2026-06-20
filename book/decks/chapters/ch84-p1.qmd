@@ -1,10 +1,16 @@
 ---
-title: "What a Referee Is Actually For"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# What a Referee Is Actually For {.title}
+## What a Referee Is Actually For
+
+**Learning objectives.** By the end you can:
+
+- Referee a peer's paper: judge and improve its claim
+- Write a report concern-first, identification before exposition
+- Respond to referees with a quote-change-evidence R&R memo
+- Concede, defend, or bound — tough on work, kind to person
 
 ::: notes
 Welcome to Week Eight, Chapter eight-point-four, part one of twelve: peer review and revision. You have built your own paper across three chapters — you ran the pre-registered specification, you broke it on purpose with placebos, and you wrote it up to the style guide. This chapter teaches the skill on the other side of the desk: how to referee someone else's paper, and then how to respond when someone referees yours. In this opening part we frame the lesson and ask what a referee is actually for.
@@ -47,7 +53,7 @@ Strip away the ceremony and a referee does two jobs. The first is a gatekeeping 
 There is an asymmetry worth internalizing now. Your job is not to rewrite the paper into the one you would have written. It is the author's paper, their question, their design. A common failure of beginner referees is to spend three paragraphs explaining how they would have approached the topic — a different dataset, a different identification strategy, a different framing entirely. That is not refereeing; it is hijacking. The referee's question is narrower and harder: given the paper the author chose to write, is the claim credible, and what is the shortest path to making it more so? You may, in one sentence, note that an alternative design exists. You may not demand the author become a different researcher.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -56,3 +56,8 @@ assets/voice/*.wav
 assets/voice/*.mp3
 /_site/
 /_freeze/
+
+# rendered videos (large; on Hopper + YouTube)
+videos/clips/
+videos/*.mp4
+!videos/upload_manifest.csv

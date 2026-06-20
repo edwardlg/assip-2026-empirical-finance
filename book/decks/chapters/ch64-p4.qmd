@@ -1,9 +1,10 @@
 ---
-title: "Reading Both Papers Table by Table"
 date: "2026-07-27"
 ---
 
-# Reading Both Papers Table by Table {.title}
+## Reading Both Papers Table by Table
+
+- Part 4 — read both papers table by table, the professional way
 
 ::: notes
 Welcome back to Chapter six-point-four, part four of seven. In part three we settled the data, and saw that the decisive question is always whether the credit score is in it. Now we read both papers the professional way: tables first, in the order the argument flows. Headline disparity, then the controls that shrink it, then the mechanism table that assigns blame to human or machine. We will walk Bartlett et al.'s three key tables, then B-H-R's three, and watch the same shape emerge twice.
@@ -17,7 +18,7 @@ Welcome back to Chapter six-point-four, part four of seven. In part three we set
 - **Table 2 — rejection.** Confirm both margins, not just price
 
 ::: notes
-For Bartlett et al., read the headline rate-gap table first. Find the regression of interest rate on the minority indicator with the GSE risk controls in. Read the sign, the magnitude — a rate difference in basis points — and the t-statistic off the table before any prose. This is the number that, if it broke, would sink the paper: minority borrowers pay a meaningful premium conditional on formula-priced risk. Do not memorize a precise figure. What is robust is that the premium is positive and nontrivial, on the order of a handful of basis points; the exact figure carries a check tag. Then read the rejection table — the second margin — to confirm the story is not only about price.
+For Bartlett et al., read the headline rate-gap table first. Find the regression of interest rate on the minority indicator with the GSE risk controls in. Read the sign, the magnitude — a rate difference in basis points — and the t-statistic off the table before any prose. This is the number that, if it broke, would sink the paper: minority borrowers pay a meaningful premium conditional on formula-priced risk. Do not memorize a precise figure. What is robust is that the premium is positive and nontrivial, on the order of a handful of basis points. Then read the rejection table — the second margin — to confirm the story is not only about price.
 :::
 
 ## Bartlett et al. — The Mechanism Table
@@ -53,7 +54,7 @@ For B-H-R, read the raw-disparity table first: the large unconditional racial ga
 The third B-H-R table is the automated-underwriting benchmark — what the algorithm would have done. Compare actual outcomes to the race-blind recommendation. This is where "how much is bias" gets its sharpest answer: the residual, after benchmarking to a rule that cannot see race, is the paper's estimate of differential treatment — smaller than the raw gap, and smaller than the disclosure-only literature implied. Read across both papers and the synthesis writes itself. Raw gaps are large. Legitimate risk explains a lot. Algorithms shrink the human discretion channel. And a residual disparity survives on both margins and remains the contested core of the debate.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

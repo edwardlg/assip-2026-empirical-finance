@@ -1,10 +1,11 @@
 ---
-title: "Robustness, Conclusion, and Calibrated Verbs"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Robustness, Conclusion, and Calibrated Verbs {.title}
+## Robustness, Conclusion, and Calibrated Verbs
+
+- Part 6 — finish the argument and match verbs to evidence
 
 ::: notes
 Welcome back to Writing the Empirical Paper, part six of seven. In part five we walked the body — data, design, and results. Now we finish the paper's argument with robustness and the conclusion, then pull together the single discipline that runs through every section: matching your verbs to your evidence. These are the moves that decide whether a referee trusts you.
@@ -46,7 +47,7 @@ The conclusion says what we learned, what we cannot claim, and what comes next. 
 One rule threads through every section: your strongest verb is bounded by your weakest assumption. A clean randomized experiment earns "causes," "the effect of." A quasi-experiment with a testable-and-passed identifying assumption earns "causally estimate," "the program reduced," with the assumption named. An observational regression earns only "is associated with," "predicts," "suggestive of." A descriptive study earns "documents" and must not wear causal clothing at all. The most common failure is not lying; it is drift: the abstract hedges correctly, the introduction is bolder, the results forget themselves, and the conclusion goes all the way to "we have shown discrimination is caused." Each step is small; the cumulative drift overclaims. Guard against it with a deliberate pass: read only the verbs attached to your main result and force them down to what your weakest assumption permits. But do not over-hedge into mush — claim exactly as much as your design supports, no more and no less.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

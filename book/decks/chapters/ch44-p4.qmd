@@ -1,9 +1,10 @@
 ---
-title: "Why Convexity: No Extrapolation, Sparse Weights"
 date: "2026-07-13"
 ---
 
-# Why Convexity: No Extrapolation, Sparse Weights {.title}
+## Why Convexity: No Extrapolation, Sparse Weights
+
+- Part 4 — what convexity buys: no extrapolation, sparse weights
 
 ::: notes
 Welcome back to Chapter four-point-four, part four of ten. In part three we set up the matching problem and its two constraints: non-negative weights that sum to one, making the synthetic control a convex combination of donors. Now we see exactly what that convexity buys — no extrapolation, sparse weights — and walk a worked number that makes it concrete.
@@ -45,7 +46,7 @@ A second gift of convexity is interpretability through sparsity. The optimal wei
 Now a worked number with three pre-periods and three donors. Suppose the treated state's pre-period premiums, in hundreds of dollars, are twelve, thirteen, fourteen. Try weights one-half on the first donor, zero on the second, one-half on the third: the synthetic premiums come out to ten-and-a-half, eleven-and-a-half, twelve-and-a-half, a mismatch of one-point-five at each year, sum of squares six-point-seven-five. Now try all weight on the third donor: synthetic eleven, twelve, thirteen, mismatch one at each year, sum of squares three. Better. The middle donor, far above the treated state at sixteen, seventeen, eighteen, gets driven to zero — including it would only push the synthetic average up and away. The optimizer refuses something absurd that might fit better in-sample. That refusal is the feature. And tie it back to Chapter four-point-one: diff-in-diff is synthetic control with the weights frozen at equality, one over J on every donor, hoping that equal average shares the treated trend. Synthetic control says don't hope — optimize so the pre-trends coincide, and report the match.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

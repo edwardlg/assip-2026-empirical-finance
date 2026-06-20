@@ -1,10 +1,11 @@
 ---
-title: "Outliers: Winsorize, Trim, or Neither"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Outliers: Winsorize, Trim, or Neither {.title}
+## Outliers: Winsorize, Trim, or Neither
+
+- Part 5 — outliers: let the source decide the fix
 
 ::: notes
 Welcome back to Building the Analysis Dataset, part five of seven. In part four we locked out look-ahead bias with a point-in-time merge. Now a content decision that can flip a result's sign: what to do with extreme values. Sam computes book-to-market and finds a value of four hundred, and one of negative ninety. These are outliers, and the right move depends entirely on where they came from. This part is about asking that question before reaching for a tool.
@@ -46,7 +47,7 @@ For artifacts and genuine extremes, the standard tool is winsorizing: instead of
 Three points of discipline separate a defensible winsor from a fudge. First, winsorize within the cross-section, grouping by date, so that extreme is judged relative to contemporaries, not relative to a different decade — a nineteen-ninety-nine outlier and a two-thousand-eight outlier should each be judged against their own era. Second, state the cutoffs and apply them symmetrically and once; one percent and ninety-nine percent is conventional, but the cardinal sin is searching over cutoffs until your t-statistic clears two. That is not cleaning; that is p-hacking with extra steps. Third, and this is the when-not-to, do not winsorize the variable that is the whole point. Priya studying catastrophe-insurance losses, or Devon studying crypto returns, lives in fat-tailed worlds where the extreme observations are the phenomenon. The right move there is often a model built for fat tails — a log transform, a quantile regression, a robust estimator — not a cap that defines the problem away.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

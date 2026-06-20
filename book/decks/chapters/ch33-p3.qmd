@@ -1,10 +1,11 @@
 ---
-title: "Two Estimators and a Worked Number"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Two Estimators and a Worked Number {.title}
+## Two Estimators and a Worked Number
+
+- Part 3 — Horvitz–Thompson vs. Hájek, with a six-student example
 
 ::: notes
 Welcome back to Chapter three-point-three, part three of ten. In part two we proved that dividing by the propensity score recovers the right average. Now we turn that expectation into a formula — meeting Horvitz–Thompson and its better-behaved cousin Hájek — and run a tiny six-student example by hand.
@@ -36,18 +37,24 @@ The fix is to normalize the weights so they sum to one within each arm, giving t
 
 ## A Worked Number: Six Students
 
-- Three enrolled, three not; outcome $Y$ is the rate
-- Hájek treated mean of A, B, C $\approx 8.45$
-- Hájek control mean of D, E, F $\approx 9.23$
-- IPW estimate: $8.45 - 9.23 = -0.78$ points
-- Rare "cross-over" units C and D dominate
+| Student | $D$ | $\hat e$ | $Y$ (rate) | weight |
+|---|---|---|---|---|
+| A | 1 | 0.8 | 7.0 | $1/0.8 = 1.25$ |
+| B | 1 | 0.5 | 8.0 | $1/0.5 = 2.00$ |
+| C | 1 | 0.2 | 9.0 | $1/0.2 = 5.00$ |
+| D | 0 | 0.8 | 9.5 | $1/0.2 = 5.00$ |
+| E | 0 | 0.5 | 9.0 | $1/0.5 = 2.00$ |
+| F | 0 | 0.2 | 8.5 | $1/0.8 = 1.25$ |
+
+- Hájek means: treated $\approx 8.45$, control $\approx 9.23$
+- IPW estimate $= -0.78$; cross-over C and D dominate
 - Unweighted gap was $-1.0$ — selection contaminated it
 
 ::: notes
 Make it concrete. Maya has six students; three enrolled, three did not. The outcome Y is the interest rate; e-hat is the estimated propensity score. The Hájek treated mean is the weighted average of students A, B, and C — one-point-two-five times seven, plus two times eight, plus five times nine, all divided by the total weight eight-point-two-five — which comes to about eight-point-four-five. The Hájek control mean, the weighted average of D, E, and F, comes to about nine-point-two-three. The I-P-W estimate is eight-point-four-five minus nine-point-two-three, equals minus zero-point-seven-eight percentage points — enrolling lowered the rate by about three-quarters of a point. Notice what the weights did. Student C, a low-propensity enrollee, got weight five and dominates the treated mean; student D, a high-propensity control, got weight five and dominates the control mean. The estimator leans hardest on the units that look like the other group, because those tell us about the missing counterfactual. The simple unweighted difference would have been eight minus nine, equals minus one — a different answer, because the unweighted version lets selection contaminate the comparison.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

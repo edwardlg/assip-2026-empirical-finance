@@ -1,9 +1,10 @@
 ---
-title: "Identification: The J/K Sort and the Winner-Minus-Loser Trade"
 date: "2026-07-20"
 ---
 
-# Identification: The J/K Sort {.title}
+## Identification: The J/K Sort
+
+- Part 3 — the portfolio construction is the identification
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part three of eleven. In part two we stated the research question and pinned it to the three-to-twelve-month horizon. Now we get concrete about identification. There is no instrument here and no natural experiment. The identification is the portfolio construction itself, and reading the paper means understanding that construction cold. This part walks through the J-K sort and the headline trade.
@@ -43,7 +44,7 @@ Here are the three steps at the end of each month t. Step one: compute each stoc
 The headline trade is the zero-cost winner-minus-loser portfolio. You go long the winners and short the losers in equal dollar amounts. The long and short legs cancel in cost, so the net investment is, notionally, zero, and the return is a pure spread: the winner return minus the loser return. A positive average spread is the momentum profit. The paper reports a grid of these spreads over a J-by-K menu — formation periods of three, six, nine, and twelve months crossed with holding periods of three, six, nine, and twelve months. That is sixteen strategies in one table. The classic, the one everyone quotes, is six-six: rank on six months, hold six months.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

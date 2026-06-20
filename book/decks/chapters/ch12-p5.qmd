@@ -1,9 +1,10 @@
 ---
-title: "The Minimum-Risk Blend"
 date: "2026-06-22"
 ---
 
-# The Minimum-Risk Blend {.title}
+## The Minimum-Risk Blend
+
+- Part 5 — find the risk-minimizing weight; Maya's lesson
 
 ::: notes
 Welcome back to Chapter one-point-two, part five of eight. In part four Maya ran three scenarios at an even split and watched the covariance drive her risk below the safer asset. But she does not have to settle for an even split. Portfolio variance is a quadratic in the weight, so it has a genuine bottom. In this part we find that minimum, and then draw the lesson Maya carries forward — a lesson a lender thinks about too.
@@ -42,7 +43,7 @@ Plugging that optimal weight back in gives a variance of zero point zero zero ei
 Here is the lesson Maya takes away. Expected return is a straight average — that is linearity from part one. Risk is not, because of the two w times one minus w times sigma one two term. The lower the covariance, the more risk cancels when you combine assets, and a negative covariance can push the portfolio below its safest component. Diversification is one term in one quadratic, and that term is the covariance. A lender like the ones Maya studies thinks the same way about a book of loans. Defaults that move together — a regional recession hitting everyone at once — are far more dangerous than the same number of defaults that move independently, even when each individual loan looks identical on paper. Co-movement, not the count, is the real risk.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

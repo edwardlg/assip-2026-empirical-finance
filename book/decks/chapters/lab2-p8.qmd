@@ -1,9 +1,10 @@
 ---
-title: "Reading the SE and Wrapping Up"
 date: "2026-06-29"
 ---
 
-# Reading the SE and Wrapping Up {.title}
+## Reading the SE and Wrapping Up
+
+- Part 8 — read and defend the FM SE; wrap up
 
 ::: notes
 Welcome back to Lab Two, Fama–MacBeth on CRSP, the final part, eight of eight. In part seven we recovered a premium near six-tenths of a percent per month with a healthy t-statistic. Now make sure you can defend it. There are three questions to ask of any Fama–MacBeth standard error, all from Chapter two-point-four's checklist. We work through all three and close out the lab and Week Two.
@@ -57,7 +58,7 @@ Third question: does it disagree with the naive number? Run a pooled OLS of retu
 Let's end where Chapter two-point-four ended. Fama–MacBeth is the historical ancestor of the entire clustering literature. Fama and MacBeth invented it in nineteen seventy-three — a decade before White's robust standard errors, three decades before Petersen's panel taxonomy — to handle the cross-sectional correlation in stock returns without any sandwich machinery, which did not yet exist. Their solution was operational genius: don't estimate the N-by-N error covariance, just side-step it by letting each period speak once. Petersen later placed it inside the unified framework: essentially clustering by time, the right tool when a common time shock dominates, but under a firm effect it understates the standard error. The deeper lesson all of Week Two has driven at: getting the point estimate is the easy half; getting its uncertainty right is the half that decides whether your finding is real.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

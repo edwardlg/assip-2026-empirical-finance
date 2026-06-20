@@ -1,10 +1,11 @@
 ---
-title: "The Variance of OLS"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Variance of OLS {.title}
+## The Variance of OLS
+
+- Part 5 — deriving $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$ and reading it
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part five of nine. In part four we proved O L S is unbiased — the archer centers on the bullseye. Now we ask the second Chapter one-point-three question: how tightly clustered are the arrows? We derive the variance of beta hat, and this is where assumption four finally does some work.
@@ -60,7 +61,7 @@ Matrix algebra hides what this formula really tells you, so let's read the slope
 A number, to make it concrete. Suppose Maya's errors have standard deviation sigma equal to one point five, she has four hundred loans, and incomes have a standard deviation of thirty, in thousands of dollars. Then the slope variance is one point five squared over three hundred ninety-nine times thirty squared — about six point two seven times ten to the minus six. The standard error is the square root of that, about zero point zero zero two five. Now notice the lever. If incomes were twice as spread out, with s sub x equal to sixty, the denominator quadruples and the standard error halves — the same square-root payoff that quadrupling the sample size would buy.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

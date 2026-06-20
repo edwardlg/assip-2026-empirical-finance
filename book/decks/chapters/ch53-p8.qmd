@@ -1,9 +1,10 @@
 ---
-title: "What's Clever: Simplicity, Data Squeezing, and Doing the Skeptic's Work"
 date: "2026-07-20"
 ---
 
-# What's Clever About the Design {.title}
+## What's Clever About the Design
+
+- Part 8 — simplicity, the overlap trick, doing the skeptic's work
 
 ::: notes
 Welcome back to the reader's guide for Jegadeesh and Titman, part eight of eleven. In part seven we finished the table-reading order with robustness and reversal. Now we step back and ask what is genuinely clever about this paper. There are three things worth admiring: the brutal simplicity of the strategy, the data-squeezing overlap trick, and the rhetorical move of doing the skeptic's work first.
@@ -45,7 +46,7 @@ Second, the overlapping-portfolio trick squeezes the data. Re-forming every mont
 Third, the authors frame momentum as an efficiency anomaly, not just a trading tip. They could have stopped at "here is a strategy that makes money." Instead they pre-empt the obvious rebuttal — you are just being paid for risk — by running the risk adjustment themselves and showing the profit is not beta in disguise. By doing the skeptic's work first, they shift the burden. Now the defender of efficiency has to name the missing risk factor. That rhetorical move — doing your critic's job before they can — is the mark of a paper built to survive. It is also a template worth stealing for your own work: anticipate the strongest objection, run that test yourself, and report it whether it helps you or not.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

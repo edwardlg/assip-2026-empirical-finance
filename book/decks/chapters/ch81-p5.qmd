@@ -1,9 +1,10 @@
 ---
-title: "When the Specification Curve Lies"
 date: "2026-08-10"
 ---
 
-# When the Specification Curve Lies {.title}
+## When the Specification Curve Lies
+
+- Part 5 — the four ways a persuasive curve misleads
 
 ::: notes
 Welcome back to The Execution and the Specification Curve, part five of six. In part four we built the checklist for reading any curve. Now comes the third move: every technique has an assumption that breaks, and a picture this persuasive is dangerous precisely because it is persuasive. A specification curve can mislead in four distinct ways. We take them one at a time.
@@ -57,7 +58,7 @@ Third, the curve describes analytic-choice fragility, not identification. A spec
 Fourth, the curve can become a fishing license. There is a perverse failure mode where a researcher runs the multiverse, then picks the specification at the center and reports that as the headline — "I chose the median, the most representative one." But the median was determined by the data you have already seen, so choosing it after the fact is just outcome-driven selection in a lab coat. The discipline that prevents this is the one you already have: the pre-analysis plan fixes the primary specification in advance, and the curve is reported around that pre-registered point, not used to choose it. The confirmatory run comes first and is privileged; the curve is context, never a substitute. That is why the curve always marks where the pre-registered specification sits.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

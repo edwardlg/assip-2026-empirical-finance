@@ -1,10 +1,16 @@
 ---
-title: "From Puzzle to Researchable Question"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# From Puzzle to Researchable Question {.title}
+## From Puzzle to Researchable Question
+
+**Learning objectives.** By the end you can:
+
+- Turn a vague puzzle into a falsifiable, signed hypothesis
+- Filter ideas by so-what, who-cares, and what's-new
+- Find identifying variation that defends a causal claim
+- Judge feasibility and scope for a five-week project
 
 ::: notes
 Welcome to Week Seven, Chapter seven-point-one, part one of eight — the idea-generation workshop. For six weeks you have been a passenger. Every dataset arrived pre-cleaned, every regression had a known right answer in the back of the book, and every research question was really a teaching device. Starting now that scaffold comes down. The rest of the camp is your own project — a real question, on real data you acquire and clean yourself, presented in front of a room at the end of Phase Two. Most first projects do not die in the regression; by now you can run a regression in your sleep. They die in the gap between "I'm interested in crypto" and "here is a specific, answerable, falsifiable question." Closing that gap is the entire subject of this chapter.
@@ -46,7 +52,7 @@ A puzzle is a feeling that something is interesting. "Crypto seems to crash all 
 Watch the transformation on Devon's puzzle. "Crypto seems to crash all at once" becomes, after sharpening: when a large stablecoin loses its dollar peg, trading volume on decentralized exchanges spikes within the same day. Notice what the sharpening did. It named the trigger — a stablecoin depeg. It named the outcome — decentralized-exchange trading volume. It named the timing — same day. And, crucially, it committed to a direction: volume goes up, not down, not merely "changes." Now Devon can be wrong. If he pulls the data and volume does not move, or moves down, the hypothesis is dead — and that is a feature. A hypothesis you cannot kill is a hypothesis you cannot learn from.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,15 @@
 ---
-title: "Fama–MacBeth on CRSP: The Question"
 date: "2026-06-29"
 ---
 
-# Fama–MacBeth on CRSP: The Question {.title}
+## Fama–MacBeth on CRSP: The Question
+
+**Learning objectives** — by the end you can:
+
+- State the two-pass Fama–MacBeth procedure precisely
+- Estimate time-series betas, then cross-sectional slopes
+- Aggregate slopes into the FM estimate and SE
+- Explain why FM is clustering by time
 
 ::: notes
 Welcome to Week Two, Lab Two — replicating a textbook Fama–MacBeth on CRSP, part one of eight. This is the capstone of Week Two. Across Chapters two-point-one through two-point-four you rebuilt ordinary least squares from the floor up: the normal equations, the Gauss–Markov guarantees, and — the part that earns its keep today — the idea that correlated errors make naive standard errors lie. Now you put all of it to work on the most famous estimation procedure in empirical asset pricing.
@@ -54,7 +60,7 @@ Eugene Fama and James MacBeth solved this in nineteen seventy-three with a proce
 A note on data, because it governs the lab's structure. The canonical test runs on CRSP monthly returns, and CRSP is licensed. Per the Conventions, section five, licensed data stays read-only on GMU infrastructure — Hopper or the WRDS Cloud — and no CRSP numbers get copied into these notes. So the lab has two paths. Path A is the real thing — the connection pattern, the query, a pinned snapshot — run only on GMU infrastructure, with no CRSP output printed. Path B is a fully self-contained, seeded simulation with the same schema and a known planted risk premium, and it runs anywhere with no credentials. Every student completes Path B; Path A is the do-it-for-real-on-Hopper extension.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The Overidentification Test"
 date: "2026-07-06"
 ---
 
-# The Overidentification Test {.title}
+## The Overidentification Test
+
+- Part 6 — turning instrument disagreement into the Sargan/Hansen J test
 
 ::: notes
 Welcome back to Week Three-point-five, part six of nine. In part five we learned to read the Anderson–Rubin interval's shapes — unbounded for a weak instrument, empty when over-identified instruments disagree. Now we turn that disagreement principle into a single statistic: the overidentification test. It lives in the world of over-identification, where you have more instruments than you strictly need, and it buys you a testable implication of exclusion.
@@ -43,7 +44,7 @@ The Sargan-Hansen J statistic measures the total correlation between the instrum
 But read the test's limits, because they are severe and routinely ignored. First, it tests only over-identifying restrictions, never the whole exclusion assumption. If you have one instrument, just-identified, there are zero over-identifying restrictions and the test is empty — nothing to check. Even with several instruments, it can only detect relative disagreement. If all your instruments are invalid in the same direction — all sharing the same back door — they will agree perfectly and the J test will happily pass. A clean J is not a certificate of validity; it is merely the absence of evidence of disagreement. Second, the test has low power when instruments are weak. Third, a rejection tells you that something is wrong, not which instrument. Like the RESET test from Chapter two-point-five, the J test is a flag, not a diagnosis — and a passed J test is one of the most over-interpreted results in applied work. Exclusion remains, at bottom, an argument you must make.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

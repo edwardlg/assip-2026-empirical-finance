@@ -1,9 +1,10 @@
 ---
-title: "The Four-Beat Answer and the Robustness Strike"
 date: "2026-08-10"
 ---
 
-# The Four-Beat Answer and the Robustness Strike {.title}
+## The Four-Beat Answer and the Robustness Strike
+
+- Part 3 — the four-beat identification answer, selection, and robustness
 
 ::: notes
 Welcome back to Mentor Session eight, part three of six. In part two we ranked the three families and saw why identification is fatal. Now we learn the four-beat shape of a strong identification answer, meet the selection version that everyone faces, and turn to the first survivable family — robustness — and the specification curve that answers it.
@@ -42,7 +43,7 @@ There is one identification threat almost every one of you will face, because al
 Now the first survivable family. Robustness is the question "does it hold if you change that one choice?" A different sample filter, a different control set, a different cutoff, a different flavor of standard error, a different window. The referee asking this suspects you searched, even quietly, for the specification that gave the prettiest answer — the garden of forking paths from Chapter seven-point-three — and wants to see the result is not balanced on a single knife-edge decision. The answer is the specification curve from Chapter eight-point-one: show a tight cluster of estimates across many reasonable choices, not one lonely number, and say one sentence — "stable across the three choices I worried about most." A cluster that holds together is far more convincing than any single point estimate.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The Data and the Look-Ahead Guard"
 date: "2026-07-20"
 ---
 
-# The Data and the Look-Ahead Guard {.title}
+## The Data and the Look-Ahead Guard
+
+- Part 5 — CRSP, Compustat, sample period, look-ahead guard
 
 ::: notes
 Welcome back to lesson five-point-two, part five of nine. In part four we ran the twenty-five time-series regressions and named the G-R-S joint test. Now we step back to the data: which databases feed the machine, what sample period it covers, and the timing device that stops the construction from peeking into the future.
@@ -57,7 +58,7 @@ The annual June re-sort uses a deliberate lag: accounting data from the fiscal y
 For the bonds, briefly: the paper's larger ambition is one model for both stocks and bonds, so it adds two bond-market factors. A term factor — long-term government minus the short rate — captures the slope of the yield curve. A default factor — long-term corporate minus long-term government — captures credit risk. The headline is that the bond factors do most of the work for bonds while the stock factors do most of the work for stocks; the two markets are largely segmented here. For our purposes, and for your notebook five-point-two, we focus on the three stock factors and the twenty-five stock portfolios, which is where the paper's lasting influence lives.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Pitfalls, the Code, and the Handoff"
 date: "2026-06-29"
 ---
 
-# Pitfalls, the Code, and the Handoff {.title}
+## Pitfalls, the Code, and the Handoff
+
+- Part 8 — the two pitfalls, the code, and the handoff
 
 ::: notes
 Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part eight of eight — the finale. In part seven we saw that the within transformation is fixed effects, and why it makes the software fast. Now we close the loose ends: the two places naive use of the trick bites you even though the theorem never becomes false, the whole chapter in fifteen lines of code, the people behind the name, and a look ahead to the next chapter.
@@ -56,7 +57,7 @@ Here is the whole chapter in fifteen lines. Build Leah's six firms — patents, 
 A word on the name, since you will meet it constantly. Ragnar Frisch and Frederick Waugh proved the demeaning-as-partialling case in nineteen thirty-three, detrending economic time series. Michael Lovell generalized it in nineteen sixty-three, for seasonal adjustment. The whole tradition of absorbing trends, seasonals, and fixed effects by partialling-out descends from it. When a modern paper writes "we absorb firm and year fixed effects," it invokes Frisch–Waugh–Lovell, ninety years on. Carry three things forward. First, the reading rule: translate "controlling for the other variables" into "I residualized those out of both the outcome and this regressor, then took a simple slope." Second, the equivalence that powers panels: regressing on group dummies equals subtracting group means. Third, the threat-naming discipline: a coefficient controls for exactly the columns you included — everything outside is still in your residuals.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

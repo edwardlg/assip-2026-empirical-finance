@@ -1,9 +1,10 @@
 ---
-title: "The Bag-of-Words Model"
 date: "2026-07-27"
 ---
 
-# The Bag-of-Words Model {.title}
+## The Bag-of-Words Model
+
+- Part 2 — the scoring engine and finance-shaped word lists
 
 ::: notes
 Welcome back to Chapter six-point-three, part two of nine. In part one we framed a measurement paper: a general dictionary mislabels neutral accounting words as negative, and the choice of dictionary is the treatment. Now we open the engine. We state the bag-of-words model that turns a fifty-thousand-word filing into one number, then watch Loughran and McDonald build their finance-specific word list.
@@ -45,7 +46,7 @@ Every sentiment measure in this paper, both the Harvard one and the finance one,
 They do not stop at negative, because finance cares about more than good-versus-bad mood. They release a family of categories. Negative and positive tone. Uncertainty: words like approximate, contingency, may, risk, and could, capturing how much the firm hedges about its own future. Litigious: words like plaintiff, tort, settlement, and court, capturing legal exposure. And strong-modal versus weak-modal: words signaling how firmly management commits, like will, must, and always, versus may, might, and possibly. Notice these categories are finance-shaped. Uncertainty and litigious are not standard psychology categories. They exist because finance has lawsuits and forward-looking statements. Good measurement is often good taxonomy.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Replicating BDM in nb5.5"
 date: "2026-07-20"
 ---
 
-# Replicating BDM in nb5.5 {.title}
+## Replicating BDM in nb5.5
+
+- Part 7 — three exercises that rebuild BDM on your laptop
 
 ::: notes
 Welcome back to Chapter five-point-five, part seven of seven, the last part. In part six we pushed back on BDM's cures. Now we turn the whole paper into code. These three exercises are scaffolded toward notebook five-point-five, the placebo-law simulation. You reproduce the spirit of the paper on a clean simulated panel, not the proprietary data, but the mechanism and the punchline are identical.
@@ -45,7 +46,7 @@ Exercise two: turn the dial on serial correlation and on panel length. Rerun exe
 Exercise three: test the cures. Hold the data-generating process fixed at a strongly serially correlated setting and rerun the placebo experiment three more times, swapping in each fix: cluster the standard errors by state, block-bootstrap by resampling whole states, and collapse each state to a single pre and post average for the two-period comparison. Tabulate the four rejection rates side by side, the conventional plus three fixes. Confirm that each fix drags the rate back toward five percent. Then, as a stretch, shrink the number of states to a handful and watch the clustering fix start to over-reject again, rediscovering the few-clusters caveat from part six with your own simulation. That stretch is the whole week folding back on itself.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "The Least-Squares Objective"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Least-Squares Objective {.title}
+## The Least-Squares Objective
+
+- Part 2 — choosing the single best-fitting line by least squares
 
 ::: notes
 Welcome back to Chapter two-point-one, part two of seven. In part one we stacked Sam's regression into the matrix equation y equals X-beta plus epsilon. Now we put real numbers on the table — a deliberately tiny four-day dataset — and settle the question those leftover errors force on us: of all the candidate lines, which one is best? Ordinary least squares answers it with a single rule, and we build that rule carefully here.
@@ -50,7 +51,7 @@ $$\text{SSR}(\mathbf{b}) = \mathbf{e}'\mathbf{e} = (\mathbf{y}-\mathbf{X}\mathbf
 What does collectively small mean? We cannot just add the residuals — positive and negative ones cancel, and a wildly wrong line could score zero. So we square them first, which kills the signs and punishes big misses more, then add. Stacking the residuals into a vector e of b equals y minus X-b, the sum of squared residuals is e-transpose-e — the quantity y minus X-b, transposed, times y minus X-b itself. That middle step is worth pausing on: a vector dotted with itself is the sum of its squared entries, its squared length. So the sum of squared residuals is literally the squared length of the residual vector, the squared distance between y and the prediction X-b. Least squares means shortest residual vector. Ordinary least squares is the rule: choose beta-hat to be the arg-min over b of that squared distance. This is the same kind of object Maya minimized last week when she minimized portfolio variance — a quadratic bowl with a genuine bottom. Next, we find that bottom.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

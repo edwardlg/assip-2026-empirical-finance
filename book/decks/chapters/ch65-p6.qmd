@@ -1,10 +1,11 @@
 ---
-title: "RAG: Retrieve, Ground, and Its Limits"
 date: "2026-07-27"
 date-format: "YYYY-MM-DD"
 ---
 
-# RAG: Retrieve, Ground, and Its Limits {.title}
+## RAG: Retrieve, Ground, and Its Limits
+
+- Part 6 — retrieve nearest chunks, ground the answer, RAG's limits
 
 ::: notes
 Welcome back to the AI co-pilot for research, part six of fourteen. In part five we built the first half of the R-A-G pipeline: chunking each filing into coherent passages with metadata, and embedding each into a meaning vector stored in an index. Now we finish the pipeline — retrieve and ground — and face the two ways retrieval-augmented generation can still go wrong.
@@ -45,7 +46,7 @@ Stage four, ground the answer. You build a prompt that contains the retrieved ch
 Why does R-A-G reduce hallucination rather than eliminate it? It removes the recall failure mode — the model is no longer guessing facts from blurry memory — but it introduces two new ways to go wrong. First, retrieval can fail: if the relevant chunk is not in the top k, the model answers from incomplete information, and a model handed the wrong passages can still produce a confident, wrong answer. Second, the model can still misread or over-extrapolate from the passages it was given — inventing a number close to one in the text, or stitching two passages into a claim neither supports. So R-A-G is a large improvement, not a guarantee. The discipline that makes it trustworthy runs through this whole lesson: every claim must cite a retrievable source, and you spot-check those citations. A claim that cites passage three is one you can falsify by opening passage three; a claim with no citation is one you cannot trust, and the prompt should forbid it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

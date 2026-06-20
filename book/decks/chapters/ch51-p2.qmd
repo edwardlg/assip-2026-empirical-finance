@@ -1,9 +1,10 @@
 ---
-title: "The Twist, and What Kind of Claim This Is"
 date: "2026-07-20"
 ---
 
-# The Twist, and What Kind of Claim This Is {.title}
+## The Twist, and What Kind of Claim This Is
+
+- Part 2 — size, value as main event; the paper's genre
 
 ::: notes
 Welcome back to Chapter five-point-one, part two of seven. In part one we framed the research question and the reigning theory: CAPM says only market beta should explain returns. Now we meet the twist that made the paper famous — two patterns the field had filed away as anomalies — and we settle a question every good referee asks first: what kind of claim is this paper even making? Getting that straight is half of reading it well.
@@ -33,7 +34,7 @@ Fama and French ask whether CAPM is true, with a twist. By the late nineteen eig
 Here is a good referee's first habit: before asking "do I believe the result?" ask "what kind of claim is this?" Weeks Three and Four drilled you to hunt for a causal design — a treatment, a counterfactual, an as-good-as-random source of variation. You will not find one here, and you should not expect to. That is not a flaw; it is the paper's genre. Fama and French nineteen ninety-two is a descriptive, predictive asset-pricing study. It documents which firm characteristics line up with average returns in the cross-section. It is the empirical-finance cousin of the regressions in Week One, not the natural experiments of Week Four. Read it asking "is this relationship real and robust?" — not "is this the causal effect of size on returns?" A referee who demands a randomized experiment here has misread the genre; one who accepts a sloppy correlation has under-read it. The right standard is robustness and honesty about what the design can and cannot deliver.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

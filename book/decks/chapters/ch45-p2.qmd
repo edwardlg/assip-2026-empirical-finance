@@ -1,9 +1,10 @@
 ---
-title: "The Construction, With Numbers"
 date: "2026-07-13"
 ---
 
-# The Construction, With Numbers {.title}
+## The Construction, With Numbers
+
+- Part 2 — work the instrument by hand on two regions
 
 ::: notes
 Welcome back to Chapter four-point-five, part two of ten. In part one we built the shift-share instrument: combine national industry shifts with baseline local shares as B-sub-r equals the sum of share times shift. Now we make it concrete with arithmetic, because the formula is opaque and the numbers are transparent. We will work two of Maya's regions by hand, then draw out the single most important observation — which ingredient actually creates variation across regions, and why the instrument needs both to vary at all. Those observations are the seeds of the two identification views that organize the rest of the chapter.
@@ -36,7 +37,7 @@ Let me make it concrete with three industries. Two of Maya's regions, Rustville 
 Now the second key observation, which plants the seed of the other view. The instrument needs both ingredients to vary. If every region had identical shares, B-sub-r would be the same constant everywhere and would instrument nothing. If every industry grew at the same national rate, B-sub-r would just be that common rate times one — again a constant. Variation in the instrument across regions is born from the interaction of share dispersion and shift dispersion. Said another way: the only thing that makes the same industry contribute differently across regions is the share, and the only thing that makes the predicted shock move at all is the shifts being nonzero and varied. The first observation — that shares do the cross-regional work — is the Goldsmith-Pinkham, Sorkin and Swift seed. The second — that the shifts are the moving randomness — is the Borusyak, Hull and Jaravel seed. Those two views are the two halves of this chapter.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

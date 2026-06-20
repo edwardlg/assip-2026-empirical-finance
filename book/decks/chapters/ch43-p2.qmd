@@ -1,10 +1,11 @@
 ---
-title: "Local Randomization and the Continuity Assumption"
 date: "2026-07-13"
 date-format: "YYYY-MM-DD"
 ---
 
-# Local Randomization and the Continuity Assumption {.title}
+## Local Randomization and the Continuity Assumption
+
+- Part 2 — why near-cutoff units are comparable, formally
 
 ::: notes
 Welcome back to Chapter four-point-three, part two of thirteen. In part one we met regression discontinuity and stated the result: the jump in the outcome at the cutoff is the effect. Now we build the deepest justification for why that works — the analogy to a randomized experiment — and then state the formal identifying assumption that makes it rigorous.
@@ -46,7 +47,7 @@ This is the local-randomization intuition, and it is the heart of regression dis
 The formal version of this intuition is a continuity assumption, stated in potential-outcomes language. Let Y-i-one and Y-i-zero be unit i's potential outcomes under treatment and control. The identifying assumption of regression discontinuity is that the average potential outcomes are continuous functions of X at the cutoff. Read this carefully, because it is the whole game. It says: if no treatment had switched on at the cutoff, the outcome would have evolved smoothly through it, with no jump. The untreated potential outcome — what would have happened to a just-barely-Russell-two-thousand stock had it stayed just-barely-Russell-ten-hundred — is the same, in the limit, as what we actually observe on the other side. Those control-side stocks supply the missing counterfactual, and any jump we then see must be the treatment. Note the elegant difference from the conditional-independence assumption. That demanded comparability after conditioning on a big pile of covariates you hope is complete. Regression discontinuity demands comparability only in the limit, exactly at the cutoff, from a smoothness condition that is far weaker and leaves observable fingerprints when it fails.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

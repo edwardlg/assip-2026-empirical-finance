@@ -1,10 +1,11 @@
 ---
-title: "Fatal Versus Survivable Critiques, and How to Concede"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Fatal Versus Survivable Critiques, and How to Concede {.title}
+## Fatal Versus Survivable Critiques, and How to Concede
+
+- Part 6 — tell a fatal critique from a survivable one
 
 ::: notes
 Welcome back to Chapter eight-point-five, part six of nine. In part five we handled confound questions and the honest "I don't know." Now we sharpen the single distinction that lets you keep your composure when a question lands hard: a survivable critique attacks a number, but a fatal critique attacks the comparison. We learn to tell them apart live, and how to concede when the attacker is right.
@@ -46,7 +47,7 @@ But if someone says your treated and control groups were already diverging befor
 Here is what to do when a fatal critique lands and the attacker is right: do not defend the indefensible. The instinct under pressure is to argue harder, and it is exactly wrong; defending a broken identification in front of a room that can see it is broken converts a damaged paper into a damaged reputation. The move is to concede the point at the level it was made and retreat to what survives. You're right that I can't rule that out with this design, so the honest reading is that this is a strong association consistent with the mechanism, not the clean causal estimate I'd hoped for, and that's a real limitation. A conceded fatal critique is a wounded paper but an intact scientist; a bluffed one is neither. And often the critique is fatal to the causal claim but not to the descriptive one. You can almost always retreat to "this is a robust pattern that future work with a better design should test causally," which is a real, publishable, honest contribution. Know your retreat position before you walk in. That is what the residual-concern column was for.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

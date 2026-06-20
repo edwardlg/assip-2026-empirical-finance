@@ -1,9 +1,10 @@
 ---
-title: "Gate One — Too Big to Be Noise?"
 date: "2026-06-22"
 ---
 
-# Gate One — Too Big to Be Noise? {.title}
+## Gate One — Too Big to Be Noise?
+
+- Part 2 — could noise alone have produced this number?
 
 ::: notes
 Welcome back to Mentor Session One, part two of five. In part one we set up the gauntlet: a number becomes a finding only by clearing three gates. Now we open the first one. Gate one asks the question Chapter one-point-five built a whole machine to answer — could noise alone have produced this number? It is where every honest evaluation starts, so let us walk a real number through it: Sam's reversal-rule backtest.
@@ -53,7 +54,7 @@ Now watch what happens when we change only the sample size. Take the exact same 
 One last point about gate one. The p-value that comes out of this — for Sam, about zero-point-zero-four-six — answers exactly one narrow question correctly: if the true edge were zero, how often would noise alone produce a t-statistic at least this extreme? That is all it answers. It refuses every other question. It does not tell you the probability your hypothesis is true; it does not tell you the effect is large; it does not tell you the result will replicate. Respect that refusal. Clearing gate one is the easiest of the three gates, and clearing it alone proves almost nothing. A statistically significant number has earned the right to be examined further — it is not yet a finding.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "Using AI Responsibly — Your Capstone's Integrity Section"
 date: "2026-07-27"
 ---
 
-# Using AI Responsibly — Your Capstone's Integrity Section {.title}
+## Using AI Responsibly — Your Capstone's Integrity Section
+
+- Part 5 — disclose every AI use as your capstone's integrity section
 
 ::: notes
 Welcome back to Mentor Session six, part five of five — the last part. In part four we used Professor Gao's earnings-management paper to show that a regression's outcome can itself be a measured proxy, validated by planting known truth in a simulation. Now we turn to the second paper — using AI responsibly in research and in teaching — and we make it the integrity section of your own capstone. The responsible-use questions in that paper are exactly the ones your capstone will be graded on, just wearing a teaching dress.
@@ -28,7 +29,7 @@ The second paper is Gao, Gopalakrishnan, Ehrlich, and Wang, forthcoming in the J
 - Reproducibility: **pin the version**, log every call
 
 ::: notes
-A simulation that predicts market moves for students to trade against is a leakage minefield. The one place training-data look-ahead bites is when the model knows how a historical episode actually resolved — it has read the ending. The cleanest defense is a date-fenced information set, tested on post-cutoff episodes the model could not have read, so the simulation is fair and realistic rather than secretly rigged by hindsight. And reproducibility is the same problem we saw with labels: because the AI's outputs are stochastic and the model version can silently change, another instructor — or a referee of the education paper — can only re-run the same experience if you pin the version string and log every call. Tie that to one line of your own capstone's responsible-AI-use disclosure. CHECK any specific feature of the published simulation before stating it as fact.
+A simulation that predicts market moves for students to trade against is a leakage minefield. The one place training-data look-ahead bites is when the model knows how a historical episode actually resolved — it has read the ending. The cleanest defense is a date-fenced information set, tested on post-cutoff episodes the model could not have read, so the simulation is fair and realistic rather than secretly rigged by hindsight. And reproducibility is the same problem we saw with labels: because the AI's outputs are stochastic and the model version can silently change, another instructor — or a referee of the education paper — can only re-run the same experience if you pin the version string and log every call. Tie that to one line of your own capstone's responsible-AI-use disclosure.
 :::
 
 ## What Your Capstone Must Disclose
@@ -42,7 +43,7 @@ A simulation that predicts market moves for students to trade against is a leaka
 So here is what your capstone must do. It must disclose and defend every way you used AI, separating writing aid — where you own the words — from data generation, where labels enter a regression and demand a validation table. For any generated labels, that table is concrete: the prompt verbatim, the gold-set and held-out sizes, out-of-sample precision and recall, the version pinned, every call logged, and your citations and figures verified against a primary source. The disclosure is itself graded — it is the difference between an instrument you calibrated and one you simply trusted. The seminar question you will face in Weeks seven and eight is exactly this: which text variable would a referee attack first, and can you show its error is small enough not to be driving your result?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

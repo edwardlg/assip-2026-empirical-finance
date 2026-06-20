@@ -1,10 +1,11 @@
 ---
-title: "Maya's Worked Memo, End to End"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Maya's Worked Memo, End to End {.title}
+## Maya's Worked Memo, End to End
+
+- Part 8 — Maya's fair-lending memo built end to end
 
 ::: notes
 Welcome back to the identification memo, part eight of nine. In part seven we covered the honesty rules — state the residual, match the verb, never bury the hard question. Now we write the whole memo end to end for the project Maya has carried since Week One. This is the lesson made concrete on a real dataset: a specification, an identifying-assumption paragraph, and a threats table read the way a referee would read it.
@@ -49,7 +50,7 @@ The identifying-assumption paragraph reads: our estimate of the effect of state 
 Maya's table has six rows, led by the differential pre-trend — the hardest question, where it belongs. Below it: the forbidden comparison and negative weights, answered by the Callaway-Sant'Anna design choice and a Goodman-Bacon decomposition; anticipation, partly testable by inspecting the quarters just before adoption; a compound policy shock, only arguable from legislative records because no test detects a perfectly co-timed policy; the outcome being a composite measure, addressed with a doubly-robust composition-matched estimate; and few-treated-cluster inference, answered with state-clustered errors plus the placebo permutation. Read it the way a referee would. The first row is the hardest question and it leads. Every column three is the right kind of response — a test where the threat is testable, an institutional argument where it is not. And no residual-concern cell is empty, because none honestly could be. The sentence says credible, not causal, and every leftover worry is on the page where a reader can see Maya already saw it. A paper built on this spine can be attacked — every paper can — but it cannot be ambushed.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

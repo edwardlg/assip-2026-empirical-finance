@@ -1,9 +1,15 @@
 ---
-title: "Building a Shift-Share Instrument"
 date: "2026-07-13"
 ---
 
-# Building a Shift-Share Instrument {.title}
+## Building a Shift-Share Instrument
+
+**Learning objectives** — by the end you can:
+
+- Build a shift-share instrument from shifts and shares
+- Explain the two identification views (shares vs. shifts)
+- Apply diagnostics: Rotemberg weights, effective shocks, AKM
+- Treat shift-share as ordinary IV
 
 ::: notes
 Welcome to Week Four, Chapter four-point-five, part one of ten. Week Three handed you the instrumental-variables machine and one hard truth: a valid instrument is something you find, and finding one is rare. You need a variable Z that shoves the treatment around, has no other path to the outcome, and is unrelated to the confounder. Most of the time the world simply does not hand you a clean coin flip. This chapter is about a different way to get an instrument: not by finding one ready-made, but by building one out of pieces you already have. The construction is the shift-share, or Bartik, instrument, named for Timothy Bartik, who put it to work in nineteen ninety-one. Our anchor is Maya. She wants to know whether a downturn in the industries that happen to employ a region's workers pushes households there into credit-card delinquency and mortgage default.
@@ -33,7 +39,7 @@ $$B_r = \sum_{j} s_{rj}\, g_j$$
 The whole idea lives in two words. Shifts are the national industry growth rates — how fast nationwide employment in autos, or finance, or retail grew this year. We write the shift for industry j as g-sub-j, and it is a national number, the same shock every region feels. Shares are the local exposure weights — what fraction of region r's jobs were in each industry at the start of the period, before this year's shocks landed. We write the share for region r in industry j as s-sub-r-j, and for each region these fractions sum to one across industries. The Bartik instrument for region r, written B-sub-r, is the share-weighted sum of the shifts: sum over industries of the share times the national shift. Read it as a forecast — given how region r was distributed across industries, and given how each industry did nationally, here is the growth we would predict for region r from national forces alone.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

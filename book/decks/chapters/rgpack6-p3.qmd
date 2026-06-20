@@ -1,9 +1,10 @@
 ---
-title: "RAG — Answering with Citations"
 date: "2026-07-27"
 ---
 
-# RAG — Answering with Citations {.title}
+## RAG — Answering with Citations
+
+- Part 3 — answer online: retrieve, cite, dodge failure modes
 
 ::: notes
 Welcome back to Reading Guide Pack Six and the AI Lab Manual, part three of eight. In part two we built the offline index — chunking each filing, embedding the passages into vectors, and storing them for fast search. Now we run the online half: a user's question arrives, and we produce an answer grounded in the documents with citations you can check. This is the half students see, and it is also where the three big failure modes live. So we walk the query path box by box, then look hard at how each box can betray you, because the whole point of this tool is to be more trustworthy than a raw chatbot, not less.
@@ -45,7 +46,7 @@ Second, stuff the prompt. You build one prompt: a system instruction that says a
 And the failure modes are not rare. Bad chunking: cut the text mid-sentence and the relevant fact splits across two chunks, so neither alone is retrievable; or chunk so coarsely that one passage mixes five topics and dilutes the signal. Retrieval miss: the right passage exists but its vector is not near the question's — the question says litigation exposure, the filing says pending legal proceedings, and the embedding model fails to bridge them, so the model answers from an irrelevant chunk. And the model ignoring the context: even with the right passage in the prompt, it can override it with a confident wrong answer from training. That last one is hallucination, which Chapter Six-point-Five calls the cardinal sin of LLM research. The defense against all three is the same discipline as the rest of this book: validate. Spot-check that retrieved chunks are relevant, confirm cited passages really say what the answer claims, and never report a RAG answer you have not traced to its source.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

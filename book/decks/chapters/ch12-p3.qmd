@@ -1,9 +1,10 @@
 ---
-title: "The Variance Algebra You Will Use"
 date: "2026-06-22"
 ---
 
-# The Variance Algebra You Will Use {.title}
+## The Variance Algebra You Will Use
+
+- Part 3 — four algebra rules that carry the whole book
 
 ::: notes
 Welcome back to Chapter one-point-two, part three of eight. In part two we defined variance and covariance and worked one number by hand. Now we collect the four algebra properties that carry almost everything in this book: scaling, bilinearity, symmetry, and the variance of a sum. Each follows from the definitions plus linearity of expectation. The last one — the variance of a sum — is the equation Maya's whole problem rides on.
@@ -43,7 +44,7 @@ Combining those gives the fourth property, the one that deserves a slow look. Th
 When does the cross-term vanish? If the covariance is zero we call X and Y uncorrelated, and only then does variance add cleanly: the variance of the sum is the sum of the variances. Independence implies uncorrelatedness, because independent variables have the expected value of the product equal to the product of the expected values, which kills the covariance. But the reverse is the classic failure mode: uncorrelated does not imply independent. Take X symmetric about zero and let Y equal X squared. They are tightly linked — Y is a deterministic function of X — yet the covariance of X with X squared is zero when the distribution is symmetric, because covariance only senses linear co-movement. Covariance is blind to curved relationships. Hold onto that; it is exactly the limitation that linear regression inherits in Week Two.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

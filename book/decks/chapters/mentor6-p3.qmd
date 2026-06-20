@@ -1,9 +1,10 @@
 ---
-title: "Three Ways AI Fools You — and the Guardrail for Each"
 date: "2026-07-27"
 ---
 
-# Three Ways AI Fools You — and the Guardrail for Each {.title}
+## Three Ways AI Fools You — and the Guardrail for Each
+
+- Part 3 — leakage, prompt p-hacking, irreproducibility, and their guardrails
 
 ::: notes
 Welcome back to Mentor Session six, part three of five. In part two we ranked the instruments by opacity and built validation's one shape: a random gold set, a held-out split, and precision and recall reported out of sample. Now we get specific. Three disciplines keep an AI instrument honest, all about not fooling yourself. The umbrella: out-of-sample is the whole game — a measure tuned on the same data it is tested on is grading itself with the answer key. Here are the three traps and the guardrail for each.
@@ -53,7 +54,7 @@ The third trap is irreproducibility. Run the same LLM on the same ten-K on Monda
 Pull the three traps together and one thread runs through all. AI is a co-pilot — it accelerates work you can verify. It becomes a hazard the instant you let it replace judgment you don't check. And disclosure turns the instrument from a private convenience into science: the prompt verbatim, the version pinned, the calls logged, the labels saved. So hold one reflex sharp. For every text-derived number, ask three things: what is it a proxy for, how was it validated, and what would I have to disclose so a referee can judge the error I could not remove?
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Directional Hypotheses"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Directional Hypotheses {.title}
+## Directional Hypotheses
+
+- Part 2 — stating hypotheses directionally as numbered, falsifiable claims
 
 ::: notes
 Welcome back to Chapter seven-point-three, part two of eight. In part one we watched Maya nearly p-hack an honest project through the garden of forking paths, and we named the cure: write the plan before you peek. Now we start writing it. The short-form pre-analysis plan has exactly five components, and the order is the discipline. This part covers the first — your hypotheses, stated directionally. A forty-page plan would teach the wrong lesson, that pre-registration is bureaucracy. The short form teaches the right one: it is a thinking tool, and each component forces a specific honesty before the data can flatter you.
@@ -34,7 +35,7 @@ Write down what you predict, and which way. Not race is related to denial — th
 If you genuinely have no prior on direction — either way would be a finding — say so and commit to a two-sided test. That is honest too; it just costs you the easier critical value, one-point-nine-six instead of one-point-six-five, which is the price of not having had a prior. State the hypotheses as numbered, falsifiable sentences, and number them, because the numbering will reappear in the multiple-testing plan. H1 is your primary hypothesis — the one the whole project lives or dies on. H2 and H3 are secondary: the ones that would enrich the story but whose failure would not sink it. Deciding which hypothesis is primary, in advance, is one of the most consequential choices in the whole plan.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

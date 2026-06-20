@@ -1,10 +1,11 @@
 ---
-title: "Priya's Pipeline, the Rubric, and Your Turn"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Priya's Pipeline, the Rubric, and Your Turn {.title}
+## Priya's Pipeline, the Rubric, and Your Turn
+
+- Part 10 — Priya's pipeline, the scoring rubric, your turn
 
 ::: notes
 Welcome back to Chapter seven-point-one, part ten of ten — the finish. In part nine we mapped five cast projects and ran Devon's depeg pipeline to an event-study spec. Now we run the same machine on Priya's disaster-and-insurance question with a different design, then meet the scoring rubric and set up the notebook.
@@ -24,17 +25,21 @@ Now Priya, the same machine, a different design. The puzzle: insurers are fleein
 
 ## The Scoring Rubric — Five Dimensions, 0–2 Each
 
-- **Falsifiable? · So-what/who-cares? · Novel? · Identifiable? · Feasible?**
-- Score each 0–2; total out of 10
-- **Veto:** any 0 on *Identifiable* or *Feasible* kills it, whatever the total
-- Solid project: **7+ with no zeros**
-- 4–6 is usually salvageable by *narrowing* the question
+| Dimension | 0 — fatal | 1 — workable | 2 — strong |
+|---|---|---|---|
+| **Falsifiable?** | A mood; no direction | Direction, vague | Sharp signed $H_0$ |
+| **So what / who cares?** | No one acts | Niche audience | Real conversation, both answers |
+| **Novel?** | Re-run, same data | New setting/period | New data/outcome/design |
+| **Identifiable?** | Correlation as causal | Descriptive, labeled | Real design (RD/DiD/event/IV) |
+| **Feasible in 5 weeks?** | Data unavailable | Obtainable; tight | In hand by Ch 7.2; one question |
+
+- **Veto:** any 0 on *Identifiable* or *Feasible* kills it; solid = **7+, no zeros**
 
 ::: notes
 You will carry three or four ideas into Week Seven, and you need a fast, honest way to rank them. Here is the rubric you'll use in problem set seven-point-one: score each candidate on five dimensions — falsifiable, so-what-slash-who-cares, novel, identifiable, and feasible — zero to two points each, total out of ten. On falsifiable, two is a sharp signed hypothesis with a null. On so-what, two means a real conversation cares and both answers matter. On novel, two is new data, outcome, or identification. On identifiable, one is descriptive honestly labeled and two is a real design from Weeks Three and Four. On feasible, two is data in hand by Chapter seven-point-two with one clean question. Read the scores as a checklist with veto power, not a sum to maximize. Any zero on identifiable or feasible is a veto — kill the idea regardless of total, because an unidentifiable question is not research and an infeasible one will not finish. A solid project lands at seven or above with no zeros. An idea scoring four to six is usually salvageable by narrowing — tighten the hypothesis, find the cutoff or event date, shrink the sample.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

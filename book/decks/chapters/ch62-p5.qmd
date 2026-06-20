@@ -1,9 +1,10 @@
 ---
-title: "The Data Behind the Measure"
 date: "2026-07-27"
 ---
 
-# The Data Behind the Measure {.title}
+## The Data Behind the Measure
+
+- Part 5 — the data, the filters, the public TNIC library
 
 ::: notes
 Welcome back to Chapter six-point-two, part five of nine. In part four we built T-N-I-C from pairwise cosine similarities. Now we look underneath: what data feeds the measure, what filters shape it, and the piece of this paper that outlives the paper itself — a public data library you can download.
@@ -45,7 +46,7 @@ Filters are decisions, and decisions are levers. The salient ones: a firm must h
 Now the part that outlives the paper: the public T-N-I-C data library. Hoberg and Phillips published the computed text-based industries — and related similarity measures — as a free, public data library any researcher can download and merge into their own work. You do not re-parse EDGAR to use text-based industries; you pull theirs. Turning a measure into infrastructure others build on is much of why this paper is cited so heavily — and the deeper capstone lesson: a reusable measure can outweigh any single regression you run with it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

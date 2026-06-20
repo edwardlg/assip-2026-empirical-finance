@@ -1,9 +1,10 @@
 ---
-title: "Three Skim-Traps, the GMU Theme, and PowerPoint"
 date: "2026-08-10"
 ---
 
-# Three Skim-Traps, the GMU Theme, and PowerPoint {.title}
+## Three Skim-Traps, the GMU Theme, and PowerPoint
+
+- Part 3 — three skim-traps, the GMU theme, and PowerPoint
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part three of ten. In part two we built the poster's six-panel skeleton and the rule that it reads numbers but never contains them. Now we dwell on the three lines in that skeleton you will get wrong if you skim — and the two alternate paths, the real GMU theme and PowerPoint. These are small details, but each one has bitten a real build, including the verification of this very lab.
@@ -30,10 +31,10 @@ Three things in this skeleton are worth dwelling on, because they are exactly th
 - Deliverable is `paper/poster.pdf` — must regenerate from `make poster`
 
 ::: notes
-Two notes on flexibility. When the College of Science distributes its current academic-poster template — and you should confirm the URL with the cosassip email; that is a CHECK tag in the lab — the only changes are the use-theme line and possibly the page-size constants. The body is identical: the make-title, the abstract block, the six-panel column structure, the input and include-graphics lines. So learn the shape on the default theme now and swap to the GMU theme when the template lands. And if you prefer to design the poster in PowerPoint, because the visual feedback is faster, the rule is the same: every figure on the slide is the same file your notebooks generated, inserted via Insert, Picture, Linked — not pasted — so a regenerated figure refreshes when you re-export to PDF. The abstract block is pasted from the generated plain-text mirror, never typed. The deliverable is paper-slash-poster-dot-pdf, and how it was authored matters less than that it regenerates from make-poster with no manual edits.
+Two notes on flexibility. When the College of Science distributes its current academic-poster template, the only changes are the use-theme line and possibly the page-size constants. The body is identical: the make-title, the abstract block, the six-panel column structure, the input and include-graphics lines. So learn the shape on the default theme now and swap to the GMU theme when the template lands. And if you prefer to design the poster in PowerPoint, because the visual feedback is faster, the rule is the same: every figure on the slide is the same file your notebooks generated, inserted via Insert, Picture, Linked — not pasted — so a regenerated figure refreshes when you re-export to PDF. The abstract block is pasted from the generated plain-text mirror, never typed. The deliverable is paper-slash-poster-dot-pdf, and how it was authored matters less than that it regenerates from make-poster with no manual edits.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,10 +1,11 @@
 ---
-title: "Placebo Tests: Fake Units and Fake Outcomes"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Placebo Tests: Fake Units and Fake Outcomes {.title}
+## Placebo Tests: Fake Units and Fake Outcomes
+
+- Part 5 — permute units, swap outcomes, report failures
 
 ::: notes
 Welcome back to Chapter eight-point-two, part five of ten. In part four we ran the in-time placebo — a fake treatment date in the pre-period — to expose differential pre-trends. Now the other two placebo flavors: permuting the units instead of the dates, and swapping in an outcome the program cannot possibly move. Both share the same logic — find nothing where nothing can be — and both end on the same uncompromising rule: a failed placebo must be reported.
@@ -34,7 +35,7 @@ Now permute units instead of time. Assign fake adoption to states that never act
 Finally, fake outcomes. Pick an outcome the treatment should have no plausible channel to move, but that shares the same data structure — Maya might use the denial gap for a loan category exempt from fair-lending examination. Pass: no effect on the placebo outcome, which rules out a broad confounder — a general economic shock to adopting states — that would have moved everything. Fail: the program moves an outcome it cannot mechanically affect, a tell that something other than the program is driving adopting states, and your effect is riding on it. The unifying point: a placebo test is a prediction your theory makes about where you should find nothing, and reporting a failed placebo is not optional. Referees run placebos in their heads as they read. A paper that omits the obvious one reads as evasive; a paper that reports a failed one and grapples with it reads as honest. You ran the placebo to find the truth, not to collect a pass.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

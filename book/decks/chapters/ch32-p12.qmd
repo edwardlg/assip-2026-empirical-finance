@@ -1,9 +1,10 @@
 ---
-title: "What Matching Buys, and What to Carry Forward"
 date: "2026-07-06"
 ---
 
-# What Matching Buys, and What to Carry Forward {.title}
+## What Matching Buys, and What to Carry Forward
+
+- Part 12 — three honest advantages, when not to trust matching
 
 ::: notes
 Welcome back to Chapter three-point-two, part twelve of twelve, the finale. In part eleven we saw matching is still selection-on-observables and dies of any omitted confounder. So if the assumption is identical to regression's, what does matching actually buy? We give three honest advantages, say when not to trust it, and strip the chapter to its load-bearing sentences.
@@ -42,7 +43,7 @@ When should you reach for it? When you have a credible argument — from institu
 Strip the chapter to its load-bearing sentences. Under the Conditional Independence Assumption and overlap, comparing treated and untreated units with the same covariates recovers a causal effect, because the selection-bias term vanishes within each cell. Exact matching does this but dies of the curse of dimensionality. The propensity score rescues it — Rosenbaum and Rubin proved conditioning on the scalar suffices, because it is a balancing score. Nearest-neighbor and caliper matching implement the comparison, with choices that trade bias against variance. You validate with balance diagnostics, standardized mean differences, never t-tests, checking balance, not the outcome. And you remember, always, that CIA is untestable and matching is still selection-on-observables. Chapter three-point-three keeps the score but stops matching on it — it reweights by it, building inverse-probability weighting, entropy balancing, and the doubly-robust estimators. The score you built here is the raw material; next chapter turns it into a weight.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

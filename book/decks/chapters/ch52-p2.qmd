@@ -1,9 +1,10 @@
 ---
-title: "Why Time-Series Buys You an Alpha"
 date: "2026-07-20"
 ---
 
-# Why Time-Series Buys You an Alpha {.title}
+## Why Time-Series Buys You an Alpha
+
+- Part 2 — why time-series yields an $R^2$ and an $\alpha$
 
 ::: notes
 Welcome back to lesson five-point-two, part two of nine. In part one we separated the two papers: the earlier one cross-sectional, the nineteen ninety-three one time-series. Now we see why going time-series matters so much. A time-series regression hands you two things the cross-section cannot — an R-squared and an intercept — and that intercept is the whole ballgame.
@@ -44,7 +45,7 @@ A nonzero alpha is a pricing error: money the model cannot explain. The cross-se
 So here is the research question, stated as plainly as we can. Is there a small set of factors — the market, a size factor, and a value factor — such that the time-series regression of any test portfolio's excess return on those three factors has, first, a high R-squared, meaning the factors capture the common variation, and second, an intercept indistinguishable from zero, meaning no priced risk is left on the table? If the answer is yes, you have replaced a vague claim — size and value matter — with an operational model: a three-line regression anyone can run. That is the bar the paper sets for itself, and the rest of the lesson is about how it tries to clear that bar.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

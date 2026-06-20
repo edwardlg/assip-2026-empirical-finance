@@ -1,9 +1,10 @@
 ---
-title: "LATE: The Four Types"
 date: "2026-07-06"
 ---
 
-# LATE: The Four Types {.title}
+## LATE: The Four Types
+
+- Part 7 — sorting units into the four response types
 
 ::: notes
 Welcome back to Chapter three-point-four, part seven of ten. In part six we built two-stage least squares as Frisch-Waugh-Lovell with an instrument. Now we arrive at the deepest idea in the chapter — the one that separates people who use I-V from people who understand it. Maya's three hundred dollars is tempting to call "the effect of the financial-literacy course." It is not. It is the effect for a specific, invisible subgroup, and Imbens and Angrist proved in nineteen ninety-four exactly which one: the local average treatment effect, the LATE. We start by sorting everyone into four types.
@@ -44,7 +45,7 @@ Attach Maya's people to the four types. The always-takers are the highly motivat
 Now watch what the instrument can and cannot learn. For an always-taker, D is one whether or not they are mailed, so the mailer changes nothing about their treatment — they contribute zero to the first stage, and the instrument is blind to their treatment effect. Same for never-takers: D is always zero, the mailer moves nothing, they are invisible. The only people whose treatment status responds to the instrument are the compliers, and the defiers. So when the Wald ratio reads the outcome response off the instrument's wiggle, the only treatment effects in that response belong to compliers. I-V literally cannot see the effect for always-takers and never-takers, because the instrument never changed their treatment. This is not a flaw you can fix with more data; it is built into what an instrument is.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

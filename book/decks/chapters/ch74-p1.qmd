@@ -1,10 +1,16 @@
 ---
-title: "Building the Analysis Dataset: The Crosswalk Problem"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Building the Analysis Dataset: The Crosswalk Problem {.title}
+## Building the Analysis Dataset: The Crosswalk Problem
+
+**Learning objectives.** By the end you can:
+
+- Join datasets through a researched, date-aware crosswalk
+- Verify merge cardinality and report the match rate
+- Defeat survivorship and look-ahead bias
+- Handle outliers and missing data, then log every step
 
 ::: notes
 Welcome to Week Seven, Chapter seven-point-four, part one of seven. Sam pulled two clean files: monthly stock returns from CRSP and annual accounting numbers from Compustat. But his real question — do high book-to-market firms earn higher returns? — lives in neither file. The returns sit in CRSP; the book value in Compustat. To answer it he must join the two. This chapter turns raw pulls into one trustworthy analysis panel, where the largest, most embarrassing errors in empirical finance get made. We open with the first surprise: nobody agrees on what to call a firm.
@@ -58,7 +64,7 @@ The solution is a crosswalk: an authoritative table mapping one identifier syste
 Two other crosswalks you will meet. First, the SEC's EDGAR system identifies filers by a Central Index Key, not a ticker or PERMNO. Leah, working on ten-K text, maps EDGAR filings to CRSP returns through a researched link, not unstable tickers. Second, CUSIP — a security identifier both CRSP and Compustat carry, tempting you into a shortcut. Resist it. CUSIPs are nine characters, but vendors store different truncations, they get reassigned over time, and CRSP's historical CUSIP differs from its current one. A naive CUSIP merge fails the same way a ticker merge fails, just less obviously. The lesson: never join on a name or a recycled code; join on a researched, date-aware identifier crosswalk, and respect its validity window.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

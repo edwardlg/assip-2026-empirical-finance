@@ -1,10 +1,11 @@
 ---
-title: "The Fundamental Problem and the Estimands"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Fundamental Problem and the Estimands {.title}
+## The Fundamental Problem and the Estimands
+
+- Part 2 — why individual effects vanish, and the three estimands
 
 ::: notes
 Welcome back to Chapter three-point-one, part two of five. In part one we defined a causal effect for one person as Y-of-one minus Y-of-zero, the gap between two parallel-world outcomes, and we saw the treatment is a switch that reveals only one of those worlds. Now we confront the consequence of that switch, the single hardest fact in the field, and then we name the three population averages that the rest of the week chases. Everything from here is about escaping a problem we are about to prove is unescapable at the individual level.
@@ -51,7 +52,7 @@ Lay it out as a table to make the missingness vivid. Imagine we could peek at bo
 When you cannot recover individual effects, you ask about averages, and you must be careful which average. A target average is called an estimand, named before we touch data. Three carry the week. First, the Average Treatment Effect, the ATE, is the mean of the individual effects over the whole population, the expected value of Y-of-one minus Y-of-zero. It answers: what if we made the program universal? In Maya's five-unit table the effects are plus-one, zero, zero, plus-one, zero, so the ATE is two-fifths, or zero-point-four. Second, the Average Treatment effect on the Treated, the ATT, restricts the average to units who actually enrolled. It answers: for the people who chose to enroll, how much did it help them? The ATE and ATT are equal only when the treated are a representative slice. Third, the Local Average Treatment Effect, the LATE, is the effect only for compliers, the subset an instrument can move. We name it here and earn it in Chapter three-point-four.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

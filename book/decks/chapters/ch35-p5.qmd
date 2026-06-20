@@ -1,9 +1,10 @@
 ---
-title: "Anderson–Rubin: Why It Works and Its Weird Shapes"
 date: "2026-07-06"
 ---
 
-# Anderson–Rubin: Why It Works and Its Weird Shapes {.title}
+## Anderson–Rubin: Why It Works and Its Weird Shapes
+
+- Part 5 — why AR stays honest; reading unbounded and empty intervals
 
 ::: notes
 Welcome back to Week Three-point-five, part five of seven. In part four we built the Anderson–Rubin mechanism: to test a candidate effect beta-naught, form the adjusted outcome y minus beta-naught times x and regress it on the instrument, with no first stage anywhere. Now we see why that stays honest however weak the instrument is, then learn to read its two strange interval shapes — unbounded and empty — each carrying a precise message.
@@ -57,7 +58,7 @@ Stranger still, the A-R interval can come back empty — no value of beta-naught
 
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

@@ -1,9 +1,10 @@
 ---
-title: "The Garden of Forking Paths, Made Visible"
 date: "2026-08-10"
 ---
 
-# The Garden of Forking Paths, Made Visible {.title}
+## The Garden of Forking Paths, Made Visible
+
+- Part 2 — enumerate every defensible spec into a grid
 
 ::: notes
 Welcome back to The Execution and the Specification Curve, part two of six. In part one we ran the pre-registered specification once and reported it whatever it showed — but a clean run answers only what that one branch says. The plan collapses the forks to one test. It leaves a question hanging: how many of the other defensible paths would have given you the same answer?
@@ -81,7 +82,7 @@ Here the arithmetic of Week One comes back to bite. If you test twenty independe
 Step two: run all of them. Estimate the key coefficient — for Maya, the average treatment effect on the denial gap — under every one of the one hundred forty-four specifications, and collect the estimates and intervals. This is embarrassingly fast; the regressions run in seconds. The output is a vector of estimates and inference results, plus a record of which choice each slot used — the load-bearing part. Step three: plot the distribution, with the choices underneath. We build that figure next.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

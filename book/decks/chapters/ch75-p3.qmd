@@ -1,10 +1,11 @@
 ---
-title: "The Threat Menu: OLS, IV, and DiD"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Threat Menu: OLS, IV, and DiD {.title}
+## The Threat Menu: OLS, IV, and DiD
+
+- Part 3 — standard threat menus for OLS, IV, DiD
 
 ::: notes
 Welcome back to the identification memo, part three of nine. In part two we wrote the identifying-assumption sentence and learned to name the specific threat, not the word endogeneity. Now we build the list of threats — and the good news is you do not invent them from scratch. Each design from Weeks Three and Four comes with a standard menu of named failures, the ones a referee reaches for first. In this part we cover the first three designs.
@@ -46,7 +47,7 @@ Instrumental variables has two assumptions, and Week Three drilled their asymmet
 Difference-in-differences assumes parallel trends: absent treatment, treated and control units' outcomes would have moved together. Its named threats are a pre-existing differential trend, where the treated group was already diverging before treatment so a slope gets mislabeled an effect; anticipation, where units respond before the official treatment date — they saw it coming — so the pre period is already contaminated; and, in staggered designs, the forbidden comparison of Chapter four-point-two, where already-treated units are used as controls, injecting negative-weights bias when effects are dynamic. Remember the one sentence underlined three times in Chapter four-point-one: parallel trends is a claim about a counterfactual, so a pre-trend can refute it but a flat pre-trend can never confirm it.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

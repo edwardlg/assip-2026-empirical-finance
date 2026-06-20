@@ -1,9 +1,10 @@
 ---
-title: "The Panel Case — Petersen's Taxonomy"
 date: "2026-06-29"
 ---
 
-# The Panel Case — Petersen's Taxonomy {.title}
+## The Panel Case — Petersen's Taxonomy
+
+- Part 3 — firm effects, time effects, and two-way clustering
 
 ::: notes
 Welcome back to Mentor Session Two, "Why your standard error is the whole ballgame," part three of four. In part two we saw that every standard error is one sandwich with a different filling for Omega, and that positive within-group correlation makes naive standard errors too small. Now we go to the place where finance researchers spend most of their lives: the panel — firms observed over many years. Panels are tricky because the errors can hold hands in two directions at once. Petersen's two-thousand-nine paper turned this from folklore into a discipline, and his taxonomy is what we cover now.
@@ -42,7 +43,7 @@ Now match the tool to the effect. If you have a firm effect, cluster by firm: th
 Here is the single most common confusion, and it is worth saying slowly. Fixed effects and clustering are not substitutes. A fixed effect removes a mean — it subtracts out each firm's average level, or each year's average level, taking a systematic shift out of the model. Clustering does something completely different: it leaves the point estimate alone and instead honors the leftover co-movement in the errors when it computes the standard error. One removes a level; the other corrects the uncertainty. Because they do different jobs, you very often need both in the same specification — firm fixed effects to absorb the level, and clustering to get the standard error right. Confusing the two is exactly the kind of mistake a referee catches in the first five minutes.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

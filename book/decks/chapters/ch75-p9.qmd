@@ -1,10 +1,11 @@
 ---
-title: "The Bridge to Week 8"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Bridge to Week 8 {.title}
+## The Bridge to Week 8
+
+- Part 9 — how the memo becomes the Week-8 paper
 
 ::: notes
 Welcome back to the identification memo, part nine of nine. In part eight we wrote Maya's memo end to end — the specification, the credible-not-causal paragraph, and a six-row table led by its hardest threat. Now we close the chapter by tracing how that one page becomes the spine of your Week-Eight paper, and how the frozen notebook turns the honesty rules into something the technology enforces.
@@ -46,7 +47,7 @@ The threats-and-responses table becomes the skeleton of your robustness section.
 Open notebook seven-point-five, the first-look regressions, frozen until the pre-analysis plan is filed. It runs the first estimate of your primary specification — the headline number your memo defends — and it is frozen for a reason that is the whole ethic of this week: you do not run it until your plan and this memo are filed as a tagged commit. The freeze is the technological enforcement of the honesty rules: with the specification and threats committed in advance, the first-look regression can inform you but can no longer seduce you into rewriting the design to fit the result. Three reflection prompts go alongside it. Find your most dangerous threat, and decide whether it is testable or only arguable. Audit your verb — did you write causal or credible, and does the evidence earn it? And run the empty-cell test: is any residual-concern cell blank, and is there a threat whose residual is "this could be the entire effect"? If so, the memo just did its most important job.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

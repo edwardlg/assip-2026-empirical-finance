@@ -1,9 +1,10 @@
 ---
-title: "Goodman-Bacon: The Weights and the Punchline"
 date: "2026-07-13"
 ---
 
-# The Weights and the Punchline {.title}
+## The Weights and the Punchline
+
+- Part 7 — the weights, why middle adopters dominate, the negative-weight punchline
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part seven of thirteen. In part six we laid out Goodman-Bacon's building blocks — clean Type-one and Type-two comparisons, and the forbidden Type-three. Now we add the weights: why the forbidden comparison is bad in precise terms, why middle-adopting groups dominate, the formal punchline that names the crisis, and the diagnostic you can actually run.
@@ -55,7 +56,7 @@ And here is the second consequence, the formal punchline that names the crisis. 
 This is the practical gift of the decomposition: you can run it — the bacon-decomp routines in Stata, the Python bacon implementations — and literally see how much of your coefficient comes from each type of comparison. If a large share of the weight sits on forbidden comparisons, your headline number is built on sand, and the Goodman-Bacon plot — each two-by-two estimate against its weight, colored by type — shows it at a glance. Priya should run this before she trusts any pooled coefficient.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

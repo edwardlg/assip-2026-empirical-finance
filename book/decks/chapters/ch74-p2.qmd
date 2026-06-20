@@ -1,10 +1,11 @@
 ---
-title: "Merge Discipline: Cardinality Is a Claim"
 date: "2026-08-03"
 date-format: "YYYY-MM-DD"
 ---
 
-# Merge Discipline: Cardinality Is a Claim {.title}
+## Merge Discipline: Cardinality Is a Claim
+
+- Part 2 — merge safely: assert cardinality, check the match rate
 
 ::: notes
 Welcome back to Building the Analysis Dataset, part two of seven. In part one we learned to join through a researched, date-aware crosswalk. Now it is time to merge. This part installs the most valuable habit in the chapter: treating a merge's cardinality as a claim you must verify, and measuring how complete the merge was.
@@ -58,7 +59,7 @@ But validate only checks cardinality; it does not tell you how complete your mer
 Two hygiene rules that bite during merges. First, after a merge or filter, when you intend to modify the resulting frame, take an explicit copy. Pandas otherwise warns you with the infamous setting-with-copy warning, and worse, your edits may or may not propagate depending on whether you got a view or a copy. So filter, call copy, then assign on the owned frame. Never chain-index into an assignment; writing into a filtered slice in one expression may silently do nothing. Second, do not use the append method to stack frames in a loop — it was removed in pandas two-point-zero and was quadratic-time anyway. Build a list and call concatenate once. One concatenate, not N appends.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

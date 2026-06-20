@@ -1,10 +1,11 @@
 ---
-title: "Time Budgeting and the Rehearsal That Proves It"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Time Budgeting and the Rehearsal That Proves It {.title}
+## Time Budgeting and the Rehearsal That Proves It
+
+- Part 4 — budget the talk and rehearse against a clock
 
 ::: notes
 Welcome back to Chapter eight-point-five, part four of nine. In part three we covered one idea per slide and the table-to-figure translation. Now we cover time. A budget you have not tested is a wish. We rehearse against a clock, learn where the time should go, and decide a cut line before we ever stand up.
@@ -46,7 +47,7 @@ Where does the time go? Roughly: a minute on question-and-why combined, fast, to
 A discipline worth stealing from professional speakers: know your cut line in advance. Decide, before you stand up, which slide you will skip if you are at minute six and only on the result. Almost always it is the second robustness detail or the third motivation point, never the design slide, never the headline. When you are over time and improvising, you cut badly; when you have pre-decided the cut, you cut cleanly and nobody notices. The rehearsal is also where you discover the sentences you cannot say smoothly, the ones with three clauses and a parenthetical, and rewrite them, because a sentence you stumble on in rehearsal is a sentence you will fail on stage. The course notebook and lab include a dry-run timer for exactly this; use it until the talk fits with room to spare.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

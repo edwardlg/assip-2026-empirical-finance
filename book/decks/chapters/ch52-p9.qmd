@@ -1,9 +1,10 @@
 ---
-title: "Replication Exercises and Referee Questions"
 date: "2026-07-20"
 ---
 
-# Replication Exercises and Referee Questions {.title}
+## Replication Exercises and Referee Questions
+
+- Part 9 — three replication exercises and referee questions
 
 ::: notes
 Welcome back to lesson five-point-two, part nine of nine — the finale. In part eight we mapped the four places this paper is vulnerable. Now we turn those critiques into hands-on work: three replication exercises scoped for your notebook five-point-two, each building on the sorting machinery from notebook five-point-one, and the three questions a referee would press.
@@ -57,7 +58,7 @@ Exercise three: run the G-R-S joint test and stress-test the construction. Compu
 Finally, three questions to interrogate this paper the way a referee would. One, risk or mispricing: the paper shows H-M-L prices the cross-section but offers no test of why value pays — what evidence, a recession-state pattern, a link to fundamentals, an out-of-country replication, would move you toward the risk story? Two, survivorship of the factors themselves: given the factor-zoo critique, would size and value survive a multiple-testing correction applied to the full search that produced them? Three, the small-growth corner: is that one rebellious cell a tolerable blemish, or a symptom that a fourth factor is missing? The hands-on companion is notebook five-point-two, which walks the full pipeline, with a Your Turn extension that bolts on a momentum factor.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

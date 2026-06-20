@@ -1,9 +1,10 @@
 ---
-title: "FRED and HMDA — Macro Series and Fair Lending"
 date: "2026-08-03"
 ---
 
-# FRED and HMDA — Macro Series and Fair Lending {.title}
+## FRED and HMDA — Macro Series and Fair Lending
+
+- Part 5 — FRED macro series and HMDA fair-lending data
 
 ::: notes
 Welcome back to Data Acquisition in Practice, part five of eight. In part four we covered EDGAR's filings, text, and X-B-R-L. Now we cover two more public sources: FRED, the easiest high-quality source you will ever use, and H-M-D-A, the central fair-lending dataset, served at national scale. Each carries one subtle gotcha worth remembering.
@@ -45,7 +46,7 @@ FRED's important gotcha is data revision. Many macro series are revised after fi
 H-M-D-A, the Home Mortgage Disclosure Act data served by the C-F-P-B, is the near-universe of U-S mortgage applications: tens of millions of application records per year, each with the loan amount, the action taken, property location down to census tract, and — the reason it is the central fair-lending dataset — applicant race, ethnicity, sex, and income. This is Maya's project. It keys on a Legal Entity Identifier for the institution and geographic codes for location; there is no person-level identifier, which shapes what questions are answerable. The size problem dominates: a single year's national register is several gigabytes. The cardinal rule is aggregate or filter on the server, not after downloading the universe. The C-F-P-B Data Browser API returns filtered slices or pre-aggregated counts. Ask for an aggregation and you get an instant small table; ask for the national universe and it fails — the throttle is the size. One more gotcha: the twenty-eighteen reporting revision changed fields, so pin the year and read that year's dictionary. The data is sensitive; handle it respectfully and never attempt re-identification.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

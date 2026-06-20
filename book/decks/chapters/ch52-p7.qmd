@@ -1,9 +1,10 @@
 ---
-title: "The Intercept Pass and What's Clever"
 date: "2026-07-20"
 ---
 
-# The Intercept Pass and What's Clever {.title}
+## The Intercept Pass and What's Clever
+
+- Part 7 — the intercept pass, two-column reading, what's clever
 
 ::: notes
 Welcome back to lesson five-point-two, part seven of nine. In part six we made the R-squared and loadings passes through the regression tables. Now we make the third pass — the intercepts — lock in the two-column reading that is the heart of this week's literacy, and then turn to what is genuinely clever in this paper.
@@ -57,7 +58,7 @@ Now, what is clever — three moves you can lift into your own work. First, the 
 Second clever move: separating common variation from cross-sectional pricing. The earlier paper only had the pricing question. This paper cleaves it in two — do the factors capture co-movement, the R-squared, and do they capture average returns, the alpha. These are genuinely different, and insisting on both makes the test far more demanding. Third: it became the workhorse benchmark. By packaging size and value as downloadable monthly factors — Ken French has hosted them publicly for decades — the paper gave every later researcher a common yardstick. When someone claims a new anomaly, the first question a referee asks is, what is its three-factor alpha? The paper did not just answer a question; it built the ruler everyone now measures with.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

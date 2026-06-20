@@ -1,10 +1,11 @@
 ---
-title: "The Classical Variance and Its One Assumption"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Classical Variance and Its One Assumption {.title}
+## The Classical Variance and Its One Assumption
+
+- Part 2 — where the classical variance formula comes from
 
 ::: notes
 Welcome back to When the Errors Misbehave, part two of eight. In part one we saw Maya's t-statistic collapse from six to two while her point estimate never moved. Now we go to the engine room: where does the classical variance formula come from, and what single assumption is holding it up? Find that assumption, and we will know exactly what to break.
@@ -58,7 +59,7 @@ In Chapter two-point-two we made the homoskedasticity-and-no-correlation assumpt
 Plug Omega equals sigma squared identity into the sandwich and watch it collapse. The middle sigma squared is a scalar and slides out front; the identity vanishes; one X-prime-X cancels against an inverse, leaving sigma squared times X-prime-X inverse. That is the classical variance formula. The standard error of any coefficient is the square root of the matching diagonal entry, using sigma-hat squared — one over N minus K, times the sum of squared residuals — to estimate the error variance. It is clean, it is fast, and it is what your software prints by default. It is also only as true as the assumption Omega equals sigma squared identity, which in finance data is basically never true.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

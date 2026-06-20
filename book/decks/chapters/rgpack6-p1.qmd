@@ -1,9 +1,15 @@
 ---
-title: "Reading a Measurement Paper"
 date: "2026-07-27"
 ---
 
-# Reading a Measurement Paper {.title}
+## Reading a Measurement Paper
+
+**Learning objectives**
+
+- Flip the question from "is it causal?" to "is it valid?"
+- Read the validation table where a measure lives or dies
+- Spot construction choices that secretly act as levers
+- Name the external quantity a measure predicts
 
 ::: notes
 Welcome to Week Six, Reading Guide Pack Six and the AI Lab Manual, part one of eight. Last week you learned to read a causal paper: find the headline table, pin down the identifying assumption, and name the alternative explanation that would sink the result. That muscle does not retire, but it is no longer enough. The five Week-Six papers are a different species, and Chapter Six-point-Five hands you a large language model that can either make you a faster researcher or quietly fabricate your evidence. This part retools your reading anatomy for measurement papers.
@@ -57,7 +63,7 @@ The professional way to grade a measure is to ask whether it predicts something 
 One more box to rotate. Every step of the construction is a researcher decision: which dictionary, how to handle negation, what window around the event, whether to drop boilerplate. Loughran and McDonald exist precisely because the off-the-shelf Harvard psychology dictionary mislabels finance words — liability, tax, cost, and capital are negative in everyday English but neutral accounting terms in a ten-K. A measure built on the wrong dictionary is a measure of the wrong thing. So treat each construction choice the way you treat a sample filter: a lever someone pulled, which you must check could not have been pulled to manufacture the result.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

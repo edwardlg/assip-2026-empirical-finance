@@ -1,9 +1,10 @@
 ---
-title: "The Endogeneity Disease, in Regional Form"
 date: "2026-07-13"
 ---
 
-# The Endogeneity Disease, in Regional Form {.title}
+## The Endogeneity Disease, in Regional Form
+
+- Part 3 — why Bartik was invented: isolating local labor demand
 
 ::: notes
 Welcome back to Chapter four-point-five, part three of ten. In part two we worked the construction by hand and saw that shares create the cross-regional variation while both ingredients must be dispersed. Now we ask why this instrument was invented and why it is the workhorse of regional economics. The answer is the textbook simultaneity disease of Chapter three-point-four, in regional form. We will see Maya's naive regression, name precisely why it is broken, and watch the Bartik instrument fix it by importing the demand piece from outside the region.
@@ -35,7 +36,7 @@ Suppose Maya runs the naive regression of a region-level outcome on realized loc
 Bartik's instrument isolates the demand piece by importing it from outside the region. The national industry shifts are demand-side shocks to each industry that an individual commuting zone is too small to have caused — Toledo's local conditions did not move the national auto cycle. Reweighting those national shocks by region r's baseline industry mix predicts the labor-demand shock region r should have received purely from riding national industry tides, stripped of local supply responses and local confounders. That predicted demand shock is then used as an instrument for realized local growth. The first stage asks: do regions with worse predicted shocks actually have worse realized growth? Yes — that is relevance, and it is testable. The second stage reads the effect of growth on delinquency off the part of growth that the national tides explain. This template — predict a local shock from national-industry-mix exposure, then instrument the realized local shock with the prediction — is the canonical Bartik design.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

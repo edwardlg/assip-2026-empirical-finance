@@ -1,9 +1,10 @@
 ---
-title: "Goodman-Bacon: The Four Kinds of 2x2"
 date: "2026-07-13"
 ---
 
-# Goodman-Bacon: The Building Blocks {.title}
+## Goodman-Bacon: The Building Blocks
+
+- Part 6 — TWFE as an exact weighted average of every 2x2
 
 ::: notes
 Welcome back to Chapter four-point-two, the staggered-adoption crisis, part six of thirteen. In part five we watched the two-state world produce the wrong sign, driven by using already-treated State E as a control for newly-treated State L. That shows two-way fixed effects can break. Goodman-Bacon, in twenty-twenty-one, shows exactly how — by proving the staggered coefficient is, identically, a weighted average of all the simple two-by-two difference-in-differences you could form. This part lays out the building blocks; the next part handles the weights and the punchline.
@@ -51,7 +52,7 @@ Map these straight onto the broken-world table from part five. Type one — trea
 To be crisp: Types one and two are honest two-by-two difference-in-differences with clean controls — the control really is untreated within the comparison window. Type three uses an already-treated unit as the control, and it is the entire source of the bias. Notice that Types two and three involve the same two cohorts, just in different windows: before the later group adopts, the comparison is clean; after, it is forbidden. That is why staggered designs are subtle — the same pair of states gives a trustworthy comparison in one window and a poisonous one in another, and the pooled regression blends them together without telling you.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

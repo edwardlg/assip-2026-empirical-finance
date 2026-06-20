@@ -1,10 +1,11 @@
 ---
-title: "The Sampling Distribution and the CLT"
 date: "2026-06-22"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Sampling Distribution and the CLT {.title}
+## The Sampling Distribution and the CLT
+
+- Part 3 — build $\hat p$'s distribution; watch the CLT
 
 ::: notes
 Welcome back to Lab one, part three of seven. In part two you drew a single p-hat and watched it tighten on the truth. One p-hat is just a dot. Here you repeat the draw thousands of times to see its whole distribution — and verify, rather than assume, two facts: that the spread falls like one over the square root of N, and that the shape goes normal.
@@ -58,7 +59,7 @@ The second fact: the distribution goes normal. The Central Limit Theorem says th
 One subtlety is worth chasing. At small N the histogram of p-hat is visibly lumpy. With N equal to ten flips, p-hat can only be zero, zero point one, and so on up to one — eleven discrete spikes. And if p is near zero or one it is also skewed, because p-hat cannot go below zero or above one, so one tail gets squashed against the boundary. The theorem still wins as N grows, but it arrives slower the closer p sits to an edge. Try p equal to zero point zero five with N equal to thirty and you will see a clearly non-normal pile-up. The N at least thirty folk rule quietly assumed a p not too near the boundary. A common check is whether N times p and N times one minus p are both at least about ten.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

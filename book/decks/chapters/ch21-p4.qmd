@@ -1,10 +1,11 @@
 ---
-title: "The Same Equations, by Orthogonality"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Same Equations, by Orthogonality {.title}
+## The Same Equations, by Orthogonality
+
+- Part 4 — deriving the same equations by geometry
 
 ::: notes
 Welcome back to Chapter two-point-one, part four of seven. In part three we minimized the squared residuals with calculus and landed on the normal equations, X-transpose-X times beta-hat equals X-transpose-y. Now we reach the exact same equations a second way — with no calculus at all — from one geometric demand. Then we solve them for the formula on the front of every econometrics course.
@@ -45,7 +46,7 @@ $$\boxed{\ \hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\math
 Now solve the normal equations. If the K-by-K matrix X-transpose-X has an inverse — and part six pins down exactly when — multiply both sides on the left by that inverse. The matrix on the left of beta-hat collapses to the identity, and we are left with beta-hat equals the inverse of X-transpose-X, times X-transpose-y. There it is — the formula on the front of every econometrics course. It is worth seeing it not as a magic incantation but as the unique solution to a single demand: find the coefficients whose residual is perpendicular to the regressors. Everything else in this book is built on top of this one line.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

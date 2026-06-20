@@ -1,10 +1,11 @@
 ---
-title: "Responding to a Referee: The R&R Memo"
 date: "2026-08-10"
 date-format: "YYYY-MM-DD"
 ---
 
-# Responding to a Referee: The R&R Memo {.title}
+## Responding to a Referee: The R&R Memo
+
+- Part 8 — flip the desk: the quote-change-evidence response memo
 
 ::: notes
 Welcome back to peer review and revision, part eight of twelve. In part seven we finished Devon's report and saw why it was a model. Now flip the desk. The editor has returned your paper with a revise and resubmit — the most common good outcome in empirical research, because it means the design was credible enough to be worth saving. Attached are the referee reports, and your job is the response memo: a point-by-point reply that matters at least as much as the revised paper.
@@ -34,7 +35,7 @@ Your job is to produce a revised paper and a document that matters at least as m
 The deepest norm of the whole exercise, and the one the camp grades hardest, is this: do exactly what you say you did. If your memo claims you added an event study, the event study must be in the paper, it must be the one you describe, and its leads must say what your memo says they say. The fastest way to lose a referee's trust permanently — in the workshop and for the rest of your career — is a response memo whose claims the revised paper does not back up. Referees check. The whole institution of peer review runs on the assumption that the response memo is honest, and a single caught lie poisons every other claim in the document. Honesty here is not optional ethics; it is the load-bearing wall.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

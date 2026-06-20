@@ -1,10 +1,11 @@
 ---
-title: "The Contract, Part Two: Zero Mean, Same Scatter, Normality"
 date: "2026-06-29"
 date-format: "YYYY-MM-DD"
 ---
 
-# The Contract, Part Two: Zero Mean, Same Scatter, Normality {.title}
+## The Contract, Part Two: Zero Mean, Same Scatter, Normality
+
+- Part 3 — assumptions 3, 4, 5 and the three tiers of payoff
 
 ::: notes
 Welcome back to Gauss–Markov and the meaning of best, part three of nine. In part two we signed the first two clauses: linearity in the parameters and a full-rank design matrix. Now we reach the three remaining clauses — zero conditional mean, homoskedasticity, and the normality add-on — and stack them into three tiers of payoff.
@@ -58,7 +59,7 @@ Assumption five is normality: epsilon given X is normally distributed with mean 
 Hold this in your head as three tiers. Assumptions one through three buy unbiasedness. Adding four buys BLUE, the full Gauss–Markov guarantee. Adding five buys exact small-sample inference. Three tiers, increasingly demanding, each delivering more. The next parts cash in the first tiers in order.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

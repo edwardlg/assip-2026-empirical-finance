@@ -1,9 +1,10 @@
 ---
-title: "The Poster: A Chain That Cannot Drift"
 date: "2026-08-10"
 ---
 
-# The Poster: A Chain That Cannot Drift {.title}
+## The Poster: A Chain That Cannot Drift
+
+- Part 2 — build the poster: a chain of numbers that cannot drift
 
 ::: notes
 Welcome back to Week Eight, Lab Eight, part two of ten. In part one we framed the lab — no new ideas, three artifacts, an operational bar. Now we build the first artifact: the ASSIP research poster and the abstract it carries. A Markdown draft is for you; a compiled PDF poster is for the audience walking the symposium floor on August twelfth. Academic conference posters are conventionally a single forty-eight-inch by thirty-six-inch landscape PDF, built from a beamerposter LaTeX class or from PowerPoint exported to PDF. We treat LaTeX as the default, because the same toolchain that built your figures builds your poster — no manual handoff that could let numbers drift.
@@ -33,7 +34,7 @@ Recall the layout from Lab Seven. Your write-up lives in the paper folder, and W
 The skeleton is small but complete in shape. A title block holds the abstract, and six content panels follow the reading order Chapter Eight-point-five's six-beat arc demands. Panel one, the question — one sentence a smart sixteen-year-old can repeat back. Panel two, why it matters — a concrete stake, not a literature recitation. Panel three, data and design and identification — the staggered difference-in-differences, the Callaway and Sant'Anna estimator, clustering by state, and the identifying assumption in contract form. Panel four is the headline — the event-study figure showing the denial gap narrowing by about one-point-eight percentage points. Panel five is robustness, the specification curve. Panel six is contribution, limits, and the QR code. The two load-bearing kinds of line are input-of-abstract and include-graphics for every figure. Those are the entire reason this is not copy-paste.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

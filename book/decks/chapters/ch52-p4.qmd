@@ -1,9 +1,10 @@
 ---
-title: "The Test Portfolios and the Regression"
 date: "2026-07-20"
 ---
 
-# The Test Portfolios and the Regression {.title}
+## The Test Portfolios and the Regression
+
+- Part 4 — the 25 portfolios, the regression, and GRS
 
 ::: notes
 Welcome back to lesson five-point-two, part four of nine. In part three we manufactured the three factors as portfolios. Now we need things to price — the test assets — and we run the regression that produces the loadings, the intercept, and the R-squared. This is the heart of the identification strategy.
@@ -58,7 +59,7 @@ Read the regression two ways. Common variation is the R-squared question: if the
 The right instrument is the G-R-S test — Gibbons, Ross, and Shanken, nineteen eighty-nine — a single F-statistic for the joint null that all twenty-five intercepts are zero. We name it and use it; we do not derive it. The intuition is exactly the joint-hypothesis logic from Week Two: instead of twenty-five separate questions, ask one question about all the intercepts at once, accounting for the fact that the portfolios' residuals are correlated. A model passes the asset-pricing bar when G-R-S fails to reject — that is, when the pricing errors are jointly indistinguishable from zero. So the whole strategy is now visible: build factors as portfolios, regress test portfolios on them, read R-squared for common variation and the intercepts jointly for pricing.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

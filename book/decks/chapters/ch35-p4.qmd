@@ -1,9 +1,10 @@
 ---
-title: "Quarter of Birth and the Anderson–Rubin Idea"
 date: "2026-07-06"
 ---
 
-# Quarter of Birth and the Anderson–Rubin Idea {.title}
+## Quarter of Birth and the Anderson–Rubin Idea
+
+- Part 4 — the cautionary tale, then inference that never divides
 
 ::: notes
 Welcome back to Week Three-point-five, part four of seven. In part three we saw the weak-instrument pathology: two-stage least squares biased toward O-L-S by one over F-plus-one, with a standard error too small. Now we meet the famous cautionary tale that taught the profession to fear weak instruments, then begin the cure — an inference idea that never divides by the first stage.
@@ -55,7 +56,7 @@ The weak-instrument pathology came from one place: dividing by a weak, error-rid
 Here is the mechanism, and it is genuinely clever. Suppose you want to test that the true effect equals some specific number, beta-naught. If that were true, then y minus beta-naught times x — the outcome with the hypothesized effect subtracted out — would be free of the causal effect of x, leaving only the structural error. Under exclusion, the instrument z should have no relationship with this adjusted outcome, because z only ever touched y through x, and we just removed x's effect. So: form y minus beta-naught times x, regress it on z, and if beta-naught is the true effect, the coefficient on z must be zero. Test that with an ordinary F-test. That is it. No first stage appears anywhere — no ratio, no denominator hugging zero.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

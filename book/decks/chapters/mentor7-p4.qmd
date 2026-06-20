@@ -1,9 +1,10 @@
 ---
-title: "Now Kill Your Own — and Commit"
 date: "2026-08-03"
 ---
 
-# Now Kill Your Own — and Commit {.title}
+## Now Kill Your Own — and Commit
+
+- Part 4 — turn the two questions on your own candidates, then commit
 
 ::: notes
 Welcome back to Mentor Session seven, part four of four. In part three I walked you through two of my own funnels — the C-S-R paper rescued by a clean non-fundamental shock, and the municipal-borrowing project that traveled the funnel over years. Both lived or died on the same two questions: where is the clean variation, and can I measure and get this? Now we point those questions at your work. You walked in with three or four candidates from problem set seven-point-one. You'll walk out having killed at least one on purpose and committed hard to one, with a runner-up in reserve.
@@ -42,7 +43,7 @@ Commitment is the other half of killing. Once the furnace has run, you stop shop
 One more thing about what we reward. Your capstone is graded on the defense, not the cleverness of the idea. The first thing I'll ask in Phase two is: what did you consider and reject, and why? A strong answer shows the furnace ran — you generated several candidates, killed most on purpose, and committed to one for reasons you can state. A weak answer reveals you kept the first idea you liked. That's why this week's reflection prompt makes you write your own kill-or-commit memo. For every candidate, run the so-what test both ways, scan the fatal-flaw checklist, and name where the clean variation would come from. Then kill at least one on purpose, commit to one in the Conventions section-four sentence-spec — outcome, treatment, controls, fixed effects, clustering, sample, identifying assumption — and name a one-line runner-up. Bring it next week.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

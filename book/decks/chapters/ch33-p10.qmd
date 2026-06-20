@@ -1,10 +1,11 @@
 ---
-title: "Choosing a Method, and the Ceiling"
 date: "2026-07-06"
 date-format: "YYYY-MM-DD"
 ---
 
-# Choosing a Method, and the Ceiling {.title}
+## Choosing a Method, and the Ceiling
+
+- Part 10 — a decision guide and the unbreakable CIA ceiling
 
 ::: notes
 Welcome back to Chapter three-point-three, part ten of ten, the finale. In part nine we ran all three methods side by side. Now we turn the lesson into a decision guide you could defend to a referee — then confront the unbreakable ceiling every method here shares, and the doorway out to the next chapter.
@@ -47,7 +48,7 @@ The honest meta-advice: report more than one. If matching, entropy balancing, an
 Stand back and see the boundary. I-P-W, entropy balancing, A-I-P-W, and matching are four different engines bolted to the same chassis: the conditional-independence assumption — that once we condition on, balance, or reweight on the observed covariates X, treatment is as good as random. Every method is a way to use X more cleverly, more stably. Not one can rescue you if that assumption is false. And it is false exactly when there is an unobserved confounder — a variable that drives both selection and the outcome, that you did not measure and cannot put in X. Suppose Maya's enrollees were also more conscientious in a way no dataset captures, and conscientiousness independently lowers rates. Then they would have gotten lower rates even without the program, no balancing on income and credit removes it, and every estimator here is biased — silently, with a clean balance table and a confident standard error. That is the unbreakable ceiling of selection-on-observables. When you cannot defend the assumption, you need a different source of identifying variation: an instrument. Chapter three-point-four introduces instrumental variables as the escape hatch for exactly the situation this chapter cannot handle.
 :::
 
-## Key Takeaway {.title}
+## Key Takeaway
 
 ::: callout-tip
 ## Key takeaway

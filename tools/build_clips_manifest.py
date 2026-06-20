@@ -27,7 +27,10 @@ def deck_title(qmd: Path) -> str:
     """Read the YAML front-matter `title:` of a deck."""
     txt = qmd.read_text(encoding="utf-8")
     m = re.search(r'(?m)^\s*title:\s*"?(.+?)"?\s*$', txt)
-    return m.group(1).strip().strip('"') if m else qmd.stem
+    if m:
+        return m.group(1).strip().strip('"')
+    m2 = re.search(r'(?m)^##\s+(.+?)\s*$', txt)   # YAML title dropped -> first ## frame
+    return m2.group(1).strip() if m2 else qmd.stem
 
 
 def main() -> None:
