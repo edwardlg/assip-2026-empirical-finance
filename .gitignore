@@ -61,3 +61,6 @@ assets/voice/*.mp3
 videos/clips/
 videos/*.mp4
 !videos/upload_manifest.csv
+
+# drag-ready upload folder (title-named copies; large)
+videos/upload_ready/
