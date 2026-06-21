@@ -64,3 +64,7 @@ videos/*.mp4
 
 # drag-ready upload folder (title-named copies; large)
 videos/upload_ready/
+
+# OAuth client secrets + cached tokens (live in ~/.config/leigao-video; never commit)
+client_secrets*.json
+yt_token*.json

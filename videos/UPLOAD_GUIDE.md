@@ -4,20 +4,21 @@ The site embeds videos by reading the `[MEF …]` code from each YouTube
 title. These files are **named as their titles**, so uploading auto-fills
 the titles — you never type them.
 
-> **Upload as PUBLIC.** A read-only API key (used in step 4) sees only
-> *public* videos — *Unlisted* and *Private* uploads are invisible to it and
-> won't be wired into the site. Make them Public (the site is public anyway).
+> **Upload as Unlisted.** The lessons stay off your public channel listing/search
+> but still embed on the site. Recovery (step 4) reads them via a one-time owner
+> **OAuth** login — an API key can't see Unlisted videos. (Don't use *Private*:
+> private videos refuse to embed on a public page.)
 
 ## 1. (Once) Smoke-test one video
-YouTube sets each title from the filename. To confirm the leading `[` survives,
-upload **one** clip first, then run step 4's command — if it reports `1 clip
-mapped`, titles are preserved and you can bulk-upload with confidence.
+YouTube sets each title from the filename. Upload **one** clip (Unlisted), then run
+step 4's command — if it reports `1 clip mapped`, titles are preserved and you can
+bulk-upload with confidence.
 
 ## 2. Upload, one week-folder at a time
 For each `Week-N/` folder under `videos/upload_ready/`:
 1. YouTube Studio → **Create → Upload videos** → drag in *all* files from the folder.
 2. Titles auto-fill from the filenames (the `[MEF …]` code is what matters).
-3. Set visibility to **Public**. Optionally paste the description from the manifest.
+3. Set visibility to **Unlisted**. Optionally paste the description from the manifest.
 4. After processing, select them all → **Add to playlist** → the playlist below.
 
 ## 3. Folders → playlists
@@ -33,17 +34,26 @@ For each `Week-N/` folder under `videos/upload_ready/`:
 | `Week-8/` | Week 8 — Your Project II | 60 |
 | | **Total** | **457** |
 
-## 4. Recover the links into the site
-Get a free **read-only** YouTube Data API v3 key (Google Cloud Console → enable
-"YouTube Data API v3" → Create credentials → API key). Then, from this repo:
+## 4. Recover the links into the site (owner OAuth)
+One-time Google Cloud setup (see `tools/yt_oauth.py` for the click-path):
+1. Cloud Console → enable **YouTube Data API v3**.
+2. **OAuth consent screen**: User type *External*; add your Google account as a *Test user*.
+3. **Credentials → Create OAuth client ID → "TVs and Limited Input devices"**; download the JSON.
+4. Save it as `~/.config/leigao-video/client_secrets.json`.
+
+Then, from this repo:
 ```bash
-export YOUTUBE_API_KEY=...          # the read-only key
-python tools/build_video_map.py --handle @LeiGao-gmu
+python tools/build_video_map.py --oauth
 ```
-It prints `N clips mapped across X/Y items` and a coverage line; a `WARNING:`
-names any subchapter still missing a video. Writes `video-map.json` (keyed by
-item id: ch11, lab1, mentor3, …). Both editions share the channel — the script's
-`[MEF]` regex picks only its own videos and ignores the other edition's.
+It prints a URL + code to authorize once (device flow), then prints
+`N clips mapped across X/Y items` and a coverage line; a `WARNING:` names any
+subchapter still missing a video. Writes `video-map.json` (keyed by item id: ch11,
+lab1, mentor3, …). Both editions share the channel — the script's `[MEF]` regex
+picks only its own videos and ignores the other edition's.
+
+> The login is cached at `~/.config/leigao-video/yt_token.json`; later runs reuse
+> it silently. In OAuth *Testing* mode the token expires after ~7 days — if a run
+> says it must re-authorize, just approve the code again.
 
 Want to preview the result *before* uploading? Dry-run it against the
 filenames YouTube will receive (no API, no upload):

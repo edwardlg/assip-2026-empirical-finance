@@ -62,20 +62,21 @@ def write_guide(repo: Path, code: str, per_week: Counter,
              "title. These files are **named as their titles**, so uploading auto-fills\n"
              "the titles — you never type them.\n")
 
-    g.append("\n> **Upload as PUBLIC.** A read-only API key (used in step 4) sees only\n"
-             "> *public* videos — *Unlisted* and *Private* uploads are invisible to it and\n"
-             "> won't be wired into the site. Make them Public (the site is public anyway).\n")
+    g.append("\n> **Upload as Unlisted.** The lessons stay off your public channel listing/search\n"
+             "> but still embed on the site. Recovery (step 4) reads them via a one-time owner\n"
+             "> **OAuth** login — an API key can't see Unlisted videos. (Don't use *Private*:\n"
+             "> private videos refuse to embed on a public page.)\n")
 
     g.append("\n## 1. (Once) Smoke-test one video\n")
-    g.append("YouTube sets each title from the filename. To confirm the leading `[` survives,\n"
-             "upload **one** clip first, then run step 4's command — if it reports `1 clip\n"
-             "mapped`, titles are preserved and you can bulk-upload with confidence.\n")
+    g.append("YouTube sets each title from the filename. Upload **one** clip (Unlisted), then run\n"
+             "step 4's command — if it reports `1 clip mapped`, titles are preserved and you can\n"
+             "bulk-upload with confidence.\n")
 
     g.append("\n## 2. Upload, one week-folder at a time\n")
     g.append("For each `Week-N/` folder under `videos/upload_ready/`:\n")
     g.append("1. YouTube Studio → **Create → Upload videos** → drag in *all* files from the folder.\n")
     g.append(f"2. Titles auto-fill from the filenames (the `[{code} …]` code is what matters).\n")
-    g.append("3. Set visibility to **Public**. Optionally paste the description from the manifest.\n")
+    g.append("3. Set visibility to **Unlisted**. Optionally paste the description from the manifest.\n")
     g.append("4. After processing, select them all → **Add to playlist** → the playlist below.\n")
 
     g.append("\n## 3. Folders → playlists\n")
@@ -84,17 +85,24 @@ def write_guide(repo: Path, code: str, per_week: Counter,
         g.append(f"| `Week-{wk}/` | {playlists[wk]} | {per_week[wk]} |\n")
     g.append(f"| | **Total** | **{total}** |\n")
 
-    g.append("\n## 4. Recover the links into the site\n")
-    g.append("Get a free **read-only** YouTube Data API v3 key (Google Cloud Console → enable\n"
-             "\"YouTube Data API v3\" → Create credentials → API key). Then, from this repo:\n")
+    g.append("\n## 4. Recover the links into the site (owner OAuth)\n")
+    g.append("One-time Google Cloud setup (see `tools/yt_oauth.py` for the click-path):\n")
+    g.append("1. Cloud Console → enable **YouTube Data API v3**.\n")
+    g.append("2. **OAuth consent screen**: User type *External*; add your Google account as a *Test user*.\n")
+    g.append("3. **Credentials → Create OAuth client ID → \"TVs and Limited Input devices\"**; download the JSON.\n")
+    g.append("4. Save it as `~/.config/leigao-video/client_secrets.json`.\n")
+    g.append("\nThen, from this repo:\n")
     g.append("```bash\n"
-             "export YOUTUBE_API_KEY=...          # the read-only key\n"
-             f"python tools/build_video_map.py --handle {HANDLE}\n"
+             "python tools/build_video_map.py --oauth\n"
              "```\n")
-    g.append("It prints `N clips mapped across X/Y items` and a coverage line; a `WARNING:`\n"
-             "names any subchapter still missing a video. Writes `video-map.json` (keyed by\n"
-             "item id: ch11, lab1, mentor3, …). Both editions share the channel — the script's\n"
-             f"`[{code}]` regex picks only its own videos and ignores the other edition's.\n")
+    g.append("It prints a URL + code to authorize once (device flow), then prints\n"
+             "`N clips mapped across X/Y items` and a coverage line; a `WARNING:` names any\n"
+             "subchapter still missing a video. Writes `video-map.json` (keyed by item id: ch11,\n"
+             "lab1, mentor3, …). Both editions share the channel — the script's `[%s]` regex\n"
+             "picks only its own videos and ignores the other edition's.\n" % code)
+    g.append("\n> The login is cached at `~/.config/leigao-video/yt_token.json`; later runs reuse\n"
+             "> it silently. In OAuth *Testing* mode the token expires after ~7 days — if a run\n"
+             "> says it must re-authorize, just approve the code again.\n")
     g.append("\nWant to preview the result *before* uploading? Dry-run it against the\n"
              "filenames YouTube will receive (no API, no upload):\n")
     g.append("```bash\n"
