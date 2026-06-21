@@ -1,0 +1,60 @@
+---
+date: "2026-06-22"
+---
+
+## A Number Is Not a Finding
+
+**Learning objectives — by the end you can:**
+
+- Explain why most computed numbers are not findings
+- Name the three gates a finding must clear
+- Treat the inference toolkit as instruments, not trophies
+- Keep "is it a finding?" separate from "what does it mean?"
+
+::: notes
+Welcome to Mentor Session One of Week One, part one of five. This session is the bridge from the Week-One inference toolkit to the thing you actually came here to do, which is research. By now you know how to compute a standard error, a t-statistic, a p-value, a confidence interval, and how to count the ways a test can lie. Today we ask what all of those tools are for. They exist to answer one deceptively hard question: when is a number a finding, and when is it just noise wearing a nice outfit? Over the next few minutes I want to plant one instinct in your head — that between computing a number and believing it, there is a gauntlet you have to walk it through. Almost everything we do this summer at ASSIP is about walking a number through that gauntlet honestly.
+:::
+
+## Most Numbers Are Not Findings
+
+- A true thing no textbook says head-on
+- A number becomes a finding only by surviving a **gauntlet**
+- The gauntlet has **three gates**
+- Our whole summer: walk numbers through them honestly
+
+::: notes
+Here is a true thing about empirical research that no textbook chapter tells you head-on. Most numbers are not findings. You will compute hundreds of numbers this summer — averages, slopes, differences between groups — and most of them are not findings. A number becomes a finding only when it survives a gauntlet, and that gauntlet has three gates. Almost everything we do this summer is about walking a number through those three gates honestly. And here is the stakes-setting fact: the eight weeks we have together, nine to five Monday through Friday, are just enough time to do that exactly once, well, on the poster you present at the August twelfth symposium. So we had better learn what the gates are.
+:::
+
+## The Three Gates
+
+- **Gate one:** could noise alone have produced this?
+- **Gate two:** is the effect big enough to matter?
+- **Gate three:** would it survive the search that found it?
+- Each gate asks a *different* question — and they can disagree
+
+::: notes
+So here are the three gates, named once, up front. Gate one asks: could noise alone have produced this number? That is the question Chapter one-point-five built an entire machine to answer. Gate two asks: is the effect big enough to actually matter — is it economically meaningful, not just detectable? And gate three, the gate that sends most so-called findings to the graveyard, asks: would this effect survive the search that found it — how many things did you try before you landed on this one? Notice that these are three genuinely different questions. A number can pass one and fail another. The art of research is keeping the three questions separate and refusing to let a pass at one gate stand in for a pass at all three.
+:::
+
+## The Toolkit Is the Set of Instruments
+
+- This week's tools = the instruments for the gates
+- Standard errors, size, power, p-values, intervals
+- The toolkit is a **means**, not an end in itself
+- Today: walk one real number through all three gates, out loud
+
+::: notes
+Here is how to think about everything you learned this week. The standard error, the t-statistic, the p-value, the confidence interval, the power calculation, the multiple-testing warning — that whole toolkit is exactly the set of instruments that test a number at each of these gates. The toolkit is a means, not an end in itself. A p-value is not a trophy; it is a gauge reading. In our Monday block we practice using these instruments the way a researcher actually does — on a number that nobody has yet decided how to feel about. And the mid-week drop-in office hours are where you bring the gate that did not click in front of the whole cohort.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Between computing a number and believing it lies a gauntlet of **three gates**: too big to be noise, big enough to matter, and robust to the search. The week's toolkit exists to test a number at each gate — not as an end in itself.
+:::
+
+::: notes
+To summarize part one: most numbers are not findings, and a number earns the title only by clearing three gates — too big to be noise, big enough to matter, and robust to the search that produced it. The inference toolkit you built this week is precisely the set of instruments for those gates. In part two we open gate one in detail and ask: could noise alone have produced this number? We will walk through Sam's reversal-rule backtest, see how a t-statistic of one-point-six-nine is just an estimate measured in units of its own wobble, and discover why the very same edge can be convincing or unconvincing depending only on how much data sits beneath it.
+:::

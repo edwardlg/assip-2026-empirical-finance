@@ -1,0 +1,60 @@
+---
+date: "2026-08-10"
+---
+
+## The Referee Wants a Reason Not to Believe You
+
+### Learning objectives
+
+- Read a referee's question as a hunt for doubt
+- Sort hard questions into three families by danger
+- Answer identification in four disciplined beats
+- Concede a fatal critique and retreat honestly
+
+::: notes
+Welcome to Mentor Session eight, part one of six, the final mentor session before the symposium. Eight weeks ago you computed an average return and thought you had an answer. Today you have a result — a number you can defend sentence by sentence, with a design behind it and an uncertainty attached. So we close the arc by teaching the last skill the camp owes you: what happens after the result exists. The place a result is actually judged is live, in a room, when someone who wants to disbelieve you starts asking questions and you have six seconds to answer.
+:::
+
+## After the Result Exists, the Game Changes
+
+- A *result* = a number with a design and an uncertainty behind it
+- The defense is live, not on paper — six seconds to answer
+- The room: faculty, peer mentors, families, College of Science
+- Same questions get asked of every paper — including mine
+
+::: notes
+Here is the shift. For eight weeks the hard part was producing the number. Now the number exists, and the game changes entirely. That room is the research symposium on Wednesday, August twelfth — the in-person poster session for on-campus interns, the virtual breakout for our remote group. Mason faculty, your peer mentors, your families, and the College of Science leadership will walk up and ask you the things they would ask any researcher whose work they doubt for the right reasons. The single biggest predictor of whether a result survives is not how clever it is. It is whether the person who found it knows, before anyone asks, exactly where it is weakest, and can say so out loud without flinching.
+:::
+
+## The Referee Hunts the Boring Explanation
+
+- A referee is not trying to understand your result
+- A referee is trying to find the reason *not* to believe it
+- They ask: *is there a more boring explanation for this number?*
+- The most useful service in science — once it stops feeling personal
+
+::: notes
+Here is the thing nobody tells you until you have published a few papers, so I will tell you now. A referee is not trying to understand your result. A referee is trying to find the reason not to believe it. That sounds adversarial, and in a sense it is — but it is the most useful service in all of science, and once you stop taking it personally it becomes the thing you cannot work without. The referee's whole job is to stand between your claim and the permanent record and ask, on behalf of every future reader who cites you without checking: is there a more boring explanation for this number than the one the author is selling? Almost always there is at least a candidate.
+:::
+
+## Show You Found It First
+
+- Don't pretend no boring explanation exists
+- Show you found that candidate first
+- Looked it in the eye — then ruled it out *or* bounded its size
+- That posture separates a result from a wish
+
+::: notes
+So if there is almost always a more boring explanation waiting, what is the defense? It is not to deny that the candidate exists. The defense is to show you found that candidate first, looked it in the eye, and either ruled it out or honestly bounded how much it could matter. That word bounded is important — you do not always get to eliminate the alternative, but you can often say "even in the worst case it could only move my number by this much." A researcher who walks in having already located their own weakest point looks completely different from one who is surprised by it. The first is reading a script they wrote in advance. The second is improvising in front of people who do this for a living.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A referee hunts for the *reason not to believe you* — the more boring explanation. Your defense is not denying it exists; it is showing you found it first and either ruled it out or honestly bounded it. That posture is what separates a result from a wish.
+:::
+
+::: notes
+To summarize part one: the referee is not your enemy, but they are not on your side either — their job is to find the more boring explanation for your number, and the most useful thing you can do is find it first. The defense is showing you already located your own weakest point. In part two we sort the hard questions into three families, ranked by danger, walk through three Socratic warm-ups you should write before the room, and meet the deadliest family of all — identification.
+:::

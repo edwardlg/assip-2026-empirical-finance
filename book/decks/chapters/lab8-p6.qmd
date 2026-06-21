@@ -1,0 +1,46 @@
+---
+date: "2026-08-10"
+---
+
+## The Packet: One Seed, Code in Run-Order
+
+- Part 6 — the packet: one seed, code in run-order
+
+::: notes
+Welcome back to Week Eight, Lab Eight, part six of ten. In part five we finished the poster and printed a proof. Now we begin the second artifact — the one-click replication packet. The packet is not new; it is the Lab Seven repository, finished. Lab Seven gave you the layout, the pinned environment, the README, the data cards, the verified gitignore, and the pre-analysis-plan tag. Part Two of the lab adds the last load-bearing piece from Chapter Eight-point-five: a single entry point that regenerates every artifact from raw inputs, under one fixed seed, so a fresh clone goes from raw bytes to a compiled poster and abstract with no human in the loop. That is exactly what the QR code on your poster promises.
+:::
+
+## One Seed, in One Place
+
+- All randomness flows from **one named constant**, set once, imported everywhere
+- Put `SEED` and project paths in `src/config.py`
+- `SEED = 20260815` — a fixed, named int, fixed *before* results, never tuned
+- Thread it: `rng = np.random.default_rng(SEED)` — every draw through `rng`
+- Compute `ROOT` from `__file__`, never a hard-coded path
+
+::: notes
+Anywhere randomness enters your analysis — a bootstrap, a train-test split, a permutation test, a synthetic-control placebo — it must flow from one named constant, set once and imported everywhere, never scattered. This is the difference between a confidence interval that is one-point-three to two-point-three every run and one that drifts to one-point-two to two-point-four and quietly destroys a reviewer's trust. Put the seed and your project paths in source-slash-config-dot-py. The seed is a fixed, named integer — the lab uses the conference date, twenty-twenty-six-oh-eight-fifteen — fixed before results, never tuned afterward, because tuning it would be the garden of forking paths wearing a disguise. Every script that draws randomness imports the seed and threads it through one modern NumPy generator: rng equals numpy default-random-generator of seed, and every draw goes through rng, never the legacy global seed. And compute the repo root from the file's own location rather than hard-coding a path — that is what lets the repo run unchanged on the container, on Hopper, and on a reviewer's laptop.
+:::
+
+## Code in Run-Order
+
+- `src/` holds the pipeline as numbered scripts — order is unambiguous
+- `01_pull_data.py` → raw cache (licensed data via pinned query, not shipped)
+- `02_build_dataset.py` → analysis dataset; no look-ahead, no leakage
+- `03_analysis.py` → writes every table and figure, deterministic via `SEED`
+- Logic in `src/`, story in `notebooks/` — nothing here is pasted by hand
+
+::: notes
+Your source folder holds the pipeline as numbered scripts, so the order is unambiguous — Lab Seven's rule: logic in source, story in notebooks. Three steps, each consuming the previous step's output. Script oh-one pulls or loads the raw inputs; public data caches to data-slash-raw, and licensed data is reconstructed by a pinned query on GMU infrastructure, never shipped. Script oh-two builds the analysis dataset from that raw cache — no look-ahead, no leakage, a pure function of the raw inputs, with a dot-copy to avoid chained assignment. Script oh-three estimates and writes every table to paper-slash-tables and every figure to paper-slash-figures, deterministic via the single seed, nothing ever pasted by hand. In your real capstone, that third script is your notebook logic — your pyfixest regressions, your etable LaTeX, your event-study figure. The synthetic mini-analysis in the lab is just a stand-in so the skeleton runs end to end; the artifact-writing discipline is what transfers unchanged.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The packet runs on **one named `SEED`** in `config.py`, threaded through `default_rng`, plus numbered `src/` scripts that pull, build, then write every artifact. Logic lives in `src/`, never typed by hand. Next: the Makefile, `run_all.py`, and the honesty test.
+:::
+
+::: notes
+To summarize part six: the replication packet rests on two disciplines. One named seed in config, fixed before results and threaded through a single NumPy generator, so every run is identical. And the pipeline as numbered scripts in source — pull, build, analyze — each a pure function of the previous step's output, writing every table and figure by code and nothing by hand. In part seven we wire these scripts into a single command — the Makefile and the equivalent run-all script — and run the honesty test that proves no number was ever typed by hand.
+:::

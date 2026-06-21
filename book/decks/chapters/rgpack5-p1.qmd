@@ -1,0 +1,63 @@
+---
+date: "2026-07-20"
+---
+
+## How to Read an Empirical Paper: The Skill of Week 5
+
+**Learning objectives** — by the end you can:
+
+- State what an unseen paper claims in twenty minutes
+- Judge whether to believe a result and where it is soft
+- Read a paper with a checklist, not front-to-back
+- Find the real paper: its tables, not its prose
+
+::: notes
+Welcome to Week Five, the reading guide, part one of seven. This week the textbook stops teaching you methods and starts teaching you judgment. Weeks one through four built the toolkit, and you can run all of it. What you cannot yet do is pick up a paper you have never seen, in a journal you have never opened, and in twenty minutes know what it claims, whether to believe it, and where it is soft. That is the skill of Week Five, and this pack is the procedure, stated once, so you can carry it to any paper.
+:::
+
+## What Weeks 1 to 4 Gave You
+
+- O L S and its assumptions
+- Robust and clustered standard errors
+- Omitted-variable bias and instrumental variables
+- Difference-in-differences and regression discontinuity
+- You can *run* all of it now
+
+::: notes
+Let us take stock. Weeks one through four built a real toolkit. You met ordinary least squares and the assumptions it leans on. You learned robust and clustered standard errors. You worked through omitted-variable bias, instrumental variables, difference-in-differences, and regression discontinuity. You can run all of it. The gap this week closes is the difference between someone who uses econometrics and someone who reads it. Running a method on your own data is one skill. Judging a stranger's finished paper, fast and fairly, is a different one, and it is the one that separates a technician from a scholar.
+:::
+
+## Five Papers, One Procedure
+
+- Each Week-5 chapter dissects one famous paper
+- Fama–French (1992) and (1993)
+- Jegadeesh–Titman (1993)
+- Petersen (2009)
+- Bertrand–Duflo–Mullainathan (2004)
+
+::: notes
+The five chapters this week each apply the same fixed procedure to one famous paper. You will read Fama and French, both the nineteen ninety-two paper and the nineteen ninety-three paper. You will read Jegadeesh and Titman from nineteen ninety-three on momentum. You will read Petersen from two thousand nine on standard errors in finance panels. And you will read Bertrand, Duflo, and Mullainathan from two thousand four on how often those standard errors lie. This pack is the connective tissue. It is the procedure itself, stated once, so you can carry it to any paper, including the unseen one you will dissect on the Week-5 assessment.
+:::
+
+## Papers Are Written to Be Cited, Not Read
+
+- The intro oversells; the literature review flatters
+- The one load-bearing assumption hides in a clause on page 14
+- The professional reader is *not* fooled
+- She has a checklist and a deliberate reading order
+- The real paper lives in the **tables**
+
+::: notes
+A warning before the trick. Papers are not written to be read; they are written to be cited. The introduction oversells. The literature review flatters. The prose hides the one assumption everything hangs on inside a subordinate clause on page fourteen. The professional reader is not impressed and not fooled. She has a checklist, she reads in a deliberate order that is not front-to-back, and she knows that the real paper lives in the tables. Over the next several parts we will hand you her checklist, her reading order, and the conventions that make a forbidding table readable. Start with the mindset: skeptical, table-first, and never sold by the framing.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Week 5 trades **methods** for **judgment**: read an unseen paper and know in twenty minutes what it claims, whether to believe it, and where it is soft. Papers are written to be cited, not read — so bring a checklist. Next: the seven-part Reader's-Guide template.
+:::
+
+::: notes
+To summarize part one: Week Five trades methods for judgment. The goal is to read an unseen paper and know, in twenty minutes, what it claims, whether to believe it, and where it is soft. Remember that papers are written to be cited, not read, so the professional reader brings a checklist and refuses to be sold by the framing. In part two we open that checklist: the seven-part Reader's-Guide template, the anatomy you will fill in for every paper this week.
+:::

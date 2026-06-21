@@ -1,0 +1,59 @@
+---
+date: "2026-07-13"
+---
+
+## The Permutation p-Value and Its Honest Limits
+
+- Part 8 — the permutation p-value and its honest limits
+
+::: notes
+Welcome back to Chapter four-point-four, part eight of ten. In part seven we built the placebo distribution and the post-over-pre RMSPE ratio. Now we turn that ratio into a permutation p-value, look at the visual companion, and state precisely what null this test is actually testing.
+:::
+
+## The Permutation p-Value
+
+$$p = \frac{\#\{\, i : r_i \ge r_1 \,\}}{J+1}$$
+
+- Fraction of all $J+1$ units whose ratio is $\ge$ the treated unit's
+- Treated has the largest ratio of 35 units → $p = 1/35 \approx 0.029$
+- A gap this extreme arises for a random unit only ~3% of the time
+- **Small-sample, permutation-based** — no normal errors, no clustered SE
+
+::: notes
+Compute the ratio for the real treated state and for every placebo donor. The permutation p-value is the fraction of all J-plus-one units whose ratio is at least as large as the treated unit's. If the treated state has the single largest ratio out of, say, thirty-five units, then p equals one over thirty-five, about zero-point-zero-two-nine: a gap this extreme, properly scaled, would arise for a randomly chosen unit only about three percent of the time. That is your inferential statement, and notice exactly what kind of statement it is. It is small-sample and permutation-based: there is no appeal to large-N asymptotics, no assumption of normal errors, no clustered standard error. It is the honest probability that the treated unit's ratio is special given the reference set of placebos.
+:::
+
+## The Floor on p, and the Visual
+
+- With 20 donors, smallest possible $p \approx 1/21 \approx 0.048$ — can't beat 5%
+- So curate a reasonably large donor pool
+- Distrust $p<0.01$ claims from a handful of donors
+- **Visual:** overlay all placebo gaps in gray, treated unit in black
+- Black wanders out of the gray cloud after $T_0$ → you can *see* the effect
+
+::: notes
+There is a floor worth knowing. With only twenty donors the smallest possible p-value is one over twenty-one, about zero-point-zero-four-eight — you literally cannot get below five percent — which is why a respectable synthetic-control study wants a reasonably large donor pool, and why claims of p below zero-point-zero-one from a handful of donors should make you suspicious. Be honest about this ceiling: the inference is exact for the permutation it performs, but its resolution is bounded by how many placebos you have. There is also a visual companion in the notebook: overlay all the placebo gap paths in gray and the treated unit's gap in black. If the black line wanders out beyond the gray cloud after T-naught while sitting inside it before, the effect is real and you can see it. If the black line is just one more strand in the spaghetti, there is no effect. Some studies trim placebo units with terrible pre-fit before drawing the cloud — do it transparently and report the rule.
+:::
+
+## What Null Are We Testing?
+
+- The **sharp null**: the policy had *no effect on any unit at any time*
+- Same flavor as Fisher-style randomization inference
+- "Treatment" is reassigned across units, not across coin flips
+- Does *not* assume donors were randomly chosen to be untreated
+- Strength rests, once more, on the **quality of the donor pool**
+
+::: notes
+One honest caveat about what this p-value is and is not. It is a test of the sharp null that the policy had no effect on any unit at any time — the same flavor of null you met in Fisher-style randomization inference — re-imagined for a setting where treatment is reassigned across units rather than across coin flips. It does not assume the donors were randomly chosen to be untreated; the reference distribution is simply what the procedure does to units we know were not treated, which is why it is sometimes called a permutation or placebo test rather than a true randomization test. That distinction matters when you write it up: you are claiming the treated unit's gap is implausibly large relative to the donors you assembled, not that treatment was randomly assigned across states. The strength of the claim therefore rests, once more, on the quality and comparability of the donor pool — bad donors make both the point estimate and the inference untrustworthy at the same time.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The permutation $p$-value is the fraction of units with an RMSPE ratio at least as large as the treated unit's — floored at $1/(J+1)$, so curate a real pool. It tests the **sharp null** of no effect anywhere, relative to the donors you assembled, not random assignment.
+:::
+
+::: notes
+To summarize part eight: the permutation p-value is the fraction of all units whose RMSPE ratio is at least as large as the treated unit's, and it is floored at one over J-plus-one, so you must curate a real donor pool and never report more precision than the placebos can support. The visual companion — the gray-spaghetti plot with the treated unit in black — lets you literally see whether the effect escapes the placebo cloud. And the null is the sharp null of no effect on any unit at any time, relative to the donors you assembled. In part nine we combine synthetic control with diff-in-diff to get synthetic diff-in-diff — the best of both worlds.
+:::

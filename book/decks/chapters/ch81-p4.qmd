@@ -1,0 +1,81 @@
+---
+date: "2026-08-10"
+---
+
+## The Cautionary Curve and the Checklist
+
+- Part 4 — Sam's flipping curve and the reading checklist
+
+::: notes
+Welcome back to The Execution and the Specification Curve, part four of six. In part three we read Maya's robust curve, where the sign never flips. Now we read the picture that should terrify you — Sam's momentum anomaly — then build the four-point checklist, and close with the permutation test on the whole forest.
+:::
+
+## Sam's Momentum Multiverse
+
+- Do past-12-month winners beat losers next month?
+- Forks: formation window, holding period, weighting
+- NYSE versus all-stock breakpoints; microcaps in or out
+- Sample period: full, post-2000, or excluding 2008-09
+- Easily past 200 specifications
+
+::: notes
+Now contrast the picture that should terrify you, had Sam built a curve for his momentum anomaly. His project asks whether past-twelve-month winners outperform losers next month — a portfolio sort with a long menu of forks: the formation window, the holding period, value versus equal weighting, New York Stock Exchange versus all-stock breakpoints, microcaps in or out, and the sample period. Those forks easily multiply past two hundred specifications.
+:::
+
+## The Curve That Flips
+
+- Sweeps from significantly negative, through a near-zero band, to significantly positive
+- Every significantly positive spec shares one choice
+- Include microcaps, equal-weighted
+- The anomaly is not a feature of the cross-section
+- It is a feature of weighting tiny, illiquid stocks
+
+::: notes
+Suppose Sam's curve sweeps from a significantly negative return on the left, through a fat band of near-zero estimates, up to a significantly positive return on the right — and the bottom panel reveals that every significantly positive specification shares one choice: include microcaps, equal-weighted. Reading downward tells the whole story. The anomaly is not a feature of the cross-section of returns; it is a feature of how you weight tiny, illiquid stocks. The headline "momentum earns eighty basis points a month" was a single branch — equal-weighted microcaps — and the curve drags it into the light.
+:::
+
+## Sam's Honest Sentence
+
+- Sign of the momentum premium is **not robust** to weighting and universe
+- Positive and significant only with equal-weighting and microcaps
+- Indistinguishable from zero under value-weighted, liquid universe
+- That is the universe a tradable strategy actually faces
+- The honest sentence kills the easy paper for a truer one
+
+::: notes
+Sam's honest sentence is the mirror image of Maya's: the sign of the momentum premium is not robust to the weighting and universe choices; it is positive and significant only under equal-weighting with microcaps included, and indistinguishable from zero under the value-weighted, liquid-universe specifications a tradable strategy would actually face. That sentence kills the easy paper and replaces it with a far more interesting one. The curve refused to let one flattering branch stand in for the forest.
+:::
+
+## The Four-Point Checklist
+
+- **1. Where does the sign live?** Both signs = choice-dependent direction
+- **2. Where does the pre-registered spec sit?** A tail needs explaining
+- **3. What fraction is significant, where the exceptions?** Low-power loss is benign
+- **4. Which rows drive the spread?** Name the fork a skeptic attacks
+
+::: notes
+The general reading rule is a short checklist. One: where does the sign live? If estimates span both signs, your direction is choice-dependent — the most serious fragility. If they share a sign, the direction is robust even if the magnitude wanders. Two: where does the pre-registered specification sit? Mark it. Near the center, your headline is representative; in a tail, you must explain why. Three: what fraction is significant, and where do the exceptions cluster? Significance lost in the low-power corner is benign; significance that appears only under one or two specific choices is a red flag. Four: which rows of the bottom panel drive the spread? The choice whose ticks best separate left from right is the fork your result is most sensitive to. Name it — it is what a skeptic will attack, and what your robustness section must address head-on.
+:::
+
+## The Permutation Test on the Whole Curve
+
+- Sharp null: the effect is zero everywhere
+- Re-shuffle treatment, recompute all 144 each time
+- Ask if the observed curve is more extreme than the null curves
+- Tests the multiverse **as a whole**, the right unit of analysis
+- For the capstone: the descriptive curve plus the checklist is required
+
+::: notes
+A word on the formal inference, kept light because the picture is most of the value. Simonsohn, Simmons, and Nelson propose a permutation test on the whole curve. Under the sharp null that the effect is zero everywhere, you re-shuffle the treatment assignment, recompute all one hundred forty-four specifications on each shuffle, and ask whether the observed curve — say, the number of significant-and-correctly-signed specifications — is more extreme than the null curves produce. This tests the multiverse as a whole, the right unit of analysis once you admit that which specification was itself a choice. For the capstone, the descriptive curve plus the checklist is required; the permutation test is an optional extension.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Sam's curve flips sign — positive only with equal-weighted microcaps, zero in the tradable universe — and the honest sentence kills the easy paper. Apply the four-point checklist to every curve: where the sign lives, where the pre-registered spec sits, where significance fails, and which fork drives the spread.
+:::
+
+::: notes
+To summarize part four: Sam's momentum curve flips sign — positive only with equal-weighted microcaps, and zero in the tradable, value-weighted universe — and the honest sentence kills the easy paper. Apply the four-point checklist to every curve: where the sign lives, where the pre-registered specification sits, what fraction is significant and where it fails, and which fork drives the spread. The permutation test rates the whole forest at once. In part five: when does this persuasive picture lie?
+:::

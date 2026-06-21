@@ -1,0 +1,57 @@
+---
+date: "2026-07-06"
+---
+
+## LATE: The Four Types
+
+- Part 7 — sorting units into the four response types
+
+::: notes
+Welcome back to Chapter three-point-four, part seven of ten. In part six we built two-stage least squares as Frisch-Waugh-Lovell with an instrument. Now we arrive at the deepest idea in the chapter — the one that separates people who use I-V from people who understand it. Maya's three hundred dollars is tempting to call "the effect of the financial-literacy course." It is not. It is the effect for a specific, invisible subgroup, and Imbens and Angrist proved in nineteen ninety-four exactly which one: the local average treatment effect, the LATE. We start by sorting everyone into four types.
+:::
+
+## A Taxonomy of Four Types
+
+| Type | $D_i(0)$ | $D_i(1)$ | Behavior |
+|---|:---:|:---:|---|
+| Never-taker | $0$ | $0$ | Never enrolls |
+| Always-taker | $1$ | $1$ | Always enrolls |
+| **Complier** | $0$ | $1$ | Enrolls iff mailed |
+| Defier | $1$ | $0$ | Enrolls iff *not* mailed |
+
+::: notes
+The key move is to think about how each person's treatment status would respond to the instrument, using potential-outcomes notation — but now applied to the treatment itself. Define D-of-one as the treatment person i would take if mailed, and D-of-zero as the treatment they would take if not mailed. Just as we never see both potential outcomes, we never see both potential treatment statuses. Every person falls into one of four types. Never-takers take zero either way — they never enroll. Always-takers take one either way — they always enroll. Compliers take zero if not mailed and one if mailed — they enroll if and only if mailed, so the instrument moves them. Defiers take one if not mailed and zero if mailed — perversely repelled by the nudge.
+:::
+
+## Maya's People, by Type
+
+- **Always-takers**: the highly motivated — they ruined OLS
+- **Never-takers**: will never enroll, mailer or not
+- **Compliers**: fence-sitters the mailer tips in
+- **Defiers**: contrarians — we will assume them away
+
+::: notes
+Attach Maya's people to the four types. The always-takers are the highly motivated who would have hunted down the course with or without a mailer — the very people whose self-selection ruined ordinary least squares, because their great debt outcomes have nothing to do with the course. The never-takers are those who, mailer or not, will never enroll. The compliers are the swing group: they sit on the fence and the mailer tips them in. The defiers are the contrarians who would have enrolled but, annoyed by junk mail, now refuse — a strange type we will assume away in a moment with a monotonicity condition.
+:::
+
+## The Instrument Only Sees Compliers
+
+- Always-taker: $D=1$ either way — mailer changes nothing
+- Never-taker: $D=0$ either way — invisible
+- Only **compliers** respond to the instrument
+- So the Wald ratio captures **only complier** effects
+
+::: notes
+Now watch what the instrument can and cannot learn. For an always-taker, D is one whether or not they are mailed, so the mailer changes nothing about their treatment — they contribute zero to the first stage, and the instrument is blind to their treatment effect. Same for never-takers: D is always zero, the mailer moves nothing, they are invisible. The only people whose treatment status responds to the instrument are the compliers, and the defiers. So when the Wald ratio reads the outcome response off the instrument's wiggle, the only treatment effects in that response belong to compliers. I-V literally cannot see the effect for always-takers and never-takers, because the instrument never changed their treatment. This is not a flaw you can fix with more data; it is built into what an instrument is.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Every unit is a **never-taker, always-taker, complier, or defier**, defined by how treatment responds to the instrument. IV can only see **compliers** — the units the instrument actually moved; always-takers and never-takers are invisible to it. Next: the monotonicity assumption and the LATE theorem itself.
+:::
+
+::: notes
+To summarize part seven: every unit is one of four types — never-taker, always-taker, complier, or defier — defined by how their treatment status would respond to the instrument. Instrumental variables can only see compliers, the units the instrument actually moved; always-takers and never-takers are invisible because the instrument never changed their treatment. This is the crucial setup. In part eight we rule out the troublesome defiers with a monotonicity assumption, state the Imbens-Angrist theorem precisely, and confront its consequence — the reason "LATE, not A-T-E" is a mantra in modern applied work.
+:::

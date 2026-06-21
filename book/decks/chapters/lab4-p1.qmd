@@ -1,0 +1,63 @@
+---
+date: "2026-07-13"
+---
+
+## Lab 4 — A Clean DiD on Real Fair-Lending Data
+
+**Learning objectives — by the end you can:**
+
+- Pull and aggregate HMDA into a denial-rate panel
+- State a fair-lending DiD spec in full discipline
+- Build a staggered synthetic panel with known effect
+- Recover that effect with Callaway–Sant'Anna, not TWFE
+
+::: notes
+Welcome to Week Four, the Lab, part one of eight. This lab is the capstone of the week, and the first time in the camp you point the causal-inference machinery at a real fair-lending dataset — the public record of nearly every mortgage application filed in the United States. In this opening part we frame the mission: recap what the two difference-in-differences chapters left us, and lay out the two paths this lab gives you.
+:::
+
+## Two Chapters, One Underlined Sentence
+
+- Chapter four-point-one: built DiD up to two-way fixed effects
+- Left one sentence underlined three times
+- Parallel trends is an assumption about a counterfactual
+- It can be **refuted** by a pre-trend
+- It can never be **confirmed** by one
+
+::: notes
+Let us pick up the thread. Chapter four-point-one built difference-in-differences from four cell means all the way up to the two-way fixed-effects regression and the event study. And it left you with one sentence underlined three times: parallel trends is an assumption about a counterfactual, so it can be refuted by a pre-trend but never confirmed by one. That asymmetry is the load-bearing idea of the whole week. A tilting pre-trend is a red flag you can see. A flat pre-trend is reassurance you can never fully bank, because the counterfactual you would need to check it against never actually happened.
+:::
+
+## And The Staggered-Timing Crisis
+
+- Chapter four-point-two: the trusted regression goes wrong
+- Under **staggered** timing plus **dynamic** effects
+- TWFE becomes a contaminated weighted average
+- Sometimes even the **wrong sign**
+- The cure: Callaway and Sant'Anna group-time ATTs
+
+::: notes
+Then chapter four-point-two delivered the bad news and the cure. The very two-way fixed-effects regression you trust in the clean two-by-two becomes a contaminated weighted average — sometimes even the wrong sign — the moment treatment timing is staggered across units and the effects are dynamic, meaning they grow over time. And it handed you the remedy: Callaway and Sant'Anna's group-time average treatment effects on the treated, estimated against clean controls that are either never treated or not yet treated, and then aggregated on purpose, with weights you name out loud. This lab puts both chapters to work at once.
+:::
+
+## The Dataset Maya Has Been Circling
+
+- HMDA Loan Application Register: the public mortgage record
+- Same data family as Gao and Sun, 2019, in PNAS
+- Build a county-year panel of **denial rates**
+- Treatment: a staggered state fair-lending policy change
+- Run TWFE, then event study, then Callaway–Sant'Anna
+
+::: notes
+The dataset is the one Maya has been circling since Week One: the Home Mortgage Disclosure Act Loan Application Register, the public record of nearly every mortgage application filed in the United States. It is the same family of data that Professor Gao and his coauthor used to ask whether same-sex couples were treated differently when they applied to borrow — Gao and Sun, two thousand nineteen, in the Proceedings of the National Academy of Sciences. You will build a county-year panel of mortgage denial rates, define treatment by a state-level fair-lending regulatory change that different states adopt in different years — staggered adoption, exactly the chapter four-point-two setting — and then run the full pipeline: two-way fixed effects first, so you can feel why it is suspect, then the event study, then Callaway–Sant'Anna with clean controls for an honest number.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+This lab points the DiD machinery at **real HMDA mortgage data**: build a county-year denial-rate panel, define a **staggered** state fair-lending shock, and run TWFE then Callaway–Sant'Anna. The discipline from both chapters carries in: parallel trends can be refuted but never confirmed. Next: the two paths, and what you will be able to do.
+:::
+
+::: notes
+To summarize part one: this lab is the Week-Four capstone, pointing the difference-in-differences machinery at real fair-lending data. You will build a county-year denial-rate panel from HMDA, define treatment by a staggered state policy shock, and run two-way fixed effects against Callaway–Sant'Anna. The discipline from both chapters comes with you: parallel trends can be refuted by a pre-trend but never confirmed by one. In part two we lay out the lab's two paths — real data and a synthetic check — and the concrete skills you will walk away with.
+:::

@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## The Horse Race and What's Clever
+
+- Part 5 — the regression horse races and three clever moves
+
+::: notes
+Welcome back to Chapter five-point-one, part five of seven. In part four we read the sorts and watched beta go flat while size and value rose. Now we go to the regression tables, which quantify what the sorts showed and let the characteristics fight in one specification. Then we name the three moves that separate this paper from the anomaly papers before it.
+:::
+
+## The Regression Horse Races
+
+- Read the FM columns as a *sequence of horse races*
+- **Beta alone:** slope small, often wrong sign, near zero — CAPM test fails
+- **Size alone / BE/ME alone:** large, strongly significant slopes
+- **Kitchen-sink:** beta, size, BE/ME together — the decisive cell
+- Size and BE/ME survive; **beta loses**
+
+::: notes
+Read the Fama–MacBeth columns as a sequence of horse races. First, beta alone — the formal CAPM test. Its slope is small, statistically indistinguishable from zero, frequently the wrong sign, once betas are measured carefully. Beta by itself does not earn its keep. Next, log size alone and log book-to-market alone: both slopes are large and strongly significant — size negative, so smaller firms earn more; book-to-market positive, so value earns more. Finally the kitchen-sink column: all three together. This is the decisive cell of the whole paper. Size and book-to-market keep their large, significant slopes; beta's slope stays near zero. When beta competes against size and book-to-market, beta loses and the other two survive together.
+:::
+
+## Spot the Headline With Your Fingertip
+
+- Find the **market-beta coefficient row**
+- Scan its **t-statistic across columns**
+- Large alone, collapsing toward zero once size and BE/ME enter
+- The number that *should* be big under CAPM is the one that isn't
+- That **absence** is the finding
+
+::: notes
+Here is a portable skill for any table you have never seen. Find the row for the market-beta coefficient, then scan its t-statistic across the columns. If it is large when beta runs alone but collapses toward zero the moment size and book-to-market enter, you have found the paper's thesis with your fingertip. The number that should be big under the reigning theory is the number that isn't. That absence — the dog that did not bark — is the finding. Look for the coefficient the dominant theory predicts must be large, then check whether it survives competitors. When it doesn't, you are watching a theory get dethroned, one t-statistic at a time.
+:::
+
+## Clever Move One: The Double Sort
+
+- In raw data, size and beta are **correlated** — small firms tend high-beta
+- A simple beta sort is partly a disguised size sort
+- The double sort: beta varies, size held fixed → clean comparison
+- The within-size beta comparison is flat
+- Same logic as "controlling for a confounder," done with buckets
+
+::: notes
+Three moves separate this paper from the anomaly papers before it. The first is the double sort to disentangle size from beta. In the raw data, size and beta are correlated — small firms tend to be high-beta — so a simple sort on beta is partly a disguised sort on size. If you sort on beta alone and see a spread, you cannot tell whether you are paid for beta or for smallness. The double sort breaks the tangle: by forming size-beta portfolios, Fama and French create cells that vary in beta while holding size roughly fixed. Now the within-size beta comparison is clean — and flat. This is the same logic as controlling for a confounder, done with buckets instead of a regression slope, and it lets them say beta's apparent premium was size in disguise.
+:::
+
+## Clever Moves Two and Three
+
+- **Book-to-market on the marquee** — one cheap ratio, enormous work
+- Survives alongside size when beta does not — durable, replicable
+- The 1993 three-factor model is built directly on these two
+- **The framing:** stage the result as an execution of CAPM
+- Done with the field's *own* weapon — Fama–MacBeth
+
+::: notes
+The second clever move is putting book-to-market on the marquee. It is a single ratio, computable from two numbers any firm reports, and it does enormous work — arguably more than size. Elevating it to a headline variable, and showing it survives alongside size when beta does not, gave the field a durable, cheap-to-compute predictor. The nineteen ninety-three sequel built the famous three-factor model directly on these two variables. The third move is the framing — beta is dead. Few papers have the nerve to say the reigning variable does not work. Fama and French stage the result as a direct execution of CAPM's central prediction, with the field's own preferred weapon, the Fama–MacBeth regression. You cannot dismiss the method as an outsider's gimmick when it is the discipline's house technique. The cleverness is as much in the framing of the contest as in any single estimate.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The regression **horse races** quantify the sorts: beta's slope collapses while size and BE/ME survive together — spot it by scanning beta's t-statistic across columns. And the paper is clever three times: the **double sort**, the elevation of **book-to-market**, and the **"beta is dead" framing** using the field's own tool. Next: where a referee should attack it.
+:::
+
+::: notes
+To summarize part five: the horse races quantify the sorts — beta collapses in the kitchen-sink specification while size and book-to-market survive. And the paper is clever three times: the double sort, the elevation of book-to-market, and the framing of executing CAPM with the field's own weapon. In part six we turn adversarial and attack the paper's four weakest joints.
+:::

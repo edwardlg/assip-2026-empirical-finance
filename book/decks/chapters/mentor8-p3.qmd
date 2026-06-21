@@ -1,0 +1,55 @@
+---
+date: "2026-08-10"
+---
+
+## The Four-Beat Answer and the Robustness Strike
+
+- Part 3 — the four-beat identification answer, selection, and robustness
+
+::: notes
+Welcome back to Mentor Session eight, part three of six. In part two we ranked the three families and saw why identification is fatal. Now we learn the four-beat shape of a strong identification answer, meet the selection version that everyone faces, and turn to the first survivable family — robustness — and the specification curve that answers it.
+:::
+
+## The Four-Beat Shape of a Strong Answer
+
+- **Name** the threat — so you don't look surprised
+- Say what you'd **see** in the data if it were true
+- Show what you **actually** see
+- State the **residual** you still can't rule out
+
+::: notes
+Here is the pattern of a strong answer to an identification question, and it has four beats in order. First, name the threat yourself, before they finish asking — that alone makes you look like you saw it coming. Second, say what we would see in the data if the threat were real — what pattern the confounder would leave behind. Third, show what we actually see — point to the table, the figure, the test that distinguishes the two worlds. Fourth, state the residual: the part you still cannot fully rule out. That last beat feels like a weakness, but it is the opposite. Naming the residual yourself proves you understand the limits of your own design better than the questioner does, and that is exactly what earns trust in a room of professionals.
+:::
+
+## The Selection Version You Will All Face
+
+- Your subjects didn't get the treatment *randomly*
+- So why isn't the result just **selection**?
+- The spine of today's stretch questions
+- Hold it — we work a real case later
+
+::: notes
+There is one identification threat almost every one of you will face, because almost none of you ran a randomized experiment. It is the selection version: my subjects did not get the treatment randomly, so why isn't the result just selection? The kinds of units that got treated may differ from the untreated in a hundred ways, and any of those differences could drive the outcome directly instead of the treatment you care about. This is the spine of today's stretch questions, which we work later on a real published paper about CEO behavior. For now, just hold the shape of it: whenever assignment is not random, selection is the first thing a smart referee reaches for, and you must reach for it first.
+:::
+
+## Robustness: Does It Hold If You Change *That* Choice?
+
+- *"Does this hold if you change that one choice?"*
+- The referee suspects you searched for the prettiest spec
+- Answer with a **specification curve** — a tight cluster, not one number
+- One sentence: *"stable across the three choices I worried about most"*
+
+::: notes
+Now the first survivable family. Robustness is the question "does it hold if you change that one choice?" A different sample filter, a different control set, a different cutoff, a different flavor of standard error, a different window. The referee asking this suspects you searched, even quietly, for the specification that gave the prettiest answer — the garden of forking paths from Chapter seven-point-three — and wants to see the result is not balanced on a single knife-edge decision. The answer is the specification curve from Chapter eight-point-one: show a tight cluster of estimates across many reasonable choices, not one lonely number, and say one sentence — "stable across the three choices I worried about most." A cluster that holds together is far more convincing than any single point estimate.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Answer identification in four beats: **name** the threat, say what you'd **see** if true, show what you **actually** see, state the **residual**. Selection is the version everyone facing non-random assignment must answer. For robustness, show a **specification cluster** — not one lonely number.
+:::
+
+::: notes
+To summarize part three: the strong identification answer has four beats — name, see, actually see, residual — and stating the residual yourself earns trust rather than losing it. Selection is the version that lands on everyone who did not randomize, so reach for it first. Robustness, the first survivable family, is answered with a tight specification cluster that proves your result is not balanced on a single choice. In part four we finish the survivable families with alternative explanations, learn the tell that separates a wound from a death, and face the hardest moment of any defense: when the critique is fatal and the attacker is right.
+:::

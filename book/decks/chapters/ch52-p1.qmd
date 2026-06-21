@@ -1,0 +1,63 @@
+---
+date: "2026-07-20"
+---
+
+## From the Cross-Section to a Factor Model
+
+**Learning objectives.** By the end you can:
+
+- Distinguish FF92's cross-section from FF93's time-series
+- Read a regression's $R^2$ as common variation
+- Read its intercept $\alpha$ as a pricing error
+- Explain why a factor is a tradeable portfolio
+
+::: notes
+Welcome to Week Five, lesson five-point-two, part one of nine. This is our reader's guide to Fama and French's nineteen ninety-three paper, "Common Risk Factors in the Returns on Stocks and Bonds." Yesterday's guide walked through the nineteen ninety-two paper, which put a knife into CAPM beta and announced that two firm characteristics — size and book-to-market — did the explaining instead. But that paper left a job unfinished, and today we see how the nineteen ninety-three paper finishes it, and why this paper became the single most-used regression in empirical finance.
+:::
+
+## The Unfinished Job From FF92
+
+- FF92 sorted stocks by size and book-to-market
+- Average returns lined up with those characteristics
+- Ran the cross-section, Fama-MacBeth style
+- Shows the characteristics are *priced*
+- Does **not** say *why*, nor give a *model*
+
+::: notes
+Recall what the nineteen ninety-two paper did. If you sort stocks by size and by book-to-market, the average returns line up with those characteristics. They ran the cross-section: at each date, regress this month's returns across firms on each firm's size and book-to-market, in the Fama-MacBeth style you saw in Lab Two. That tells you the characteristics are priced — high book-to-market stocks earn more on average. But it does not tell you why, and it does not give you a model you can hand to someone and say, here is the machine that generates expected returns. That is exactly the gap the nineteen ninety-three paper fills.
+:::
+
+## Same Characters, New Machinery
+
+- FF93 manufactures size and value into **factors**
+- Factors = tradeable portfolios on the right-hand side
+- Question: can a few factors explain co-movement?
+- And price stocks with **no leftover**?
+- Students conflate the two papers constantly
+
+::: notes
+The nineteen ninety-three paper takes the two characteristics and manufactures them into factors — tradeable portfolios whose returns you put on the right-hand side of an ordinary time-series regression. Where the earlier paper asked, do these characteristics predict the cross-section of average returns, this paper asks the structurally different question: can a small set of factor returns explain the common month-to-month movement in stock returns, and price them with no leftover? Same two characters, completely different machinery. Today's job is to see that difference clearly, because students conflate these two papers constantly, and the conflation hides the cleverest move in the literature. We read it the professional way, tables first, in an order that reveals the argument.
+:::
+
+## Two Shapes of the Same Question
+
+- Both about: small and value beat CAPM
+- **FF92 cross-sectional:** firms within a date
+- Output: a risk premium per characteristic
+- **FF93 time-series:** time within a portfolio
+- Decompose a return stream into common pieces
+
+::: notes
+Here is the cleanest way to hold the two papers apart. Both are about the same fact: small stocks and high book-to-market, or value, stocks have earned higher average returns than CAPM says they should. The difference is the shape of the question. The earlier paper is cross-sectional: freeze a single month, and ask across thousands of firms whether return slopes on the characteristic. Do that every month and average the slopes; the output is a risk premium per characteristic. The unit of variation is firms within a date. The nineteen ninety-three paper is time-series: freeze a single portfolio — say, small-cap value stocks — and watch it move through time, decomposing its return stream into common pieces plus an idiosyncratic remainder. The unit of variation is time within a portfolio.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+FF92 asked a **cross-sectional** question — are size and value priced? FF93 asks a **time-series** question — can a few factor portfolios explain the common movement in returns *and* leave no pricing error? Same characters, new machinery. Next: why going time-series buys you an R-squared and an alpha.
+:::
+
+::: notes
+To summarize part one: the nineteen ninety-two paper asked a cross-sectional question — are size and value priced? The nineteen ninety-three paper asks a time-series question — can a few factor portfolios explain the common movement in returns, and leave no pricing error behind? Same characters, brand new machinery. In part two, we see exactly why going time-series matters so much: it hands you two things the cross-section cannot, an R-squared and an intercept, and that intercept is the whole ballgame.
+:::

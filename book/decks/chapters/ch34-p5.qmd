@@ -1,0 +1,47 @@
+---
+date: "2026-07-06"
+---
+
+## A Worked Number and Why Wald Beats OLS
+
+- Part 5 — a numeric Wald estimate, and why it beats OLS
+
+::: notes
+Welcome back to Chapter three-point-four, part five of eight. In part four we built the Wald estimator — reduced form over first stage — for Maya's random mailer. Now we put real numbers through it, get a concrete effect, and then see exactly why this estimator beats ordinary least squares, along with the price we pay for that cleanliness.
+:::
+
+## A Number: $-90 / 0.30 = -300$
+
+| Group | $\overline{D}$ | $\overline{Y}$ (\$) |
+|---|:---:|:---:|
+| Mailed ($Z{=}1$) | $0.40$ | $-120$ |
+| Not mailed ($Z{=}0$) | $0.10$ | $-30$ |
+
+- First stage $= 0.30$; reduced form $= -\$90$
+- Wald $= -90 / 0.30 = -\$300$ per completer
+
+::: notes
+Put numbers on it. Among mailed households, forty percent completed the course and the mean balance change was minus one hundred twenty dollars. Among unmailed households, ten percent completed and the mean change was minus thirty dollars. The mailer raised completion from ten percent to forty percent — a first stage of zero-point-three-zero. The mailer lowered the average balance change from minus thirty to minus one hundred twenty dollars — a reduced form of minus ninety dollars. The Wald estimate is minus ninety divided by zero-point-three-zero, which equals minus three hundred dollars. Read it carefully. The mailer on average improved balances by ninety dollars, but it only got an extra thirty percent of people into the course. If the only way the mailer helped was by getting people into the course, then that ninety-dollar improvement was produced entirely by the thirty percent who enrolled because of it. So the per-completer effect must be ninety divided by zero-point-three, which is three hundred dollars of improvement.
+:::
+
+## Why Wald Beats OLS
+
+- OLS compares **all** completers to **all** non-completers
+- That sweeps in motivated always-takers — contaminated
+- Wald only compares mailed vs. unmailed — random, clean
+- Price: \$300 is the effect for the people the mailer **moved**
+
+::: notes
+Why does this beat ordinary least squares? O-L-S would compare all completers to all non-completers — including the highly motivated people who would have completed the course no matter what, and whose great debt outcomes have nothing to do with the course. The Wald estimator never makes that contaminated comparison. It only ever compares the mailed group to the unmailed group, and since mailing was random, those two groups are identical in motivation. The contrast is clean. The price — and it is the central subtlety of all I-V — is that three hundred dollars is the effect for a specific subpopulation: the people the mailer actually moved. We unpack exactly who they are in part seven. For now, one more reading: the instrument delivers a dose of treatment, and the Wald ratio strips the offer back down to the effect of that dose.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Maya's Wald estimate is $-90 / 0.30 = -\$300$ per completer — a clean mailed-vs-unmailed contrast that never makes OLS's contaminated comparison. The catch: it is the effect only for the people the instrument moved. Next: scaling up to **2SLS** with controls and continuous treatments.
+:::
+
+::: notes
+To summarize part five: Maya's Wald estimate is minus ninety divided by zero-point-three-zero, equal to minus three hundred dollars per completer. It beats ordinary least squares because it never compares motivated always-takers to anyone — it only contrasts the mailed and unmailed groups, which random assignment made identical in motivation. The catch, which we will pay off in part seven, is that three hundred dollars is the effect only for the people the instrument moved, not for everyone. But first, the Wald estimator handles only one binary instrument and no controls. Real problems have continuous treatments and many controls. In part six we scale up to two-stage least squares, and see it as Frisch-Waugh-Lovell with an instrument swapped in.
+:::

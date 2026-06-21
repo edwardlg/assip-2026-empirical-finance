@@ -1,0 +1,59 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## Fuzzy RD Is Instrumental Variables
+
+- Part 5 — fuzzy RD is IV: a ratio of two jumps
+
+::: notes
+Welcome back to Chapter four-point-three, part five of thirteen. In part four we saw that the cutoff often only nudges the treatment probability — fuzzy regression discontinuity. Now we show that fuzzy RD is exactly the instrumental-variables problem from Week three: the effect is a ratio of two jumps, everything from Week three transfers, and in practice one function call does it all.
+:::
+
+## The Fuzzy Estimand Is a Ratio
+
+- $\tau_{\text{FRD}} = \dfrac{\text{jump in outcome at }c}{\text{jump in treatment at }c}$
+- Numerator: reduced form — effect of *crossing* on the outcome
+- Denominator: first stage — effect of crossing on treatment
+- This is the **Wald estimator** from Chapter 3.4
+- Instrument is $Z_i = \mathbf{1}\{X_i \geq c\}$, being above the cutoff
+
+::: notes
+Here is where Week three comes roaring back. In a fuzzy design you have a discontinuity that affects the outcome, the numerator, and a discontinuity that affects the treatment, the denominator, and the causal effect is their ratio. Tau-F-R-D is the jump in the outcome at the cutoff divided by the jump in the treatment at the cutoff. Stare at that fraction and you will recognize the Wald estimator from Chapter three-point-four exactly. The numerator is a reduced form: the effect of crossing the cutoff on the outcome, ignoring treatment. The denominator is a first stage: the effect of crossing the cutoff on the treatment. Divide, and you scale the reduced form up by the dose of treatment the cutoff actually delivered. Fuzzy regression discontinuity is instrumental variables, where the instrument is the indicator Z-i for being above the cutoff.
+:::
+
+## Everything From Week 3 Transfers
+
+- **Relevance**: the denominator jump must be real, not a sliver
+- A sliver invites the weak-instrument pathology of 3.5
+- **Exclusion**: crossing $c$ affects $Y$ *only* through treatment
+- **LATE**: identifies the effect for compliers at the cutoff
+- Under monotonicity — no defiers — it is a clean LATE
+
+::: notes
+Three lessons transfer. Relevance is the jump in the treatment probability, the denominator. It is testable — you can see the first-stage jump — and it had better be a real jump, not a sliver, or you are dividing by something near zero and inviting the weak-instrument pathology of Chapter three-point-five. Exclusion is the continuity assumption applied to the instrument: crossing the cutoff must affect the outcome only through the treatment, and nothing else can jump at the cutoff. If passive ownership were the only thing that changes when a stock crosses into the two-thousand, exclusion holds; if crossing also triggered a change in analyst-coverage rules at the same rank, exclusion fails. And it is local average treatment effect, not the average treatment effect: fuzzy regression discontinuity identifies the effect for units who take treatment because they crossed the cutoff — the compliers at the cutoff. Under a monotonicity assumption, crossing can only raise, never lower, the chance of treatment, with no defiers, the estimand is a clean local average treatment effect.
+:::
+
+## In Practice
+
+- No new machinery — estimate two jumps, take the ratio
+- Use standard errors that respect the ratio
+- Never hand-divide two regressions and trust the naive error
+- Let the software propagate the uncertainty
+- `rdrobust` does both jumps and the ratio in one call
+
+::: notes
+So you do not need new machinery for fuzzy regression discontinuity; you need to estimate two jumps instead of one and take their ratio, with standard errors that respect the ratio. That is the same warning as Week three: never hand-divide two regressions and trust the naive standard error. Let the software propagate the uncertainty. In practice the rdrobust package does both jumps and the ratio in one call, which is exactly what the notebook for this chapter will use.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Fuzzy RD is **instrumental variables** with the above-cutoff indicator as the instrument. The effect is the jump in $Y$ over the jump in $D$ — the Wald ratio — a **LATE for compliers at the cutoff** under monotonicity. Relevance, exclusion, and weak-instrument worries all carry over from Week 3. Next: how to estimate those jumps honestly.
+:::
+
+::: notes
+To summarize part five: fuzzy regression discontinuity is instrumental variables with the above-cutoff indicator as the instrument. The effect is the jump in the outcome over the jump in the treatment — the Wald ratio — identifying a local average treatment effect for compliers at the cutoff under monotonicity. Relevance, exclusion, and the weak-instrument warning all carry over from Week three, and one function call estimates both jumps and the ratio. In part six we turn to estimation: why a global high-order polynomial is a trap.
+:::

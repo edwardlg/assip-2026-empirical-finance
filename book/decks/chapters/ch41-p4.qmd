@@ -1,0 +1,57 @@
+---
+date: "2026-07-13"
+---
+
+## Event Studies: Letting the Effect Breathe
+
+- Part 4 — leads and lags: dynamic effects and pre-trend checks
+
+::: notes
+Welcome back to Chapter four-point-one, part four of six. In part three we wrote difference-in-differences as the single two-way fixed-effects coefficient beta. That one number collapses all of "before" into one value and all of "after" into another. But real data usually has several periods on each side, and that extra structure is a gift. The event study uses it to ask two questions the single beta cannot: does the effect grow or fade, and were the groups already drifting apart before treatment? This is the canonical DiD figure.
+:::
+
+## The Event Study: Leads and Lags
+
+$$Y_{it}=\alpha_i+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbb{1}\{t-t_i^*=k\}+\varepsilon_{it}$$
+
+- Event time $k=t-t^*$: $k=0$ is first treated period
+- One coefficient $\beta_k$ per relative period
+- Leads ($k<0$) before; lags ($k\ge 0$) after
+- **Omit $k=-1$** → baseline pinned to zero
+
+::: notes
+The idea is to replace the single treatment dummy with a set of dummies, one per period relative to the moment treatment switched on. Define event time k as t minus t-star, where t-star is when treatment begins. So k equals zero is the first treated period, k equals minus one the period just before, k equals plus two two periods after. Estimate one coefficient beta-k per event-time period. Dummies for k below zero are leads — periods before treatment; those for k at least zero are lags — the treatment period and after. We must drop one event-time dummy or the model is collinear with the fixed effects, the same dummy trap as always. By convention we drop k equals minus one, so beta-minus-one is zero by construction. Every other coefficient then reads as how far the treated-control gap has moved from where it stood the instant before treatment. That pins the plot to zero just before treatment and measures everything against it.
+:::
+
+## Reading the Lags: the Dynamic Effect
+
+- Lags ($k\ge 0$) trace how the effect **evolves**
+- e.g. $\hat\beta_0{=}30$, $\hat\beta_1{=}55$, $\hat\beta_2{=}70$ — builds
+- Flat post-period → immediate and permanent
+- Rising → accumulates; spike then decay → transitory
+
+::: notes
+Plot the estimated beta-k against event time, with confidence intervals. Look first at the lags — k at least zero. These trace how the regulation's effect evolves after it switches on. Suppose beta-zero is thirty dollars, beta-one fifty-five, beta-two seventy. The effect builds over three years toward the seventy that the static two-by-two would have blurred into a single number. The event study un-blurs it. A flat post-period says the effect is immediate and permanent. A rising one says it accumulates. A spike that then decays says it was transitory — a one-time jolt, not a lasting change. This dynamic picture is exactly what the single coefficient beta throws away, and it is often the most interesting part of the answer for a policymaker who wants to know not just whether something worked, but when.
+:::
+
+## Reading the Leads: the Pre-Trend Test
+
+- Leads ($k<0$): the **pre-trend** check
+- No treatment yet → groups should not diverge
+- Flat leads hugging zero → visible parallel trend
+- Sloping leads → groups already pulling apart: trouble
+
+::: notes
+Now look at the leads — k below zero. This is the half of the plot that earns the event study its keep. Under parallel trends, the groups should not have been diverging before treatment, since no treatment yet existed to cause divergence. So the lead coefficients — beta-minus-two, beta-minus-three, and so on — should all be statistically indistinguishable from zero, hugging the horizontal axis. If they do, the groups moved together in the pre-period — a visible parallel trend, which is reassuring. If instead the leads slope steadily upward toward k equals zero, that is a pre-trend: the groups were already pulling apart before anything happened, and the parallel-trends story is in trouble. A divergence already underway gets mistaken for a treatment effect.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The **event study** replaces one dummy with leads and lags, normalized to $k=-1$. The **lags** show the dynamic treatment effect; the **leads** are a visible pre-trend check. Next: the deep reason flat leads do *not* prove parallel trends — and how to get the standard errors right.
+:::
+
+::: notes
+To summarize part four: the event study replaces the single treatment dummy with a sequence of leads and lags, normalized so the period just before treatment sits at zero. The lags trace the dynamic treatment effect as it grows, fades, or jumps; the leads check whether the groups were drifting apart before treatment. It is the most informative figure in a DiD paper. But a trap waits, one of the deepest ideas in the chapter. In part five we explain why flat leads do not actually prove parallel trends — for two reasons, one logical and one statistical — then turn to getting the standard errors right.
+:::

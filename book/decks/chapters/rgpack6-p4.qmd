@@ -1,0 +1,72 @@
+---
+date: "2026-07-27"
+---
+
+## A Prompt-Pattern Catalog for Research
+
+- Part 4 — five reusable prompt patterns that constrain and ground
+
+::: notes
+Welcome back to Reading Guide Pack Six and the AI Lab Manual, part four of eight. In part three we finished RAG, the pipeline that grounds a model in your documents with citations. Now we sharpen the prompts themselves. A prompt is not a wish; it is a specification. The patterns here are the reusable ones for empirical work, and the recurring move is the same: constrain the output and demand grounding. Get this habit and your output stops being a paragraph you hope is right and becomes a column you can verify.
+:::
+
+## Five Patterns, One Move
+
+| Pattern | When to use | What it buys you |
+|---|---|---|
+| **Extraction** | Pull structured fields from messy text | Prose becomes a checkable dataframe column |
+| **Classification-with-rubric** | Label items into categories | Reproducible labels — a measure to validate |
+| **Cite-or-abstain** | Any RAG question over your documents | Kills hallucination: quote a source or abstain |
+| **Code review** | Check your own analysis script | A second reader for look-ahead, leakage |
+| **Summarize-with-quotes** | Digest a long filing or paper | Every claim anchored to a verbatim quote |
+
+::: notes
+Here is the catalog at a glance. Extraction pulls structured fields from messy text — the auditor, the going-concern flag, every guidance figure — turning prose into a checkable dataframe column. Classification-with-rubric labels each item into categories, but produces only a measure to be validated, which is the point of the next two parts. Cite-or-abstain is the non-negotiable pattern for any RAG question, and it kills hallucination. Code review uses the model as a second reader for look-ahead bugs, off-by-one merges, and leakage. And summarize-with-quotes digests a long filing without losing traceability. Five patterns, one move underneath: constrain and ground.
+:::
+
+## Extraction and Classification
+
+- **Extraction**: "extract these fields as JSON; copy verbatim; do not infer"
+- Absent field → output **null**, never guess
+- **Classification**: the rubric makes the label **reproducible**
+- Precise inclusion criteria + one example per label
+- Output the label, the **verbatim evidence phrase**, and a confidence
+
+::: notes
+Look at two patterns in detail. The extraction template tells the model: extract these fields as JSON; copy values verbatim, do not infer; if a field is absent output null, never guess; output only the JSON. That verbatim-and-null discipline is what makes the output checkable. The classification template is where the rubric does all the work. You give precise inclusion criteria and one example for each label, add an UNCLEAR label for when the text gives too little information, and ask for JSON with the label, a verbatim phrase that decided it, and a confidence. The rubric is what makes the label reproducible — by you, by another grader, and by the model on a re-run. Without it you have not built a measure, you have rolled dice.
+:::
+
+## Cite-or-Abstain, Code Review, Summarize
+
+- **Cite-or-abstain**: "use ONLY the context; cite the passage id in brackets"
+- If absent, reply exactly **"Not supported by the provided context."**
+- **Code review**: check look-ahead bias, train/test leakage, silent merges
+- "If unsure, say so rather than inventing a problem"
+- **Summarize-with-quotes**: each bullet backed by a verbatim quote ≤25 words
+
+::: notes
+Three more. Cite-or-abstain wraps around every RAG question: answer using only the context passages, cite the passage id in brackets after each claim, and if the context lacks the answer reply exactly "Not supported by the provided context." Code review aims the model at the bugs we worry about this week: check look-ahead bias — does any feature at time t use information from t or later — leakage between train and test, and silent sample changes on merge or dropna; and if unsure, say so rather than inventing a problem. And summarize-with-quotes asks for n bullets, each followed by a verbatim quote of at most twenty-five words, stating nothing the document does not say.
+:::
+
+## Two Cross-Cutting Rules
+
+- **Give the model an exit**: UNCLEAR / null / "Not supported"
+- A model with no permission to abstain will **fabricate to comply**
+- A forced wrong label is **worse** than an honest blank
+- **Constrain the output format**: JSON, a fixed label set, a quote
+- Free text you cannot parse is output you cannot **validate at scale**
+
+::: notes
+Two cross-cutting rules tie the catalog together. First, always give the model an exit — UNCLEAR, or null, or "Not supported." A model with no permission to abstain will fabricate to comply: asked for a label it cannot justify, it invents one. A forced wrong label is worse than an honest blank, because the blank you route to a human and the wrong label silently poisons your data. Second, always constrain the output format — JSON, a fixed label set, a required quote — so the result is machine-parseable. A free-text answer you cannot parse is one you cannot validate at scale, and at ten thousand filings, validation at scale is the only validation that matters.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A prompt is a **specification**, not a wish: constrain the output and demand grounding. Use the five patterns — extraction, classification-with-rubric, cite-or-abstain, code review, summarize-with-quotes — and always give the model an **exit** so it abstains instead of fabricating. Next: why an LLM label is a measurement you must validate, not ground truth.
+:::
+
+::: notes
+To summarize part four: treat every prompt as a specification. The five patterns all share one move: constrain the output and demand grounding so the result is checkable. Two rules cut across all five: give the model an exit so it abstains rather than fabricating, and constrain the output format so you can validate it at scale. Notice the classification pattern produces labels, and labels are measurements. In part five we take those labels seriously and start building an evaluation harness: a hand-labeled gold set and a confusion matrix, the way Week One taught you to score any estimator.
+:::

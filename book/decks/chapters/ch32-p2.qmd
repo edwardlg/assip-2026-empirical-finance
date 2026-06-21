@@ -1,0 +1,55 @@
+---
+date: "2026-07-06"
+---
+
+## Why the Naive Comparison Fails
+
+- Part 2 — decompose the naive difference, name selection bias
+
+::: notes
+Welcome back to Chapter three-point-two, part two of eleven. In part one we set the target — the average treatment effect on the treated — and wrote each applicant's two potential outcomes. Now we show why the obvious comparison fails, decompose the naive difference exactly, and name the villain: selection bias. We close by setting up the strategy for the whole chapter.
+:::
+
+## Decomposing the Naive Difference
+
+- Naive: enrollee approval rate minus non-enrollee rate
+- $\mathbb{E}[Y \mid D{=}1] - \mathbb{E}[Y \mid D{=}0] = \tau_{\text{ATT}} + \text{bias}$
+- Bias $= \mathbb{E}[Y(0)\mid D{=}1] - \mathbb{E}[Y(0)\mid D{=}0]$
+- The gap in *untreated* outcome between the groups
+
+::: notes
+The obvious thing is to compare the approval rate of enrollees to non-enrollees. But that naive difference does not estimate tau-A-T-T. Decompose it exactly, as we did last chapter. The expected outcome given treated, minus the expected outcome given untreated, equals tau-A-T-T — what we want — plus a second term. That second term is the expected untreated outcome among the treated, minus the expected untreated outcome among the untreated. It is the gap in the untreated potential outcome, Y of zero, between the people who enrolled and the people who did not.
+:::
+
+## Selection Bias, Named
+
+- Savvier enrollees would be approved more *even without the course*
+- Then $\mathbb{E}[Y(0)\mid D{=}1] > \mathbb{E}[Y(0)\mid D{=}0]$
+- Selection bias is positive; naive comparison *overstates* the program
+- Maya's job: kill that term
+
+::: notes
+That second term is the selection bias. If the enrollees are the financially-savvier, higher-income applicants who would have been approved at higher rates even without the course, then the expected untreated outcome among the treated exceeds that among the untreated. The selection bias is positive, and the naive comparison overstates the program. Maya's whole job is to kill that term. Notice it is built entirely from the untreated potential outcome — the thing the treated never reveal. That is exactly why selection bias is hard: it lives in a quantity we cannot directly see.
+:::
+
+## The Chapter's Strategy and One Warning
+
+- Strategy: **selection on observables** via **matching**
+- Refined into **propensity-score matching**
+- State the assumption, show on numbers, watch it break, write code
+- Warning: matching is regression-with-controls in better clothes
+
+::: notes
+This chapter is the first of two on how to kill selection bias when the thing driving it is observable. The strategy has a name — selection on observables — and a tool: matching, refined into propensity-score matching. The plan is to state the assumption that makes it work, show on real numbers why comparing look-alikes recovers tau-A-T-T, watch it break, and write the code. But hold one warning from the first page: matching is not a different beast from regression with controls. It is the same bet — the bet that you have measured the confounders — dressed in better clothes. The omitted-variable bias of Week Two is waiting here under a new name. We will earn that warning, not just assert it.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The naive difference equals $\tau_{\text{ATT}}$ **plus selection bias** — the gap in the untreated outcome $Y(0)$ between enrollees and non-enrollees. When enrollees would be approved more anyway, the bias is positive and the comparison overstates the program. Next: the assumption that makes matching work.
+:::
+
+::: notes
+To summarize part two: the naive difference equals the average treatment effect on the treated plus a selection-bias term — the gap in the untreated outcome between enrollees and non-enrollees. When savvier people both enroll and would be approved anyway, that bias is positive and the naive comparison overstates the program. The chapter's strategy is selection on observables, implemented by matching and then propensity-score matching. In part three we state the assumption that makes this work — the Conditional Independence Assumption — and prove that, under it, comparing like with like recovers the effect.
+:::

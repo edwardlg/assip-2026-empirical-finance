@@ -1,0 +1,46 @@
+---
+date: "2026-08-03"
+---
+
+## Lay Out the Research Repository
+
+- Part 3 — lay out the repository, one directory per job
+
+::: notes
+Welcome back to Week Seven, the Lab, part three of eight. In part two we fixed the boundary: the repo travels, the licensed data stays home. Now we build the layout. A research repo has a small number of directories, each with one job, and putting things in the right place from day one is what keeps a six-month project navigable. Start from a layout, not a blank folder.
+:::
+
+## The Directory Skeleton
+
+- README, environment file, git-ignore, and the pre-analysis plan
+- `data/` with `raw/` and `processed/` — both git-ignored
+- `src/` for importable code: pulls, cleaning, estimation
+- `notebooks/` to explore, `paper/` for the write-up
+- `logs/` for the pull log, `data-cards/` per source
+
+::: notes
+Here is the shape. At the root sit the README, the environment file, the git-ignore, the pre-analysis-plan file, and a deviations log. Then the directories. The data folder holds inputs and built datasets, split into raw — untouched pulls, your ground truth — and processed, what your cleaning code produces. The entire data tree is git-ignored, but you commit an empty placeholder file in each subfolder so the structure travels even though the contents do not. The source folder holds reusable code you import — the bounded queries, the cleaning functions, the estimators. The rule of thumb is logic in source, story in notebooks. The paper folder is for Week Eight's write-up, figures, and tables. The logs folder holds the append-only pull log from Chapter seven-point-two. And data-cards holds one spec sheet per source.
+:::
+
+## Build It, and the .gitkeep Trick
+
+- `git init` creates the hidden `.git/` history folder
+- Make the directories with one `mkdir -p`
+- Git tracks files, not directories
+- A zero-byte `.gitkeep` lets an empty folder survive a clone
+- Your code writes its cache into `data/raw/` — it must exist
+
+::: notes
+Build it with plain shell commands. Make the directory, run git init, and scaffold the tree with one make-directory command, then touch a placeholder in each data subfolder. Git init turns the folder into a repository — it creates the hidden dot-git directory where Git stores every version of every file. The git-keep trick is small but important: Git tracks files, not directories, so an empty raw folder would simply not exist in a fresh clone. A zero-byte git-keep file — the name is convention, not magic — gives Git something to track, so the folder is recreated when someone clones. That matters because your code writes its cache into the raw folder and would fail if the folder were missing. The cohort also distributes a template repository so you need not assemble this scaffolding by hand a second time.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A research repo is a few directories, each with **one job**: `data/` (git-ignored, with `.gitkeep` placeholders), `src/` for logic, `notebooks/` for story, `paper/`, `logs/`, `data-cards/`. Start from the layout, not a blank folder. Next: the cohort GitHub workflow.
+:::
+
+::: notes
+To summarize part three: a research repository is a small set of directories, each with one job — data, git-ignored with placeholder files so the structure travels; source for logic; notebooks for story; paper, logs, and data-cards. You build it with git init and one make-directory command, and the git-keep trick keeps empty folders alive across a clone. In part four we take this layout up to GitHub and walk the whole cohort workflow — what you do, and what the instructor sees on the other side.
+:::

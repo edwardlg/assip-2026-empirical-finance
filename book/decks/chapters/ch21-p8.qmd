@@ -1,0 +1,45 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Verifying the Fit and What Comes Next
+
+- Part 8 — verifying orthogonality and looking ahead
+
+::: notes
+Welcome back to Chapter two-point-one, part eight of eight — the finale. In part seven we recovered Sam's coefficients by hand: a baseline of one and a beta of seven-sixths, about one-point-one-seven. Now we close the loop by checking that the residuals behave exactly as the projection geometry promised, and then we look ahead to the rest of the week.
+:::
+
+## Verifying Orthogonality
+
+- Fitted $\hat y_i = 1 + (7/6)x_i$; residuals $\hat{\mathbf{e}} = (1/3,\ -1,\ 5/6,\ -1/6)$
+- Sum: $1/3 - 1 + 5/6 - 1/6 = 0$ (intercept guarantees)
+- Dot with market: $-2/3 + 5/6 - 1/6 = 0$
+- Both zero — residual $\perp$ both columns of $\mathbf{X}$
+
+::: notes
+Let us verify the orthogonality we promised. The fitted values are y-hat-sub-i equals one plus seven-sixths times x-sub-i. Working through the four days, the fitted vector is minus four-thirds, one, thirteen-sixths, thirteen-sixths. Subtracting from y, the residual vector e-hat is one-third, minus one, five-sixths, minus one-sixth. Now check the two normal-equation identities. First, the residuals should sum to zero because there is an intercept: one-third minus one plus five-sixths minus one-sixth — that is one-third minus one plus two-thirds, exactly zero. They cancel on the nose. Second, the residuals should be orthogonal to the market column: minus two times one-third, plus five-sixths, minus one-sixth — that is minus two-thirds plus four-sixths, which equals zero again. Both zero. The residual vector is perpendicular to both columns of X, the fit is the orthogonal projection of y onto the plane the two columns span, and the formula did precisely what the geometry said it would. The notebook reruns this in three lines of NumPy and confirms statsmodels returns the same one-point-zero, one-point-one-six-seven.
+:::
+
+## Where This Goes Next
+
+- One line carries every linear regression: $\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$
+- We asked only *what* the best fit is — not whether to **trust** it
+- Ch 2.2: assumptions, unbiasedness, Gauss–Markov
+- Lab: **nb2.1 — OLS from scratch, NumPy vs. statsmodels**
+
+::: notes
+Step back and see what one line of algebra now carries: beta-hat equals the inverse of X-transpose-X times X-transpose-y handles every linear regression you will ever run, from Sam's four days to thousands of observations and dozens of regressors, without a symbol changing. But the question we answered was narrow. We asked only what the best-fitting line is — not whether it is good, unbiased, or how much to trust it. Those need assumptions about where the data came from, and they are chapter two-point-two, where we meet the classical regression assumptions, prove ordinary least squares is unbiased, and state the Gauss-Markov theorem — the result that, among a whole class of estimators, least squares is best. Before that, head to the lab: notebook two-point-one, OLS from scratch with NumPy versus statsmodels. You will build X and y for Sam's data and a larger real return series, compute beta-hat by hand, form the hat matrix and residual maker, verify symmetry and idempotency, and check that your from-scratch coefficients match statsmodels to machine precision.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Sam's residuals sum to zero and sit perpendicular to the market, exactly as the projection geometry promised — the whole machine checks out by hand. Next, Ch 2.2 asks whether to *trust* the fit: assumptions, unbiasedness, and the Gauss–Markov theorem.
+:::
+
+::: notes
+To summarize part eight, and the whole lesson: we verified that Sam's residuals sum to exactly zero and sit perpendicular to the market column, just as the projection geometry promised — so the entire machine checks out by hand. You now own the one line that drives every linear regression: beta-hat equals the inverse of X-transpose-X, times X-transpose-y, understood as a projection that drops a perpendicular. In chapter two-point-two we shift from what the fit is to whether we should trust it — the data-generating assumptions, unbiasedness, and the Gauss-Markov theorem. I will see you in the lab, and then in two-point-two.
+:::

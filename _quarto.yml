@@ -27,6 +27,7 @@ project:
     - "data-cards/**/*.md"
     - "environment.yml"
     - "CONVENTIONS.md"
+    - "video-map.json"   # built by tools/build_video_map.py; consumed by _includes/video-embed.html
 
 # -----------------------------------------------------------------
 # Global execution policy: never execute code on CI or locally during
@@ -484,6 +485,7 @@ format:
     notebook-view: true
     include-in-header:
       - file: _includes/notebook-buttons.html
+      - file: _includes/video-embed.html   # per-subchapter YouTube embeds (from video-map.json)
   pdf:
     documentclass: scrbook
     papersize: letter

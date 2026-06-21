@@ -1,0 +1,47 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## The Null and the Alternative
+
+- Part 2 — the two competing hypotheses, $H_0$ vs. $H_1$
+
+::: notes
+Welcome back to Chapter one-point-five, part two of ten. In part one we met Sam's rule and the one question every test answers: could pure luck have produced this? Now we write that question down formally as two competing claims about the world — the null and the alternative — and emphasize three things about how they work.
+:::
+
+## The Null and the Alternative
+
+- $H_0$: the skeptic's "nothing going on" claim
+- For Sam: $H_0:\ \mu = 0$ (rule has no edge)
+- $\mu$ is the true expected daily return
+- $H_1$: what you suspect instead
+- For Sam: $H_1:\ \mu > 0$ (rule makes money)
+
+::: notes
+A test starts with two competing claims about the world — not about your sample, but about the process that generated it. The null hypothesis, written H naught, is the claim of nothing going on. It is the skeptic's position, the boring default you believe until the data force you off it. For Sam, the population quantity of interest is the true expected daily return mu — the average return the rule would earn over infinitely many days. The skeptic says the rule has no edge: H naught says mu equals zero. The alternative hypothesis, written H one, is what you suspect might be true instead. Sam suspects the rule makes money: H one says mu is greater than zero. Why mu equals zero as the null? Because zero is the dividing line between an edge and an anti-edge — the uninteresting, status-quo value whose rejection would count as a discovery. For Maya comparing two neighborhoods, no finding means equal approval rates, so her null is a difference of zero.
+:::
+
+## Three Things to Emphasize
+
+- Hypotheses are about $\mu$, not the sample $\bar{x}$
+- We know $\bar{x}=0.08\%$ already — nothing to test there
+- The test is asymmetric, like a courtroom
+- We grant $H_0$ the benefit of the doubt
+- The null is almost always a single point
+
+::: notes
+Three things deserve emphasis, because this is where the logic lives. First, the hypotheses are statements about mu, the unobservable population mean — not about x-bar, the sample average Sam computed. We know x-bar equals zero point zero eight percent with certainty; there is nothing to test about a number we already hold. The whole exercise is what x-bar lets us infer about mu. Second, the test is deliberately asymmetric. We do not treat the null and the alternative as equally matched contestants. We grant the null the benefit of the doubt and ask whether the data can overturn it — the way a courtroom presumes innocence. Third, the null is almost always a point — a single value like mu equals zero — because a point gives us something concrete to compute with. If we assume mu equals zero is exactly true, we can ask exactly how surprising Sam's eight basis points would be. We cannot do that with a vague the rule is bad.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A test pits a skeptical **null** $H_0$ (here $\mu=0$, no edge) against an **alternative** $H_1$ ($\mu>0$). Both are claims about the unobservable population mean $\mu$, never the sample $\bar{x}$. The test is asymmetric: we presume the null and ask whether the data overturn it. The null is a single point so we can compute with it. Next: the test statistic.
+:::
+
+::: notes
+To summarize part two: a test pits a skeptical null — here mu equals zero, no edge — against an alternative, mu greater than zero. Both are claims about the unobservable population mean mu, never the sample average x-bar, which we already know. The test is asymmetric: we presume the null and ask whether the data can overturn it. And the null is a single point precisely so we have something concrete to compute with. In part three we build the test statistic — the single ruler that turns how far is the data from the null into a number we can look up.
+:::

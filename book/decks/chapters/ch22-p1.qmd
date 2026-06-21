@@ -1,0 +1,64 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Gauss–Markov: Why Trust OLS?
+
+**Learning objectives.** By the end you can:
+
+- State the five classical assumptions as testable claims
+- Prove OLS is unbiased and is BLUE
+- Read the variance formula $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$
+- Distinguish unbiasedness from consistency
+
+::: notes
+Welcome to Week Two, Chapter two-point-two, part one of nine. In Chapter two-point-one you built the ordinary least squares machine. This lesson asks the honest follow-up question: why should anyone trust the number it prints? We frame Maya's loan problem, and we state the punchline that the rest of the lesson earns — that O L S is the Best Linear Unbiased Estimator.
+:::
+
+## Maya's Question
+
+- Does income predict the rate on a personal loan?
+- For each borrower: rate $y_i$ and income $x_i$
+- Fit $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$
+- $\hat{\boldsymbol{\beta}} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$
+- Software prints slope $\hat{\beta}_1 = -0.42$
+
+::: notes
+Maya works at a credit union, and her question is one they actually pay people to answer. Does a borrower's income predict the interest rate they get on a personal loan? She pulls a sample of N approved loans. For each borrower i she records the annual percentage rate, y sub i, that they were charged, and their reported annual income, x sub i. She runs the regression you built in Chapter two-point-one: y equals X times beta plus the error vector. In matrix form, that is y equals X beta plus epsilon. Out pops the familiar formula: beta hat equals the inverse of X transpose X, times X transpose y. Her software prints beta one hat equals negative zero point four two. Each extra ten thousand dollars of income is associated with a rate about zero point four two percentage points lower. She writes it down.
+:::
+
+## The Only Honest Follow-Up
+
+- Not "is $-0.42$ the right answer?"
+- She'll never see the true $\beta_1$
+- Two questions from Chapter 1.3:
+- Is the recipe aimed at the truth — unbiased?
+- Is it the steadiest — smallest variance?
+
+::: notes
+Because Chapter one-point-three trained her to, she asks the only honest follow-up question there is: why should anyone trust this number? Notice she is not asking whether negative zero point four two is the right answer. She will never know the true beta one, the same way Priya could never see the true mean claim. Instead she asks the two questions Chapter one-point-three taught us to separate. First: is the recipe — beta hat equals the inverse of X transpose X times X transpose y — aimed at the truth? Is it unbiased? Second: of all the recipes she could have used, is this one the steadiest? Does it have the smallest variance? Chapter one-point-three answered both for the sample mean. This lesson answers them for O L S.
+:::
+
+## The Punchline: BLUE
+
+- A famous result: the Gauss–Markov theorem
+- It says OLS is BLUE
+- Best Linear Unbiased Estimator
+- "Best" is technical, not a compliment
+- It comes with a price: five assumptions to sign
+
+::: notes
+Here is the punchline, stated once in plain English and then earned over the next several parts. There is a famous theorem — the Gauss–Markov theorem — that says O L S is BLUE: the Best Linear Unbiased Estimator. Best is a precise technical word, not a compliment, and it comes with a price tag: a list of assumptions you have to be willing to sign. The theorem is really a contract. If you accept five conditions about how your data were generated, then O L S is guaranteed to be the lowest-variance estimator in a specific club. The entire art of applied econometrics is reading that contract carefully: knowing which clause is most likely to be violated, what you see when it breaks, and which later chapter fixes it. So we spend most of this lesson interrogating the fine print.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Maya can't ask whether $-0.42$ is "right." She asks whether the **recipe** is unbiased and whether it has the smallest variance. The **Gauss–Markov theorem** answers: OLS is **BLUE** — but only under a five-clause contract. Next: the five assumptions.
+:::
+
+::: notes
+To summarize part one: Maya can never ask whether negative zero point four two is the right answer, because she will never see the true slope. Instead she asks the two Chapter one-point-three questions: is the recipe unbiased, and does it have the smallest variance? The Gauss–Markov theorem answers both at once — O L S is the Best Linear Unbiased Estimator — but only if you sign a five-clause contract about how the data were generated. In part two we read the first clauses of that contract, stated not as abstract Greek but as testable claims about Maya's loan data.
+:::

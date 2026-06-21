@@ -1,0 +1,47 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## The McCrary Density Test
+
+- Part 11 — the McCrary test for manipulation at the cutoff
+
+::: notes
+Welcome back to Chapter four-point-three, part eleven of thirteen. In part ten we learned to read an RD plot. Now we face the local-randomization story's fatal enemy — manipulation — and the formal check for it: the McCrary density test, which hunts for a tell-tale cliff in the histogram of the running variable at the cutoff.
+:::
+
+## Manipulation: The Fatal Enemy
+
+- If units can control which side they land on, the story collapses
+- A $658$ nudged to $661$ by paying down one balance
+- But only savvier applicants know to do this
+- The just-above group is enriched with higher-type units
+- Sorting mixes the treatment effect with a selection effect
+
+::: notes
+The local-randomization story has one fatal enemy: manipulation. If units can precisely control which side of the cutoff they land on, the coin-flip story collapses, and the units just above are no longer comparable to the units just below. Picture a lending cutoff at a credit score of six-sixty. Suppose a savvy applicant, or a loan officer helping them, can nudge a six-fifty-eight into a six-sixty-one by paying down one small balance right before the pull — but only the more sophisticated, more financially-capable applicants know to do this. Then the people who should have been at six-fifty-eight but appear at six-sixty-one are systematically more capable than those who remain. The just-above and just-below groups are no longer exchangeable. Manipulation has sorted units across the cutoff on exactly the kind of unobserved characteristic regression discontinuity assumes is balanced, and your jump now mixes the treatment effect with a selection effect. Sam's Russell example is comparatively safe — a firm cannot finely control its rank to the dollar — but you must check, not assume.
+:::
+
+## The McCrary Density Test
+
+- Fingerprint of manipulation: a jump in the *density* of $X$ at $c$
+- Too few just below, too many just above — a cliff
+- **Null**: density of $X$ continuous at $c$ — what you hope
+- **Reject** $\Rightarrow$ a jump in density — evidence of sorting
+- A pass is necessary but not sufficient reassurance
+
+::: notes
+The fingerprint of manipulation is a discontinuity in the density of the running variable at the cutoff. If borrowers are sneaking from just-below to just-above six-sixty, you will see too few observations piled up just below and too many just above — a cliff in the histogram of X exactly at the cutoff. Under the clean, no-manipulation story, the density should be smooth through the cutoff, because people do not bunch at a threshold they cannot see or control. This is what the McCrary density test checks. McCrary, in two-thousand-eight, proposed estimating the density on each side and testing whether the two agree at the boundary. The null hypothesis is that the density is continuous at the cutoff — no sorting — and that is what you hope to see. Rejecting the null means a jump in the density: evidence of manipulation and a serious threat. Mechanically it is a local-linear density estimator on each side; a modern, more robust implementation by Cattaneo, Jansson, and Ma is what most packages ship. A failed test is often fatal. A passed test is necessary but not sufficient: it rules out the crudest sorting but cannot by itself prove the design is clean.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Manipulation — units sorting across $c$ on unobservables — breaks the design. Its fingerprint is a **jump in the density of $X$ at $c$**. The **McCrary test** (null: density continuous) hunts for that cliff; rejecting it is evidence of sorting. A failed test is often fatal; a passed test is necessary, not sufficient. Next: the full validity checklist.
+:::
+
+::: notes
+To summarize part eleven: manipulation — units precisely sorting across the cutoff on the very unobservables regression discontinuity assumes are balanced — breaks the design by mixing the treatment effect with a selection effect. Its fingerprint is a discontinuity in the density of the running variable at the cutoff: too few observations just below, too many just above. The McCrary density test, whose null is a continuous density, hunts for that cliff, with the modern Cattaneo-Jansson-Ma implementation in most packages. A failed test is often fatal, and a passed test is necessary but not sufficient. In part twelve we widen out to the full validity checklist.
+:::

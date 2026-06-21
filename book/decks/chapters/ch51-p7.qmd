@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## Rebuild It Yourself: Three Replications & Three Referee Questions
+
+- Part 7 — rebuild the paper and leave with referee questions
+
+::: notes
+Welcome back to Chapter five-point-one, part seven of seven — the last segment. In part six we attacked the paper at its four weakest joints. Now we close the loop. You do not understand a paper until you have rebuilt a piece of it. So we walk through three replication exercises, from the gentlest sort to the full Fama–MacBeth horse race, then leave you with three referee questions. Everything lives in notebook five-point-one, which ships a seeded synthetic fallback with the same schema, so every step runs on your laptop, with a Path-A pull for Hopper.
+:::
+
+## Exercise 1 — A Univariate Size Sort
+
+- Rank firms into **size deciles** each year, form ten portfolios
+- Compute each decile's average monthly return
+- Plot average return against size decile — the line slopes **down**
+- Small firms, higher returns — the simplest live fact, recreated
+- Then break it: re-sort on **contemporaneous** size, watch look-ahead distort it
+
+::: notes
+Exercise one: reproduce a univariate size sort — the gentlest replication. Each year, rank firms into size deciles, form the ten portfolios, and compute each decile's average monthly return. Plot average return against the size decile. You should see the line slope down — small firms, higher returns. One sort, one picture, and you have recreated the paper's simplest live fact. Then break it on purpose: re-sort using contemporaneous market equity instead of lagged, and watch look-ahead contamination change the picture. That sabotage teaches the timing lag better than any lecture — you see the spurious predictability you manufacture when a regressor peeks at information no investor could have had yet.
+:::
+
+## Exercise 2 — The Size–BE/ME Double Sort
+
+- Build the $5\times5$ (or decile×decile) grid on size and book-to-market
+- Honor the **July-to-June timing gap** from §3
+- Print the table of average returns
+- Returns rise across BE/ME *within* each size row
+- Returns rise down size *within* each BE/ME column
+
+::: notes
+Exercise two: build the size–book-to-market double sort. Construct the five-by-five grid sorting on size and on book-to-market, and honor the July-to-June timing gap from the data section. Print the table of average returns and read it the way part four taught: returns rising across book-to-market within each size row, and rising down size within each book-to-market column. The deliverable is the paper's headline table, in miniature, built by your own hands — plus a one-paragraph note on exactly where you applied the timing lag and why. That forces you to internalize the look-ahead defense as a concrete line of code.
+:::
+
+## Exercise 3 — The Fama–MacBeth Horse Race
+
+- Reuse your **Lab 2** machine
+- Pass 1: estimate portfolio-level **pre-formation betas**
+- Pass 2: each month regress returns on beta, log size, log BE/ME
+- Average the slopes; FM standard errors from the scatter
+- Three specs — watch **beta collapse** while size and BE/ME survive
+
+::: notes
+Exercise three: run the Fama–MacBeth horse race, reusing your Lab Two machine. Pass one: estimate portfolio-level pre-formation betas. Pass two: each month, regress returns on beta, log size, and log book-to-market; collect the monthly slopes; average them; and compute the standard errors from the slope scatter. Run three specifications — beta alone, size and book-to-market alone, and all three together — and assemble the columns yourself. Confirm with your own t-statistics that beta's slope collapses while size and book-to-market survive. When you watch your own beta coefficient die in your own regression, the paper stops being something you read and becomes something you know.
+:::
+
+## Read Like a Referee — Three Margin Questions
+
+- **Snooping:** what would convince you size and BE/ME are real, not lucky?
+- **Mechanism:** design a test pushing toward **risk** vs. **mispricing**
+- Why can a descriptive design never fully settle the why?
+- **The dog that didn't bark:** why is beta's premium near zero?
+- True? attenuation (Week 2 EIV)? or sort/sample masking it?
+
+::: notes
+Before you leave the paper, sit with three margin questions. First, snooping: if size and book-to-market survived a field-wide search, what evidence would convince you they are real and not two lucky winners of a multiple-testing lottery? Second, mechanism: the paper shows value and small stocks earn more but cannot say why. Design, in words, a test that would push you toward the risk story over the mispricing story — and explain why a descriptive design can never fully settle this. Third, the dog that didn't bark: beta's premium should be large under CAPM and isn't. List every reason it could be near zero — beta truly doesn't matter, measurement error attenuating it, or the sort and sample masking it — and say what you would check to tell those apart.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+You only understand a paper once you **rebuild** it: a size sort, a size–BE/ME double sort, and the **Fama–MacBeth horse race** where beta dies on your own screen. Then read like a referee — interrogate **snooping**, **mechanism**, and **the dog that didn't bark**. Next stop: **notebook 5.1**, where you stop reading about the sorts and build them.
+:::
+
+::: notes
+To summarize part seven and the whole chapter: you only understand a paper once you have rebuilt a piece of it, so we walked from a univariate size sort, to the size–book-to-market double sort, to the full Fama–MacBeth horse race where beta's slope collapses on your own screen. And we leave you with three margin questions — on snooping, on mechanism, and on the dog that didn't bark. You now own the Reader's-Guide anatomy: research question, identification, data, table order, what's clever, what's vulnerable, and replication. That lens carries forward to every paper this week. Next stop: notebook five-point-one, where you stop reading about the sorts and build them.
+:::

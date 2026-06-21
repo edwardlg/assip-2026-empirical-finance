@@ -1,0 +1,47 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## The Fast Scan, AI Co-Pilot on a Leash
+
+- Part 8 — the fast literature scan, AI on a leash
+
+::: notes
+Welcome back to Chapter seven-point-one, part eight of ten. In part seven we covered feasibility's four constraints — data, scope, time, and skills. Now the fast literature scan that answers "what's new" in a few hours, and the one tool that helps you do it and will also hurt you if you trust it: the AI co-pilot. This is where Chapter six-point-five earns its place in Week Seven.
+:::
+
+## The Fast Literature Scan
+
+- A few *hours*, not a six-week reading marathon
+- **Google Scholar:** search outcome + treatment in plain words, sort by relevance
+- Use **"cited by"** to walk *forward* to the current edge
+- Read the *right* three papers' intros — curated maps by experts
+- The Week 5 skill: find question, data, identification, punchline first
+
+::: notes
+You cannot answer "what's new" from your armchair, and you cannot afford a six-week reading marathon. You need a fast scan — a few hours that tells you whether your question already has a settled answer, what the live arguments are, and which two or three papers you must actually read. Start broad with Google Scholar: search your outcome and treatment in plain words — "mortgage denial race HMDA," "stablecoin depeg contagion," "patent grant firm innovation" — sort by relevance, and skim titles and abstracts for ten minutes to map the terrain. Use the "cited by" link on any central paper to walk forward in time to who built on it, which is how you find the current edge of a conversation rather than its history. When you find a paper squarely on your question, read its introduction's literature review — a curated map drawn by an expert. This is the reading skill Week Five built: you do not read every paper, you read the right three, finding the question, the data, the identification, and the punchline first.
+:::
+
+## The AI Co-Pilot on a Leash
+
+- **Great at triage:** sort twenty abstracts, summarize each method in a line
+- Good at explaining a half-remembered method, parsing a data dictionary
+- Use *cite-or-decline*: "summarize only what I paste; say so if off-topic"
+- **Non-negotiable:** an LLM fabricates citations that look perfect and don't exist
+- **Verify every citation** against Scholar / DOI before it enters your proposal (§6)
+
+::: notes
+Now the AI co-pilot. An LLM is genuinely excellent at literature triage. Paste twenty abstracts and ask it to sort them into "directly on my question, adjacent, or off-topic" and summarize each method in one line; you lose almost nothing if it miscategorizes one, because you were going to skim the borderline cases anyway. It is excellent at explaining a method you half-remember, parsing a data dictionary, and suggesting search terms you hadn't thought of. A good prompt borrows the cite-or-decline discipline: ask it to summarize only the abstracts you paste, and to say so rather than guess if one is off-topic — constraining it to the text you supply, not its blurry parametric memory. But here is the non-negotiable rule, lifted straight from Chapter six-point-five: an LLM will fabricate citations that look perfect and do not exist. Ask it for papers on stablecoin depegs and it hands you authors, titles, years, and journals in flawless format — some real, some pure invention, and you cannot tell which from the page. This has already embarrassed lawyers and students who trusted the output. So, per CONVENTIONS section six: verify every single citation against a real index — Google Scholar, the journal's site, a DOI lookup — before it enters your proposal. If you cannot find the paper, it does not exist, no matter how confident the model sounded. Treat the LLM as a suggestion engine for what to verify, never the citation itself, and never the source of a specific number. If you cannot verify a claim, tag it bracket-CHECK and move on rather than letting a fabrication stand. The whole point of a leash is that the dog still does the hunting; you just decide what's real.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Scan in hours: plain-word Scholar searches, "cited by" to the current edge, the right three papers read for question-data-identification-punchline. Use the AI for triage — but **verify every citation**, because it invents perfect-looking references. Next: the cast's five real projects.
+:::
+
+::: notes
+To summarize part eight: scan the literature fast — Google Scholar, plain-word searches, the "cited by" link to reach the current edge, and the right three papers read for question, data, identification, and punchline. Use the AI co-pilot for triage and explanation, but keep it leashed: verify every citation against a real index, because it fabricates perfect-looking references that do not exist, and never take a specific number on its word. In part nine we cash all of this out — five feasible projects mapped to the cast, and the first of two fully worked examples running from mood to a defensible spec.
+:::

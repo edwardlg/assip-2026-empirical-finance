@@ -1,0 +1,59 @@
+---
+date: "2026-07-06"
+---
+
+## Balance Diagnostics and the Firewall
+
+- Part 10 — audit with SMD; check balance, never the outcome
+
+::: notes
+Welcome back to Chapter three-point-two, part ten of eleven. In part nine, matching recovered the true effect. Now we audit it: did the treated and control groups actually become comparable on the covariates? We meet the standardized mean difference, read Maya's balance table, and learn the sacred rule — check balance, never the outcome.
+:::
+
+## The Standardized Mean Difference
+
+- The audit question: did matching make groups comparable on $\mathbf{X}$?
+- $\text{SMD}_j = \dfrac{\bar X_{j,1} - \bar X_{j,0}}{s_j}$ — gap in SD units
+- Scale-free: credit and dollar income on equal footing
+- Convention (Austin 2011, Stuart 2010): $|\text{SMD}| < 0.1$ is acceptable
+
+::: notes
+You have a propensity model and a set of matches. Before believing the zero-point-three-one, you must answer one question: did the matching make the treated and control groups actually comparable on the covariates? That is what the whole exercise was for. The standard tool is the standardized mean difference, computed for each covariate before and after matching. For covariate j, it is the treated mean minus the control mean, divided by the pooled standard deviation. It is the gap in means measured in standard-deviation units — scale-free, so a credit score and an income in dollars are on the same footing. The convention, from Austin two-thousand-eleven and Stuart twenty-ten, is that an absolute standardized mean difference below zero-point-one is acceptable balance; larger means the groups still differ.
+:::
+
+## Maya's Balance Table
+
+| Covariate | SMD before | SMD after |
+|---|---:|---:|
+| creditworthiness | +0.79 | −0.03 |
+| income | +0.45 | +0.02 |
+| age | +0.27 | +0.04 |
+| propensity score | +1.02 | ≈ 0.00 |
+
+- Never use a t-test: it conflates imbalance with sample size
+
+::: notes
+Here are Maya's standardized mean differences, before and after matching, from the same run. Before matching, the groups are wildly different — enrollees are zero-point-seven-nine standard deviations more creditworthy, and a full one-point-zero-two standard deviations higher on the propensity score. That imbalance is the selection bias in covariate form. After one-to-one caliper matching, every value drops below the zero-point-one threshold: creditworthiness to minus zero-point-zero-three, income to zero-point-zero-two, age to zero-point-zero-four, the score to essentially zero. The matched groups are now genuine look-alikes. Crucially, you never use a t-test for balance: a t-test conflates the size of the imbalance with the sample size, and matching changes the sample size, so a significant imbalance can shrink to insignificant just by dropping units. The standardized mean difference measures the imbalance itself.
+:::
+
+## Check Balance, Never the Outcome
+
+- The balance table is the evidence the $0.31$ deserves belief
+- Tune model, caliper, neighbors looking *only* at balance
+- Keep $Y$ hidden until the design is locked
+- Watching the effect = specification search (Chapter 1.5 pathology)
+
+::: notes
+This balance table — not the regression output — is what a referee reads first in a matching paper. It is the evidence the zero-point-three-one deserves to be believed. Now the rule that trips up everyone the first time: you check balance, never the outcome. You tune your propensity model, your caliper, your number of neighbors, looking only at how well the covariates balance, and you keep the outcome hidden from yourself until the design is locked. Why? Because the credibility of selection-on-observables rests on the design being chosen independently of the answer it produces. If you fiddle with the recipe while watching the estimate, you are selecting the specification that gives the effect you like — the specification-search pathology from Chapter one-point-five, aimed straight at your causal conclusion. Treat that firewall as sacred: balance is what you optimize, the effect is what you report once, at the end.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Audit with the **standardized mean difference** — gap in SD units, target $|\text{SMD}| < 0.1$, never a t-test. Maya's covariates fall from $+0.79$ to $-0.03$ and the score from $+1.02$ to $\approx 0$: that table earns belief in the estimate. Check **balance, never the outcome** — a sacred firewall. Next: when it all fails.
+:::
+
+::: notes
+To summarize part ten: you audit matching with the standardized mean difference — the between-group gap in standard-deviation units — targeting an absolute value below zero-point-one, and never using a t-test, which conflates imbalance with sample size. Maya's covariates fall from as high as zero-point-seven-nine before matching to near zero after, and the propensity score from one-point-zero-two to essentially zero. That table is the evidence that earns belief. And the sacred rule: tune the design looking only at balance, keeping the outcome hidden, so you never specification-search on the answer. In part eleven we confront the limits — CIA is untestable, and matching is still just selection-on-observables.
+:::

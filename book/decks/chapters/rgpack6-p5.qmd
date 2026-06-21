@@ -1,0 +1,61 @@
+---
+date: "2026-07-27"
+---
+
+## An LLM Label Is a Measurement — The Gold Set
+
+- Part 5 — validate LLM labels with a gold set and confusion matrix
+
+::: notes
+Welcome back to Reading Guide Pack Six and the AI Lab Manual, part five of eight. In part four we built a catalog of prompt patterns and noticed that classification produces labels. This part ties the AI module back to the science. When you ask a language model to classify ten thousand eight-Ks as layoff or not-layoff, you have not measured anything yet — you have produced ten thousand guesses from an instrument of unknown accuracy. Treating those guesses as ground truth is exactly the error Loughran and McDonald exposed in the off-the-shelf sentiment dictionary, reborn in a fancier tool. The fix is the same one Week One taught for any estimator: validate it against a standard.
+:::
+
+## Build a Hand-Labeled Gold Set
+
+- The standard is a **gold set**: items humans labeled against the same rubric
+- Draw the sample **at random** from the real corpus — not the easy cases
+- At least **two humans** label each item independently, then reconcile
+- This gives the gold set itself a **known reliability**
+- The gold set is the ruler you measure the model against
+
+::: notes
+The standard you measure against is a hand-labeled gold set: a sample of items that humans labeled carefully against the same rubric the model used. Build it right. Draw the sample at random from the real corpus, not the easy cases, because a model that aces the obvious examples may still fail on the hard ones that matter. Have at least two humans label each item independently, then reconcile their disagreements, so the gold set itself has a known reliability. That reconciliation is not busywork — it tells you whether the task is even well-defined, a point we return to with kappa. The gold set is the ruler you hold the model against, so build it with more care than the thing it measures.
+:::
+
+## Split It — Dev and Held-Out Test
+
+- **Split** the gold set into a small dev set and a held-out test set
+- Look at the **dev set** as much as you like while tuning the prompt
+- Touch the **test set once**, at the very end, for final numbers
+- Tuning until you ace the reported examples = **overfitting**
+- It inflates accuracy like an in-sample $R^2$ flatters a regression
+
+::: notes
+Here is the discipline that makes the whole thing honest: split the gold set into a small development set and a held-out test set. You are allowed to look at the dev set as much as you like while you tune the prompt — try a new rubric phrasing, add an example, see what breaks. But you may touch the test set only once, at the very end, to report your final numbers. Tuning the prompt until it aces the same examples you then report on is the prompt-engineering version of overfitting, and it inflates your accuracy exactly the way an in-sample R-squared flatters a regression. This is the same train-test hygiene Week One drilled into you for any estimator; the language model does not get a pass on it just because it feels like magic.
+:::
+
+## The Confusion Matrix
+
+|              | Human: Layoff | Human: Not |
+|--------------|:---:|:---:|
+| **LLM: Layoff** | TP | FP |
+| **LLM: Not**    | FN | TN |
+
+- Score the model's labels against the **held-out** human labels
+- Four counts: true/false positives, true/false negatives
+- Every summary number is built from these **four cells**
+
+::: notes
+Now score the model's labels against the held-out human labels with a confusion matrix. For a binary layoff classifier, lay out a two-by-two table. Model says layoff and human agrees: a true positive. Model says layoff but human says not: a false positive. Model says not but human says layoff: a false negative, a missed layoff. Both say not: a true negative. Those four counts are everything you need. Every summary number we report in the next part is built from these four cells, so getting the matrix right is the foundation of the whole evaluation. Tally the four cells and you are ready to compute the numbers that decide whether this instrument is good enough to use.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+An LLM label is a guess from an instrument of unknown accuracy, so **validate it against a hand-labeled gold set**: random sample, two independent labelers, split into a dev set you tune on and a test set you touch once. Score it with a **confusion matrix** of four counts. Next: turning those four counts into precision, recall, $F_1$, and kappa.
+:::
+
+::: notes
+To summarize part five: an LLM label is not ground truth, it is a guess from an instrument of unknown accuracy, and you validate it exactly the way Week One taught for any estimator. Build a hand-labeled gold set from a random sample of the real corpus, with at least two humans labeling each item independently and reconciling, so the ruler itself has known reliability. Split it into a dev set you may tune on freely and a held-out test set you touch only once, or you overfit your prompt the way an in-sample R-squared flatters a regression. Then score the model against the held-out labels with a confusion matrix of four counts. In part six we turn those four counts into the numbers you actually report: precision, recall, F-one, and Cohen's kappa.
+:::

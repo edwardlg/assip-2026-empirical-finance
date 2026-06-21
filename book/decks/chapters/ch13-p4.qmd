@@ -1,0 +1,71 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Mean Squared Error and the Bias-Variance Tradeoff
+
+- Part 4 — one scorecard combining bias and variance
+
+::: notes
+Welcome back to Estimators and Their Sampling Distributions, part four of seven. Bias asked "do you aim true?" and variance asked "are you steady?" You usually trade them off, so you need one scorecard respecting both. This part builds it — the mean squared error — and scores two recipes head to head.
+:::
+
+## One Scorecard for Both
+
+- Bias: do you aim true? Variance: are you steady?
+- **MSE** penalizes both kinds of badness at once
+- $\operatorname{MSE}(\hat{\mu})=\mathbb{E}\!\left[(\hat{\mu}-\mu)^2\right]$
+- Expected squared distance from estimate to truth
+- It splits cleanly into exactly two pieces
+
+::: notes
+The mean squared error of an estimator is the expected squared distance between the estimate and the truth — the expected value of mu hat minus mu, all squared. It penalizes both kinds of badness at once: missing the target and being unsteady both make that squared distance large on average. And the beautiful fact is that it splits into those two pieces.
+:::
+
+## The Decomposition
+
+- Add and subtract $\mathbb{E}[\hat{\mu}]$ — "add zero cleverly"
+- Let $A=\hat{\mu}-\mathbb{E}[\hat{\mu}]$, $B=\mathbb{E}[\hat{\mu}]-\mu$
+- Expand $(A+B)^2=A^2+2AB+B^2$
+- Cross term dies: $\mathbb{E}[A]=0$
+- $\operatorname{MSE}=\operatorname{Var}(\hat{\mu})+\operatorname{Bias}(\hat{\mu})^2$
+
+::: notes
+Here is the decomposition you should be able to reproduce. Insert the expected value of mu hat and subtract it right back — the "add zero cleverly" trick. Group into two halves: call A the random part, mu hat minus its own mean, and B the constant part, the expected value of mu hat minus mu, which is exactly the bias. Expand: A plus B, all squared, equals A squared plus two A B plus B squared. The expected value of A squared is the variance; of B squared is bias squared, since B is constant; and the cross term dies, because the expected value of A, the average deviation from its own mean, is zero. What survives is mean squared error equals variance plus bias squared. For an unbiased estimator the second term is zero and MSE is just variance — which is why, for the sample mean, minimizing variance and minimizing MSE are the same goal.
+:::
+
+## Two Recipes, Scored
+
+- Keep $\mu=\$8{,}000$, $N=200$
+- **A, plain mean:** unbiased, $\operatorname{Var}\approx720{,}000$
+- $\operatorname{MSE}_A\approx 720{,}000$ — all variance
+- **B, 5%-trimmed:** $\operatorname{Var}\approx400{,}000$, bias $-300$
+- $\operatorname{MSE}_B\approx 400{,}000+90{,}000=490{,}000$
+
+::: notes
+Let us put numbers on the tradeoff. Keep the true mean at eight thousand dollars and N at two hundred. Recipe A is the plain sample mean: unbiased, bias zero. Its standard error is about eight hundred forty-nine dollars, so its variance is that squared, roughly seven hundred twenty thousand dollars-squared, and its MSE is all variance — about seven hundred twenty thousand. Recipe B is the five-percent-trimmed mean, dropping the largest and smallest five percent. On a right-skewed distribution this lops off the volatile catastrophe tail, so suppose its variance falls to about four hundred thousand — but discarding the right tail leaves it about three hundred dollars low, a bias of negative three hundred. Its MSE is four hundred thousand plus three hundred squared — four hundred thousand plus ninety thousand — equals four hundred ninety thousand.
+:::
+
+## A Little Bias Can Be a Bargain
+
+- B is biased yet wins: $490{,}000 < 720{,}000$
+- Variance saved (320k) dwarfs bias-squared paid (90k)
+- If bias were \$700: penalty 490k, B loses
+- A tiny deliberate bias can slash variance
+- The engine behind shrinkage and machine learning
+
+::: notes
+Recipe B is biased and yet wins decisively — four hundred ninety thousand beats seven hundred twenty thousand — because the variance it saved, three hundred twenty thousand, dwarfs the bias-squared it paid, ninety thousand. Had the bias been a fat seven hundred dollars, the penalty would be four hundred ninety thousand and B would lose. The whole game is in that arithmetic: a little bias is a bargain only when it buys enough variance. This explains a fact that confuses people — sometimes a biased estimator beats an unbiased one. On a skewed distribution, the extreme claims make the plain mean jump around, so trimming slashes the variance, and if that drop beats the bias-squared, the trimmed mean wins. This tradeoff is the engine behind regularization, shrinkage, and essentially all of machine learning, which we meet again in Week Four.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+$\operatorname{MSE}(\hat{\mu})=\operatorname{Var}(\hat{\mu})+\operatorname{Bias}(\hat{\mu})^2$ — total error is a budget of variance plus bias squared. A tiny deliberate bias can be a *bargain* when it buys a big cut in variance. Next: what happens to a recipe as the data grow without bound — **consistency**.
+:::
+
+::: notes
+To summarize part four: mean squared error decomposes exactly into variance plus bias squared. For an unbiased estimator MSE is just variance. And because the two trade off, a biased recipe like the trimmed mean can beat the plain mean when the variance it saves dwarfs the bias squared it pays — the engine behind shrinkage and machine learning. In part five we ask: as we pour in more data, does the estimate home in on the truth and stay there? Consistency.
+:::

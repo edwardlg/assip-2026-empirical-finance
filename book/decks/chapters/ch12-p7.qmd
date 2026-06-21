@@ -1,0 +1,57 @@
+---
+date: "2026-06-22"
+---
+
+## Why $|\rho|\le 1$ Is Cauchy–Schwarz
+
+- Part 7 — the correlation bound is Cauchy–Schwarz, drawn as angles
+
+::: notes
+Welcome back to Chapter one-point-two, part seven of eight. In part six we learned that correlation is the cosine of an angle between two variables. A cosine never exceeds one in size, so the absolute value of correlation can never exceed one. In this part we see that this bound is exactly the Cauchy–Schwarz inequality, prove it with a single-knob trick, and then draw Maya's three scenarios as three angles between two arrows.
+:::
+
+## The Bound Is Cauchy–Schwarz
+
+- $|\cos\theta|\le 1$ is the Cauchy–Schwarz inequality
+- Translates to $|\operatorname{Cov}(X,Y)|\le \operatorname{sd}(X)\,\operatorname{sd}(Y)$
+- Hence $|\rho_{XY}|\le 1$ — for free
+- Proof: $\operatorname{Var}(X - tY)\ge 0$ for every real $t$
+
+::: notes
+In vector geometry, the statement that the absolute cosine is at most one is equivalent to the Cauchy–Schwarz inequality: the absolute inner product is at most the product of the lengths. Translate through our dictionary and you get, for free, that the absolute covariance of X and Y is at most the product of their standard deviations, and hence the absolute correlation is at most one. But you can prove it without ever saying the word geometry, using the same single-knob trick that reappears in Gauss–Markov. For any real number t, the variance of X minus t Y cannot be negative — it is an expected square. That one fact is the whole engine.
+:::
+
+## The One-Knob Proof
+
+$$0 \le \operatorname{Var}(X - tY) = \operatorname{Var}(X) - 2t\operatorname{Cov}(X,Y) + t^2\operatorname{Var}(Y)$$
+
+- A parabola in $t$ that never dips below zero
+- So its discriminant must be $\le 0$
+- Rearranges to $\operatorname{Cov}(X,Y)^2 \le \operatorname{Var}(X)\operatorname{Var}(Y)$
+- Equality only when $X$ is an exact linear function of $Y$
+
+::: notes
+Expand that variance. The variance of X minus t Y equals the variance of X, minus two t times the covariance, plus t squared times the variance of Y. The right-hand side is a parabola in t that never dips below zero, so its discriminant must be at most zero. Writing that out, two times the covariance, squared, minus four times the product of the variances, is at most zero — which rearranges to exactly the covariance squared being at most the product of the variances. That is Cauchy–Schwarz. Equality holds only when some line, X minus t Y, has zero variance, meaning X is an exact linear function of Y — the vectors are parallel, correlation plus or minus one. So the boundary of correlation is precisely perfect linearity.
+:::
+
+## Maya's Scenarios as Angles
+
+- $|\sigma_{12}|\le (0.20)(0.10) = 0.02$ — the box Cauchy–Schwarz sets
+- **A** ($\rho=+1$, $0^\circ$): arrows aligned, longest sum, max risk
+- **B** ($\rho=0$, $90^\circ$): perpendicular, Pythagorean — free reduction
+- **C** ($\rho=-0.5$, $120^\circ$): splayed apart, partial cancellation
+
+::: notes
+Back to Maya, now with a picture. Her two assets have volatilities zero point two zero and zero point one zero, so by Cauchy–Schwarz the covariance is boxed into an absolute value of at most zero point zero two. That is why Scenario A used exactly zero point zero two — it is the most the assets can possibly move together, correlation plus one, angle zero degrees. Her three scenarios are three angles between two arrows of length zero point two zero and zero point one zero. Scenario A, correlation plus one, angle zero: arrows aligned, the combined arrow as long as it can be, maximum risk. Scenario B, correlation zero, angle ninety degrees: perpendicular arrows, combined length given by the Pythagorean theorem, shorter than adding the lengths — the free risk reduction. Scenario C, covariance minus zero point zero one, so correlation minus zero point five, angle one hundred twenty degrees: arrows splay past a right angle and partly cancel, shorter still.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+$|\rho|\le 1$ is the **Cauchy–Schwarz inequality**, provable by demanding $\operatorname{Var}(X-tY)\ge 0$. Portfolio volatility is the **length of a vector sum**, so risk adds by the law of cosines, and the angle is the correlation. Diversification is the triangle inequality at work. Next: stacking covariances into the matrix $\mathbf{\Sigma}$.
+:::
+
+::: notes
+To summarize part seven: the bound that correlation lies between minus one and one is the Cauchy–Schwarz inequality, provable by demanding that the variance of X minus t Y stay non-negative. Portfolio volatility is literally the length of the vector sum of the weighted centered returns, so risk adds by the law of cosines, and the angle between assets is the correlation. Diversification is just the triangle inequality doing its job. In part eight we stack all the pairwise covariances into one object — the covariance matrix — that Week Two's matrix regression will feed on.
+:::

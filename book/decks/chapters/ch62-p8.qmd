@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## What's Vulnerable
+
+- Part 8 — four measurement soft spots, and the defense
+
+::: notes
+Welcome back to Chapter six-point-two, part eight of nine. In part seven we praised four clever moves. Now we press the other way. A measurement paper has measurement vulnerabilities, different from Week Five's causal threats. The right skeptical question is not "what confounds the treatment?" but "what makes the text a noisy or biased signal of what the firm actually does?" Four soft spots.
+:::
+
+## Boilerplate, And Self-Description
+
+- **Boilerplate**: 10-Ks are part lawyer-written, formulaic, shared
+- Firms can score "similar" for sharing a law firm's templates
+- **Self-description**: firms choose how to portray themselves
+- Vaguely, grandly ("we're an AI company now"), or conservatively
+- Are we measuring differentiation, or differentiation in *marketing prose*?
+
+::: notes
+The first soft spot is boilerplate and legal language. A ten-K is written by lawyers as much as managers; large stretches are formulaic and shared across firms — risk-factor language, disclaimers, accounting boilerplate. If that leaks into the vectors, two firms score similar because they share a law firm's templates, not because they make similar products. Restricting to the product-description section and downweighting ubiquitous words limits this but does not erase it — and as disclosure norms drift, the boilerplate baseline drifts too, contaminating the time-varying comparisons. The second, sharpest soft spot is specific to self-reported text: firms choose how to describe themselves, with motives. Vaguely, to avoid tipping off rivals; grandly, to flatter investors — "we are an A-I company now"; conservatively, to manage legal exposure. Since differentiation is itself an outcome, there is reflexivity: a firm that talks differently is coded differentiated, but talking different is not always being different. The skeptic asks: are we measuring product differentiation, or differentiation in marketing prose?
+:::
+
+## Meaning, And Parsing
+
+- **Bag-of-words ignores meaning**: order, synonymy, context all gone
+- "Do not compete in X" ≈ "compete in X" in the bag
+- "automobile" and "car" treated as unrelated
+- This is exactly the gap Chapter 6.5's embeddings close
+- **Parsing noise**: everything depends on pulling Item 1 cleanly
+
+::: notes
+The third soft spot: bag-of-words ignores meaning. The representation throws away word order and, basically, synonymy and context. "We do not compete in semiconductors" and "we compete in semiconductors" give nearly identical bags; "automobile" and "car" are treated as unrelated. The measure sees vocabulary overlap, which correlates with shared business but is not the same thing. This is exactly the gap the embedding models of Chapter six-point-five close — meaning, not word identity — which is why this paper sits one chapter before the A-I module: it is the bag-of-words ceiling that motivates moving past it. The fourth soft spot is parsing and section-extraction noise. Everything upstream depends on correctly pulling Item One from a messy, inconsistently formatted, decades-spanning EDGAR corpus. Formats change; HTML and plain-text eras differ; some firms bury or merge the description. Every parsing error injects noise — or worse, selection, if cleanly-parsing filings differ systematically from the rest, since larger, better-resourced firms file cleaner documents.
+:::
+
+## None Of These Sinks It
+
+- The pass-one validation is the defense
+- TNIC out-predicts SIC *despite* the noise
+- The vulnerabilities *locate* the paper, they don't kill it
+- A genuinely better measure, from a self-reported, vocabulary-based signal
+- With limits the next generation of text methods is built to push
+
+::: notes
+None of these sinks the paper. The pass-one validation is the defense: it shows the measure out-predicts S-I-C despite all this noise. The vulnerabilities do not kill the paper — they locate it. This is a genuinely better industry measure, built from a signal that is informative but self-reported, vocabulary-based, and parser-dependent, with limits the next generation of text methods is built to push against. That is precisely the bridge into the rest of Week Six.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Four measurement soft spots: **boilerplate** shared across firms, strategic **self-description**, **bag-of-words** blindness to meaning, and **parsing/selection** noise. None sinks the paper — the validation defends it — but each *locates* it: a better measure from an imperfect, self-reported signal.
+:::
+
+::: notes
+To summarize part eight: a measurement paper has measurement vulnerabilities. Boilerplate legal language can make firms look similar for sharing templates. Strategic self-description means firms may talk different without being different. Bag-of-words ignores meaning, treating "car" and "automobile" as unrelated. And parsing noise, or worse, selection, lurks in the extraction pipeline. None of these sinks the paper, because the validation shows it beats S-I-C anyway — they locate it. In part nine we close with three replication exercises and where Week Six is heading.
+:::

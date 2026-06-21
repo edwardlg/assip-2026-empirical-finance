@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Tough on the Work, Kind to the Person
+
+- Part 5 — the core norm: hard on the work, kind to the person
+
+::: notes
+Welcome back to peer review and revision, part five of twelve. In part four we labeled points major or minor and rendered a calibrated verdict. Now we cover the norm that holds the whole enterprise together — the one worth stating as flatly as possible: criticize the paper as hard as the evidence demands, and never criticize the author at all.
+:::
+
+## Separate the Paper From the Person
+
+- Criticize the work as hard as evidence demands
+- Never criticize the author at all
+- Conflating them makes the author defensive
+- Defensive authors argue back instead of fixing
+- That makes the paper worse and the workshop hostile
+
+::: notes
+This is the norm that holds the whole enterprise together, and it is worth stating as flatly as possible. Criticize the paper as hard as the evidence demands; never criticize the author at all. The two are easy to conflate when you are tired and the paper is frustrating, and the conflation is corrosive — it makes the author defensive, which makes them argue back instead of fixing things, which makes the paper worse and the workshop hostile. The discipline of keeping the work and the person separate is not soft; it is what keeps the criticism landing where it can do good.
+:::
+
+## The Mechanics Are Concrete
+
+- "The section does not rule out anticipation," not "you didn't think"
+- Attribute claims to the text, not to a failing of mind
+- Cite Petersen on robust errors understating variability
+- Calibrate warmth to toughness: harder point, careful phrasing
+- A hard point delivered carelessly gets rejected for its tone
+
+::: notes
+The mechanics are concrete. Write about the paper, not the person: the identification section does not rule out anticipation, not you didn't think about anticipation. Attribute claims to the text, not to a supposed failing of mind: Table Three reports robust standard errors on panel data, which Petersen, two thousand nine, shows understates the true sampling variability — not you used the wrong standard errors because you don't understand clustering. Assume competence and good faith — the author is a colleague who made defensible choices you happen to disagree with, not a student who needs scolding. And calibrate the warmth to the toughness: the harder a point, the more carefully you phrase it, not because the point softens but because a hard point delivered carelessly gets rejected for its tone instead of accepted for its content.
+:::
+
+## False Reassurance Is the True Cruelty
+
+- None of this means going easy
+- The kindest move: find the fatal flaw before the grader does
+- And find it so clearly that the author can fix it
+- Waving through a broken design guarantees a harsher break later
+- Tough on the work is the kindness
+
+::: notes
+None of this means going easy. The kindest thing you can do for a peer is to find the fatal flaw before the assessment grader does, and to find it so clearly that they can fix it. False reassurance is the true cruelty: a referee who waves through a broken design to spare someone's feelings has guaranteed that someone a harsher audience will break it later, when it costs more. Tough on the work is the kindness. Be precise, be specific, be relentless about the evidence — and never once make it about the person holding the pen.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Criticize the paper as hard as the evidence demands; never criticize the author at all.** Write about the text, attribute claims to the text, and calibrate warmth to toughness. Going easy is no kindness — **false reassurance is the true cruelty.** Finding the fatal flaw clearly, before the grader does, is the kindness. Next: a worked report — Devon refereeing Maya.
+:::
+
+::: notes
+To summarize part five: the norm that holds peer review together is tough on the work, kind to the person. Criticize the paper as hard as the evidence demands and never criticize the author, because conflating them makes the author defensive and the paper worse. The mechanics are concrete: write about the text, attribute claims to the text rather than a failing of mind, assume competence, and calibrate warmth to toughness so a hard point is accepted for its content, not rejected for its tone. And none of this is going easy — false reassurance is the true cruelty, because a flaw waved through now breaks harder later. In part six we watch Devon referee Maya's fair-lending paper, putting all of this into one report.
+:::

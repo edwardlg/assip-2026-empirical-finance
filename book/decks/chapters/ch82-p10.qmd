@@ -1,0 +1,63 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Assembling the Battery: What a Survivor Looks Like
+
+- Part 10 — line up every test; report non-survivors
+
+::: notes
+Welcome to Chapter eight-point-two, part ten of ten, the finale. In part nine the Oster delta quantified robustness to the confounder we never measured. Now we step back and see the whole structure. Each test in this chapter answered one row of the threats table you wrote in Chapter seven-point-five. In this final part we line them up, ask what it means to survive the battery, and confront the real lesson — that a result which does not survive should be reported as not surviving.
+:::
+
+## One Test Per Threat
+
+| Threat (Ch 7.5) | Stress-test | Pass looks like |
+|---|---|---|
+| Differential pre-trend | In-time placebo | Placebo ATT $\approx 0$ |
+| Few treated clusters | Wild bootstrap; in-space placebo | Bootstrap $p$ agrees / effect in tail |
+| Errors correlated | Alt. clustering; HAC | CI excludes zero, conservative clustering |
+| Tuned to a knob | Bandwidth / controls / winsorizing | Estimate flat across range |
+| Cherry-picked family | Bonferroni / Benjamini–Hochberg | Survives pre-specified correction |
+| Unobserved confounder | Oster (2019) δ | $\hat\delta \ge 1$; set excludes zero |
+
+::: notes
+Here is the whole battery on one slide. Each row is a threat from your Chapter seven-point-five table, paired with the stress-test that answers it and what a pass looks like. Differential pre-trend: the in-time placebo, passing when the placebo A-T-T is about zero. Few treated clusters: the wild cluster bootstrap or in-space placebo, passing when the bootstrap p agrees or the real effect sits in the tail. Errors correlated across units or time: alternative clustering and H-A-C, passing when the interval excludes zero under conservative clustering. Result tuned to a knob: sensitivity to bandwidth, controls, or winsorizing, passing when the estimate is flat across the defensible range. Cherry-picked from a family: Bonferroni or Benjamini–Hochberg, passing when the result survives the correction you pre-specified. And the unobserved confounder: the Oster delta, passing when delta-hat is at least one and the bounding set excludes zero.
+:::
+
+## A Survivor Is Credible, Not Proven
+
+- A survivor is **not proven** — nothing observational ever is
+- It is **credible**: you ran every referee attack on yourself
+- And the number held
+- That is the strongest claim empirical work can honestly make
+- The whole identification memo, made to pay off
+
+::: notes
+A result that survives this battery is not proven — nothing observational ever is, as Chapter seven-point-five hammered — but it is credible in the sense the identification memo demanded. You tried every attack a referee would, on yourself first, and the number held. That is the strongest claim empirical work can honestly make. Notice what survival is not: not a guarantee of truth, not a license to overclaim. It is the disciplined statement that the result withstood the adversarial pressure you could bring. This is exactly the credibility the threats table promised back in Week Seven, now delivered.
+:::
+
+## The Real Lesson: Report Non-Survivors
+
+- A result that doesn't survive should be reported as **not surviving**
+- Bootstrap $p = 0.2$? Say: suggestive but imprecisely estimated
+- In-time placebo lights up? Say: can't separate program from a pre-trend
+- Oster $\hat\delta = 0.4$? Say: unobserved selection could explain it
+- A failed test is a **success of the method**, not of you
+
+::: notes
+The converse is the real lesson, so let it land. A result that does not survive should be reported as not surviving. The key professional habit is to treat a failed robustness test as a finding, not a setback to bury. If Maya's wild cluster bootstrap had returned p equals zero-point-two, the honest paper says the effect is suggestive but imprecisely estimated. If her in-time placebo had lit up, it says the design cannot separate the program from a pre-trend. If her Oster delta had come in at zero-point-four, it says unobserved selection could explain the result. None is a failure of you; each is a success of the method, which stops you from telling the world something untrue. The author who runs these tests hoping they pass and the one hoping to learn the truth get the same output — but only the second is doing science.
+:::
+
+## Your Turn, and What's Next
+
+- Open **nb8.2** — the robustness-battery harness for column 3 of *your* table
+- Run your **scariest placebo first**; write the honest sentence if it fails
+- Read coefficient stability **with Oster's eyes**; defend $R_{\max}$, re-run at 1
+- **Audit your family**: how many outcomes did you really look at?
+- Next: Chapter 8.3 — presenting all this as a robustness section
+
+::: notes
+Your turn. Open notebook eight-point-two, the robustness-battery harness, built to run column three of your threats table end to end on your pre-registered estimate from Chapter eight-point-one. First, run your scariest placebo: take the threat you ranked most dangerous, build the placebo that would expose it, and if it fails, write the honest sentence that narrows or kills your claim. Second, read coefficient stability with Oster's eyes — report both R-squared values, compute delta-hat, defend your R-max, then re-run at one. Third, audit your family: write down every outcome you looked at, not just the ones you report, and apply both corrections. A robustness section with only passes is not more credible — it is less, because a reader assumes you did not try hard enough to fail. In Chapter eight-point-three we turn to presenting all of this as the robustness section that becomes the backbone of your paper. See you there.
+:::

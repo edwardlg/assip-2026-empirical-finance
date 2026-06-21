@@ -1,0 +1,55 @@
+---
+date: "2026-07-20"
+---
+
+## Tables That Hide Nothing, Robustness That Kills
+
+- Part 3 — links three and four: transparent tables, honest robustness
+
+::: notes
+Welcome back to the anatomy of a Journal of Finance paper, part three of four. In part two we built the first two links — sharpening an itch into a question, and the design that isolates your variable from a thicket of confounds with a one-sentence identifying assumption. Now we build the two links that carry the result onto the page: transparent tables that hide nothing, and honest robustness that tries to kill your own finding before a referee does.
+:::
+
+## Tables That Hide Nothing
+
+- Key coefficient **marches across columns** as controls pile on
+- Sample size $N$ at the bottom of **every** column
+- The standard-error note says **clustered** — at the level the key variable varies
+- One spec that worked = a magic trick; referees are trained magicians
+
+::: notes
+The result lives in the tables, and an honest table hides nothing. It shows the key coefficient marching across columns as controls and fixed effects pile on, so the reader can watch whether it survives or collapses. It reports the sample size — N — at the bottom of every column, so the reader can catch the sample silently changing. And it states, in a note, the standard-error flavor; on panel data that note had better say clustered, at the level the key variable varies, or a Petersen-literate referee will not read past it. A table that reports only the one specification that worked is not transparent — it is a magic trick, and referees are trained magicians. They know exactly which columns you chose not to show.
+:::
+
+## Reading the Coefficient Across Columns
+
+- It **stays stable** as controls and fixed effects enter $\rightarrow$ a result that survives
+- It **shrinks toward zero** once they enter $\rightarrow$ an artifact of what was omitted
+- The march across columns is the *whole argument*, visible at a glance
+- A result versus an artifact — the table lets you tell them apart
+
+::: notes
+Why does the march across columns matter so much? Because it is the whole credibility argument made visible. Suppose the key coefficient stays stable as you add issuer-finance controls and then state fixed effects. That stability is the result surviving its controls — the confounds you could measure did not explain it away. Now suppose instead it shrinks toward zero once those controls and fixed effects go in. That collapse tells you the original number was an artifact of what was omitted — the confounds were doing the work all along, and the social factor was just standing in for them. The difference between a real result and an artifact is exactly the difference between a coefficient that holds and one that melts, and a transparent table lets a sixty-second reader tell them apart.
+:::
+
+## Robustness Tries to Kill the Result
+
+- The gap between a working paper and a published one
+- Different controls, different window, different SE flavor
+- A **placebo** where the effect *should* be zero — check that it is
+- Report the checks that **failed**, not just the ones that passed
+
+::: notes
+The difference between a working paper and a published one is mostly the robustness section — the months spent trying to kill your own result before a referee does. You re-run with different controls, a different sample window, a different standard-error flavor. You run a placebo where the effect should be zero, and check that it is. You confront the most threatening alternative explanation head-on and show the data does not support it. Honest robustness is not decoration. It is you, the author, doing the referee's job to yourself first, in public, and reporting the checks that failed as well as the ones that passed. That honesty is what makes the headline believable. The honesty is the credibility.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A transparent **table** lets the key coefficient march across columns with $N$ shown and errors **clustered**; a stable coefficient is a result surviving, one that melts is an artifact. **Robustness** is you killing your own finding first — and reporting the checks that *failed*. The honesty **is** the credibility.
+:::
+
+::: notes
+To summarize part three: a transparent table lets the key coefficient march across columns, with the sample size shown in every column and the errors clustered at the right level — and you read its fate at a glance, because a coefficient that stays stable is a result surviving its controls while one that melts toward zero was an artifact. Robustness is you doing the referee's job to yourself first, running placebos and alternative specs, and reporting the checks that failed, not just the ones that passed. The honesty is the credibility. In part four I put all four links together on one of my own live papers, and show you why this whole session is your capstone in miniature.
+:::

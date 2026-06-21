@@ -1,0 +1,70 @@
+---
+date: "2026-07-27"
+---
+
+## Replication Exercises and What to Ask Next
+
+- Part 9 — three replication exercises and questions to carry forward
+
+::: notes
+Welcome back to Chapter six-point-three, part nine of nine, the finale. In part eight we finished the critique and bridged to large language models. Now we make the paper concrete with three replication exercises, then carry forward the laws and referee questions.
+:::
+
+## Exercise 1 — Reproduce the Misclassification
+
+- Take a handful of real ten-Ks from EDGAR
+- Score negativity twice: Harvard, then LM finance list
+- Tabulate the most frequent Harvard-negative words
+- Tag genuinely negative versus benign accounting terms
+- Reproduce the headline: the two scores differ a lot
+
+::: notes
+These run in notebook six-point-three, the Loughran-McDonald sentiment pipeline, which hands you a ten-K parser, the L-M word lists, and a small sample of filings matched to returns. Exercise one reproduces the misclassification. Take a handful of real ten-Ks from EDGAR, or the notebook's bundled sample. Score each for negativity twice: once with the Harvard negative list, once with the L-M finance-negative list. Then do the diagnostic that is the paper: among the words the Harvard list counts as negative, tabulate the most frequent ones and tag which are genuinely negative in finance versus benign accounting terms like tax, cost, capital, liability, and depreciation. You should reproduce the qualitative headline: a large share of Harvard-flagged negativity comes from neutral accounting vocabulary, and the two scores for the same filing differ substantially.
+:::
+
+## Exercise 2 — A Naive Dictionary and tf–idf
+
+- Build a deliberately *naive* negative dictionary
+- A generic web list, no finance filtering
+- Compare its scores to the LM finance scores
+- Where do they most disagree, and on which words?
+- Re-score with **tf–idf** weighting; watch rankings move
+
+::: notes
+Exercise two stresses the measure. Construct a deliberately naive negative dictionary, say a generic web list of negative words with no finance filtering, and score the same filings with it. Compare its scores to the L-M finance-negative scores: where do they most disagree, and on which words? Then re-score the filings using t-f-i-d-f weighting instead of raw counts, and see whether down-weighting ubiquitous boilerplate words changes the ranking of filings by negativity. This exercise makes you feel both levers: which words are on the list, and how you weight them. It is the heart of problem set six-point-three, the L-M dictionary versus a naive dictionary.
+:::
+
+## Exercise 3 — Validate Out-of-Sample, Then Break It
+
+- Split filings into a build set and a held-out test set
+- On the build set, confirm the validation direction
+- Re-estimate on held-out filings; is it an artifact?
+- Hand-write sentences with negation, sarcasm, conditionals
+- Watch the bag-of-words scorer misclassify them
+
+::: notes
+Exercise three validates out-of-sample, then breaks the method. Split your matched filings into a build set and a held-out test set. Using only the build set, confirm the direction of the validation result: more L-M-negative tone associated with lower abnormal returns, higher volume, and higher volatility around the filing. Then re-estimate on the held-out filings to check the association is not an artifact of the build sample, the out-of-sample discipline from the critique. Finally, hand-construct a dozen sentences with negation, sarcasm, and conditionals, like, we are not exposed to material litigation, run them through the bag-of-words scorer, and watch it misclassify them. That last step is the vulnerability made concrete on your own screen, and it is the exact failure that motivates the embedding and large-language-model methods of Chapter six-point-five.
+:::
+
+## Two Laws and Three Referee Questions
+
+- Law: instruments don't transfer across domains without re-validation
+- Law: every text model is only as honest as its out-of-sample test
+- Q1: is the dictionary's power out-of-sample, or circular?
+- Q2: sentiment, or just disclosure style and length?
+- Q3: where does bag-of-words break, and does it matter?
+
+::: notes
+Carry forward two laws. First, measurement instruments do not transfer across domains without re-validation. Second, every text model, dictionary or transformer, is only as honest as its out-of-sample test. And carry three referee questions. One: is the dictionary's apparent power genuinely out-of-sample, or did the test set help build it? Two: how much of the result is sentiment versus disclosure style, length, and parsing rules, and which controls would you demand? Three: where does bag-of-words break, with negation and conditionals, and over a long filing do those errors average out or bias the score? Go now and run exercise one. Seeing tax and liability dominate a filing's negative word count is the moment the title stops being a riddle and becomes a method.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Run the three exercises: **reproduce** the misclassification, **stress** the measure with a naive list and tf–idf, then **validate out-of-sample and break it** with negation. Carry two laws: instruments don't transfer across domains without re-validation, and every text model is only as honest as its out-of-sample test.
+:::
+
+::: notes
+To summarize part nine and the whole lesson. Three exercises take you from reproducing the misclassification headline, to stressing the measure with a naive dictionary and t-f-i-d-f weighting, to validating out-of-sample and then deliberately breaking the scorer with negation and conditionals. Carry two laws forward: measurement instruments do not transfer across domains without re-validation, and every text model, dictionary or transformer, is only as honest as its out-of-sample test. Loughran and McDonald is the careful endpoint of the bag-of-words era. It shows how far counting the right words gets you, and exactly where counting words stops being meaning, which is the gap Chapter six-point-five sets out to fill.
+:::

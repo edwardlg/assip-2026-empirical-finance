@@ -1,0 +1,57 @@
+---
+date: "2026-07-13"
+---
+
+## When It Fails: Reading the Pre-Period Fit
+
+- Part 6 — what failure looks like: reading the pre-period fit
+
+::: notes
+Welcome back to Chapter four-point-four, part six of ten. In part five we curated the donor pool and defended no-interference and no-anticipation. Now we ask what failure looks like. Synthetic control is unusually honest, because its central diagnostic is staring at you the whole time: the pre-treatment fit.
+:::
+
+## The Pre-Period Fit Is the Credential
+
+- Good study: real and synthetic lie on top of each other pre-$T_0$, diverge after
+- Can't reproduce the treated unit *before* treatment? No business claiming it *after*
+- A large pre-period gap is the method **confessing** no donor blend resembles you
+- Convexity won't let it lie — regression would paper over the failure
+
+::: notes
+A good study shows the real unit and its synthetic twin lying on top of each other through the entire pre-period, then diverging after T-naught. The pre-period fit is the credential. If the synthetic control cannot reproduce the treated unit before treatment — when there is no treatment effect to obscure the comparison — then it has no business claiming to reproduce it after. A large pre-period gap is the method confessing that no convex combination of your donors resembles your treated unit, and the convexity constraint will not let it lie about that. This is exactly why convexity matters: an unconstrained regression would paper over the failure with a slick in-sample fit; the constrained optimizer leaves the gap visible for you to see.
+:::
+
+## Quantify It: Pre-Period RMSPE
+
+$$\text{RMSPE}_{\text{pre}} = \sqrt{ \frac{1}{T_0} \sum_{t=1}^{T_0} \big( Y_{1t} - \hat{Y}_{1t}^{N} \big)^2 }$$
+
+- Root mean squared prediction error over the pre-period
+- Small relative to the outcome scale → tracks well
+- Large → red flag: no honest comparison exists
+
+::: notes
+Quantify the fit with the root mean squared prediction error over the pre-period: the square root of the average squared gap between the treated unit and its synthetic control across the pre-treatment years. A small pre-period RMSPE relative to the scale of the outcome means the synthetic control tracks well; a large one is a red flag that no honest comparison exists. This single number is what you report to let a reader judge whether the pre-period match earned the right to be trusted in the post-period.
+:::
+
+## Three Failure Modes
+
+- **Bad fit:** large pre-RMSPE — report it and abandon the design
+- Don't crank predictors until something fits
+- **Interpolation bias:** an edge unit can't be matched by donors all below it
+- **Short pre-period trap:** few pre-periods can be matched by luck
+- The longer the pre-period it survives, the more causal the divergence
+
+::: notes
+Three failure modes to watch for. First, bad fit: large pre-RMSPE, no credible counterfactual. The honest move is to report it and abandon the design, not to crank the predictors until something fits. Second, interpolation bias: a treated unit at the edge of the donor distribution — the highest-premium state, say — cannot be matched by a convex average of donors all below it, because the constraint forbids reaching past the most extreme donor, so the synthetic systematically falls short. Third, the short pre-period trap: with only a few pre-periods, you can match them by luck, the way an unconstrained regression overfits. A convincing study has a long pre-period, so that tracking through it is genuinely hard to fake. The longer the pre-period the synthetic control survives, the more the post-period divergence deserves to be read as causal.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The **pre-period RMSPE** is the credential: a tight pre-fit earns the post-period gap; a large one means abandon the design. Watch for bad fit, **interpolation bias** at an edge unit, and the **short pre-period trap**. Convexity keeps the failure visible.
+:::
+
+::: notes
+To summarize part six: the pre-period fit, measured by RMSPE, is the method's honest diagnostic. A tight pre-fit earns the right to read the post-period gap as causal, while a poor fit is the method confessing that no honest comparison exists. Watch for three failure modes — bad fit, interpolation bias at an edge unit, and the short pre-period trap. But even with a beautiful pre-fit and a clear post-period gap, one question remains: is that gap real, or just noise? With a sample size of one, you cannot compute a standard error. In part seven we meet the honest alternative — the placebo permutation test.
+:::

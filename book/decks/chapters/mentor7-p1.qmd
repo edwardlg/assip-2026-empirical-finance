@@ -1,0 +1,60 @@
+---
+date: "2026-08-03"
+---
+
+## The Funnel Is Mostly a Furnace
+
+**Learning objectives — by the end you can:**
+
+- See the research funnel as a **furnace**, not a filter
+- Kill ideas cheaply on paper, **without grief**
+- Spot **sunk cost** arguing for a project's survival
+- Decide forward — *best use of the weeks left?*
+
+::: notes
+Welcome to Mentor Session seven of Week seven, part one of four. Yesterday's chapter handed you a machine for turning a vague mood into a sharp research sentence — the puzzle, the so-what filter, the hypothesis grammar, the scoring rubric. I use a version of it every week. But it leaves out the part of the job no rubric can do for you, because it is emotional rather than technical. That part is the killing. By the time a paper of mine reaches a journal, I have abandoned somewhere between ten and thirty ideas — most of them ideas I liked, several already half-built. Today is the unglamorous half of the funnel: not how to pick a project, but how to kill one.
+:::
+
+## The Skill That Separates Finishers
+
+- Research is a funnel: many ideas in, **one project** out
+- Its real job is not to *select* — it is to **destroy**
+- Burns roughly **ten ideas per survivor**
+- Finishers aren't better at generating — they're better at **killing**
+
+::: notes
+Picture the research process as a funnel: wide at the top where ideas go in, narrow at the bottom where one project comes out. Beginners imagine the funnel's job is to select — to recognize the one good idea among the noise. That is only half right. Its real job is to destroy. It is a furnace that burns about ten ideas for every one it lets through, and the heat is the point. The biggest difference between people who finish good research and people who don't is not cleverness at generating ideas — almost everyone can generate ideas. It is the willingness to kill the ones they have already fallen in love with, early, before the love becomes sunk cost and the sunk cost becomes a year you can't get back.
+:::
+
+## Fall Out of Love Cheaply
+
+- An untested idea is **not** a good idea — just an unkilled one
+- Untested ideas are where **months go to die**
+- Learn to fall *out* of love quickly, **on paper**
+- Do it before the data and the deadline make the breakup expensive
+
+::: notes
+So the discipline I want you to learn is not how to fall in love — you already know how. It is how to fall out of love quickly and cheaply, on paper, before the data and the deadline make the breakup expensive. An idea that has not survived a serious attempt to kill it is not a good idea — it is merely an untested one, and untested ideas are where months go to die. Killing an idea is a win, not a loss: every idea you kill in an afternoon is a month you did not waste in the data. The researchers who look productive are not the ones who never have bad ideas — we all have mostly bad ideas — they are the ones whose furnace runs hot enough that only survivors see daylight.
+:::
+
+## Enemy One: Sunk Cost
+
+- *"I can't quit — I already cleaned forty thousand rows."*
+- Those rows are gone **whether or not** you continue
+- The only honest question is **forward-looking**
+- *From here, is this still the best use of the weeks I have left?*
+
+::: notes
+The first enemy of cheap killing is a bias you'll recognize from any decision you've regretted: sunk cost. Once you've spent a week scraping a dataset, the dataset starts arguing for its own survival — I can't quit now, I've already cleaned forty thousand rows. But those rows are gone whether you continue or not. They are not a reason to continue; they are a reason you wish you had a reason. The only honest question at every checkpoint is forward-looking: given what I know now, and ignoring everything I've already spent, is this still the best use of the weeks I have left? I make myself answer that on purpose, because my instincts will not ask it — they will defend the work I've done. Write the cost off. Decide from here.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The research funnel is a **furnace**: it burns about ten ideas per survivor, and that's the process working. Killing on paper is a win — every idea killed in an afternoon saves a wasted month. Enemy one is **sunk cost**: ignore what's spent and decide from here.
+:::
+
+::: notes
+To summarize part one: the research funnel is really a furnace whose job is to destroy about ten ideas for every one that survives, and a furnace that runs hot is the process working correctly, not failing. Killing an idea cheaply, on paper, is a win — every idea you burn in an afternoon is a month you do not waste in the data. And the first enemy of cheap killing is sunk cost: the work you have already done will argue for its own survival, so you must ignore what's spent and decide only from here. In part two we meet the other two enemies — the inert project, caught by the so-what test, and the fatal flaw.
+:::

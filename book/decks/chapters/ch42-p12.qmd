@@ -1,0 +1,66 @@
+---
+date: "2026-07-13"
+---
+
+## Two More Routes to the Same Fix
+
+- Part 12 — Sun-Abraham and Borusyak-Jaravel-Spiess; the code
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part twelve of thirteen. In part eleven we aggregated Callaway and Sant'Anna's grid into a robust event study that recovered the truth. Now we see the other two leading estimators reach the same destination by different roads, then run the code that shows the crisis and its cure side by side.
+:::
+
+## Sun–Abraham: An Honest Event Study
+
+- Crisis infects the **event-study** TWFE too — corrupting the pre-trend test
+- Naive $\hat\beta_e$ is contaminated by **other cohorts' other event times**
+- A flat pre-trend can hide bias — the diagnostic plot can **lie**
+- Fix: **saturate** — relative-time $\times$ cohort, $\delta_{g,e}$, clean controls; then weight
+
+::: notes
+Sun and Abraham, in twenty-twenty-one, noticed the crisis infects the event-study version just as badly — and treacherously, because it corrupts the very pre-trend test you rely on. In the naive event study you replace the single treatment indicator with relative-time dummies and estimate a coefficient for each event time. They prove that under staggered timing with heterogeneous dynamics, each coefficient is contaminated by treatment effects from other event times of other cohorts — the leads and lags bleed into each other through the same forbidden comparisons, so a flat-looking pre-trend can hide real bias. Their fix, the interaction-weighted estimator, saturates the regression: interact every relative-time dummy with every cohort indicator, using never-treated units as clean controls. These are precisely Callaway and Sant'Anna's group-time effects in regression clothing, then aggregated with cohort-share weights.
+:::
+
+## Borusyak–Jaravel–Spiess: Imputation
+
+- $\text{effect}_{it}=Y_{it}-Y_{it}(0)$; only $Y_{it}(0)$ is missing — so **impute it**
+- (1) Fit $Y_{it}=\alpha_i+\lambda_t+\varepsilon_{it}$ on **untreated cells only**
+- (2) Impute $\hat Y_{it}(0)=\hat\alpha_i+\hat\lambda_t$ for treated cells
+- (3) Effect $\hat\tau_{it}=Y_{it}-\hat Y_{it}(0)$; average however you like — also **efficient**
+
+::: notes
+Borusyak, Jaravel, and Spiess, in twenty-twenty-four, take the most direct route, and it doubles as the clearest way to understand what every clean estimator is doing. The treatment effect for a treated cell is, by definition, the actual outcome minus the untreated potential outcome — and only that untreated outcome is missing, so impute it. Three steps. First, fit the two-way fixed-effects model using only the untreated observations, so no treatment effect contaminates the estimated fixed effects. Second, impute the missing untreated outcome for each treated cell as the predicted alpha-i plus lambda-t. Third, the estimated effect is the actual outcome minus that imputed counterfactual, and you average these however you like. Imputation simply refuses to fit on treated cells, so an already-treated unit's effect can never leak into anyone's control. Under their assumptions it is also the efficient estimator, with a proper pre-trend test from untreated residuals.
+:::
+
+## Three Routes, One Principle
+
+- Callaway–Sant'Anna: assemble clean 2x2s
+- Sun–Abraham: saturate the event-study regression
+- Borusyak–Jaravel–Spiess: impute the counterfactual from untreated cells
+- All (i) form only clean comparisons, (ii) build a grid, (iii) aggregate transparently
+
+::: notes
+Three estimators, one principle. Callaway and Sant'Anna assemble clean two-by-twos; Sun and Abraham saturate the event-study regression; Borusyak, Jaravel, and Spiess impute the counterfactual from untreated cells only. All three form only clean comparisons, produce a grid of effects, and aggregate transparently with weights you control. In most real datasets they land within sampling noise of one another — and far, often qualitatively far, from the broken pooled coefficient. You choose among them mostly by convenience and by which standard errors and pre-trend tests you want.
+:::
+
+## The Code: Two Worlds
+
+- **World A:** E yr 2, L yr 5, **no** never-treated $\to$ TWFE $=+0.40$ (wrong sign)
+- **World B:** add never-treated N $\to$ TWFE $=-1.23$ (attenuated); clean ATT $=-2.571$ (exact)
+- `att_gt` compares cohort $g$ only to controls with `G > t` — **never** already-treated
+- Same perfect parallel trends — TWFE ranges sign-flipped to attenuated
+
+::: notes
+The notebook builds two worlds. World A is the sign-flip world — two states, no never-treated unit — where two-way fixed effects comes out positive, plus zero-point-four-zero, on data where the true effect is negative in every treated cell. That is the sign flip, live, driven by the forbidden comparison that is the only one available when no never-treated unit exists. World B adds a genuine never-treated state N, which lets the clean estimator identify every cohort. There, two-way fixed effects is tamed to a merely attenuated minus one-point-two-three, while the clean two-by-twos recover State E's and State L's effects exactly, for an overall clean effect of minus two-point-five-seven-one — the truth to the decimal. The key line is the clean-control filter: the function compares cohort g only to units whose adoption year is strictly greater than t — never the already-treated.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Three routes, one principle.** Callaway–Sant'Anna assemble clean 2x2s, Sun–Abraham saturate the event-study regression, Borusyak–Jaravel–Spiess impute from untreated cells — and on the same data TWFE runs from **$+0.40$** to **$-1.23$** while the clean estimator nails **$-2.571$**. Next, the finale: the four things to carry forward, and the lab.
+:::
+
+::: notes
+To summarize part twelve: Sun and Abraham saturate the event study with cohort-by-relative-time interactions; Borusyak, Jaravel, and Spiess impute the untreated counterfactual from untreated cells only; both reach the same place as Callaway and Sant'Anna. The code shows it starkly — same perfect parallel trends, yet pooled two-way fixed effects ranges from sign-flipped plus zero-point-four-zero to attenuated minus one-point-two-three, while the clean estimator nails the true minus two-point-five-seven-one. In part thirteen, the finale, we gather the four things to carry forward, and preview the lab.
+:::

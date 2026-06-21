@@ -1,0 +1,64 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## From Puzzle to Researchable Question
+
+**Learning objectives.** By the end you can:
+
+- Turn a vague puzzle into a falsifiable, signed hypothesis
+- Filter ideas by so-what, who-cares, and what's-new
+- Find identifying variation that defends a causal claim
+- Judge feasibility and scope for a five-week project
+
+::: notes
+Welcome to Week Seven, Chapter seven-point-one, part one of eight — the idea-generation workshop. For six weeks you have been a passenger. Every dataset arrived pre-cleaned, every regression had a known right answer in the back of the book, and every research question was really a teaching device. Starting now that scaffold comes down. The rest of the camp is your own project — a real question, on real data you acquire and clean yourself, presented in front of a room at the end of Phase Two. Most first projects do not die in the regression; by now you can run a regression in your sleep. They die in the gap between "I'm interested in crypto" and "here is a specific, answerable, falsifiable question." Closing that gap is the entire subject of this chapter.
+:::
+
+## The Trick, In One Sentence
+
+- A good project is a vague interest passed through **three filters**
+- Does anyone care? · Is it new? · Can *I* actually do it?
+- Output: one sentence — *effect of [treatment] on [outcome]*
+- *…identified by [variation], using [data I can get]*
+- Get the sentence right and the project almost runs itself
+
+::: notes
+Here is the trick stated in one sentence, the way this book states every trick before unpacking it. A good empirical project is a vague interest passed through three filters — Does anyone care? Is it new? Can I actually do it? — until what comes out the other side is a single sentence of the form: the effect of a specific treatment or variation, on a specific measurable outcome, identified by a specific source of variation, using a specific dataset I can get. Everything else in Week Seven is downstream of getting that one sentence right — acquiring the data, writing the pre-analysis plan, building the dataset, arguing identification. Get the sentence right and the project almost runs itself. Get it wrong and no clever econometrics will save you.
+:::
+
+## A Puzzle Is Not Yet a Question
+
+- A **puzzle** is a feeling that something is interesting
+- "Crypto seems to crash all at once" — a mood
+- You cannot be *wrong* about a puzzle; it predicts nothing
+- Popper: a claim nothing could refute is not scientific
+- The job: turn a puzzle into something you *can* be wrong about
+
+::: notes
+A puzzle is a feeling that something is interesting. "Crypto seems to crash all at once" is a puzzle. "Insurers are pulling out of wildfire states" is a puzzle. Puzzles are necessary — you should not work on something boring for five weeks — but a puzzle is not a research question, because you cannot be wrong about a puzzle. It makes no prediction. Nothing you could observe in data would force you to abandon it. And a claim that nothing could refute is, in Karl Popper's sense, not a scientific claim at all. The first job of this chapter is to teach you to turn a puzzle into something you can be wrong about — a falsifiable hypothesis.
+:::
+
+## Sharpening Devon's Puzzle
+
+- Puzzle: "Crypto seems to crash all at once"
+- Sharpened: *a stablecoin loses its dollar peg →*
+- *…DEX trading volume spikes the same day*
+- It named the trigger, the outcome, the timing — and a **direction**
+- If volume doesn't move, the hypothesis is dead — that's the feature
+
+::: notes
+Watch the transformation on Devon's puzzle. "Crypto seems to crash all at once" becomes, after sharpening: when a large stablecoin loses its dollar peg, trading volume on decentralized exchanges spikes within the same day. Notice what the sharpening did. It named the trigger — a stablecoin depeg. It named the outcome — decentralized-exchange trading volume. It named the timing — same day. And, crucially, it committed to a direction: volume goes up, not down, not merely "changes." Now Devon can be wrong. If he pulls the data and volume does not move, or moves down, the hypothesis is dead — and that is a feature. A hypothesis you cannot kill is a hypothesis you cannot learn from.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **puzzle** is a mood you can't be wrong about; a **falsifiable hypothesis** names a trigger, an outcome, a timing, and a *signed direction*. Sharpen until the data could contradict you. Next: the four-slot grammar that makes every sharp hypothesis.
+:::
+
+::: notes
+To summarize part one: a puzzle is a feeling, and you cannot be wrong about it, so it is not yet research. Sharpening Devon's depeg puzzle named a trigger, an outcome, a timing, and — crucially — a direction, so that the data could contradict him. That is a falsifiable hypothesis. In part two we make the structure explicit with a four-slot grammar you will run every single project idea through, and we connect it to the empirical-spec discipline this whole book has been built on.
+:::

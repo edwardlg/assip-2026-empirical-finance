@@ -1,0 +1,64 @@
+---
+date: "2026-07-13"
+---
+
+## Goodman-Bacon: The Building Blocks
+
+- Part 6 — TWFE as an exact weighted average of every 2x2
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part six of thirteen. In part five we watched the two-state world produce the wrong sign, driven by using already-treated State E as a control for newly-treated State L. That shows two-way fixed effects can break. Goodman-Bacon, in twenty-twenty-one, shows exactly how — by proving the staggered coefficient is, identically, a weighted average of all the simple two-by-two difference-in-differences you could form. This part lays out the building blocks; the next part handles the weights and the punchline.
+:::
+
+## An Exact Algebraic Identity
+
+- The pooled $\hat\beta$ **literally equals** a particular weighted sum of 2x2s
+- Not an approximation — **no error term**
+- Tells you precisely **which** 2x2s and **what weight** each gets
+- The diagnostic centerpiece of the whole crisis
+
+::: notes
+Goodman-Bacon's result is beautiful because it is an exact algebraic identity, not an approximation: the one number beta-hat literally equals a particular weighted sum of two-by-two difference-in-differences, with no error term. And it tells you precisely what those two-by-twos are and what weight each receives. This is the diagnostic centerpiece of the whole crisis, because it converts a vague worry — that something contaminates the coefficient — into an exact accounting you can compute and inspect. This is the Goodman-Bacon, twenty-twenty-one, decomposition, published in the Journal of Econometrics.
+:::
+
+## Three Kinds of 2x2 Comparison
+
+- Take cohort $k$ (earlier), cohort $\ell$ (later), plus never-treated
+- **Type 1:** treated cohort vs. never-treated — clean
+- **Type 2:** earlier vs. later, **before** later switches on — clean
+- **Type 3:** later vs. earlier, **after** earlier switched on — **forbidden**
+
+::: notes
+With staggered timing there are several types of two-by-two comparison the data can support. Take any two cohorts — an earlier-adopting group k and a later-adopting group ell — plus the never-treated group. Goodman-Bacon shows the pooled coefficient decomposes into these building blocks. Type one: a treated cohort compared to states that never adopt. This is clean — the control is genuinely untreated throughout. Type two: earlier-treated versus later-treated, in the window before the later group switches on. The later group is still untreated here, acting as a clean control while the earlier group is treated — also clean. Type three: later-treated versus earlier-treated, in the window after the earlier group has switched on. Here is the poison: the earlier group is already treated throughout this window and is being used as the control for the later group. This is the forbidden comparison.
+:::
+
+## Mapping the Types onto Section 3
+
+- Type 1: the comparison §3 **lacked** — there was no never-treated state
+- Type 2: State L is the clean control for State E during years 2–4
+- Type 3: State E is the contaminated control for State L during years 5–8
+
+::: notes
+Map these straight onto the broken-world table from part five. Type one — treated versus never-treated — is the comparison that table lacked, because it had no never-treated state, which is exactly why nothing could rescue the sign there. Type two appears during years two through four: State L is still untreated then, so it serves as a clean control for the already-adopting State E. Type three appears during years five through eight: State E is already treated, so using it as the control for L is exactly the contaminated comparison we traced by hand. So the single forbidden comparison we diagnosed informally is, formally, the Type-three building block of the decomposition.
+:::
+
+## Honest Versus Poison
+
+- Types 1 and 2: honest 2x2s with **clean** (untreated-in-window) controls
+- Type 3: uses an **already-treated** unit as control
+- Type 3 is the **entire** source of the bias
+
+::: notes
+To be crisp: Types one and two are honest two-by-two difference-in-differences with clean controls — the control really is untreated within the comparison window. Type three uses an already-treated unit as the control, and it is the entire source of the bias. Notice that Types two and three involve the same two cohorts, just in different windows: before the later group adopts, the comparison is clean; after, it is forbidden. That is why staggered designs are subtle — the same pair of states gives a trustworthy comparison in one window and a poisonous one in another, and the pooled regression blends them together without telling you.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Goodman-Bacon (2021) proves $\hat\beta^{\text{TWFE}}$ **exactly equals** a weighted average of every 2x2 DiD. **Type 1** (vs. never-treated) and **Type 2** (earlier vs. not-yet-treated) are clean; **Type 3** — later vs. **already-treated** — is the poison, and the entire source of bias. Next: the weights — why the worst comparisons can dominate, and the negative-weight punchline.
+:::
+
+::: notes
+To summarize part six: Goodman-Bacon proves the pooled coefficient is exactly — an algebraic identity with no error term — a weighted average of every two-by-two the data support. Treated-versus-never-treated and earlier-versus-not-yet-treated are clean; later-versus-already-treated is the forbidden Type-three comparison, the entire source of bias. In our broken world, Type two is L as a clean control for E in years two through four, and Type three is E as a contaminated control for L in years five through eight. In part seven we add the weights — why the bad comparison is bad, why middle adopters dominate, and the punchline that forbidden comparisons can enter with negative weight.
+:::

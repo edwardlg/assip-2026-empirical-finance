@@ -1,0 +1,58 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Devon's Crypto Returns and Fat Tails
+
+- Part 7 — how fat tails poison the average
+
+::: notes
+Welcome back to Chapter one-point-four, part seven of nine. In part six we saw the two laws form the engine of inference, resting on one load-bearing assumption: finite variance. Now we meet Devon, who pulls crypto data off-chain, confidently builds a confidence interval, and discovers that averaging crypto returns is nothing like averaging coin flips. The culprit is fat tails.
+:::
+
+## Devon's Confident Mistake
+
+- Devon pulls daily returns for a basket of cryptos
+- His reasoning: "Returns are returns; CLT kicks in at $N=30$"
+- He builds a confidence interval on the average daily return
+- Result: absurdly narrow on one sample, wildly different next month
+- The problem is **not** his code
+
+::: notes
+Meet Devon. He has been pulling daily returns for a basket of cryptocurrencies off-chain. He has read the last two parts and reasons confidently: returns are returns. I will average a few hundred daily returns, the Central Limit Theorem kicks in around N equals thirty, my sample mean is approximately normal, and I will slap a confidence interval on the average daily return. He runs it. The confidence interval comes out absurdly narrow on one sample, and then wildly different on the next month of data. The two intervals barely overlap. Something is clearly wrong — but it is not his code. The code is fine. What is wrong is that Devon assumed the Central Limit Theorem would bite quickly, and his data violate the very clause that makes it bite. That clause is about the tails.
+:::
+
+## Fat Tails Poison the Average
+
+- **Fat tails:** extreme values far more probable than a bell allows
+- Equities already heavier-tailed than normal (1987, 2020)
+- Crypto: a single day can post $+40\%$ or $-50\%$
+- The CLT needs "no single term dominates" — fat tails **break** this
+- One monster day yanks $\bar{x}$ around by itself
+
+::: notes
+The culprit is fat tails — a distribution whose extreme values are far more probable than a normal curve of the same width would allow. Equity returns are already heavier-tailed than the normal: big moves happen more often than a bell predicts, which is the quantitative reason the crashes of October nineteen-eighty-seven and March twenty-twenty were not supposed to be possible under the models of their day. Crypto returns are heavier still. A single day can post a plus-forty-percent or minus-fifty-percent move that a normal model fit to ordinary days would expect once in the lifetime of the universe — yet on-chain you find several such days in a single year. Now recall the Central Limit Theorem's secret clause: the bell emerges only when no single contribution dominates the sum. Fat tails break that. When you average N returns and one is a minus-fifty-percent day, that single observation yanks the mean around all by itself.
+:::
+
+## Most Days Tell You Almost Nothing
+
+- Typical day: a small wiggle
+- A handful of catastrophic or euphoric days do most of the work
+- Averaging never gets to cancel the noise
+- Any honest summary must reckon with the giants
+
+::: notes
+Sit with why this is so corrosive. In a fat-tailed return series, the typical day tells you almost nothing about the average. On most days the return is a small wiggle, but every so often one monster day arrives whose magnitude is comparable to the sum of everything around it. A handful of catastrophic or euphoric days do most of the work in determining the average. So the averaging never gets to do its noise-cancelling job, because one term refuses to be small relative to the rest. The cancellation we relied on in the Law of Large Numbers — independent deviations offsetting each other — is overwhelmed whenever a giant arrives. Any statistic that hopes to summarize the series has to reckon with those giants honestly, rather than pretending the bell has already formed.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Fat tails** — extreme values far more likely than a bell allows — break the CLT's "no single term dominates" clause. One $-50\%$ crypto day yanks $\bar{x}$ around by itself, so averaging never cancels the noise. Devon's confidence interval was built on sand. Next: the precise hierarchy of bad behavior.
+:::
+
+::: notes
+To summarize part seven: Devon assumed the Central Limit Theorem would bite at N equals thirty and built a confidence interval that swung wildly between months — not because his code was wrong, but because his crypto returns are fat-tailed. Fat tails mean extreme values far more likely than a bell allows, which breaks the theorem's secret clause that no single term dominates. One minus-fifty-percent day yanks the average around by itself, so the noise-cancelling never happens and the bell never forms. In part eight we make this precise with a hierarchy of bad behavior — because having a mean is not at all the same as the bell forming quickly.
+:::

@@ -1,0 +1,57 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## API Knobs, Model Tiers, and the Azure Gateway
+
+- Part 12 — call knobs, three model tiers, GMU's Azure gateway
+
+::: notes
+Welcome back to the AI co-pilot for research, part twelve of fourteen. In part eleven we set the non-negotiable key rule and built the Anthropic Messages call with prompt caching. Now the remaining call knobs, the three model tiers, and G-M-U's Azure gateway — which is not just a backup but a robustness check on your results.
+:::
+
+## Two More Knobs
+
+- Small `max_tokens` for classification — one word out, cheap
+- A tight cap stops the model rambling past the label
+- Adaptive thinking for genuinely hard judgment calls only
+- Skip it for cheap, high-volume labeling where cost dominates
+
+::: notes
+Two more things in that call. Small max-tokens for classification: the output is one word, so a cap of sixteen is plenty. You pay per output token, and a tight cap also prevents the model from rambling past the label you asked for. For tasks that produce real prose, like a literature summary, you would set this far higher and stream the response. And adaptive thinking: a one-word tone label needs no deliberation, but a harder task — does this passage describe a new liquidity risk or restate an existing one, and why — benefits from letting the model reason before answering. Use adaptive thinking for genuinely hard judgment calls; skip it for cheap, high-volume labeling where speed and cost dominate.
+:::
+
+## Three Model Tiers
+
+- Most capable — the default for development and validation
+- Faster and cheaper — often plenty for classification
+- Cheapest — for the highest-volume, simplest tasks
+- Develop on the capable model; check a cheaper one clears your bar
+
+::: notes
+Anthropic offers three model tiers. The most capable is the default and the most accurate. A faster and cheaper mid-tier is often plenty for classification. And the cheapest tier is for the highest-volume, simplest tasks. A sensible workflow follows directly from the validation lesson: develop and validate your rubric on the most capable model, then check whether a cheaper model still clears your F-one bar on the gold set before running it across all forty thousand documents. The gold set decides which tier you can afford — it is cheaper to label a corpus with a small model, but only if that model is accurate enough, and validation is what tells you.
+:::
+
+## GMU's Azure OpenAI Deployment
+
+- GMU serves GPT-family models via an Azure gateway
+- Same shape: read the key from the environment, never inline
+- Confirm the deployment name and API version in the GMU portal
+- Two providers is a **robustness check**, not redundancy
+- A result that holds under a different vendor is real evidence
+
+::: notes
+G-M-U also provides OpenAI-family models through an Azure A-P-I management gateway. The pattern is the same shape — read the key from the environment, never hard-code it — using the OpenAI SDK's Azure client. The endpoint is fixed; the key is read from the environment and appears nowhere in the source. The deployment name and the A-P-I version are configuration you confirm against G-M-U's portal before running, since a wrong deployment name or version is the most common reason a first Azure call fails. Having two providers is not redundancy for its own sake — it is a robustness check. If your headline result holds up when you re-label your corpus with a different model from a different vendor, that is real evidence your finding is about the documents and not an artifact of one model's quirks. If it flips, you have learned something important before a referee does.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Keep **max_tokens small** for classification and use adaptive thinking only for hard calls. Pick the cheapest **model tier** that still clears your F1 bar on the gold set. GMU's **Azure gateway** lets a second vendor re-label your corpus — a robustness check, not redundancy. Next: audit logging and the local fallback.
+:::
+
+::: notes
+To summarize part twelve: tune the call for the task — small max-tokens for one-word classification, adaptive thinking only for genuinely hard judgment calls. Choose among three Anthropic model tiers by letting the gold set decide the cheapest one that still clears your F-one bar. And use G-M-U's Azure gateway, which follows the same key-in-the-environment pattern, to re-label your corpus with a different vendor — a robustness check that tells you whether your finding is about the documents or one model's quirks. In part thirteen we cover audit logging and the local fallback for licensed data.
+:::

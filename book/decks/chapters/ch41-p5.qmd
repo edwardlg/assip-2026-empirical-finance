@@ -1,0 +1,73 @@
+---
+date: "2026-07-13"
+---
+
+## Pre-Trends and Clustered Inference
+
+- Part 5 — why flat leads fall short, and clustered standard errors
+
+::: notes
+Welcome back to Chapter four-point-one, part five of six. In part four we unpacked DiD into an event study, whose leads check pre-trends. Now the caution separating a sophisticated DiD reader from a naive one: flat leads do not prove parallel trends. Then the standard errors, easy to get wrong in DiD.
+:::
+
+## Pre-Trends Don't Prove Parallel Trends
+
+- **Logical**: leads are about the pre-period that *did* happen
+- Parallel trends is about the post-period $Y(0)$ that did *not*
+- Flat leads are *consistent with*, not proof of, the assumption
+- A coincident shock could fake clean pre-trends
+
+::: notes
+It is tempting to see flat lead coefficients and conclude "parallel trends holds — I tested it." You did not, and it does not. The first problem is logical. Parallel trends is about the treated group's post-period untreated outcome — a world that never happened. The leads are about the pre-period — a world that did happen. Flat leads say the groups moved together before treatment; that is consistent with parallel trends continuing afterward, reassuring, but not the same statement. A coincident shock or bundled policy could shift the treated group's trajectory at exactly the moment of treatment, and the pre-trends look pristine while the assumption is false. Pre-trends are a necessary-looking symptom, not the disease.
+:::
+
+## The Power Trap
+
+- **Statistical**: pre-trend tests have low **power**
+- Few pre-periods, noisy data → wide confidence intervals
+- "Failed to reject" can mean *no trend* or *can't see it*
+- Worst datasets give the most falsely reassuring flat leads
+- Slogan: pre-trends can **refute**, never **confirm**
+
+::: notes
+The second problem is statistical: pre-trend tests have low power — the chance of detecting a violation when one truly exists. With few pre-periods and noisy data, the leads' confidence intervals are wide — wide enough to contain both zero and a meaningful differential trend. So "I failed to reject zero pre-trend" can mean "there is no pre-trend" or "there is one, but my data is too noisy to see it," and a zero-spanning coefficient cannot tell them apart. The danger is backwards: the worst datasets — small, noisy, few periods — most likely hand you a reassuring flat lead. Report the bands honestly. The slogan: pre-trends can refute parallel trends, never confirm it.
+:::
+
+## The BDM Placebo Disaster
+
+- **Bertrand, Duflo, Mullainathan (2004)**: random placebo treatments
+- No true effect → should be "significant" 5% of the time
+- Conventional SEs flagged fakes up to **45%** of the time
+- Culprit: **serial correlation** of residuals within a unit
+- Moulton logic: effective sample far below nominal
+
+::: notes
+Now inference. Bertrand, Duflo, and Mullainathan, two thousand four, asked whether conventional DiD standard errors on long panels are honest. They invented placebo treatments assigned at random — no true effect — and ran the standard DiD regression thousands of times. With honest standard errors, a placebo effect should flag significant at the five percent level about five percent of the time. Instead, conventional standard errors flagged the fakes up to forty-five percent of the time — nearly half of pure-noise treatments. The culprit is serial correlation within units: a state's premium this year is highly correlated with last year's. By the Moulton logic, correlated observations each carry less fresh information, so the effective sample is far below the nominal count. The persistent treatment dummy compounds this, making naive standard errors blow up.
+:::
+
+## The Fix — and Its Limit
+
+| SE flavor | SE | t | Honest? |
+|-----------|----|----|---------|
+| Classical | 14 | 5.0 | No |
+| Robust HC1 | 16 | 4.4 | No |
+| Clustered by state | 38 | 1.8 | Yes\* |
+
+- Cluster by the **unit of treatment** (state)
+- Point estimate stays \$70; the SE more than doubles
+- *Few treated clusters* (Priya has one) → lean on placebo inference
+
+::: notes
+The fix, the default ever since, is the cluster-robust standard error, clustered by the unit of treatment — here, by state — letting each state's residuals be arbitrarily correlated across its years. The table tells the story. The point estimate is seventy dollars throughout; only the standard error moves. Classical and robust both ignore serial correlation and give a dishonest t-stat near five. Clustering by state more than doubles the standard error, dragging the t-stat to a sobering one-point-eight. But the catch returns: cluster-robust errors need many clusters, thirty to fifty. Priya has one treated state, as did Card and Krueger. You cannot cluster your way out of one treated cluster. There you lean on placebo inference — assign the fake treatment to each control in turn and see how unusual the real estimate is.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Flat leads are **consistent with** parallel trends but never prove it — both logically and because the test has low **power**. For inference, **cluster by the treatment unit** (BDM, 2004) — but with few treated units, lean on placebo/permutation tests. Next: where the clean 2×2 story cracks under staggered adoption.
+:::
+
+::: notes
+To summarize: flat leads are consistent with parallel trends but never prove it — logically, because the assumption lives in an unobserved post-period counterfactual, and statistically, because the test has low power. For inference, cluster by the unit at which treatment is assigned, the lesson of Bertrand, Duflo, and Mullainathan — but when treated units are few, even clustering strains, so lean on placebo inference. In part six we reach the crack: when units adopt at different times — staggered adoption — much of this breaks, where Chapter four-point-two begins.
+:::

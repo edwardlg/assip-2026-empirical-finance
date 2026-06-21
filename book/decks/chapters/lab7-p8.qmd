@@ -1,0 +1,58 @@
+---
+date: "2026-08-03"
+---
+
+## File the Pre-Analysis Plan as a Tagged Commit
+
+- Part 8 — file the pre-analysis plan as an immutable tagged commit
+
+::: notes
+Welcome back to Week Seven, the Lab, part eight of eight, the final part. In part seven you verified a git-ignore that blocks data and secrets. Now the step that ties this lab to Chapter seven-point-three and turns your repo into an instrument of scientific honesty. Recall the argument: a pre-analysis plan only constrains you if its contents are fixed before you analyze, and the only proof of that to a skeptic is a credible timestamp.
+:::
+
+## Commit the Plan, Then Tag It
+
+- Commit `PRE-ANALYSIS-PLAN.md` as its own clean commit
+- Nothing else mixed in — this is "the moment it was filed"
+- A Git tag is a permanent, named pointer to a commit
+- An annotated tag stores a message, author, and date
+- `git tag -a pap-filed`, then push the tag
+
+::: notes
+First, the plan itself must exist as a committed file. You wrote it in notebook seven-point-three and saved it as the pre-analysis-plan file. Commit it as its own clean commit, with nothing else mixed in, so the commit is unambiguously the moment the plan was filed. Now tag that commit. A Git tag is a permanent, human-named pointer to a specific commit; an annotated tag — the dash-a form — additionally stores its own message, author, and, the part that matters, a date. This is your registration timestamp. Tag it pap-filed with a message noting it was filed before any confirmatory regression, then push the tag so the instructor can see it. Confirm it landed by reading back the tagged commit, its date, and the plan it points to.
+:::
+
+## Why the Tag Is a Cryptographic Promise
+
+- Git names each commit by hashing its contents and its parent
+- Each commit's identity depends on the entire history before it
+- A later commit cannot be slipped in before the tag
+- Doing so changes every later hash — a visible rewrite
+- Anyone can verify the plan existed before the results
+
+::: notes
+Why this is a cryptographic promise and not just a sticky note. Git names every commit by a hash of its full contents and the hash of its parent — so each commit's identity depends on the entire history before it. A commit made after you ran your confirmatory regression cannot be retroactively inserted before the pap-filed commit without changing every subsequent hash, which would visibly rewrite the whole pushed history. And the instructor, and GitHub's servers, already hold the original. In plain terms: anyone can verify that the plan existed, in exactly this form, before the commits that contain your confirmatory results. That is the entire point of Chapter seven-point-three's register-by-time-stamping. The tag is the seal; the hash chain is what makes the seal unbreakable.
+:::
+
+## The Order of Operations
+
+- Tag the plan first
+- Only after the tag do you run confirmatory regressions
+- Never silently edit the tagged plan — you cannot, honestly
+- Record every departure, dated, in `DEVIATIONS.md`
+- Commit deviations after the tag, so the seams are visible
+
+::: notes
+The discipline that follows is the order of operations. The plan is tagged first. Only after pap-filed do you run the confirmatory regressions — notebook seven-point-five is frozen until exactly this moment. When you inevitably deviate — a control drops out for collinearity, a year needs special handling — you do not silently edit the tagged plan; you cannot, honestly, because the tag points at the old version. Instead you record every departure, dated, in the deviations file, and commit it after pap-filed. The commit history now tells the honest story by construction: here is the plan, tagged and immutable, and here, in commits that provably come after, is everything that changed and why. A referee reading that history trusts you more, not less, because the seams are visible.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+File the plan as its own commit, then `git tag -a pap-filed` and push it. The hash chain makes the timestamp **unbreakable**: anyone can verify the plan existed before your results. Tag first, run confirmatory tests after, and log deviations — never edit the tag. A result a stranger cannot reconstruct is not yet a result.
+:::
+
+::: notes
+To summarize part eight, and the lab: you commit the pre-analysis plan as its own clean commit and tag it pap-filed with an annotated tag, which stores the date. Git's hash chain makes that timestamp unbreakable — anyone can verify the plan existed before your confirmatory results. The order of operations seals it: tag first, run confirmatory tests only after, and log every deviation, dated, rather than editing the tag. You now have a repository that is reproducible as a repository — a sensible layout, a pinned environment, a README and data cards, a verified git-ignore, and an immutable plan. The habit underneath is the one this lab exists to install: a result a stranger cannot reconstruct is not yet a result. Keep committing into it.
+:::

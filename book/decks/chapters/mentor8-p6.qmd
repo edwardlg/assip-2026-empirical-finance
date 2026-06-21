@@ -1,0 +1,55 @@
+---
+date: "2026-08-10"
+---
+
+## Stealing the Interpretation, and Your Defense Brief
+
+- Part 6 — the interpretation-stealing alternative and your defense brief
+
+::: notes
+Welcome back to Mentor Session eight, part six of six — the last part of the last mentor session. In part five we worked the disclosure paper through measurement and selection. Now we face the alternative explanation that steals the interpretation, write the defense brief that goes with you into Assessment eight and the symposium, and close the whole arc that started eight weeks ago with an eight-percent average.
+:::
+
+## The Alternative That Steals Your Interpretation
+
+- *"It's not politics — it's risk tolerance. You relabeled risk aversion."*
+- More dangerous than robustness: it grants your number, steals your *meaning*
+- The answer's shape: find where the two stories *predict differently*
+- Selection can't be killed with observational data — claim the **robust association**
+
+::: notes
+Now the alternative explanation, imagined at the revise-and-resubmit stage: "this isn't about politics at all — it's risk tolerance. Conservative-leaning executives are simply more risk-averse, and risk-averse managers disclose differently. You relabeled risk aversion as politics." That is more dangerous than a robustness complaint precisely because it doesn't attack the design — it grants your number and steals your interpretation. The convincing answer has the shape from our rule: find a place where "it's politics" and "it's just risk aversion" make different predictions, and let the data choose. And tie it to honesty — selection can rarely be killed completely with observational data, so the most a defensible version should claim is a robust association that survives the obvious selection stories, not a clean causal sweep. Claiming the second honestly is stronger than overclaiming the first.
+:::
+
+## Now Write Your Defense Brief
+
+- Anticipate the **three hardest questions** about *your* result
+- Four lines each: the question, its family, the four-beat answer, the residual
+- For the genuinely fatal one: write your **retreat position**
+- The residual stated plainly gets you believed *more*, not less
+
+::: notes
+So here is the reflection prompt, the one that goes with you into Assessment eight. Write your defense brief: open your Chapter seven-point-five threats table, your robustness results, and your one-click packet, and anticipate the three hardest questions a referee will ask about your own result. For each, write four lines — the question phrased the way a hostile, intelligent reader would actually say it; the classification, identification or robustness or alternative; the drafted answer in the four-beat shape; and the residual concern you cannot fully rule out. Then, only for whichever question is genuinely fatal if the attacker is right, write your retreat position — the honest descriptive claim that survives even if you lose the point. The author who writes "here is the trait I still can't fully separate out" gets believed more than the one who claims a clean sweep.
+:::
+
+## The Defense Is Graded, Not the Cleverness
+
+- Assessment eight grades the *defense*, not the cleverness
+- In the eight-minute talk, the eight minutes are the easy part
+- The question period is where the result is judged
+- The questions are your own threats-table rows, fired back at you
+
+::: notes
+One reminder about how this is scored. Your capstone is graded on the defense, not the cleverness — that is Assessment eight. In the eight-minute talk, the eight minutes are the easy part; the question period is where the result is actually judged. And here is the reassuring part: the questions are not a mystery. They are your own threats-table rows, fired back at you. If you did the work in Chapter seven-point-five, you already wrote the questions. The reflection prompt makes you draft the answers before the conference, when you are calm, instead of inventing them under pressure in front of a roving photographer from Mason News. Bring the brief to your defense and read your own script back.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The two sentences this camp existed for: *"What is the single best reason, right now, not to believe my result — and what did I do about it?"* and *"Here is what I found, here is exactly why you should believe it, and here is the one command that lets you check me."* Write both honestly and you are a researcher who can defend a result.
+:::
+
+::: notes
+This closes Mentor Session eight and the whole arc that started with an eight-percent average. Close your brief with the two sentences that are the point of eight weeks. The first is the question I will actually ask you in your defense, so have the answer ready: what is the single best reason, right now, not to believe your result — and what did you do about it? The second is the sentence this camp existed to let you say truthfully, the one that turns a claim into a result: here is what I found, here is exactly why you should believe it, and here is the one command that lets you check me. If you can write both sentences honestly, you are not a student who took a finance course. You are a researcher who can defend a result. Bring your brief to the symposium on August twelfth. Go defend it.
+:::

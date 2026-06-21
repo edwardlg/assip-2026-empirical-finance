@@ -1,0 +1,44 @@
+---
+date: "2026-07-27"
+---
+
+## What's Vulnerable — Pushing Back Like a Referee
+
+- Part 6 — push back like a referee; find the soft spots
+
+::: notes
+Welcome back to Chapter six-point-four, part six of seven. In part five we gave each paper credit for its one good idea — the formula-priced benchmark, and the found race-blind counterfactual. Now we do the other half of careful reading: push back the way a referee will, and find the soft spots Mentor Four promised would be attacked first. There are four, and they come in two pairs — two bias traps, then two questions about what the result even means and how far it travels.
+:::
+
+## The Two Bias Traps
+
+- **Omitted creditworthiness** — soft risk correlated with race biases the gap **up**
+- BHR answer this partly, but a near-complete file is still a **bound**
+- **Over-controlling** — a control on the discrimination pathway biases it **down**
+- Confounder I should hold fixed, or channel I should not?
+
+::: notes
+The first soft spot is omitted creditworthiness, the perennial threat. For Bartlett et al., the residual rate gap is discrimination only if the GSE inputs capture all legitimate risk. If lenders price on a soft, unobserved risk signal correlated with race, part of the premium is real risk, and the coefficient is biased upward — Week-Two omitted-variable bias, in the direction that flatters a discrimination finding. B-H-R partly answer this — it is their whole point — but cannot fully escape it: even a near-complete file omits the soft information a human underwriter gleans, so their residual is still a bound, not a clean causal effect. The mirror-image danger is over-controlling. If either paper conditions on a variable that lies on the discrimination pathway — a steered product type, an internal risk grade that itself encodes bias — the race coefficient shrinks for the wrong reason and understates discrimination. The honest reader checks every control and asks: confounder I should hold fixed, or channel I should not?
+:::
+
+## Definitions and Reach
+
+- **Disparate treatment** vs **disparate impact** — different legal questions
+- A score shaped by past inequity may be a **channel**, not a clean control
+- **External validity:** the formula-priced segment may be the *least* biased
+- Magnitudes are "**of their era**"; the qualitative lessons travel
+
+::: notes
+Two more vulnerabilities. First, definitional issues in the word discrimination. B-H-R's race-blind benchmark measures disparate treatment — a different rule applied to the same inputs. But fair-lending law also recognizes disparate impact: a facially neutral rule that produces worse outcomes for a protected group can be unlawful if not justified by business necessity. A small residual after conditioning on the score is reassuring about disparate treatment and says little about disparate impact — and a credit score shaped by historical inequities may be a channel, not a clean control. The two papers can both be right and still disagree about whether the market is fair, because they answer different legal questions. Second, external validity. Bartlett et al.'s FinTech contrast is tied to particular lenders, products and years; the conforming, formula-priced segment is the cleanest part of the market and may be the least discriminatory. Jumbo, non-conforming and subprime segments, where pricing is more discretionary, could look worse. Both papers' magnitudes should be read as of their era, not as constants. The qualitative lessons travel; the precise basis points and percentage-point gaps do not.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Four soft spots: omitted soft risk (biases **up**), over-controlling (biases **down**), disparate **treatment** versus **impact**, and era-bound external validity. Both papers can be right and still disagree on whether the market is "fair." Next: **replicate it yourself** on HMDA.
+:::
+
+::: notes
+To summarize part six: the vulnerabilities are symmetric and worth naming precisely. Omitted soft risk biases the race gap up, over-controlling on a discrimination channel biases it down, the treatment-versus-impact distinction means both papers can be right and still disagree about whether the market is fair, and every magnitude is bound to its era and its cleanest market segment. A careful referee presses on all four. In part seven, the final part, we stop reading and start building: three replication exercises on public disclosure data that rebuild the spirit of both papers, and the lab where Maya confronts the missing credit score line by line.
+:::

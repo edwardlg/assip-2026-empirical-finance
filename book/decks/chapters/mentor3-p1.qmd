@@ -1,0 +1,60 @@
+---
+date: "2026-07-06"
+---
+
+## Natural Experiments: Finding the Lever Nature Pulled
+
+**Learning objectives — by the end you can:**
+
+- Recognize a natural experiment in the historical record
+- Argue as-if-random assignment, not just compute it
+- State and stress-test the exclusion restriction
+- Name the complier population your design measures
+
+::: notes
+Welcome to Week Three, Mentor Session three, part one of five. This week you learned the framework that organizes all of causal inference — potential outcomes, the selection-bias term that contaminates the easy comparison, and the four designs that chase it down: matching, weighting, and the one we live inside today, instrumental variables. Chapter three-point-four taught you that an instrument is a lever that shoves the treatment around for reasons unrelated to the confounder. Today we ask where these levers actually come from. You almost never get to flip the coin yourself, so the empiricist's real craft is finding the coin someone else already flipped. That is a natural experiment, and over the next few minutes we frame what makes one credible.
+:::
+
+## You Rarely Flip the Coin Yourself
+
+- Most finance questions **cannot** be randomized
+- Ethics, cost, law — or the event already happened
+- You can't assign firms to short-sale constraints, families to debt
+- The world sometimes runs the experiment **for** you
+
+::: notes
+Start with the hard fact about our field. Most of the questions we care about cannot be settled by a randomized trial. You cannot ethically assign families to take on crushing debt. You cannot afford to randomize which countries suffer a financial crisis. You cannot legally force half the market's firms to face short-sale constraints while the other half goes free. And very often the event you care about already happened — it is sitting in the historical record, finished, with no coin in sight. So the laboratory ideal — flip a coin, assign treatment, compare — is usually off the table from the start. But here is the saving grace: every so often, some force out in the world runs the experiment for you, without asking your permission.
+:::
+
+## What a Natural Experiment Is
+
+- A real-world force assigns treatment **as-if at random**
+- A regulator, a law, a weather pattern, a calendar rule
+- It behaves like a randomized trial — though nobody ran one
+- The craft: **recognize** the lever and argue it is clean
+
+::: notes
+A natural experiment is a piece of the real world that behaves like a randomized trial even though no researcher ran one. Some force outside the system — a legislature passing a law, a regulator launching a pilot program, a weather pattern, a quirk of a calendar rule — assigned a treatment to some units and not to others. And it did so, you will argue, in a way unrelated to the things that would otherwise confound your comparison. Notice the verb: you will argue. The statistics here are the easy part. The hard part is first recognizing that a lever exists in the messy historical record, and then building the case that the lever is clean. That case is what separates a convincing natural experiment from wishful thinking.
+:::
+
+## The Statistics Are the Easy Part
+
+- "As-if random" is the entire claim — everything rests on it
+- A credible design defends **three things** in plain language
+- As-good-as-random assignment, then exclusion, then compliers
+- Argue, don't just compute — the design *is* the finding
+
+::: notes
+The entire value of the design rests on one phrase: as-if random. If that claim holds, the comparison between treated and control units is clean, and the coefficient you compute is causal. If it fails, no amount of careful regression saves you. So a credible natural experiment is one where you can defend three things in plain language, out loud, to a skeptic. First, that assignment was as good as random. Second, the exclusion restriction — that the assignment reaches the outcome only through the treatment. Third, an honest account of the complier population — whose effect you actually measured. We will take these three in order over the next three parts. The lesson to carry: in a natural experiment, the design is the finding, and the coefficient is just what falls out once the lever is shown to be clean.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **natural experiment** is a real-world force — a law, a regulator, a weather pattern — that assigned treatment **as-if at random**. Its whole value rests on that claim, defended in plain language across **three** pillars. Next: the first pillar, as-good-as-random assignment.
+:::
+
+::: notes
+To summarize part one: a natural experiment is a slice of the real world that behaves like a randomized trial, because some outside force — a law, a regulator, an accident of geography or timing — assigned treatment to some units and not others. The whole design lives or dies on the as-if-random claim, which you defend, not compute, across three pillars: as-good-as-random assignment, the exclusion restriction, and the complier population. In part two we take the first pillar head on. We will see how it borrows the selection-bias logic from Chapter three-point-one, why randomization zeroes that villain, and how a natural experiment makes the same bet without ever flipping a coin — then checks itself with balance.
+:::

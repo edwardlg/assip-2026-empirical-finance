@@ -1,0 +1,45 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Sam's Beta, Computed by Hand
+
+- Part 7 — inverting by hand to recover Sam's beta
+
+::: notes
+Welcome back to Chapter two-point-one, part seven of eight. Over the last six parts we built the whole least-squares machine — stacking the data, minimizing the squared residuals, deriving the normal equations by calculus and by geometry, solving for beta-hat, and naming the hat matrix and residual maker. Now we cash it out on Sam's four trading days: we invert the matrices by hand and recover Sam's beta.
+:::
+
+## Building $\mathbf{X}'\mathbf{X}$ and $\mathbf{X}'\mathbf{y}$
+
+- $(1,1)$ = sum of ones squared = $4$ (just $N$)
+- Off-diagonal = $-2+0+1+1 = 0$
+- $(2,2)$ = sum of squared market returns $= 6$
+$$\mathbf{X}'\mathbf{X} = \begin{pmatrix} 4 & 0 \\ 0 & 6 \end{pmatrix},\qquad \mathbf{X}'\mathbf{y} = \begin{pmatrix} 4 \\ 7 \end{pmatrix}$$
+
+::: notes
+Time to cash everything out on Sam's four days. The design matrix X has a column of four ones and a market column of minus two, zero, one, one; the outcome y is minus one, zero, three, two. First build X-transpose-X. The one-one entry is the sum of squares of the ones column — four, which is just N. The off-diagonal is the sum of the market returns, which is zero. The two-two entry is the sum of squared market returns — four plus zero plus one plus one equals six. So X-transpose-X is the diagonal matrix with four and six on its diagonal. It came out diagonal as a small gift: the market returns sum to zero, making the ones column and the market column orthogonal in this sample. Next, X-transpose-y. The first entry dots the ones column with y: minus one plus zero plus three plus two equals four. The second dots the market column with y: two plus zero plus three plus two, equals seven. So X-transpose-y is four on top, seven on the bottom.
+:::
+
+## Recovering Sam's Beta
+
+- Invert diagonal entrywise: $(\mathbf{X}'\mathbf{X})^{-1} = \begin{pmatrix} 1/4 & 0 \\ 0 & 1/6 \end{pmatrix}$
+$$\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y} = \begin{pmatrix} 1 \\ 7/6 \end{pmatrix} \approx \begin{pmatrix} 1.000 \\ 1.167 \end{pmatrix}$$
+- $\hat\beta_0 = 1$ baseline · $\hat\beta_1 = 7/6 \approx 1.17$ = Sam's beta
+- Beta above $1$: the stock **amplifies** market moves
+
+::: notes
+Inverting a diagonal matrix just inverts each diagonal entry, so the inverse of X-transpose-X is diagonal with one-quarter and one-sixth. Multiply it by X-transpose-y: one-quarter times four is one, and one-sixth times seven is seven-sixths. So beta-hat is one on top and seven-sixths on the bottom, approximately one-point-zero and one-point-one-six-seven. That means beta-zero-hat equals one and beta-one-hat equals seven-sixths, about one-point-one-seven. Sam's estimated beta is about one-point-one-seven: when the market rises one percent, his stock rises about one-point-one-seven percent on average over these four days, plus a one percent baseline that has nothing to do with the market. A beta above one means the stock amplifies market moves — consistent with the high-octane, momentum-flavored names Sam likes.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+On Sam's four days, $\hat{\boldsymbol\beta} = (1,\ 7/6)$ — a baseline of $1$ and a beta of about $1.17$, so the stock amplifies market moves. Next we verify the orthogonality the geometry promised, then look ahead.
+:::
+
+::: notes
+To summarize part seven: we built X-transpose-X and X-transpose-y from Sam's four days, inverted by hand, and recovered beta-hat equals one and seven-sixths — a baseline of one and a beta of about one-point-one-seven, meaning his stock amplifies market moves. In part eight, the finale, we verify the two orthogonality identities the geometry promised — residuals summing to zero and perpendicular to the market — and then point ahead to chapter two-point-two and the lab.
+:::

@@ -1,0 +1,47 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## Feasibility — What You Can Actually Finish
+
+- Part 7 — feasibility: what you can actually finish
+
+::: notes
+Welcome back to Chapter seven-point-one, part seven of ten. In part six we named the three designs — cutoff, dated policy, timestamped event — and the honest descriptive out. Now we hit the filter students always skip and then regret: feasibility. An idea can be sharp, consequential, novel, and well-identified, and still be impossible for you to finish now. Feasibility is not a lack of ambition; it is the discipline of matching scope to the resources you actually have — five weeks, a laptop, free or program-provided data, and an AI co-pilot whose limits you learned in Chapter six-point-five. Four constraints bind.
+:::
+
+## Data Access — The First Project-Killer
+
+- Ask before you fall in love: *can I get this data, legally, free, this week?*
+- Open today: HMDA, NOAA, FEMA, FRED, PatentsView, on-chain APIs, `yfinance`
+- Licensed, GMU-only: CRSP, Compustat, Bloomberg — read-only on Hopper/WRDS
+- Some data you imagine exists — but doesn't, or is paywalled, or too slow
+- Feasible projects start from data you can hold by the end of Ch 7.2
+
+::: notes
+First constraint: data access — the most common project-killer. Before you fall in love with a question, ask the unglamorous question: can I actually get the data, legally, for free or through the program, in a usable form, this week? Some data is genuinely open and downloadable today — HMDA loan records, NOAA storm events, FEMA disaster declarations, FRED macro series, USPTO PatentsView, on-chain data via public APIs, daily prices via yfinance. Some is licensed and lives only on GMU infrastructure — CRSP, Compustat, Bloomberg — which per CONVENTIONS section five you may use read-only on Hopper or WRDS, never copied off. And some data you imagine exists but does not, or sits behind a paywall, or requires an approval process longer than the whole camp. A feasible project starts from data you can have in hand by the end of Chapter seven-point-two, not data you are hoping to find.
+:::
+
+## Scope, Time, and Your Own Skills
+
+- **Scope:** answer *one* question. Every "and" multiplies what can break
+- Find the *smallest* still-interesting version; extend later, never rescue
+- **Time:** five weeks, a third eaten by acquiring and cleaning
+- Budget backward from the presentation — lock the question ~now
+- **Skills:** a clean DiD you understand beats a fragile model you half-do
+
+::: notes
+Three more constraints. Scope: a first project should answer one question, not five. The beginner's instinct is to widen — "and I'll check it by firm size, and across countries, and over three decades." Each "and" multiplies the data you must clean and the ways the analysis can break. The professional instinct is the opposite: find the smallest version of the question that is still interesting, answer that cleanly, and only then add. You can always extend a tight project; you can rarely rescue a sprawling one. Time: five weeks is short, and a third of it goes to acquiring and cleaning data — always more than you expect. Budget backward from the presentation: results a week before, analysis the week before that, a clean dataset before that, which leaves about a week from today to lock the question and start pulling data. And everything must be reproducible — every snippet runs fresh, secrets via environment variables, licensed data stays put. Finally, your own skills: be honest about the gap between a method's elegance and your ability to execute it under time pressure. A clean difference-in-differences you fully understand beats a fragile structural model you half-understand, because in Phase Two someone will ask.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Feasibility binds on four fronts: **data you can actually get this week**, **scope tight enough for one clean question**, a **five-week clock**, and **your own honestly-assessed skills**. Budget backward and lock the question now. Next: the fast literature scan, with the AI on a leash.
+:::
+
+::: notes
+To summarize part seven: feasibility is the filter students skip and regret. It binds on four fronts — data you can legally get this week, scope tight enough to answer one question cleanly, a five-week clock a third of which goes to cleaning, and your own honestly-assessed skills. Budget backward from the presentation and lock the question now. In part eight we cover the fast literature scan that answers "what's new" in hours rather than weeks, and how to use the AI co-pilot for it while keeping the leash firmly in hand.
+:::

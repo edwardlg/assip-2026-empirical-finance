@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Tables That Stand Alone and a Worked Intro
+
+- Part 7 — stand-alone tables and a worked intro skeleton
+
+::: notes
+Welcome back to Writing the Empirical Paper, part seven of seven. In part six we finished the argument with robustness, conclusion, and the calibrated-verb discipline. Now we close with two things: why your tables must stand alone, and a worked introduction that assembles every move into five paragraphs. Then we hand off to the notebook that builds your tables.
+:::
+
+## Tables Are Read First — Make Them Stand Alone
+
+- Referees read tables before they read prose
+- Your main table must be intelligible without the surrounding text
+- Informative title; complete notes defining sample and symbols
+- Standard errors named; significance stars defined; sensible digits
+- The full binding standard lives in the style-guide appendix
+
+::: notes
+Referees read tables before they read prose. You learned this as a consumer in Week Five — go to the tables first, find the headline number, read the prose last and skeptically. As a producer, the implication is stark: your tables must stand alone, because they are read first and sometimes read only. A reader should understand your main table — the sample, what the coefficient means, what the stars and parenthetical numbers indicate, what fixed effects and clustering were used — without leaving the table. That self-containment comes from craft: an informative title; complete notes defining the sample, units, estimator, and every symbol; standard errors in parentheses beneath coefficients, with the flavor named; significance stars defined; a sensible number of significant digits; and rows disclosing fixed effects, controls, sample size, and within R squared. The full standard lives in the style-guide appendix — treat it as the binding spec, and do not hand-format tables; the notebook does it for you.
+:::
+
+## A Worked Intro Skeleton
+
+- **Hook**: a real fact and a tension, not "the literature"
+- **Contribution**: "first quasi-experimental estimate of..."
+- **"We find" preview**: number, magnitude, timing, robustness fact
+- **Positioning**: construct the gap by contrast
+- **Roadmap**: a few functional sentences, no drama
+
+::: notes
+Let us assemble the four moves into an introduction skeleton, for Maya's staggered difference-in-differences on whether state fair-lending examination programs reduced the county-level minority-white denial gap, pointed at the mortgage data Professor Gao and his coauthor used to study how same-sex couples were treated when they applied to borrow, published in the Proceedings of the National Academy of Sciences in twenty nineteen. The hook leads with a fact and a tension. The contribution claims the first-quasi-experimental-estimate job with a calibrated verb — exploiting plausibly exogenous variation, not "we prove discrimination." The we-find preview gives the number, the magnitude in human units, the timing, and the key robustness fact, then names the parallel-trends assumption it rests on. The positioning sentence constructs the gap by contrast between a descriptive literature and an audit-study literature that have not met. The roadmap is a few functional sentences. Every verb is bounded by the weakest assumption, so the prose never says "causes" without the conditional attached.
+:::
+
+## Your Turn: Build the Real Tables
+
+- Open the notebook on publication-quality tables and figures
+- It renders your frozen regression objects to LaTeX
+- Built to the style-guide standard, never retyped
+- Write your contribution, then stress-test it on a classmate
+- Audit your verbs; make your headline table stand alone
+
+::: notes
+For your turn, open the notebook on publication-quality tables and figures. It takes the regression objects you produced earlier — your fixed-effects results, your event-study coefficients — and renders them into a regression table and an event-study plot, both exported to LaTeX, both built to the style-guide standard. You will not hand-format a single table; the notebook does it reproducibly from the frozen results, so the tables can never silently drift from the numbers they report. Three reflection prompts: write your one-sentence contribution and stress-test it on a classmate who has not seen your project; audit your verbs against your weakest assumption, forcing each down to what the design permits; and cover the prose around your headline table to check it stands alone, fixing every gap in the notes. That is the discipline of this whole lesson.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Your **tables must stand alone** — read first, sometimes read only — built to the style-guide standard by the notebook, never retyped. The worked skeleton assembles all four intro moves with verbs bounded by the weakest assumption. Now build your real tables and write the introduction that promises.
+:::
+
+::: notes
+To close Writing the Empirical Paper: your tables are read first and must stand alone, built to the binding style-guide standard by the notebook rather than hand-formatted, so they never drift from the numbers. The worked skeleton showed all four introduction moves assembled in five paragraphs, every verb bounded by the weakest assumption. Remember the reveal that opened this lesson: a paper is an argument for why a reader should believe what you found. Now go build your publication-quality tables, write the one-sentence contribution, and assemble the introduction that promises a reader something worth their twenty minutes — and promises only what your design can deliver. Next in your work, this same discipline compresses into your poster panels and your abstract.
+:::

@@ -1,0 +1,44 @@
+---
+date: "2026-06-22"
+---
+
+## Measured Is Not Explained
+
+- Part 5 — passing the gates makes a number real, not explained
+
+::: notes
+Welcome back to Mentor Session One, part five of five. In part four we opened gate three and saw how the search that finds a number inflates the chance it is pure luck. Now we close the session with the most important caveat of all — passing all three gates tells you a number is real and large, but not why it is there — and then we name exactly what separates a finding from noise, and where the program heads next.
+:::
+
+## Measured Is Not Explained
+
+- All three gates passed: the number is **real and large**
+- They do **not** establish *why* — that is causation
+- Maya's loan-approval gap: real, harmful, not a fluke — but not yet *explained*
+- "Is this a finding?" $\neq$ "what does this finding mean?"
+
+::: notes
+There is a fourth thing lurking behind all three gates, and it is worth naming even though we formalize it later. Passing the gates tells you a number is real and large — it does not tell you why. When Maya finds a gap in loan-approval rates between two neighborhoods, walking that gap through the three gates establishes that it is too big to be noise, large enough to harm real borrowers, and not an artifact of trying many neighborhood pairings. It does not, by itself, establish why the gap exists. That is the work of identification, which the rest of the program is largely about. Keep the two questions separate. "Is this a finding?" and "what does this finding mean?" are different questions, and collapsing them is how confident people end up confidently wrong.
+:::
+
+## What Separates a Finding from Noise
+
+- Clears all three gates: a **magnitude**, an **interval**, a **search history**
+- Same machine — estimate minus null, over standard error
+- Runs on a mean today, on a slope $\hat\beta$ in Week 2
+- Research is the discipline of *not fooling yourself*
+
+::: notes
+So here is what actually separates a finding from noise. A finding clears all three gates and arrives carrying three things: a magnitude in the units of the problem, an honest interval around it, and a search history you can defend. And notice that the same machine runs at every gate — the estimate, minus the null, divided by the standard error. That one ratio runs on a sample mean today, and it will run on a regression slope, beta-hat, in Week Two, and on far more elaborate estimates after that. Richard Feynman put the whole job in one sentence: the first principle is that you must not fool yourself, and you are the easiest person to fool. Your job this summer is to produce numbers you would defend to a skeptic who actively tried to break them.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A number is a finding when it is too large to be noise, large enough to care about, and robust to the search — and even then it is *measured*, not yet *explained*. The same estimate-minus-null-over-standard-error machine carries forward to the regression slope $\hat\beta$ in Week 2.
+:::
+
+::: notes
+To summarize the whole session: a number is a finding when it is too large to be noise, large enough to care about, and robust to the search that produced it — and even then it is a measured finding, not yet an explained one. We walked Sam's eight basis points through gate one, saw the huge-N trap at gate two, and counted the forking paths at gate three. Keep the measured-versus-explained line bright. Next week the same machine — estimate, minus null, over standard error — moves from a sample mean to a regression slope, beta-hat, as we begin Week Two and the long work of identification: not just whether a number is a finding, but what it actually means. Bring the empirical claim you walked through the gates in your reflection, and we will argue a few of them aloud.
+:::

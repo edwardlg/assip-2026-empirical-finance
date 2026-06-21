@@ -1,0 +1,55 @@
+---
+date: "2026-06-22"
+---
+
+## Reading the Answer, and Proving the Law
+
+- Part 7 — interpret the 81/19 split, prove the law in three lines
+
+::: notes
+Welcome back to Chapter one-point-one, part seven of eight. In part six the decomposition came out exact on Sam's table. Now we do two things: read off what that split actually means for the strategy, then prove the Law of Total Variance in three honest lines of algebra — iterated expectations applied twice, with one term cancelling.
+:::
+
+## Reading The Answer
+
+- Within-regime risk $1.710$ — about $81\%$ of the total
+- Across-regime risk $0.400$ — about $19\%$
+- Perfect regime forecasting removes only a fifth
+- Most wobble is *inside* regimes — Sam needs another edge
+
+::: notes
+Read the answer. Of Sam's total daily return variance, two point one one, the within-regime risk is one point seven one — about eighty-one percent — and the across-regime risk is only zero point four — about nineteen percent. The blunt takeaway: even if Sam could perfectly forecast tomorrow's regime, only about a fifth of the portfolio's variance would go away. Most of the wobble is inside the regimes, not between them. A regime-timing overlay alone will not tame this strategy; Sam needs an edge that works within regimes too. That single sentence — actionable, quantitative, defensible — is what the Law of Total Variance buys you.
+:::
+
+## The Algebra: Two Pieces
+
+- Across: $\operatorname{Var}(\mathbb{E}[X\mid Y])=\mathbb{E}\big[(\mathbb{E}[X\mid Y])^2\big]-(\mathbb{E}[X])^2$
+- Within: $\mathbb{E}[\operatorname{Var}(X\mid Y)]=\mathbb{E}[X^2]-\mathbb{E}\big[(\mathbb{E}[X\mid Y])^2\big]$
+- Both use iterated expectations to simplify
+- One shared middle term, opposite signs
+
+::: notes
+The proof is just iterated expectations applied twice, plus the definition of variance. Start with the across-regime term. Apply the variance identity — mean of the square minus square of the mean — to the random variable, the conditional expectation of X given Y. Its overall mean is the expectation of X by iterated expectations, so the across term is the expectation of the conditional mean squared, minus the expectation of X, all squared. Now the within-regime term. The conditional variance is the conditional mean of X squared minus the conditional mean squared. Take the outer expectation, and use iterated expectations again to turn the expectation of the conditional mean of X squared into simply the expectation of X squared. So the within term is the expectation of X squared minus the expectation of the conditional mean squared. Both terms share that middle quantity, with opposite signs.
+:::
+
+## The Cancellation Is The Law
+
+- Add: middle term appears $+$ once, $-$ once — cancels
+- $\mathbb{E}[\operatorname{Var}(X\mid Y)]+\operatorname{Var}(\mathbb{E}[X\mid Y])=\mathbb{E}[X^2]-(\mathbb{E}[X])^2$
+- $=\operatorname{Var}(X)\qquad\blacksquare$
+- Within "gives up" the term; across "claims" it
+
+::: notes
+Now add the two terms. The middle quantity — the expectation of the conditional mean squared — appears once with a plus and once with a minus, and cancels exactly. What survives is the expectation of X squared minus the expectation of X, squared, which is precisely the variance of X. That cancellation is the law. The within piece gives up the shared term and the across piece claims it; together they reconstruct the total variance with nothing left over. That is the entire proof — a beautiful, almost bookkeeping-level cancellation that nonetheless carries real meaning about where risk lives.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+For Sam, within-regime risk is $\approx 81\%$ and across only $\approx 19\%$ — regime timing alone removes just a fifth. The Law of Total Variance itself falls out of **iterated expectations applied twice**: one shared term cancels, leaving $\operatorname{Var}(X)$. Next: when interpretation goes wrong, and why these laws run everything.
+:::
+
+::: notes
+To summarize part seven: the reading is decisive — eighty-one percent of Sam's risk lives within regimes, only nineteen percent across, so regime timing alone removes just a fifth of the wobble. And the proof is iterated expectations applied twice, with one shared term cancelling to leave the variance of X. The within piece gives up that term and the across piece claims it, reassembling the total with nothing lost. In our final part, part eight, we flag the one place interpretation goes wrong, and step back to see why these two laws run everything downstream.
+:::

@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## Identification by Building the Truth
+
+- Part 2 — how Petersen manufactures a known-truth world via simulation
+
+::: notes
+Welcome back to Chapter five-point-four, part two of seven. In part one we framed the question — which standard-error method is correct in a finance panel — and noted that a methods paper can only be judged where the truth is known. Now we see how Petersen manufactures such a world. The word "identification" here means something unusual. In Weeks Three and Four, identification meant causal identification — that a coefficient measures a treatment effect rather than a correlation. Petersen's paper is not causal. There is no treatment, no counterfactual, no exclusion restriction. So what is being identified?
+:::
+
+## Petersen Identifies the Truth by Building It
+
+- This is a **Monte Carlo simulation study**
+- He sets the true $\beta$ and the true error correlation structure
+- Because he built the process, he **knows** the right answer
+- Then runs each candidate SE method on the simulated panels
+- Asks: does its reported SE match the **true** variability of $\hat\beta_1$?
+
+::: notes
+The answer is the cleverest move in the paper. Petersen identifies the truth by building it himself. This is a Monte Carlo simulation study. He generates artificial panels in which he sets the true beta and the true error correlation structure. Because he created the data-generating process, he knows the right answer with certainty — both the true coefficient and the true standard deviation of the estimate across repeated samples. He then runs each candidate method on these panels and asks: does its reported standard error match the true sampling variability? It is a controlled experiment transplanted into econometrics.
+:::
+
+## The Logic in One Breath
+
+- Generate $S$ independent panels from the **same** known process
+- On each, compute $\hat\beta_1$ and method M's estimated SE
+- **True SE** = the actual standard deviation of the $S$ estimates
+- **Average estimated SE** = the mean of method M's $\widehat{\text{se}}$
+- Correct method: the two **agree**. Biased: average sits below or above
+
+::: notes
+Here is the logic in one breath. Generate S independent panels from the same known process. On each, compute beta-one-hat and its estimated standard error under method M. Now compare two numbers. The true standard error is the actual standard deviation of your S estimates — computable directly, because you have many draws. The average estimated standard error is the mean of method M's reported error across those draws. If M is correct, the two agree. If biased, its average sits below the truth — overconfident — or above it — overcautious. You can also check coverage directly: across the S panels, what fraction of M's ninety-five percent intervals actually trapped the true beta? A correct method covers ninety-five percent; an overconfident one covers far less.
+:::
+
+## Three Correlation Structures
+
+- **Firm effect:** $\varepsilon_{it}$ correlated with itself over time; firms independent
+- A firm-specific $\gamma_i$ baked into every $\varepsilon_{it}$
+- **Time effect:** a common shock $\delta_t$ hits **all** firms in a period
+- Residuals correlated across firms within a period; independent over time
+- **Both, or neither:** he varies the relative sizes
+
+::: notes
+Petersen runs this under three correlation structures, which form the taxonomy the whole paper turns on. First, a firm effect: the residual of firm i is correlated with itself across time — a firm mispriced this year tends to be mispriced next year — but firms are independent of each other. Formally, a firm-specific component, gamma-i, is baked into every error term. Second, a time effect: a common shock hits all firms in a period — the whole market drops in two-thousand-eight — so residuals are correlated across firms within a period, but independent across periods. Here a time component, delta-t, is shared by all firms that period. Third, both or neither: he varies the relative size of the two components, including where one dominates and where they coexist.
+:::
+
+## The Regressor Matters Too
+
+- He also varies whether $x_{it}$ has a persistent **firm** component
+- Moulton logic: damage scales with within-cluster correlation of **errors** $\times$ **regressor**
+- If $x$ is pure noise within firm, even a strong firm effect barely bites
+- The bias bites only when **both** are persistent
+- That is exactly the corporate-finance case
+
+::: notes
+Crucially, he also varies whether the regressor x has a persistent firm component — because, recall the Moulton logic from Week Two, the damage from ignored correlation scales with the product of the within-cluster correlation of the errors and of the regressor. If x is pure noise within a firm, even a strong firm effect barely biases the OLS standard error. The bias bites only when both are persistent — exactly the corporate-finance case. To complete the argument, Petersen pairs the simulations with re-analysis of real finance panels — showing the lessons are not an artifact of toy data, but change real standard errors by the predicted amounts.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Petersen's identification is **simulation as proof**: build worlds where you set the true $\beta$ and the true error structure, then check whether each method's SE matches the **known** sampling variability of $\hat\beta_1$. He sweeps three structures — firm effect, time effect, both — and varies the regressor too. Next: the data, and how to read the tables column by column.
+:::
+
+::: notes
+To summarize part two: because you cannot settle "which standard error is right" by argument alone, Petersen builds worlds where the answer is known. He sets the true beta and error structure, generates many panels, and checks whether each method's reported standard error matches the true sampling variability and covers at the nominal rate. He sweeps three structures — firm, time, and both — and varies the regressor, because the bias only bites when both errors and regressor are persistent. In part three we turn to the data, deliberately fabricated, and the taxonomy that is your panel diagnostic.
+:::

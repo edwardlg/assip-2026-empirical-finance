@@ -1,0 +1,51 @@
+---
+date: "2026-08-03"
+---
+
+## Your Data, Reproducibly: The Repository Is the Deliverable
+
+**Learning objectives.** By the end you can:
+
+- Lay out a research repository from a template
+- Pin a conda environment that rebuilds anywhere
+- Verify `.gitignore` blocks licensed data and secrets
+- File the pre-analysis plan as a tagged commit
+
+::: notes
+Welcome to Week Seven, the Lab, part one of eight. This is where your project stops being a pile of notebooks on your laptop and becomes a research repository — a single, version-controlled folder a stranger could clone and understand. Over these eight parts we build that repository step by step: a sensible layout, a pinned environment, a README and data cards, a git-ignore that makes leaks impossible, and a pre-analysis plan tagged with an immutable timestamp. This opening part frames why the repository itself is your capstone deliverable.
+:::
+
+## Where Week Seven Has Been Pointing
+
+- Everything Week Seven built points to this lab
+- Chapter seven-point-two: pull data the same way every time
+- Chapter seven-point-three: date your pre-analysis plan
+- This lab builds the thing those chapters described
+- The repository you stand up today is your capstone
+
+::: notes
+Everything Week Seven has built points here. Chapter seven-point-two taught you to pull data so the same command, run a year from now, gives the same answer — pinned, cached, logged. Chapter seven-point-three taught you to write a pre-analysis plan, and insisted it only constrains you if you can date it, and named the mechanism: a tagged Git commit. This lab is where you actually build the thing those chapters described, and it is not a throwaway exercise. The repository you stand up today is your capstone deliverable. Weeks Seven and Eight both live inside it — the dataset build, the identification memo, the first-look regressions, and next week's full analysis all commit into this same repo. Get the scaffolding right now, and the rest of the camp is building on rock.
+:::
+
+## Reproducibility Is a Property of the Repository
+
+- A skeptic treats an unrepeatable analysis as an assertion
+- Reproducibility lives in the repository, not one script
+- The "result" here is operational, not statistical
+- Can a fresh clone reconstruct the environment?
+- Did the licensed bytes and secrets stay home?
+
+::: notes
+The discipline this lab drills is the one a referee, a replication team, or future-you cares about most: reproducibility is a property of the repository, not of any single script. A brilliant analysis whose data pull cannot be re-run, whose environment cannot be reconstructed, or whose pre-registration cannot be dated is, to a skeptic, just an assertion. We are going to make your project the opposite of an assertion. There is no synthetic-data simulation here and no estimator to recover. The result you are checking is operational: can a fresh clone of your repo, on a machine that has never seen your project, reconstruct the environment, read what the project does, and verify that the licensed bytes and the secrets never left your control? That is a yes-or-no you can actually test.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A result a stranger cannot reconstruct is not yet a result. This lab makes your project the opposite of an assertion: reproducibility becomes a property of the **repository** — and that repository is your capstone deliverable. Next: laying out the project from a sensible template.
+:::
+
+::: notes
+To summarize part one: this lab turns your project into a research repository, and that repository is your capstone deliverable — Weeks Seven and Eight both live inside it. The key idea is that reproducibility is a property of the repository, not of any single script, and the test is operational: can a fresh clone rebuild everything while the licensed data and secrets stay home? In part two we start building, laying out the project from a sensible template.
+:::

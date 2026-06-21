@@ -1,0 +1,71 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Panels, Petersen, and the Checklist
+
+- Part 8 — panels, Petersen's taxonomy, and the checklist
+
+::: notes
+Welcome back to When the Errors Misbehave, part eight of eight, the finale. In part seven we handled correlation across time with H-A-C. Now the hard case Maya and Priya live in — a panel, where both diseases can strike at once — Petersen's two-thousand-nine taxonomy, and the checklist that ties the lesson together.
+:::
+
+## The Panel Problem
+
+- A panel: many firms $i$ observed over many periods $t$
+- **Firm effect**: a firm's errors correlated across its years
+- **Time effect**: a market-wide shock hits all firms at once
+- Either or both can be present in $\boldsymbol\Omega$
+- Petersen (2009): a taxonomy, not a new estimator
+
+::: notes
+Now the hard case: a panel, where you observe many firms over many periods at once. A panel can have both diseases. Errors can be correlated within a firm across time — a firm effect: a firm mispriced this year tends to be mispriced next year. And errors can be correlated across firms within a period — a time effect: when the market drops, every firm's residual drops together. Which standard error do you use? Mitchell Petersen took this up in a now-canonical two-thousand-nine paper, after noticing finance papers used a chaos of incompatible methods, getting standard errors that differed by factors of two on the same data. His contribution was a clear taxonomy and simulations showing which approach is right when.
+:::
+
+## Petersen's Defaults
+
+- **Firm effect** dominates corporate panels and is most ignored
+- Fix: **cluster by firm** — White and Fama–MacBeth do not
+- **Time effect**: cluster by time, or absorb with time fixed effects
+- **Both present**: **two-way clustering** (Cameron–Gelbach–Miller, 2011)
+- Recipe: firm sandwich plus time sandwich minus White
+
+::: notes
+The headline findings, treat them as practical defaults. First, a persistent firm effect is, in Petersen's data, the dominant problem in corporate-finance panels, and the one most often ignored. The right tool is clustering by firm, letting each firm's errors be arbitrarily correlated across its years. White standard errors and Fama–MacBeth do not fix a firm effect and leave you overconfident. Second, a time effect — a shock hitting all firms in a period — is better handled by clustering by time, or absorbed by time fixed effects, a dummy for each period. Third, if both are present, use two-way clustering, from Cameron, Gelbach, and Miller, two thousand eleven. The recipe is elegant: compute the firm-clustered sandwich, add the time-clustered sandwich, and subtract the plain White sandwich so the overlap is not double-counted.
+:::
+
+## Diagnose, and Don't Confuse FE With Clustering
+
+- Cluster by firm, then by time — bigger move wins
+- Both move it a lot: you want two-way clustering
+- Fixed effects and clustering are **not** substitutes
+- FE removes a firm's average level; clustering handles leftover correlation
+- "I have firm FE, so I needn't cluster" is a costly error
+
+::: notes
+How do you tell which effect dominates? Petersen offers a diagnostic you can run yourself. Cluster by firm and note the standard error; then cluster by time. Whichever moves it more away from the naive White number points at the bigger source of correlation. If both move it a lot, you want two-way clustering. One subtlety: fixed effects and clustering are not substitutes. A firm fixed effect removes the firm's average level from both sides; clustering by firm handles correlation in the leftover residuals over time, which a fixed effect cannot touch because it is about co-movement, not means. You often want both. Saying "I have firm fixed effects, so I need not cluster" is a common and costly error.
+:::
+
+## The Mental Checklist
+
+- Variance differ across observations? Almost always — use **robust**
+- Grouped errors? **Cluster**, and count your clusters
+- Pure time series with serial correlation? **HAC / Newey–West**
+- Panel? Diagnose à la **Petersen**: firm, time, or both
+- It is just: what does $\boldsymbol\Omega$ look like?
+
+::: notes
+Here is the mental checklist. One: could the error variance differ across observations? In finance, essentially always — so never use classical standard errors as your final answer; use at least robust, or H-C-three when N is small. Two: are observations grouped with correlated errors inside a group? Then cluster on that group, and check you have enough clusters. Three: a pure time series with serial correlation? Use H-A-C, Newey–West. Four: a panel? Diagnose à la Petersen — firm effect, cluster by firm; time effect, time fixed effects or cluster by time; both, two-way cluster. The whole checklist is one question in plain clothes: what does Omega look like?
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Getting **beta hat** right and getting its **uncertainty** right are two separate jobs — this whole lesson was the second. Walk the checklist: robust always, cluster on groups, HAC on time series, Petersen's taxonomy on panels. A wrong standard error makes you wrongly *confident* — and that gets findings rejected, sometimes after they are published.
+:::
+
+::: notes
+To close: getting beta hat right and getting its uncertainty right are two separate jobs, and this chapter was about the second. Walk the checklist — robust always, cluster on groups, H-A-C on time series, Petersen on panels — and you are really just asking what Omega looks like. A biased estimator points at the wrong answer; a wrong standard error makes you wrongly confident. Both get a finding rejected. Only one gets it rejected after it has been published. Next, in the notebook, you turn these knobs yourself and watch the t-stat that lies become the t-stat that tells the truth.
+:::

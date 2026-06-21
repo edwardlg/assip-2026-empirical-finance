@@ -1,0 +1,58 @@
+---
+date: "2026-07-20"
+---
+
+## Replicating BDM in nb5.5
+
+- Part 7 — three exercises that rebuild BDM on your laptop
+
+::: notes
+Welcome back to Chapter five-point-five, part seven of seven, the last part. In part six we pushed back on BDM's cures. Now we turn the whole paper into code. These three exercises are scaffolded toward notebook five-point-five, the placebo-law simulation. You reproduce the spirit of the paper on a clean simulated panel, not the proprietary data, but the mechanism and the punchline are identical.
+:::
+
+## Exercise One: A False-Positive Rate
+
+- Simulate a state-year panel with serially correlated errors
+- Use an AR-one process; no true treatment effect
+- One thousand replications, each a random placebo law
+- Run two-way fixed effects with the *conventional* standard error
+- Record whether absolute t exceeds one point nine six
+
+::: notes
+Exercise one: reproduce a placebo difference-in-differences false-positive rate. Simulate a state-year panel with serially correlated within-state errors, for example an A-R-one process so this year's shock partly carries over to next year, and with no true treatment effect. In each of one thousand replications, assign a random placebo law to a random subset of states starting in a random year, run the two-way fixed-effects regression with the conventional standard error, and record whether the absolute t-statistic exceeds one point nine six. Report the empirical rejection rate. You should see it land far above zero point zero five. This is BDM's headline table, rebuilt on your laptop, and the moment the abstract worry becomes a number you measured yourself.
+:::
+
+## Exercise Two: Turn the Dials
+
+- Sweep the AR-one persistence from zero toward one
+- Separately sweep the number of years T, small to large
+- Plot placebo rejection rate against each
+- Zero persistence: rate near the honest five percent
+- As persistence and length grow, the rate climbs
+
+::: notes
+Exercise two: turn the dial on serial correlation and on panel length. Rerun exercise one sweeping the A-R-one persistence parameter from zero, meaning independent errors, up toward one, meaning highly persistent, and separately sweeping the number of years T from small to large. Plot the placebo rejection rate against each. At zero persistence the rate should sit near the honest five percent. As persistence and panel length grow, it should climb. This reproduces BDM's mechanism evidence and proves to yourself that serial correlation, not chance, is the culprit. You are not taking the paper's word for it; you are rebuilding the panel-length table with your own hands and watching the disease respond to the dial.
+:::
+
+## Exercise Three: Test the Cures
+
+- Fix a strongly serially correlated setting
+- Rerun with three fixes: cluster by state, block bootstrap, collapse
+- Tabulate four rejection rates side by side
+- Confirm each fix drags the rate toward five percent
+- Stretch: shrink the states, watch clustering over-reject again
+
+::: notes
+Exercise three: test the cures. Hold the data-generating process fixed at a strongly serially correlated setting and rerun the placebo experiment three more times, swapping in each fix: cluster the standard errors by state, block-bootstrap by resampling whole states, and collapse each state to a single pre and post average for the two-period comparison. Tabulate the four rejection rates side by side, the conventional plus three fixes. Confirm that each fix drags the rate back toward five percent. Then, as a stretch, shrink the number of states to a handful and watch the clustering fix start to over-reject again, rediscovering the few-clusters caveat from part six with your own simulation. That stretch is the whole week folding back on itself.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Open **nb5.5** (`notebooks/week-05/nb5.5-bdm-placebo-law.ipynb`): build a serially correlated panel, run the placebo experiment across standard-error flavors, and read the false-positive rate off your own output. Three referee questions follow you in — on sensitivity to the panel, whether the cure reaches few-cluster designs, and the size-versus-power cost of collapsing. That closes Week Five.
+:::
+
+::: notes
+To close part seven and the chapter: open notebook five-point-five, the BDM placebo-law simulation, where you build the serially correlated panel, run the placebo experiment across standard-error flavors, and read the false-positive rate off your own output rather than off a table in a two thousand four journal. Carry three referee questions in with you. First, how sensitive is the indictment to the panel's specific autocorrelation and length? Second, do clustering and the block bootstrap actually reach the few-treated-unit designs that need them most, or do they assume the easy case of many states? Third, when missing a real effect is costly, is collapsing to pre and post the right default, given that it buys size with power? That is Week Five.
+:::

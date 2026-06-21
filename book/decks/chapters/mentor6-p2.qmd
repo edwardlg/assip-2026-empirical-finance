@@ -1,0 +1,67 @@
+---
+date: "2026-07-27"
+---
+
+## From Transparent to Opaque — and How to Validate
+
+- Part 2 — rank the instruments, then validate out-of-sample
+
+::: notes
+Welcome back to Mentor Session six, part two of five. In part one we established that a text-derived number is a noisy proxy, not a fact, and behaves like a mismeasured regressor once it enters a model. Now we look at this week's three instruments, from most transparent to most opaque — and build the one shape validation always takes. The part-one reframing is liberating: text-as-data is the same measurement discipline you have practiced all camp, applied to a new sensor. What changes across instruments is not the discipline — it is how much of the instrument you can see.
+:::
+
+## Three Instruments, Increasing Opacity
+
+- **Loughran–McDonald** dictionary: rubric *is* a published word list
+- **Hoberg–Phillips** similarity: prose becomes geometry, a recomputable cosine
+- **LLM classifier**: rubric is your prompt plus an opaque model
+- Same discipline across all three — only the **burden of proof** changes
+
+::: notes
+Start with Loughran and McDonald, from Chapter six-point-three. Its rubric is a published word list anyone can inspect, so you see exactly why a filing scored as it did. When liability gets counted as gloom, that is a visible bug. Next, Hoberg and Phillips, from Chapter six-point-two: prose becomes geometry, and similarity is a cosine you can recompute yourself — a measurement paper, judged on better than what, at what. Finally, the LLM classifier from Chapter six-point-five: possibly more accurate, but definitely less transparent, because its rubric is your prompt plus an opaque model whose reasoning you cannot read. The discipline is identical across all three; only the opacity — and therefore the burden of proof — changes.
+:::
+
+## Less Transparency Raises the Bar
+
+- An LLM may be **more accurate** than a word list
+- It is far **less transparent** — you cannot read its reasoning
+- Less transparency *raises* the validation bar, it does not lower it
+- Transparency is a gift to a skeptical referee
+
+::: notes
+Here is the move people get exactly backwards. They reason that because the LLM is more accurate, it needs less scrutiny. The opposite holds. An LLM may be more accurate, but it is far less transparent: you cannot read its reasoning, so you cannot eyeball why a filing scored as it did. Less transparency raises the bar on validation; it does not lower it. The harder it is for a skeptic to check your instrument by inspection, the more you owe them in out-of-sample numbers — transparency is a gift you pay back in validation when you trade it for accuracy.
+:::
+
+## Validation Has One Non-Negotiable Shape
+
+- Build a **gold set**: a *random* sample you hand-label
+- **Split it** — hold out a test set you touch exactly once
+- Tuning against numbers you then report is **lying to yourself**
+- Report **precision and recall**, never bare accuracy
+
+::: notes
+And validation has one non-negotiable shape. First, build a gold set — a random sample of documents you label by hand, the closest thing to ground truth. It must be random; cherry-picked easy cases just flatter the instrument. Second, split it. Tune your prompt on a development set, and hold out a test set you do not look at while tuning — because tuning against numbers you then report is how you lie to yourself. Third, compute precision and recall on the held-out set. Precision asks: of the filings I labeled negative, how many really were? Recall asks: of the truly negative filings, how many did I catch? Those two numbers, on data the instrument never saw, are what you report.
+
+:::
+
+## The Ninety-Four-Percent Trap
+
+- Corpus is **imbalanced**: only ~6% of filings truly "negative"
+- A lazy "not-negative" labeler scores **94% accuracy**
+- ...while catching **zero** of the cases you care about
+- Ask for the *two* numbers — on the **held-out** documents
+
+::: notes
+Why never bare accuracy? Because financial text is almost always imbalanced. Suppose only about six percent of filings are truly negative. A lazy classifier that labels everything not-negative is right on the other ninety-four percent — so it scores ninety-four percent accuracy while catching zero of the cases you care about. The headline number is nearly worthless. If a classmate reports ninety-four percent accuracy and wants to drop those labels into a regression, the two numbers you ask for instead are precision and recall, on the held-out documents. Only after the instrument clears that bar, out of sample, do you earn the right to run it across the forty thousand documents you never hand-labeled.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The three instruments run from **transparent** (a published word list) to **opaque** (an LLM whose reasoning you cannot read), and less transparency *raises* the validation bar. Validation has one shape: build a **random gold set**, **split it**, and report **precision and recall** out-of-sample — never bare accuracy, which an imbalanced corpus makes a lie.
+:::
+
+::: notes
+To summarize: the three instruments differ not in discipline but in opacity, and opacity raises the burden of proof. Validation always has the same shape — a random gold set, a held-out split you touch once, and precision and recall reported out of sample, never bare accuracy, which an imbalanced corpus turns into a comfortable lie. In part three we name the three ways an AI instrument fools you — look-ahead leakage, prompt p-hacking, and irreproducibility — and the guardrail that stops each one.
+:::

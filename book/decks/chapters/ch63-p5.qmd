@@ -1,0 +1,70 @@
+---
+date: "2026-07-27"
+---
+
+## Reading the Paper in the Right Order
+
+- Part 5 — a table-by-table reading order for the paper
+
+::: notes
+Welcome back to Chapter six-point-three, part five of nine. In part four we covered the data and the public Master Dictionary. Now the reading plan. Do not read this paper front to back. Read the misclassification evidence first, because it is the whole point, then the validation horse race, then the construction summary and the weighting refinements. This part walks that order table by table.
+:::
+
+## First: The Misclassification Exhibit
+
+- Which Harvard-negative words appear in ten-Ks, how often
+- The most frequent: tax, cost, capital, liability
+- Also board, vice, crude, depreciation
+- No one calls these negative in a financial sentence
+- A large share of "negative" signal comes from benign words
+
+::: notes
+First, the word-misclassification exhibit. Find the table that shows which Harvard-negative words actually appear in ten-Ks and how often. This is the headline of the diagnosis. You are looking for the result that the most frequent negative words in filings, by the Harvard list, are words like tax, cost, capital, liability, board, vice, crude, and depreciation, words no one would call negative in a financial sentence. The number that carries the paper is the share of Harvard-flagged negativity that comes from such benign words, and it is a large fraction. Read this first and the rest of the paper is just consequences. If a large share of your negative signal is the word tax, your sentiment measure is mostly an accounting-density measure wearing a costume.
+:::
+
+## Second: The Construction Summary
+
+- Skim the table describing the finance-specific lists
+- How many words in negative, positive, uncertainty, litigious, modal
+- You do not need to memorize the counts
+- See that the categories are *finance-shaped*
+- Uncertainty and litigious are not psychology categories
+
+::: notes
+Second, the construction summary. Skim the table that describes the finance-specific lists: how many words are in the negative list, the positive list, and the uncertainty, litigious, and modal lists. You do not need to memorize counts. You need to see that the categories are finance-shaped. Uncertainty and litigious are not standard psychology categories; they exist because finance has lawsuits and forward-looking statements. The point of this table is qualitative: it shows the taxonomy was designed for disclosure, not borrowed from a psychology lab.
+:::
+
+## Third: The Validation Horse Race
+
+- Regress abnormal returns, volume, volatility on tone
+- Once with Harvard-negative, once with finance-negative
+- Read sign, magnitude, t-stat, and what is held fixed
+- Finance-negative shows the cleaner, more robust link
+- Harvard's apparent power *weakens* after the cleanup
+
+::: notes
+Third, the validation regressions, the horse race. Now the comparative tests: regressions of filing-period abnormal returns, trading volume, and return volatility on the tone score, run once with the Harvard-negative measure and once with the finance-negative measure, with the usual firm controls. Read these the way Week Five taught you to read a table: sign, magnitude, t-statistic, and what is being held fixed across columns. The pattern to look for is that the finance-negative measure shows a cleaner, more robust association with market reactions, more negative tone going with worse returns, higher volume, and higher volatility, and the apparent power of the Harvard measure weakens once you account for the misclassified words. The direction of the comparison matters more than the exact magnitudes, so do not quote coefficients from memory; read them off the paper.
+:::
+
+## Last: Robustness and Weighting
+
+- The paper explores **term weighting**
+- **tf–idf**: term frequency times inverse document frequency
+- Down-weights words in almost every filing
+- Up-weights words rare across filings, frequent in this one
+- *How* you count, not just *what*, affects the signal
+
+::: notes
+Last, the robustness and weighting tables. The paper also explores term weighting: instead of counting raw word frequencies, it weights words by how distinctive they are using a scheme called t-f-i-d-f, term frequency times inverse document frequency. That scheme down-weights words appearing in almost every filing and up-weights words that are rare across filings but frequent in this one. Read this last, as a refinement of the core message: how you count, not just what you count, affects the signal. This is also the seam that connects to Chapter six-point-two's text-similarity work and, eventually, to the dense vector representations of Chapter six-point-five.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Read **misclassification first** (tax, cost, liability dominate Harvard's "negative" count), then the **horse race** (finance-negative tracks returns, volume, and volatility more cleanly), then the **construction** and **tf–idf weighting** tables. *What* you count and *how* you count both shape the signal. Next: what is genuinely clever here.
+:::
+
+::: notes
+To summarize part five. Read the paper in this order. First the misclassification exhibit, where tax, cost, and liability dominate the Harvard negative count. Second the construction summary, to confirm the categories are finance-shaped. Third the validation horse race, where finance-negative tracks abnormal returns, volume, and volatility more cleanly and Harvard's apparent power weakens. Last the robustness and t-f-i-d-f weighting tables, which show that how you count, not just what you count, affects the signal. In part six we name what is genuinely clever about this paper, the moves you will reuse.
+:::

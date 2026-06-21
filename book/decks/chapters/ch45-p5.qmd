@@ -1,0 +1,46 @@
+---
+date: "2026-07-13"
+---
+
+## View I — It's the Shares (GPSS)
+
+- Part 5 — identification view one: exogeneity of the shares
+
+::: notes
+Welcome back to Chapter four-point-five, part five of ten. In part four we built the bank-lending version and saw that the count of shocks decides your strategy. Now the long-delayed question — why is the instrument valid? The first modern answer comes from Goldsmith-Pinkham, Sorkin and Swift, in twenty twenty, and it is the one that connects most directly to Chapter three-point-four. Their answer, in three words: it's the shares. We will see the reframing that makes the Bartik a recipe for combining many share-instruments, and the exogenous-shares assumption it leans on.
+:::
+
+## The Bartik Is a Recipe Over Share-Instruments
+
+- In one period the shifts $g_j$ are **fixed numbers**, applied everywhere
+- The only thing differing across regions is the **share vector**
+- So the Bartik is the **shares, weighted by the shifts**
+- 2SLS with $B_r$ = over-identified 2SLS using each share $s_{rj}$ as an instrument
+- The shifts merely supply the **weights**
+
+::: notes
+Look again at the construction and ask: as we move from region to region, what is actually varying? In a given period the national shifts are fixed numbers — the same auto shock, the same finance shock, applied everywhere. The only thing that differs across regions is the vector of shares. So from a cross-sectional standpoint, the Bartik instrument is the shares, weighted by the shifts. The shifts are not the source of cross-regional variation; they are the weights in a recipe that mixes many share-based instruments into one. Goldsmith-Pinkham, Sorkin and Swift show, with a little algebra, that running two-stage least squares with the single Bartik instrument is numerically identical to running an over-identified estimation that uses each industry's baseline share as a separate instrument, where the national shifts supply the particular weights placed on each share. Whatever makes the Bartik valid must therefore be a statement about the shares.
+:::
+
+## The Identifying Assumption: Exogenous Shares
+
+- Valid instrument needs **exclusion** — uncorrelated with the error
+- If the operative instruments are shares, the burden falls on shares:
+$$\mathbb{E}[\varepsilon_r \mid s_{r1}, \dots, s_{rJ}] = 0$$
+- Initial industrial composition **as-good-as-randomly assigned**
+- Shifts get the lighter job: just be **relevant** (the first stage)
+
+::: notes
+Here is the payoff. By Chapter three-point-four, an instrument is valid only if it satisfies the exclusion restriction — uncorrelated with the structural error. If the operative instruments are the shares, then the identifying assumption is about the shares: each baseline industry share is uncorrelated with the region-level error. Formally, the expected value of the error epsilon-sub-r given all the shares is zero, conditional on controls. In words: a region's initial industrial composition is as-good-as-randomly assigned with respect to whatever else drives the outcome. The shifts get a much lighter job — they need to be relevant, meaning industries that grew nationally must actually move regional employment, the first stage. But the exogeneity burden falls entirely on the shares. The national auto cycle is allowed to be endogenous to all sorts of macro forces; what must be exogenous is that Rustville started out sixty percent auto.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**GPSS reframing:** the Bartik is one linear combination of $J$ share-instruments, with the shifts as weights — so validity is a statement about the *shares*. The identifying assumption: $\mathbb{E}[\varepsilon_r\mid s_{r1},\dots,s_{rJ}]=0$, the initial industry mix is as-good-as-random. Next: when that's credible, and the Rotemberg-weight diagnostic.
+:::
+
+::: notes
+To summarize part five: Goldsmith-Pinkham, Sorkin and Swift reframe the Bartik as a recipe that combines many share-instruments, weighted by the shifts. Running two-stage least squares with the single Bartik is numerically identical to using each industry's share as its own instrument. So whatever makes the instrument valid must be a statement about the shares, and the identifying assumption is exactly that: each baseline industry share is uncorrelated with the region-level error — the initial industrial composition is as-good-as-randomly assigned. The shifts only need to be relevant. In part six we ask when exogenous shares is actually credible, where it fails for Maya, and the Rotemberg-weight diagnostic that tells you which shares to defend hardest.
+:::

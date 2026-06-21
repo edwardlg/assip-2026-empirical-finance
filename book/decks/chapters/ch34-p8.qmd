@@ -1,0 +1,56 @@
+---
+date: "2026-07-06"
+---
+
+## The LATE Theorem and the IV Table
+
+- Part 8 — the LATE theorem and reading an IV table
+
+::: notes
+Welcome back to Chapter three-point-four, part eight of ten. In part seven we sorted everyone into four types and saw that the instrument can only see compliers. Now we rule out the troublesome defiers, state the theorem that names exactly what I-V estimates, and confront its consequence. Then we install a reading habit — the three regressions every honest I-V table must report.
+:::
+
+## Monotonicity and the LATE Theorem
+
+- **Monotonicity**: $D_i(1) \geq D_i(0)$ for all $i$ — **no defiers**
+- The mailer can only raise, never lower, take-up
+- Then the IV estimand equals:
+$$\mathbb{E}\!\left[\,Y_i(1) - Y_i(0) \mid \text{complier}\,\right] \equiv \text{LATE}$$
+- Maya's \$300 = the effect on **fence-sitters**
+
+::: notes
+There is one loose end: defiers. If some people are pushed into treatment while others are pushed out, their effects enter the numerator with opposite signs and can cancel or even reverse the estimate. To rule this out, Imbens and Angrist impose monotonicity: the instrument moves everyone in the same direction, or not at all. Formally, D-of-one is greater than or equal to D-of-zero for every person — the mailer can only increase, or leave unchanged, the chance of taking the course. Monotonicity says: no defiers. It is usually mild and defensible, but like exclusion it is an assumption about behavior, not a fact you can fully check. With relevance, exclusion, and monotonicity in hand, the Imbens-Angrist theorem delivers the punchline: the I-V estimand equals the average treatment effect among compliers — the expected value of Y-of-one minus Y-of-zero, given the person is a complier. That is the LATE. Maya's three hundred dollars is the effect of the course on the fence-sitters who took it because they were mailed.
+:::
+
+## LATE, Not ATE
+
+- **ATE** averages over everyone; **ATT** over the treated
+- These differ from LATE when effects vary across types
+- First stage $0.30$ = the **complier share** (30%)
+- Two valid instruments $\to$ two different, both-correct LATEs
+
+::: notes
+This is why "LATE, not A-T-E" is a mantra in modern applied work. The average treatment effect, A-T-E, averages over everyone; the average effect on the treated, A-T-T, here is dominated by always-takers. Both generally differ from the LATE whenever the treatment effect varies across the four types — which it almost always does. A reassurance: the complier share is recoverable — the first stage, zero-point-three-zero, says thirty percent of Maya's population are compliers. But the deeper warning is this: two valid instruments for the same treatment can yield two different LATEs, because they move different sets of compliers. So when you read an I-V result, the honest question is never just "is the instrument valid?" but also "who are the compliers, and do I care about them?" An estimate can be perfectly identified and still answer a question you did not ask — if Maya wants the effect on never-takers, to argue for mandatory education, LATE is silent.
+:::
+
+## The Anatomy of an IV Table
+
+- **First stage**: $D$ on $Z$ — establishes relevance
+- **Reduced form**: $Y$ on $Z$ — instrument's total effect on $Y$
+- **2SLS**: the ratio = reduced form / first stage
+- Null reduced form $\Rightarrow$ your IV rests on **nothing**
+
+::: notes
+Before weak instruments, install a habit. Every honest I-V analysis reports three regressions read as a set. First, the first stage — D on Z and controls — which establishes relevance; you want a large, precise coefficient on Z. Second, the reduced form — Y on Z and controls — the instrument's total effect on the outcome. Crucially, if the reduced form is a flat zero, your I-V estimate is built on nothing — a significant two-S-L-S number coming out of a null reduced form is a red flag. Third, the two-S-L-S estimate, which in the just-identified binary case is exactly the reduced form divided by the first stage. If a colleague shows you a two-S-L-S table without the first stage and reduced form, ask for them — they are where the design lives.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Under **monotonicity** (no defiers), the Imbens–Angrist theorem says IV identifies the **LATE** — the complier effect — not the ATE or ATT. Always read the **first stage, reduced form, and 2SLS** as a set; a null reduced form means your IV rests on nothing. Next: what breaks when the instrument is **weak**.
+:::
+
+::: notes
+To summarize part eight: under monotonicity — no defiers — the Imbens-Angrist theorem says instrumental variables identifies the local average treatment effect, the complier effect, not the average over everyone or over the treated. Two different valid instruments can give two different, both-correct LATEs, because they move different compliers. And always read the three regressions as a set — first stage, reduced form, and two-S-L-S — because a null reduced form means your I-V rests on nothing. We have assumed throughout that the first stage is healthy. In part nine we ask what happens when it is not — when the lever barely moves — and meet the weak-instrument problem, which can make I-V worse than the O-L-S it was meant to fix.
+:::

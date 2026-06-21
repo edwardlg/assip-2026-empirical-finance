@@ -1,0 +1,70 @@
+---
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+## The Naive Estimator and Selection Bias
+
+- Part 3 — decompose Maya's 21 points into effect plus bias
+
+::: notes
+Welcome back to Chapter three-point-one, part three of five. In part two we proved we can never see an individual effect, so we chase averages, and we named three estimands. Now the central derivation: take Maya's naive twenty-one-point comparison and decompose it exactly into a causal piece and a contamination piece. Then we put real numbers on it and watch two-thirds of her effect evaporate.
+:::
+
+## What Maya Actually Computed
+
+- $\widehat{\Delta} = \overline{Y}_{D=1} - \overline{Y}_{D=0} = 0.62 - 0.41 = 0.21$
+- Population target: $\Delta = \mathbb{E}[Y_i\mid D_i{=}1]-\mathbb{E}[Y_i\mid D_i{=}0]$
+- The **naive difference in means**
+- Every dashboard and "users who did X" headline
+- Question: when does $\Delta$ equal a causal effect?
+
+::: notes
+Back to Maya's twenty-one points. She took the average observed outcome among enrollees, zero-point-six-two, and subtracted the average among non-enrollees, zero-point-four-one. In population terms her estimator targets the naive difference in means: the expected value of Y given D equals one, minus the expected value of Y given D equals zero. This is the quantity every spreadsheet, every dashboard, every "users who did X had higher Y" headline reports. The question that decides whether it means anything: when does this naive difference equal a causal effect? To answer it, we translate observed outcomes into potential outcomes, and the answer falls out as an exact decomposition.
+:::
+
+## The Decomposition
+
+- Observation rule on each group gives
+$$\Delta = \mathbb{E}[Y_i(1)\mid D{=}1] - \mathbb{E}[Y_i(0)\mid D{=}0]$$
+- Add and subtract $\mathbb{E}[Y_i(0)\mid D{=}1]$, regroup:
+$$\Delta = \underbrace{\text{ATT}}_{\text{want}} + \underbrace{\mathbb{E}[Y_i(0)\mid D{=}1]-\mathbb{E}[Y_i(0)\mid D{=}0]}_{\text{selection bias}}$$
+
+::: notes
+Here is the derivation. Among the treated, the observation rule says observed Y equals Y-of-one, so their expected outcome is the expected Y-of-one among the treated. Among the untreated, observed Y equals Y-of-zero. So the naive difference is the expected Y-of-one among the treated minus the expected Y-of-zero among the untreated, exact and assumption-free. Now the one trick: add and subtract the expected Y-of-zero among the treated, the treated group's untreated counterfactual, which is nowhere in the difference. Group the four terms into two pairs. The first is the ATT, the effect on the treated. The second is new: the selection bias.
+:::
+
+## What the Bias Term Means
+
+- Bias $= \mathbb{E}[Y_i(0)\mid D{=}1] - \mathbb{E}[Y_i(0)\mid D{=}0]$
+- How enrollees *would have done* vs. how non-enrollees *did*
+- Compares the groups in a world where **neither** is treated
+- Measures how different they were **before** the program
+- If enrollees were already better, bias is **positive**
+
+::: notes
+Read what that bias term is: the expected Y-of-zero among the treated minus the expected Y-of-zero among the untreated, the difference in the untreated potential outcome between the two groups. In plain English: how would the enrollees have done without the program, versus how the non-enrollees actually did. It compares the two groups in a world where neither gets treated, measuring how different they already were before the program. If the people who enroll would have had higher approval anyway, which is Maya's worry, the first term exceeds the second, the bias is positive, and her twenty-one points overstate the true effect. This is Week Two's omitted-variable bias in its sharpest form: the comparison group's outcome is a bad stand-in for the treated group's missing counterfactual.
+:::
+
+## Maya's 21 Points, Split Honestly
+
+- Enrollees with program: $0.62$ (observed)
+- Enrollees *if not* enrolled: $0.55$ (counterfactual, unseen)
+- Non-enrollees: $0.41$ (observed)
+- $\Delta = (0.62-0.55) + (0.55-0.41) = 0.07 + 0.14$
+- **7 points** real effect, **14 points** selection bias
+
+::: notes
+Let us put numbers on it, and we can only suppose, because the counterfactual is unobserved. The enrollees' approval with the program is zero-point-six-two, observed. Had they not enrolled, their average would have been zero-point-five-five, unobserved. The non-enrollees' approval is zero-point-four-one, observed. The ATT, the true effect, is zero-point-six-two minus zero-point-five-five, which is zero-point-zero-seven. Run the decomposition: seven points of real effect, plus zero-point-five-five minus zero-point-four-one, fourteen points of bias, summing to twenty-one. Two-thirds is not the program; enrollees were already fourteen points more approvable before it did anything. And nothing in her data reveals the split. She sees zero-point-six-two and zero-point-four-one; the hidden zero-point-five-five is missing by the Fundamental Problem. A bigger sample sharpens the wrong number. This is identification, not estimation.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The naive difference always equals **ATT plus selection bias**, where bias is how different the groups were in $Y_i(0)$ before treatment. Maya's 21 points are really 7 real and 14 bias — and no sample size fixes it. Next: SUTVA, the assumption hiding in the notation.
+:::
+
+::: notes
+To summarize part three: the naive difference always decomposes into the ATT plus a selection-bias term, and that bias is how different the two groups were in their untreated potential outcome before treatment. Maya's twenty-one points were really seven of program plus fourteen of pre-existing advantage, and no amount of data recovers the hidden counterfactual. The whole enterprise of causal inference reduces to one mission: make that selection-bias term go to zero, estimate it, or design around it. But first, in part four, we make explicit an assumption the framework has been quietly leaning on all along: SUTVA.
+:::

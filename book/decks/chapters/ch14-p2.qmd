@@ -1,0 +1,58 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Why the Law of Large Numbers Works
+
+- Part 2 — proving the LLN via Chebyshev's inequality
+
+::: notes
+Welcome back to Chapter one-point-four, part two of nine. In part one we stated the Weak Law: the sample mean converges in probability to mu. Now we make it feel inevitable using a single tool you can carry for the rest of your life — Chebyshev's inequality — and we see the engine underneath: averaging cancels noise.
+:::
+
+## Chebyshev Does the Heavy Lifting
+
+- For any $Y$ with mean $\mu_Y$, variance $\sigma_Y^2$, any $\epsilon>0$:
+$$\Pr\!\big(|Y-\mu_Y|\ge \epsilon\big)\le \frac{\sigma_Y^2}{\epsilon^2}$$
+- No assumption on **shape** — only finite variance
+- Deliberately **crude**, but crude is all we need
+- We want a bound that **vanishes**, not a tight one
+
+::: notes
+One tool makes the Law feel inevitable: Chebyshev's inequality. It says no random variable strays far from its own mean very often, where far is measured in standard deviations. Formally, for any random variable Y with mean mu-Y and variance sigma-Y-squared, and any positive epsilon, the probability that Y is at least epsilon away from its mean is at most the variance divided by epsilon squared. The idea in one sentence: variance is average squared distance from the mean, so if lots of probability sat far out, the variance would be large; turn that around and small variance forbids much probability from sitting far out. Chebyshev makes no assumption about shape — only finite variance — so it is almost always loose. But loose is exactly what we want, because we are not nailing down a probability, we are proving one vanishes.
+:::
+
+## Plug In and Watch It Vanish
+
+- We know $\operatorname{Var}(\bar{x})=\sigma^2/N$ (from Ch 1.3)
+$$\Pr\!\big(|\bar{x}-\mu|\ge \epsilon\big)\le \frac{\sigma^2}{N\,\epsilon^2}$$
+- $\epsilon$ fixed, $\sigma^2$ fixed, but $N$ in the denominator
+- As $N\to\infty$ the bound $\to 0$ — that **is** the Weak Law
+- Engine: **averaging cancels noise**
+
+::: notes
+Now apply Chebyshev to the sample mean itself. We already know — this was the punchline of chapter one-point-three — that the sample mean has mean mu and variance sigma squared over N. So Chebyshev hands us: the probability that the sample mean misses mu by at least epsilon is at most sigma squared, divided by N times epsilon squared. Stare at the right-hand side. Your tolerance epsilon is fixed, the population variance is fixed, but N sits in the denominator. As N goes to infinity, that bound goes to zero. The probability of a meaningful miss is squeezed to nothing. That is the Weak Law, and we got it almost for free. The engine underneath is simple: averaging cancels noise. Independent draws have deviations as likely to offset as to reinforce, so the variance of their average falls like one over N.
+:::
+
+## The $\sqrt{N}$ Reflex
+
+- Standard deviation of $\bar{x}$ is $\sigma/\sqrt{N}$
+- To **halve** uncertainty, **quadruple** the sample
+- Correlated draws reinforce — LLN slows or fails
+- Foreshadows time-series standard errors in Week 2
+
+::: notes
+One consequence worth burning into reflex. The standard deviation of the sample mean is sigma over the square root of N. That square root is the same fact you have seen attached to every standard error, wearing different clothes. Because of it, to halve your uncertainty you must quadruple your sample. Diminishing returns are baked into the mathematics — so when someone says they doubled their sample and expected their error bars to halve, you already know they will be disappointed. One more caveat. The cancellation relies on independence. If draws were strongly correlated — every observation echoing the last, as in a trending time series — deviations would reinforce instead of cancel, the one-over-N rate would degrade, and the Law would arrive far more slowly or not at all. That is why time-series data demand special standard errors, which we tackle in Week Two.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Feed one fact — $\operatorname{Var}(\bar{x})=\sigma^2/N$ — into **Chebyshev's inequality** and the miss-probability is bounded by $\sigma^2/(N\epsilon^2)$, which vanishes as $N$ grows. The engine is that **averaging cancels noise**, at rate $1/\sqrt{N}$. Next: watch one running mean settle.
+:::
+
+::: notes
+To summarize part two: we proved the Weak Law almost for free by feeding one fact from chapter one-point-three — that the variance of the sample mean is sigma squared over N — into Chebyshev's inequality, and watching the miss-probability vanish as N grows. The engine is that averaging cancels noise, and the rate is one over root N, which means quadrupling your data only halves your error. In part three we stop calculating and watch the Law happen, following a single running mean as it settles.
+:::

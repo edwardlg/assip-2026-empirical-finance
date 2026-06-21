@@ -1,0 +1,60 @@
+---
+date: "2026-07-13"
+---
+
+## DiD as One Regression Coefficient
+
+- Part 3 — DiD as the two-way fixed-effects coefficient
+
+::: notes
+Welcome back to Chapter four-point-one, part three of six. In part two, DiD imputed the treated state's missing counterfactual by adding the control's change to the treated's pre level, valid under parallel trends. The two-by-two table is transparent, but it does not scale and it gives no standard error. This part fixes both by writing the difference-in-differences estimate as a single regression coefficient — the two-way fixed-effects model that the rest of Week Four builds on.
+:::
+
+## DiD as One Coefficient: TWFE
+
+$$Y_{it} = \alpha_i + \lambda_t + \beta\, D_{it} + \varepsilon_{it}$$
+
+- $\alpha_i$ unit fixed effect: absorbs fixed group differences
+- $\lambda_t$ time fixed effect: absorbs common time shocks
+- $D_{it}=1$ in exactly one cell — treated, post
+- $\hat\beta=\$70$, the DiD estimate
+
+::: notes
+The difference-in-differences estimate is exactly the coefficient beta in the two-way fixed-effects regression: Y-i-t equals alpha-i plus lambda-t plus beta times D-i-t plus an error. Alpha-i is a unit fixed effect — one intercept per state. It absorbs everything constant over time about that state: its permanently higher price level, its fixed fire geography. That is the regression doing the "difference across groups" automatically. Lambda-t is a time fixed effect — one intercept per period, common to all units. It absorbs everything hitting every state equally that year: the nationwide reinsurance shock, the common inflation. That is the "difference across time." With those soaking up fixed unit differences and common time shocks, the only variation left for D-i-t to explain is the thing varying across both unit and time together — the treated state being treated in the post period. So beta is the DiD estimate, seventy dollars. The fixed effects are not controls thrown in; they are the regression encoding of the two differencing operations.
+:::
+
+## The Interaction Form
+
+$$Y_{it} = \beta_0 + \beta_1 \text{Treat}_i + \beta_2 \text{Post}_t + \beta_3(\text{Treat}_i\times\text{Post}_t) + \varepsilon_{it}$$
+
+- $\beta_1$ = fixed treated-versus-control gap
+- $\beta_2$ = common before-after change
+- $\beta_3$ = the DiD estimate — same \$70
+- Fixed-effects form scales to **many** units and periods
+
+::: notes
+A point of vocabulary that matters next chapter. The older way to write the same regression used explicit dummies. Let Treat equal one for the treated unit, Post equal one for the post period, and interact them. Beta-one is the fixed treated-versus-control gap, what alpha-i generalizes; beta-two is the common before-after change, what lambda-t generalizes; and the interaction coefficient, beta-three, is the DiD estimate — identical to seventy dollars. The interaction term simply is D-i-t here: one only for the treated unit in the post period. The two specifications are the same model. The fixed-effects form is the one that keeps working with many units and periods, because then you cannot write a single Treat-times-Post interaction, but you can still write one intercept per unit and one per period. Carry the boxed two-way fixed-effects form forward — it is the equation the next chapter will interrogate.
+:::
+
+## Priya's Empirical Spec
+
+- **Outcome**: state-year average homeowner premium
+- **Treatment**: $D_{it}=1$ for treated state in post years
+- **Fixed effects**: state ($\alpha_i$) and year ($\lambda_t$)
+- **Clustering**: by state
+- **Identifying assumption**: parallel trends
+
+::: notes
+Stated in the empirical-spec discipline from the Conventions, Priya's design is short. The outcome is the state-year average homeowner premium. The treatment is the wildfire-pricing regulation: D-i-t equals one for the treated state in post years. No controls are needed beyond the fixed effects. The fixed effects are state, alpha-i, and year, lambda-t. The standard errors are clustered by state — we will see why in part five. The sample is all states, all years in the window. And the identifying assumption is parallel trends — that absent the regulation, the treated state's premiums would have moved like the controls'. Every DiD paper you read can, and should, be reduced to a spec exactly this explicit. When you read one, hunt for these six lines; if the author has not stated them, you state them yourself before you trust the result.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The **TWFE** regression $Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+\varepsilon_{it}$ recovers the DiD estimate as one coefficient: fixed effects encode the two differencing operations, and $\beta$ is what survives both. Next: the **event study**, which lets the effect grow over time and lets us *look* at the pre-trends.
+:::
+
+::: notes
+To summarize part three: the two-way fixed-effects regression recovers the difference-in-differences estimate as a single coefficient beta, with unit and time fixed effects encoding the two differencing operations, and beta being exactly what survives both. We also reduced Priya's whole design to a six-line empirical spec. In part four we exploit the fact that real data has many periods on each side, not just one before and one after. The event study replaces the single treatment dummy with a sequence of coefficients — letting the effect grow over time, and, crucially, letting us look at whether the trends were parallel before treatment.
+:::

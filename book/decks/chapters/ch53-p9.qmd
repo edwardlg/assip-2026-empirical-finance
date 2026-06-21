@@ -1,0 +1,58 @@
+---
+date: "2026-07-20"
+---
+
+## What's Vulnerable: The First Three Threats
+
+- Part 9 — transaction costs, data-snooping, and seasonality
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part nine of eleven. In part eight we admired what is clever. Now we turn the table over. This is where a referee earns their keep. There are five live threats to the result; this part covers the first three — transaction costs, data-snooping, and seasonality — and part ten covers the last two.
+:::
+
+## Transaction Costs: The Biggest Threat
+
+- Momentum is a **high-turnover** strategy
+- You re-rank and trade a fresh slice every month
+- Shorted losers are small, illiquid, low-priced, wide-spread
+- A one-percent gross spread can be **eaten alive** by costs
+- Net profitability shrinks — by some accounts, can vanish
+
+::: notes
+The first and biggest threat: transaction costs. Does the profit survive trading? Momentum is a high-turnover strategy. Every month you re-rank and trade a fresh slice of the portfolio, and the losers you short are disproportionately small, illiquid, low-priced stocks with wide bid-ask spreads — the most expensive names to trade. A gross spread of roughly one percent per month can be eaten alive by round-trip costs, by the short-sale costs of borrowing hard-to-borrow losers, and by price impact. The paper engages this, but the honest verdict from later work is contested: net profitability shrinks substantially, and by some accounts of the short leg in small caps, it can vanish entirely. Any claim of momentum profits must be quoted net of a credible cost model — which is precisely the exercise the problem set forces.
+:::
+
+## Data-Snooping: Sixteen Strategies in One Grid
+
+- Sixteen $J$-by-$K$ cells is sixteen tests
+- Crowning the most significant cell is multiple comparisons
+- A lone $t = 2.5$ means less as a maximum over sixteen
+- Mitigating: it's a **broad region**, not one cell
+- And it replicates **out of sample** — the strongest defense
+
+::: notes
+The second threat is data-snooping, the multiple-testing problem from Week One. Sixteen J-by-K cells is sixteen strategies. If you stare at a four-by-four grid and crown the most significant cell, you have run sixteen tests and reported the winner — a textbook multiple-comparisons problem. A single t of two-point-five means much less when it is the maximum over sixteen correlated tries; you should mentally Bonferroni-discount any single starred cell. But the mitigating facts here are real and worth crediting. The result is not one isolated cell but a broad region of the grid. It was predicted in advance by the overreaction literature. And it has since replicated out of sample — in other countries, other asset classes, and the decades after nineteen eighty-nine. Out-of-sample survival is the strongest possible answer to a snooping charge, and momentum has it.
+:::
+
+## Seasonality Cuts Both Ways
+
+- Momentum is anti-January — but that's still an exposure
+- Annual profit is eleven good months minus a January loss
+- Vulnerable to anything that shifts the seasonal pattern
+- Tax-loss-rule changes, the rise of index investing
+- A clue to **mechanism**, not a clean robustness check
+
+::: notes
+The third threat is the January, or seasonality, effect. Even though momentum is an anti-January phenomenon, the seasonality cuts both ways as a vulnerability. A strategy whose entire annual profit depends on eleven good months minus a January loss is exposed to anything that shifts that seasonal pattern — changes to tax-loss-selling rules, or the rise of index investing that alters who is trading small caps in January. So the seasonal structure is a clue to mechanism, telling you something about why the effect exists, rather than a clean robustness check you can simply wave away. When a result leans on a specific calendar pattern, you have to ask what would happen if that pattern eroded — and for momentum, that question is genuinely open.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three threats: **transaction costs** can devour a one-percent gross spread, especially the small-cap short leg; **data-snooping** across sixteen cells (answered best by out-of-sample replication); and **seasonality**, where the anti-January structure is an exposure, not a free pass. Next: two more threats.
+:::
+
+::: notes
+To summarize part nine: the first three vulnerabilities. Transaction costs are the biggest — momentum's high turnover and its small, illiquid short leg can devour a one-percent gross spread, so profits must always be quoted net of a credible cost model. Data-snooping is real across sixteen J-by-K cells, but it is answered by the effect being a broad region, predicted in advance, and replicated out of sample. And seasonality cuts both ways: the anti-January structure is an exposure to anything that shifts the calendar pattern, a clue to mechanism rather than a free pass. In part ten we cover the last two threats: the risk-versus-behavioral debate and overlapping-portfolio inference.
+:::

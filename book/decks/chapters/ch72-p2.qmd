@@ -1,0 +1,58 @@
+---
+date: "2026-08-03"
+---
+
+## Three Rules for Every Source
+
+- Part 2 — three cross-cutting rules before any source
+
+::: notes
+Welcome back to Data Acquisition in Practice, part two of eight. In part one we framed the gap between a question and a dataset, and laid out the six-question template. Now, before any specific source, we cover three rules that cut across all of them. They come straight from our CONVENTIONS, and they are the difference between a pull a referee trusts and one they cannot.
+:::
+
+## Rule 1 — Secrets in Environment Variables
+
+- An API key is a password
+- Hard-code it, and it lives in git history forever
+- Bots scrape public repos for exactly such strings
+- Read every key at runtime from the environment
+- A missing-key error is the system working
+
+::: notes
+Rule one: secrets live in environment variables, never in code. Several sources require an API key — a string that identifies you to the server. A key is a password. The instant you write api-key equals abc-one-two-three into a notebook, that key is in your shell history, your git history, and, if you ever push, on GitHub forever, where bots scrape public repos for exactly such strings. So every key is read at runtime from the environment, using os-dot-environ. You set the variable once in your shell, or better, in a dot-env file listed in dot-gitignore and never committed. If reading the key raises a key-error, that is the system working: it refuses to run until you set the key out-of-band.
+:::
+
+## Rule 2 — Licensed Data Stays on GMU
+
+- CRSP, Compustat, IBES, TRACE are **licensed**, not public
+- License permits GMU researchers on GMU systems
+- Never to your laptop, a public repo, or a web service
+- Analyze only on WRDS Cloud or GMU's Hopper cluster
+- Licensed raw data is **never committed to git**
+
+::: notes
+Rule two: licensed data stays on GMU infrastructure. This is the rule most likely to get a student into real trouble. C-R-S-P, Compustat, I-B-E-S, T-R-A-C-E, and the other WRDS subscriptions are licensed, not public. GMU pays for them; the license permits use by GMU-affiliated researchers on GMU systems. The hard consequence: you may not download C-R-S-P or Compustat to your personal laptop, email it outside GMU, post it to a public repo, or paste it into a commercial web service. It may be analyzed only inside the walls the license defines — on WRDS Cloud itself, or on GMU's Hopper cluster. Concretely: licensed raw data is never committed to git. Your repository commits the code that pulls it and a log of what was pulled; the licensed bytes stay in a data-raw directory your gitignore excludes. We apply this discipline uniformly, even to public data.
+:::
+
+## Rule 3 — Pinned, Cached, and Logged
+
+- **Pin** a snapshot or date — live data changes
+- **Cache** the raw response; everything downstream reads it
+- **Log** the query, row count, and a content hash
+- One helper, `log_pull`, folds in all three
+- Log the request, never a key; hash detects drift
+
+::: notes
+Rule three: a pull is reproducible only if it is pinned, cached, and logged. Pin a snapshot or date — live data changes. C-R-S-P gets re-stated, FRED revises G-D-P, firms refile amended ten-Ks. A pinned pull says not the latest data but the data as it stood on a specific date. Cache the raw data — pull once, write the untouched response to disk, and have every downstream step read that cached file, never re-hitting the API. The raw cache is your ground truth, and it freezes the input so a re-run gives identical numbers. Log the query — write down exactly what you asked for: the SQL or URL, the date, the row count, and a hash of the result. We fold all three into a tiny helper called log-pull. It stores the request, never a key, so the log is safe to commit. And the content hash is the trick: if two pulls produce the same hash, they are byte-identical; if not, something upstream moved.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three rules cut across every source: keep **secrets in environment variables**, keep **licensed data on GMU infrastructure** and out of git, and make every pull **pinned, cached, and logged**. The `log_pull` helper and a content hash turn "did the data change?" into a one-line check. Next: WRDS Cloud.
+:::
+
+::: notes
+To summarize part two: three rules govern every source. Secrets live in environment variables, never in code. Licensed data stays on GMU infrastructure and never enters git. And every pull is pinned, cached, and logged, with a content hash that makes did-the-data-change a one-line check. With these in hand, part three opens the source tour with WRDS Cloud — the home of C-R-S-P, Compustat, I-B-E-S, and T-R-A-C-E.
+:::

@@ -1,0 +1,58 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## The Normal Equations, by Calculus
+
+- Part 3 — deriving the normal equations by calculus
+
+::: notes
+Welcome back to Chapter two-point-one, part three of seven. In part two we set up the least-squares objective — minimize the sum of squared residuals, the squared length of y minus X-b. Now we minimize it the way you minimize anything: expand it, differentiate it, and set the derivative to zero. The result is a clean linear system called the normal equations, and getting comfortable with two matrix-calculus facts is all it takes.
+:::
+
+## Expanding the Bowl
+
+- Multiply out, treating $\mathbf{b}$ as the variable:
+$$\text{SSR} = \mathbf{y}'\mathbf{y} - \mathbf{y}'\mathbf{X}\mathbf{b} - \mathbf{b}'\mathbf{X}'\mathbf{y} + \mathbf{b}'\mathbf{X}'\mathbf{X}\mathbf{b}$$
+- Two middle terms are scalars — each equals its transpose
+- They merge:
+$$\text{SSR} = \mathbf{y}'\mathbf{y} - 2\,\mathbf{b}'\mathbf{X}'\mathbf{y} + \mathbf{b}'\mathbf{X}'\mathbf{X}\mathbf{b}$$
+
+::: notes
+Expand the objective by multiplying it out, treating b as the variable. Using the rule that the transpose of a product reverses the order, the sum of squared residuals becomes y-transpose-y, minus y-transpose-X-b, minus b-transpose-X-transpose-y, plus b-transpose-X-transpose-X-b. Now look at the two middle terms. Each is a single number — a one-by-one matrix — and a number equals its own transpose. So y-transpose-X-b equals its own transpose, which is b-transpose-X-transpose-y. The two middle terms are identical, and we merge them into one. The objective is now y-transpose-y, minus two times b-transpose-X-transpose-y, plus b-transpose-X-transpose-X-b. A constant term, a linear term in b, and a quadratic term in b. That is the bowl, written cleanly enough to differentiate.
+:::
+
+## Setting the Gradient to Zero
+
+- Two matrix-calculus facts (scalar analogues you trust):
+$$\tfrac{\partial}{\partial\mathbf{b}}(\mathbf{a}'\mathbf{b}) = \mathbf{a},\qquad \tfrac{\partial}{\partial\mathbf{b}}(\mathbf{b}'\mathbf{A}\mathbf{b}) = 2\mathbf{A}\mathbf{b}$$
+- Gradient: $-2\mathbf{X}'\mathbf{y} + 2\mathbf{X}'\mathbf{X}\mathbf{b}$; set to $\mathbf{0}$
+$$\boxed{\ \mathbf{X}'\mathbf{X}\,\hat{\boldsymbol\beta} = \mathbf{X}'\mathbf{y}\ }$$
+
+::: notes
+Now minimize. With a vector of variables you differentiate each component at once — that is the gradient. You need exactly two matrix-calculus facts, both analogues of scalar rules you trust. First: the gradient of a-transpose-b with respect to b is just a, the analogue of the derivative of a-times-b being a. Second: the gradient of b-transpose-A-b, for a symmetric A, is two-A-b, the analogue of the derivative of a-times-b-squared being two-a-b. The matrix X-transpose-X is symmetric, so the second rule applies cleanly. Apply them term by term: the constant differentiates to zero, the linear term gives minus two X-transpose-y, and the quadratic term gives two X-transpose-X-b. Set the gradient to the zero vector, call the solution beta-hat, the twos cancel, and rearranging gives the normal equations: X-transpose-X times beta-hat equals X-transpose-y. They are called normal not because they are ordinary, but because normal is the old word for perpendicular — a clue we cash out in part four.
+:::
+
+## Why It's a Minimum
+
+- Flat point alone could be a max or saddle — check the curvature
+- Hessian is $2\mathbf{X}'\mathbf{X}$, positive semidefinite:
+$$\mathbf{v}'\mathbf{X}'\mathbf{X}\mathbf{v} = \lVert\mathbf{X}\mathbf{v}\rVert^2 \ge 0$$
+- A bowl opening upward — flat point is its **bottom**
+- Same "squared length is never negative" as last week's $\mathbf{\Sigma}$
+
+::: notes
+We have only verified the gradient vanishes here, which marks a flat point. Is it a minimum? Yes, decisively. The second derivative — the Hessian — is two X-transpose-X, and X-transpose-X is positive semidefinite. Here is why: for any vector v, v-transpose-X-transpose-X-v equals the squared length of X-v, which is never negative. That is the same "a squared length is never negative" argument that made the covariance matrix Sigma positive semidefinite last week. A quadratic with a non-negative-definite Hessian is a bowl opening upward, so the flat point is its bottom — no competing maxima, no saddles. Least squares has a unique honest minimum, provided we can actually solve the system, which we will check later.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Differentiating the sum of squared residuals and setting the gradient to zero gives the **normal equations** $\mathbf{X}'\mathbf{X}\hat{\boldsymbol\beta} = \mathbf{X}'\mathbf{y}$. The Hessian $2\mathbf{X}'\mathbf{X}$ is positive semidefinite, so this flat point is a genuine minimum.
+:::
+
+::: notes
+To summarize part three: expanding the least-squares bowl and setting its gradient to zero gives the normal equations — X-transpose-X times beta-hat equals X-transpose-y — and the positive-semidefinite Hessian guarantees this is a true minimum, not a maximum or a saddle. The word normal hinted at perpendicularity. In part four we pay that hint off: we derive the very same normal equations a second time, with no calculus at all, from a single geometric demand — that the residual be perpendicular to every regressor.
+:::

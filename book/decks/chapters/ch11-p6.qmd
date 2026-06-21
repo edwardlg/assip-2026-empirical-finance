@@ -1,0 +1,54 @@
+---
+date: "2026-06-22"
+---
+
+## Sam's Risk Decomposition, Worked
+
+- Part 6 — run the three ingredients, check against the direct total
+
+::: notes
+Welcome back to Chapter one-point-one, part six of eight. In part five we stated the Law of Total Variance — total risk equals within-regime plus across-regime. Now we run the numbers on Sam's table, step by step, and check the answer against a direct calculation. This is the payoff the whole chapter was building toward.
+:::
+
+## Step 1 — Within-Regime Variances
+
+- Use $\operatorname{Var}(X\mid Y)=\mathbb{E}[X^2\mid Y]-(\mathbb{E}[X\mid Y])^2$
+- Calm: $\mathbb{E}[X^2\mid 1]=2.000$, so $\operatorname{Var}=2.000-0.510=1.490$
+- Stormy: $\mathbb{E}[X^2\mid 2]=2.667$, so $\operatorname{Var}=2.667-0.444=2.222$
+
+::: notes
+We need three ingredients, all partly computed already. Step one: the within-regime variances, using the conditional mean of the square minus the square of the conditional mean. On calm days, with conditional probabilities zero point zero seven one, zero point five, and zero point four two nine on returns minus two, zero, and plus two, the conditional mean of X squared is four times zero point zero seven one plus four times zero point four two nine, which is two point zero. Subtracting the squared conditional mean, zero point seven one four squared, or zero point five one zero, gives a calm-day variance of one point four nine. On stormy days, with conditional probabilities zero point five, zero point three three three, and zero point one six seven, the conditional mean of X squared is two point six six seven. Subtracting minus zero point six six seven squared, or zero point four four four, gives a stormy-day variance of two point two two two.
+:::
+
+## Steps 2 and 3 — The Two Pieces
+
+- Within: $\mathbb{E}[\operatorname{Var}(X\mid Y)]=(1.490)(0.70)+(2.222)(0.30)=1.710$
+- Across: $\mathbb{E}[X\mid Y]$ is $0.714$ w.p. $0.70$, $-0.667$ w.p. $0.30$
+- $\operatorname{Var}(\mathbb{E}[X\mid Y])=(0.414)^2(0.70)+(-0.967)^2(0.30)$
+- $=0.120+0.280=0.400$
+
+::: notes
+Step two: the within-regime piece is the regime-weighted average of those two conditional variances. One point four nine times zero point seven, plus two point two two two times zero point three, equals one point zero four three plus zero point six six seven, which is one point seven one zero. Step three: the across-regime piece is the variance of the conditional-mean random variable, which takes value zero point seven one four with probability zero point seven and minus zero point six six seven with probability zero point three. Its overall mean is the expectation of X, zero point three, which we proved with iterated expectations earlier. So the variance is zero point four one four squared times zero point seven, plus minus zero point nine six seven squared times zero point three. That is zero point one two zero plus zero point two eight zero, which equals zero point four zero zero.
+:::
+
+## Add Up and Check
+
+- Within $+$ across $=1.710+0.400=2.110$
+- Direct: $\mathbb{E}[X^2]=2.200$, $\operatorname{Var}(X)=2.200-0.090=2.110$
+- It matches exactly — the decomposition is exact
+- Verifiable in a few lines of NumPy, no simulation noise
+
+::: notes
+Add the two pieces: one point seven one zero plus zero point four zero zero equals two point one one zero. Now check against the direct calculation. Compute the variance of X straight from the marginal of X — probabilities zero point two, zero point four five, and zero point three five on returns minus two, zero, and plus two, with mean zero point three. The mean of X squared is four times zero point two plus four times zero point three five, which is two point two. Subtracting zero point three squared, or zero point zero nine, gives a total variance of two point one one. It matches: two point one one equals one point seven one plus zero point four. The decomposition is exact. The whole thing is a few lines of NumPy once you treat the table as data — and because we use the true probabilities rather than a sample, there is no simulation noise; the law is verified to the digit.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+On Sam's table the decomposition is exact: $1.710+0.400=2.110=\operatorname{Var}(X)$. The within piece and the across piece reassemble the total variance with nothing left over, verifiable to the digit in a few lines of NumPy. Next: reading the answer, and proving the law in three lines.
+:::
+
+::: notes
+To summarize part six: working the three ingredients on Sam's table, the within-regime piece is one point seven one, the across-regime piece is zero point four, and they sum to two point one one — exactly the directly computed total variance. The decomposition is exact, with no simulation noise, because we used the true probabilities. In part seven we read off what that split means for Sam's strategy, then prove the law in three honest lines of algebra.
+:::

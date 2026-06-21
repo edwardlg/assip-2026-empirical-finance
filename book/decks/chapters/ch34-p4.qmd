@@ -1,0 +1,55 @@
+---
+date: "2026-07-06"
+---
+
+## Maya's Mailer and the Wald Estimator
+
+- Part 4 — a real instrument and the Wald ratio
+
+::: notes
+Welcome back to Chapter three-point-four, part four of eight. In part three we learned the two conditions: relevance, which is testable, and exclusion, which is arguable. Now we give Maya a real instrument — a randomly assigned mailer — check both conditions on it, and then turn the conditions into an actual number using the simplest formula in all of I-V: the Wald estimator.
+:::
+
+## Maya's Instrument: The Random Mailer
+
+- Nonprofit **randomly** mailed a promo for the course
+- $Z_i = 1$ if mailed, $0$ otherwise
+- **Relevance**: mailer raised completion — testable, $\pi_1 > 0$
+- **Exclusion**: randomization buys $Z \not\leftrightarrow \varepsilon$ free
+- Direct path ("read brochure, skip class") must be argued
+
+::: notes
+Here is Maya's instrument. Her nonprofit ran a recruitment campaign, and with a limited budget they could not mail everyone — so they randomly selected which households received a glossy promotional mailer with a sign-up link and a small completion incentive. Let Z equal one if household i was mailed, zero otherwise. Mailing is the instrument. Check relevance: did the mailer raise course completion? Almost certainly — a nudge plus an incentive makes people more likely to enroll. That is the first stage, and Maya can test it; she expects the coefficient pi-one to be positive. Now exclusion. The randomization buys the hardest half for free: because mailing was assigned by a coin flip, Z is statistically independent of motivation and every other confounder, by design. The remaining half — no direct path — Maya must argue. Could the mailer improve debt outcomes without the course, if someone reads the brochure's tips and improves on their own? If so, exclusion fails. She defends it by arguing the mailer was content-light — a sign-up link, not a budgeting lesson. She cannot prove this; she can only make it credible.
+:::
+
+## The Wald Estimator
+
+- Binary $Z$, binary $D$, no controls — Maya's exact setup
+$$\hat{\beta}_1^{\text{Wald}} = \frac{\overline{Y}_{Z=1} - \overline{Y}_{Z=0}}{\overline{D}_{Z=1} - \overline{D}_{Z=0}}$$
+- Numerator = **reduced form** (mailer's effect on debt)
+- Denominator = **first stage** (mailer's effect on completion)
+
+::: notes
+Now the simplest possible estimate. With a binary instrument Z, a binary treatment D, and no controls — exactly Maya's setup — the magic ratio becomes a ratio of differences in means. The effect is the difference in mean outcome between the mailed and unmailed groups, divided by the difference in mean completion between them. This is the Wald estimator. The numerator is the reduced form — the raw effect of the mailer on debt, ignoring the course entirely. It is exactly the difference-in-means you would compute in a randomized experiment where the treatment is the offer. The denominator is the first stage — the effect of the mailer on completion, the share of mailed people who took the course minus the share of unmailed people who did. The Wald estimator scales up the reduced form by the first stage.
+:::
+
+## Two Natural Experiments
+
+- **Rainfall** $\to$ crop income (as-good-as-random)
+- **Quarter of birth** $\to$ years of schooling
+- Each lives or dies on the same **untestable** exclusion claim
+
+::: notes
+Random assignment of the instrument is the gold standard precisely because it secures the hardest half of exclusion — independence from the confounder — for free. The classic natural-experiment instruments work the same way, by borrowing randomness from the world. Rainfall as an instrument for crop income: rain is as-good-as-random and plausibly affects the local economy only through agriculture. Quarter of birth as an instrument for years of schooling: compulsory-schooling laws tied to birthdates create exogenous variation in how long students stay enrolled. Each lives or dies on the same untestable exclusion claim — rainfall must not affect the outcome except through income; birth-quarter must not affect earnings except through schooling. Train yourself to ask, every time, what is the relevance evidence and what is the exclusion argument.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Maya's **random mailer** is the instrument: relevance is testable, and randomization secures the hard half of exclusion. The **Wald estimator** turns the conditions into a number — reduced form over first stage. Next: a worked number, and why Wald beats OLS.
+:::
+
+::: notes
+To summarize part four: Maya's random mailer is her instrument. Relevance is testable, and randomization secures the hardest half of exclusion for free, leaving only the no-direct-path claim to argue. The Wald estimator turns the two conditions into a single number — the reduced form, the mailer's effect on debt, divided by the first stage, the mailer's effect on completion. In part five we put numbers on it, compute Maya's effect, and see precisely why this clean mailed-versus-unmailed contrast beats the contaminated comparison that ordinary least squares would make.
+:::

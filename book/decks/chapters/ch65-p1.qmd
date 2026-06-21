@@ -1,0 +1,51 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## The AI Co-Pilot for Research: The Stakes
+
+**Learning objectives.** By the end you can:
+
+- Write prompts that constrain the model, not invite improvising
+- Build a retrieval pipeline grounded in source documents
+- Treat every LLM label as a measurement to validate
+- Log every API call for reproducible, disclosable work
+
+::: notes
+Welcome to Week Six, Chapter six-point-five, part one of fourteen: the AI co-pilot for research. Picture Leah, three weeks into a capstone on patents and innovation. She has forty thousand firm-year ten-K filings to read, a ninety-page data dictionary, a regression throwing an error she does not understand, and a deadline. She opens a chat window and types: read these filings and tell me which firms are innovative. Twenty seconds later she has a confident, fluent, well-organized answer. It is also, in places, completely made up — and the made-up parts look exactly like the true parts. This lesson is about that last sentence, and how to use a model so your results survive a referee.
+:::
+
+## Same Reason It Helps, It Harms
+
+- A large language model predicts the next token of text
+- Tuned to follow instructions; produces fluent text on demand
+- Most useful new tool in a generation
+- Also the most dangerous — **for the same reason**
+- Fluent and plausible, grounded in reality or not
+
+::: notes
+A large language model — a system like Claude or G-P-T — is trained to predict the next token of text and tuned to follow instructions. It is the most useful new research tool to arrive in empirical finance in a generation, and also the most dangerous, for the same reason: it produces fluent, plausible text on demand, whether or not that text is grounded in anything real. The skill this lesson teaches is not how to type into a box — you already know that. The skill is how to extract the genuine help, which is large, while building guardrails that stop a confident-sounding model from quietly corrupting your data, your code, and your conclusions.
+:::
+
+## Four Things That Separate You From a Chatbot User
+
+- Write prompts that **constrain** the model, not invite improvising
+- Build retrieval that **grounds** answers in source documents
+- Treat every label as a **measurement** to validate
+- **Log** every call so the work is reproducible
+
+::: notes
+We follow the reveal-the-trick structure the whole book uses: state what the tool actually does, see why it helps on a concrete task, see when and how it fails — in detail, because the failures are subtle and expensive — and then show the code. By the end you should be able to do four things that separate a researcher from a chatbot user. First, write prompts that constrain the model instead of inviting it to improvise. Second, build a retrieval pipeline that forces answers to be grounded in source documents. Third, treat every model-produced label as a measurement that must be validated against hand-coded truth before you trust it. Fourth, log every A-P-I call so your AI-assisted work is as reproducible and disclosable as a regression table. Everything here connects forward to Mentor Session Six — text as data, and AI without fooling yourself — and to your capstone, where you must disclose and defend every way you used a model.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A large language model is the **most useful and most dangerous** new research tool — for the same reason: it produces fluent text whether or not it is true. The job is to extract the genuine help while building guardrails. Next: the co-pilot framing, and the five places it genuinely helps.
+:::
+
+::: notes
+To summarize part one: a large language model produces fluent, plausible text on demand, which makes it both the most useful and the most dangerous new tool in empirical finance, for the same reason. Your task is to keep the genuine, large help while building guardrails that stop a confident model from corrupting your data, code, and conclusions. The four skills are constrained prompting, grounded retrieval, validation of labels as measurements, and logging for reproducibility. In part two we make this concrete with the co-pilot framing and the five places a model genuinely earns its keep.
+:::

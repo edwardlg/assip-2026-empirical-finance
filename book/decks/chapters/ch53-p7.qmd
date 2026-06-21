@@ -1,0 +1,56 @@
+---
+date: "2026-07-20"
+---
+
+## Reading Order: Robustness and Reversal
+
+- Part 7 — sub-periods, the January surprise, long-run reversal
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part seven of eleven. In part six we read the returns matrix and the risk-adjustment table. Now we finish the reading order with the robustness checks — sub-periods and seasonality — and then the optional last table on long-horizon reversal. The seasonality result is the surprising one, so we spend most of our time there.
+:::
+
+## Third: Sub-Period Robustness
+
+- Split the sample in half
+- Confirm profit is not driven by one lucky decade
+- A result that lives in both halves is harder to dismiss
+- This guards against a single-period fluke
+
+::: notes
+Third in the reading order, the sub-period and seasonality robustness. Start with sub-periods. Split the sample in half and confirm the profit is not driven by one lucky decade. If momentum shows up in the first half and again in the second half, it is much harder to dismiss as a fluke of one unusual period. A result that lives in both halves of the sample is a result with some structural staying power. This is a basic but essential check: many apparent anomalies turn out to be a single good decade dressed up as a permanent effect, and splitting the sample is the cheapest way to catch that.
+:::
+
+## The Seasonality Surprise
+
+- Break profits out **by calendar month**
+- Size and value anomalies clustered in **January**
+- Momentum has the **opposite** January problem
+- It tends to **lose money in January**
+- Losers — beaten-down small caps — bounce hard in January
+
+::: notes
+Now the crucial check: seasonality. Break the profits out by calendar month. This matters because the size and value anomalies of the era were famously concentrated in January. Momentum has the opposite January problem. The strategy tends to lose money in January while earning its keep in the other eleven months. Why? The losers are often beaten-down small caps, and those bounce hard in January — partly from tax-loss-selling reversals — so shorting them is painful in that one month. Reading this table tells you the profit is not a January artifact. It is an anti-January effect, which is actually harder to dismiss than a January-concentrated one, because you cannot wave it away as the same old turn-of-the-year seasonal that drives the other anomalies.
+:::
+
+## Last, Optional: Long-Horizon Reversal
+
+- Look at behavior **after** the holding period
+- Medium-horizon profits eventually **reverse** if held long
+- Reconciles momentum with De Bondt-Thaler long-run reversal
+- Hints at the **overreaction** interpretation
+
+::: notes
+Last, and optional, is the longer-horizon and post-holding behavior. Here you look at what happens after the holding period ends. The evidence is that the medium-horizon momentum profits eventually reverse if you hold long enough. This is important for the story: it reconciles momentum with the De Bondt and Thaler long-run reversal we met earlier, and it hints at the overreaction interpretation. The picture becomes continuation for a few months to a year, driven perhaps by underreaction to news, followed by eventual reversal as prices overshoot and then correct. You do not need this table to establish that momentum exists, but it is what links the short-horizon anomaly to the broader behavioral story about how prices process information.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Robustness: split the sample so no single decade carries the result, then read seasonality — momentum is an **anti-January** effect, losing in January and earning the other eleven months. The optional last table shows long-horizon **reversal**, hinting at overreaction. Next: what's clever.
+:::
+
+::: notes
+To summarize part seven: the robustness reading starts by splitting the sample so the profit is not one lucky decade, then breaks profits out by calendar month. The seasonality result is striking — momentum is an anti-January effect, losing money in January while earning in the other eleven months, which makes it harder to dismiss than the January-concentrated size and value anomalies. The optional last table shows medium-horizon profits eventually reverse at long horizons, linking momentum to De Bondt and Thaler and to the overreaction story. In part eight we step back and ask what is genuinely clever about this paper's design.
+:::

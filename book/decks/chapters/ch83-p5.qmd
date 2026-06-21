@@ -1,0 +1,60 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Data, Design, and Results
+
+- Part 5 — redeem the promise with the paper's body
+
+::: notes
+Welcome back to Writing the Empirical Paper, part five of seven. In part four we built the literature review that makes your gap visible. Now we reach the body of the paper, where the introduction's promise is redeemed with actual evidence. Three sections — data, design, and results — each carry a specific load and each have a specific failure mode to avoid. We take them in turn.
+:::
+
+## Data: Reproducible, Not Buried
+
+- Name the source and vintage — a pinned snapshot
+- Sample: years, units, filters, and *why* each filter
+- Every exclusion is a potential selection threat — disclose it
+- One near-mandatory artifact: a summary-statistics table
+- Do *not* narrate your cleaning ordeal
+
+::: notes
+The data section makes the work reproducible without burying the argument. It names the source and vintage — a pinned snapshot of the mortgage disclosure data. It names the sample: which years, which units, which filters, and why each filter was applied. Every exclusion is a potential selection threat, so disclose it. It states the unit of observation and the construction of the key variables. It carries one near-mandatory artifact: a summary-statistics table — means, standard deviations, counts, by treatment status — that lets a reader sanity-check the sample before trusting anything built on it. What the section does not do is narrate your cleaning ordeal. The reader does not need to know one file had a malformed column; they need the final sample and how to rebuild it. Put the ordeal in the replication packet, not the paper.
+:::
+
+## Design: The Identifying Assumption Up Front
+
+$$\text{Gap}_{ct} = \sum_{k \neq -1} \beta_k \,\mathbb{1}[t - G_s = k] + \boldsymbol{\delta}'\mathbf{X}_{ct} + \alpha_c + \lambda_t + \varepsilon_{ct}$$
+
+- Write the estimating equation explicitly
+- State the identifying assumption in **one sentence**
+- Name the threat and the design feature in the same breath
+- "We control for confounders" throws away your credibility
+
+::: notes
+The empirical design section puts the identifying assumption front and center. It is largely your identification memo turned into prose. State the specification: outcome, treatment, controls, fixed effects, clustering, sample, and the identifying assumption in one sentence. Write the estimating equation explicitly. In Maya's staggered formulation, the gap in county c and year t equals a sum over event-time of beta-k times an indicator that t minus the state's adoption year equals k, plus delta-transpose times controls X, plus county fixed effects alpha-c, plus year fixed effects lambda-t, plus an error term; standard errors are clustered by state. Then — the heart of the section — state the assumption that makes beta-k for k at least zero a causal effect: absent the programs, adopting and never-adopting states' gaps would have moved in parallel. Name the threat and the design feature that addresses it in the same breath. A section that says "we control for confounders" instead of naming the assumption has thrown away the one thing that makes the paper credible.
+:::
+
+## Results: Lead With the Headline Table
+
+- Open with the single table holding your main estimate
+- Walk the reader through it in prose
+- Magnitude in units a human can feel, not just a number
+- Cardinal sin: the "data dump" of eight equal tables
+- Significance is not importance — carry the economics
+
+::: notes
+The results section leads with the headline table. Open with the single table containing your main estimate — for Maya, the overall average treatment effect and the event-time profile from the clean Callaway and Sant'Anna estimator. Walk the reader through it in prose: point at the coefficient, state its sign, its magnitude in units a human can feel — one point eight percentage points, a fifth of the pre-period gap — and its precision. The cardinal sin here is the data dump: a section presenting eight tables with equal weight, letting the reader find the important one. You found it for them in the introduction; do it again here. Lead with the headline, interpret it economically — is the effect big enough to matter, not just significant? — and only then present supporting results. Significance is not importance: a coefficient can be three-starred and economically trivial, and your prose must carry the economic interpretation the stars cannot.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The body redeems the promise: **data** makes the work reproducible without burying it, **design** puts the one-sentence identifying assumption front and center, and **results** lead with the headline table interpreted in human units. Significance is not importance. Next: robustness, conclusion, and causal-language discipline.
+:::
+
+::: notes
+To summarize part five: the body of the paper redeems the introduction's promise with evidence. The data section makes the work reproducible without burying the argument, anchored by a summary-statistics table, and never narrates the cleaning ordeal. The design section writes the estimating equation explicitly and states the identifying assumption in one sentence, naming the threat and the design feature together. The results section leads with the headline table, interprets the magnitude in units a human can feel, and remembers that significance is not importance. In part six we convert your threats table into persuasion and learn the causal-language discipline that runs through everything.
+:::

@@ -1,0 +1,47 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## Retrieval-Augmented Generation: Chunk and Embed
+
+- Part 5 — the RAG pipeline: chunk filings, then embed each chunk
+
+::: notes
+Welcome back to the AI co-pilot for research, part five of fourteen. In part four we finished the four prompt patterns, including cite-or-decline. But that pattern has an obvious hole: it only works if the model has the right source text in front of it. A model's parametric knowledge — the facts baked into its weights during training — is a blurry, lossy compression, with no clean way to separate what it knows from what it confabulates. So instead of asking the model to recall, we hand it the relevant source text at query time and ask it to answer from that. This is retrieval-augmented generation, or R-A-G, the standard architecture for question-answering over a private document collection like a folder of ten-K filings.
+:::
+
+## Stage 1 — Chunk
+
+- A single 10-K can run past 100,000 words
+- Split each filing into 500–1,000-token passages
+- Break at section boundaries so each chunk is coherent
+- Keep metadata: which filing, firm, year, section
+- Metadata lets you cite — and block future chunks later
+
+::: notes
+Here is the pipeline in four stages; this part covers the first two. Stage one, chunk. A single ten-K can run past one hundred thousand words, far more than you want in one prompt, and most of it is irrelevant to any given question. So you split each filing into chunks — passages of, say, five hundred to one thousand tokens, often broken at section boundaries like Item one-A Risk Factors or Item seven, so each chunk is internally coherent. Each chunk keeps metadata: which filing, which firm, which fiscal year, which section. That metadata is what lets you cite the source later, and — as we will see when we discuss leakage — what lets you enforce that you never retrieve a chunk from the future.
+:::
+
+## Stage 2 — Embed
+
+- Convert each chunk into an **embedding** — a meaning vector
+- A few hundred to a few thousand numbers per chunk
+- Similar topics land **near each other** in vector space
+- True even when the passages use different words
+- Store the vectors in an index for nearest-neighbor search
+
+::: notes
+Stage two, embed. You convert each chunk into an embedding — a vector of a few hundred to a few thousand numbers that represents the chunk's meaning, produced by an embedding model. The key property, which you met in spirit when you computed cosine similarity between ten-K texts: passages about similar topics land near each other in this vector space, even if they use different words. "We face significant litigation exposure" and "pending lawsuits could materially harm us" sit close together because they mean similar things. You embed every chunk once and store the vectors in a vector index — a data structure built for fast nearest-neighbor search, whether that is a dedicated library or even a plain array for a small corpus.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**RAG** answers from source text you supply at query time, not from blurry memory. First you **chunk** each filing into coherent passages with firm-year-section metadata, then **embed** each chunk into a meaning vector stored in a searchable index. Next: retrieve, ground, and the limits of RAG.
+:::
+
+::: notes
+To summarize part five: retrieval-augmented generation hands the model the relevant source text at query time, so it summarizes documents you control instead of recalling facts it may have invented. The first two stages prepare the corpus. Chunking splits each filing into coherent, few-hundred-token passages that carry firm, year, and section metadata — metadata that powers both citation and the date filter we need against leakage. Embedding turns each chunk into a meaning vector, so passages about similar topics sit near each other in the index even when their wording differs. In part six we complete the pipeline: retrieve the nearest chunks, ground the answer in them, and face the two ways R-A-G can still go wrong.
+:::

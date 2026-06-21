@@ -1,0 +1,47 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## Directional Hypotheses
+
+- Part 2 — stating hypotheses directionally as numbered, falsifiable claims
+
+::: notes
+Welcome back to Chapter seven-point-three, part two of eight. In part one we watched Maya nearly p-hack an honest project through the garden of forking paths, and we named the cure: write the plan before you peek. Now we start writing it. The short-form pre-analysis plan has exactly five components, and the order is the discipline. This part covers the first — your hypotheses, stated directionally. A forty-page plan would teach the wrong lesson, that pre-registration is bureaucracy. The short form teaches the right one: it is a thinking tool, and each component forces a specific honesty before the data can flatter you.
+:::
+
+## Component 1 — State the Direction
+
+- Not "race is related to denial" — lands heads on any nonzero
+- H1: minority applicants face **higher** denial, conditional on observables
+- H2: the gap is **smaller** for algorithmic than face-to-face lenders
+- A direction commits you to a **one-sided** test
+- You may only claim it if the prior came **before** the data
+
+::: notes
+Write down what you predict, and which way. Not race is related to denial — that is a coin that lands heads on any nonzero coefficient. Instead, a directional claim: minority applicants face higher denial conditional on observables, and the gap is smaller for algorithmic lenders than face-to-face. Directional hypotheses are the honest default for a reason you proved in Chapter one-point-five. A directional claim commits you to a one-sided test, and you may only claim one if the direction came from the science before you saw the data. Writing it down is exactly that evidence.
+:::
+
+## No Prior? Be Honest About It
+
+- No prior on direction — either way is a finding — commit **two-sided**
+- That is honest too; it just costs the easier critical value
+- One-point-nine-six instead of one-point-six-five
+- State hypotheses as numbered, falsifiable sentences
+- H1 primary; H2, H3 secondary — the numbering returns later
+
+::: notes
+If you genuinely have no prior on direction — either way would be a finding — say so and commit to a two-sided test. That is honest too; it just costs you the easier critical value, one-point-nine-six instead of one-point-six-five, which is the price of not having had a prior. State the hypotheses as numbered, falsifiable sentences, and number them, because the numbering will reappear in the multiple-testing plan. H1 is your primary hypothesis — the one the whole project lives or dies on. H2 and H3 are secondary: the ones that would enrich the story but whose failure would not sink it. Deciding which hypothesis is primary, in advance, is one of the most consequential choices in the whole plan.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A hypothesis must say **which way** — a directional claim earns a one-sided test only if the prior came before the data, which the dated plan proves. Number them: H1 primary, the rest secondary. Next: writing the primary specification by naming all seven slots.
+:::
+
+::: notes
+To summarize part two: state your hypotheses directionally, because a directional claim earns a one-sided test only if the prior came before the data — and the dated plan is exactly that proof. If you have no prior, two-sided is honest and just costs the harder critical value. Number them, with H1 primary and the rest secondary. In part three we write the heart of the plan: the primary specification, the single regression that tests H1, pinned down by naming every one of its seven slots so there is no fork left to walk.
+:::

@@ -1,0 +1,47 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## How to Read an RD Plot
+
+- Part 10 — reading an RD plot like a referee
+
+::: notes
+Welcome back to Chapter four-point-three, part ten of thirteen. In part nine we automated the bandwidth and learned to report robust intervals. Now the most visual part of the design: a good RD plot is half the argument. We cover its three layers, then how to read one like a skeptical referee.
+:::
+
+## The Three Layers of an RD Plot
+
+- **Binned scatter**: mean outcome per bin, one dot each
+- Binning averages away idiosyncratic noise
+- **Fitted curves**: two local fits, each extrapolated *to* $c$
+- Show them only over the bandwidth you used
+- **The jump**: the vertical gap between the curves at $c$ is $\hat\tau$
+
+::: notes
+Regression discontinuity is the most visual design in this book, and a good plot is half the argument. Before any regression, plot the data, because the human eye is an excellent jump-detector and an even better fraud-detector. A canonical plot has three layers. First, the binned scatter: chop the running variable into bins, compute the mean outcome within each bin, and plot one dot per bin against the bin's center. Raw scatterplots of individual observations are too noisy; binning averages away the idiosyncratic noise and reveals the shape of the conditional mean. Second, the fitted curves: overlay the local polynomial fit, two separate curves, one on each side, each extrapolated to the cutoff but not across it. These are the lines whose boundary heights you are differencing; show them only over the bandwidth you actually used. Third, the jump: at the cutoff, the two curves meet at two different heights, and the vertical gap between them is tau-hat. If you cannot see the discontinuity in a well-binned plot, be deeply skeptical of a regression that claims one.
+:::
+
+## How to Read It Like a Referee
+
+- Is there a visible jump *at the cutoff, and only there*?
+- Are side trends gentle, or is a high-order wiggle being fit?
+- For fuzzy designs, plot the treatment too — confirm the first stage
+- Plot pre-determined covariates — they should *not* jump
+- A good RD paper is a wall of these plots
+
+::: notes
+How do you read it like a referee? First, is there a visible jump at the cutoff, and only at the cutoff? A jump somewhere other than the cutoff is a warning that your effect might be an artifact of functional form. Second, are the trends on each side smooth and gentle, or is a high-order wiggle being fit? Gentle near-linear trends are reassuring; a curve doing gymnastics to hit the boundary is the Gelman-Imbens pathology made visible. Third, for a fuzzy design, plot the treatment too — make a second plot with the treatment probability on the vertical axis and confirm there is a real jump at the cutoff, which is your first stage. Fourth, plot pre-determined covariates the same way: they should not jump. A good regression-discontinuity paper is a wall of these plots, and learning to read them is learning to audit the design.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A good RD plot layers a **binned scatter**, **two local fitted curves**, and the **visible jump** between them — the step should be obvious to the eye, *at $c$ and only there*, with gentle side-trends. For fuzzy designs, also plot the treatment (the first stage) and pre-determined covariates (which must *not* jump). Next: did anyone game the cutoff?
+:::
+
+::: notes
+To summarize part ten: a good regression-discontinuity plot layers three things — a binned scatter that averages away noise, two local fitted curves each extrapolated to the boundary, and the visible jump between them. The step should be obvious to the eye, at the cutoff and only there, with gentle side-trends rather than a high-order wiggle. For a fuzzy design, also plot the treatment to show the first stage, and plot pre-determined covariates, which must not jump. In part eleven we ask the question that can break the whole design: did anyone game the cutoff? That is the McCrary density test.
+:::

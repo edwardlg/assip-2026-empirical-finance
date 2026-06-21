@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## RAG: Retrieve, Ground, and Its Limits
+
+- Part 6 — retrieve nearest chunks, ground the answer, RAG's limits
+
+::: notes
+Welcome back to the AI co-pilot for research, part six of fourteen. In part five we built the first half of the R-A-G pipeline: chunking each filing into coherent passages with metadata, and embedding each into a meaning vector stored in an index. Now we finish the pipeline — retrieve and ground — and face the two ways retrieval-augmented generation can still go wrong.
+:::
+
+## Stage 3 — Retrieve
+
+- A question arrives; embed it with the **same** model
+- Find the $k$ chunks whose vectors are nearest
+- Nearest by cosine similarity — the metric from before
+- Typically $k$ between three and ten
+- Plain nearest-neighbor search, not magic
+
+::: notes
+Stage three, retrieve. When a question arrives — what liquidity risks did this firm disclose in twenty-nineteen — you embed the question with the same embedding model, then find the k chunks whose vectors are nearest to the question's vector, nearest by cosine similarity, exactly the metric you used before. Those k chunks, typically k between three and ten, are the passages most likely to contain the answer. This is the retrieval step, and it is plain nearest-neighbor search, not magic.
+:::
+
+## Stage 4 — Ground the Answer
+
+- Build a prompt with the retrieved chunks plus the question
+- Instruct: answer from these passages only
+- Cite the chunk ID for every claim; decline if absent
+- Job shifts from recall to reading comprehension
+- Each chunk's metadata makes the citation verifiable
+
+::: notes
+Stage four, ground the answer. You build a prompt that contains the retrieved chunks and the question, with an instruction in the spirit of the cite-or-decline pattern: answer using only the passages below, cite the chunk I-D for every claim, and if the passages do not contain the answer, say so. The model now has the actual source text in its context window, so its job shifts from recall — dangerous and fabrication-prone — to reading comprehension and summarization, which is much more reliable. And because each chunk carries metadata, the answer can cite firm X, fiscal year twenty-nineteen, Item seven — a citation you can open and verify.
+:::
+
+## RAG Reduces, Not Eliminates, Hallucination
+
+- It removes the **recall** failure mode
+- But retrieval can **fail** — relevant chunk not in the top $k$
+- The model can still **misread** or over-extrapolate
+- Discipline: every claim cites a retrievable source you spot-check
+
+::: notes
+Why does R-A-G reduce hallucination rather than eliminate it? It removes the recall failure mode — the model is no longer guessing facts from blurry memory — but it introduces two new ways to go wrong. First, retrieval can fail: if the relevant chunk is not in the top k, the model answers from incomplete information, and a model handed the wrong passages can still produce a confident, wrong answer. Second, the model can still misread or over-extrapolate from the passages it was given — inventing a number close to one in the text, or stitching two passages into a claim neither supports. So R-A-G is a large improvement, not a guarantee. The discipline that makes it trustworthy runs through this whole lesson: every claim must cite a retrievable source, and you spot-check those citations. A claim that cites passage three is one you can falsify by opening passage three; a claim with no citation is one you cannot trust, and the prompt should forbid it.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+You **retrieve** the nearest chunks to the question, then **ground** the answer by forcing the model to cite passages and decline when they fall short. This shifts it from recall to reading comprehension — sharply reducing, but not eliminating, hallucination. Next: an LLM label is a measurement.
+:::
+
+::: notes
+To summarize part six: the second half of R-A-G. Retrieval embeds the question and pulls the nearest k chunks by cosine similarity — plain nearest-neighbor search. Grounding builds a prompt from those chunks and forces the model to answer only from them, cite each chunk, and decline when they fall short, shifting it from fabrication-prone recall to reliable reading comprehension with verifiable citations. But retrieval can miss the relevant chunk, and the model can still misread, so every claim must cite a retrievable source you spot-check. In part seven we reach the heart of the lesson: an LLM label is a measurement, not the truth.
+:::

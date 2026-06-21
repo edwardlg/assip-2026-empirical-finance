@@ -1,0 +1,70 @@
+---
+date: "2026-07-13"
+---
+
+## Path A — Pinning a Vintage and Querying HMDA
+
+- Part 3 — Path A: pin the vintage, query the CFPB API
+
+::: notes
+Welcome back to Week Four, the Lab, part three of eight. In part two we laid out the two paths and the reproducible setup. Now we work Path A — real HMDA. You do not have to run it to finish the lab, but you should understand it, because this is how you would build the panel for the capstone. We start where every reproducible pull must: pinning a vintage and respecting the register's size.
+:::
+
+## HMDA: Free, Public, and Enormous
+
+- Published by the FFIEC and the CFPB
+- Most lenders must report nearly every application
+- Action taken, loan amount, location, applicant demographics
+- Tens of millions of records per year
+- One of the largest public microdatasets in U.S. finance
+
+::: notes
+First, what HMDA is. The Home Mortgage Disclosure Act Loan Application Register is free, public data published by the FFIEC and the Consumer Financial Protection Bureau. Under the act, most mortgage lenders must report nearly every application, with the action taken — originated, approved-but-not-accepted, denied, or withdrawn — the loan amount, the property location down to census tract, and applicant demographics. It is one of the largest public microdatasets in U.S. finance, tens of millions of records per year. That size is the first practical fact that shapes everything you do with it.
+:::
+
+## Pin the Vintage First
+
+- HMDA is **revised**: published, then re-published with corrections
+- The schema changed across reform years
+- Any reproducible pull must name year and snapshot
+- Record that string in your notebook
+- Never present a figure without naming its vintage
+
+::: notes
+Now the discipline. Pin the data vintage first. HMDA is revised: a given application year is published, then re-published with corrections, and the schema has changed across reform years — the twenty-eighteen expansion under Dodd-Frank added many fields. So any reproducible pull must state which year and which snapshot it used. For this lab we pin a recent multi-year window of the register as published in the CFPB Data Browser snapshot current at the camp container build — and you record that exact string. Never present a figure without naming its vintage.
+:::
+
+## Respect the Size: Two Disciplined Options
+
+- A single year's national file is multiple gigabytes
+- **Never** download the full national file to a laptop
+- Option one: filtered API pulls, a handful of states
+- Option two: FFIEC bulk files, aggregate in chunks
+- Aggregate **down** to county-year before doing anything else
+
+::: notes
+The register is too large to pull whole — a single year's nationwide file is multiple gigabytes. Never download the full national file to a laptop. Two disciplined options. First, filtered interface pulls, good for a handful of states: the Data Browser lets you request only the rows you need, filtered by state and year. Second, the FFIEC bulk files, good for the whole country: per-year files you download once to the container's read-only data area, then aggregate with pie-arrow and pandas in chunks. The camp container mirrors these so you are not re-downloading gigabytes. Either way, the rule holds: large data stays on GMU infrastructure, and you aggregate down to a county-year panel before doing anything else.
+:::
+
+## The Aggregation Query Pattern
+
+- The API returns raw records **or** server-side aggregations
+- For a panel, the **aggregation endpoint** is what you want
+- Ask CFPB to count actions by your dimensions
+- You never move the microdata at all
+- Pin years and states; group by state and action taken
+
+::: notes
+Here is the query pattern. The CFPB HMDA Data Browser exposes an HTTP interface that returns either raw records or server-side aggregations. For a panel, the aggregation endpoint is what you want: you ask CFPB to count actions by the dimensions you care about, so you never move the microdata. The pattern is a base address plus query parameters naming the years, the states, and the variables to group by. In the example function you loop over years, pass the states as a comma-joined list, and request actions-taken codes one and three — one meaning loan originated, three meaning denied. The server returns a tidy table you normalize, one row per state, year, and action-taken cell, with a count. One caution: confirm the live parameter names against the API docs for your pinned vintage, because CFPB has renamed fields across releases. The snippet is the pattern, not a guaranteed-stable contract.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+HMDA is free, public, and **enormous** — tens of millions of rows a year. **Pin the vintage** and name it with every figure; never pull the national file to a laptop. Use the CFPB **aggregation endpoint** so the server counts actions by state, year, and action taken — you never move the microdata. Next: turning those counts into a denial-rate panel and defining the treatment.
+:::
+
+::: notes
+To summarize part three: HMDA is free, public, and enormous — tens of millions of records a year. So you pin the vintage and name it alongside every figure, and you never pull the national file to a laptop. To build a panel, you lean on the CFPB aggregation endpoint, so the microdata stays put. In part four we turn those counts into a denial-rate outcome, handle thin cells and the denominator choice, and define the treatment — a staggered state fair-lending policy — then name the full spec.
+:::

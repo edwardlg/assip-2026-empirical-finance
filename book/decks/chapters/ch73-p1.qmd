@@ -1,0 +1,64 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## Why Pre-Registration Exists
+
+**Learning objectives.** By the end you can:
+
+- Separate confirmatory from exploratory analysis
+- Write a five-component short-form pre-analysis plan
+- Pin a primary specification by naming every slot
+- Register before you peek using a hold-out
+
+::: notes
+Welcome to Week Seven, Chapter seven-point-three, part one of eight: the pre-analysis plan. Over this lesson we build the single document that protects an honest researcher from their own worst instincts. Our character Maya has a question about mortgage discrimination, a real HMDA dataset she pulled last chapter, and a problem she has not noticed. She is excited — and that excitement is the danger. In this part we watch how a good student can p-hack an honest project without a single dishonest thought, and we name the device that stops it. The frame is Benjamin Olken's two-thousand-fifteen paper, Promises and Perils of Pre-Analysis Plans — the most balanced thing on the topic.
+:::
+
+## Maya's Dangerous Afternoon
+
+- Question: do minority applicants face higher denial, controls fixed?
+- Does the gap shrink for algorithmic vs. face-to-face lenders?
+- She runs her main regression, sees a small coefficient, frowns
+- Then she **tries things** — each one defensible in isolation
+- A starred specification appears; she reports only that one
+
+::: notes
+Here is what happens if no one stops Maya. She runs her main regression and stares at the race coefficient. Suppose it comes out small and insignificant. Being a good, resourceful student, she starts trying things. Maybe drop the smallest lenders. Maybe winsorize income at the first and ninety-ninth percentiles. Maybe add a quadratic in loan-to-value. Maybe restrict to purchase loans, since refinances are noisier. Maybe cluster by county instead of by lender, because that tightens the standard error. Somewhere in that thicket of reasonable choices, a specification appears where the coefficient is large and starred. She feels relief and reports that one specification as though it were the only one she considered. She is not lying. Every choice was defensible. That is exactly what makes the result worthless.
+:::
+
+## The Garden of Forking Paths
+
+- Under a true null, the p-value is **uniform** on the interval zero to one
+- One test gives $p<0.05$ exactly five percent of the time
+- Twenty true nulls: $1-0.95^{20}\approx 0.64$ — a sixty-four percent fluke
+- Five binary forks $=2^5=32$ specifications
+- Outcome-aware choices pull you toward the lucky branch
+
+::: notes
+Go back to the cold arithmetic of Chapter one-point-five. When the null is true, the p-value is uniform between zero and one, so a single test gives p below zero-point-zero-five exactly five percent of the time. But run many tests and it explodes. With twenty independent true nulls each tested at five percent, the chance that at least one crosses the line by luck is one minus zero-point-nine-five to the twentieth power — about zero-point-six-four. Sixty-four percent, better than a coin flip, purely from twenty tries. Maya did not consciously run twenty tests. But every maybe in her thicket is a fork. Five binary choices give two to the fifth — thirty-two specifications. Even if the true gap is exactly zero, the chance one crosses significance is enormous. And because she walked the forks with the outcome in view, she was pulled toward the branch she was hoping for. This is Andrew Gelman's garden of forking paths.
+:::
+
+## The Embarrassingly Simple Fix
+
+- You cannot fish in a pond whose boundaries you fixed **in advance**
+- Write hypotheses, primary spec, sample, clustering — before any coefficient
+- Thirty-two forks collapse to **one** confirmatory test
+- Everything tried afterward is still allowed — labeled **exploratory**
+- Confirmatory: a real test · Exploratory: a hypothesis generator
+
+::: notes
+The mechanism is almost embarrassingly simple, and it is the whole trick. You cannot fish in a pond whose boundaries you nailed down before you knew where the fish were. If Maya writes, in a dated committed file — my primary outcome is the denial indicator, my specification clusters by lender, my sample is purchase loans only — before seeing a single coefficient, then the thirty-two forks collapse to one. There is exactly one confirmatory test, and its p-value means what Chapter one-point-five said it means. Everything she tries afterward is still allowed and valuable, but now honestly labeled exploratory: a generator of new hypotheses, not a test of this one. This is the same defense you met last week against prompt-induced p-hacking — freeze the rubric before you look at the downstream coefficient. A pre-analysis plan generalizes it to your entire design.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **pre-analysis plan** separates the analysis you committed to in advance (**confirmatory**) from the analysis you invented after seeing data (**exploratory**). The sin is not exploring — it is presenting an exploratory result as if it were a test. Next: the five components of a short-form PAP.
+:::
+
+::: notes
+To summarize part one: a pre-analysis plan separates confirmatory analysis — what you committed to in advance — from exploratory analysis, what you invented after seeing the data, so a reader can tell which results were tests and which were searches. Both kinds are legitimate. The sin is never exploring; it is presenting an exploratory result as if it had been a confirmatory test. Olken holds the promise and the perils in the same hand, and we will too. In part two we start writing Maya's plan, beginning with the first of its five components: hypotheses stated directionally.
+:::

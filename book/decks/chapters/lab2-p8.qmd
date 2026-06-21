@@ -1,0 +1,70 @@
+---
+date: "2026-06-29"
+---
+
+## Reading the SE and Wrapping Up
+
+- Part 8 — read and defend the FM SE; wrap up
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, the final part, eight of eight. In part seven we recovered a premium near six-tenths of a percent per month with a healthy t-statistic. Now make sure you can defend it. There are three questions to ask of any Fama–MacBeth standard error, all from Chapter two-point-four's checklist. We work through all three and close out the lab and Week Two.
+:::
+
+## Question 1 — What Variation Is It Built From?
+
+- FM SE = scatter of the **monthly slopes** over $\sqrt{T}$
+- More **stocks** per month barely tightens it
+- More **months** tightens it like $1/\sqrt{T}$
+- Precision lives in $T$ (time clusters), **not** $N$ (cross-section)
+- Only 30 months? Be as nervous as Priya with 9 states — use $t_{T-1}$
+
+::: notes
+First question: what variation is the standard error built from? It is the scatter of the monthly slopes over the square root of T — driven entirely by how many months you have and how much the price of beta bounces between them. Doubling the number of stocks per month barely tightens it. But doubling the number of months tightens it like one over the square root of T. This is the cluster-asymptotics lesson from Chapter two-point-four wearing a new hat: precision lives in T, the number of time clusters, not in N, the cross-section. If you have only thirty months, be as nervous as Priya was with nine states — use the t-distribution with T minus one degrees of freedom, not the normal.
+:::
+
+## Question 2 — What Correlation Does It Handle?
+
+- **Handles** automatically: within-month cross-sectional correlation
+- The common market shock that moves all stocks together
+- **Misses:** serial correlation in the slopes **across months**
+- If $\hat\gamma_{1,t}$ predicts $\hat\gamma_{1,t+1}$, plain FM SE is too small
+- Fix: **Newey–West** on the slope series (the extension)
+
+::: notes
+Second question: what correlation does it handle, and what does it miss? It handles, automatically and exactly, the within-month cross-sectional correlation — the common market shock that moves all stocks together. But it misses serial correlation in the slopes across months. If this month's slope predicts next month's slope — a firm-effect-style persistence — then the plain Fama–MacBeth standard error is too small. The fix is a Newey–West correction on the slope series, which you apply in the extension. So this question pairs a strength with a blind spot: cross-section handled, time persistence not.
+:::
+
+## Question 3 — Does It Beat the Naive SE?
+
+- Run pooled OLS of `ret` on `beta_hat` over the **whole** panel
+- Compare its SE on `beta_hat` to your FM SE
+- Pooled SE will be **dramatically smaller**
+- It pretends 108,000 stock-months are 108,000 independent draws
+- That gap **is** the diagnostic — the lying t-stat vs the honest one
+
+::: notes
+Third question: does it disagree with the naive number? Run a pooled OLS of return on estimated beta across the entire stacked panel, and compare its standard error on beta to your Fama–MacBeth standard error. The pooled one will be dramatically smaller — because it pretends your one hundred eight thousand stock-months are independent observations, when on the dimension that matters they are closer to three hundred sixty. That disagreement is the diagnostic, exactly as in Chapter two-point-four: the gap between the lying t-statistic and the honest one. The pooled standard error coming out far too small is not a contradiction to resolve — it is the whole point of Fama–MacBeth made visible.
+:::
+
+## The Deeper Lesson
+
+- FM invented 1973 — before White (1980), before Petersen (2009)
+- Operational genius: side-step the $N\times N$ covariance, don't estimate it
+- Petersen's verdict: FM ≈ clustering by time; right for a common shock
+- But understates SE under a **firm effect** — needs Newey–West / firm clusters
+- **Point estimate is the easy half; its uncertainty decides if it's real**
+
+::: notes
+Let's end where Chapter two-point-four ended. Fama–MacBeth is the historical ancestor of the entire clustering literature. Fama and MacBeth invented it in nineteen seventy-three — a decade before White's robust standard errors, three decades before Petersen's panel taxonomy — to handle the cross-sectional correlation in stock returns without any sandwich machinery, which did not yet exist. Their solution was operational genius: don't estimate the N-by-N error covariance, just side-step it by letting each period speak once. Petersen later placed it inside the unified framework: essentially clustering by time, the right tool when a common time shock dominates, but under a firm effect it understates the standard error. The deeper lesson all of Week Two has driven at: getting the point estimate is the easy half; getting its uncertainty right is the half that decides whether your finding is real.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Defend any FM SE with three questions: what variation (months, not stocks), what correlation it handles (cross-sectional, not serial), and does it beat the naive pooled SE (far larger). FM clusters by time — right for a common shock, blind to firm effects. That closes Week 2. Next week: panel data and fixed effects.
+:::
+
+::: notes
+To summarize part eight and close the lab: defend any Fama–MacBeth standard error with three questions. What variation — months, not stocks. What correlation it handles — within-month cross-sectional, not serial across months. And does it beat the naive pooled standard error — far larger, and that gap is the diagnostic. Fama–MacBeth clusters by time, the right tool when a common market shock dominates, but blind to firm effects. That closes Week Two, where you rebuilt OLS, faced down heteroskedasticity and clustering, and replicated the most famous estimator in asset pricing. Next week: panel data and fixed effects, where these ideas about correlated errors return in full force. Great work.
+:::

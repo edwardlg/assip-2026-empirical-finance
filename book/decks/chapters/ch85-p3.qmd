@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## One Idea Per Slide, and the Table-to-Figure Translation
+
+- Part 3 — what goes on each slide, and translating tables
+
+::: notes
+Welcome back to Chapter eight-point-five, part three of nine. In part two we walked the four beats that carry the talk. Now we cover the two rules that govern what goes on each slide. Both respect the fact that a live audience reads with their ears, not their eyes. The first rule is one idea per slide; the second is the mechanical translation from a results table into a figure.
+:::
+
+## One Idea Per Slide
+
+- A slide is one claim with one piece of evidence
+- Two ideas: the audience chooses, and chooses wrong
+- The test: can the idea be the *title*, a full sentence?
+- "Results" is not a title; the one-line finding is
+- Six clean slides beat four crowded ones
+
+::: notes
+A slide is a single claim with a single piece of evidence for it. The instant a slide has two ideas, the audience has to choose which one to follow while you talk, and they will choose wrong, and you will lose them. The test is brutal and useful: if you cannot write the slide's one idea as the title, a full sentence, not a noun phrase, the slide is doing too much. "Results" is not a title; "the denial gap falls one point eight points after the regulation, and the fall is concentrated in algorithmic lenders" is a title, because it is the idea, and a reader who only reads your titles should still get the argument. Split anything that resists this. Six clean slides beat four crowded ones every time, because the crowded four cost you the room.
+:::
+
+## Why Translate a Table at All
+
+- In the paper, results live in a regression table
+- Correct, but unreadable from row eight in four seconds
+- A listener cannot scan a five-by-seven grid while you speak
+- A table is for a reader who can stop and study
+- A figure is for a listener who cannot
+
+::: notes
+Here is the reveal that separates a paper from a talk. In your paper, your results live in a regression table, the four-decimal, five-column, standard-errors-in-parentheses object the style guide specifies down to the typography. That table is correct, and it is unreadable from row eight of a lecture hall in four seconds. A live audience cannot scan a five-by-seven grid of numbers while you speak; by the time they have found the coefficient you are talking about, you are three sentences past it. So you do not show the table. You translate it into a figure. The principle under everything that follows: a table is for a reader who can stop and study; a figure is for a listener who cannot.
+:::
+
+## The Translation, Made Mechanical
+
+- One coefficient with interval becomes a **point with an error bar**
+- Several specifications become a **coefficient plot**
+- Diff-in-diff becomes an **event-study plot**, flat then jumping
+- Discontinuity becomes a **binned scatter** with the jump
+- A subgroup pattern becomes **small-multiples bars**
+
+::: notes
+The translation is mechanical, and learning it is one of the highest-leverage skills in this chapter. A single coefficient with its confidence interval becomes a point with an error bar: one estimate, one whisker, and the eye reads "is it different from zero?" and "how precise?" instantly. A coefficient across several specifications becomes a coefficient plot, one dot-and-whisker per specification, lined up, with a reference line at zero. The audience sees stability as a shape, a tight vertical cluster, not as seven numbers to compare mentally. A difference-in-differences becomes an event-study plot, flat before treatment, jumping after, which is the parallel-trends defense made visible. A regression discontinuity becomes the binned scatter with the fitted jump at the cutoff. And a subgroup pattern becomes a small-multiples bar chart. Same number, two encodings, chosen for the medium. Strip the gridlines, the legend nobody reads, the third decimal; the figure has one job, which is to make one comparison obvious.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**One idea per slide** — if the idea cannot be the title, the slide does too much. And **translate every result you say out loud into a figure**: a table is for a reader who can stop and study, a figure is for a listener who cannot. Same number, legible at the speed of speech. Next: time budgeting and the rehearsal that proves it.
+:::
+
+::: notes
+To summarize part three: one idea per slide, tested by whether the idea fits in the title as a full sentence, and translate every result you say out loud from a table into a figure, because a table is for a reader who can stop and study while a figure is for a listener who cannot. The translation is mechanical: error bars, coefficient plots, event-study plots, binned scatters, small multiples. In part four we cover time budgeting and the timed rehearsal that proves a budget you have not tested is only a wish.
+:::

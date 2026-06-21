@@ -1,0 +1,46 @@
+---
+date: "2026-07-27"
+---
+
+## KPSS: Let the Market Value the Patent
+
+- Part 2 — the event-study move and filtering out the market
+
+::: notes
+Welcome back to Chapter six-point-one, part two of ten. In part one we set up the measurement problem: patent counts and citations both fail to value a patent in dollars in real time. Now we meet the clever move that solves it — an event study on the patent-grant date — and the first refinement that filters out the market. This is the heart of the paper.
+:::
+
+## The Clever Move: Read the Stock Reaction
+
+- Headline is *not* a causal estimate — it is a measurement strategy
+- A patent grant by the U.S. Patent Office is *news*
+- Valuable patent should make the stock jump
+- Read the **abnormal return** in a tight grant window
+- Same event-study logic as Week 4
+
+::: notes
+First, name the kind of claim. The headline contribution of K-P-S-S is not a causal estimate in the Week-Three or Week-Four sense. It is a measurement strategy — a recipe for turning observable data into a number that proxies an unobservable, the economic value of an invention. So the thing playing the role of an identifying assumption is the assumption that makes the recipe valid. Now the move itself. When the U.S. Patent and Trademark Office grants a patent to a publicly traded firm, that grant is news. The market did not know for certain the patent would issue, or on exactly what claims. If the patent is valuable, the stock should jump when the grant becomes public; if worthless, the stock should not move. So K-P-S-S read the stock-market reaction in a short window around the grant date as the market's real-time, dollar-denominated estimate of what the patent is worth. This is exactly the event-study logic from Week Four: pick an event date, define a narrow window, and measure the abnormal return — the part of the return not explained by the market's normal movement.
+:::
+
+## Refinement One: Filter Out the Market
+
+- A stock can move for reasons unrelated to the patent
+- The whole market rallied, or the sector moved
+- Strip out the market's contribution — keep the residual
+- Market model: $R_{it} = a_i + b_i R_{mt} + \varepsilon_{it}$
+- The patent's value lives in $\varepsilon_{it}$, not the raw return
+
+::: notes
+The first refinement turns that intuition into something usable: filter out the market. A stock can move during the window for reasons that have nothing to do with the patent — the whole market rallied, or the firm's sector moved. The raw window return is therefore contaminated. So K-P-S-S strip out the market's contribution, leaving the idiosyncratic, firm-specific component of the window return — the abnormal return in the language of Week Four. This is the same discipline as the market model: the firm's return on day t equals a-sub-i plus b-sub-i times the market return on day t, plus a residual epsilon-sub-i-t, where that residual is the firm-specific surprise. The patent's value lives in the residual epsilon, not in the raw return. Keep that picture: we are not reading the whole stock move, only the part the market could not have explained on its own.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Let the market value the patent: a grant is **news**, so read the stock reaction in a tight window as the market's dollar estimate. Refinement one **filters out the market** — keep the firm-specific residual $\varepsilon_{it}$, where the patent's value lives, not the raw return.
+:::
+
+::: notes
+To summarize part two: K-P-S-S outsource patent valuation to the stock market via an event study on the grant date — a measurement strategy, not a causal claim. The first refinement filters out the market: using the market model, keep only the firm-specific residual, the abnormal return, because the patent's value lives there and not in the raw return. In part three we finish the recipe — scaling the reaction into dollars, adjusting for grant-anticipation, and stating the one assumption that makes the whole measure valid.
+:::

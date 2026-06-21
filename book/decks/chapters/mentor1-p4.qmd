@@ -1,0 +1,55 @@
+---
+date: "2026-06-22"
+---
+
+## Gate Three — Surviving the Search
+
+- Part 4 — would the effect survive the search that found it?
+
+::: notes
+Welcome back to Mentor Session One, part four of five. In part three we opened gate two and separated statistical significance from effect size. Now we reach the gate that sends most so-called findings to the graveyard. Gate three asks: would this effect survive the search that found it? How many things did you try before you landed on the one you are reporting? This is the question a serious reader asks first, and it changes how you read every result in finance.
+:::
+
+## The Search Inflates Luck
+
+- A true null still gives $p<0.05$ a full **5%** of the time
+- p-values are **uniform** under the null hypothesis
+- Test enough dead rules and one *will* look significant
+- The reported p-value then becomes a **lie**
+
+::: notes
+Start with a fact about p-values that gate three is built on. Even when there is genuinely nothing there — when the null hypothesis is exactly true — a p-value still falls below zero-point-zero-five a full five percent of the time. Under the null, p-values are uniformly distributed, which means one in twenty pure-noise tests crosses the line by chance. So if you test enough dead rules, one will look significant, guaranteed, with no real effect anywhere. And if you then report only that winner, the p-value you print is a lie — because it pretends the other tries never happened. The reported five percent is no longer the real chance of a false alarm.
+:::
+
+## Twenty Dead Rules, One Winner
+
+- Test 20 worthless rules, report the best
+- $1 - 0.95^{20} \approx 64\%$ chance of a spurious "hit"
+- You would have reported a coin flip as a discovery
+- First question a reader asks: **how many things did you try?**
+
+::: notes
+Let me put a number on it. Suppose you test twenty worthless rules — twenty signals with no real edge — and you report the one with a p-value below zero-point-zero-five. What is the chance that at least one of the twenty looked significant by pure luck? It is one minus zero-point-nine-five raised to the twentieth power, which is about sixty-four percent. Almost two-thirds of the time, pure noise hands you a winner. So if you report that winner as a discovery, you have reported a coin flip. This is why the first question a serious reader asks of any result is not "what was the t-statistic?" but "how many things did you try before you found this one?" A finding has to survive not just one test, but the whole search that surfaced it.
+:::
+
+## The Garden of Forking Paths
+
+- Even *one* analysis hides dozens of silent choices
+- Which window, which sample, which control, which cutoff
+- You need not run 20 tests to face the 20-test problem
+- Defenses later: pre-registration, Bonferroni, false discovery rate
+
+::: notes
+And it is worse than counting tests, because of something called the garden of forking paths. Even a single analysis that looks like one test hides dozens of silent choices: which time window you used, which subsample you kept, which control variables you included, where you set a cutoff. Each choice was a fork in the road, and you only walked one path — but you might have walked a different one if the data had nudged you. So you can face the twenty-test problem without ever consciously running twenty tests. The defenses we build later in the program are pre-registration, the Bonferroni correction, and the false discovery rate. For now, the habit to build is simple: always ask, of any result, how many things were probably tried before this one surfaced.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Gate three asks how many things you tried: twenty dead rules give a $\approx 64\%$ chance of a spurious winner, and even one analysis hides a garden of forking paths. Always ask "how many things did they try?" before trusting any result.
+:::
+
+::: notes
+To summarize part four: gate three asks whether an effect would survive the search that found it. Because a true null still produces a significant p-value five percent of the time, testing twenty dead rules gives about a sixty-four percent chance of a spurious winner — and even one careful analysis hides a garden of forking paths, dozens of silent choices that each could have gone another way. So the reflex is to always ask, of any result, how many things were tried before this one. In part five we close the session by naming what actually separates a finding from noise, and by drawing the crucial line between a number that is measured and a number that is explained — the line that the rest of the program is built to cross.
+:::

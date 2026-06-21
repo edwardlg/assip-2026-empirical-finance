@@ -1,0 +1,83 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Measuring Power and Tracing a Power Curve
+
+- Part 6 — measure power and trace a power curve
+
+::: notes
+Welcome back to Lab one, part six of seven. In part five you measured the size of your test — how often it cries wolf with no wolf. Now the opposite question: when there really is a wolf, how often do you catch it? That is power. You will measure it on a biased coin, then sweep the true p across a grid and trace a whole power curve.
+:::
+
+## What Power Is
+
+- Size asks: how often do you cry wolf with no wolf?
+- Power asks the opposite: do you catch a *real* wolf?
+- Power $= 1 - \beta = \Pr(\text{reject } H_0 \mid H_1)$
+- Change one thing: draw data from $p \neq p_0$
+- Then run the same test and count rejections
+
+::: notes
+Power equals one minus beta, the probability of rejecting the null given the alternative is true. To measure it, change one thing from your size experiment: draw the data from a coin whose true p is not equal to the null value p-naught, then run the same test and count rejections. For example, generate data at a true p of zero point six, test against a null of one-half, and the fraction of rejections is your empirical power at that effect size.
+:::
+
+## Size Is Power at the Null
+
+- `empirical_size` is `empirical_power` with `p_true == p0`
+- Size is power evaluated *at the null*
+- Same machine, pointed at different truths
+- Worth pausing on — it unifies the two ideas
+- One simulator answers both questions
+
+::: notes
+Here is a unifying observation. Your empirical-size function is just your empirical-power function with the data-generating p set equal to the null value p-naught. Size is power evaluated at the null. They are the same machine pointed at different truths: when the truth coincides with the null, the rejection rate is the size; when it departs, that rate is the power. One simulator answers both questions.
+:::
+
+## Trace the Power Curve
+
+- Hold $p_0 = 0.5$, $\alpha = 0.05$, $N$ fixed
+- Sweep the true $p$ across a grid, say $0.30$ to $0.70$
+- Redo the sweep for a few $N$ and overlay the curves
+- Each curve is a **valley**, bottoming at $p = 0.5$
+- At the bottom, "power" equals the *size* — about $0.05$
+
+::: notes
+Now trace a power curve. Hold the null at one-half, alpha at zero point zero five, and N fixed, then sweep the true p across a grid from zero point three to zero point seven. Redo the sweep for a few values of N and overlay the curves. Each curve is a valley. At the bottom, the true p equals one-half: there the null is true, so what you call power is actually the size — about zero point zero five, the dotted line. The valley floor is exactly the false-positive rate from part five, now inside the power picture.
+:::
+
+## Reading the Curves
+
+- Move $p$ away from $0.5$: power climbs toward $1.0$
+- Bigger effects are easier to detect
+- Larger $N$ gives a *steeper, narrower* valley
+- At $N=800$ even $p=0.55$ is caught most of the time
+- At $N=50$ that same small bias often slips past
+
+::: notes
+Read the curves. As the true p moves away from one-half, power climbs toward one: bigger effects are easier to detect. And the larger-N curves are steeper and narrower. With N equal to eight hundred, even a small bias like p equal to zero point five five is caught most of the time, while at N equal to fifty that same bias slips past more often than not. This makes the power levers visible: effect size and sample size both buy power. Read off the N equal to fifty curve how far the true p must be from one-half to catch the bias eighty percent of the time.
+:::
+
+## Why a Non-Rejection Proves So Little
+
+- If Sam tests a truly $p=0.54$ coin at $N=50$ and fails…
+- The correct sentence: *fail to reject is not accept*
+- The curve shows power there is low — a miss is likely
+- A non-rejection at low power proves almost nothing
+- Power is why "no evidence" is not "evidence of no effect"
+
+::: notes
+Finally, connect the curve to the rule that failing to reject is not the same as accepting. Suppose Sam runs the N equal to fifty test on a coin that is truly p equal to zero point five four and fails to reject. The correct sentence is not the coin is fair, but rather, we did not find enough evidence to call it unfair. At N equal to fifty the power against a bias that small is low, so a miss was the likely outcome even though the coin really is biased. A non-rejection at low power is almost uninformative. No evidence of an effect is not evidence of no effect.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Power** is $\Pr(\text{reject} \mid H_1)$, measured by drawing data from $p \neq p_0$ and counting rejections. Size is just power *at the null*. The power curve is a valley bottoming at $\approx 0.05$ when $p = p_0$ and rising toward $1$ as the effect grows; larger $N$ steepens it. A non-rejection at low power proves little. Next: p-hacking.
+:::
+
+::: notes
+To summarize part six: power is the probability of rejecting given the alternative is true, measured by drawing data from a p that differs from the null and counting rejections. Size is just power at the null — the same machine, two truths. The power curve is a valley bottoming near zero point zero five when the true p equals the null and rising toward one as the effect grows, with larger N steepening it. A non-rejection at low power proves almost nothing. In part seven we turn many honest tests loose on worthless coins and watch p-hacking inflate the false-positive rate.
+:::

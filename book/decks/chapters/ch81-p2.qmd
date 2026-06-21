@@ -1,0 +1,94 @@
+---
+date: "2026-08-10"
+---
+
+## The Garden of Forking Paths, Made Visible
+
+- Part 2 — enumerate every defensible spec into a grid
+
+::: notes
+Welcome back to The Execution and the Specification Curve, part two of six. In part one we ran the pre-registered specification once and reported it whatever it showed — but a clean run answers only what that one branch says. The plan collapses the forks to one test. It leaves a question hanging: how many of the other defensible paths would have given you the same answer?
+:::
+
+## Invert the p-Hacker's Sin
+
+- Spec curve is due to Simonsohn, Simmons, and Nelson, 2020
+- The p-hacker runs many, reports the **one** that looks best
+- The spec-curve analyst runs many, reports **all at once**
+- P-hacking exploits multiplicity by concealment
+- Spec-curve analysis defangs it by exhaustive disclosure
+
+::: notes
+The specification curve, due to Simonsohn, Simmons, and Nelson in twenty-twenty, inverts the usual sin. The p-hacker runs many specifications and reports the one that looks best, hiding the rest. The specification-curve analyst runs many — ideally all defensible ones — and reports them all at once. Where p-hacking exploits multiplicity by concealment, this defangs it by exhaustive disclosure. If your result is robust, it is there across most of the forest; if it is a lucky branch, the picture says so loudly, and you catch yourself before a referee does.
+:::
+
+## Step 1 — Enumerate Defensible Choices
+
+- List, for each decision, every option a competent researcher could pick
+- Only the **defensible** ones — no absurd padding
+- A spec you would never defend in a seminar does not belong
+- Padding smuggles in noise, then hides behind "the median was fine"
+- This is the act of writing the garden down
+
+::: notes
+The procedure has three steps, and the discipline is entirely in the first. Step one: enumerate the defensible analytic choices — the act of writing the garden down. For each decision, you list every option a competent researcher could have chosen, and only the defensible ones. The point is not to pad the count with absurd specifications. A specification you would never defend in a seminar does not belong, because it lets you smuggle in noise and hide behind "but the median was fine."
+:::
+
+## Maya's Five Slots
+
+- **Controls:** composition covariate subsets — 4 combinations
+- **Fixed effects:** add state-specific trends or not — 2 options
+- **Sample window:** full, drop 2020, drop edge cohorts — 3 options
+- **Clustering:** by state, by county, wild bootstrap — 3 options
+- **Outcome:** gap difference vs. log-ratio — 2 operationalizations
+
+::: notes
+Maya's choices partition into five slots. Controls: which composition covariates enter — none, income, income plus loan-to-value, or all three — four combinations. Fixed effects: add state-specific linear trends to the county and year baseline, or not — two options. Sample window: full period, drop twenty-twenty, or drop the edge cohorts — three options. Clustering: by state, by county, or wild-cluster bootstrap — three options. Outcome: the gap as a difference or as a log-ratio — two operationalizations.
+:::
+
+## The Multiverse Is a Grid
+
+- $4 \times 2 \times 3 \times 3 \times 2 = 144$ specifications
+- Each is one point in the garden made into a grid
+- One of the 144 **is** her pre-registered primary spec
+- The confirmatory run is a privileged point **inside** the multiverse
+- It is not outside it
+
+::: notes
+Multiply them: four times two times three times three times two equals one hundred forty-four specifications. Each is a single point in the garden of forking paths made into a grid — every combination of every defensible choice, laid out so none can hide. And one of those one hundred forty-four is her pre-registered primary specification. The confirmatory run is not outside the multiverse; it is a privileged point inside it.
+:::
+
+## Multiple Testing in Disguise
+
+- Test 20 true nulls at 5%: false-winner chance $\approx 0.64$
+- With 144 specs, a spurious significant result is near-certain
+- The garden is multiple testing wearing "I only ran one regression"
+- 144 measures how many you **could defensibly have run**
+- The curve shows the whole distribution luck and choice produce
+
+::: notes
+Here the arithmetic of Week One comes back to bite. If you test twenty independent true nulls at five percent, the chance at least one crosses the line by luck is about zero point six four. With one hundred forty-four specifications, even if the true effect were exactly zero, at least one landing below five percent is overwhelmingly likely. The garden of forking paths is just multiple testing wearing the disguise of "I only ran one regression." The one hundred forty-four measure how many she could defensibly have run — the real size of her multiple-testing problem.
+:::
+
+## Steps 2 and 3
+
+- **Step 2:** estimate the key coefficient under all 144
+- Collect estimates, confidence intervals, and the choice-record
+- 144 fixed-effects regressions run in seconds
+- The choice-record is the load-bearing part
+- **Step 3:** plot the distribution, with the choices underneath
+
+::: notes
+Step two: run all of them. Estimate the key coefficient — for Maya, the average treatment effect on the denial gap — under every one of the one hundred forty-four specifications, and collect the estimates and intervals. This is embarrassingly fast; the regressions run in seconds. The output is a vector of estimates and inference results, plus a record of which choice each slot used — the load-bearing part. Step three: plot the distribution, with the choices underneath. We build that figure next.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The specification curve inverts the p-hacker's sin: run **all** defensible specifications and disclose them at once. Enumerate only choices you would defend out loud; cross-multiply the slots into a grid. Maya's five slots yield $144$ specifications — and that count is the true size of her multiple-testing problem.
+:::
+
+::: notes
+To summarize part two: the specification curve inverts the p-hacker's sin — run every defensible specification and disclose them all at once. The discipline is in step one: enumerate only choices you would defend out loud, then cross-multiply the slots. Maya's five slots yield one hundred forty-four specifications — the true size of her multiple-testing problem. In part three we draw the two-panel figure and read a robust curve.
+:::

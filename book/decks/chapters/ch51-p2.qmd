@@ -1,0 +1,46 @@
+---
+date: "2026-07-20"
+---
+
+## The Twist, and What Kind of Claim This Is
+
+- Part 2 — size, value as main event; the paper's genre
+
+::: notes
+Welcome back to Chapter five-point-one, part two of seven. In part one we framed the research question and the reigning theory: CAPM says only market beta should explain returns. Now we meet the twist that made the paper famous — two patterns the field had filed away as anomalies — and we settle a question every good referee asks first: what kind of claim is this paper even making? Getting that straight is half of reading it well.
+:::
+
+## The Twist That Made It Land
+
+- Two awkward patterns nagged the late 1980s
+- **Size:** small firms (low market cap) earned more than big firms
+- **Value:** high book-to-market firms (BE/ME) beat growth firms
+- Dismissed as anomalies, footnotes to CAPM
+- The question: are they actually the *main event*?
+
+::: notes
+Fama and French ask whether CAPM is true, with a twist. By the late nineteen eighties, two awkward patterns had been noticed. First, size: small firms — those with low market capitalization, meaning share price times shares outstanding — seemed to earn higher average returns than big firms. Second, value: firms with a high book-to-market ratio — the accountant's book value of equity divided by the market's valuation of that equity, written BE over ME — seemed to beat growth firms. The profession treated these as anomalies, footnotes to CAPM. Fama and French's real question is whether these footnotes are actually the main event. Once you account for size and book-to-market, does market beta have anything left to explain at all? The answer, telegraphed by their results, is the one that made the paper famous: size and book-to-market capture the cross-sectional variation, and beta adds essentially nothing once they are controlled for. The paper did not just add a variable; it dethroned one.
+:::
+
+## What Kind of Claim Is This?
+
+- **No causal design** — and you shouldn't expect one
+- This is a **descriptive / predictive** asset-pricing study
+- Documents which firm characteristics line up with average returns
+- The cousin of Week 1 regressions, not Week 4 experiments
+- Ask "is this relationship real and robust?" — not "is it causal?"
+
+::: notes
+Here is a good referee's first habit: before asking "do I believe the result?" ask "what kind of claim is this?" Weeks Three and Four drilled you to hunt for a causal design — a treatment, a counterfactual, an as-good-as-random source of variation. You will not find one here, and you should not expect to. That is not a flaw; it is the paper's genre. Fama and French nineteen ninety-two is a descriptive, predictive asset-pricing study. It documents which firm characteristics line up with average returns in the cross-section. It is the empirical-finance cousin of the regressions in Week One, not the natural experiments of Week Four. Read it asking "is this relationship real and robust?" — not "is this the causal effect of size on returns?" A referee who demands a randomized experiment here has misread the genre; one who accepts a sloppy correlation has under-read it. The right standard is robustness and honesty about what the design can and cannot deliver.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The twist: **size** and **book-to-market**, once dismissed as anomalies, turn out to be the main event — and beta adds nothing once they enter. And the genre matters: this is a **descriptive, predictive** study, so judge it on robustness, not on a causal design. Next: the empirical machinery — portfolio sorts and the Fama–MacBeth regression — plus the data.
+:::
+
+::: notes
+To summarize part two: the twist is that size and book-to-market, the field's footnotes, turn out to capture the cross-section while beta goes flat. And the genre is descriptive and predictive — so we judge the paper on whether its relationships are real and robust, not on a causal identification strategy it never claims to have. In part three we open the engine room: the two pieces of machinery the paper runs on — portfolio sorts and the Fama–MacBeth cross-sectional regression you built in Lab Two — and the CRSP-plus-Compustat data underneath them.
+:::

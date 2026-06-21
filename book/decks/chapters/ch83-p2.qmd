@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## The Introduction That Promises
+
+- Part 2 — the introduction's four promise-making moves
+
+::: notes
+Welcome back to Writing the Empirical Paper, part two of seven. In part one we learned that a paper is an argument, not a transcript, and that you say the important thing first at every scale. Now we open the most-read, most-rewritten section of all: the introduction. It is a promise machine, and it makes its promise through four near-canonical moves. Follow them mechanically until you have earned the right to deviate.
+:::
+
+## Four Moves of the Introduction
+
+- The introduction is a promise machine, four to six paragraphs
+- Move one: the **hook** — name the question, make them care
+- Move two: the **one-sentence contribution**
+- Move three: the **"we find" preview**
+- Move four: the **roadmap**
+
+::: notes
+The introduction is a promise machine. In roughly four to six paragraphs it must make a specific reader want to read the rest, by promising credibly that the payoff is worth their next twenty minutes. The best empirical papers follow a near-canonical structure almost mechanically, and you should too. It has four moves: the hook, the one-sentence contribution, the we-find preview, and the roadmap. Take them in order. We will walk through all four, and the one-sentence contribution is so important it gets its own part next.
+:::
+
+## The Hook and the Contribution
+
+- Hook opens with a real-world fact or tension
+- Not "the literature has long studied"
+- Earn attention with *consequence*, not a literature recitation
+- Contribution: one sentence on what is now *known* that was not
+- Not what you did — what the field now knows
+
+::: notes
+The hook is the first paragraph. It names the question and makes the reader care, in that order, fast. It opens with a real-world fact or tension — a number, a puzzle, a policy debate — not with "the literature has long studied." A good hook says: in twenty twenty-three, applicants from minority neighborhoods were denied at nearly twice the rate of applicants from white neighborhoods, a gap that persists even among similar incomes and loan sizes; whether it reflects differential treatment, and whether policy can move it, is a live and unresolved question. Two sentences, and the stakes are real. The hook earns attention with consequence, not a literature recitation. The one-sentence contribution lands in the first or second paragraph. It says, in one sentence, what is now known that did not exist before you wrote it. Not "we run a difference-in-differences," but "we provide the first causally credible estimate of how fair-lending examination programs affect the denial gap."
+:::
+
+## The "We Find" Preview and Roadmap
+
+- Pay a deposit: tell the reader the answer immediately
+- Sign, rough magnitude, timing, the key robustness fact
+- Students resist — but there is no ending to spoil
+- Roadmap: a short, functional map of the sections
+- Intro must work for someone who never reads the rest
+
+::: notes
+Having promised a contribution, you must immediately pay a deposit: tell the reader the answer. A paragraph beginning literally "We find that" or "Our main result is" previews the headline number, its sign, its rough magnitude, and the key robustness fact. For example: we find that adopting an examination program reduces the denial gap by about one point eight percentage points, roughly a fifth of the pre-period gap; the effect emerges within two years, is robust to alternative controls and clustering, and survives a placebo test. Students resist this, feeling they are spoiling the ending. Reread part one: there is no ending to spoil. A referee who hunts nine pages for your finding is already annoyed. The roadmap is the last paragraph: a short, functional map of the sections, no drama. And a discipline spanning all four moves: the introduction should be readable by someone who will never read the rest of the paper.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The introduction makes **four moves in order**: hook, one-sentence contribution, "we find" preview, roadmap. Lead with a real fact, give the answer up front, and write it so a reader who stops there walks away with the question, the answer, and the right confidence. Next: building the one-sentence contribution.
+:::
+
+::: notes
+To summarize part two: the introduction is a promise machine with four moves in order — the hook, the one-sentence contribution, the we-find preview, and the roadmap. Open with a real-world fact, not a literature recitation. Give the answer up front; there is no ending to spoil. And write the whole introduction so that a reader who stops there still walks away with the question, the answer, and the appropriate degree of confidence. In part three we slow down and build the single most important sentence in the paper: the one-sentence contribution.
+:::

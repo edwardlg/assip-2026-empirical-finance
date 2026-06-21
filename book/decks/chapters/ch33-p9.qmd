@@ -1,0 +1,59 @@
+---
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+## The Code: Three Methods Side by Side
+
+- Part 9 — one runnable script puts all three side by side
+
+::: notes
+Welcome back to Chapter three-point-three, part nine of ten. In part eight we saw why doubly robust is efficient and machine-learning-ready. Now one runnable script ties the methods together on simulated data where we know the true effect — so you can watch which estimators land near it and which wander.
+:::
+
+## The Simulated World
+
+- Build Maya's setup; enrollment depends on income and credit
+- So there is **selection** by construction
+- True effect of enrolling: a $-0.8$ point reduction
+- Outcome depends on income and credit too
+- We observe only one potential outcome per unit
+
+::: notes
+One runnable script ties the three methods together on a simulated dataset where we know the true effect, so you can watch which estimators land near it. We build Maya's financial-literacy setup: enrollment depends on income and credit, so there is selection by construction. We draw two standardized covariates, income and credit; the true propensity is a logistic function of them, and treatment D is drawn from that probability. The true treatment effect of enrolling is a minus zero-point-eight percentage-point reduction in the rate. The rate-if-not-enrolled depends on income and credit plus noise; the rate-if-enrolled adds the effect. We observe only one potential outcome for each unit — whichever matches their actual treatment.
+:::
+
+## The Three Estimates
+
+- Naive difference in means: biased by selection
+- Fit logit, clip $\hat e$ to $[0.01, 0.99]$, stabilize weights
+- IPW (Hájek): self-normalizing weighted means per arm
+- AIPW: fit outcome models, correct with weighted residuals
+- Print weight max and effective $N$ — the habit to keep
+
+::: notes
+The script computes four numbers. The naive difference in means is biased by selection. Then it estimates the propensity score with a logit, clips e-hat to the range zero-point-zero-one to zero-point-nine-nine — that clip is trimming extreme scores — and builds stabilized weights using the marginal treatment share. The I-P-W estimate uses Hájek self-normalizing weighted means in each arm. For A-I-P-W it fits an outcome regression separately in the treated and control groups, predicts each unit's outcome, and forms the doubly-robust mean as the prediction plus the inverse-probability-weighted residual. Finally it prints the weight diagnostics — the max weight and the effective sample size — which are the habit to internalize: always look at your weights.
+:::
+
+## What You See When It Runs
+
+- Naive comes out badly biased toward zero
+- Both IPW and AIPW land near the true $-0.8$
+- Break one model at a time — AIPW survives
+- Break **both** at once — it finally drifts
+- Entropy weights (nb3.3) give exact balance, smaller max weight
+
+::: notes
+Run it and the naive difference comes out badly biased toward zero — selection makes enrollees and non-enrollees differ for reasons unrelated to the program — while both I-P-W and A-I-P-W land close to the true minus zero-point-eight. To feel the double-robustness property, change the outcome models to a deliberately wrong specification — drop credit — and watch A-I-P-W stay near minus zero-point-eight because the propensity model is still right. Then instead corrupt the propensity formula while keeping the outcome models correct, and watch A-I-P-W still stay near the truth. Break both at once and it finally drifts. That experiment — one model wrong is survivable, both wrong is not — is the whole "doubly" in one screen. The entropy-balancing comparison lives in notebook three-point-three, where you will see entropy weights deliver exact balance with a smaller max weight than I-P-W on the very same data.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+On simulated data with a known $-0.8$ effect, the naive gap is badly biased while **IPW and AIPW both land near the truth**. Breaking one model at a time leaves AIPW standing; breaking both sinks it — the "doubly" property on one screen. Always print your weight max and effective sample size. Next: how to choose among the methods.
+:::
+
+::: notes
+To summarize part nine: on simulated data with a known minus zero-point-eight effect, the naive difference is badly biased while I-P-W and A-I-P-W both land near the truth, and breaking one model at a time leaves A-I-P-W standing while breaking both sinks it. The enduring habit is to always print your weight max and effective sample size. In part ten we step back and turn all of this into a practical decision guide — and then confront the unbreakable ceiling that every method here shares.
+:::

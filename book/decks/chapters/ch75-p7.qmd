@@ -1,0 +1,59 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## Intellectual Honesty: State the Residual, Don't Oversell
+
+- Part 7 — the three honesty rules and the memo as thinking tool
+
+::: notes
+Welcome back to the identification memo, part seven of nine. In part six we sorted threats into testable and arguable and matched each to the right kind of column-three response. Now we turn to the honesty rules — the discipline that keeps you from writing the whole memo backward, starting from the starred result you want and reverse-engineering an assumption that delivers it.
+:::
+
+## Don't Write The Memo Backward
+
+- Temptation: start from the three-star result, work backward
+- Reverse-engineer an assumption that delivers what you want
+- That is spec-search and p-hacking in a costume
+- Your PAP pinned the spec *before* you peeked
+- The memo must defend *that* spec, not the flattering one
+
+::: notes
+The temptation, as the data come in and a coefficient turns up significant with three stars, is to write the memo backward — to start from the result you want and reverse-engineer an identifying assumption that delivers it. This is the spec-search and the p-hacking you were warned about in Week One, wearing the costume of a research design. The pre-analysis plan you filed in Chapter seven-point-three exists precisely to stop this: it pinned your primary specification before you peeked, and your identification memo must defend that specification, not whichever one the data later flatters. The memo and the plan are written in the same spirit — commit first, then test — and a memo that quietly drifts to a different design than the one you registered has broken the contract.
+:::
+
+## Three Honesty Rules
+
+- **1. State the residual concern, every time** — substantive, not "none"
+- Candor is rare, and easy for a referee to verify
+- **2. Match the verb to the evidence** — *credible*, not *causal*
+- Say "consistent with," never "proves" or "establishes"
+- **3. Don't bury the hard question** — lead with it
+
+::: notes
+Three honesty rules, which double as the things a grader looks for. One: state the residual concern, every time, and make it substantive. "We cannot rule out a contemporaneous policy shock that hit treated states in the same year" is worth more to your credibility than a triumphant "no concerns remain." Referees reward candor because candor is rare and easy to verify — they will think of the residual concern whether or not you write it, so writing it first robs the attack of its force. Two: match the verb to the evidence. If your assumption is untestable and merely argued, your sentence says credible, not causal, and your prose says "consistent with" and "we cannot reject," never "proves" or "establishes." A two-star result on a design with a serious untestable threat is suggestive evidence, not "we show that." Three: do not bury the hard question. Lead the table with your most dangerous threat. The instinct to hide it is exactly backward: the hidden threat is the one the referee finds anyway, and finding it themselves is worse for you than your having flagged it.
+:::
+
+## The Memo Is A Thinking Tool
+
+- Not a defensive document to *survive* review
+- A tool to find out whether your project is real
+- Empty column 3, column 4 "could be the entire effect"?
+- You just learned the project-killer *before* Week 8
+- The right response is to redesign, not soften the language
+
+::: notes
+The deep point is that the identification memo is not a defensive document you write to survive review. It is a thinking tool you write to find out whether your project is real. If, while filling the table, you discover a threat for which column three is empty and column four is "this could be the entire effect," you have learned something invaluable before sinking Week Eight into a paper that cannot be saved — and the right response is to change the design, not to soften the language. The memo's first reader is you, and its first job is to talk you out of a project that will not survive contact with a skeptic.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Never write the memo **backward** from the result you want — your PAP pins the spec you must defend. Obey three rules: state the residual every time, match the verb (*credible*, not *causal*), and never bury the hard question. The memo is a **thinking tool**: its first reader is you, and its job is to find the project-killer before Week 8 does. Next: Maya's worked memo.
+:::
+
+::: notes
+To summarize part seven: never write the memo backward from a starred result — your pre-analysis plan pinned the specification, and the memo must defend that one, not whichever the data later flatters. Obey three honesty rules: state a substantive residual concern every time, match the verb to the evidence so an argued assumption earns credible and not causal, and never bury the hard question — lead with your most dangerous threat. The deep point is that the memo is a thinking tool, not a defensive document; its first reader is you, and if a row's column three is empty and its residual is "this could be the entire effect," the memo just did its most important job. In part eight we write the whole thing end to end for Maya's fair-lending project.
+:::

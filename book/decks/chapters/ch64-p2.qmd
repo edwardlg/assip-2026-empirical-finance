@@ -1,0 +1,66 @@
+---
+date: "2026-07-27"
+---
+
+## Two Bets on Identification
+
+- Part 2 — two identification bets that get past a raw disparity
+
+::: notes
+Welcome back to Chapter six-point-four, part two of seven. In part one we framed the two papers — Bartlett et al. on pricing, B-H-R on acceptance. Now we reach the heart of any empirical paper: the identification strategy. Both face the threat Mentor Four drilled into Maya: a raw disparity confounds the same rule applied to groups that differ in legitimate factors with a different rule applied to the same factors, and only the second is discrimination. Bartlett et al. bet on a clean institutional benchmark; B-H-R bet on getting the data that closes the gap.
+:::
+
+## Bartlett: Price Against a Published Formula
+
+- Regress the loan's rate on a minority indicator + GSE risk inputs
+- For conforming loans, default risk is priced by a **published formula**
+- Same credit score and LTV $\Rightarrow$ same credit risk **by construction**
+- Any surviving rate gap is hard to call legitimate risk
+
+::: notes
+Bartlett et al.'s workhorse is a regression of the loan's rate on a minority indicator, conditioning on the risk variables a fair lender is allowed to use — crucially the government-sponsored-enterprise pricing inputs that mechanically determine what a loan should cost: credit score, loan-to-value ratio, and so on. The identifying claim is sharp because of the institutional setting. For conforming loans sold to Fannie Mae and Freddie Mac, the default risk is priced by a published formula. So two loans with the same credit score and the same loan-to-value carry the same credit risk to the investor by construction. Any rate gap that survives is hard to attribute to risk the lender legitimately priced — it points to the discrimination pathway, whether a human's discretion or an algorithm's proxy variable.
+:::
+
+## Bartlett: The FinTech Contrast
+
+- If discretion drives bias, removing the human should **shrink** the gap
+- If the gap persists under algorithms, the **machine** is doing something
+- Pricing on geography that proxies for race; weaker competition
+- Beware the **over-controlling trap** from Mentor 4
+
+::: notes
+The second piece of identification is the FinTech-versus-traditional contrast. If face-to-face discretion is the mechanism, removing the human should shrink the gap. If the gap persists under algorithmic pricing, the mechanism is something the algorithm itself does — competing less hard, or pricing on geography that proxies for race. This is where the over-controlling trap from Mentor Four bites hardest. Controlling for the GSE risk inputs is exactly right — those are legitimate risk. But if you also controlled for a channel of discrimination — say, the product the borrower was steered into — you would regress away the very effect you are hunting. The threat in one sentence: the rate gap equals differential treatment only as long as the GSE inputs capture all legitimate risk, and no controls sit on the steering channel.
+:::
+
+## BHR: Close the Gap by Observation
+
+- Earlier work **designed around** the missing credit score
+- BHR simply **get the score** by linking richer loan-level data
+- If the residual collapses when the score enters, the rest was **OVB**
+- The Week-2 omitted-variable bias, finally measured not feared
+
+::: notes
+B-H-R's bet is the opposite and just as instructive. Where the classic disclosure-only literature had to design around the missing credit score, B-H-R simply get the score, and much more, by linking to richer loan-level data. Their identifying logic: if the residual racial disparity collapses once you add the creditworthiness variables underwriters actually see, then much of what earlier studies called unexplained was omitted-variable bias all along — the omitted-variable bias of Week Two, finally measured rather than feared.
+:::
+
+## BHR: The Race-Blind AUS Benchmark
+
+- The government's automated engine produces approve/refer **without race**
+- A literal mechanical counterfactual: what a non-discriminating rule decides
+- Compare actual denials to AUS recommendations
+- Separates **what the risk model says** from **what the human added**
+
+::: notes
+The masterstroke is the race-blind automated underwriting benchmark. The government's engine produces an approve-or-refer recommendation from risk inputs without seeing race, so it is a literal mechanical counterfactual for what a rule that cannot discriminate would decide. Comparing actual denials to the recommendations separates what the risk model says from what the human did on top of it. Tie this back to the spine of the course. The whole exercise is the selection-on-observables logic of Week Three: both papers bet they conditioned on enough of creditworthiness that the residual race coefficient is causal. Week Two named the danger — omitted-variable bias from the unobserved score. Neither runs a difference-in-differences or a regression discontinuity, and that is itself a reading lesson.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Two bets: Bartlett et al. find a **formula-priced market** so the fair price is given; BHR **get the credit score** and benchmark against a race-blind machine. The identifying work is in the **conditioning set**, not a natural experiment. Next: the **data**.
+:::
+
+::: notes
+To summarize part two: both papers identify off a conditioning set and an institutional benchmark, not a natural experiment. Bartlett et al. find a formula-priced market where the fair price is given, then split by lender technology. B-H-R get the credit score earlier work could only fear was missing, and benchmark against a race-blind engine. The referee's first question is always: what is in the controls, and is the score in there? That points straight at part three — the data, and the omission that shaped this field.
+:::

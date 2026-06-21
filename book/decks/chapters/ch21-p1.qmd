@@ -1,0 +1,64 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Stacking Regression into Matrix Form
+
+**Learning objectives.** By the end you can:
+
+- Write the regression $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$
+- Derive $\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$ two ways
+- See OLS as dropping a perpendicular
+- Recover Sam's beta by hand
+
+::: notes
+Welcome to Week Two, Chapter two-point-one, part one of seven. This week we take regression — a tool you have probably met only as a black box, where you type two columns into a stats package and get back a slope — and rebuild it in the language that makes everything afterward tractable: matrix algebra. By the end you will write the whole procedure on one line, and see that it does one thing: drop a perpendicular. We anchor everything in Sam's question. Sam trades momentum, and notices that when the market jumps, his stock jumps too — but not one-to-one. He wants a number: if the market moves up one percent, how much does his stock move, on average? That number is called beta, and estimating it is a regression of the stock's return on the market's.
+:::
+
+## What This Chapter Builds
+
+- Rebuild regression in the language of **matrix algebra**
+- Goal: the whole procedure on one line
+- Derive it two ways — calculus **and** geometry
+- Sam's question: market up $1\%$ $\Rightarrow$ stock up how much?
+- That sensitivity is **beta**, a regression slope
+
+::: notes
+Here is the plan. We rebuild ordinary least squares in matrix form, because that is the language in which efficiency, robust standard errors, instrumental variables, and fixed effects all become tractable. The payoff is a single formula, reached by two routes — calculus and pure geometry — that land on the exact same place. One promise up front: everything here is the algebra and geometry of the fit. Whether the fit is good, unbiased, or uncertain needs assumptions about the data, and that fills the next three chapters. Here we ask only: what is the best-fitting line, and why?
+:::
+
+## One Observation at a Time
+
+- Sam has $N$ days; day $i$: stock $y_i$, market $x_i$
+$$y_i = \beta_0 + \beta_1 x_i + \varepsilon_i$$
+- $\beta_0$ intercept · $\beta_1$ slope (Sam's beta) · $\varepsilon_i$ error
+- The $\beta$'s are fixed unknowns; the $\varepsilon_i$ are unobserved
+- Repetition is what matrices exist to absorb
+
+::: notes
+Start with what you know, one observation at a time. Sam has data for N trading days. On day i his stock returned y-sub-i and the market returned x-sub-i. The model says each day's stock return is a line in the market return, plus a leftover: y-sub-i equals beta-zero plus beta-one times x-sub-i plus epsilon-sub-i. Beta-zero is the intercept, the part unrelated to the market. Beta-one is the slope, Sam's beta, the sensitivity to it. And epsilon-sub-i is the error for day i: everything the line misses — stock-specific news, noise, whatever the market leaves unexplained. These are population quantities: the betas are fixed unknowns we want to learn, the epsilons unobserved. Writing this for every day is repetitive — and repetition is exactly what matrices absorb.
+:::
+
+## Stacking into One Equation
+
+- First column of $\mathbf{X}$ is all **ones** — the intercept's regressor
+$$\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$$
+- $\mathbf{y}$: $N\times 1$ · $\mathbf{X}$: $N\times K$ · $\boldsymbol\beta$: $K\times 1$
+- $K$ = regressors **including** the intercept
+- Add controls — the equation doesn't change a symbol
+
+::: notes
+Here is the one mildly clever move. Stack the N outcomes into a column vector y, stack the errors the same way, and build a matrix X whose first column is all ones and whose second holds the market returns. Why does the column of ones belong? Multiply the first row of X by beta: you get beta-zero plus beta-one x-one, the first equation exactly. That column is the intercept's regressor, equal to one for everyone, so its coefficient adds the same baseline to every prediction. So X-beta reproduces all N equations at once: y equals X-beta plus epsilon. Now fix the shapes. We have N observations and K regressors including the intercept, so Sam has K equals two. y is the N-by-one outcome vector. X is the N-by-K design matrix: row i is observation i, column j is regressor j. Beta is K-by-one, the coefficients; epsilon N-by-one, the unobserved errors. Add controls later and the equation does not change a symbol — the whole reason we work this way.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A whole dataset of regression equations collapses into one matrix equation, $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$, where each row of the design matrix $\mathbf{X}$ is an observation and a column of ones carries the intercept. This is the master equation of the next four chapters.
+:::
+
+::: notes
+To summarize part one: a whole dataset of regression equations collapses into one matrix equation, y equals X-beta plus epsilon. Each row of the design matrix X is one observation, each column one regressor, and a leading column of ones carries the intercept. This is the master equation of the next four chapters, so the shapes and names are worth memorizing. In part two we use Sam's four-day dataset and turn the leftover errors into a precise rule for the single best line: ordinary least squares.
+:::

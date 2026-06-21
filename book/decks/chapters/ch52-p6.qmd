@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## Reading the Tables in Argument Order
+
+- Part 6 — factor summary, the grid, $R^2$ and loadings passes
+
+::: notes
+Welcome back to lesson five-point-two, part six of nine. In part five we covered the data and the look-ahead guard. Now we read the tables. A professional does not read this paper top to bottom; you read it in the order the argument runs — factor definitions, then common variation, then pricing. We start with the first two tables and the first two passes through the regression results.
+:::
+
+## First: The Factor-Summary Table
+
+- Defines SMB, HML, and the market factor
+- Reports average returns, standard deviations, correlations
+- (i) Do SMB and HML have **positive** average returns?
+- (ii) Are they only weakly correlated, roughly orthogonal?
+- (iii) Glance at magnitudes for a feel of the units
+
+::: notes
+First, find the factor-definition and summary table — the one that defines S-M-B, H-M-L, and the market factor and reports their average returns, standard deviations, and correlations. You are checking three things. One: do S-M-B and H-M-L have positive average returns over the sample — that is, did small and value actually pay? Two: are S-M-B and H-M-L only weakly correlated with each other and with the market? They should be roughly orthogonal by construction — that was the point of the two-by-three averaging — and low correlation among regressors keeps the loadings interpretable and the standard errors small. Three: glance at the magnitudes so you have a feel for what a unit of H-M-L means before you read the loadings.
+:::
+
+## Second: The 25-Portfolio Returns Grid
+
+- The *pattern to be explained* — the explanandum
+- Read it as a five-by-five grid
+- Across BE/ME, growth to value: returns **rise**
+- Down size, small to big: returns **fall**
+- Small-value highest; small-growth the problem child
+
+::: notes
+Second, read the table of average excess returns on the twenty-five portfolios. This is the pattern to be explained — the explanandum. Read it as a five-by-five grid. Across book-to-market, left to right, from growth to value, average returns should rise: that is the value effect. Down the size dimension, from small to big, they should fall: that is the size effect. The most extreme cell — small-value — is the highest-returning corner, and small-growth is the notorious problem child. Burn this grid into your memory, because every later table is asking the same question: did the model reproduce this? If you do not know the pattern, you cannot judge whether the model captured it.
+:::
+
+## Third: The Regression Tables — R-Squared Pass
+
+- The heart of the paper: loadings, intercepts, R-squared
+- **Pass one:** scan only the R-squared column
+- Should be high across the board
+- Adding SMB and HML lifts R-squared above CAPM
+- Direct evidence size and value are *common* co-movement
+
+::: notes
+Third, and the heart of the paper, are the time-series regression tables. For each of the twenty-five portfolios they report the loadings, the intercept with its t-statistic, and the R-squared. Read them in three passes. Pass one is the R-squared pass: scan only the R-squared column. They should be high across the board — the three factors should explain the large majority of each portfolio's variance. This is the common variation result. Compare mentally to a market-only CAPM regression: adding S-M-B and H-M-L lifts the R-squared values substantially, which is direct evidence that size and value are genuinely common sources of co-movement, not just cross-sectional curiosities.
+:::
+
+## Loadings Pass
+
+- **Pass two:** read the loadings against the sorts
+- $\hat s$ down size: small portfolios load **positive**, big near zero
+- $\hat h$ across BE/ME: value **positive**, growth negative
+- Loadings should march **monotonically** with the sort
+- The model "recognizing" the characteristics
+
+::: notes
+Pass two is the loadings pass. Now read s-hat, the S-M-B loading, down the size dimension: small portfolios should load strongly positive on S-M-B, while big portfolios sit near zero or negative. Read h-hat, the H-M-L loading, across the book-to-market dimension: value portfolios load strongly positive on H-M-L, growth portfolios negative. The loadings should march monotonically with the sort — that orderliness is the model recognizing the very characteristics the portfolios were sorted on. This is what people mean when they say the loadings make sense. A loading that jumped around randomly would be a red flag; instead, they climb smoothly with size and with value, exactly as the construction predicts.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Read tables in argument order: factor summary (positive, orthogonal factors), the 25-portfolio **grid to be explained**, then the regression tables. Pass one — **R-squared** high everywhere. Pass two — **loadings** march monotonically with the sorts. Next: the intercept pass and the two-column literacy.
+:::
+
+::: notes
+To summarize part six: read the tables in argument order. The factor-summary table should show positive, roughly orthogonal factors. The twenty-five-portfolio grid is the pattern to be explained, rising across value and falling across size. Then the regression tables: pass one shows R-squared high everywhere, the common variation result; pass two shows the loadings marching monotonically with the sorts, the model recognizing the characteristics. In part seven we make the third pass — the intercept pass — and lock in the two-column reading that is the literacy this whole week is teaching.
+:::

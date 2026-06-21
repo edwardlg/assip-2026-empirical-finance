@@ -1,0 +1,55 @@
+---
+date: "2026-06-29"
+---
+
+## The Few-Clusters Trap & Thinking Like the Referee
+
+- Part 4 — too few clusters, and reporting like a referee
+
+::: notes
+Welcome back to Mentor Session Two, "Why your standard error is the whole ballgame," part four of four. In part three we sorted out the panel — firm effects, time effects, two-way clustering, and the rule that fixed effects and clustering do different jobs. Now we close two loops. First, the trap where clustering, the supposed cure, quietly reintroduces the overconfidence it was meant to fix. Second, what it actually means to report and defend a standard error the way a referee thinks. This is the empirical-spec discipline made concrete.
+:::
+
+## When the Cure Reintroduces the Disease
+
+- Robust SEs handle **heteroskedasticity** only
+- They are blind to **within-group correlation** — e.g. same firm over years
+- Few clusters: asymptotics live in $G$, not $N$
+- 11 industries, 8,000 firm-years $\rightarrow$ clustering can make you overconfident *again*
+
+::: notes
+First, two warnings from the warm-ups. Robust, White, or H-C-one standard errors protect you against heteroskedasticity — unequal variances — and nothing else. They are completely blind to within-group correlation, like the same firm's errors being linked across years. So "I used robust standard errors, I'm protected" is false against exactly the clustering problem Maya had. Second, and more subtle: clustering itself can backfire. The asymptotic theory that makes cluster-robust standard errors valid lives in the number of clusters, capital G, not the number of observations N. If you have eight thousand firm-year observations but only eleven industries and you cluster by industry, you have only eleven clusters. With G that small, the cluster-robust t-test becomes anti-conservative — overconfident again — even though your intent was to be more honest. The cure reintroduced the disease.
+:::
+
+## Remedies for Too Few Clusters
+
+- Small-sample $t$ with $G-1$ degrees of freedom
+- Wild cluster bootstrap
+- Both correct for the **few-clusters** distortion in the reference distribution
+- Don't quietly pick the clustering level with the smallest SE
+
+::: notes
+What do you do when you are stuck with only a couple dozen clusters? Petersen and the few-clusters literature offer remedies. One is to use a small-sample t-distribution with G minus one degrees of freedom instead of the normal approximation — that widens your critical values to account for having few clusters. Another is the wild cluster bootstrap, which simulates the reference distribution directly rather than trusting the large-G formula. Both are correcting the same thing: the distortion in the reference distribution that creeps in when G is small. And the discipline point — do not quietly try every clustering level and report whichever gives the smallest standard error. Name the tension honestly in the paper and show the reader you saw it.
+:::
+
+## Real Panels Where This Bites
+
+- Petersen (2009), *Review of Financial Studies* — folklore into discipline
+- Gao, Han, Kim & Pan (2024), *J. Corporate Finance* — supply-chain common ownership
+- Errors hold hands: same firm over years; shared owner; common-year shock
+- Naming your clustering level is an **economic claim** about Omega
+
+::: notes
+Two real references anchor this. Petersen's two-thousand-nine paper in the Review of Financial Studies turned "which standard error?" from folklore into a discipline. And one of Prof. Gao's own studies — Gao, Han, Kim and Pan, two-thousand-twenty-four, in the Journal of Corporate Finance — relates a supplier firm's earnings management to overlapping institutional ownership along its supply chain. There the residuals can hold hands along several dimensions: the same firm over many years, firms tied through a shared institutional owner, and a common shock in a given year. Each dimension implies a clustering or fixed-effect choice, and ignoring any pushes the standard error in the dangerous, too-small direction — which is why two-way clustering is natural to consider here. Naming your clustering level is not a technicality; it is an economic claim about where Omega's off-diagonals actually live.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Robust SEs miss within-group correlation, and clustering with too few clusters ($G$ small) makes you overconfident again — use a $G-1$ $t$-distribution or the wild cluster bootstrap. Report the estimate, the SE flavor, the clustering level, and the **cluster count** every time. Your goal: standard errors you would defend to someone trying to break them.
+:::
+
+::: notes
+To summarize the whole session: the point estimate is the easy part, and credibility lives in the standard error. Every standard error is one sandwich with a different filling for Omega. Naive ones are too small because of within-group correlation, robust ones fix only heteroskedasticity, panels need firm and time clustering, and too few clusters make you overconfident again — treated with a G-minus-one t-distribution or the wild cluster bootstrap. Report the estimate, the standard-error flavor, the clustering level, and the cluster count, every time. "Significant" with the wrong standard error is how real papers get retracted; the coefficient was never the problem. Your goal is standard errors you would defend to someone actively trying to break them. Next week we move into the heart of causal identification — what it takes to call a coefficient an effect.
+:::

@@ -1,0 +1,56 @@
+---
+date: "2026-07-06"
+---
+
+## Weak Instruments: When the Lever Barely Moves
+
+- Part 9 — what breaks when the first stage is weak
+
+::: notes
+Welcome back to Chapter three-point-four, part nine of ten. In part eight we learned that instrumental variables identifies the LATE, the complier effect, and that we always read the first stage, reduced form, and two-S-L-S together. Now we confront the failure mode hiding in that first stage: the weak instrument, when the lever barely moves. It can make I-V worse than the very O-L-S it was meant to fix — and here is exactly how.
+:::
+
+## When the Denominator Shrinks
+
+$$\hat{\beta}_1^{\text{IV}} = \frac{\text{how } Y \text{ moves with } Z}{\text{how } D \text{ moves with } Z}$$
+
+- Weak instrument: first stage $\operatorname{Cov}(Z,D)$ near zero
+- Still defined, still consistent — but dividing by ~0 is violent
+- Tiny numerator errors amplify into nonsense
+
+::: notes
+Return to the magic ratio one final time, because its denominator causes all our trouble. The I-V estimate is how Y moves with Z over how D moves with Z. What happens as that denominator — the first stage, the covariance of Z and D — shrinks toward zero? Relevance technically still holds, so the estimator stays consistent in the limit. But dividing by a number close to zero is numerically violent: tiny errors in the numerator amplify into enormous errors in the ratio. An instrument with a near-zero first stage is weak, and weak instruments produce three pathologies that can make I-V worse than the O-L-S it was meant to fix.
+:::
+
+## Three Pathologies
+
+- **Bias toward OLS** — $\hat{D}$ is mostly noise tied to $\varepsilon$
+- $\dfrac{\text{2SLS bias}}{\text{OLS bias}} \approx \dfrac{1}{F}$
+- **Inflated variance** — standard errors balloon and lie
+- **Exclusion amplified** — tiny $\operatorname{Cov}(Z,\varepsilon)$ blows up
+
+::: notes
+Three pathologies. First, the counterintuitive killer: bias toward O-L-S. When the instrument is weak, Z explains almost none of D, so the fitted treatment D-hat is mostly first-stage noise — and that noise correlates with the structural error, because the residual and error share the confounder. So D-hat is contaminated by exactly the endogeneity you were fleeing. The approximation is stark: the bias of two-S-L-S as a fraction of the O-L-S bias is roughly one over F, where F is the first-stage F-statistic. When F is near one, two-S-L-S is nearly as biased as O-L-S, and you paid a large variance penalty for it. Second: inflated variance — the near-zero denominator makes estimates wobble violently and confidence intervals far too narrow. Third: tiny exclusion violations get amplified — a small forbidden direct effect enters as c over the covariance of Z and D, negligible when the first stage is strong, but it blows up when the denominator is near zero. A strong first stage buffers you against this untestable assumption.
+:::
+
+## Measuring Strength: the First-Stage F
+
+- First-stage **F** = joint significance of excluded instruments
+- Rule of thumb: **$F > 10$** (Stock–Yogo, 2005)
+- But it assumes **homoskedastic, non-clustered** errors
+- Real finance data $\Rightarrow$ **Olea–Pflueger effective $F$**
+
+::: notes
+Since relevance is testable, strength is too — the one piece of good news. The standard measure is the first-stage F-statistic: the F for the joint significance of the excluded instruments in the first-stage regression. A large F says Z explains a lot of D beyond the controls — a strong lever. The famous rule of thumb is F greater than ten, from Stock and Yogo, two thousand five, who tabulated critical values guaranteeing two-S-L-S bias no more than ten percent of O-L-S bias. But treat F greater than ten as a smoke alarm, not a certificate. It was derived under homoskedastic, non-clustered errors — and with the clustering of almost every finance dataset, the plain F can badly understate weakness. So Olea and Pflueger, two thousand thirteen, built an effective F from cluster-robust variances. When your errors are heteroskedastic or clustered — the default in finance — report that effective F, not the classical one.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **weak instrument** has a near-zero first stage: 2SLS drifts back toward **OLS bias** (roughly $1/F$ of it), its standard errors balloon and lie, and tiny exclusion violations explode. Report the first-stage F, but in finance use the **Olea–Pflueger effective F**, not a casual "$F>10$." Next: the code, and what to carry forward.
+:::
+
+::: notes
+To summarize part nine: a weak instrument has a near-zero first stage, and dividing by it is violent. Three pathologies follow. Two-S-L-S drifts back toward the O-L-S bias you were fleeing — roughly one over F of it. Its standard errors balloon, so confidence intervals lie. And tiny, untestable exclusion violations get amplified into large bias. Strength is measurable, so always report the first-stage F and clear Stock and Yogo's bar comfortably, but do not trust F greater than ten blindly — it assumes classical errors and bounds bias, not inference. With the clustered errors real finance data have, report the Olea-Pflueger effective F instead. In part ten, our final part, we run the whole chapter in code and gather what carries forward into Chapter three-point-five.
+:::

@@ -1,0 +1,47 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Maya's Defense, and Why the Memo Works
+
+- Part 11 — Maya's defense, and why the whole memo works
+
+::: notes
+Welcome back to peer review and revision, part eleven of twelve. In part ten we read Maya bound the untestable pre-trend and concede the staggered-design gap. Now we read her third response — a respectful defense — and then tally what makes the whole memo work, response by response.
+:::
+
+## Point Three: Defend by Doing the Work
+
+- Devon worried small counties might drive the result
+- Maya respectfully believes it is not a small-cell artifact
+- New columns 4 and 5: weight by volume, drop small counties
+- Weighted gives −1.3 points; dropping small gives −1.5
+- Estimate stable across both; settled by evidence, not argument
+
+::: notes
+Major point three, the small-cell denominator. Devon's quoted comment: a handful of small counties where the gap is mechanically volatile could drive the estimate; a robustness column weighting by volume, or dropping small counties, would tell us whether the result is real. Maya's response: we respectfully believe the result is not a small-cell artifact, and we checked this directly as the referee suggests. New columns four and five of Table Two weight by application volume, estimate negative one point three percentage points, and drop counties below fifty minority applications per year, negative one point five. The estimate is stable across both. We added a sentence in Section five-point-two concluding the result is not driven by mechanically volatile small counties. This is the model defense: she did the requested work first, then stated the conclusion, so the disagreement is settled by evidence rather than argument. The paper is better for the challenge — her result is now armored against exactly the concern Devon raised.
+:::
+
+## Why This Memo Works
+
+- Each response quotes, states the change, points to a number
+- One bounded threat, one concession, one defense
+- Every claimed change is actually in the revised paper
+- Devon can verify each one in under a minute
+- His next note: addressed every point, recommend acceptance
+
+::: notes
+Look at what the memo does as a whole. Point one bounded the untestable threat — the actual joint-test p-value, plus an honest note that flat leads cannot confirm the counterfactual. Point two conceded the gap was real, ran the requested estimator, and reported both numbers side by side; because they agree, the concession cost nothing and bought credibility. Point three was a respectful defense that did the requested work first and then stated the conclusion. Every response quotes, states the change, and points to a specific new table or figure with a specific number. And every change Maya claims is a change the revised paper actually contains — the do-exactly-what-you-said norm, honored. Devon, re-reading, can verify each one in under a minute, and his next report to the editor will say the author addressed every point; recommend acceptance.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Maya's third response is a **defense by doing the work**: she ran the requested checks (−1.3 weighted, −1.5 dropping small counties — stable) and *then* stated the conclusion, settling the disagreement with evidence. Across all three, every response quotes, changes, and cites a real number, and every claimed change is in the paper — which is exactly why the memo earns "recommend acceptance." Next: closing the loop back to Week 5.
+:::
+
+::: notes
+To summarize part eleven: Maya answers Devon's third major point, the small-cell denominator, with a respectful defense — she did the requested work first, showing the estimate stable at negative one point three weighted by volume and negative one point five dropping tiny counties, and only then stated her conclusion, settling the disagreement with evidence rather than argument. Across all three points, the memo works because every response quotes the comment, states the change, and points to a real number, and because every claimed change is actually in the revised paper. Devon can verify each in under a minute, and his next note to the editor recommends acceptance. In part twelve we close the loop back to Week Five and set up the workshop.
+:::

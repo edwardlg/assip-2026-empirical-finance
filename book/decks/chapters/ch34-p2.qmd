@@ -1,0 +1,57 @@
+---
+date: "2026-07-06"
+---
+
+## The Problem IV Solves
+
+- Part 2 — what makes Maya's regressor endogenous
+
+::: notes
+Welcome back to Chapter three-point-four, part two of eight. In part one we saw that an instrument imports clean variation to escape an unobserved confounder. Now let us get exact about what is actually broken in Maya's regression, and why endogeneity is a disease with three different faces — all of which a valid instrument can cure.
+:::
+
+## Maya's Broken Regression
+
+- $Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i$
+- $D_i$ = completed the financial-literacy course
+- $\beta_1$ = the causal effect Maya wants
+- **Motivation** hides in $\varepsilon_i$: drives both $D$ and $Y$
+- $\operatorname{Cov}(D,\varepsilon) < 0 \Rightarrow$ OLS biased
+
+::: notes
+Maya posits a causal model for person i: the outcome Y equals beta-zero plus beta-one times D plus an error. Here Y is a debt-health outcome — say, the change in credit-card balance over the next year, coded so lower is better — D is one if person i completed the course and zero otherwise, and beta-one is the causal effect she is after. For ordinary least squares to recover beta-one, the zero-conditional-mean assumption must hold: the expected value of the error given D must be zero. It does not. The error contains everything about person i that affects their debt and is not the course — and the dominant such thing is financial motivation. Motivated people both sign up for the course and have better debt outcomes anyway. So D and the error move together; their covariance is negative.
+:::
+
+## The Bias, Made Explicit
+
+$$\hat{\beta}_1^{\text{OLS}} \xrightarrow{p} \beta_1 + \frac{\operatorname{Cov}(D, \varepsilon)}{\operatorname{Var}(D)}$$
+
+- Same disease as omitted-variable bias (Ch 2.5)
+- Maya cannot condition it away — no column for motivation
+- C-I-A assumes this confounder does **not** exist
+
+::: notes
+Run O-L-S and the estimate converges not to beta-one but to beta-one plus a bias term: the covariance of D and the error, divided by the variance of D. This is the same disease as the omitted-variable bias of Chapter two-point-five — motivation is a relevant variable, correlated with D, banished into the error. And Maya cannot cure it by conditioning, because she has no column for motivation. C-I-A, the engine of Chapters three-point-two and three-point-three, is exactly the assumption that no such unobserved confounder exists, and here it fails by construction. This is the precise moment where every matching and balancing tool you learned runs out of road.
+:::
+
+## Endogeneity Has Three Faces
+
+- **Unobserved confounding** — motivation drives $D$ and $Y$
+- **Simultaneity / reverse causality** — $Y$ also causes $D$
+- **Measurement error** — noisy regressor attenuates the slope
+- All three yield to a **valid instrument**
+
+::: notes
+Endogeneity wears three classic faces, and you have met all three. First, unobserved confounding, Maya's case: a variable hiding in the error drives both treatment and outcome. Second, simultaneity or reverse causality, where Y also causes D — for example, a firm's crash risk might itself change how much investors want to short it, so short interest and crash risk are jointly determined, and regression alone cannot tell which way the arrow points. Third, measurement error: classical noise in a regressor mechanically correlates it with the error and attenuates the slope toward zero, and a valid instrument for the true value undoes that attenuation, because the instrument is correlated with the truth but not with the noise. In all three, the fix is identical: find variation in D that is not contaminated. That clean variation is exactly what an instrument supplies.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Maya's regressor $D$ is **endogenous**: motivation sits in the error, so OLS converges to $\beta_1$ plus a bias term. IV is the design-based answer to all three faces of endogeneity — confounding, simultaneity, measurement error. Next: the two conditions an instrument must satisfy.
+:::
+
+::: notes
+To summarize part two: Maya's regressor D is endogenous because motivation sits in the error, so O-L-S converges to beta-one plus a bias term that conditioning cannot remove. Instrumental variables is the design-based answer to all three faces of endogeneity — unobserved confounding, simultaneity, and measurement error. But finding a legitimate instrument is hard, and earning the name requires satisfying two conditions that are profoundly asymmetric in how you defend them. In part three we meet those two conditions: relevance, which the data can test, and exclusion, which only logic can argue.
+:::

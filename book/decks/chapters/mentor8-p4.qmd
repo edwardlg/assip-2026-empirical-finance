@@ -1,0 +1,65 @@
+---
+date: "2026-08-10"
+---
+
+## Alternatives, the Tell, and the Honest Retreat
+
+- Part 4 — alternative explanations, the tell, and the honest retreat
+
+::: notes
+Welcome back to Mentor Session eight, part four of six. In part three we covered the four-beat answer, the selection version, and robustness. Now we finish the survivable families with alternative explanations, learn the tell that separates a wound from a death, and face the hardest moment of any defense — when the critique is fatal and the attacker is right.
+:::
+
+## Alternatives: Could a Different Mechanism Fit?
+
+- *"Couldn't [this other channel] produce the same data?"*
+- Don't deny it — find where the two stories make *different* predictions
+- Show the data sides with you
+- It steals your *interpretation*, not your number
+
+::: notes
+Alternative explanation is the question "couldn't this other channel generate exactly what you see?" Your story is one of several consistent with the pattern, and the referee wants to know why yours. The defense here is rarely to deny the alternative — it usually is plausible. Instead, find the place where your story and theirs make different predictions, and show the data sides with yours. This is the subtle one, because an alternative explanation grants your number entirely and steals your interpretation. The number is fine; what it means is now in dispute. So the test is never "is my number big" — it is "where do these two stories diverge, and which way does the evidence point at that fork?"
+:::
+
+## The Tell: Number vs Comparison
+
+- Robustness and alternatives attack a **number**
+- Identification attacks the **comparison**
+- A moved number is a **wound**; a removed comparison is a **death**
+- Pre-empt on the slide — the robustness slide is a *strike*, not an appendix
+
+::: notes
+Here is the tell that separates the survivable families from the fatal one, and it is the six-second classifier from your warm-up. Robustness and alternatives attack a number — they move it or reinterpret it. Identification attacks the comparison itself. A moved number is a wound; a removed comparison is a death. Once you can hear which is which while the question is still being asked, you know instantly how hard to fight. And because robustness and alternatives are predictable, pre-empt them on the slide so they are answered before they are asked. The robustness slide is a pre-emptive strike, not an appendix you hope nobody reaches. Put the cluster up front, and you have disarmed the question before the questioner opens their mouth.
+:::
+
+## When the Critique Is Fatal — and Right
+
+- The instinct is to argue harder — that is exactly wrong
+- Defending a broken design turns a damaged *paper* into a damaged *reputation*
+- Concede at the level the point was made, retreat to what survives
+- *"A strong association consistent with the mechanism, not the clean causal estimate"*
+
+::: notes
+Sometimes the critique is fatal and the attacker is right. It happens. The instinct is to argue harder, and that is exactly wrong — defending a broken design in front of a room that can see it is broken turns a damaged paper into a damaged reputation. The move is to concede at the level the point was made and retreat to what survives. Say it plainly: "you're right I can't rule that out with this design, so the honest reading is a strong association consistent with the mechanism, not the clean causal estimate I'd hoped for." Almost always there is a retreat position, because fatal to the causal claim is rarely fatal to the descriptive one.
+:::
+
+## Know Your Retreat Before You Walk In
+
+- The residual-concern column of your threats table is *for* this
+- A conceded critique = a wounded paper, an intact scientist
+- Invite verification: *"clone the packet and you get the same figure, seed and all"*
+
+::: notes
+Know your retreat position before you walk in — that is exactly what the residual-concern column of your Chapter seven-point-five threats table was for. A conceded fatal critique leaves you a wounded paper but an intact scientist, and that trade is always worth making. One more weapon for the survivable questions about a number: the strongest sentence you can say is "the exact code that produces it is in the packet — clone it and you get the same figure, seed and all." You invite verification instead of asking for trust. That is the posture of someone with nothing to hide.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+An **alternative explanation** grants your number and steals your interpretation — beat it by finding where the two stories *predict differently*. The tell: a moved number is a **wound**, a removed comparison a **death**. When the fatal critique is right, concede and retreat to the honest association — a wounded paper, an intact scientist.
+:::
+
+::: notes
+To summarize part four: an alternative explanation grants your number and steals your interpretation, so beat it by finding where the two stories make different predictions. The tell that classifies any question is whether it attacks a number — a wound — or the comparison — a death. When a fatal critique is right, do not argue harder; concede and retreat to the honest descriptive claim, which keeps your reputation intact. In part five we put all of this to work on a real published paper of mine about CEO political ideology and disclosure — the perfect case, because it sits in the crosshairs of all three families at once.
+:::

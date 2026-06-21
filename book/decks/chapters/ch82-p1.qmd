@@ -1,0 +1,64 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Stress-Testing Your Own Result: The Adversarial Turn
+
+**Learning objectives.** By the end you can:
+
+- Attack your own inference, not just your specifications
+- Design the tests a hostile referee would run
+- Run each test on yourself before submission
+- Report a failed robustness test as a finding
+
+::: notes
+Welcome to Week Eight, Chapter eight-point-two, part one of ten. Last chapter you wrapped your pre-registered estimate in a specification curve — every defensible analytic choice plotted so a reader could see your headline number was not one lucky fork in the garden. That was about the many regressions you could have run. This chapter is more adversarial. Here you stop varying your choices and start attacking your inference itself. The question is no longer "is my estimate stable across reasonable specifications?" It is "is my estimate even real, or have I been fooled?" The discipline has an ugly name and a beautiful purpose: you are going to try to kill your own result — design the tests a hostile referee would design, run them on yourself first, and report what they find whether you like the answer or not.
+:::
+
+## The Promises in Column Three Come Due
+
+- Last chapter: did I vary my **analytic choices** enough?
+- This chapter: is my **inference itself** real?
+- Your Ch 7.5 threats table had a column 3: *what we do about it*
+- Each test here **operationalizes one promise** you already wrote
+- Keep your threats table open as we go
+
+::: notes
+Here is the spine before the machinery. Back in Chapter seven-point-five you wrote an identification memo with a threats-and-responses table — four columns, and the third was "what we do about it." Column three was a set of promises. This chapter is where those promises come due. Every robustness test below is the operationalization of one row's column three: a placebo for the spurious-pattern threat, a wild cluster bootstrap for the few-clusters threat, an Oster delta for the unobserved-confounder threat. So as you read, keep your own threats table open. Every test here is an answer you owe to a row you already wrote.
+:::
+
+## Maya's Result, Ready to Attack
+
+- Staggered diff-in-diff on HMDA mortgage data
+- Do state **fair-lending exams** shrink the minority–white denial gap?
+- Callaway–Sant'Anna overall ATT, clustered by **state**
+- Headline: $\approx -1.4$pp, SE $\approx 0.55$, $t \approx 2.5$, three stars
+- A good day — now we try to make it die
+
+::: notes
+We continue with Maya's project from Week Seven: the staggered difference-in-differences on H-M-D-A mortgage data, asking whether state fair-lending examination programs reduced the county-level minority-versus-white gap in mortgage-denial rates. Her identifying assumption is per-cohort parallel trends; her primary estimate is a Callaway–Sant'Anna overall average treatment effect on the treated, clustered by state. Suppose she ran it and got an A-T-T of about minus one-point-four percentage points — the exams appear to shrink the denial gap by one-point-four points — with a state-clustered standard error of about zero-point-five-five, so a t of about two-point-five and three stars on the table. A good day. Now we spend the chapter trying to make that number die.
+:::
+
+## The Cheapest Attack: Is the t-stat Lying?
+
+- A too-small SE makes $t$ too big and significance an illusion
+- Chapter 2.4: OLS gives the **right point estimate** even with bad errors
+- What bad errors corrupt is the **variance** — the SE, hence $t$, hence $p$
+- A SE robustness check never touches $\hat\beta$
+- It re-asks: *how uncertain is this number, really?*
+
+::: notes
+Start with the cheapest attack, because it is also the most common cause of a result that evaporates: the standard error is too small, so the t-statistic is too big, and the significance is an illusion. Recall the central lesson of Chapter two-point-four. Ordinary least squares gives you the right point estimate even when the errors misbehave; what misbehaving errors corrupt is the variance of that estimate — the standard error, hence the t-stat, hence the p-value. A robustness check on standard errors does not touch your beta-hat at all. It re-asks the question "how uncertain is this number?" under a less convenient, and often more honest, set of assumptions about how the errors are correlated.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+This chapter's job is to try to kill your own result before a referee does. Each test answers one promise from column 3 of your threats table. Start with the cheapest attack: a too-small standard error fakes significance — and fixing it never touches your point estimate.
+:::
+
+::: notes
+To summarize part one: this chapter is the adversarial turn, where you stop varying analytic choices and start attacking your inference itself — trying to kill your own result before a hostile referee can. Every test operationalizes one promise from column three of the threats table you wrote in Chapter seven-point-five. Maya's headline, a one-point-four-point shrinkage of the denial gap with three stars, is our target. We start with the cheapest and most common attack: the standard error that is too small, which fakes significance — and the crucial fact that fixing it never touches your point estimate, only its uncertainty. In part two we open up the sandwich estimator and watch Maya's standard error move as we re-cluster.
+:::

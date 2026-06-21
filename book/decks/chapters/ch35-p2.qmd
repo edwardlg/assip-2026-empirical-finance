@@ -1,0 +1,58 @@
+---
+date: "2026-07-06"
+---
+
+## Exclusion, Compliers, and Identification
+
+- Part 2 — finish the referee's checklist: exclusion, compliers, identification
+
+::: notes
+Welcome back to Week Three-point-five, part two of seven. In part one we covered the referee's first two questions: name the triple, and check relevance with the first-stage F. Now we finish the checklist with its three hardest questions — exclusion, compliers, and identification. These are the ones answered by argument and design, not by a single statistic.
+:::
+
+## Question 3: Is Exclusion Plausible?
+
+- Does $z$ affect $y$ **only** through $x$?
+- **Untestable** in the just-identified case — defended by argument
+- The referee looks for the **back door**
+- ATM distance: dense, young, tech-forward neighborhoods trade more
+- Exclusion is where most IV papers **live or die**
+
+::: notes
+Question three: is exclusion plausible? Does z affect y only through x? This is the question the data cannot answer — exclusion is fundamentally untestable in the just-identified case, an assumption you defend with argument, not a statistic. So the referee reads the authors' defense and looks for the back door: a channel by which the instrument touches the outcome without going through the treatment. For Devon's A-T-M-distance instrument, ask: does living near a crypto A-T-M correlate with anything else that affects trading? Crypto A-T-Ms cluster in dense, young, tech-forward, financially-active neighborhoods, and people there trade more of everything for reasons unrelated to whether they personally hold crypto — income, financial literacy, peer effects. That is a back door through neighborhood affluence. A good paper anticipates this and argues it away; a bad paper pretends the back door does not exist. Exclusion is where most I-V papers actually live or die.
+:::
+
+## Question 4: Who Are the Compliers?
+
+- IV does **not** estimate the effect for everybody
+- It estimates the **Local Average Treatment Effect** — for **compliers**
+- Compliers: whose treatment the instrument actually flips
+- ATM compliers: convenience-driven marginal adopters
+- Not the whales (always-takers), not the crypto-averse (never-takers)
+
+::: notes
+Question four: who are the compliers? Recall that I-V does not estimate the average treatment effect for everybody. It estimates the Local Average Treatment Effect — the effect for compliers, the subpopulation whose treatment status the instrument actually flips. For A-T-M distance, the compliers are people who would hold crypto if an A-T-M were nearby but would not if it were far — marginal, convenience-driven adopters. They are not the crypto whales, who hold regardless, the always-takers; nor the crypto-averse, who never hold, the never-takers. So even if the design is perfect, the number answers a narrow question: the trading effect for convenience-driven marginal adopters. Ask of every I-V paper whether the abstract overclaims by describing a complier-specific effect as if it were universal. Most do.
+:::
+
+## Question 5: Just- or Over-Identified?
+
+- Count instruments vs. endogenous regressors
+- **One per regressor** = just-identified — no internal check
+- **More than regressors** = over-identified — a **testable implication**
+- Over-identification also invites **many-instruments bias**
+- A double-edged sword
+
+::: notes
+Question five: just-identified or over-identified? Count the instruments and the endogenous regressors. One instrument per endogenous regressor is just-identified — exactly enough information to pin down the parameter, no more. More instruments than regressors is over-identified, and you get something extra: a testable implication. With surplus instruments, each implies its own I-V estimate; if they all point to the same place, that is reassuring, and if they disagree wildly, at least one is violating exclusion. That is the overidentification test, which we reach later. It is also where the many-instruments bias lurks. Just-identified I-V is cleaner to reason about but offers no internal check on exclusion; over-identified offers a check but introduces new ways to go wrong.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The last three questions are answered by **design, not statistics**: argue **exclusion** through back-door channels, identify the **compliers** behind the LATE, and count instruments for **identification**. Next: the deepest failure hiding inside relevance — the **weak-instrument pathology**.
+:::
+
+::: notes
+To summarize part two: the referee's last three questions live in design and argument, not in a statistic. Exclusion is an argument about back-door channels and cannot be tested when just-identified. The compliers define the narrow LATE population the estimate actually describes. And counting instruments tells you whether you are just- or over-identified. Run all five questions and you will read I-V papers better than most graduate students. In part three we open up question two and find the deepest failure mode of all — the weak-instrument pathology, where I-V breaks even when you did everything by the book.
+:::

@@ -1,0 +1,47 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## Co-Pilot, Not Autopilot: Where It Helps
+
+- Part 2 — the co-pilot framing: five safe uses, the hazards
+
+::: notes
+Welcome back to the AI co-pilot for research, part two of fourteen. In part one we framed the stakes: the same fluency that makes a model useful makes it dangerous. Now the framing in one sentence: a model is a co-pilot — it accelerates work you could verify yourself, and it is a hazard exactly when you use it to replace judgment you cannot or do not check. Take the aviation metaphor literally. A co-pilot reduces the captain's workload and handles the tedious legs, but the captain signs the logbook and answers the inquiry. In research, you are the captain. The model never signs your paper.
+:::
+
+## Five Places It Genuinely Helps
+
+- **Literature triage** — sort 200 abstracts so you read the right three
+- **Parsing documentation** — CRSP, Compustat, WRDS syntax
+- **Code review and debugging** — verified by the interpreter
+- **Drafting and rewriting prose** — you own every word kept
+- **Classifying text at scale** — powerful, and the most dangerous
+
+::: notes
+Where does the co-pilot genuinely help? Five places, each sharing one property: the output is cheap to verify, or the cost of an occasional error is low. First, literature triage. You have two hundred abstracts and two days; the model sorts them into relevant, tangential, or off-topic and flags the closest three, which you then read yourself. If it miscategorizes one, you lose little. Second, parsing data dictionaries — the CRSP variable definitions, the WRDS query syntax, the eight ways Compustat encodes a missing value. You can check its answer against the manual in thirty seconds, so the speedup is safe. Third, code review and debugging: paste your function and the traceback, and the verifier is a Python interpreter, not your own credulity. Fourth, drafting and rewriting prose — you read every word and own every word you keep, so the only risk is laziness. Fifth, and the one this lesson treats most seriously, classifying or extracting structured information from text at scale: reading forty thousand filings and labeling each one's tone. This is genuinely new and powerful, and also the most dangerous, because the output is a column of numbers flowing straight into a regression, and you cannot eyeball forty thousand labels.
+:::
+
+## Where It Is a Hazard
+
+- Whenever you **cannot cheaply verify** and an error is costly
+- Facts you can't check — an invented coefficient or default rate
+- The model may "know" your answer for the **wrong reason**
+- Knowing the future relative to your sample — fatal in backtests
+- Generating framing, hypothesis, **and** evidence — a closed loop
+
+::: notes
+Now the dangerous places, stated just as plainly. A model is a hazard whenever you cannot cheaply verify the output and an error is costly. Three patterns recur. First, facts you can't check at a glance — what is the coefficient in such-and-such paper, what was the two-thousand-eight default rate on subprime adjustable-rate mortgages — where the model produces a specific, confident number that may be invented. Second, anything where the model may know your answer for the wrong reason, most insidiously knowing the future relative to your sample, which we will see is a fatal bias in backtests. Third, anything you would be tempted to keep only because you like the result: using the model to generate the framing, the hypothesis, and the supporting evidence is a closed loop with no contact with reality. The rest of the lesson is a set of techniques for staying in the safe column and detecting when you have drifted into the dangerous one.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A model is a **co-pilot**: it accelerates verifiable work and is a hazard when it replaces judgment you cannot check. It helps with triage, documentation, debugging, prose, and classification. It is dangerous on unverifiable facts and future-knowing tasks. Next: prompt patterns that constrain the model.
+:::
+
+::: notes
+To summarize part two: treat the model as a co-pilot, not an autopilot — you remain the captain who signs the paper. It genuinely helps where verification is cheap: literature triage, parsing documentation, code debugging, prose editing, and large-scale classification. It is a hazard where you cannot cheaply check the output and an error is costly — invented facts, future-leaking predictions, and closed-loop reasoning. In part three we start building the first guardrail: prompt patterns that constrain the model's degrees of freedom instead of inviting it to improvise.
+:::

@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Fatal Versus Survivable Critiques, and How to Concede
+
+- Part 6 — tell a fatal critique from a survivable one
+
+::: notes
+Welcome back to Chapter eight-point-five, part six of nine. In part five we handled confound questions and the honest "I don't know." Now we sharpen the single distinction that lets you keep your composure when a question lands hard: a survivable critique attacks a number, but a fatal critique attacks the comparison. We learn to tell them apart live, and how to concede when the attacker is right.
+:::
+
+## A Survivable Critique Attacks a Number
+
+- "Cluster your standard errors differently"
+- "Winsorize at one percent, not five"
+- "Did you control for firm size?"
+- These ask whether a *choice* changes the answer
+- You say: we checked; it doesn't — or I'll re-run it
+
+::: notes
+This is the distinction that lets you keep your composure when a question lands hard, so internalize it now. A survivable critique attacks a number; a fatal critique attacks the comparison. If someone says your standard errors should be clustered differently, or you should winsorize at one percent not five, or did you control for firm size, those are survivable, because they ask whether a choice changes the answer. You can say "we checked; it doesn't" — you did, on the robustness slide — or "fair, let me re-run it and report back." The result might move a little; it does not vanish. These are the questions you can absorb without losing the room, because your robustness work already anticipated most of them.
+:::
+
+## A Fatal Critique Attacks the Comparison
+
+- "Your groups were diverging before treatment"
+- "Your instrument plausibly affects the outcome directly"
+- "The cutoff also switches a different program's eligibility"
+- These attack the identifying assumption itself
+- They are the arguable, not testable, threats
+
+::: notes
+But if someone says your treated and control groups were already diverging before treatment, or your instrument plausibly affects the outcome directly, or the same cutoff also switches eligibility for a different program, those attack the identifying assumption itself. If the attacker is right, no amount of re-clustering saves you, because the comparison was never clean. Those are the fatal ones, and you know exactly which they are, because they are the testable-versus-arguable threats from the identification chapter. The ones you can only argue, not test, are precisely the ones that are fatal if lost. You walked in knowing which of your threats live in that column, so a fatal question is one you recognize the instant it is asked.
+:::
+
+## When a Fatal Critique Is Right, Concede
+
+- Do not defend the indefensible; arguing harder is wrong
+- Concede at the level it was made, retreat to what survives
+- "A strong association, not the clean causal estimate"
+- A conceded critique is a wounded paper, an intact scientist
+- Retreat to the descriptive claim; know it before you walk in
+
+::: notes
+Here is what to do when a fatal critique lands and the attacker is right: do not defend the indefensible. The instinct under pressure is to argue harder, and it is exactly wrong; defending a broken identification in front of a room that can see it is broken converts a damaged paper into a damaged reputation. The move is to concede the point at the level it was made and retreat to what survives. You're right that I can't rule that out with this design, so the honest reading is that this is a strong association consistent with the mechanism, not the clean causal estimate I'd hoped for, and that's a real limitation. A conceded fatal critique is a wounded paper but an intact scientist; a bluffed one is neither. And often the critique is fatal to the causal claim but not to the descriptive one. You can almost always retreat to "this is a robust pattern that future work with a better design should test causally," which is a real, publishable, honest contribution. Know your retreat position before you walk in. That is what the residual-concern column was for.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**A survivable critique attacks a number; a fatal one attacks the comparison.** Survivable: re-cluster, winsorize, add a control — you checked. Fatal: the comparison was never clean. When a fatal critique is right, **concede and retreat to the descriptive claim** that survives. Next: the one-click replication packet, the second surface.
+:::
+
+::: notes
+To summarize part six: tell critiques apart live. A survivable critique attacks a number you can re-run, like clustering or a control; the result may move but does not vanish. A fatal critique attacks the comparison itself, the arguable threats you could never test, and if the attacker is right no re-clustering saves you. When a fatal critique is right, do not bluff; concede at the level it was made and retreat to the descriptive claim that survives, which is honest and often still publishable. In part seven we move to the second surface a skeptic touches: the one-click replication packet, and its first three load-bearing parts.
+:::

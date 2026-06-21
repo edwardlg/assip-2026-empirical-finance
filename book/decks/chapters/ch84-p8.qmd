@@ -1,0 +1,47 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Responding to a Referee: The R&R Memo
+
+- Part 8 — flip the desk: the quote-change-evidence response memo
+
+::: notes
+Welcome back to peer review and revision, part eight of twelve. In part seven we finished Devon's report and saw why it was a model. Now flip the desk. The editor has returned your paper with a revise and resubmit — the most common good outcome in empirical research, because it means the design was credible enough to be worth saving. Attached are the referee reports, and your job is the response memo: a point-by-point reply that matters at least as much as the revised paper.
+:::
+
+## Quote, Change, Evidence
+
+- The memo is read before the paper is re-read
+- It tells the editor: can this author take criticism and act?
+- For each comment, do three things in order
+- Quote the comment verbatim; state what you changed
+- Then point to the number — table, figure, page
+
+::: notes
+Your job is to produce a revised paper and a document that matters at least as much: the response memo, also called the response-to-referees or the R and R letter. It is a point-by-point reply to every comment, and an editor reads it before re-reading the paper, because it tells them whether you are someone who can take criticism and act on it — more predictive of a good career than any single result. The structure is rigid and merciful in its rigidity. For each comment, you do three things, in this order: quote the comment, state what you changed, and point to the evidence. Quote it verbatim, usually in a blockquote, so the editor need not hold two documents side by side. State what you changed in plain, specific language — we have added an event study as new Figure Two and discuss it in Section four-point-two. Then point to the result: the new table number, the new figure, the page, the actual number the analysis produced. A response that says we have addressed this concern without saying where and with what number is worthless; the editor cannot verify it and will assume you did nothing.
+:::
+
+## Do Exactly What You Say You Did
+
+- The deepest norm, graded hardest in the camp
+- Claim an event study, it must be in the paper
+- Its leads must say what the memo says they say
+- Referees check; a single caught lie poisons every claim
+- Honesty here is the load-bearing wall, not optional ethics
+
+::: notes
+The deepest norm of the whole exercise, and the one the camp grades hardest, is this: do exactly what you say you did. If your memo claims you added an event study, the event study must be in the paper, it must be the one you describe, and its leads must say what your memo says they say. The fastest way to lose a referee's trust permanently — in the workshop and for the rest of your career — is a response memo whose claims the revised paper does not back up. Referees check. The whole institution of peer review runs on the assumption that the response memo is honest, and a single caught lie poisons every other claim in the document. Honesty here is not optional ethics; it is the load-bearing wall.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A revise-and-resubmit is a small victory — the design was worth saving. The response memo runs **quote → change → evidence** for every comment: paste the words verbatim, state the change plainly, point to a specific new number. Its deepest norm, graded hardest, is **do exactly what you say you did** — a single caught discrepancy poisons the whole memo. Next: when to concede, defend, or bound.
+:::
+
+::: notes
+To summarize part eight: when your paper comes back as a revise and resubmit, that is a small victory — the design was credible enough to save — and the response memo can matter as much as the revision, because the editor reads it first to judge whether you can take criticism and act. Run quote, change, evidence for every comment: quote it verbatim so nothing is held side by side, state the change in plain language, and point to a specific new table, figure, and number. And honor the deepest norm, graded hardest: do exactly what you say you did. Referees check, and a single caught discrepancy poisons every other claim. In part nine we cover the three moves available for any comment: concede, defend, or bound.
+:::
