@@ -434,6 +434,12 @@ book:
         - book/appendices/E-solutions-manual/E-w8-ps8.4-solutions.md
         - book/appendices/E-solutions-manual/E-w8-ps8.5-solutions.md
 
+    - part: "ASSIP 2026 Cohort"
+      chapters:
+        - assignments/index.qmd
+        - assignments/2026-07-10.qmd
+        - cohort-projects.qmd
+
   page-footer:
     border: true
     left: |
