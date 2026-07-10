@@ -48,7 +48,7 @@ on a *steeper* premium trajectory than the control before the regulation, for re
 whether the \$70 over- or understates the true ATT, and explain via the parallel-trends equation why.
 
 **A2. (Pre-trends do not prove parallel trends — name the assumption and how you'd interrogate it. 8 pts.)**
-Priya estimates an event study $Y_{it}=\alpha_i+\lambda_t+\sum_{k\neq -1}\beta_k\mathbb{1}\{t-t_i^*=k\}+
+Priya estimates an event study $Y_{it}=\alpha_i+\lambda_t+\sum_{k\neq -1}\beta_k\mathbb{1}\{t-t_i^{\ast}=k\}+
 \varepsilon_{it}$, omitting $k=-1$, and her lead coefficients $\hat\beta_{-4},\dots,\hat\beta_{-2}$ are all
 statistically indistinguishable from zero. (i) **Name the identifying assumption of DiD and explain why it is
 untestable** — point to the exact term in the parallel-trends equation that lives in a counterfactual world.

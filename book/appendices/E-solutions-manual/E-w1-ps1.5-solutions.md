@@ -133,7 +133,7 @@ $$[\,-0.013\%,\; 0.173\%\,].$$
 $\alpha = 0.05$ fails to reject $H_0: \mu = 0$.** General principle: the $100(1-\alpha)\%$ confidence
 interval is *exactly the set of null values $\mu_0$ that the two-sided level-$\alpha$ test would fail
 to reject* — the test, inverted. A value lies in the interval iff
-$|\bar{x} - \mu_0|/\widehat{\operatorname{se}} \le t^*$, which is precisely the non-rejection
+$|\bar{x} - \mu_0|/\widehat{\operatorname{se}} \le t^{\ast}$, which is precisely the non-rejection
 condition. Reading "is $0$ in the interval?" is the same act as running the test.
 
 **(c)** [3 pts] No contradiction. The one-sided test puts the *entire* $5\%$ in the upper tail

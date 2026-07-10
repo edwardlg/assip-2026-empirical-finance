@@ -110,8 +110,8 @@ The deepest attack: the omitted variable you never measured. No balance table ca
 
 **(b) Compute δ both ways (8 pts).** Using the nb8.2 calculator:
 
-- **The bounding set.** Fix $\delta = 1$ (the benchmark: unobservables exactly as confounding as observables) and solve for the bias-adjusted coefficient $\beta^*$. Report the identified set $[\hat\beta_1, \beta^*]$. **Pass:** it excludes zero. **Fail:** it contains zero.
-- **The δ that kills it.** Set $\beta^* = 0$ and solve for the required $\hat\delta$. **Pass:** $\hat\delta \ge 1$ (Oster's heuristic) — an unobservable would have to be *at least as confounding as everything you observed* to nullify the result, usually implausible because you already control for the obvious confounders. The larger $\hat\delta$, the more robust. **Fail:** $\hat\delta < 1$ — a confounder *weaker* than your observables could erase the effect.
+- **The bounding set.** Fix $\delta = 1$ (the benchmark: unobservables exactly as confounding as observables) and solve for the bias-adjusted coefficient $\beta^{\ast}$. Report the identified set $[\hat\beta_1, \beta^{\ast}]$. **Pass:** it excludes zero. **Fail:** it contains zero.
+- **The δ that kills it.** Set $\beta^{\ast} = 0$ and solve for the required $\hat\delta$. **Pass:** $\hat\delta \ge 1$ (Oster's heuristic) — an unobservable would have to be *at least as confounding as everything you observed* to nullify the result, usually implausible because you already control for the obvious confounders. The larger $\hat\delta$, the more robust. **Fail:** $\hat\delta < 1$ — a confounder *weaker* than your observables could erase the effect.
 
 Show the calculator inputs and the result. For calibration, the chapter's illustrative Maya numbers (an uncontrolled ATT of −2.2 moving only modestly to −1.4 while $R^2$ climbs from 0.08 to 0.42, $R_{\max}=1.3\tilde R_1$) give $\hat\delta \approx 4.7$ — robust; nb8.2's seeded synthetic version produces a comparably-large δ on its own DGP. Report *your* δ.
 
@@ -151,7 +151,7 @@ Tick every box; an unticked box is points off on the part it belongs to.
 - [ ] **All applicable placebos** run (in-time, in-space permutation with a distribution plot and permutation p, placebo outcome) with pass/fail stated by the Ch 8.2 rules — and any *failed* placebo reported, not buried.
 - [ ] Sensitivity run on controls (no/primary/aggressive) and sample/winsorizing (0/1/5%, defensible subsamples); **no bad control** added; fat-tail "do not winsorize the subject" case named where it applies.
 - [ ] The **family** is declared with its size $m$ and pre-specification status; **both** Bonferroni and Benjamini–Hochberg applied; surviving set and honest contribution sentence stated.
-- [ ] **Oster δ** computed *both ways* (bounding set at $\delta=1$; the $\hat\delta$ that drives $\beta^*$ to 0), with $R_{\max}$ defended and an $R_{\max}$ **sweep** reported; δ-is-not-a-p-value and failing-δ-is-information rules obeyed.
+- [ ] **Oster δ** computed *both ways* (bounding set at $\delta=1$; the $\hat\delta$ that drives $\beta^{\ast}$ to 0), with $R_{\max}$ defended and an $R_{\max}$ **sweep** reported; δ-is-not-a-p-value and failing-δ-is-information rules obeyed.
 - [ ] Every threat row of the Ch 7.5 table maps to a test in the battery (or a stated reason it is not runnable).
 - [ ] The honesty audit answers all three reflections; **no all-passes section without naming its most fragile result.**
 - [ ] Every magnitude labeled **real** (your data, snapshot pinned) or **illustrative** (synthetic / consistent-with-nb8.2 / borrowed from the solutions).

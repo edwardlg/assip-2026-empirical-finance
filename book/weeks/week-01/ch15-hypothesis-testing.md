@@ -166,15 +166,15 @@ A second, related caution: a p-value is itself a random variable. Run Sam's back
 
 A p-value answers one question — "can I reject *this particular* null?" A **confidence interval (CI)** answers all of them at once, and is often the more honest object to report.
 
-Start from the test. We *fail* to reject a candidate null value $\mu_0$ at level $\alpha$ exactly when the statistic is not extreme — when $|t| \le t^*$, where $t^*$ is the two-sided critical value. Writing that out,
+Start from the test. We *fail* to reject a candidate null value $\mu_0$ at level $\alpha$ exactly when the statistic is not extreme — when $|t| \le t^{\ast}$, where $t^{\ast}$ is the two-sided critical value. Writing that out,
 
-$$\left| \frac{\bar{x} - \mu_0}{s/\sqrt{N}} \right| \le t^* \quad\Longleftrightarrow\quad \bar{x} - t^*\,\frac{s}{\sqrt{N}} \;\le\; \mu_0 \;\le\; \bar{x} + t^*\,\frac{s}{\sqrt{N}}.$$
+$$\left| \frac{\bar{x} - \mu_0}{s/\sqrt{N}} \right| \le t^{\ast} \quad\Longleftrightarrow\quad \bar{x} - t^{\ast}\,\frac{s}{\sqrt{N}} \;\le\; \mu_0 \;\le\; \bar{x} + t^{\ast}\,\frac{s}{\sqrt{N}}.$$
 
 The set of *all* null values $\mu_0$ that survive the test is precisely the interval
 
-$$\left[\, \bar{x} - t^*\,\widehat{\operatorname{se}}(\bar{x}), \;\; \bar{x} + t^*\,\widehat{\operatorname{se}}(\bar{x}) \,\right].$$
+$$\left[\, \bar{x} - t^{\ast}\,\widehat{\operatorname{se}}(\bar{x}), \;\; \bar{x} + t^{\ast}\,\widehat{\operatorname{se}}(\bar{x}) \,\right].$$
 
-That is the $100(1-\alpha)\%$ confidence interval. **A confidence interval is simply the collection of null hypotheses you cannot reject** — a test, inverted. For Sam, with $t^* \approx 1.97$ at $251$ degrees of freedom, the $95\%$ CI for $\mu$ is
+That is the $100(1-\alpha)\%$ confidence interval. **A confidence interval is simply the collection of null hypotheses you cannot reject** — a test, inverted. For Sam, with $t^{\ast} \approx 1.97$ at $251$ degrees of freedom, the $95\%$ CI for $\mu$ is
 
 $$0.08\% \pm 1.97 \times 0.0473\% = [\,-0.013\%,\; 0.173\%\,].$$
 

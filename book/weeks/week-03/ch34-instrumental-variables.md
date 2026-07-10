@@ -42,7 +42,7 @@ Endogeneity has three classic faces, all of which IV addresses, and you have met
 
 - **Unobserved confounding** (this case): a variable in $\varepsilon$ drives both $D$ and $Y$. Motivation drives course-taking and debt.
 - **Simultaneity / reverse causality**: $Y$ also causes $D$. A firm's stock-price crash risk might *itself* change how much investors want to short it, so short interest and crash risk are jointly determined — you cannot tell which way the arrow points by regression alone.
-- **Measurement error**: from Chapter 2.5, classical noise in a regressor, $x = x^* + m$, mechanically correlates the regressor with the error and attenuates the slope toward zero. A valid instrument for $x^*$ undoes the attenuation, because the instrument is correlated with the true $x^*$ but not with the noise $m$.
+- **Measurement error**: from Chapter 2.5, classical noise in a regressor, $x = x^{\ast} + m$, mechanically correlates the regressor with the error and attenuates the slope toward zero. A valid instrument for $x^{\ast}$ undoes the attenuation, because the instrument is correlated with the true $x^{\ast}$ but not with the noise $m$.
 
 In all three, the fix is the same: find variation in $D$ that is *not* contaminated. That variation is what an instrument supplies.
 
