@@ -92,11 +92,11 @@ jobs:
       - name: Render Quarto textbook -> _site/textbook/ (HTML)
         run: quarto render --to html
 
-      - name: Render Quarto textbook -> _site/textbook/ (PDF)
-        # NOTE: the book PDF compile is currently broken by a TeX Live 2026 update
-        # ("Missing { inserted" in xelatex); keep it from blocking the HTML site deploy.
-        continue-on-error: true
-        run: quarto render --to pdf
+      # NOTE: the separate `quarto render --to pdf` step was REMOVED. It re-cleaned the
+      # shared output dir (_site/textbook/) and left it empty, which took /textbook/
+      # offline. The site serves the HTML book; to restore a downloadable book PDF later,
+      # render it to a separate directory and copy the .pdf into _site/textbook/ AFTER
+      # the HTML render (or use a single multi-format `quarto render`).
 
       # ---- Per-week PowerPoint decks (with speaker notes) --------------
       - name: Render decks -> book/decks/*.pptx
