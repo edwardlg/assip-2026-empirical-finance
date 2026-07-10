@@ -1,0 +1,45 @@
+---
+title: "Cohort Research Projects"
+subtitle: "Fifteen empirical-finance papers — ASSIP 2026"
+---
+
+Over the summer, the ASSIP 2026 cohort builds a portfolio of real, data-backed empirical finance
+papers — each with a research question, data from WRDS or public sources, an identification
+strategy, regression tables, figures, and a written draft. Results are reported exactly as they
+came out: findings and honest nulls alike. Below is the portfolio, by project.
+
+## The fifteen papers
+
+| # | Paper | Headline result |
+|---|---|---|
+| 1 | Cognitive vs. Physical Automation: AI and Robotics Patents | AI patents track employment growth; robotics tracks firm value |
+| 2 | The Diffusion of AI into Medicine | Health incumbents hold about 47% of medical-AI patents; the market values them |
+| 3 | Clawbacks and CEO Risk-Taking after the 2023 SEC Rule | *Null* — the one significant result is a size-and-COVID artifact that fails pre-trends |
+| 4 | Do Anomalies Die When They Are Published? | Anomaly long-short returns fall about half after publication |
+| 5 | Import Exposure and the April-2025 Tariff Shock | Import-exposed firms fell on the shock and rebounded on the pause |
+| 6 | Does Housing Re-Price Disaster Risk Only Where People Believe? | *Null* — no robust belief-conditional re-pricing |
+| 7 | BNPL Enters the Credit File | *Null* — no furnisher-specific complaint spike; the surge is sector-wide |
+| 8 | Is the LLM Reading the 10-K or Remembering the Stock? | *Null at scale* — no look-ahead contamination detected |
+| 9 | Did ChatGPT Reprice AI-Exposed Labor? | AI-exposed firms earned abnormal returns; the sign flips by economic role |
+| 10 | What Cracked a Bank in March 2023? | Uninsured deposits, not hidden bond losses, drove the SVB-week crash |
+| 11 | Do CHIPS Act Awards Move the Awardee's Stock? | *Null* — no average effect; the apparent size-scaling is a single outlier |
+| 12 | Did the 2025 Half-Cent Tick Tighten Spreads? | *Null* — the difference-in-differences fails its placebo and parallel-trends |
+| 13 | Where Does Price Discovery Happen: Kalshi vs. Polymarket? | Polymarket leads price discovery on identical contracts |
+| 14 | What Kind of Layoff Does the Market Punish? | Layoff announcements cost about 1.6%, driven by firm materiality |
+| 15 | Cohort capstone: A Policy-Shock Event-Study Atlas of 2022–2025 | Firm differentiation scales with shock size; the SVB shock uniquely propagates |
+
+## What the tally says
+
+Nine significant findings, five diagnosed nulls, and one that scaled to a null — with zero
+fabricated numbers. That mix is what honest research looks like. A project that reports fifteen
+"significant" results out of fifteen is the one to distrust; a diagnosed null (a failed placebo, a
+single leverage point, a non-parallel pre-trend) is a real result, and it is what makes the
+significant findings credible.
+
+## How the work is divided
+
+The heavy computational scaffolding — building the data pipeline, running the regressions,
+drafting the tables — is done with AI assistance. Each student then owns the part a machine cannot
+do reliably: hand-collecting and hand-coding documents, pinning exact event dates, resolving messy
+entity crosswalks, and making the judgment calls that determine whether a result holds up. That
+hand-work is what makes each paper trustworthy.

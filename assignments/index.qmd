@@ -1,0 +1,18 @@
+---
+title: "Assignments"
+subtitle: "Weekly research and reading tasks for the ASSIP 2026 cohort"
+---
+
+Each week the cohort has one or two assignments — a research task, a reading, or a short
+write-up. The full instructions live on each week's page below. New weeks are added here as the
+summer progresses.
+
+## This summer
+
+| Week | Assignment | Due |
+|---|---|---|
+| **Week of July 10, 2026** | [The other side of "AI takes your job," and read one of my papers](2026-07-10.qmd) | Part 1 brief: **Mon, July 13**. Part 2 discussion: **Tue, July 14 (AM)**. |
+
+::: {.callout-note}
+Questions during the week? Email Prof. Gao — ask early rather than stay stuck.
+:::

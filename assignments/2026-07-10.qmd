@@ -1,0 +1,146 @@
+---
+title: "Week of July 10 — AI and the Labor Market, and Reading a Finance Paper"
+subtitle: "ASSIP 2026 · Mentor: Prof. Lei Gao"
+date: "2026-07-10"
+---
+
+[**Download this assignment as a PDF**](assip-week-2026-07-10.pdf)
+
+Two parts this week. **Part 1** is a written research brief. **Part 2** prepares you to
+discuss a real finance paper with me. Read both fully before you start.
+
+---
+
+## Part 1 — The Other Side of the "AI Takes Your Job" Story
+**Due: Monday, July 13.**
+
+The headlines say *"AI is coming for your job."* That is only half the story. A large and
+growing body of serious research finds that AI often **complements** human work — raising
+productivity, and sometimes helping the people who need it most. Your task is to investigate
+that other half, with special attention to **workers with disabilities**, for whom AI-powered
+tools (speech-to-text, screen readers, live captioning, AI job-matching, remote-work software)
+can open doors that were previously closed.
+
+### What to produce — a 2–3 page research brief with four parts
+1. **Annotated bibliography** of **5–7 credible sources** (at least **2** specifically on
+   disability & employment). For each source, write 2–3 sentences: what did it find, and why
+   does it matter?
+2. **Two datasets** you could actually use. For each, state **one specific research question**
+   you could answer with it.
+3. **Your own hypothesis** — one sentence — plus a short paragraph sketching how you would test
+   it (what data, what comparison).
+4. **One honest caveat.** The evidence is genuinely mixed. Find and describe at least one way AI
+   can *harm* disabled workers (e.g., biased hiring tools). **Good research acknowledges the
+   other side.**
+
+### Start here — then go beyond these
+**Positive effects of AI on work (augmentation, productivity):**
+- Brynjolfsson, Li & Raymond (2023), *Generative AI at Work*, NBER 31161 — an AI assistant
+  raised customer-support productivity 14% on average, and **34% for the least-experienced
+  workers.** → https://www.nber.org/papers/w31161
+- Noy & Zhang (2023), *Science* — in an experiment, ChatGPT cut writing-task time ~40%, raised
+  quality, and **narrowed the gap between weaker and stronger writers.** →
+  https://pubmed.ncbi.nlm.nih.gov/37440646/ (open preprint available on SSRN)
+- Autor (2024), *Applying AI to Rebuild Middle Class Jobs*, NBER 32140 — argues AI can extend
+  human expertise to a broader set of workers. → https://www.nber.org/papers/w32140
+
+**AI, assistive technology & disability employment:**
+- Kruse, Schur et al. (2024), *Assistive Technology's Potential to Improve Employment of People
+  with Disabilities*, J. Occupational Rehabilitation — U.S. Census data links greater
+  assistive-technology availability to **higher disability employment.** →
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC11219186/
+- Schur, Ameri & Kruse (2020), *Telework after COVID: a "silver lining" for workers with
+  disabilities?* — remote work, enabled by digital/assistive tools, removes commuting and
+  physical-workplace barriers. → https://smlr.rutgers.edu/faculty-research-engagement/program-disability-research/telework
+- OECD (2023), *Using AI to Support People with Disability in the Labour Market* — four
+  categories of AI that help disabled workers, from 70+ stakeholder interviews. →
+  https://www.oecd.org/en/publications/using-ai-to-support-people-with-disability-in-the-labour-market_008b32b7-en.html
+
+**The honest nuance (AI can also harm — you must engage with this):**
+- ILO (2025), *AI's double-edged sword* — the *same* AI can discriminate: resume screeners that
+  downrank disability-related signals; video-interview tools that misread autism or facial
+  differences. → https://www.ilo.org/resource/article/ais-double-edged-sword-new-frontier-employment-people-disabilities
+
+### Datasets to explore
+- **IPUMS CPS** — U.S. monthly labor-force data with a disability question (`DIFFANY`, since
+  2008). Free with registration; build custom extracts online. → https://cps.ipums.org/cps/
+- **DisabilityStatistics.org** (Cornell University) — **no coding required**: pre-made tables of
+  disability employment rates by year and state. Great first stop. → https://www.disabilitystatistics.org/
+- **AI Occupational Exposure (AIOE)** — which occupations are most "exposed" to AI. Free on
+  GitHub. → https://github.com/AIOE-Data/AIOE
+- **O*NET** — detailed attributes of ~1,000 occupations (skills, tasks, work context). Free. →
+  https://www.onetcenter.org/database.html
+- *Also useful:* **nTIDE** monthly disability-employment report (https://researchondisability.org/nTIDE);
+  **IPUMS ACS** for occupation × disability (https://usa.ipums.org/usa/).
+
+### Ground rules (important)
+- **Every citation must be real and clickable — verify each one yourself by opening the link.**
+  Do **not** trust any AI-generated citation without checking it. Fabricated references are the
+  fastest way to lose credibility in research.
+- Prefer the **primary source** (the actual paper) over a blog summary.
+- Keep a running list of the search terms and databases you used — you'll include it at the end.
+
+### Guiding questions (pick a few to anchor your brief)
+- Does AI help *lower-skilled* workers more than higher-skilled ones? Why might that be?
+- Does remote work (enabled by AI/assistive tech) expand employment for disabled workers?
+- Which occupations are most "exposed" to AI — and is *exposure* the same thing as *at risk*?
+
+---
+
+## Part 2 — Read One of My Papers
+**Discussion: Tuesday, July 14 (morning) — come ready to talk for 5 minutes.**
+
+Pick **one** paper below, read it carefully, and prepare a **5-minute talk**. This is how you
+learn to read finance research. You do **not** need to understand every equation — focus on the
+story.
+
+### In your 5 minutes, cover these five things (this is also how every finance paper is built)
+1. **The question** — what are they asking, and why does it matter?
+2. **The data** — what data did they use, and where did it come from?
+3. **The method** — how do they answer it? (What is the key comparison or "experiment"?)
+4. **The main finding** — the single most important result, *with the number*.
+5. **Your take** — one thing you found clever, and one thing you would question or want to know more.
+
+### Choose one (all are mine; roughly easiest → most technical)
+1. **Lending Practices to Same-Sex Borrowers** (Sun & Gao, *PNAS* 2019) — *Do same-sex couples
+   face mortgage discrimination?* Uses real federal mortgage records. Intuitive and socially
+   important (ranked in the *Financial Times* Top-100 research with social impact). **Best first read.**
+2. **The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans** (Gao, Liu & Wang,
+   working paper) — extends the discrimination question to the *municipal bond* market: do
+   same-sex-marriage bans raise a city's borrowing costs? Relatable policy question.
+3. **Does Local Religiosity Affect Organizational Risk-Taking? Evidence from the Hedge Fund
+   Industry** (Gao, Wang & Zhao, *J. Corporate Finance* 2017) — *Do hedge funds in more
+   religious areas take less risk?* Textbook-clear question → data → method → finding.
+4. **Local Religiosity and Financial Advisor Misconduct** (Gao, Cowan, Han & Pan, *J. Corporate
+   Finance* 2024) — the same "does local culture shape behavior?" idea applied to individual
+   financial advisers and their misconduct records. Pairs nicely with paper #3.
+5. **Corporate Patents, R&D Success, and Tax Avoidance** (Gao, Yang & Zhang, *Rev. Quant.
+   Finance & Accounting* 2016) — *Do successful innovators also avoid more tax?* (Nice fit if
+   you're on one of the patents projects.)
+6. **Standing Out from the Crowd via CSR Engagement** (Gao, He & Wu, *J. Financial &
+   Quantitative Analysis* 2023) — *Why do firms "do good"?* A competition-based answer. (ESG.)
+7. **Individualistic CEO and Corporate Innovation** (Gao, Han, Pan & Zhang, *Research Policy*
+   2023) — *Does a CEO's cultural background (U.S. frontier heritage) shape how much the firm
+   innovates?*
+8. **Seeing is Believing: Annual Report "Graphicity" and Stock Return Predictability** (Gao,
+   Deng, Hu & Zhou, working paper) — *Do the pictures and charts in a company's annual report
+   carry information the market misses?* A modern, novel angle (text- and image-as-data).
+9. **Market Intraday Momentum** (Gao, Han, Li & Zhou, *J. Financial Economics* 2018) — *Does the
+   market's morning return predict its afternoon return?* A simple, tradable idea. **Most
+   technical / for the quant-minded.**
+
+### How to access
+- My **Google Scholar** page has a free PDF or link for every paper:
+  https://scholar.google.com/citations?user=zk0dvhsAAAAJ
+- Or search **"Lei Gao George Mason"** on SSRN (https://www.ssrn.com).
+
+### How to read your first finance paper (tips)
+- Read in this order: **abstract → introduction → conclusion → then the ONE main table.** Skip
+  the heavy math on the first pass.
+- The **introduction previews every finding** — read it twice.
+- Write down the **one sentence** that captures the whole paper. If you can say it out loud, you
+  understand it.
+
+---
+
+*Questions during the week? Email me. I'd rather you ask early than stay stuck.*

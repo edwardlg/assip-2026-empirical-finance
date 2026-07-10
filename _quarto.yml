@@ -27,6 +27,7 @@ project:
     - "data-cards/**/*.md"
     - "environment.yml"
     - "CONVENTIONS.md"
+    - "assignments/**/*.pdf"
 
 # -----------------------------------------------------------------
 # Global execution policy: never execute code on CI or locally during
@@ -105,6 +106,10 @@ book:
         href: book/capstones/README.md
       - text: "Instructor Manual"
         href: book/instructor-manual/README.md
+      - text: "Assignments"
+        href: assignments/index.qmd
+      - text: "Cohort Projects"
+        href: cohort-projects.qmd
       - text: "About"
         href: about.qmd
     right:
