@@ -93,10 +93,14 @@ jobs:
         run: quarto render --to html
 
       - name: Render Quarto textbook -> _site/textbook/ (PDF)
+        # NOTE: the book PDF compile is currently broken by a TeX Live 2026 update
+        # ("Missing { inserted" in xelatex); keep it from blocking the HTML site deploy.
+        continue-on-error: true
         run: quarto render --to pdf
 
       # ---- Per-week PowerPoint decks (with speaker notes) --------------
       - name: Render decks -> book/decks/*.pptx
+        continue-on-error: true
         run: |
           set -e
           mkdir -p _site/decks
