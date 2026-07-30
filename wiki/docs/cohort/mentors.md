@@ -17,15 +17,15 @@ The 14-student cohort is supported by a three-tier mentorship structure: one fac
 **Associate Professor of Finance** · Costello College of Business, George Mason University
 :material-email: &nbsp; <lgao9@gmu.edu> &nbsp;·&nbsp; :material-school: &nbsp; PhD, University of Georgia &nbsp;·&nbsp; :material-domain: &nbsp; former SEC Division of Economic and Risk Analysis (DERA)
 
-Prof. Gao is the faculty mentor for the ASSIP 2026 Empirical Finance Research Group. His research is in empirical corporate finance, banking, fair lending, and the regulatory uses of machine learning; he has testified to **Congress** as an expert witness on fair-lending policy, and his work has been cited in regulatory proceedings at the SEC and CFPB.
+Prof. Gao is the faculty mentor for the ASSIP 2026 Empirical Finance Research Group. His research is in empirical corporate finance, banking, fair lending, and the regulatory uses of machine learning; he has been invited to testify before **Congress** as an expert witness on fair-lending policy, and his work has been cited in regulatory proceedings at the SEC and CFPB.
 
 **Selected published research (verified anchor papers used in this cohort's reading list):**
 
-- Gao, L., Wang, Y., & Zhao, J. (2024). *Mortgage lending and bank conflicts of interest: Evidence from the U.S. mortgage market.* *Journal of Financial and Quantitative Analysis.*
-- Gao, L., Calluzzo, P., & Dong, G. N. (2017). *Has the financial system become safer after the crisis? The changing nature of financial-institution risk.* *Journal of Banking & Finance,* 80, 124 – 142.
-- Gao, L., Dong, G. N., & Lin, J. (2019). *Securities litigation, withdrawal risk, and the financial intermediation chain.* *Journal of Banking & Finance,* 98, 31 – 50.
+- Sun, H., & Gao, L. (2019). *Lending practices to same-sex borrowers.* *Proceedings of the National Academy of Sciences,* 116(19), 9293 – 9302.
+- Gao, L., Han, Y., Li, S. Z., & Zhou, G. (2018). *Market Intraday Momentum.* *Journal of Financial Economics,* 129(2), 394 – 414.
+- Elnahas, A., Gao, L., Hossain, M. N., & Kim, J.-B. (2024). *CEO Political Ideology and Voluntary Forward-Looking Disclosure.* *Journal of Financial and Quantitative Analysis,* 59(8), 3671 – 3707.
 
-A full publication list is on his [GMU faculty page](https://business.gmu.edu/) and [Google Scholar profile](https://scholar.google.com/) (TBD links).
+A full publication list is on his [research page](https://sites.google.com/view/lei-gao/research), [GMU faculty page](https://business.gmu.edu/profiles/lgao9), and [Google Scholar profile](https://scholar.google.com/citations?user=zk0dvhsAAAAJ).
 
 **What he owns in this cohort:**
 

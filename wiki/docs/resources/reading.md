@@ -90,54 +90,54 @@ Stable links are JSTOR, SSRN, the publisher's DOI, or the journal page. Where a 
 
 ## Five Gao papers
 
-These five trace the methodological arc of the program — fair lending, banking, innovation — through Prof. Gao's own work.
+These five trace the methodological arc of the program — fair lending, innovation, disclosure, and rigorous identification — through Prof. Gao's own work.
 
 <div class="grid cards" markdown>
 
--   :material-book-open-page-variant: &nbsp; **Gao, Hwang & Liu** — *Lender screening, illiquidity, and the disclosure premium*
+-   :material-book-open-page-variant: &nbsp; **Sun & Gao (2019)** — *Lending practices to same-sex borrowers*
 
     ---
 
-    See [the Quarto textbook bibliography](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/bibliography.html) for the canonical citation and the publicly available working-paper SSRN link.
+    *Proceedings of the National Academy of Sciences* 116(19): 9293–9302. [DOI](https://doi.org/10.1073/pnas.1903592116)
 
-    *Why it matters:* the foundation paper for our fair-lending and bank-screening discussions. Week-3 PSM examples ride on its empirical setup.
+    *Why it matters:* the program's fair-lending flagship (Financial Times "Top 100 Business-School Research with Social Impact"). The over-controlling trap in HMDA studies and the design-beats-controls lesson, made concrete — the Week 4 mentor session and the Week 6.4 Reader's Guide both build on it.
 
--   :material-book-open-page-variant: &nbsp; **Gao & Sun (2019)** — *Fair lending and algorithmic mortgage pricing*
-
-    ---
-
-    Cited in [the Week 6.4 Reader's Guide](https://edwardlg.github.io/assip-2026-empirical-finance/textbook/book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.html). SSRN link in the textbook bibliography.
-
-    *Why it matters:* the over-controlling trap in HMDA-based fair-lending studies, made concrete. Lab 3 and Lab 6 both build on it.
-
--   :material-book-open-page-variant: &nbsp; **Gao et al. (2024)** — *Innovation, patents, and the cross-section of returns* (published 2024)
+-   :material-book-open-page-variant: &nbsp; **Gao, Han, Li & Zhou (2018)** — *Market Intraday Momentum*
 
     ---
 
-    See the textbook bibliography for the published JF / JFE / RFS citation.
+    *Journal of Financial Economics* 129(2): 394–414. [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0304405X18301351)
 
-    *Why it matters:* extends KPSS (2017) and shows where the patent-value construct still has identifying-assumption gaps. Week 6 reading.
+    *Why it matters:* return predictability and honest out-of-sample testing — a core piece of the Weeks 5–6 empirical-finance canon.
 
--   :material-book-open-page-variant: &nbsp; **Gao — Bank regulation and small-business lending**
-
-    ---
-
-    Citation and link in the textbook bibliography.
-
-    *Why it matters:* a worked staggered-DiD design that Week 4 leans on as a case study.
-
--   :material-book-open-page-variant: &nbsp; **Gao — Most recent working paper**
+-   :material-book-open-page-variant: &nbsp; **Gao, Han, Pan & Zhang (2023)** — *Individualistic CEO and Corporate Innovation: Evidence from U.S. Frontier Culture*
 
     ---
 
-    SSRN link in the textbook bibliography; updated each summer.
+    *Research Policy* (2023). [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950964)
 
-    *Why it matters:* read in Week 7 as a model of how a research question turns into a registered design — the version we want your capstone to imitate.
+    *Why it matters:* innovation measured with a hand-built cultural instrument — 19th-century frontier exposure linked to CEO birthplaces — identification from history rather than kitchen-sink controls. Week 6 reading.
+
+-   :material-book-open-page-variant: &nbsp; **Elnahas, Gao, Hossain & Kim (2024)** — *CEO Political Ideology and Voluntary Forward-Looking Disclosure*
+
+    ---
+
+    *Journal of Financial and Quantitative Analysis* 59(8): 3671–3707. [Cambridge Core](https://doi.org/10.1017/S0022109023001023)
+
+    *Why it matters:* a disclosure study that survives the measurement-then-selection referee gauntlet — the Week 8 mentor session's worked case in defending an endogenous regressor.
+
+-   :material-book-open-page-variant: &nbsp; **Gao, Liu & Wang** — *The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans*
+
+    ---
+
+    Working paper (AEA 2025). [Prof. Gao's research page](https://sites.google.com/view/lei-gao/research)
+
+    *Why it matters:* fair lending travels from mortgages to municipal-bond markets — read in Week 7 as a model of how a research question turns into a registered design, the standard we want your capstone to imitate.
 
 </div>
 
-!!! note "Gao paper citations"
-    Gao paper titles, journals, page ranges, and DOIs are stored once in the Quarto textbook's bibliography file so we don't have two places to update them. The Quarto build is the single source of truth — if a citation here ever disagrees with the textbook, the textbook is right.
+!!! note "Citations verified"
+    Each citation above is the paper's real published form (authors, year, journal, volume, pages), verified against the publisher, PNAS, SSRN, and Prof. Gao's [research page](https://sites.google.com/view/lei-gao/research).
 
 ---
 

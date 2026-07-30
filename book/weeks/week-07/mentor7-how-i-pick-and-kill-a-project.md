@@ -127,7 +127,7 @@ where is the variation, who is the audience, and what is the single fatal flaw m
 
 **Slide 4 — Two of my own funnels.**
 - **A clean shock makes a project viable** — *Standing Out from the Crowd via CSR* (JFQA 2023): the question only became answerable when we found a source of price pressure that moves a firm's stock for reasons *unrelated to its fundamentals*. That's what turned a correlation into a design.
-- **An idea becomes a paper over years** — *The Rainbow of Credits* (municipal borrowing, AEA 2025, headed for the JF): I'll trace how the question narrowed, which versions I killed, and what survived contact with the data.
+- **An idea becomes a paper over years** — *The Rainbow of Municipal Credit* (municipal borrowing, AEA 2025, headed for the JF): I'll trace how the question narrowed, which versions I killed, and what survived contact with the data.
 - The thread: both lived or died on the same two questions — *where's the clean variation?* and *can I actually measure and get this?*
 
 **Slide 5 — Now kill your own.**
@@ -147,7 +147,7 @@ These tie today's theme to two of my own projects, offered as live worked cases 
 > Gao, L., He, J., & Wu, J. (2023). Standing Out from the Crowd via CSR Engagement: Evidence from
 > Non-Fundamental-Driven Price Pressure. *Journal of Financial and Quantitative Analysis*.
 >
-> Gao, L., Liu, S., & Wang, Y. The Rainbow of Credits: Evidence from Municipal Borrowing. (AEA 2025;
+> Gao, L., Liu, S., & Wang, Y. The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans. (AEA 2025;
 > target *Journal of Finance*).
 
 The first paper asks whether a firm's exposure to **price pressure that is *not* driven by its
@@ -180,7 +180,7 @@ or kill this version." Mark anything you would need to confirm against the actua
    source of non-fundamental price pressure before describing it as fact — reason about what *kind* of
    variation the design *needs*, not which specific instrument the paper uses.
 
-2. **Watching an idea travel the whole funnel.** Use *The Rainbow of Credits* as the worked case for a
+2. **Watching an idea travel the whole funnel.** Use *The Rainbow of Municipal Credit* as the worked case for a
    project's life cycle. (a) The puzzle is something like "municipalities seem to pay very different
    borrowing costs, and not only because some are riskier." Run that puzzle through yesterday's three
    filters out loud — *so what* (who acts differently if either answer is true — a city treasurer, a

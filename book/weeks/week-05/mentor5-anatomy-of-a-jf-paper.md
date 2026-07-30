@@ -113,7 +113,7 @@ comparison, what is the threat, and what check would make a skeptic stop arguing
 - The honesty *is* the credibility. Report the checks that failed, not just the ones that passed.
 
 **Slide 5 — Why this is your capstone in miniature.**
-- *The Rainbow of Credits* (Gao, Liu & Wang, AEA 2025; target *JF*) is a live paper still being built — you are seeing a real one mid-flight, not a museum piece.
+- *The Rainbow of Municipal Credit* (Gao, Liu & Wang, AEA 2025; target *JF*) is a live paper still being built — you are seeing a real one mid-flight, not a museum piece.
 - In Weeks 7–8 you write your *own* paper: real question, real data (CRSP / Compustat / EDGAR / municipal data), a design you can defend, tables you build — bound for the **ASSIP Research Symposium on Wednesday, August 12, 2026** (poster + virtual breakout for remote interns) and an abstract in the **Journal of Student-Scientists' Research (JSSR), GMU Mason Publishing**.
 - The seven-part template you read *outward* this week is what I run *inward* on every project of mine before I commit two years to it.
 - Read every paper — including your own draft — as though you will defend its tables in a seminar. By August 12 you will.
@@ -125,7 +125,7 @@ comparison, what is the threat, and what check would make a skeptic stop arguing
 These tie today's construction ideas to a working paper my coauthors and I are still building, offered as a live
 worked case of how a question becomes a *Journal of Finance* submission:
 
-> Gao, L., Liu, S., & Wang, Y. "The Rainbow of Credits: Evidence from Municipal Borrowing." (AEA 2025; target
+> Gao, L., Liu, S., & Wang, Y. "The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans." (AEA 2025; target
 > *Journal of Finance*.)
 
 The setting is the U.S. **municipal bond market** — the market through which states, cities, counties, school
