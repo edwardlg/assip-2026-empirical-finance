@@ -70,7 +70,7 @@ Weeks 5 and 6. Reader's Guides for each are in `book/weeks/week-05/` and
 - **Gao, L., Han, Y., Li, S. Z., & Zhou, G. (2018).** — Market Intraday Momentum. *Journal of Financial Economics* **129**(2), 394–414. <https://www.sciencedirect.com/science/article/abs/pii/S0304405X18301351>
 - **Gao, L., Han, J., Pan, Z., & Zhang, H. (2023).** — Individualistic CEO and Corporate Innovation: Evidence from U.S. Frontier Culture. *Research Policy* (2023). SSRN: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950964>
 - **Elnahas, A., Gao, L., Hossain, M. N., & Kim, J.-B. (2024).** — CEO Political Ideology and Voluntary Forward-Looking Disclosure. *Journal of Financial and Quantitative Analysis* **59**(8), 3671–3707. DOI: <https://doi.org/10.1017/S0022109023001023>
-- **Gao, L., Han, J., Kim, J.-B., & Pan, T. (2024).** — Common Ownership Along the Supply Chain and Management Disclosure. *Journal of Corporate Finance* (2024). See Prof. Gao's research page for the DOI.
+- **Gao, L., Han, J., Kim, J.-B., & Pan, Z. (2024).** — Common Ownership Along the Supply Chain and Management Disclosure. *Journal of Corporate Finance* (2024). See Prof. Gao's research page for the DOI.
 - **Gao, L., Liu, S., & Wang, Y.** — The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans. Working paper (AEA 2025). SSRN: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4984106>
 - **Deng, W., Hu, B., Zhou, G., & Gao, L.** — Seeing is Believing: Annual Report "Graphicity" and Stock Returns Predictability. Working paper.
 
