@@ -17,7 +17,7 @@ The 14-student cohort is supported by a three-tier mentorship structure: one fac
 **Associate Professor of Finance** · Costello College of Business, George Mason University
 :material-email: &nbsp; <lgao9@gmu.edu> &nbsp;·&nbsp; :material-school: &nbsp; PhD, University of Georgia &nbsp;·&nbsp; :material-domain: &nbsp; former SEC Division of Economic and Risk Analysis (DERA)
 
-Prof. Gao is the faculty mentor for the ASSIP 2026 Empirical Finance Research Group. His research is in empirical corporate finance, banking, fair lending, and the regulatory uses of machine learning; he has been invited to testify before **Congress** as an expert witness on fair-lending policy, and his work has been cited in regulatory proceedings at the SEC and CFPB.
+Prof. Gao is the faculty mentor for the ASSIP 2026 Empirical Finance Research Group. His research is in empirical corporate finance, banking, fair lending, and the regulatory uses of machine learning; he has been invited to testify before **Congress** as an expert witness on fair-lending policy, and his research speaks to fair-lending and disclosure questions of the kind considered by regulators such as the SEC and CFPB.
 
 **Selected published research (verified anchor papers used in this cohort's reading list):**
 
