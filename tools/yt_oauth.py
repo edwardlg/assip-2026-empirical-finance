@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 """
-yt_oauth.py -- minimal, dependency-free OAuth (device flow) for reading a
-channel owner's OWN uploads, INCLUDING unlisted/private videos, via the YouTube
-Data API. A plain API key only sees PUBLIC videos; owner OAuth sees everything,
-which is what build_video_map.py needs when the lessons are uploaded Unlisted.
+yt_oauth.py -- minimal, dependency-free OAuth (device flow) for a channel owner
+to read AND (optionally) modify their OWN videos via the YouTube Data API. A
+plain API key only sees PUBLIC videos; owner OAuth sees everything, which is what
+build_video_map.py needs when the lessons are uploaded Unlisted.
 
-Read-only scope. No third-party libraries (urllib only). Uses the OAuth 2.0
-"device" flow: you open a URL on any device and type a short code -- no localhost
-redirect, so it works cleanly over SSH/WSL.
+Two scopes:
+  * SCOPE       (youtube.readonly) -- read-only, the default (build_video_map.py).
+  * SCOPE_WRITE (youtube, "manage your account") -- read + write, needed to
+    change a video's visibility (set_playlist_public.py). Cached in a SEPARATE
+    token file so the read-only and write tokens never clobber each other.
+    (Device flow rejects youtube.force-ssl; the `youtube` scope is allowed.)
+
+No third-party libraries (urllib only). Uses the OAuth 2.0 "device" flow: you
+open a URL on any device and type a short code -- no localhost redirect, so it
+works cleanly over SSH/WSL.
 
 ONE-TIME SETUP (channel owner):
   1. Google Cloud Console -> APIs & Services -> Library -> enable
@@ -15,29 +22,36 @@ ONE-TIME SETUP (channel owner):
   2. APIs & Services -> OAuth consent screen:
        - User type: External
        - Add your own Google account under "Test users"
-       - (Sensitive scope youtube.readonly + "Testing" status is fine for personal
-          use. Note: in Testing, refresh tokens expire after ~7 days -- if a run
-          says it must re-authorize, just approve the code again.)
+       - (Sensitive scopes youtube.readonly / youtube + "Testing" status are fine
+          for personal use. Note: in Testing, refresh tokens expire after ~7 days
+          -- if a run says it must re-authorize, just approve again.)
   3. APIs & Services -> Credentials -> Create credentials -> OAuth client ID ->
      Application type: "TVs and Limited Input devices". Download the JSON.
   4. Save that JSON as:  ~/.config/leigao-video/client_secrets.json
      (or pass --client-secrets PATH, or set GOOGLE_CLIENT_SECRETS=PATH)
 
-The access/refresh token is cached at ~/.config/leigao-video/yt_token.json
-(mode 0600). Never commit client_secrets.json or yt_token.json.
+Tokens are cached at ~/.config/leigao-video/yt_token.json (read-only scope) and
+yt_token_write.json (write scope), each created mode 0600. Never commit
+client_secrets.json or yt_token*.json.
 """
 from __future__ import annotations
 import json, os, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
-SCOPE = "https://www.googleapis.com/auth/youtube.readonly"
+SCOPE = "https://www.googleapis.com/auth/youtube.readonly"   # read-only
+# Full "manage your YouTube account" scope: read + write (videos.update). NOT
+# force-ssl -- the device/limited-input flow rejects force-ssl with invalid_scope;
+# `youtube` is on its allowlist and is enough to change visibility.
+SCOPE_WRITE = "https://www.googleapis.com/auth/youtube"
+API = "https://www.googleapis.com/youtube/v3"
 DEVICE_CODE_URL = "https://oauth2.googleapis.com/device/code"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 DEVICE_GRANT = "urn:ietf:params:oauth:grant-type:device_code"
 
 CONF_DIR = Path(os.environ.get("LEIGAO_VIDEO_CONF", Path.home() / ".config" / "leigao-video"))
 DEFAULT_SECRETS = CONF_DIR / "client_secrets.json"
-DEFAULT_TOKEN = CONF_DIR / "yt_token.json"
+DEFAULT_TOKEN = CONF_DIR / "yt_token.json"               # read-only scope
+DEFAULT_TOKEN_WRITE = CONF_DIR / "yt_token_write.json"   # write scope (separate)
 
 
 def _post(url: str, **params) -> dict:
@@ -73,16 +87,19 @@ def load_client_secrets(path: str | None) -> tuple[str, str]:
 
 def _save_token(cache: Path, tok: dict) -> None:
     cache.parent.mkdir(parents=True, exist_ok=True)
-    cache.write_text(json.dumps(tok))
-    os.chmod(cache, 0o600)
+    # Open 0600 up front so the refresh token is never briefly world-readable.
+    fd = os.open(cache, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w") as f:
+        f.write(json.dumps(tok))
 
 
-def _device_login(client_id: str, client_secret: str, cache: Path) -> dict:
-    d = _post(DEVICE_CODE_URL, client_id=client_id, scope=SCOPE)
+def _device_login(client_id: str, client_secret: str, cache: Path, scope: str = SCOPE) -> dict:
+    d = _post(DEVICE_CODE_URL, client_id=client_id, scope=scope)
     if "device_code" not in d:
         raise SystemExit(f"device-code request failed: {d.get('error', d)}")
     url = d.get("verification_url") or d.get("verification_uri")
-    print("\n=== Authorize read-only access to your YouTube channel ===")
+    kind = "read + WRITE" if scope == SCOPE_WRITE else "read-only"
+    print(f"\n=== Authorize {kind} access to your YouTube channel ===")
     print(f"  1. On any device, open:  {url}")
     print(f"  2. Enter this code:      {d['user_code']}")
     print("  (waiting for approval...)", flush=True)
@@ -109,8 +126,13 @@ def _device_login(client_id: str, client_secret: str, cache: Path) -> dict:
 
 def get_access_token(client_secrets: str | None = None,
                      cache_path: str | os.PathLike = DEFAULT_TOKEN,
-                     force_login: bool = False) -> str:
-    """Return a usable access token: refresh the cached one, else device-login."""
+                     force_login: bool = False,
+                     scope: str = SCOPE) -> str:
+    """Return a usable access token: refresh the cached one, else device-login.
+
+    Pass scope=SCOPE_WRITE (with a write-specific cache_path, e.g. DEFAULT_TOKEN_WRITE)
+    to obtain a token that can modify videos.
+    """
     client_id, client_secret = load_client_secrets(client_secrets)
     cache = Path(cache_path)
     if not force_login and cache.exists():
@@ -121,12 +143,23 @@ def get_access_token(client_secrets: str | None = None,
             if "access_token" in t:
                 return t["access_token"]
             print(f"(cached token refresh failed: {t.get('error', '?')} — re-authorizing)")
-    return _device_login(client_id, client_secret, cache)["access_token"]
+    return _device_login(client_id, client_secret, cache, scope)["access_token"]
 
 
-def authorized_get(path: str, access_token: str,
-                   api: str = "https://www.googleapis.com/youtube/v3", **params) -> dict:
+def authorized_request(method: str, path: str, access_token: str,
+                       body: dict | None = None, api: str = API, **params) -> dict:
+    """Authorized YouTube Data API call. method in {GET, POST, PUT}; body -> JSON.
+    Raises urllib.error.HTTPError on non-2xx so callers can handle per-item failures."""
     url = f"{api}/{path}?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {access_token}"})
+    data = json.dumps(body).encode() if body is not None else None
+    headers = {"Authorization": f"Bearer {access_token}"}
+    if data is not None:
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(url, data=data, method=method, headers=headers)
     with urllib.request.urlopen(req) as r:
-        return json.load(r)
+        raw = r.read()
+    return json.loads(raw) if raw else {}
+
+
+def authorized_get(path: str, access_token: str, api: str = API, **params) -> dict:
+    return authorized_request("GET", path, access_token, api=api, **params)
