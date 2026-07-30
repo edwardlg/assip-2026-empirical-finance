@@ -10,15 +10,15 @@ date: "2026-07-20"
 Welcome back to the anatomy of a Journal of Finance paper, part four of four. In the first three parts we built the chain — a sharp question, a credible design, transparent tables, and honest robustness. Now I run that whole chain inward on one of my own working papers, still being built, so you see a real one mid-flight rather than a museum piece — and then I show you why this session is your capstone in miniature.
 :::
 
-## The Rainbow of Credits — a Live Case
+## The Rainbow of Municipal Credit — a Live Case
 
-- Gao, Liu & Wang, *The Rainbow of Credits* (AEA 2025; target *JF*)
+- Gao, Liu & Wang, *The Rainbow of Municipal Credit* (AEA 2025; target *JF*)
 - Setting: the U.S. **municipal bond market**
 - Outcome = the **yield** an issuer must offer; unit = a bond issue
 - Question: does a state's **social and political climate** move the yield?
 
 ::: notes
-The live case is a paper my coauthors and I are still building: Gao, Liu and Wang, "The Rainbow of Credits: Evidence from Municipal Borrowing," presented at the American Economic Association meetings in twenty twenty-five, target journal the Journal of Finance. The setting is the U.S. municipal bond market — the market through which states, cities, counties, and school districts borrow money by issuing bonds, to build roads, schools, and water systems. The price of that borrowing is the yield an issuer must offer investors, and the unit of observation is a bond issue. That yield is our outcome. The question: does a state's social and political climate — a factor with nothing mechanical to do with a city's balance sheet — move the interest rate local governments pay to borrow, holding the issuer's actual finances fixed?
+The live case is a paper my coauthors and I are still building: Gao, Liu and Wang, "The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans," presented at the American Economic Association meetings in twenty twenty-five, target journal the Journal of Finance. The setting is the U.S. municipal bond market — the market through which states, cities, counties, and school districts borrow money by issuing bonds, to build roads, schools, and water systems. The price of that borrowing is the yield an issuer must offer investors, and the unit of observation is a bond issue. That yield is our outcome. The question: does a state's social and political climate — a factor with nothing mechanical to do with a city's balance sheet — move the interest rate local governments pay to borrow, holding the issuer's actual finances fixed?
 :::
 
 ## Reading the Table You Would Expect
@@ -40,7 +40,7 @@ The data comes from municipal-bond issuance and secondary-market trade records, 
 - Bound for the **ASSIP Research Symposium, Wed Aug 12, 2026** + an abstract in **JSSR**
 
 ::: notes
-Here is why this session is your capstone in miniature. The Rainbow of Credits is a live paper still being built — you saw a real one mid-flight, not a museum piece. In Weeks Seven and Eight you write your own paper: a real question, real data from C-R-S-P, Compustat, EDGAR or municipal sources, a design you can defend, and tables you build yourself. It is bound for the ASSIP Research Symposium on Wednesday, August twelfth, twenty twenty-six — a poster, with a virtual breakout for our remote interns — and an abstract in the Journal of Student-Scientists' Research, G-M-U Mason Publishing. The seven-part template you read outward this week is what I run inward before committing two years to a project.
+Here is why this session is your capstone in miniature. The Rainbow of Municipal Credit is a live paper still being built — you saw a real one mid-flight, not a museum piece. In Weeks Seven and Eight you write your own paper: a real question, real data from C-R-S-P, Compustat, EDGAR or municipal sources, a design you can defend, and tables you build yourself. It is bound for the ASSIP Research Symposium on Wednesday, August twelfth, twenty twenty-six — a poster, with a virtual breakout for our remote interns — and an abstract in the Journal of Student-Scientists' Research, G-M-U Mason Publishing. The seven-part template you read outward this week is what I run inward before committing two years to a project.
 :::
 
 ## Key Takeaway

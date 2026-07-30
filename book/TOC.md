@@ -208,7 +208,7 @@ vulnerable · three replication exercises.
 - **nb5.5** BDM placebo-law simulation `[~1,700 w / ~24 cells]`
 
 - **Reading Guide Pack 5 (meta-guide):** the fixed Reader's-Guide template, a "reading order" heuristic, a glossary of table conventions, and a self-check rubric students apply to each paper. `[~3,000 w]`
-- **Mentor Session 5 (Lei Gao):** *"Anatomy of a JF paper."* Tied to the *Rainbow of Credits* municipal-borrowing working paper (AEA 2025). Pre-read, 3 warm-ups, 5-slide deck, 3 stretch questions, reflection. `[~2,200 w]`
+- **Mentor Session 5 (Lei Gao):** *"Anatomy of a JF paper."* Tied to the *Rainbow of Municipal Credit* municipal-borrowing working paper (AEA 2025). Pre-read, 3 warm-ups, 5-slide deck, 3 stretch questions, reflection. `[~2,200 w]`
 - **Assessment W5 + rubric** — students write their own 4-page Reader's Guide on an unseen paper; rubric. `[~2,200 w]`
 
 **Week 5 subtotal: ~58,000 words** *(guides 15,700 · problems 11,400 · notebooks 8,500 · reading pack 3,000 · mentor 2,200 · assessment 2,200 · narrative 1,400 · overhead/figures prose ~13,600)*
@@ -281,7 +281,7 @@ LLMs *responsibly* as a research co-pilot.
 - **nb7.5** First-look regressions (frozen until PAP filed) `[~1,600 w / ~22 cells]`
 
 - **Lab 7 (Lab Manual): "Your Data, Reproducibly."** Stand up a GitHub repo from the template, wire GitHub Classroom, pin environments, write a README + data card, and file the PAP as a tagged commit. `[~4,200 w]`
-- **Mentor Session 7 (Lei Gao):** *"How I pick a project — and kill one."* Tied to Gao, He & Wu (2023, *JFQA*) CSR/price-pressure and the *Rainbow of Credits* pipeline. Pre-read, 3 warm-ups, 5-slide deck, 3 stretch questions, reflection. `[~2,200 w]`
+- **Mentor Session 7 (Lei Gao):** *"How I pick a project — and kill one."* Tied to Gao, He & Wu (2023, *JFQA*) CSR/price-pressure and the *Rainbow of Municipal Credit* pipeline. Pre-read, 3 warm-ups, 5-slide deck, 3 stretch questions, reflection. `[~2,200 w]`
 - **Assessment W7 + rubric** — PAP + identification memo graded on the research-design rubric. `[~2,200 w]`
 
 **Week 7 subtotal: ~60,000 words** *(chapters 26,200 · problems 11,000 · notebooks 8,300 · lab 4,200 · mentor 2,200 · assessment 2,200 · narrative 1,500 · overhead/figures prose ~4,400)*

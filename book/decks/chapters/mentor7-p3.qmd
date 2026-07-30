@@ -34,13 +34,13 @@ Why does non-fundamental pressure rescue the project? Because it moves the price
 
 ## Funnel Two: An Idea Travels Years
 
-- Paper: *The Rainbow of Credits* — municipal borrowing (AEA 2025, → JF)
+- Paper: *The Rainbow of Municipal Credit* — municipal borrowing (AEA 2025, → JF)
 - Puzzle: munis pay very different costs, not only because some are riskier
 - Run it through three filters: **so what · who cares · what's new**
 - A broad question has **many** versions — most must be killed
 
 ::: notes
-The second project is Gao, Liu, and Wang — The Rainbow of Credits: Evidence from Municipal Borrowing — presented at the A-E-A in twenty-twenty-five and targeted at the Journal of Finance. It is the better case for watching an idea travel the whole funnel. The puzzle: municipalities pay very different borrowing costs, not only because some are riskier. Run that through yesterday's three filters. So what — who acts differently if either answer is true? A city treasurer, a regulator, a bond investor all plausibly do. Who cares — whose conversation does this sit inside? And what's new — new data, new period, new outcome, or new identification? A question this broad has many versions, and the furnace's destructive half means most must be killed to reach one.
+The second project is Gao, Liu, and Wang — The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans — presented at the A-E-A in twenty-twenty-five and targeted at the Journal of Finance. It is the better case for watching an idea travel the whole funnel. The puzzle: municipalities pay very different borrowing costs, not only because some are riskier. Run that through yesterday's three filters. So what — who acts differently if either answer is true? A city treasurer, a regulator, a bond investor all plausibly do. Who cares — whose conversation does this sit inside? And what's new — new data, new period, new outcome, or new identification? A question this broad has many versions, and the furnace's destructive half means most must be killed to reach one.
 :::
 
 ## Carving and Killing Sub-Questions
@@ -62,5 +62,5 @@ Both projects lived or died on the **same two questions**: *where is the clean v
 :::
 
 ::: notes
-To summarize part three: both projects lived or died on the same two questions — where is the clean variation, and can I measure and get this? The C-S-R paper was a hopeless correlation until non-fundamental price pressure rescued it and turned it into a design. The Rainbow of Credits shows the other half: a broad puzzle spawns many versions, most must be killed, and the survivor can take years. In part four we turn those questions on your own candidates and talk about the other half of killing — commitment.
+To summarize part three: both projects lived or died on the same two questions — where is the clean variation, and can I measure and get this? The C-S-R paper was a hopeless correlation until non-fundamental price pressure rescued it and turned it into a design. The Rainbow of Municipal Credit shows the other half: a broad puzzle spawns many versions, most must be killed, and the survivor can take years. In part four we turn those questions on your own candidates and talk about the other half of killing — commitment.
 :::

@@ -19,5 +19,5 @@ Turn a hunch into a falsifiable, pre-registered empirical design with data in ha
 
 ## Lab, mentor, assessment
 - [Lab 7 — Your Data, Reproducibly](lab7-your-data-reproducibly.md) (repo template, pinned env, .gitignore discipline, PAP as a tagged commit)
-- [Mentor Session 7 — "How I pick a project — and kill one"](mentor7-how-i-pick-and-kill-a-project.md) (Gao, He & Wu 2023 *JFQA*; *Rainbow of Credits*)
+- [Mentor Session 7 — "How I pick a project — and kill one"](mentor7-how-i-pick-and-kill-a-project.md) (Gao, He & Wu 2023 *JFQA*; *Rainbow of Municipal Credit*)
 - [Week 7 Assessment + Rubric](assessment7.md) — submit the PAP + identification memo (the design half of the capstone)

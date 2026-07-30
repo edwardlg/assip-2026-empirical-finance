@@ -127,7 +127,7 @@ The first is the paper that turned "which standard error?" from folklore into a 
 The second is one of my own panel studies, offered as a setting where the panel-dependence and
 clustering choices genuinely matter:
 
-> Gao, Han, Kim & Pan (2024), "Overlapping institutional ownership along the supply chain and
+> Gao, Han, Kim & Pan (2024), "Common ownership along the supply chain and corporate earnings management and
 > earnings management of supplier firms," *Journal of Corporate Finance*, 84, 102520.
 
 For all three questions, **reason about method and inference only.** Do not invent or recite

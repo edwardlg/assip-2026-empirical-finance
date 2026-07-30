@@ -119,7 +119,7 @@ error I could not remove?*
 - The thread: AI is a *co-pilot* — it accelerates work you can verify; it is a hazard the moment you let it replace judgment you don't check.
 
 **Slide 5 — Why this is your capstone's integrity section.**
-- I'll walk two of my own papers: one where the outcome — *earnings management of supplier firms* — is itself a **measured construct** (discretionary accruals as a noisy proxy for the unobserved thing the manager is actually doing), and the panel structure dictates the SEs (*Overlapping Institutional Ownership Along the Supply Chain and Earnings Management of Supplier Firms*); and one about using *AI responsibly in finance research and teaching* (*Derivatives Trading Simulation Supported by AI*). The first paper is not text-as-data — but the measurement discipline we built today applies wherever a regression's outcome is a proxy, not a fact.
+- I'll walk two of my own papers: one where the outcome — *earnings management of supplier firms* — is itself a **measured construct** (discretionary accruals as a noisy proxy for the unobserved thing the manager is actually doing), and the panel structure dictates the SEs (*Common Ownership along the Supply Chain and Corporate Earnings Management*); and one about using *AI responsibly in finance research and teaching* (*Derivatives Trading Simulation Supported by AI*). The first paper is not text-as-data — but the measurement discipline we built today applies wherever a regression's outcome is a proxy, not a fact.
 - Your capstone must *disclose and defend* every way you used AI: writing aid (you own the words) vs. data generation (labels that enter a regression — these demand a validation table).
 - The responsible-AI-use disclosure is graded: prompt verbatim, gold-set + held-out sizes, OOS precision/recall, model version pinned, calls logged, citations and figures verified against a primary source.
 - The seminar question you'll face in Weeks 7–8: *which text variable would a referee attack first — and can I show its error is small enough not to be driving my result?*
@@ -132,8 +132,7 @@ These tie today's ideas to two of my own papers, offered as live worked cases �
 validating a behavioral construct (earnings management) inside a panel*, and one of *using AI responsibly
 in research and teaching*:
 
-> Gao, L., Han, J., Kim, J-B., & Pan, T. (2024). Overlapping institutional ownership along the supply
-> chain and earnings management of supplier firms. *Journal of Corporate Finance*, 84, 102520.
+> Gao, L., Han, J., Kim, J-B., & Pan, T. (2024). Common Ownership along the Supply Chain and Corporate Earnings Management. *Journal of Corporate Finance*, 84, 102520.
 >
 > Gao, L., Gopalakrishnan, S., Ehrlich, M., & Wang, C. (forthcoming). Derivatives Trading Simulation
 > Supported by AI. *Journal of Financial Education*.

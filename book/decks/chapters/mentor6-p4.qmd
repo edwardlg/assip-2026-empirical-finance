@@ -12,13 +12,13 @@ Welcome back to Mentor Session six, part four of five. In part three we named th
 
 ## Paper One — Earnings Management as a Proxy
 
-- *Overlapping Institutional Ownership and Earnings Management of Supplier Firms*
+- *Common Ownership along the Supply Chain and Corporate Earnings Management*
 - Outcome: **earnings management** — not directly observable
 - Backed out as **discretionary accruals** (Jones / modified-Jones residual)
 - Same shape as text: a noisy proxy for an unseen latent quantity
 
 ::: notes
-The first paper is Gao, Han, Kim, and Pan, twenty-twenty-four, in the Journal of Corporate Finance — Overlapping institutional ownership along the supply chain and earnings management of supplier firms. It asks whether the same institutional investors holding large stakes in both a supplier and its customer change how aggressively the supplier's managers engage in earnings management — the discretionary slack in accruals with which managers shape reported earnings away from cash reality. The crucial point for today: earnings management is not directly observable. It has to be backed out of accounting data as the residual from a model of normal accruals — the Jones or modified-Jones discretionary accruals. That makes it a measurement problem of exactly the same shape as today's text problem — a noisy proxy for an unseen latent quantity — even though the sensor is an accruals model, not an LLM.
+The first paper is Gao, Han, Kim, and Pan, working paper — Common ownership along the supply chain and corporate earnings management and earnings management of supplier firms. It asks whether the same institutional investors holding large stakes in both a supplier and its customer change how aggressively the supplier's managers engage in earnings management — the discretionary slack in accruals with which managers shape reported earnings away from cash reality. The crucial point for today: earnings management is not directly observable. It has to be backed out of accounting data as the residual from a model of normal accruals — the Jones or modified-Jones discretionary accruals. That makes it a measurement problem of exactly the same shape as today's text problem — a noisy proxy for an unseen latent quantity — even though the sensor is an accruals model, not an LLM.
 :::
 
 ## Validating a Continuous Proxy

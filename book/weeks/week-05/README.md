@@ -22,5 +22,5 @@ three replication exercises. See [`../../TOC.md`](../../TOC.md) for the full pla
 - [PS 5.1](ps5.1.md) FF92 sorts · [PS 5.2](ps5.2.md) FF93 factor construction · [PS 5.3](ps5.3.md) Momentum + costs · [PS 5.4](ps5.4.md) Petersen clustering · [PS 5.5](ps5.5.md) BDM placebo
 
 ## Mentor, assessment
-- [Mentor Session 5 — "Anatomy of a JF paper"](mentor5-anatomy-of-a-jf-paper.md) (Gao, Liu & Wang, *Rainbow of Credits*, AEA 2025)
+- [Mentor Session 5 — "Anatomy of a JF paper"](mentor5-anatomy-of-a-jf-paper.md) (Gao, Liu & Wang, *Rainbow of Municipal Credit*, AEA 2025)
 - [Week 5 Assessment + Rubric](assessment5.md) — students write their own 4-page Reader's Guide on an unseen paper

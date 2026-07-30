@@ -66,26 +66,15 @@ Weeks 5 and 6. Reader's Guides for each are in `book/weeks/week-05/` and
 
 ## C — Gao papers (referenced from Weeks 3 – 8)
 
-::: callout-note
-## TBD — pending the central `refs.bib`
+- **Sun, H., & Gao, L. (2019).** — Lending practices to same-sex borrowers. *Proceedings of the National Academy of Sciences* **116**(19), 9293–9302. DOI: <https://doi.org/10.1073/pnas.1903592116>
+- **Gao, L., Han, Y., Li, S. Z., & Zhou, G. (2018).** — Market Intraday Momentum. *Journal of Financial Economics* **129**(2), 394–414. <https://www.sciencedirect.com/science/article/abs/pii/S0304405X18301351>
+- **Gao, L., Han, J., Pan, Z., & Zhang, H. (2023).** — Individualistic CEO and Corporate Innovation: Evidence from U.S. Frontier Culture. *Research Policy* (2023). SSRN: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950964>
+- **Elnahas, A., Gao, L., Hossain, M. N., & Kim, J.-B. (2024).** — CEO Political Ideology and Voluntary Forward-Looking Disclosure. *Journal of Financial and Quantitative Analysis* **59**(8), 3671–3707. DOI: <https://doi.org/10.1017/S0022109023001023>
+- **Gao, L., Han, J., Kim, J.-B., & Pan, T. (2024).** — Common Ownership Along the Supply Chain and Management Disclosure. *Journal of Corporate Finance* (2024). See Prof. Gao's research page for the DOI.
+- **Gao, L., Liu, S., & Wang, Y.** — The Rainbow of Municipal Credit: Evidence from Same-Sex Marriage Bans. Working paper (AEA 2025). SSRN: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4984106>
+- **Deng, W., Hu, B., Zhou, G., & Gao, L.** — Seeing is Believing: Annual Report "Graphicity" and Stock Returns Predictability. Working paper.
 
-Full citations for Prof. Gao's published and working papers will be filled in
-here once the central `.bib` file is committed. Until then, working-paper
-versions are available on SSRN; the wiki's
-[Reading list](../wiki/resources/reading.html#five-gao-papers) carries the
-current short descriptions.
-:::
-
-- **Gao, L., Hwang, B.-H., & Liu, B.** — Lender screening, illiquidity, and the
-  disclosure premium. *Citation TBD.* SSRN link TBD.
-- **Gao, L. & Sun, ___ (2019).** — Fair lending and algorithmic mortgage
-  pricing. *Citation TBD.* SSRN link TBD.
-- **Gao, L., ___ (2024).** — Innovation, patents, and the cross-section of
-  returns. *Published 2024; full citation TBD.*
-- **Gao, L., ___ ** — Bank regulation and small-business lending.
-  *Citation TBD.* SSRN link TBD.
-- **Gao, L., ___ ** — Most recent working paper (Week 7 reading).
-  SSRN link TBD; updated each summer.
+A full, current list of Prof. Gao's work is on his [research page](https://sites.google.com/view/lei-gao/research).
 
 ## D — Methodology & econometrics references
 
