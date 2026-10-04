@@ -10,7 +10,7 @@ Text-as-data and machine-learning-flavored empirical finance, plus a full module
 1. [Ch 6.1 — Kogan, Papanikolaou, Seru & Stoffman (2017)](ch61-readers-guide-kpss-2017.md), *QJE* 132(2):665–712 (market-based patent value)
 2. [Ch 6.2 — Hoberg & Phillips (2016)](ch62-readers-guide-hoberg-phillips-2016.md), *JPE* 124(5):1423–1465 (TNIC; 10-K cosine similarity)
 3. [Ch 6.3 — Loughran & McDonald (2011)](ch63-readers-guide-loughran-mcdonald-2011.md), *JF* 66(1):35–65 (finance sentiment dictionaries)
-4. [Ch 6.4 — Bartlett et al. (2022) + Bhutta–Hizmo–Ringo (paired)](ch64-readers-guide-bartlett-bhutta-fair-lending.md) (fair lending in the algorithmic era; ties to Gao & Sun 2019)
+4. [Ch 6.4 — Bartlett et al. (2022) + Bhutta–Hizmo–Ringo (paired)](ch64-readers-guide-bartlett-bhutta-fair-lending.md) (fair lending in the algorithmic era; ties to Sun & Gao 2019)
 5. [Ch 6.5 — The AI Co-Pilot for Research (LLM-in-the-Loop)](ch65-ai-copilot-for-research.md) — prompt patterns, RAG over 10-Ks, OOS-validated classification, critical limits, the Anthropic + GMU Azure APIs (env-var keys only)
 
 ## Notebooks (`../../../notebooks/week-06/`)

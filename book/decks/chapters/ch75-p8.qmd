@@ -19,9 +19,10 @@ Welcome back to the identification memo, part eight of nine. In part seven we co
 - Controls enter via covariate-conditional parallel trends
 - Callaway–Sant'Anna against never- and not-yet-treated controls
 - State-clustered inference; placebo reassigns adoption years
+- HMDA data as in Sun and Gao (2019, *PNAS*)
 
 ::: notes
-Maya's project is a staggered difference-in-differences on HMDA data, asking whether state fair-lending examination programs reduced the minority-white gap in mortgage-denial rates. This is the exact design of Chapter four-point-two, pointed at the dataset Professor Gao and his coauthor used to ask whether same-sex couples were treated differently when they applied to borrow. The outcome is the county-year minority-white mortgage-denial gap from the HMDA loan-application register. The treatment is an indicator for whether the applicant's state had an active fair-lending examination program that year, with staggered adoption and never-adopters as clean controls. Applicant-composition controls — income, loan-to-value, requested-loan-amount — enter through covariate-conditional parallel trends. Fixed effects for county and year are absorbed inside the group-time estimator, inference is clustered by state, and a placebo check randomly reassigns adoption years.[^gaosun]
+Maya's project is a staggered difference-in-differences on HMDA data, asking whether state fair-lending examination programs reduced the minority-white gap in mortgage-denial rates. This is the exact design of Chapter four-point-two, pointed at the dataset Professor Gao and his coauthor used to ask whether same-sex couples were treated differently when they applied to borrow. The outcome is the county-year minority-white mortgage-denial gap from the HMDA loan-application register. The treatment is an indicator for whether the applicant's state had an active fair-lending examination program that year, with staggered adoption and never-adopters as clean controls. Applicant-composition controls — income, loan-to-value, requested-loan-amount — enter through covariate-conditional parallel trends. Fixed effects for county and year are absorbed inside the group-time estimator, inference is clustered by state, and a placebo check randomly reassigns adoption years.
 :::
 
 ## The Identifying-Assumption Paragraph
@@ -61,4 +62,3 @@ Maya's memo is the lesson made concrete: a **credible** sentence, an assumption 
 To summarize part eight: Maya's worked memo shows the whole discipline on a real dataset. The specification is a staggered difference-in-differences on HMDA. The identifying-assumption paragraph uses the verb credible, not causal, and defends parallel trends three ways — flat leads, clean Callaway-Sant'Anna controls, and exogenous legislative timing. The six-row table leads with the hardest threat, puts a test where the threat is testable and an argument where it is not, and leaves no residual-concern cell empty. A paper built on this spine can be attacked but cannot be ambushed. In part nine we trace how this one page becomes the spine of your entire Week-Eight paper, and how the notebook enforces the honesty.
 :::
 
-[^gaosun]: Gao, L., & Sun, H. (2019). Lending practices to same-sex borrowers. *Proceedings of the National Academy of Sciences*, 116(19), 9293–9302.

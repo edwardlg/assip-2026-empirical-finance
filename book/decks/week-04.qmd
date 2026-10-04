@@ -40,7 +40,7 @@ Every design buys identification with one untestable assumption. Your job is to 
 :::
 
 ::: notes
-Five objectives, one per chapter. Notice the verbs: run, diagnose, estimate, build, construct. We are not asking you to recite the names of the estimators. We are asking you to operate them and to spot when they lie. Every chapter follows the same arc that worked in Weeks One through Three: state the clean idea, walk through a worked example with Priya, Sam, or Maya, then reveal exactly when the clean idea breaks and how the modern fix routes around it. The lab on Friday is a real difference-in-differences on CFPB HMDA mortgage data with a state policy shock, using the Callaway-Sant'Anna heterogeneity-robust estimator. The mentor session on Monday revisits Gao and Sun's 2019 PNAS paper on detecting lending discrimination with a clean design. By Friday you will be able to read any causal-design paper in finance and ask the four questions a referee asks first.
+Five objectives, one per chapter. Notice the verbs: run, diagnose, estimate, build, construct. We are not asking you to recite the names of the estimators. We are asking you to operate them and to spot when they lie. Every chapter follows the same arc that worked in Weeks One through Three: state the clean idea, walk through a worked example with Priya, Sam, or Maya, then reveal exactly when the clean idea breaks and how the modern fix routes around it. The lab on Friday is a real difference-in-differences on CFPB HMDA mortgage data with a state policy shock, using the Callaway-Sant'Anna heterogeneity-robust estimator. The mentor session on Monday revisits Sun and Gao's 2019 PNAS paper on detecting lending discrimination with a clean design. By Friday you will be able to read any causal-design paper in finance and ask the four questions a referee asks first.
 :::
 
 ## Priya's 2×2: The Whole Trick in Four Numbers
@@ -280,7 +280,7 @@ Six failure modes, one per chapter and one shared across them all. First, pre-tr
 ## Deliverable and Look-Ahead
 
 - **Lab 4** — a clean DiD on real CFPB HMDA data with a state policy shock, run with Callaway–Sant'Anna and a Goodman-Bacon decomposition
-- **Mentor Session 4** — Gao and Sun (2019, PNAS): "Detecting discrimination with a clean design"
+- **Mentor Session 4** — Sun and Gao (2019, PNAS): "Detecting discrimination with a clean design"
 - **Problem sets 4.1–4.5** — 2×2 DiD, Goodman-Bacon weights, RD bandwidth choice, synthetic control placebo, shift-share Rotemberg decomposition
 - **Look-ahead, Week 5** — stop *building* tools and start *reading* the frontier
 
@@ -290,7 +290,7 @@ Weeks 3 and 4 built the modern empiricist's kit. Weeks 5 and 6 use that kit to r
 :::
 
 ::: notes
-Three deliverables close the week. The lab runs a clean DiD on real CFPB HMDA mortgage data with a state policy shock — you will use Callaway-Sant'Anna with never-treated and not-yet-treated controls, decompose the pooled TWFE into Goodman-Bacon weights, and verify that the heterogeneity-robust estimate diverges from the broken pooled coefficient by exactly the amount the forbidden comparisons inject. Monday's mentor session walks through Gao and Sun's 2019 PNAS paper on detecting lending discrimination, which uses exactly this design discipline. The problem sets drill each chapter's mechanic. And the look-ahead: Weeks Three and Four built the modern empiricist's full kit. Weeks Five and Six stop deriving estimators and start decoding published finance papers, tables-first. The questions we have trained you to ask — what is the design, what is the identifying assumption, where are the weights, is the inference honest — are precisely the questions a Reader's Guide is built around. Turn the page.
+Three deliverables close the week. The lab runs a clean DiD on real CFPB HMDA mortgage data with a state policy shock — you will use Callaway-Sant'Anna with never-treated and not-yet-treated controls, decompose the pooled TWFE into Goodman-Bacon weights, and verify that the heterogeneity-robust estimate diverges from the broken pooled coefficient by exactly the amount the forbidden comparisons inject. Monday's mentor session walks through Sun and Gao's 2019 PNAS paper on detecting lending discrimination, which uses exactly this design discipline. The problem sets drill each chapter's mechanic. And the look-ahead: Weeks Three and Four built the modern empiricist's full kit. Weeks Five and Six stop deriving estimators and start decoding published finance papers, tables-first. The questions we have trained you to ask — what is the design, what is the identifying assumption, where are the weights, is the inference honest — are precisely the questions a Reader's Guide is built around. Turn the page.
 :::
 
 ## References {.unnumbered}
@@ -299,5 +299,5 @@ Three deliverables close the week. The lab runs a clean DiD on real CFPB HMDA mo
 :::
 
 ::: notes
-The references slide is auto-populated by Pandoc from cited keys. Names mentioned in this deck include Card and Krueger 1994, Bertrand, Duflo, and Mullainathan 2004, Goodman-Bacon 2021, de Chaisemartin and D'Haultfœuille 2020, Callaway and Sant'Anna 2021, Sun and Abraham 2021, Borusyak, Jaravel, and Spiess 2024, Imbens and Kalyanaraman 2012, Calonico, Cattaneo, and Titiunik 2014, Gelman and Imbens 2019, McCrary 2008, Lee and Lemieux 2010, Abadie, Diamond, and Hainmueller 2010, Arkhangelsky, Athey, Hirshberg, Imbens, and Wager 2021, Bartik 1991, Goldsmith-Pinkham, Sorkin, and Swift 2020, Borusyak, Hull, and Jaravel 2022, Adão, Kolesár, and Morales 2019, and Gao and Sun 2019.
+The references slide is auto-populated by Pandoc from cited keys. Names mentioned in this deck include Card and Krueger 1994, Bertrand, Duflo, and Mullainathan 2004, Goodman-Bacon 2021, de Chaisemartin and D'Haultfœuille 2020, Callaway and Sant'Anna 2021, Sun and Abraham 2021, Borusyak, Jaravel, and Spiess 2024, Imbens and Kalyanaraman 2012, Calonico, Cattaneo, and Titiunik 2014, Gelman and Imbens 2019, McCrary 2008, Lee and Lemieux 2010, Abadie, Diamond, and Hainmueller 2010, Arkhangelsky, Athey, Hirshberg, Imbens, and Wager 2021, Bartik 1991, Goldsmith-Pinkham, Sorkin, and Swift 2020, Borusyak, Hull, and Jaravel 2022, Adão, Kolesár, and Morales 2019, and Sun and Gao 2019.
 :::

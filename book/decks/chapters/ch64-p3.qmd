@@ -26,10 +26,10 @@ Bartlett et al. combine the Home Mortgage Disclosure Act — the near-census of 
 - Also start from **HMDA**, linked to GSE + credit-bureau records
 - Decisive difference: they observe the **credit score** and full file
 - Plus the **race-blind AUS recommendation**
-- The variable whose absence forced Gao & Sun toward design
+- The variable whose absence forced Sun & Gao toward design
 
 ::: notes
-B-H-R also start from the Home Mortgage Disclosure Act but link to government-sponsored-enterprise and credit-bureau loan-level records, and the decisive difference from every disclosure-only study is that they observe the credit score and a near-complete underwriting file, plus the race-blind automated underwriting recommendation. The unit is again the loan or application. What this dataset can see that the public file cannot is precisely the variable whose absence forced Gao and Sun toward design: the applicant's credit score and the full risk profile the underwriter weighed.
+B-H-R also start from the Home Mortgage Disclosure Act but link to government-sponsored-enterprise and credit-bureau loan-level records, and the decisive difference from every disclosure-only study is that they observe the credit score and a near-complete underwriting file, plus the race-blind automated underwriting recommendation. The unit is again the loan or application. What this dataset can see that the public file cannot is precisely the variable whose absence forced Sun and Gao toward design: the applicant's credit score and the full risk profile the underwriter weighed.
 :::
 
 ## Why the Missing Score Is the Whole Story
@@ -40,7 +40,7 @@ B-H-R also start from the Home Mortgage Disclosure Act but link to government-sp
 - When you read either paper: **locate whether the score is in the data**
 
 ::: notes
-The contrast is the whole pedagogical point and worth saying plainly to Maya. The Home Mortgage Disclosure Act alone is blind to the credit score. That single omission is why Mentor Four argued a design beats more controls in the same-sex-borrower work, and why Gao and Sun reached for matched comparison and policy variation rather than a kitchen-sink regression. B-H-R's data let them do the thing the disclosure-only researcher cannot: directly test how much of the residual disparity was the missing score in disguise. So when you read either paper, locate immediately whether the credit score is in the data — because that one fact determines whether the residual race coefficient is a serious estimate of differential treatment or a placeholder for everything the data could not measure.
+The contrast is the whole pedagogical point and worth saying plainly to Maya. The Home Mortgage Disclosure Act alone is blind to the credit score. That single omission is why Mentor Four argued a design beats more controls in the same-sex-borrower work, and why Sun and Gao reached for matched comparison and policy variation rather than a kitchen-sink regression. B-H-R's data let them do the thing the disclosure-only researcher cannot: directly test how much of the residual disparity was the missing score in disguise. So when you read either paper, locate immediately whether the credit score is in the data — because that one fact determines whether the residual race coefficient is a serious estimate of differential treatment or a placeholder for everything the data could not measure.
 :::
 
 ## Key Takeaway

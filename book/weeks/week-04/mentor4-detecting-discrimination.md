@@ -135,7 +135,7 @@ clean?*
 These tie today's identification ideas to a paper my coauthor and I wrote, offered as a worked
 case of detecting discrimination in real lending data:
 
-> Gao, L., & Sun, H. (2019), "Lending practices to same-sex borrowers," *Proceedings of the
+> Sun, H., & Gao, L. (2019), "Lending practices to same-sex borrowers," *Proceedings of the
 > National Academy of Sciences*, 116(19), 9293–9302.
 
 The setting is the one this whole session is built around. U.S. mortgage lenders report, under the

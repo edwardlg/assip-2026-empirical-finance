@@ -183,7 +183,7 @@ defaults; the binding constraint is always "what have the students just learned 
 
 **A fair-lending regulator or SEC economist — slot Wednesday of Week 4.** This is the most
 important guest of the four because it lands the week the students study identification for
-discrimination detection, the same week Mentor Session 4 anchors on Gao & Sun (2019) and ch4 builds
+discrimination detection, the same week Mentor Session 4 anchors on Sun & Gao (2019) and ch4 builds
 DiD on HMDA. A practicing economist from a fair-lending unit, the CFPB, HUD, or an SEC division can
 do something a chapter cannot: explain what it means for a coefficient to become *evidence in a
 proceeding* — the documentation a regulator demands, the adversarial scrutiny a number survives in

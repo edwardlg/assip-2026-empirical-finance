@@ -239,7 +239,7 @@ Three reflection prompts to write up alongside the notebook:
 
 3. **Audit your family.** Write down every outcome you have looked at — not just the ones you plan to report. How many is $m$? Apply both Bonferroni and Benjamini–Hochberg. Which results survive each? If your headline result survives only the uncorrected single test and not the correction for your true family size, what is the honest contribution sentence you can write — and is it the one you were hoping to write?
 
-[^gaosun]: Gao, L., & Sun, H. (2019). Lending practices to same-sex borrowers. *Proceedings of the National Academy of Sciences*, 116(19), 9293–9302.
+[^gaosun]: Sun, H., & Gao, L. (2019). Lending practices to same-sex borrowers. *Proceedings of the National Academy of Sciences*, 116(19), 9293–9302.
 
 [^oster]: Oster, E. (2019). Unobservable Selection and Coefficient Stability: Theory and Evidence. *Journal of Business & Economic Statistics*, 37(2), 187–204.
 

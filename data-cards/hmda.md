@@ -6,7 +6,7 @@ The **HMDA Loan Application Register (LAR)** is the public, near-census record o
 
 The provider is the **CFPB** (Consumer Financial Protection Bureau), which runs the modern public **HMDA Data Browser**, with the **FFIEC** (Federal Financial Institutions Examination Council) publishing the per-year bulk files. It is one of the **largest public microdatasets in U.S. finance** — tens of millions of records per year.
 
-The reveal is also the limitation the whole fair-lending literature turns on: **HMDA records who applied, where, for how much, and what happened — but not the applicant's credit score.** It can show you *that* denial rates differ by race; it cannot tell you whether that gap is discrimination or unseen differences in creditworthiness. That single missing column is why fair-lending work leans on *design*, not more controls (Ch 6.4; Gao & Sun, 2019).
+The reveal is also the limitation the whole fair-lending literature turns on: **HMDA records who applied, where, for how much, and what happened — but not the applicant's credit score.** It can show you *that* denial rates differ by race; it cannot tell you whether that gap is discrimination or unseen differences in creditworthiness. That single missing column is why fair-lending work leans on *design*, not more controls (Ch 6.4; Sun & Gao, 2019).
 
 ## Coverage
 
@@ -51,7 +51,7 @@ def fetch_hmda(states, year):
 
 ## Gotchas
 
-- **No credit score.** The single most important caveat. A raw denial-rate or pricing gap by race confounds discrimination with unobserved creditworthiness (Week 2 OVB). This is *why* Gao & Sun (2019) reached for a clean design, and why Bartlett et al. and BHR are notable for getting at the score from outside HMDA (Ch 6.4).
+- **No credit score.** The single most important caveat. A raw denial-rate or pricing gap by race confounds discrimination with unobserved creditworthiness (Week 2 OVB). This is *why* Sun & Gao (2019) reached for a clean design, and why Bartlett et al. and BHR are notable for getting at the score from outside HMDA (Ch 6.4).
 - **The 2018 schema break.** Pre- and post-2018 files differ in fields and codings. Do not splice a pre-2018 series to a post-2018 series without reconciling the schema — the "new" rate/DTI/LTV fields simply do not exist before 2018.
 - **It's enormous.** Never pull the national file to a laptop; aggregate server-side or in chunks on the container.
 - **Thin cells are noise.** A rural county with 40 applications has a wildly swinging denial rate. Filter out cells below a minimum decided-application count (e.g., 100) so sampling noise in tiny geographies does not dominate the panel.
@@ -91,4 +91,4 @@ def fetch_hmda(states, year):
 - **Week 4, Lab 4 — Clean DiD on HMDA + a state policy shock.** The lab's Path A builds exactly the county-year denial-rate panel above from the Data Browser API, then runs TWFE → event study → Callaway–Sant'Anna against clean controls. The card's aggregation pattern *is* the lab's recipe.
 - **Week 6, Ch 6.4 — fair lending in the algorithmic era** (Bartlett, Morse, Stanton & Wallace; Bhutta, Hizmo & Ringo). HMDA is the spine of both papers, and the chapter's whole pivot is what HMDA *cannot* see (the credit score) and how those authors get it from outside HMDA.
 - **Capstone 1 — Fair Lending on HMDA.** The terminal use: a real disparity-plus-clean-design paper. The student pins a vintage, builds the panel on GMU infrastructure, and defends a parallel-trends or matched-design identifying assumption.
-- **Gao & Sun (2019, *PNAS*)** is the anchor paper across this thread (Mentor Session 4, Lab 4, Capstone 1): same-sex-borrower lending studied with a *design* precisely because HMDA-family data lacks the score.
+- **Sun & Gao (2019, *PNAS*)** is the anchor paper across this thread (Mentor Session 4, Lab 4, Capstone 1): same-sex-borrower lending studied with a *design* precisely because HMDA-family data lacks the score.
