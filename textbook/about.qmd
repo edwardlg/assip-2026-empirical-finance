@@ -1,0 +1,181 @@
+---
+title: "About this book"
+subtitle: "How the curriculum was built, the editorial standard, and how it fits into ASSIP 2026."
+pagetitle: "About — Empirical Finance from the Ground Up (ASSIP 2026)"
+description-meta: >
+  How the ASSIP 2026 Empirical Finance textbook was drafted, the
+  editorial honesty policy, and how to contribute. Hosted by Prof. Lei
+  Gao for the GMU ASSIP 2026 cohort.
+toc: true
+number-sections: false
+---
+
+## What this is
+
+This site is the textbook, lab manual, instructor manual, and capstone
+gallery for the **Empirical Finance research group of ASSIP 2026 — the
+Aspiring Scientists Summer Internship Program** at George Mason
+University's College of Science. It runs as **eight full-time weeks**
+(Mon–Fri 9 am – 5 pm) from **Mon Jun 22, 2026** through the **ASSIP
+Research Symposium on Wed Aug 12, 2026**, with orientation on Thu Jun
+18 and the holidays Jun 19 (Juneteenth) and Jul 3 (Independence Day
+observance) off.
+
+The curriculum is built around real datasets (CRSP, Compustat, HMDA,
+EDGAR, FRED, USPTO, and more — see the
+[data dictionary](book/appendices/C-data-dictionary/README.md)) and
+real methods (OLS and its standard-error pathologies, IV, DiD, RD,
+synthetic control, shift-share, event studies, text-as-data, and an AI
+copilot lab).
+
+## Who runs it
+
+- **Faculty mentor:** **[Prof. Lei Gao](https://business.gmu.edu/)**,
+  Associate Professor of Finance at George Mason University's Costello
+  College of Business. **Prof. Gao's 2026 ASSIP slot is officially
+  REMOTE only.**
+- **ASSIP director:** **Dr. Amanda Haymond Still**, GMU College of
+  Science. Program contact: `cosassip@gmu.edu`.
+- **Cohort:** 14 advanced high-school students (15+) and pre-graduation
+  undergraduates, selected by GMU's College of Science. Typical ASSIP
+  group size is 2–15, so 14 is the high end and is run with a
+  **layered mentorship model**: faculty mentor over the whole cohort,
+  with PhD / RA sub-leaders working sub-pods on data engineering,
+  identification, and writing.
+
+## The ASSIP context
+
+ASSIP (Aspiring Scientists Summer Internship Program) is GMU's
+flagship summer research internship for advanced high-school students
+(age 15+; 16+ for in-person wet-lab tracks — not applicable to our
+remote slot) and undergraduates who have not yet graduated. There is
+**no minimum GPA**. Students may participate in at most two summer
+sessions. The program costs a **$25 application fee plus $1,299
+tuition**, and **full tuition waivers are available** for
+Pell-eligible and reduced-lunch students.
+
+Completion yields:
+
+- A **research poster at the ASSIP Research Symposium** (Wed Aug 12,
+  2026) — the required core deliverable, with in-person poster
+  sessions for on-site interns and virtual breakouts for remote
+  interns (our cohort works virtually).
+- A **research abstract** published in the *Journal of
+  Student-Scientists' Research* (JSSR, GMU Mason Publishing).
+- An optional **full paper** for projects that support it.
+- **3 GMU College of Science credits.**
+- Participation in the ASSIP **scientific-writing and career forum**.
+
+## How it was drafted
+
+The textbook was drafted in a **multi-agent workflow** under human
+editorial supervision. The pipeline runs roughly:
+
+1. A **planner** drafts a chapter outline from the syllabus and prior
+   reviews, with handoff notes for the writer.
+2. A **writer** produces the chapter, the worked examples, the problem
+   set, and the companion notebook.
+3. A **reviewer** reads the chapter against the planner's outline and
+   the editorial standard, flags issues, and writes a revision memo.
+4. A **human editor** (Prof. Gao) accepts, rejects, or rewrites — and
+   resolves any disagreement between the planner and the reviewer.
+
+Every artifact you see — chapters, problem sets, solution sketches,
+notebooks, data cards, capstone specs — went through this pipeline.
+The handoff notes are kept under [`agents/handoffs/`](https://github.com/edwardlg/assip-2026-empirical-finance/tree/main/agents/handoffs)
+so the editorial process itself is auditable.
+
+## The `[CHECK]` policy
+
+Empirical finance is full of numbers that are *almost right* — a
+coefficient quoted from memory, a year off by one, a sample period
+that does not quite match the source. The honest way to handle that is
+to flag the uncertainty in line, not to launder it into confidence.
+
+Throughout the book you will see tags like:
+
+> The HML factor earned an annualized premium of roughly 4.3 %
+> in 1963–1990 `[CHECK against Fama-French 1993 Table 4]`.
+
+A `[CHECK]` is **not** a typo or a TODO. It is an explicit statement
+that the surrounding number, claim, or attribution has not yet been
+independently verified against a primary source. Tagged claims are
+true to the best of the writer's knowledge but the verification step
+has not been logged. Students are encouraged to do that verification
+themselves and submit corrections.
+
+## A note on synthetic results
+
+The five **capstone projects** ship with illustrative result tables and
+figures. Where a capstone shows an estimate — a coefficient, a
+t-statistic, a balance table — that estimate is a **synthetic
+illustration** generated from realistic but simulated data, *not* a
+publication-quality replication. Each capstone landing page carries a
+prominent banner saying so. Students executing the capstone for real
+will obtain different (and we hope, more interesting) results.
+
+## A note on math
+
+Math is rendered with **KaTeX** for speed and clean typography. Display
+equations use the standard double-dollar block:
+
+$$
+\widehat{\boldsymbol{\beta}} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y},
+\qquad
+\widehat{\mathrm{Var}}(\widehat{\boldsymbol{\beta}}) =
+(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}' \widehat{\boldsymbol{\Omega}} \mathbf{X} (\mathbf{X}'\mathbf{X})^{-1}.
+$$
+
+Inline math like $\Pr(A \mid B) = \Pr(A,B) / \Pr(B)$ uses single dollars.
+If a formula does not render, it is a bug — please
+[open an issue](https://github.com/edwardlg/assip-2026-empirical-finance/issues/new).
+
+## How to contribute
+
+There are three good ways to help.
+
+### Submit a correction
+
+If you find a `[CHECK]` you can resolve, or a flat error you can fix,
+the recommended path is:
+
+1. Fork the repo on GitHub.
+2. Edit the relevant `.md` file.
+3. Open a pull request with the source of the corrected fact in the
+   description.
+
+### Suggest a problem
+
+Problem sets are the most valuable contribution. A good problem
+- has a unique correct answer (or a unique correct approach),
+- uses only data students can actually obtain,
+- ties to a specific chapter and learning objective, and
+- comes with a short solution sketch in the same style as the existing
+  ones.
+
+### Suggest a reading
+
+Week 5 and Week 6 are reader's-guide weeks. If there is a paper that
+*belongs* in the empirical-finance core for advanced high-school and
+pre-graduation undergraduate researchers and is not here,
+[open an issue](https://github.com/edwardlg/assip-2026-empirical-finance/issues/new)
+with the citation and a one-paragraph case.
+
+## License and citation
+
+The text and notebooks are released under
+[**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Code blocks inside the notebooks are additionally released under MIT.
+
+Suggested citation:
+
+> Gao, L. (2026). *Empirical Finance from the Ground Up — ASSIP 2026
+> Cohort.* Costello College of Business, George Mason University.
+> <https://edwardlg.github.io/assip-2026-empirical-finance/textbook/>
+
+## Contact
+
+- Editorial questions, errata, and partnership inquiries:
+  **lgao9 (at) gmu.edu** (Prof. Lei Gao).
+- ASSIP program logistics, applications, and admissions:
+  **cosassip (at) gmu.edu** (Dr. Amanda Haymond Still, ASSIP Director).
