@@ -1,0 +1,71 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Measurement Error: Three Subtleties, and the Simulation
+
+- Part 6 — three subtleties, then attenuation in live code
+
+::: notes
+Welcome back to Chapter two-point-five, part six of nine. In part five we derived attenuation bias: classical noise in your regressor multiplies the coefficient by the reliability ratio, pulling it toward zero. Now we cover three subtleties that confuse people about measurement error, and then watch attenuation happen in code — a coefficient sliding from two toward zero exactly as the formula predicts.
+:::
+
+## Three Subtleties
+
+- **(1)** Classical noise in $y$ is harmless to the slope — only inflates SEs
+- **(2)** A mismeasured **control** re-opens OVB — it only partly absorbs confounding
+- **(3)** **Non-classical** error can bias *away* from zero
+- Asymmetry: noise in $x$ biases; classical noise in $y$ does not
+
+::: notes
+Three variations matter, and confusing them is a common error. First, mismeasured y is harmless to the slope, mostly. If the outcome carries classical error — you observe y-star plus a random static v uncorrelated with the regressors — it just folds into the equation error. Since v is uncorrelated with x, the assumption survives and beta-hat stays consistent; the only cost is a larger error variance inflating standard errors. That is the crucial asymmetry: classical noise in x biases the slope, classical noise in y does not. Second, a mismeasured control re-opens omitted variable bias. If Maya's credit proxy is noisy, the regression controls for the noisy proxy, not the true confounder, so residual confounding leaks back onto the D coefficient. A noisily-measured control is a partially-omitted control — which is why "I controlled for it" and "I controlled for it well" are different claims. Third, non-classical error can bias away from zero. The toward-zero guarantee depends on the error being uncorrelated with the truth; with top-coded incomes, or self-reports where high earners under-state more, the bias can go either direction. Measurement-error-always-attenuates is a half-truth: it attenuates under the classical assumptions.
+:::
+
+## The Simulation Setup
+
+- Build data with known $\beta_1 = 2$, true regressor variance $1$
+- Corrupt $x$ with rising noise: $\sigma_m \in \{0, 0.5, 1.0, 2.0\}$
+- Each time, regress $y$ on the noisy $x = x^* + m$
+- Predict $\lambda = 1/(1+\sigma_m^2)$ and the limit $\beta_1\lambda$
+
+::: notes
+The fastest way to trust the formula is to simulate it. We build fifty thousand observations where we know the true beta-one is two, with the true regressor having variance one and a well-specified equation. Then we corrupt the regressor with increasing noise: measurement-error standard deviations of zero, one-half, one, and two. For each, we form the observed x as x-star plus m, regress y on that noisy x, and compare the estimate to two predictions — the reliability ratio lambda, one over one plus the noise variance, and the predicted limit, beta-one times lambda. About ten lines of code, isolating one thing: how the slope responds to pure static in the regressor.
+:::
+
+## The Estimate Marches Toward Zero
+
+| $\sigma_m$ | $\lambda$ | $\hat\beta$ | $\beta_1\lambda$ |
+|:--:|:--:|:--:|:--:|
+| 0.0 | 1.00 | 1.998 | 2.000 |
+| 0.5 | 0.80 | 1.602 | 1.600 |
+| 1.0 | 0.50 | 1.001 | 1.000 |
+| 2.0 | 0.20 | 0.402 | 0.400 |
+
+- With $\sigma_m = 1$, noise variance = signal variance: coefficient **halved**
+
+::: notes
+Here is what running it produces, up to simulation noise. With no noise, lambda is one and beta-hat lands at essentially the true two. With noise standard deviation one-half, lambda is zero-point-eight and the estimate falls to about one-point-six. With noise standard deviation one, the noise variance equals the signal variance, lambda is one-half, and the coefficient is exactly halved to about one-point-zero. With noise standard deviation two, lambda drops to zero-point-two and the estimate collapses to about zero-point-four. Every row, the estimate sits right on top of beta-one times lambda — marching from two toward zero exactly as the formula predicts.
+:::
+
+## A Bias, Not a Standard-Error Problem
+
+- Try $N = 5{,}000{,}000$: the numbers barely move
+- Attenuation is a bias in the probability **limit**, not sampling noise
+- More data shrinks the wobble, not the bias
+- One experiment shows the whole distinction of this chapter
+
+::: notes
+And here is the punchline that ties the chapter together. No amount of additional data changes these numbers. Try five million observations instead of fifty thousand, and the estimates barely move, because attenuation is a bias in the probability limit, not sampling noise. More data shrinks the wobble; it does nothing to the bias, baked into where the estimate is centered. That single experiment is the cleanest demonstration of the distinction this chapter draws — between a problem you can drown in data and one you cannot. Measurement error in the regressor is firmly the second kind.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Classical noise in $y$ only widens standard errors; a noisy **control** quietly re-opens OVB; **non-classical** error can push either way. In code, the estimate slides toward zero on $\beta_1\lambda$ and **more data never rescues it**.
+:::
+
+::: notes
+To summarize part six: three subtleties — classical noise in the outcome only widens standard errors, a noisily-measured control re-opens omitted variable bias, and non-classical error can push away from zero. And in simulation, the coefficient slides from two toward zero exactly along beta-one times lambda, halved when noise variance equals signal variance, and utterly unmoved by enormous samples, because it is a bias in the limit. In part seven we meet the third and final threat — wrong functional form, where a straight line is forced through a curved world.
+:::

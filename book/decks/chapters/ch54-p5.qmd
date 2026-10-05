@@ -1,0 +1,57 @@
+---
+date: "2026-07-20"
+---
+
+## What's Clever About Petersen
+
+- Part 5 — four transferable moves that make the paper land
+
+::: notes
+Welcome back to Chapter five-point-four, part five of seven. In part four we read the simulation tables column by column and watched OLS and White undercover while the matching clustering recovered nominal coverage. Now we name what is genuinely clever about this paper. These are four transferable moves you will reuse for the rest of your career — not just facts about standard errors, but a model of how to make a contested methodological claim land.
+:::
+
+## Simulation as Proof
+
+- You can't settle "which SE is right" by argument alone
+- Every method is **internally** consistent given its assumptions
+- Petersen builds worlds where the answer is **known**
+- He **randomizes the data-generating process** — only the method varies
+- Makes a contested methodological claim **decidable**
+
+::: notes
+First, simulation as proof — the deepest cleverness, and it is epistemological. You cannot settle "which standard error is right" by argument alone, because every method is internally consistent given its own assumptions. Petersen sidesteps the debate by building worlds where the answer is known and letting the methods compete. This is the same logic as a controlled experiment, transplanted to econometrics: he randomizes the data-generating process so that the only thing varying across his comparisons is the method. It is a model of how to make a contested methodological claim decidable, rather than a matter of taste or authority. When you cannot argue your way to an answer, manufacture a world where the answer is known.
+:::
+
+## Clean Taxonomy and Legibility
+
+- **Taxonomy:** one diagnostic — *where are residuals correlated?*
+- A messy literature became a **flowchart**
+- **Legibility:** the sandwich estimator wasn't new
+- Traces to White, Liang–Zeger, Arellano
+- Petersen showed finance **how much was on the table**
+
+::: notes
+Second, the clean taxonomy. Before this paper, "which standard error?" felt like a matter of taste or local custom. Petersen reduced it to a single diagnostic question — where are your residuals correlated? — with a one-to-one map from the answer to the fix. Firm effect, cluster by firm; time effect, cluster by time; both, two-way. A messy literature became a flowchart, and good taxonomy is underrated: it changes what practitioners can hold in their heads. Third, legibility. The underlying mathematics — the cluster-robust sandwich estimator and its consistency in the number of clusters — was not new; it traces back to White, Liang–Zeger, Arellano, and others. What Petersen did was make it legible to finance: he showed working empiricists, in their own data, exactly how much money was on the table. He translated a theorem into a habit. That is why this paper has tens of thousands of citations while the equally correct theory papers are read by far fewer.
+:::
+
+## Diagnose Your Own Panel Without Knowing Truth
+
+- The practical gem: a **self-diagnostic** (notebook 2.4)
+- Cluster by firm and look; cluster by time and look
+- Whichever moves your SE **more** from White points at the bigger source
+- Turns "which cluster?" from a **guess** into a reading off your output
+
+::: notes
+Fourth, diagnosing your own panel without knowing the truth. The practical gem is the self-diagnostic that notebook two-point-four walks you through. In your real data you do not know the true Omega, but you can still let the methods tell on themselves. Cluster by firm and look at the standard error; cluster by time and look again. Whichever clustering moves your standard error more, away from the White number, is pointing at the bigger source of correlation. He turned "which cluster?" from a guess into something you read directly off your own output. That is the difference between a paper that hands you a rule and a paper that hands you an instrument you can use on data the author never saw.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Four transferable moves: **simulation as proof** (manufacture a world where truth is known), a **clean taxonomy** (one diagnostic, a flowchart), making a known estimator **legible** to finance, and a **self-diagnostic** for your own panel. Next: where a careful referee can still push.
+:::
+
+::: notes
+To summarize part five: the cleverness is fourfold, and all four are moves you can steal. Simulation as proof — when argument cannot settle a methodological dispute, build a world where the truth is known and let the methods compete. A clean taxonomy that turned a messy literature into a flowchart. Legibility — taking a known but neglected estimator and showing working finance exactly how much was at stake, translating a theorem into a habit. And a self-diagnostic that works on data whose truth you do not know. In part six we do the other half of a good reading: we find the paper's edges — the places a careful referee can still push.
+:::

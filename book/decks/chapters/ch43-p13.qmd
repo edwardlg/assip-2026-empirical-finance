@@ -1,0 +1,59 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## The Russell Wrinkle, the Code, and Takeaways
+
+- Part 13 — the Russell wrinkle, the code, and takeaways
+
+::: notes
+Welcome back to Chapter four-point-three, part thirteen of thirteen, the finale. In part twelve we walked the validity checklist. Now we face an honest subtlety in Sam's Russell design, make the whole idea runnable in one block, and gather the five takeaways to carry forward.
+:::
+
+## The Russell Wrinkle: Sharp or Fuzzy?
+
+- Naively the rank cutoff looks sharp — rank decides your index
+- But index weights use *float-adjusted* cap, not raw rank
+- Banding rules, added in 2007, create a buffer zone
+- So in modern data the design is genuinely **fuzzy**
+- Define the running variable and first stage *exactly* as the institution does
+
+::: notes
+It is worth being honest with Sam about a real subtlety in the Russell design, because it teaches the sharp-versus-fuzzy distinction better than any toy. Naively, the boundary looks sharp: your end-of-May market-cap rank deterministically decides your index. But the outcome economists care about — actual passive-fund ownership, or index weight — does not jump deterministically with membership, because index weights are based on float-adjusted market cap, not raw rank, and FTSE Russell added banding rules in two-thousand-seven that introduce a buffer zone to reduce churn. So in modern data the design is genuinely fuzzy: crossing the rank cutoff sharply raises the probability and intensity of Russell-two-thousand-tracking ownership, but does not force a fixed amount. The right tool is the fuzzy ratio from part five. There is also a famous methodological fight here: the choice of running variable and bandwidth can swing headline results. Sam's takeaway is that the running variable and first stage must be defined exactly as the institution defines them.
+:::
+
+## The Whole Idea in Code
+
+- Simulate: landing in the R2000 jumps ownership by a true $0.6$
+- Smooth trend in rank, plus the jump, plus noise
+- Triangular-kernel local-linear regression; sweep $h \in \{4,8,16,32\}$
+- $h=4$: $\approx 0.56$, wide error; $h=32$: $\approx 0.41$, tight but biased
+- The global quartic: a tight error around a *biased* $0.41$
+
+::: notes
+Here is the whole sharp-regression-discontinuity idea in one runnable block. Simulate a world where landing in the Russell two-thousand — the treatment, the indicator that the running variable is at least the cutoff — jumps next-year passive ownership by a true zero-point-six points on top of a smooth trend in rank, plus noise. Then estimate the jump with a triangular-kernel local-linear regression at bandwidths four, eight, sixteen, and thirty-two, and for contrast with the global quartic that Gelman and Imbens warn against. Running it prints the bias-variance trade-off. At bandwidth four the estimate is near zero-point-five-six with a wide standard error of about zero-point-one-eight; at bandwidth thirty-two it drifts to about zero-point-four-one with a tight error of about zero-point-zero-seven, biased because the wide window let the treated-side curvature bend the fit. The global quartic, fit to all six thousand points, reports a tight-looking error around a biased estimate near zero-point-four-one — a deceptively precise number in the wrong place. Stay local, choose the bandwidth honestly, and trust the robust interval. The code uses only numpy, pandas, and statsmodels; the notebook redoes it with rdrobust.
+:::
+
+## Five Things to Carry Forward
+
+- **The RD idea**: the jump at $c$ is the local effect, via continuity
+- **Sharp vs fuzzy**: fuzzy is IV — jump in $Y$ over jump in $D$
+- **Stay local, stay low-order**: local linear, triangular kernel
+- **Bandwidth is bias–variance**: automate it; report CCT intervals
+- **Audit the design**: McCrary, covariate balance, donut, institutions
+
+::: notes
+Five things from this chapter will do real work later. First, the regression-discontinuity idea: the jump in the conditional mean at the cutoff is the causal effect for the local population, identified by continuity of the potential-outcome means — weaker than the conditional-independence assumption and, unlike it, checkable. Second, sharp versus fuzzy: sharp reads the effect straight off the outcome jump, while fuzzy is instrumental variables, the jump in the outcome over the jump in the treatment, a local average treatment effect for compliers at the cutoff. Third, stay local and stay low-order: local linear regression with a triangular kernel, not a global high-order polynomial. Fourth, bandwidth is a bias-variance trade-off, so automate it with Imbens-Kalyanaraman and report Calonico-Cattaneo-Titiunik robust intervals. Fifth, audit the design: the McCrary test, covariate-balance regressions, donut and bandwidth checks, and an institutional argument that no other policy changes at the cutoff.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+RD: the **jump at $c$ is the effect**, identified by continuity. **Sharp** reads it directly; **fuzzy** is IV. **Stay local, stay low-order**, automate the bandwidth, report CCT robust intervals, and **audit** with McCrary, covariate-balance, donut, and institutional checks. In the notebook, reproduce Sam's Russell design with `rdrobust`. Next chapter, a new tool joins the kit.
+:::
+
+::: notes
+To close the chapter: regression discontinuity says the jump in the outcome at the cutoff is the causal effect, identified by continuity. Sharp designs read that jump directly; fuzzy designs are instrumental variables. Estimate it locally and low-order, automate the bandwidth and report robust bias-corrected intervals, and audit with the McCrary test, covariate-balance regressions, donut checks, and an institutional argument. In your notebook you will reproduce Sam's Russell design with rdrobust, build the plot, run the density and balance tests, and switch to a fuzzy design. That completes Chapter four-point-three; the next chapter adds another tool to your causal-inference kit.
+:::

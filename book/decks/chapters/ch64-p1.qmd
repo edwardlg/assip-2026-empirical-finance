@@ -1,0 +1,60 @@
+---
+date: "2026-07-27"
+---
+
+## Does the Algorithm Cure Discrimination?
+
+**Learning objectives.** By the end you can:
+
+- State each paper's question, outcome, and key regressor
+- Explain pricing versus acceptance discrimination margins
+- Read why the missing credit score drives the field
+- Judge what an algorithm does and does not cure
+
+::: notes
+Welcome to Week Six, Chapter six-point-four, part one of seven. This is a reader's guide to two papers on fair lending in the algorithmic era: Bartlett, Morse, Stanton and Wallace, on consumer lending discrimination in the FinTech era, and Bhutta, Hizmo and Ringo, on how much racial bias affects mortgage lending. Our character Maya has spent two weeks circling one question. In Mentor Session Four she learned that a disparity is not a finding — that the gap between "minority borrowers are charged more" and "lenders discriminate against minority borrowers" is the entire intellectual content of fair lending, and that no list of controls can close it by itself. Now she wants to know something that sounds like good news and may not be: if a computer makes the lending decision instead of a loan officer, does the discrimination go away? A machine has no face to read, no neighborhood prejudice, no discretion to abuse. Surely the algorithm is the cure. These two papers take that hope seriously and refuse to flatter it.
+:::
+
+## Two Papers, Two Margins
+
+- Bartlett et al.: do FinTech lenders **overcharge** minority borrowers?
+- Bhutta, Hizmo, Ringo: how much of the **denial** gap is real risk?
+- Pricing margin versus acceptance margin
+- Both put the **algorithm itself** on trial
+
+::: notes
+This chapter reads two papers that map the whole battlefield. Bartlett, Morse, Stanton and Wallace ask whether FinTech lenders — who price algorithmically, with no human in the loop — charge minority borrowers more than they should. Bhutta, Hizmo and Ringo, whom we will call B-H-R, ask the companion question on the acceptance margin: of the raw racial gap in mortgage denials, how much is legitimate risk and how much is a residual that looks like bias? Together they cover pricing versus acceptance, machine versus human, raw gap versus residual — and teach the lesson the algorithmic era sharpened: the trick is never in the headline disparity, it is in what you were and were not able to hold fixed.
+:::
+
+## Bartlett et al.: The Pricing Question
+
+- Outcome: the **interest rate** (also probability of rejection)
+- Key regressor: borrower **race / ethnicity**
+- Moderator: **FinTech** lender versus traditional lender
+- "Algorithms are blind" is the hypothesis tested, not assumed
+
+::: notes
+State each paper's question as a question, naming the outcome and the key right-hand-side variable, exactly as the Week-Five template demands. For Bartlett et al.: holding creditworthiness fixed, do Black and Hispanic borrowers pay higher mortgage interest rates than otherwise-identical white borrowers — and does it matter whether the loan was priced by an algorithm or by a human? The outcome is the interest rate, and separately the probability of rejection. The key regressor is borrower race or ethnicity. The moderator that makes the paper modern is whether the lender is a FinTech — algorithmic, no face-to-face contact — or a traditional lender. The hoped-for answer, that algorithms are blind so they do not discriminate, is exactly the hypothesis the paper sets out to test rather than assume.
+:::
+
+## BHR: The Acceptance Question
+
+- Outcome: loan **denial / approval** (and some pricing)
+- Key regressor: **race**
+- New ingredient: a near-complete underwriting file, including the **credit score**
+- Plus a **race-blind automated underwriting system** verdict
+
+::: notes
+For B-H-R: of the large raw racial disparity in mortgage approval, what share is explained by legitimate, observable risk factors — and how much residual differential treatment survives once you can finally see the creditworthiness that earlier studies could not? The outcome is loan denial or approval. The key regressor is race. The decisive new ingredient is a near-complete set of underwriting inputs, including the credit score that the Home Mortgage Disclosure Act famously lacks, plus the verdict of a race-blind automated underwriting system — call it the A-U-S — that tells you what a purely algorithmic decision would have been. Notice how the two questions partition the problem. Bartlett et al. live on the pricing margin: conditional on getting a loan, what do you pay? B-H-R live on the acceptance margin: do you get the loan at all? A complete verdict needs both, because a lender can launder discrimination from one margin to the other.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Two papers, one battlefield: **pricing** (Bartlett et al.) versus **acceptance** (BHR), and human versus machine. Both put the algorithm on trial. Next: the **identification strategy** — two different bets on how to get past a raw disparity.
+:::
+
+::: notes
+To summarize part one: two papers map fair lending in the algorithmic era. Bartlett et al. ask whether FinTech lenders overcharge minority borrowers on the pricing margin; B-H-R ask how much of the denial gap is legitimate risk on the acceptance margin. Both put the algorithm on trial. In part two we open the engine room: the identification strategy.
+:::

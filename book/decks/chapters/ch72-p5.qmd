@@ -1,0 +1,58 @@
+---
+date: "2026-08-03"
+---
+
+## FRED and HMDA — Macro Series and Fair Lending
+
+- Part 5 — FRED macro series and HMDA fair-lending data
+
+::: notes
+Welcome back to Data Acquisition in Practice, part five of eight. In part four we covered EDGAR's filings, text, and X-B-R-L. Now we cover two more public sources: FRED, the easiest high-quality source you will ever use, and H-M-D-A, the central fair-lending dataset, served at national scale. Each carries one subtle gotcha worth remembering.
+:::
+
+## FRED — Macro and Financial Series
+
+- Hundreds of thousands of economic and financial series
+- Each series has a short **series ID**: GDP, UNRATE, DGS10
+- `pandas-datareader` needs no key; `fredapi` wants a free key
+- Public; but cite the **underlying** source, not just FRED
+- Cap: about **120 requests per minute** per key
+
+::: notes
+FRED, the Federal Reserve Economic Data from the Saint Louis Fed, is the easiest high-quality source you will ever use: hundreds of thousands of series — G-D-P, unemployment, the federal funds rate, C-P-I, mortgage rates, Treasury yields, the V-I-X — most updated automatically. This is Maya's macro control and a control in nearly every project here. Each series has a short series I-D, a string like capital-G-D-P, U-N-R-A-T-E for the unemployment rate, or D-G-S-ten for the ten-year Treasury. Two access routes: pandas-datareader needs no key and returns a tidy data-frame, while the fred-api package wants a free key but gives finer control over release dates and vintages. FRED is public, but it aggregates series from sources like the B-L-S and B-E-A, so cite the underlying source, not just FRED. The rate cap is roughly one hundred twenty requests per minute per key.
+:::
+
+## FRED's Revision Gotcha
+
+- Many macro series are **revised** after first release
+- Today's 2020 GDP is not the number published in 2021
+- Pulling the latest revised series is quiet look-ahead bias
+- **ALFRED vintages** give the number as published then
+- Contemporaneous control: latest is fine; forecasting: vintage
+
+::: notes
+FRED's important gotcha is data revision. Many macro series are revised after first release: today's value for twenty-twenty G-D-P is not the number published in twenty twenty-one. If your study's logic depends on what was knowable at the time — a real-time or forecasting design, like Sam's backtests or anything event-study-like — pulling the latest revised series is a quiet look-ahead bias. FRED solves this with A-L-F-R-E-D vintages: functions that give the number as it was published then. For a contemporaneous control variable, the latest series is fine; for anything that pretends to use only past information, pull the vintage. For the reproducible pull, pin the vintage date or note latest-pulled-on-a-date, cache to Parquet, and log. FRED is small and public, so caching is cheap and there is no excuse not to.
+:::
+
+## HMDA — Fair Lending at National Scale
+
+- Tens of millions of US mortgage *application* records per year
+- Records applicant race, ethnicity, sex, and income
+- Keys on a lender **LEI** and geographic codes; no person ID
+- HMDA is huge: **aggregate or filter on the server**
+- 2018 revision changed fields — pin the year, read its dictionary
+
+::: notes
+H-M-D-A, the Home Mortgage Disclosure Act data served by the C-F-P-B, is the near-universe of U-S mortgage applications: tens of millions of application records per year, each with the loan amount, the action taken, property location down to census tract, and — the reason it is the central fair-lending dataset — applicant race, ethnicity, sex, and income. This is Maya's project. It keys on a Legal Entity Identifier for the institution and geographic codes for location; there is no person-level identifier, which shapes what questions are answerable. The size problem dominates: a single year's national register is several gigabytes. The cardinal rule is aggregate or filter on the server, not after downloading the universe. The C-F-P-B Data Browser API returns filtered slices or pre-aggregated counts. Ask for an aggregation and you get an instant small table; ask for the national universe and it fails — the throttle is the size. One more gotcha: the twenty-eighteen reporting revision changed fields, so pin the year and read that year's dictionary. The data is sensitive; handle it respectfully and never attempt re-identification.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**FRED** is the friendliest macro source — but mind **revision**: pull an ALFRED vintage whenever your design uses only past information. **HMDA** is the fair-lending universe, so huge you must **aggregate or filter on the server**, and you must pin the year because the 2018 revision changed its fields. Next: 13F and PatentsView.
+:::
+
+::: notes
+To summarize part five: FRED is the friendliest macro source, but its trap is revision — pull an A-L-F-R-E-D vintage whenever your design must use only past information. H-M-D-A is the fair-lending universe, so large that you must aggregate or filter on the server rather than download everything, and you must pin the data year because the twenty-eighteen revision changed the fields. In part six we cover two more sources: thirteen-F institutional holdings, and USPTO PatentsView for innovation data.
+:::

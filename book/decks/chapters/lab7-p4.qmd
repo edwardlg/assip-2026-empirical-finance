@@ -1,0 +1,46 @@
+---
+date: "2026-08-03"
+---
+
+## The Cohort GitHub Workflow
+
+- Part 4 — create a private repo from the cohort template
+
+::: notes
+Welcome back to Week Seven, the Lab, part four of eight. In part three we laid out the directory skeleton on disk. Now we take it to GitHub. You do not invent a repo name on the fly — you create one private repo from the cohort's template, and that single repo is the home for everything you build over the next two weeks. Let us walk the whole workflow, including what the instructor sees.
+:::
+
+## Create a Private Repo From the Template
+
+- Prof. Gao posts the cohort template repo URL
+- Click "Use this template," then "Create a new repository"
+- Owner: your account or the cohort organization
+- Name: `capstone-2026-` your GitHub username
+- Visibility: **Private** — non-negotiable
+
+::: notes
+Prof. Gao posts the URL of the cohort's template repo. On that page, click Use this template, then Create a new repository, and fill in three things: the owner — either your own GitHub account or the cohort organization, your pod sub-leader will tell you which — the name, capstone twenty-twenty-six followed by your GitHub username, to keep the cohort consistent, and the visibility set to Private. That last setting is non-negotiable: the repo may reference licensed data and will hold your in-progress plan, so only you and the people you explicitly invite should see it. GitHub copies the template into your new repo with one commit, and from this moment on, the repository is the submission — there is no separate upload at the end of Week Eight. ASSIP does not use GitHub Classroom; we use a plain template repo plus a shared cohort organization.
+:::
+
+## Invite the Instructor, Then Clone
+
+- Private repos are invisible until you grant access
+- Settings, Collaborators, Add people
+- Add Prof. Gao and your pod sub-leader at Read
+- They see and clone; they do not push
+- Then `git clone` to the machine where you work
+
+::: notes
+Because the repo is private, Prof. Gao and your pod sub-leader cannot see it until you grant access. On the repo page, go to Settings, Collaborators, Add people, and add the GitHub usernames your sub-leader gives you — typically Prof. Gao plus your pod's sub-leader, both at Read permission. They need to see your commits and clone your repo; they do not need to push to it. If your repo lives inside the cohort organization, an org-level team may already handle this — confirm with your sub-leader. Either way, before you push anything sensitive, verify that the right people, and only the right people, can see the repo. Then clone it to the machine where you will work — the ASSIP container, or GMU infrastructure if you touch licensed data.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Create one **private** repo from the cohort template, named `capstone-2026-<username>`, then add Prof. Gao and your sub-leader as **Read** collaborators before pushing anything sensitive. From here on, the repo *is* the submission. Next: the commit-and-push loop, and the instructor's view.
+:::
+
+::: notes
+To summarize part four: you create one private repository from the cohort template, named capstone twenty-twenty-six plus your username, with visibility set to Private. You invite Prof. Gao and your pod sub-leader as Read collaborators, verifying that only the right people can see it, then clone the repo to where you work. The repository is now the submission — no separate upload exists. In part five we walk the daily rhythm: the commit-and-push loop, and exactly what the instructor sees on the other side.
+:::

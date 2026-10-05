@@ -1,0 +1,66 @@
+---
+date: "2026-07-13"
+---
+
+## Callaway–Sant'Anna: Group-Time ATTs
+
+- Part 10 — the group-time ATT, each an honest clean-control 2x2
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part ten of thirteen. In part nine we landed on the shared cure — clean controls plus transparent aggregation of a group-time grid. Callaway and Sant'Anna, in twenty-twenty-one, give the cleanest statement of that fix, and it is the estimator paired with two-way fixed effects in this chapter's notebook, so we spend the most time here. This part introduces their central object and shows that each piece of it is just an honest two-by-two.
+:::
+
+## The Group-Time ATT
+
+- Central object: $\text{ATT}(g,t)$
+- $g$ = **which cohort** (defined by adoption year $G_i$)
+- $t$ = **when** you measure
+- $\text{ATT}(2017,2019)$ = effect on 2017-adopters, measured in 2019 (two-years-after)
+
+::: notes
+Their central object is the group-time average treatment effect, written A-T-T of g comma t: the average treatment effect, at calendar time t, for the cohort of units that first adopted in year g. Read the two arguments carefully. The first, g, indexes which cohort, defined by its adoption year — exactly the G-i from earlier. The second, t, indexes when you are measuring. So A-T-T of twenty-seventeen comma twenty-nineteen is the effect on the states that adopted in twenty-seventeen, measured in twenty-nineteen — that is, their two-years-after effect. The whole estimator is a grid of these numbers, one for every cohort and every post-adoption period.
+:::
+
+## Each ATT Is an Honest 2x2
+
+$$\widehat{\text{ATT}}(g,t)=\underbrace{(\bar Y_{g,t}-\bar Y_{g,g-1})}_{\text{cohort }g\text{'s change}}-\underbrace{(\bar Y_{C,t}-\bar Y_{C,g-1})}_{\text{clean control's change}}$$
+
+- Cohort $g$'s change from $g-1$ (just before adoption) to $t$
+- Minus the clean control's change over the **same** window
+
+::: notes
+The estimation of each group-time effect is a humble, honest two-by-two difference-in-differences, built to use only clean controls. For cohort g and a post-adoption period t at least g, compare the change in cohort g's outcome — from the period just before g adopted, that is g minus one, to period t — against the change over the same calendar window in a clean comparison group. In symbols: the estimated effect equals cohort g's change, the average outcome at g and t minus the average at g and g-minus-one, minus the clean control's change over the identical window. It is exactly the four-cell difference-in-differences you already know, just confined to one cohort and one clean control.
+:::
+
+## The Only Real Rule
+
+- Control group $C$ = **never-treated** or **not-yet-treated** ($G>t$)
+- **Never** an already-treated unit — the rule TWFE broke
+- Each $\widehat{\text{ATT}}(g,t)$ is a clean **Type-1 or Type-2** comparison
+- **Not a single** forbidden Type-3 is ever formed
+
+::: notes
+The control group C is either the never-treated units or the not-yet-treated units — those whose adoption year is strictly after t, so they are still untreated throughout the window. That is the only real rule, and it is the rule two-way fixed effects broke: the control is never an already-treated unit. Each estimate is therefore a clean Type-one or Type-two comparison in Goodman-Bacon's language, and not a single forbidden Type-three comparison is ever formed. The estimator does by deliberate construction exactly what the pooled regression failed to do by accident: it refuses to let an already-treated unit serve as a counterfactual.
+:::
+
+## Optionally Conditional on Covariates
+
+- Can make the comparison **conditional** on covariates
+- Uses a **doubly-robust** DiD (outcome regression + propensity score)
+- Those ideas come from Chapter 3.3
+- Relaxes parallel trends to hold only **after** conditioning
+
+::: notes
+In practice Callaway and Sant'Anna let you make the comparison conditional on covariates, using a doubly-robust difference-in-differences that marries the outcome-regression and propensity-score ideas from Chapter three-point-three. This lets you relax parallel trends so it needs to hold only after conditioning on those covariates — useful when adopters and non-adopters differ in observable ways. The doubly-robust machinery gives you two chances to get the counterfactual right: you are protected if either the outcome model or the propensity model is correctly specified. But the clean-control principle is unchanged — covariates refine the counterfactual, they never license using an already-treated unit as a control.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Callaway–Sant'Anna's central object is $\text{ATT}(g,t)$ — the effect on cohort $g$ (adoption year) measured at time $t$. Each is an honest **2x2** comparing cohort $g$'s change to a **clean control's** change (never- or not-yet-treated, $G>t$) — never an already-treated unit. Optionally doubly-robust with covariates. Next: aggregate the grid into a robust event study.
+:::
+
+::: notes
+To summarize part ten: Callaway and Sant'Anna define the group-time effect, A-T-T of g comma t, the effect on cohort g — identified by its adoption year — measured at calendar time t. Each one is estimated as an honest two-by-two difference-in-differences: cohort g's change from the period before adoption to time t, minus a clean control's change over the same window, where the control is never-treated or not-yet-treated, never already-treated. So every piece is a clean Type-one or Type-two comparison, and the estimator can optionally condition on covariates with a doubly-robust difference-in-differences from Chapter three-point-three. In part eleven we take the whole grid of these effects and aggregate it transparently — by event time — into the heterogeneity-robust event study that honestly replaces the broken one.
+:::

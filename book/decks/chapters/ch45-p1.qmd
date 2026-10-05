@@ -1,0 +1,51 @@
+---
+date: "2026-07-13"
+---
+
+## Building a Shift-Share Instrument
+
+**Learning objectives** — by the end you can:
+
+- Build a shift-share instrument from shifts and shares
+- Explain the two identification views (shares vs. shifts)
+- Apply diagnostics: Rotemberg weights, effective shocks, AKM
+- Treat shift-share as ordinary IV
+
+::: notes
+Welcome to Week Four, Chapter four-point-five, part one of ten. Week Three handed you the instrumental-variables machine and one hard truth: a valid instrument is something you find, and finding one is rare. You need a variable Z that shoves the treatment around, has no other path to the outcome, and is unrelated to the confounder. Most of the time the world simply does not hand you a clean coin flip. This chapter is about a different way to get an instrument: not by finding one ready-made, but by building one out of pieces you already have. The construction is the shift-share, or Bartik, instrument, named for Timothy Bartik, who put it to work in nineteen ninety-one. Our anchor is Maya. She wants to know whether a downturn in the industries that happen to employ a region's workers pushes households there into credit-card delinquency and mortgage default.
+:::
+
+## The Result in One Plain Sentence
+
+- Take each industry's **national** growth rate — no town caused it
+- Reweight by **how much each town depended on each industry**
+- Heavy in nationally-booming industries → high predicted shock
+- Tied to declining industries → low predicted shock
+- That **predicted shock is your instrument**
+
+::: notes
+Here is the whole idea in one sentence. To get an instrument for how hard a local economy was hit, take the national growth rate of each industry — a shock that no single town can have caused — and reweight those national shocks by how much each town depended on each industry to begin with. A town heavily invested in industries that happened to boom nationally gets a high predicted shock; a town tied to nationally-declining industries gets a low one. That predicted shock is your instrument. Why is it good? A region's realized fortunes mix two things: the national tide lifting or sinking its industries, which is exogenous to the region, and purely local stuff — a local scandal, a local boom, the very confounders we fear. The shift-share construction keeps only the first ingredient and throws away everything local. That clean part is the lever.
+:::
+
+## Shifts and Shares
+
+- **Shifts** $g_j$: national industry growth rates this period
+- **Shares** $s_{rj}$: region $r$'s baseline employment fraction in industry $j$
+- Shares sum to one: $\sum_j s_{rj} = 1$
+- Instrument = **share-weighted sum of the shifts**:
+$$B_r = \sum_{j} s_{rj}\, g_j$$
+
+::: notes
+The whole idea lives in two words. Shifts are the national industry growth rates — how fast nationwide employment in autos, or finance, or retail grew this year. We write the shift for industry j as g-sub-j, and it is a national number, the same shock every region feels. Shares are the local exposure weights — what fraction of region r's jobs were in each industry at the start of the period, before this year's shocks landed. We write the share for region r in industry j as s-sub-r-j, and for each region these fractions sum to one across industries. The Bartik instrument for region r, written B-sub-r, is the share-weighted sum of the shifts: sum over industries of the share times the national shift. Read it as a forecast — given how region r was distributed across industries, and given how each industry did nationally, here is the growth we would predict for region r from national forces alone.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **shift-share instrument** is *built*, not found: combine national industry **shifts** $g_j$ with baseline local **shares** $s_{rj}$ as $B_r = \sum_j s_{rj} g_j$. It predicts a region's shock from national tides at its initial exposure. Next: the construction with numbers.
+:::
+
+::: notes
+To summarize part one: a shift-share instrument is built, not found. When the world refuses to hand you a clean coin flip, you manufacture an instrument from a national part — the industry shifts, growth rates no single region caused — and a local part — the baseline shares, exposure weights — combined as B-sub-r equals the sum over industries of share times shift. It predicts what should have happened to a region if it had simply ridden the national industry waves at its initial exposure. In part two we make it concrete with numbers, working two regions by hand and seeing exactly which ingredient does the work.
+:::

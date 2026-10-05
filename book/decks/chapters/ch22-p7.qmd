@@ -1,0 +1,59 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Why OLS Wins, and Seeing It in Code
+
+- Part 7 — the proof sketch and a Monte Carlo confirmation
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part seven of nine. In part six we stated the theorem: under assumptions one through four, O L S is the Best Linear Unbiased Estimator. Now we sketch why it must be true, see where homoskedasticity does the load-bearing work, and confirm the whole story with a Monte Carlo.
+:::
+
+## The Proof Sketch
+
+- Write any rival as $\tilde{\boldsymbol{\beta}} = \hat{\boldsymbol{\beta}} + \mathbf{D}\mathbf{y}$
+- Unbiased for every $\boldsymbol{\beta}$ forces $\mathbf{D}\mathbf{X} = \mathbf{0}$
+- Cross-terms then vanish
+- $\operatorname{Var}(\tilde{\boldsymbol{\beta}}\mid\mathbf{X}) = \sigma^2(\mathbf{X}'\mathbf{X})^{-1} + \sigma^2\mathbf{D}\mathbf{D}'$
+- Extra piece is never negative
+
+::: notes
+Here is the shape of the argument; the full proof is an appendix exercise. Take any rival linear unbiased estimator and write it as O L S plus a detour: beta-tilde equals beta hat plus D times y, for some matrix D capturing how the rival differs. Demanding that beta-tilde be unbiased for every possible beta forces an algebraic condition on D — specifically, D times X equals zero, the detour must be orthogonal to the regressors. When you then compute the rival's variance, that orthogonality makes the cross-terms vanish, and you are left with the rival's variance equal to sigma squared times the inverse of X transpose X — the O L S variance — plus sigma squared times D times D transpose.
+:::
+
+## Homoskedasticity Does the Work
+
+- $\mathbf{D}\mathbf{D}'$ is a sum of squares: never negative
+- Only way to tie OLS: set $\mathbf{D} = \mathbf{0}$ — be OLS
+- Same shape as the bias–variance decomposition
+- $\sigma^2\mathbf{I}$ is what made cross-terms cancel
+- Break Assumption 4 $\Rightarrow$ OLS no longer guaranteed best
+
+::: notes
+That extra piece, sigma squared times D times D transpose, is a sum of squares: it can be zero but never negative. So the rival's variance is the O L S variance plus a non-negative penalty. The only way to tie O L S is to set D equal to zero — which makes you O L S. Any genuine deviation strictly adds variance. This is the same shape as the bias–variance decomposition: a target term plus a non-negative penalty, minimized by killing the penalty. And notice the homoskedasticity assumption is doing the load-bearing work — it is what let us write the variance of epsilon given X as sigma squared times the identity, so the cross-terms cleanly cancel. Break it, and O L S is no longer guaranteed best; a weighted estimator can beat it. That is the deeper reason Chapter two-point-four cares about heteroskedasticity.
+:::
+
+## Faking Maya's Universe
+
+- Set the true $\boldsymbol{\beta}$, draw many obedient samples
+- Check estimates center on truth, spread matches formula
+- 20,000 fits: mean of slopes lands on $-0.42$
+- Unbiasedness, *seen* not just proven
+- Empirical variance matches $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$
+
+::: notes
+Before naming the efficiency property, let's confirm the part-four and part-five facts by faking Maya's universe. We set the true beta, draw many samples that obey all four assumptions, and check two things: that the O L S estimates center on the truth, and that their spread matches sigma squared times the inverse of X transpose X. In code we fix a true intercept of twelve and a true slope of negative zero point four two, an error standard deviation of one point five, and four hundred loans. We draw twenty thousand alternate universes and collect twenty thousand slope estimates. The mean of those twenty thousand slopes lands on negative zero point four two — unbiasedness, seen rather than just proven. And the empirical variance of the slopes matches the bottom-right entry of sigma squared times the inverse of X transpose X to two or three decimals. The formula and the histogram are two views of the same object.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Any rival's variance is $\sigma^2(\mathbf{X}'\mathbf{X})^{-1} + \sigma^2\mathbf{D}\mathbf{D}'$ — OLS plus a non-negative penalty, zero only when the rival *is* OLS. **Homoskedasticity** makes the cross-terms cancel; break it and OLS loses "best." A Monte Carlo shows it: slopes center on $-0.42$, spread matches the formula. Next: efficiency.
+:::
+
+::: notes
+To summarize part seven: any linear unbiased rival has variance equal to the O L S variance plus a non-negative penalty, sigma squared times D times D transpose, which is zero only when the rival is literally O L S. That is why O L S wins. Homoskedasticity is the clause that makes the cross-terms cancel, so breaking it costs O L S the best title and hands it to weighted least squares. And a twenty-thousand-sample Monte Carlo makes it visible: the slopes center on negative zero point four two and their spread matches sigma squared times the inverse of X transpose X. In part eight we give the smallest-variance property its proper name: efficiency.
+:::

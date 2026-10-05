@@ -1,0 +1,47 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Anatomy of a Report: Summary and Lead
+
+- Part 2 — the report's opening: summary, then biggest concern
+
+::: notes
+Welcome back to peer review and revision, part two of twelve. In part one we asked what a referee is for: gatekeeping, and more importantly, improvement, without hijacking the author's project. Now we build the report. It has a fixed skeleton, and the order is load-bearing in the way the Week-Five reading order was: you read tables-first, you write the report concern-first. This part covers the opening two moves — the summary and the biggest concern.
+:::
+
+## Start With a Summary in Your Words
+
+- Open with one paragraph: question, data, design, headline
+- Three to six sentences, written without the abstract
+- This is proof you understood the paper
+- The author's deepest fear: the reader did not get it
+- A wrong summary is itself the biggest finding
+
+::: notes
+Step zero: a summary, in your own words. Open with one paragraph — three to six sentences — that states what the paper does: the question, the data, the design, and the headline finding with its magnitude. This is not filler and it is not flattery. It is proof that you understood the paper, and the single most reassuring thing an author can read, because the deepest fear of anyone who has just submitted is that the reader did not get it. Write it without looking at the abstract — the way you would summarize Fama and French from the tables — and then the author can check your summary against their intent. If your summary describes a paper they did not write, that mismatch is itself the most important finding in your report: the paper failed to communicate its own claim, and no amount of robustness fixes that.
+:::
+
+## Lead With the Single Biggest Concern
+
+- After the summary, lead with the one issue that matters most
+- The thing that, unanswered, sinks the result
+- Do not bury it; do not soften it with small points first
+- Usually this is an identification threat
+- The alternative explanation the design did not rule out
+
+::: notes
+Step one: the single biggest concern, stated first. After the summary, lead with the one issue that most threatens the paper — the thing that, if the author cannot answer it, sinks the result. Do not bury it; do not build to it; do not soften it with five smaller points first. A report that opens with Table Three's caption has a typo and reaches the broken identifying assumption on page two has mis-ranked its own concerns and wasted the author's attention. Put the dagger on the table first. In almost every empirical paper, this biggest concern is an identification threat — the alternative explanation for the headline result that the design did not rule out. Naming it well is the highest-value sentence you will write as a referee.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Open a report **concern-first**: (0) a summary in your own words — proof you understood the claim — written without the abstract, and (1) the single biggest concern stated first, almost always an **identification threat**. Naming it well is the highest-value sentence you write. Next: the rest of the skeleton — identification, specification, exposition.
+:::
+
+::: notes
+To summarize part two: a referee report opens with a summary in your own words, written without the abstract, proving you understood the claim — and if it describes a paper the author did not write, that mismatch is your most important finding. Then you lead with the single biggest concern, stated first and never buried, almost always an identification threat: the alternative explanation the design did not rule out. In part three we finish the skeleton — identification threats by danger, then specification and robustness, then exposition last.
+:::

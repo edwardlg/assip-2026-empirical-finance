@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## KPSS: Vulnerable Joints — Selection, Efficiency, Causation
+
+- Part 8 — three joints: selection, efficiency, associations
+
+::: notes
+Welcome back to Chapter six-point-one, part eight of ten. In part seven we covered the first two vulnerable joints — expectations versus realized value, and confounding news in the window. Now we take the remaining three: selection screens that bound the population, market efficiency baked into the measure, and the fact that the growth results are associations rather than experiments.
+:::
+
+## Selection: Three Screens Stack Up
+
+- Only **granted** patents get a value — rejected ones invisible
+- Only **public** firms with CRSP returns can be valued
+- Only firms that **survive** and stay listed around the grant
+- Panel describes large, public, surviving U.S. firms
+- Generalizing to the whole economy needs an outside argument
+
+::: notes
+The third joint is selection, and it connects to Week One and external validity. Three screens stack up. First, only granted patents get a value — applications that were rejected or abandoned, and the strategic decision to even apply, are invisible. Second, only patents of publicly traded firms with CRSP returns can be valued — private firms, pre-IPO startups, universities, and foreign assignees are excluded, and these are not a random slice of innovation. Third, the firm has to survive and stay listed around the grant date. So the panel describes the innovation of large, public, surviving U.S. firms, and generalizing its growth and reallocation conclusions to the whole economy requires an argument the data alone cannot supply. This bounds external validity in a way every downstream user inherits.
+:::
+
+## Efficient Markets Is Baked In
+
+- The measure *assumes* the market prices the patent correctly
+- If markets are slow, value leaks in later — measure attenuated
+- If markets over-react, the measure is inflated
+- You cannot use it to *test* efficiency — that is circular
+- Abnormal return depends on the normal-return model and window
+
+::: notes
+The fourth joint: efficient markets is baked in, and it cuts both ways. The measure assumes the market prices the patent correctly and promptly at grant. If markets are slow or noisy, the window misses value that leaks in later, and the measure is attenuated; if markets over-react, it is inflated. You cannot use the measure to test market efficiency, because efficiency is the assumption that built it — a circularity worth stating plainly. And remember Week Four: the abnormal return is itself estimated relative to a market model whose parameters are estimated with noise, so a careful reader asks how sensitive the measure is to the choice of normal-return model and window length.
+:::
+
+## Growth Results Are Associations
+
+- Even with a perfect measure, growth findings are *predictive*
+- No random assignment, no instrument, no discontinuity
+- Reverse causality: growing firms innovate more
+- Common drivers: a demand shock lifts both
+- Accept the measure and correlations; reserve the causal story
+
+::: notes
+The fifth and last joint connects to Weeks Three and Four. Even granting a perfect measure, the reallocation and growth findings are predictive — innovating firms grow and rivals shrink on average — not identified causal effects. There is no random assignment of patents, no instrument for innovation, no discontinuity. The creative-destruction reading is consistent with the correlations but not pinned down by them. Reverse causality, where growing firms innovate more, and common drivers, where a demand shock lifts both innovation and growth, are live alternatives. K-P-S-S are measured about this, and you should be too: accept the measure, accept the correlations, and reserve judgment on the precise causal story.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three more joints: **selection** bounds the panel to granted patents of public survivors; **efficiency is baked in**, so the measure cannot test efficiency and depends on the normal-return model; and the growth results are **associations**, not experiments — accept the correlations, reserve the causal story.
+:::
+
+::: notes
+To summarize part eight: three more vulnerable joints. Selection stacks three screens — granted patents, public firms, survivors — so the panel describes large, public, surviving U.S. firms and bounds external validity. Market efficiency is the assumption that built the measure, so the measure cannot test efficiency, and it depends on the normal-return model and window length. And the growth and reallocation results are predictive associations, not experiments, with reverse causality and common drivers always in play. In part nine we stop critiquing and start building — three escalating exercises that reconstruct a piece of the measure in the notebook.
+:::

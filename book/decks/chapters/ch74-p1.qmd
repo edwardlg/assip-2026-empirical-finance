@@ -1,0 +1,76 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## Building the Analysis Dataset: The Crosswalk Problem
+
+**Learning objectives.** By the end you can:
+
+- Join datasets through a researched, date-aware crosswalk
+- Verify merge cardinality and report the match rate
+- Defeat survivorship and look-ahead bias
+- Handle outliers and missing data, then log every step
+
+::: notes
+Welcome to Week Seven, Chapter seven-point-four, part one of seven. Sam pulled two clean files: monthly stock returns from CRSP and annual accounting numbers from Compustat. But his real question — do high book-to-market firms earn higher returns? — lives in neither file. The returns sit in CRSP; the book value in Compustat. To answer it he must join the two. This chapter turns raw pulls into one trustworthy analysis panel, where the largest, most embarrassing errors in empirical finance get made. We open with the first surprise: nobody agrees on what to call a firm.
+:::
+
+## A Dataset Is a Sequence of Decisions
+
+- Two clean files, but the question lives in neither
+- Book-to-market needs a *join* of CRSP and Compustat
+- A dataset is not data; it is decisions
+- Every merge, drop, and date is a modeling choice
+- Make them deliberately, defensibly, reproducibly
+
+::: notes
+State the trick up front. A dataset is not data; it is a sequence of decisions, and the decisions are the dataset. Every merge you run, every row you drop, every outlier you reshape, and every available-as-of date you assign is a modeling choice that can change your answer. The professional skill is not avoiding these choices — they are unavoidable — but making them deliberately, defensibly, and reproducibly. We build Sam's panel step by step, with Maya's mortgage-disclosure cleaning as a second example, doing the two things amateurs skip: count the rows and check the match rate.
+:::
+
+## Nobody Agrees on What to Call a Firm
+
+- CRSP identifies *securities* by **PERMNO**
+- Compustat identifies *companies* by **GVKEY**
+- One company can have several share classes
+- Tickers are nicknames, not identifiers
+- The ticker "C" meant Chrysler before Citigroup
+
+::: notes
+Here is the first surprise. Sam assumes he joins CRSP and Compustat on the company. But the two were built decades apart and do not use the same identifier. CRSP tracks securities and identifies each by a PERMNO — a permanent number that survives ticker changes. Compustat tracks companies' financial statements and identifies each by a GVKEY, a permanent company key. A PERMNO is a security; a GVKEY is a company; not even the same kind of object. One company can have multiple share classes trading as multiple PERMNOs — think of Alphabet's Class A and Class C shares. So Sam cannot merge on a ticker. Tickers are nicknames, not identifiers. The ticker letter C meant Chrysler before it meant Citigroup. Merge on ticker and you silently glue one firm's returns to an unrelated firm's fundamentals.
+:::
+
+## The Crosswalk Must Respect Dates
+
+- Use the **CCM link table** to map GVKEY to PERMNO
+- **LINKTYPE**: keep the researched, confirmed links
+- **LINKPRIM**: marks the primary security, no double-count
+- **LINKDT / LINKENDDT**: the valid date window
+- The map is *time-varying* — join on date too
+
+::: notes
+The solution is a crosswalk: an authoritative table mapping one identifier system to another. For CRSP and Compustat that is the CRSP-Compustat Merged link table. For each GVKEY-PERMNO pair it carries four things. Link-type encodes the quality of the link; keep only the researched, confirmed codes. Link-prim is the primary-link flag, marking the one primary security so you do not double-count. And link-date and link-end-date give the window over which the link is valid. That window is why you cannot collapse the table to a simple dictionary from PERMNO to GVKEY — the map is time-varying. To merge correctly you join on identifier and require your observation's date fall inside the link window. Skipping the date filter produces exactly the Chrysler–Citigroup pathology.
+:::
+
+## Two More Crosswalks, One Lesson
+
+- EDGAR filers use a **CIK**, not a ticker
+- Route EDGAR to CRSP through a researched link
+- **CUSIP** tempts you, but truncations and reuse bite
+- Use the purpose-built link; always apply a date filter
+- Join on a researched, date-aware identifier
+
+::: notes
+Two other crosswalks you will meet. First, the SEC's EDGAR system identifies filers by a Central Index Key, not a ticker or PERMNO. Leah, working on ten-K text, maps EDGAR filings to CRSP returns through a researched link, not unstable tickers. Second, CUSIP — a security identifier both CRSP and Compustat carry, tempting you into a shortcut. Resist it. CUSIPs are nine characters, but vendors store different truncations, they get reassigned over time, and CRSP's historical CUSIP differs from its current one. A naive CUSIP merge fails the same way a ticker merge fails, just less obviously. The lesson: never join on a name or a recycled code; join on a researched, date-aware identifier crosswalk, and respect its validity window.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A firm has **different identifiers in different datasets** — PERMNO in CRSP, GVKEY in Compustat. Never join on a ticker or name; join through a **researched crosswalk** (the CCM link), and respect its **valid date window**. Next: how to merge without silently exploding your panel.
+:::
+
+::: notes
+To summarize part one: a firm wears different identifiers in different datasets — PERMNO in CRSP, GVKEY in Compustat — and tickers are recycled nicknames. Never join on a name or a ticker; join through a researched crosswalk and respect its valid date window. In part two we install the most valuable habit in this chapter: treating a merge's cardinality as a claim you must verify.
+:::

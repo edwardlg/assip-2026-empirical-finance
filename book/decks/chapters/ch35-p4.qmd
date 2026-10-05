@@ -1,0 +1,68 @@
+---
+date: "2026-07-06"
+---
+
+## Quarter of Birth and the Anderson–Rubin Idea
+
+- Part 4 — the cautionary tale, then inference that never divides
+
+::: notes
+Welcome back to Week Three-point-five, part four of seven. In part three we saw the weak-instrument pathology: two-stage least squares biased toward O-L-S by one over F-plus-one, with a standard error too small. Now we meet the famous cautionary tale that taught the profession to fear weak instruments, then begin the cure — an inference idea that never divides by the first stage.
+:::
+
+## The Cautionary Tale: Quarter of Birth
+
+- Angrist–Krueger (1991): schooling on earnings
+- Instrument = **quarter of birth** — as-good-as-random, textbook
+- Born early in year $\to$ hit 16 with less accumulated schooling
+- Relevance plausible, exclusion plausible
+
+::: notes
+The profession learned this the hard way. In a celebrated nineteen-ninety-one study, Angrist and Krueger wanted the causal effect of an extra year of schooling on earnings. Schooling is endlessly endogenous — ability, family background, and ambition drive both schooling and wages. Their instrument was beautiful: quarter of birth. Compulsory-schooling laws let you drop out at sixteen, but you start school in the year you turn six, so children born early in the year hit sixteen with less accumulated schooling. Quarter of birth nudges education for the marginal dropout, and is surely as-good-as-random with respect to earnings. Relevance plausible, exclusion plausible — a textbook instrument.
+:::
+
+## Bound–Jaeger–Baker (1995)
+
+- The instrument is **weak** — tiny share of schooling variation
+- "Significant" only because the sample is enormous
+- They replaced it with **random** quarter of birth — pure noise
+- 2SLS *still* produced a significant, plausible coefficient
+- **Significance of the first stage is not strength**
+
+::: notes
+Then, in a nineteen-ninety-five paper, Bound, Jaeger, and Baker delivered the critique that reshaped how empiricists think. Their argument had two prongs. First, the instrument is weak: quarter of birth explains a minuscule fraction of schooling variation — the first stage, though significant in their enormous sample, is faint in the sense that matters, the F hovering low. Second, and devastatingly, they re-ran the analysis after replacing the real instrument with randomly generated quarter of birth — pure noise — and two-stage least squares still produced a significant, plausible coefficient with a respectable standard error. A random number manufactured a causal estimate. The lesson: significance of the first stage is not strength. With a big enough sample, a useless instrument clears the significance bar while remaining far too weak for credible inference.
+:::
+
+## The Cure: Never Divide by the First Stage
+
+- Pathology came from **dividing by a weak first stage**
+- So: design inference that **never divides** by it
+- The **Anderson–Rubin** test (1949) — rediscovered in the late 1990s
+- Test each **candidate** $\beta_0$; build a CI from those you cannot reject
+
+::: notes
+The weak-instrument pathology came from one place: dividing by a weak, error-ridden first stage. So the cure is an inference procedure that never divides by the first stage at all. That is the whole idea of the Anderson–Rubin test, which, remarkably, was published in nineteen-forty-nine — decades before anyone understood how badly weak instruments could bite. It was rediscovered in the late nineteen-nineties as the gold standard for weak-instrument-robust inference. Instead of estimating beta and dividing, Anderson–Rubin tests each candidate value of beta directly through the reduced form, building a confidence interval from all values it cannot reject — valid no matter how weak the instrument is.
+:::
+
+## The Mechanism
+
+- To test $H_0: \beta = \beta_0$, form $y - \beta_0\,x$
+- If $\beta_0$ is true, $x$'s effect is **removed**
+- Under exclusion, $z$ should have **no relationship** with it
+- Regress $y - \beta_0 x$ on $z$; **$F$-test** coefficient $= 0$
+- **No first stage appears anywhere**
+
+::: notes
+Here is the mechanism, and it is genuinely clever. Suppose you want to test that the true effect equals some specific number, beta-naught. If that were true, then y minus beta-naught times x — the outcome with the hypothesized effect subtracted out — would be free of the causal effect of x, leaving only the structural error. Under exclusion, the instrument z should have no relationship with this adjusted outcome, because z only ever touched y through x, and we just removed x's effect. So: form y minus beta-naught times x, regress it on z, and if beta-naught is the true effect, the coefficient on z must be zero. Test that with an ordinary F-test. That is it. No first stage appears anywhere — no ratio, no denominator hugging zero.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Bound–Jaeger–Baker showed even **random noise** can pose as an instrument — significance is not strength. The cure, **Anderson–Rubin**, tests each candidate $\beta_0$ by regressing $y-\beta_0 x$ on $z$, never dividing by the first stage. Next: why this stays honest, and how to read its strange interval shapes.
+:::
+
+::: notes
+To summarize part four: Bound, Jaeger, and Baker showed that with a feeble first stage, even random noise can pose as an instrument and manufacture a confident answer — significance of the first stage is not strength. The cure, the Anderson–Rubin test from nineteen-forty-nine, tests each candidate effect size beta-naught by forming the adjusted outcome y minus beta-naught times x and regressing it on the instrument with an F-test. No first stage appears. In part five we see why this stays honest no matter how weak the instrument is, and learn to read its strange interval shapes — unbounded and empty.
+:::

@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## The Data and the Look-Ahead Guard
+
+- Part 5 — CRSP, Compustat, sample period, look-ahead guard
+
+::: notes
+Welcome back to lesson five-point-two, part five of nine. In part four we ran the twenty-five time-series regressions and named the G-R-S joint test. Now we step back to the data: which databases feed the machine, what sample period it covers, and the timing device that stops the construction from peeking into the future.
+:::
+
+## The Standard Data Pair
+
+- Returns and market caps from **CRSP**
+- NYSE, AMEX, and NASDAQ common stocks
+- Book equity from the **Compustat** annual files
+- Merged to CRSP by firm
+- Bond side adds government and corporate bond returns
+
+::: notes
+The data are the standard pair you have been using all camp. Stock returns and market caps come from C-R-S-P, the Center for Research in Security Prices, covering NYSE, AMEX, and NASDAQ common stocks. Book equity comes from the Compustat annual files, merged to C-R-S-P by firm. The bond side of the paper, which we keep brief, adds U.S. government and corporate bond returns. These are exactly the databases behind your own labs this week, so the plumbing should feel familiar — the novelty is entirely in how the two are combined to form factors and test portfolios.
+:::
+
+## The Sample Period
+
+- Stocks: **July 1963 through December 1991**
+- Roughly 342 monthly observations
+- Start date is not arbitrary
+- Compustat book-equity coverage thin before early 1960s
+- Mid-1963 avoids worst survivorship and backfill
+
+::: notes
+The stock sample period is July nineteen sixty-three through December nineteen ninety-one — roughly three hundred forty-two monthly observations. The start date is not arbitrary. Book-equity coverage in Compustat is thin before the early nineteen sixties, so beginning in mid-nineteen sixty-three avoids the worst survivorship and backfill problems. This is a recurring theme in empirical finance: the sample window is itself a research choice, defended by the quality of the underlying data, not picked for convenience. Knowing why a paper starts where it starts is part of reading it like a professional.
+:::
+
+## The June Re-Sort Guard
+
+- Annual June re-sort with a deliberate lag
+- Accounting data from fiscal year-end in year $y{-}1$
+- Matched to returns July of $y$ through June of $y{+}1$
+- Ensures book equity was **public before** the returns
+- A look-ahead guard we revisit later
+
+::: notes
+The annual June re-sort uses a deliberate lag: accounting data from the fiscal year-end in calendar year y-minus-one is matched to returns from July of year y through June of year y-plus-one. This is the standard device for making sure the book-equity number was actually public before the returns it is used to predict — a look-ahead guard we will revisit when we discuss what is vulnerable. The logic is simple but easy to get wrong: if you matched this year's accounting data to this year's earlier returns, you would be using information no real-time investor had yet, and you would manufacture a premium that nobody could have earned. The lag closes that door.
+:::
+
+## The Bonds, Briefly
+
+- Larger ambition: one model for stocks *and* bonds
+- Adds a **term** factor: long government minus short rate
+- Adds a **default** factor: corporate minus government
+- Bond factors do bond work; stock factors do stock work
+- We focus on the three stock factors and 25 portfolios
+
+::: notes
+For the bonds, briefly: the paper's larger ambition is one model for both stocks and bonds, so it adds two bond-market factors. A term factor — long-term government minus the short rate — captures the slope of the yield curve. A default factor — long-term corporate minus long-term government — captures credit risk. The headline is that the bond factors do most of the work for bonds while the stock factors do most of the work for stocks; the two markets are largely segmented here. For our purposes, and for your notebook five-point-two, we focus on the three stock factors and the twenty-five stock portfolios, which is where the paper's lasting influence lives.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+CRSP returns plus Compustat book equity, July 1963 to December 1991. The **June re-sort with a lag** guarantees book equity was public before the returns it predicts — the core look-ahead guard. Bonds get their own two factors, but our focus is the three stock factors. Next: how to read the tables in argument order.
+:::
+
+::: notes
+To summarize part five: the data are C-R-S-P returns plus Compustat book equity, running July nineteen sixty-three through December nineteen ninety-one. The June re-sort with a lag guarantees that book equity was public before the returns it is used to predict — the core look-ahead guard of the whole construction. The bonds get their own term and default factors, but our focus stays on the three stock factors and the twenty-five portfolios. In part six we read the tables the professional way — not front to back, but in the order the argument actually runs.
+:::

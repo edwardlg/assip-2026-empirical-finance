@@ -1,0 +1,64 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## Regression Discontinuity: The Jump Is the Effect
+
+**Learning objectives.** By the end you can:
+
+- Explain why near-cutoff units are as-good-as-randomly assigned
+- Distinguish sharp from fuzzy RD and write each estimand
+- Estimate the jump with local linear regression and a bandwidth
+- Audit an RD design for manipulation and other threats
+
+::: notes
+Welcome to Week Four, Chapter four-point-three, part one of thirteen: regression discontinuity. Every design so far has been a fight to make treated and untreated units comparable, and each one bought that comparability with an assumption you mostly cannot test. This chapter introduces a design where comparability is almost handed to you by the world, and where the central assumption is, for once, partly checkable. In this opening part we meet the idea and state the result in one plain sentence.
+:::
+
+## A Design Where the World Randomizes
+
+- Earlier designs bought comparability with untestable assumptions
+- Conditioning, instruments, parallel trends — all assumed
+- RD lives wherever a sharp rule switches treatment on
+- A threshold creates a knife-edge between near-identical units
+- Compare units just on either side of the line
+
+::: notes
+Every design in this book so far has fought to make treated and untreated units comparable. Week three fought it with conditioning, and then with an instrument that imported clean variation from outside. The difference-in-differences chapters fought it across time, leaning on parallel trends. Each design buys comparability at the price of an assumption you mostly cannot test. Regression discontinuity is different. It lives wherever a treatment is switched on by a sharp, mechanical rule. A credit score at or above six-sixty flips a loan from rejected to approved. A test score at or above a cutoff wins a scholarship. The rule creates a knife-edge: a unit at six-fifty-nine and a unit at six-sixty-one are, for all practical purposes, the same kind of unit, yet one is treated and one is not, purely because a number crossed a line. Compare the outcomes of units just on either side of that line and you have something that looks remarkably like a randomized experiment, run for free by the institution that drew the cutoff.
+:::
+
+## Sam and the Russell Reconstitution
+
+- Sam trades momentum and index effects
+- FTSE Russell ranks U.S. stocks by market cap yearly
+- Top thousand: Russell 1000; next two thousand: Russell 2000
+- Rank 998 versus 1002 — nearly identical firms
+- Far more passive money tracks the Russell 2000
+
+::: notes
+Our guide this chapter is Sam, who trades on momentum and index effects, and who has fixated on one of the cleanest natural experiments in all of finance: the annual reconstitution of the Russell stock indexes. Once a year, FTSE Russell ranks U.S. stocks by market capitalization and slices the list. The largest roughly one thousand go into the Russell ten-hundred, the large-cap index; the next roughly two thousand go into the Russell two-thousand, the small-cap index. The boundary between them, around rank one thousand, is a cutoff. A stock ranked nine-ninety-eight and a stock ranked one-thousand-and-two are nearly identical companies of nearly identical size, but one is a small fish in the large-cap pond and the other is a big fish in the small-cap pond. Crucially, vastly more passive money tracks the Russell two-thousand, so crossing into it can mean a large jump in passive-fund ownership, and through that, in governance, liquidity, and price.
+:::
+
+## The Result in One Sentence
+
+- Treatment switches on at known cutoff $c$ in running variable $X$
+- The effect at the cutoff is the jump in the outcome
+- $X$ is continuous through $c$; only treatment breaks
+- So the vertical gap in $\mathbb{E}[Y\mid X]$ at $c$ is the effect
+- Everything technical is an elaboration of "measure the jump"
+
+::: notes
+Here is the whole design in one sentence. When a treatment switches on at a known cutoff c in some running variable X, the causal effect of the treatment, for units right at the cutoff, is the size of the jump in the outcome as X crosses c. The running variable is also called the forcing variable or the score, and the treatment is assigned by which side of c you fall on. If the outcome Y varies smoothly with X everywhere except for a clean break exactly at c, then that break cannot be the smooth influence of X itself, which is continuous through c. The only thing that changes discontinuously at c is the treatment. So the vertical gap in the conditional mean of Y given X, right at c, is the treatment effect. Everything technical in this chapter is an elaboration of measure the jump.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Regression discontinuity exploits a sharp rule that switches treatment on at a cutoff $c$. Units just above and just below $c$ are nearly identical, so the **jump** in the outcome at $c$ is the causal effect — for the local population at the cutoff. Next: *why* those near-cutoff units are comparable.
+:::
+
+::: notes
+To summarize part one: regression discontinuity exploits a sharp rule that switches treatment on at a known cutoff in a running variable. Because units just above and just below the cutoff are nearly identical, the jump in the outcome at the cutoff is the causal effect, for the local population sitting right at the line. Everything else in this chapter is machinery for measuring that jump honestly. In part two we build the deepest justification for why near-cutoff units are comparable: the local-randomization story.
+:::

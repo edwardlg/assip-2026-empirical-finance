@@ -1,0 +1,506 @@
+[
+ {
+  "id": "ch11",
+  "type": "chapter",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/ch11-joint-conditional-two-laws.md",
+  "outPrefix": "ch11",
+  "codePrefix": "W1.1",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "ch12",
+  "type": "chapter",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/ch12-expectation-variance-geometry.md",
+  "outPrefix": "ch12",
+  "codePrefix": "W1.2",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "ch13",
+  "type": "chapter",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/ch13-estimators-sampling-distributions.md",
+  "outPrefix": "ch13",
+  "codePrefix": "W1.3",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "ch14",
+  "type": "chapter",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/ch14-lln-clt.md",
+  "outPrefix": "ch14",
+  "codePrefix": "W1.4",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "ch15",
+  "type": "chapter",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/ch15-hypothesis-testing.md",
+  "outPrefix": "ch15",
+  "codePrefix": "W1.5",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "lab1",
+  "type": "lab",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/lab1-coin-flip-universe.md",
+  "outPrefix": "lab1",
+  "codePrefix": "W1.L",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "mentor1",
+  "type": "mentor",
+  "week": 1,
+  "srcPath": "book/weeks/week-01/mentor1-what-is-a-finding.md",
+  "outPrefix": "mentor1",
+  "codePrefix": "W1.M",
+  "date": "2026-06-22"
+ },
+ {
+  "id": "ch21",
+  "type": "chapter",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/ch21-ols-matrix-form.md",
+  "outPrefix": "ch21",
+  "codePrefix": "W2.1",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "ch22",
+  "type": "chapter",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/ch22-gauss-markov.md",
+  "outPrefix": "ch22",
+  "codePrefix": "W2.2",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "ch23",
+  "type": "chapter",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/ch23-frisch-waugh-lovell.md",
+  "outPrefix": "ch23",
+  "codePrefix": "W2.3",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "ch24",
+  "type": "chapter",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/ch24-heteroskedasticity-clustering-hac.md",
+  "outPrefix": "ch24",
+  "codePrefix": "W2.4",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "ch25",
+  "type": "chapter",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/ch25-misspecification-ovb-measurement-error.md",
+  "outPrefix": "ch25",
+  "codePrefix": "W2.5",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "lab2",
+  "type": "lab",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/lab2-fama-macbeth-crsp.md",
+  "outPrefix": "lab2",
+  "codePrefix": "W2.L",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "mentor2",
+  "type": "mentor",
+  "week": 2,
+  "srcPath": "book/weeks/week-02/mentor2-standard-error-ballgame.md",
+  "outPrefix": "mentor2",
+  "codePrefix": "W2.M",
+  "date": "2026-06-29"
+ },
+ {
+  "id": "ch31",
+  "type": "chapter",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/ch31-potential-outcomes-sutva.md",
+  "outPrefix": "ch31",
+  "codePrefix": "W3.1",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "ch32",
+  "type": "chapter",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/ch32-matching-propensity-scores.md",
+  "outPrefix": "ch32",
+  "codePrefix": "W3.2",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "ch33",
+  "type": "chapter",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/ch33-entropy-balancing-doubly-robust.md",
+  "outPrefix": "ch33",
+  "codePrefix": "W3.3",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "ch34",
+  "type": "chapter",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/ch34-instrumental-variables.md",
+  "outPrefix": "ch34",
+  "codePrefix": "W3.4",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "ch35",
+  "type": "chapter",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/ch35-reading-iv-weak-iv-pathology.md",
+  "outPrefix": "ch35",
+  "codePrefix": "W3.5",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "lab3",
+  "type": "lab",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/lab3-weak-iv-pathology.md",
+  "outPrefix": "lab3",
+  "codePrefix": "W3.L",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "mentor3",
+  "type": "mentor",
+  "week": 3,
+  "srcPath": "book/weeks/week-03/mentor3-natural-experiments.md",
+  "outPrefix": "mentor3",
+  "codePrefix": "W3.M",
+  "date": "2026-07-06"
+ },
+ {
+  "id": "ch41",
+  "type": "chapter",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/ch41-did-event-studies.md",
+  "outPrefix": "ch41",
+  "codePrefix": "W4.1",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "ch42",
+  "type": "chapter",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/ch42-staggered-adoption-crisis.md",
+  "outPrefix": "ch42",
+  "codePrefix": "W4.2",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "ch43",
+  "type": "chapter",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/ch43-regression-discontinuity.md",
+  "outPrefix": "ch43",
+  "codePrefix": "W4.3",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "ch44",
+  "type": "chapter",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/ch44-synthetic-control.md",
+  "outPrefix": "ch44",
+  "codePrefix": "W4.4",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "ch45",
+  "type": "chapter",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/ch45-bartik-shift-share.md",
+  "outPrefix": "ch45",
+  "codePrefix": "W4.5",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "lab4",
+  "type": "lab",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/lab4-hmda-did.md",
+  "outPrefix": "lab4",
+  "codePrefix": "W4.L",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "mentor4",
+  "type": "mentor",
+  "week": 4,
+  "srcPath": "book/weeks/week-04/mentor4-detecting-discrimination.md",
+  "outPrefix": "mentor4",
+  "codePrefix": "W4.M",
+  "date": "2026-07-13"
+ },
+ {
+  "id": "ch51",
+  "type": "chapter",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/ch51-readers-guide-fama-french-1992.md",
+  "outPrefix": "ch51",
+  "codePrefix": "W5.1",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "ch52",
+  "type": "chapter",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/ch52-readers-guide-fama-french-1993.md",
+  "outPrefix": "ch52",
+  "codePrefix": "W5.2",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "ch53",
+  "type": "chapter",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/ch53-readers-guide-jegadeesh-titman-1993.md",
+  "outPrefix": "ch53",
+  "codePrefix": "W5.3",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "ch54",
+  "type": "chapter",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/ch54-readers-guide-petersen-2009.md",
+  "outPrefix": "ch54",
+  "codePrefix": "W5.4",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "ch55",
+  "type": "chapter",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/ch55-readers-guide-bertrand-duflo-mullainathan-2004.md",
+  "outPrefix": "ch55",
+  "codePrefix": "W5.5",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "mentor5",
+  "type": "mentor",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/mentor5-anatomy-of-a-jf-paper.md",
+  "outPrefix": "mentor5",
+  "codePrefix": "W5.M",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "rgpack5",
+  "type": "reading-pack",
+  "week": 5,
+  "srcPath": "book/weeks/week-05/reading-guide-pack-5.md",
+  "outPrefix": "rgpack5",
+  "codePrefix": "W5.R",
+  "date": "2026-07-20"
+ },
+ {
+  "id": "ch61",
+  "type": "chapter",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/ch61-readers-guide-kpss-2017.md",
+  "outPrefix": "ch61",
+  "codePrefix": "W6.1",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "ch62",
+  "type": "chapter",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/ch62-readers-guide-hoberg-phillips-2016.md",
+  "outPrefix": "ch62",
+  "codePrefix": "W6.2",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "ch63",
+  "type": "chapter",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/ch63-readers-guide-loughran-mcdonald-2011.md",
+  "outPrefix": "ch63",
+  "codePrefix": "W6.3",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "ch64",
+  "type": "chapter",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/ch64-readers-guide-bartlett-bhutta-fair-lending.md",
+  "outPrefix": "ch64",
+  "codePrefix": "W6.4",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "ch65",
+  "type": "chapter",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/ch65-ai-copilot-for-research.md",
+  "outPrefix": "ch65",
+  "codePrefix": "W6.5",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "mentor6",
+  "type": "mentor",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/mentor6-text-as-data-ai-without-fooling-yourself.md",
+  "outPrefix": "mentor6",
+  "codePrefix": "W6.M",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "rgpack6",
+  "type": "reading-pack",
+  "week": 6,
+  "srcPath": "book/weeks/week-06/reading-guide-pack-6-ai-lab-manual.md",
+  "outPrefix": "rgpack6",
+  "codePrefix": "W6.R",
+  "date": "2026-07-27"
+ },
+ {
+  "id": "ch71",
+  "type": "chapter",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/ch71-idea-generation-workshop.md",
+  "outPrefix": "ch71",
+  "codePrefix": "W7.1",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "ch72",
+  "type": "chapter",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/ch72-data-acquisition-in-practice.md",
+  "outPrefix": "ch72",
+  "codePrefix": "W7.2",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "ch73",
+  "type": "chapter",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/ch73-pre-analysis-plan.md",
+  "outPrefix": "ch73",
+  "codePrefix": "W7.3",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "ch74",
+  "type": "chapter",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/ch74-building-the-analysis-dataset.md",
+  "outPrefix": "ch74",
+  "codePrefix": "W7.4",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "ch75",
+  "type": "chapter",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/ch75-identification-memo.md",
+  "outPrefix": "ch75",
+  "codePrefix": "W7.5",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "lab7",
+  "type": "lab",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/lab7-your-data-reproducibly.md",
+  "outPrefix": "lab7",
+  "codePrefix": "W7.L",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "mentor7",
+  "type": "mentor",
+  "week": 7,
+  "srcPath": "book/weeks/week-07/mentor7-how-i-pick-and-kill-a-project.md",
+  "outPrefix": "mentor7",
+  "codePrefix": "W7.M",
+  "date": "2026-08-03"
+ },
+ {
+  "id": "ch81",
+  "type": "chapter",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/ch81-execution-specification-curve.md",
+  "outPrefix": "ch81",
+  "codePrefix": "W8.1",
+  "date": "2026-08-10"
+ },
+ {
+  "id": "ch82",
+  "type": "chapter",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/ch82-robustness-inference-stress-tests.md",
+  "outPrefix": "ch82",
+  "codePrefix": "W8.2",
+  "date": "2026-08-10"
+ },
+ {
+  "id": "ch83",
+  "type": "chapter",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/ch83-writing-the-empirical-paper.md",
+  "outPrefix": "ch83",
+  "codePrefix": "W8.3",
+  "date": "2026-08-10"
+ },
+ {
+  "id": "ch84",
+  "type": "chapter",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/ch84-peer-review-and-revision.md",
+  "outPrefix": "ch84",
+  "codePrefix": "W8.4",
+  "date": "2026-08-10"
+ },
+ {
+  "id": "ch85",
+  "type": "chapter",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/ch85-presentation-and-replication-packet.md",
+  "outPrefix": "ch85",
+  "codePrefix": "W8.5",
+  "date": "2026-08-10"
+ },
+ {
+  "id": "lab8",
+  "type": "lab",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/lab8-final-manuscript-repo-defense.md",
+  "outPrefix": "lab8",
+  "codePrefix": "W8.L",
+  "date": "2026-08-10"
+ },
+ {
+  "id": "mentor8",
+  "type": "mentor",
+  "week": 8,
+  "srcPath": "book/weeks/week-08/mentor8-defending-a-result.md",
+  "outPrefix": "mentor8",
+  "codePrefix": "W8.M",
+  "date": "2026-08-10"
+ }
+]

@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## The Oster δ: Reframing the Confounder You Can't Measure
+
+- Part 8 — reframe the unmeasured confounder as how-much
+
+::: notes
+Welcome back to Chapter eight-point-two, part eight of ten. In part seven we corrected for a family of outcomes and showed which results survive. Now the deepest attack, and the one with the most beautiful logic, because it confronts the threat that cannot be tested directly: an omitted variable you never measured. Maya's weakest assumption is selection on unobservables — the residual concern that unobserved creditworthiness differences could still shift the gap. No balance table can reach it, because the confounder you fear is, by definition, the one not in the table. So Oster, two-thousand-nineteen, reframes the question into one you can answer.
+:::
+
+## Reframing an Untestable Threat
+
+- You can't ask "is there an unobserved confounder?" — there always could be
+- Oster's question: how strong must **unobservable** selection be...
+- ...relative to the **observable** selection you can see...
+- ...to explain away your **entire** result?
+- Implausibly strong $\Rightarrow$ robust; barely as strong $\Rightarrow$ fragile
+
+::: notes
+Here is the reframing. You can never ask whether there is an unobserved confounder, because there always could be one. Oster instead asks: how strong would selection on unobservables have to be, relative to the selection on observables you can actually see, to explain away your entire result? If the answer is "implausibly strong — stronger than the observables, which you already control for," then your result is robust to the threat you cannot test. If the answer is "barely as strong as the observables," it is fragile. This turns an unanswerable yes-or-no question into a quantitative how-much question, and that is the whole trick.
+:::
+
+## Coefficient Stability Is Only Half the Story
+
+- Naive idea: coefficient barely moves with controls $\Rightarrow$ robust
+- Oster: that is **half** the story — the missing half is the $R^2$
+- Stable coefficient can mean control doesn't matter (good)...
+- ...or control matters but barely correlates with treatment (not safe)
+- Stability only reassures **relative to** added explanatory power
+
+::: notes
+The argument builds on the coefficient-stability intuition from sensitivity analysis, but fixes its fatal flaw. The naive idea is: if my coefficient barely moves when I add controls, it must be robust to omitted variables too. Oster shows this is only half the story, and the missing half is the R-squared. Adding a control can leave the coefficient stable for two opposite reasons: either the control truly does not matter — genuinely reassuring — or the control matters but is nearly uncorrelated with treatment, in which case an unobservable as predictive as that control could still move the coefficient a lot. Coefficient movement is only meaningful relative to how much explanatory power the controls added. A coefficient that stays put while R-squared jumps from zero-point-one-zero to zero-point-five-five is far more reassuring than one that stays put while R-squared barely rises.
+:::
+
+## Three Ingredients, One Parameter δ
+
+- **Uncontrolled**: coefficient $\hat\beta_0$, fit $\tilde R_0$
+- **Controlled**: coefficient $\hat\beta_1$, fit $\tilde R_1$
+- **Maximum** $R_{\max}$: fit if you controlled everything — default $1.3\,\tilde R_1$, capped at 1
+- $\delta$ = ratio of **unobservable** to **observable** selection
+- $\delta = 1$: the unmeasured stuff is no more confounding than the measured
+
+::: notes
+Oster formalizes this with three ingredients you read off two regressions. The uncontrolled regression gives a coefficient beta-zero-hat and an R-squared, R-tilde-zero — Maya's treatment with no covariates. The controlled regression gives beta-one-hat and R-tilde-one — her full covariate-conditional spec. And a maximum R-squared, R-max: the R-squared a hypothetical regression on treatment plus all observables and all unobservables would attain. You cannot observe it, so you assume it — Oster's evidence-based default is one-point-three times R-tilde-one, capped at one. The key parameter is delta: the ratio of selection on unobservables to selection on observables. Delta equals one means the unobservables are exactly as related to treatment as the observables you control for — the natural benchmark, because it says the stuff I couldn't measure is no more confounding than the stuff I could. Delta equals two means twice as confounding; delta equals one-half means half.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The Oster δ turns "is there a hidden confounder?" into "how strong would it have to be, relative to my observables?" Its core insight: coefficient stability only reassures when read against the $R^2$ gain — a coefficient shrugging off powerful controls is far stronger evidence than one ignoring toothless ones.
+:::
+
+::: notes
+To summarize part eight: the Oster delta confronts the one threat you cannot test directly — an unobserved confounder — by reframing it into a question you can answer: how strong would unobservable selection have to be, relative to observable selection, to explain away your whole result? The key insight is that coefficient stability is only half the story; you must read it against how much the R-squared rose, because a coefficient shrugging off powerful controls is reassuring while one ignoring toothless controls proves nothing. You read three ingredients off two regressions — the uncontrolled and controlled coefficients and R-squareds, plus an assumed maximum R-squared — and the parameter delta is the ratio of unobservable to observable selection. In part nine we put delta to work two ways and read Maya's number, with three honesty rules.
+:::

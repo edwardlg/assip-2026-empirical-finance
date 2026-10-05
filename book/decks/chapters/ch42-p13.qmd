@@ -1,0 +1,77 @@
+---
+date: "2026-07-13"
+---
+
+## What to Carry Forward
+
+- Part 13 — the four takeaways and the lab
+
+::: notes
+Welcome back to Chapter four-point-two, the staggered-adoption crisis, part thirteen of thirteen — the finale. Across this lesson we exposed how the pooled coefficient breaks under staggered adoption, named the forbidden comparison, proved it with Goodman-Bacon and de Chaisemartin–D'Haultfœuille, and built the clean estimators that route around it. Now we gather the four things that should change how you read every difference-in-differences result, and point you to the lab.
+:::
+
+## 1. TWFE Is Not a Safe Default
+
+- Identifies a sensible effect **only** if timing is common **or** effects homogeneous
+- Both staggered timing **and** dynamic effects $\Rightarrow$ contaminated, possibly wrong-signed
+- The normal situation in policy data
+- A staggered TWFE DiD should trigger a **question**, not acceptance
+
+::: notes
+First, the pooled two-way fixed-effects regression is not a safe default under staggered adoption. It identifies a sensible effect only when timing is common or effects are homogeneous. The moment you have both staggered timing and heterogeneous or dynamic effects — the normal situation in policy data — the single coefficient is a contaminated weighted average that can be biased and can carry the wrong sign. Seeing such a regression on staggered data should now trigger an immediate question, not acceptance.
+:::
+
+## 2. The Root Cause Is the Forbidden Comparison
+
+- OLS uses **already-treated** units as controls for not-yet-treated units
+- Their still-moving effect is mis-read as a **counterfactual trend** and subtracted
+- **Goodman-Bacon:** $\hat\beta$ = timing-variance-weighted average of all 2x2s
+- **dCdH:** same disease, **negative cell weights** computable from the design alone
+
+::: notes
+Second, the root cause is the forbidden comparison. Ordinary least squares, left to itself, uses already-treated units as controls for not-yet-treated units, and if the already-treated unit's effect is still moving, that motion is mis-read as a counterfactual trend and subtracted from the thing you want. Goodman-Bacon, twenty-twenty-one, proves the coefficient is exactly a timing-variance-weighted average of all two-by-two difference-in-differences and isolates the later-versus-already-treated comparisons as the culprits. de Chaisemartin and D'Haultfœuille, twenty-twenty, prove the same disease in full generality as a weighted average of cell-level effects with negative weights — weights you can compute from the design alone, before estimating anything.
+:::
+
+## 3. The Cure Is One Idea
+
+- **Clean controls** + **transparent aggregation**
+- Compare each new cohort only to never- or not-yet-treated units
+- Estimate a grid of group-time effects, average with **chosen** weights
+- Callaway–Sant'Anna · Sun–Abraham · Borusyak–Jaravel–Spiess — near-identical
+
+::: notes
+Third, the cure is one idea: clean controls plus transparent aggregation. Compare each newly-treated cohort only to never-treated or not-yet-treated units, estimate a grid of group-time effects, and average them with weights you choose and can defend. Callaway and Sant'Anna do this with explicit doubly-robust two-by-twos; Sun and Abraham by saturating the event-study regression with cohort-by-relative-time interactions; Borusyak, Jaravel, and Spiess by imputing the untreated counterfactual from untreated cells only. Three routes, one principle, near-identical answers — all honest where two-way fixed effects was not.
+:::
+
+## 4. Report the Diagnostics, Not Just the Estimate
+
+- Run the **Goodman-Bacon** decomposition — see weight on forbidden comparisons
+- Check the **dCdH negative-weight** count
+- Present a **heterogeneity-robust event study** with honest pre-trends
+- Spec: **name** your control group (never- vs. not-yet) and your **aggregation weights**
+
+::: notes
+Fourth, report the diagnostics, not just the estimate. Before trusting any staggered difference-in-differences, run the Goodman-Bacon decomposition to see how much weight sits on forbidden comparisons, check the de Chaisemartin–D'Haultfœuille negative-weight count, and present a heterogeneity-robust event study whose pre-period coefficients actually test parallel trends. And name your control group — never-treated versus not-yet-treated — and your aggregation weights explicitly, because in this setting those choices determine what your single headline number means.
+:::
+
+## Your Turn: nb4.2
+
+- Rebuild Priya's staggered panel — 2017, 2019, 2021 waves, plus never-adopters
+- Confirm pooled TWFE is biased (and, sharp version, wrong-signed)
+- Run **Goodman-Bacon**: read clean vs. forbidden weight; find the negative weight
+- Estimate **Callaway–Sant'Anna** $\text{ATT}(g,t)$; check flat pre-trends, compare to TWFE
+
+::: notes
+Now it is your turn. Open notebook four-point-two, "Staggered DiD: TWFE versus Callaway–Sant'Anna." You will rebuild Priya's staggered climate-disclosure panel — California in twenty-seventeen, a twenty-nineteen wave, a twenty-twenty-one wave, and never-adopters — with a building treatment effect, and confirm the pooled coefficient is biased and, in the sharp version, wrong-signed. You will run the Goodman-Bacon decomposition, read off how much of the coefficient comes from clean versus forbidden comparisons, and find the negative weight. Then you will estimate the Callaway–Sant'Anna group-time effects with never-treated controls, aggregate to a heterogeneity-robust event study, verify the pre-trends are flat and the dynamics match the truth, and compare its overall effect to the broken number side by side.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Four takeaways: TWFE is **not** safe under staggered adoption; the cause is the **forbidden comparison**; the cure is **clean controls + transparent aggregation** (three routes, one idea); and you must **report diagnostics** and **name your control group and weights**. In nb4.2 you'll make it concrete. Up next in Week 4: regression discontinuity — identification from a sharp cutoff rather than a clean control.
+:::
+
+::: notes
+To close Chapter four-point-two: carry forward four things. Pooled two-way fixed effects is not a safe default under staggered adoption. The root cause is the forbidden comparison — already-treated units serving as controls. The cure is one idea, clean controls plus transparent aggregation, realized three ways. And you must report the diagnostics and name your control group and weights. The lab puts every piece into your hands. Looking ahead in Week Four, we turn to a different identification strategy — regression discontinuity — where the credible comparison comes not from a clean control group but from units narrowly on either side of a sharp cutoff. Nicely done getting through the staggered-adoption crisis; it is one of the most important corrections in modern applied econometrics.
+:::

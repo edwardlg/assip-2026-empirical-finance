@@ -1,0 +1,57 @@
+---
+date: "2026-07-20"
+---
+
+## Why Time-Series Buys You an Alpha
+
+- Part 2 — why time-series yields an $R^2$ and an $\alpha$
+
+::: notes
+Welcome back to lesson five-point-two, part two of nine. In part one we separated the two papers: the earlier one cross-sectional, the nineteen ninety-three one time-series. Now we see why going time-series matters so much. A time-series regression hands you two things the cross-section cannot — an R-squared and an intercept — and that intercept is the whole ballgame.
+:::
+
+## Two Gifts of the Time-Series Regression
+
+- **R-squared:** fraction of variance the factors explain
+- High R-squared = factors capture *common variation*
+- The part many stocks share, undiversifiable
+- **Intercept alpha:** the average return left over
+- After the factors have done their work
+
+::: notes
+A time-series regression hands you two things the cross-section cannot. First, the R-squared: the fraction of a portfolio's month-to-month variance that the factors explain. A high R-squared means the factors capture the common variation — the part of returns that many stocks share, the part that cannot be diversified away. Second, the intercept, which we call alpha. If your factors are the complete description of priced risk, then a portfolio's average excess return should be entirely accounted for by its exposures to those factors, and the intercept — the average return left over after the factors have done their work — should be zero. The cross-sectional regression never produces an alpha in this sense; the time-series regression does.
+:::
+
+## A Nonzero Alpha Is a Pricing Error
+
+- Nonzero $\alpha$ = money the model cannot explain
+- That single number is the whole ballgame
+- Cross-section gives no $\alpha$ of this kind
+- Time-series replaces a vague claim with a model
+
+::: notes
+A nonzero alpha is a pricing error: money the model cannot explain. The cross-sectional regression of the earlier paper never produces an alpha in this sense. The time-series regression does, and that single number is the whole ballgame. This is the payoff of switching shapes. Instead of saying vaguely that size and value matter, you get an operational model: a three-line regression anyone can run, which either leaves a leftover or does not. The R-squared tells you whether the factors capture co-movement; the alpha tells you whether they capture the average return level. Keep those two readings distinct in your mind — they are genuinely different questions, and the whole paper turns on insisting on both at once.
+:::
+
+## The FF93 Research Question, Plainly
+
+- Is there a small factor set — market, size, value?
+- Such that each regression has **high R-squared**?
+- Meaning: factors capture common variation
+- And an **intercept indistinguishable from zero**?
+- Meaning: no priced risk left on the table
+
+::: notes
+So here is the research question, stated as plainly as we can. Is there a small set of factors — the market, a size factor, and a value factor — such that the time-series regression of any test portfolio's excess return on those three factors has, first, a high R-squared, meaning the factors capture the common variation, and second, an intercept indistinguishable from zero, meaning no priced risk is left on the table? If the answer is yes, you have replaced a vague claim — size and value matter — with an operational model: a three-line regression anyone can run. That is the bar the paper sets for itself, and the rest of the lesson is about how it tries to clear that bar.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Going time-series buys two numbers per portfolio: **R-squared**, the common variation captured, and **alpha**, the pricing error left over. The FF93 question is whether three factors give every portfolio a high R-squared *and* a near-zero alpha. Next: how the factors are manufactured as portfolios.
+:::
+
+::: notes
+To summarize part two: going time-series buys you two numbers per portfolio — the R-squared, which measures the common variation captured, and the alpha, which measures the pricing error left over. The Fama-French question is whether three factors can give every test portfolio both a high R-squared and a near-zero alpha. In part three we open the machinery and see how a factor — which sounds like an abstraction — is manufactured as a real, tradeable long-short portfolio you could actually hold.
+:::

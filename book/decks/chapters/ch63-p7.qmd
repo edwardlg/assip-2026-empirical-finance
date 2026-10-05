@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## What's Vulnerable: Context and Drift
+
+- Part 7 — lost context and dictionary drift
+
+::: notes
+Welcome back to Chapter six-point-three, part seven of nine. In part six we praised four clever moves. Now we find the paper's edges, which are mostly the edges of bag-of-words itself. This part covers the two deepest cracks: counting words throws away context, and context is meaning; and a fixed dictionary goes stale as language and disclosure drift. The authors would grant both.
+:::
+
+## Bag-of-Words Throws Away Context
+
+- Counting words ignores order, syntax, and scope
+- "This is not a good year" counts as *positive*
+- The bag never sees the "not"
+- Negation patched with crude rules; partial at best
+- Sarcasm, irony, conditionals are invisible
+
+::: notes
+First, bag-of-words throws away context, and context is meaning. This is the central limitation, and the authors would be the first to grant it. Counting words ignores order, syntax, and scope. This is not a good year contains the positive word good, and a naive count scores it positive; the negation flips the meaning, and the bag never sees the not. Loughran and McDonald handle simple negation with crude rules, like flagging a positive word as negated if a negator appears within a few words, but the patch is partial. Sarcasm, irony, conditionals, like we would face severe losses if the unlikely event occurred, and long-range dependencies, like the risks described in last year's filing no longer apply, are invisible to a word counter. The model literally cannot represent the idea that the same word means opposite things in two sentences.
+:::
+
+## It Works on Average, Not Sentence by Sentence
+
+- Word-counting is a proxy for meaning, not meaning
+- It works on average, over long documents
+- It breaks sentence by sentence
+- A fifty-thousand-word filing may average errors out
+- Or it may not — that is an empirical worry
+
+::: notes
+The honest way to state the limitation is this. Word-counting is not meaning; it is a proxy for meaning that works on average, over long documents, and breaks sentence by sentence. Over a fifty-thousand-word ten-K, many local errors may wash out, leaving a usable document-level score. But they may not, and whether they do is an empirical question, not a guarantee. Keep that distinction sharp: the method's defense is statistical averaging across a long document, not correctness on any single sentence. That is exactly why a risk-factor section written entirely in conditionals could bias the whole score in one direction.
+:::
+
+## Dictionaries Are Static; Language Drifts
+
+- A fixed list is frozen when it was built
+- New vocabulary arrives: "crypto," "SPAC," pandemic boilerplate
+- Old words shift connotation over time
+- Firms learn the flagged words and game the score
+- A widely-used measure is one firms manage
+
+::: notes
+Second, dictionaries are static, but language and disclosure drift. A fixed word list is frozen at the moment it was built. New financial vocabulary arrives, like crypto, S-P-A-C, and pandemic-era boilerplate; old words shift connotation; and firms learn which words the algorithms flag and adjust their writing to game the score. A dictionary built on filings from the late nineteen-nineties and two-thousands may misread filings from twenty-twenty-six, and a measure everyone uses is a measure firms have an incentive to manage. The public list is updated over time, which helps, but the underlying fragility, that the meaning of the instrument can decay, is structural to dictionary methods.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Bag-of-words throws away **context** — "not a good year" scores positive — so it works on average over long documents but breaks sentence by sentence. And a fixed dictionary **drifts**: new vocabulary arrives, words shift meaning, and firms game flagged words. The instrument's meaning can decay. Next: look-ahead, parsing, and the bridge to embeddings.
+:::
+
+::: notes
+To summarize part seven. Two deep vulnerabilities, both inherent to bag-of-words. First, counting words throws away context: not a good year scores positive because the bag never sees the not, so the method works on average over long documents but breaks sentence by sentence. Second, a fixed dictionary drifts: new vocabulary arrives, words shift connotation, and firms learn to game the flagged words, so the instrument's meaning can decay over time. In part eight we cover the remaining edges, look-ahead in tuning and parsing choices, and the bridge to embeddings and large language models.
+:::

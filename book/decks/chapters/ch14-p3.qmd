@@ -1,0 +1,58 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Seeing the LLN, and Standardizing for the CLT
+
+- Part 3 — watch a running mean, then standardize
+
+::: notes
+Welcome back to Chapter one-point-four, part three of nine. In part two we proved the Law of Large Numbers with Chebyshev. Now we watch it happen on screen with a single running mean, and then we pivot to the second great theorem by building the one quantity it is all about — the standardized sample mean.
+:::
+
+## See It: One Running Mean
+
+- Follow a **single** sample as it grows
+- Fair die rolls, $\mu=3.5$; plot the running average
+- Early: jagged, wild — after 3 rolls could be $2.0$ or $5.3$
+- Later: presses against $3.5$, wander shrinks like $1/\sqrt{N}$
+- Change the seed: new path, **same** destination
+
+::: notes
+The cleanest way to watch the Law is to follow one sample as it grows. Imagine Sam simulating fair die rolls, where the population mean is three-point-five. We draw one die, then a second, then a third, and after each new roll we recompute the average of everything so far, then plot that running average against the number of rolls. What you see is a curve that starts jagged and undisciplined — after three rolls the average might be two-point-zero or five-point-three, anything is possible — and then, as N climbs into the hundreds and thousands, flattens out and presses against the dashed line at three-point-five. It never lands exactly and stays; it keeps making tiny corrections forever, but the room it has to wander in keeps closing, shrinking like one over root N. Change the seed and a different jagged path settles onto the same line. The destination is the population's; only the route is random.
+:::
+
+## The LLN Says Where, Not What Shape
+
+- LLN tells us *where* $\bar{x}$ ends up: on $\mu$
+- It says **nothing** about the **shape** of the cloud around $\mu$
+- That shape is the **CLT's** job
+- First we need the right quantity to ask about
+
+::: notes
+The Law of Large Numbers tells us where the sample mean ends up — it collapses onto mu. But it says nothing about the shape of the cloud of possible sample-mean values around that destination. That shape is the Central Limit Theorem's job, and it is, frankly, one of the most surprising facts in all of mathematics. Before we can state it, we need to build the right object to ask the shape question about. The raw sample mean is no good — it is a moving target, centered on mu with a width that keeps shrinking. We want something with a fixed center and a fixed width, so we can compare its shape against a universal yardstick. That object is the standardized sample mean.
+:::
+
+## Standardize the Sample Mean
+
+- $\bar{x}$ has mean $\mu$, standard deviation $\sigma/\sqrt{N}$
+- Standardize: measure it in **standard errors from the truth**
+$$z_N=\frac{\bar{x}-\mu}{\sigma/\sqrt{N}}$$
+- Subtract the mean, divide by the standard deviation
+- Mean zero, standard deviation one — ready to compare
+
+::: notes
+We already know the sample mean has mean mu and standard deviation sigma over root N. Now we standardize it — subtract its mean and divide by its standard deviation — so what is left is measured in standard errors away from the truth. Call that standardized quantity z-sub-N: the sample mean minus mu, all over sigma divided by root N. Standardizing is just re-centering and rescaling so the object has mean zero and standard deviation one, no matter what N is. That fixed center and fixed width is exactly what lets us ask a clean shape question and compare the answer to a single universal curve. In the next part the Central Limit Theorem tells us what that shape converges to.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A single **running mean** shows the LLN in pixels: a jagged path that funnels onto $\mu$, its wander shrinking like $1/\sqrt{N}$. The LLN fixes *where* $\bar{x}$ lands; to ask about *shape* we standardize it into $z_N=\frac{\bar{x}-\mu}{\sigma/\sqrt{N}}$. Next: the Central Limit Theorem.
+:::
+
+::: notes
+To summarize part three: a single running mean is the Law of Large Numbers made of pixels — a jagged path that funnels onto the true mean, its room to wander shrinking like one over root N, with the destination fixed by the population and only the route random. But the Law fixes only where the sample mean lands, not the shape of the cloud around it. To ask about shape we built the standardized sample mean, with mean zero and standard deviation one. In part four we state the Central Limit Theorem and find out what shape that standardized quantity converges to.
+:::

@@ -1,0 +1,70 @@
+---
+date: "2026-07-13"
+---
+
+## Two Paths, Goals, and Setup
+
+- Part 2 — the two paths, the skills, and reproducible setup
+
+::: notes
+Welcome back to Week Four, the Lab, part two of eight. In part one we framed the mission: a clean difference-in-differences on real HMDA mortgage data. Now we lay out the lab's two paths — real data and a synthetic check — the concrete skills you will gain, and the reproducible setup.
+:::
+
+## The Two Paths
+
+- **Path A — real HMDA**: the CFPB Data Browser and FFIEC files
+- A reproducible recipe; we do not fabricate HMDA numbers
+- **Path B — synthetic fallback**: a seeded county-year panel
+- Built with a **known** treatment effect, runs anywhere
+- Read both, even if you only run one
+
+::: notes
+The lab gives you two paths, and you read both even if you only run one. Path A is real HMDA, through the public CFPB Data Browser interface and the FFIEC bulk files. You will see the query pattern, the schema you get back, and how to aggregate the application-level register up to a county-year panel. We do not fabricate specific HMDA numbers — the real register is enormous — so Path A is a reproducible recipe against a pinned vintage. Path B is a self-contained, seeded, synthetic county-year panel that looks like aggregated HMDA but is built with a known treatment effect. It runs anywhere — no credentials, no network — so you can run the whole pipeline and recover the effect you planted.
+:::
+
+## Why Both: Build a Universe Where You Know the Truth
+
+- The slogan Lab 3 stated and this lab drills
+- Unsure a tool does what it claims? Build a known universe
+- Path B is that universe; Path A is the messy world
+- A real estimate is only as trustworthy as the synthetic demo
+- Same code must recover a known answer first
+
+::: notes
+Why bother with both? Because of the discipline this whole week has been building toward, the one Lab Three stated as a slogan: when you are unsure whether a tool does what it claims, build a universe where you know the truth, and check. Path B is that universe — you plant the effect, so you know the answer. Path A is the messy world you check it against. A causal estimate on real HMDA is only as trustworthy as your demonstration, on synthetic data, that the very same code recovers a known answer. You earn the right to trust the estimator on data whose truth you cannot see by first watching it succeed on data whose truth you can.
+:::
+
+## What You Will Be Able To Do
+
+- **Pull and aggregate** HMDA into a county-year denial-rate panel
+- **State a fair-lending DiD spec** in full discipline
+- **Build a staggered synthetic panel** with a known effect
+- **Run TWFE** and explain why it is biased here
+- **Read an event study**; **estimate Callaway–Sant'Anna**
+
+::: notes
+Here are the concrete skills. You will pull and aggregate real HMDA from the CFPB Data Browser into a reproducible county-year panel of denial rates, pinning a data vintage. You will state a fair-lending DiD design in full empirical-spec discipline — outcome, treatment, controls, fixed effects, clustering, sample, and the load-bearing line, the identifying assumption in one sentence. You will build a staggered synthetic panel with a known dynamic effect, run static two-way fixed effects and explain why its single coefficient is biased under staggered adoption, read an event study with leads as the pre-trend check and lags as the dynamic effect, and estimate Callaway–Sant'Anna group-time effects with clean controls — verifying they recover the planted effect where two-way fixed effects could not.
+:::
+
+## Setup: Two Reproducibility Rules
+
+- Environment installs `pyfixest` and `differences`
+- Pin the seed: `rng = np.random.default_rng(SEED)`
+- Never the legacy global seed
+- Draw **all** randomness from that one generator
+- A single source makes the panel replayable bit-for-bit
+
+::: notes
+Now setup. Per the conventions, every code block runs end to end on a fresh environment. The two estimators that matter are pie-fix-est, for fast two-way fixed effects and the naive event study, and the differences package, the Python implementation of Callaway–Sant'Anna's group-time effects. Path A also needs requests and pie-arrow. Then two reproducibility rules you follow without exception. First, pin the seed: use NumPy's modern generator — r-n-g equals n-p dot random dot default-generator of SEED — never the legacy global seed. Second, draw all randomness from that one generator. A single source of randomness makes the synthetic panel replayable bit for bit. The numbers quoted later are what the seed twenty-twenty-six-oh-five-two-eight produces.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Path A** is real HMDA as a reproducible recipe; **Path B** is a seeded synthetic panel with a known effect. Read both. The slogan: when unsure a tool does what it claims, build a universe where you know the truth and check. Pin one seed; draw all randomness from one generator. Next: Path A — pinning a vintage and querying the CFPB API.
+:::
+
+::: notes
+To summarize part two: the lab runs two paths. Path A is real HMDA as a reproducible recipe; Path B is a seeded synthetic panel with a planted, known effect — and you read both. The slogan underneath: when you are unsure a tool does what it claims, build a universe where you know the truth and check. And the reproducibility spine: pin one seed, draw all randomness from one generator, so every run replays bit for bit. In part three we start Path A in earnest — pinning a data vintage, respecting the register's enormous size, and writing the CFPB Data Browser query.
+:::

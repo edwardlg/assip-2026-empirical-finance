@@ -1,0 +1,56 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Projection Algebra and Invertibility
+
+- Part 6 — projection algebra and when $\mathbf{X}'\mathbf{X}$ inverts
+
+::: notes
+Welcome back to Chapter two-point-one, part six of seven. In part five we named the hat matrix and the residual maker. Now we nail down the two properties that mark every projection — symmetric and idempotent — and harvest two more identities for free. Then we confront the assumption we have leaned on the whole lesson: that X-transpose-X has an inverse. We find exactly when it does, and what goes wrong when it does not.
+:::
+
+## Symmetric and Idempotent
+
+- **Symmetric:** $\mathbf{H}' = \mathbf{H}$ and $\mathbf{M}' = \mathbf{M}$
+- **Idempotent:** $\mathbf{H}\mathbf{H} = \mathbf{H}$, $\mathbf{M}\mathbf{M} = \mathbf{M}$
+- Project twice = project once — already on the plane
+- Free: $\mathbf{H}\mathbf{M} = \mathbf{0}$ · $\mathbf{M}\mathbf{X} = \mathbf{0}$ (annihilator)
+
+::: notes
+Two defining properties. First, symmetric: H-transpose equals H. Transpose it, and the symmetric core, the inverse of X-transpose-X, comes back unchanged while the outer X and X-transpose swap into place, so you recover H exactly. Likewise M is symmetric. Second, idempotent: H times H equals H, and M times M equals M. Applying a projection twice does nothing new — once you have dropped onto the plane, you are already on it, so dropping again leaves you put. Algebraically the inner X-transpose-X cancels its inverse and H comes straight back. Two more identities fall out for free. H times M equals zero: the two projections are orthogonal — the explained and unexplained pieces meeting at a right angle again. And M times X equals zero: the residual maker annihilates the regressors themselves — hence annihilator — the matrix form of residuals being orthogonal to every regressor.
+:::
+
+## When Does $\mathbf{X}'\mathbf{X}$ Invert?
+
+- Need **full column rank**: no regressor a combination of others
+- Failure: **perfect multicollinearity**
+- E.g. market in percent **and** in basis points ($100\times$)
+- Then $\mathbf{X}\mathbf{v} = \mathbf{0}$ for some $\mathbf{v}\ne\mathbf{0}$ $\Rightarrow$ singular, no inverse
+
+::: notes
+Everything so far quietly assumed the inverse of X-transpose-X exists. When does it? That matrix is non-singular precisely when the columns of X are linearly independent — when no column is a weighted sum of the others. We say X has full column rank. The failure case has a name econometricians say with a grimace: perfect multicollinearity. Here is the intuition. If two columns carried the same information — say Sam accidentally includes the market return in percent and the same return in basis points, exactly one hundred times the first — those columns are proportional, and there is no unique way to split the explained part between the two redundant regressors. Any split that adds up the same gives identical fitted values, so the data cannot choose, and beta-hat is not pinned down. Algebraically, redundant columns make X-v equal zero for some nonzero v, so the squared length of X-v is zero — the matrix is only positive semidefinite, singular, no inverse. The bowl from part three has a flat-bottomed trough instead of a single low point.
+:::
+
+## The Same Wall as Last Week
+
+- Ch 1.2: redundant asset $\Rightarrow$ covariance $\mathbf{\Sigma}$ singular
+- Here: redundant regressor $\Rightarrow$ $\mathbf{X}'\mathbf{X}$ singular
+- Cure: don't feed the machine a redundant column
+- Need $N \ge K$; *near*-collinearity is the insidious case (Ch 2.4)
+
+::: notes
+This is exactly the wall chapter one-point-two warned about, met from the other side. There, a redundant asset made the covariance matrix Sigma singular. Here, a redundant regressor makes X-transpose-X — built the same way, as a matrix of cross-products, a close cousin of a covariance matrix — singular. Same event, same cure: do not feed the machine a redundant column. Two practical notes. First, full column rank requires at least as many observations as regressors, N at least K — you cannot fit more coefficients than you have data points. Second, real software almost never sees perfect collinearity; it usually comes from a coding mistake. The more insidious problem is near-collinearity, where X-transpose-X is invertible but barely, making beta-hat wildly sensitive to tiny data changes — a precision problem we quantify with standard errors in chapter two-point-four.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+$\mathbf{H}$ and $\mathbf{M}$ are symmetric and idempotent — the fingerprints of projecting. The formula needs $\mathbf{X}'\mathbf{X}$ invertible, which holds exactly when $\mathbf{X}$ has **full column rank** (no perfect collinearity) — the same singular-matrix wall as last week's $\mathbf{\Sigma}$.
+:::
+
+::: notes
+To summarize part six: the hat matrix and residual maker are both symmetric and idempotent — the algebraic fingerprints of projecting — and they hand us the free identities H-M equals zero and M-X equals zero. All of it requires X-transpose-X to be invertible, which holds exactly when X has full column rank, with no perfect collinearity — the same singular-matrix wall as last week's covariance matrix. In part seven we stop proving and start computing: we run the entire machine on Sam's four days, invert the matrices by hand, recover his beta, verify the orthogonality, and point ahead to chapter two-point-two.
+:::

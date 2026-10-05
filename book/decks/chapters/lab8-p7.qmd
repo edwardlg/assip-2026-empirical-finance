@@ -1,0 +1,58 @@
+---
+date: "2026-08-10"
+---
+
+## The One-Click: Makefile, run_all, Honesty Test
+
+- Part 7 — the one-click: Makefile, run_all, and the honesty test
+
+::: notes
+Welcome back to Week Eight, Lab Eight, part seven of ten. In part six we set the single seed and laid out the numbered pipeline scripts. Now we wire those scripts into one command — the Makefile and the make-free run-all script — and run the make-clean, make-all honesty test that proves the packet is real.
+:::
+
+## The Makefile and `run_all.py`
+
+- `Makefile` is the one-click — each target names what it produces
+- `all → poster → tables, figures, abstract → data` — `make` walks the graph
+- Recipe lines need a **real TAB**, not spaces (else `missing separator`)
+- `run_all.py` does the same with no `make` — runs steps as subprocesses
+- It gates the LaTeX compile on `shutil.which` — skips cleanly if no engine
+
+::: notes
+The Makefile is the one-click. Each target names what it produces and depends on the targets that must run first, so make enforces the order. The dependency chain is the lesson: make-all wants poster, which needs tables, figures, and abstract, all of which need data, which runs the pull and the build. Make walks that graph and runs each step once. One rule trips up every beginner: make recipe lines must be indented with a real tab, not spaces — a space-indented recipe gives the cryptic "missing separator" error. Because make is not installed everywhere, especially on Windows, ship an equivalent Python entry point, run-all-dot-py. It runs each step as a subprocess, so a failure stops the build loudly rather than silently half-building, and it gates the LaTeX compile on whether an engine exists — the same shutil-which pattern the notebooks use — skipping cleanly if none is found. Run-all is make-all; run-all dash-dash-clean is make-clean then make-all.
+:::
+
+## The Honesty Test
+
+- `make clean && make all` — delete every derived file, rebuild from nothing
+- If numbers come back identical, **no number was typed by hand**
+- If a number drifts, you found a hand-edit — before a reviewer did
+- Check mechanically: `md5sum` before, then `md5sum -c before.txt`
+- Tables byte-identical; figure PDFs need `metadata={"CreationDate": None}`
+
+::: notes
+Here is the test that proves the packet is real. Make-clean and make-all: delete every derived file and rebuild from nothing. If the paper comes back identical, the chain holds — no number in the PDF was typed by hand, because there was nothing left on disk to copy from. Every table and figure was regenerated from raw inputs through your seeded code. If a number drifts, you just found a hand-edit, and you found it before a reviewer did. To check identity mechanically, hash the generated artifacts with md5sum before, then md5sum dash-c after — every line reading OK means a byte-identical rebuild. One subtlety that bit this lab: the table dot-tex will be byte-identical, but a figure saved as PDF will not be, unless you pin its metadata. Matplotlib stamps the current wall-clock time into the PDF's creation-date, so two runs differ in those metadata bytes while the plotted data is pixel-for-pixel the same. The fix is to pass metadata creation-date None to savefig. Knowing which differences are cosmetic — a timestamp — versus real — a drifted coefficient — is the whole skill.
+:::
+
+## Commit the Finished Packet
+
+- The packet *is* the repo — finishing it is a **commit**, not an upload
+- Commit `config.py`, the `src/` scripts, `Makefile`, `run_all.py`, `poster.tex`
+- Do **not** commit derived outputs — they regenerate; committing invites drift
+- Exception some advisors prefer: commit `poster.pdf` as a released build output
+- No secrets, no licensed data — keys from `os.environ`, gitignore is the wall
+
+::: notes
+The packet is the repository, so finishing it is a commit, not an upload. Add config-dot-py, the three source scripts, the Makefile, run-all-dot-py, and poster-dot-tex, then commit and push. Do not commit the derived outputs — the poster PDF, the abstract, the tables, the figures — if they are generated; they come back from make-all, and committing them invites exactly the drift the packet prevents, so add them to gitignore alongside the data folder. The one nuance some advisors prefer for ASSIP: commit the final poster PDF as a released artifact, so a visitor who scans the QR sees the rendered poster without installing LaTeX — but treat it as a build output you refresh, never a source. And the rule from Lab Seven still governs: no secrets, no licensed data, ever. Your config holds a seed, not an API key; keys come from the environment; the gitignore you verified in Lab Seven is the wall.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+`make all` (or `python run_all.py`) rebuilds raw → poster in one command; `make clean && make all` is the honesty test — identical numbers mean nothing was hand-typed. Commit the wiring and source, never derived outputs or licensed data. Next: the eight-minute talk.
+:::
+
+::: notes
+To summarize part seven: the Makefile and run-all script give you one command from raw bytes to a compiled poster, with run-all the make-free fallback. The honesty test — make-clean then make-all — proves nothing was hand-typed, the only allowed difference a pinned figure timestamp. Finishing the packet is a commit of source and wiring, never derived outputs, secrets, or licensed data. That completes the second artifact. In part eight we build the third — the eight-minute talk — starting with the timed rehearsal protocol that makes it survive the room.
+:::

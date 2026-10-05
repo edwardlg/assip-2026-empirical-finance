@@ -1,0 +1,59 @@
+---
+date: "2026-07-13"
+---
+
+## Synthetic DiD: The Best of Both Worlds
+
+- Part 9 — synthetic DiD combines unit and time reweighting
+
+::: notes
+Welcome back to Chapter four-point-four, part nine of ten. In part eight we did inference with a placebo permutation test and its honest limits. Now we stitch synthetic control and diff-in-diff together into synthetic diff-in-differences, where each method's strength patches the other's hole.
+:::
+
+## Two Methods, Two Weaknesses
+
+- Arkhangelsky, Athey, Hirshberg, Imbens & Wager (2021)
+- **DiD:** equal weights, differences out a time effect — but trusts raw parallel trends
+- **Synthetic control:** reweights units beautifully — but no differencing
+- Synthetic control forces near-perfect fit → fragile; throws away levels
+- SDID does **both kinds of reweighting** *and* keeps DiD differencing
+
+::: notes
+Synthetic control has a quiet weakness, and diff-in-diff has a different one, and Arkhangelsky, Athey, Hirshberg, Imbens and Wager, in twenty-twenty-one, noticed that each method's strength patches the other's hole. Recall the two estimators side by side. Diff-in-diff uses all units with equal weight and removes a common time effect by differencing — but it relies on the parallel-trends assumption holding for the raw, unweighted control group, which we have spent the whole chapter doubting. Synthetic control reweights units to match the pre-period beautifully — but it uses no time differencing and forces the pre-period fit to be near-perfect, which can make it fragile and throws away the level information diff-in-diff exploits. Synthetic diff-in-diff does both kinds of reweighting at once and keeps the diff-in-diff differencing.
+:::
+
+## The SDID Recipe
+
+$$\arg\min_{\tau,\mu,\alpha,\beta} \sum_{i}\sum_{t} \big( Y_{it} - \mu - \alpha_i - \beta_t - \tau D_{it} \big)^2 \, \hat{w}_i\, \hat{\lambda}_t$$
+
+- **Unit weights** $\hat{w}_j$: weighted donors' pre-trend runs *parallel* (not identical)
+- **Time weights** $\hat{\lambda}_t$: pre-periods that best predict the post get more say
+- A *weighted* two-way fixed-effects DiD; strip weights → ordinary DiD
+- Allows a constant level gap — it **differences that gap away**
+
+::: notes
+The recipe, in words. Synthetic diff-in-diff computes two sets of weights. Unit weights on the donors, like synthetic control, chosen so the weighted donors' pre-period trend runs parallel to the treated unit's — note parallel, not identical. It allows a constant level gap between the treated unit and its weighted donors, because it is going to difference that gap away diff-in-diff style, so it does not need a perfect level match, only a matched trend. Time weights on the pre-periods, chosen so the pre-years that best predict the post-period get more say, down-weighting distant, less-relevant history. Then it runs a weighted two-way fixed-effects diff-in-diff using both sets of weights, where D-i-t is one for the treated unit in the post-period, alpha-i and beta-t are unit and time fixed effects from Chapter four-point-one, and tau is the treatment effect. Strip the weights — all ones — and this is ordinary two-way fixed-effects diff-in-diff. Drop the time fixed effects and push the unit weights to match levels exactly and you are back near pure synthetic control. Synthetic diff-in-diff sits between them.
+:::
+
+## When to Reach for Each
+
+- SDID is more **robust** — only needs a matched *trend*, not a level match
+- More **precise** — typically smaller variance than either parent
+- **Principled inference** — placebo or jackknife variance estimators
+- One unit, excellent pre-fit, nameable weights → classic synthetic control
+- Poor level match but good trend, or a few treated units → SDID
+
+::: notes
+The practical payoffs. Synthetic diff-in-diff is more robust — it does not crash when no convex combination matches the treated unit's level, because it only asks for a matched trend. It is more precise — Arkhangelsky and coauthors show it typically has smaller variance than either parent. And crucially it comes with a principled inference procedure, placebo-based or jackknife variance estimators they derive, so you are not stuck with synthetic control's single-unit permutation ceiling when you have a handful of treated units. When you have one treated unit and an excellent pre-period fit, classic synthetic control with placebo inference is clean and transparent — use it, and you get a weight vector you can name in a sentence. When the level match is poor but the trend match is good, or when you have a few treated units and want a variance estimate with coverage guarantees, reach for synthetic diff-in-diff. They are not rivals; it is the more general tool, and Abadie's synthetic control is the special, maximally interpretable case you should still prefer when its assumptions hold.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Synthetic DiD** reweights units *and* times and keeps DiD differencing, so it needs only a matched **trend** (not an exact level match) and brings principled variance. Use classic synthetic control for one unit with an excellent pre-fit; reach for SDID when the level match is poor or you have a few treated units.
+:::
+
+::: notes
+To summarize part nine: synthetic diff-in-diff is the more general tool. It reweights both units and times and keeps the diff-in-diff differencing, so it needs only a matched trend rather than an exact level match, and it arrives with principled variance estimators. Classic synthetic control remains the special, maximally interpretable case you prefer with one treated unit, an excellent pre-fit, and a desire for weights you can name. In part ten, the last part, we watch the code run end to end and gather the four lessons to carry forward.
+:::

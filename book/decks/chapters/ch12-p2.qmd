@@ -1,0 +1,60 @@
+---
+date: "2026-06-22"
+---
+
+## Defining Variance and Covariance
+
+- Part 2 — define variance and covariance, read covariance like a story
+
+::: notes
+Welcome back to Chapter one-point-two, part two of eight. In part one we saw that expectation is linear and forgives any dependence between variables. Now we meet the two quantities that do not forgive: variance, which measures spread, and covariance, which measures how two variables move together. We define them both, read the covariance like a story, and work one number by hand before any Greek letters pile up.
+:::
+
+## Variance: Expected Squared Deviation
+
+- $\operatorname{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
+- Average squared distance of $X$ from its own mean
+- Standard deviation $\operatorname{sd}(X) = \sqrt{\operatorname{Var}(X)}$ — same units as $X$
+- In finance we call $\operatorname{sd}(X)$ **volatility**
+
+::: notes
+Start with the definitions. The variance of X is the expected value of the squared deviation — X minus its mean, squared, averaged. Equivalently it is the expected value of X squared minus the square of the expected value of X. That second form follows by expanding the square and using linearity; verify it once by hand and never again. Variance is the average squared distance of X from its own mean. Its square root is the standard deviation of X, which lives in the same units as X itself. In finance we call that volatility. So variance is in squared units, and volatility is in the natural units of the return.
+:::
+
+## Covariance: Expected Product of Deviations
+
+- $\operatorname{Cov}(X,Y) = \mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}[Y])]$
+- Also equals $\mathbb{E}[XY] - \mathbb{E}[X]\,\mathbb{E}[Y]$
+- Both above their means $\Rightarrow$ product positive $\Rightarrow$ rise together
+- No systematic link $\Rightarrow$ products wash out, near zero
+- $\operatorname{Cov}(X,X) = \operatorname{Var}(X)$ — seed of the matrix picture
+
+::: notes
+The covariance of X and Y is the natural two-variable cousin: the expected product of their deviations — X minus its mean, times Y minus its mean, averaged. Equivalently, the expected value of X times Y minus the product of the two means. Read the first form like a story. When X is above its mean, is Y usually above its mean too? Then the product of the two deviations is usually positive, and so is the covariance — the variables tend to rise and fall together. When one is typically above its mean while the other is below, the product is negative and so is the covariance. If there is no systematic relationship, the positive and negative products wash out and the covariance is near zero. Notice that the covariance of X with itself is just the variance of X. That tiny fact is the seed of the whole matrix picture later.
+:::
+
+## A Number First
+
+| | $R_2=+0.10$ | $R_2=-0.10$ |
+|---|---|---|
+| $R_1=+0.10$ | $0.40$ | $0.10$ |
+| $R_1=-0.10$ | $0.10$ | $0.40$ |
+
+- Each asset up half, down half: means are $0$
+- Each variance $= (0.10)^2 = 0.01$
+- $\mathbb{E}[R_1 R_2] = 0.008 - 0.002 = 0.006$, so $\operatorname{Cov} = 0.006 > 0$
+
+::: notes
+A number first, before any Greek. Suppose two assets each return either plus ten percent or minus ten percent in a period, with the four-cell joint table shown — the probability of each combination. Each asset is up half the time and down half the time, so both expected returns are zero, and each variance is the expected value of the return squared, which is ten percent squared, or zero point zero one. For the covariance we need the expected value of R one times R two. The two same-direction cells contribute plus zero point zero zero eight, and the two opposite-direction cells contribute minus zero point zero zero two, for a total of zero point zero zero six. Since the means are zero, the covariance is zero point zero zero six, which is positive: the table's diagonal weight makes the assets move together. We reuse exactly this computation when we estimate covariances from real return histories — there the probabilities become observed frequencies.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Variance** is the expected squared deviation; its root, **volatility**, lives in the natural units. **Covariance** is the expected product of deviations — positive when variables rise together, negative when they oppose. And $\operatorname{Cov}(X,X)=\operatorname{Var}(X)$. Next: the four algebra rules that carry the whole book.
+:::
+
+::: notes
+To summarize part two: variance is the expected squared deviation, and its square root, volatility, lives in the natural units of the variable. Covariance is the expected product of deviations — positive when two variables rise together, negative when they move oppositely, near zero when there is no systematic link. And the covariance of a variable with itself is its variance. In part three we turn these definitions into four algebra rules — scaling, bilinearity, symmetry, and the variance of a sum — that carry almost everything in this book.
+:::

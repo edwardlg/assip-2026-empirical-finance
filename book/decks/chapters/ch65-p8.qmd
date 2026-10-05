@@ -1,0 +1,59 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## The Out-of-Sample Validation Protocol
+
+- Part 8 — gold set, held-out split, precision, recall, F1
+
+::: notes
+Welcome back to the AI co-pilot for research, part eight of fourteen. In part seven we established that an LLM label is a measurement that must be calibrated. Now the procedure, step by step. It is not optional and it is not hard. You build a gold set by hand, hold part of it out, run the model, build a confusion matrix, and report precision, recall, and F-one on data you never tuned against.
+:::
+
+## Build and Split the Gold Set
+
+- **Step 1:** hand-label a *random* sample — say 200 documents
+- Better: two coders label independently, reconcile disagreements
+- Random matters — easy cherry-picked cases flatter the classifier
+- **Step 2:** set aside ~50 as a **held-out test set**
+- The other 150 are development; touch test once, at the end
+
+::: notes
+Step one: build a gold set by hand. Draw a random sample of documents from your corpus — say two hundred — and label each one yourself. Better still, have two people label independently and reconcile disagreements, which also tells you how hard the task is for humans. This hand-labeled set is your gold standard, the closest thing you have to ground truth. It must be a random sample, because a gold set of cherry-picked easy cases will flatter your classifier. Two hundred is a reasonable floor; the smaller the gold set, the wider the confidence intervals. Step two: split the gold set. Set aside a portion — say fifty documents — as a held-out test set you will not look at while developing your prompt. The other one hundred fifty are your development set, used for tuning the rubric. This is the same discipline as a train-test split: if you tune until you nail the very examples you measure on, your reported accuracy is optimistic garbage. The test set is touched once, at the end.
+:::
+
+## Confusion Matrix, Then Precision and Recall
+
+- **Step 3:** run the model; tabulate true/false positives and negatives
+- **Step 4:** $\text{Precision}=\frac{TP}{TP+FP}$, $\text{Recall}=\frac{TP}{TP+FN}$
+- Precision: when it says negative, how often is it right?
+- Recall: of truly negative filings, how many did it catch?
+- $F_1$ is the harmonic mean — high only when both are high
+
+::: notes
+Step three: run the model on the gold set and build a confusion matrix. For a binary task — negative versus not-negative — the model's labels versus the gold labels fall into four cells: true positives, false positives, false negatives, and true negatives. Step four: compute precision, recall, and F-one. Precision equals true positives over true positives plus false positives — when the model says negative, how often is it right? It penalizes false alarms. Recall equals true positives over true positives plus false negatives — of all the truly negative filings, how many did the model catch? It penalizes misses. F-one is the harmonic mean of the two — high only when both are high.
+:::
+
+## Why Not Accuracy — and Report Out of Sample
+
+- **Accuracy lies under class imbalance** — financial text is imbalanced
+- If 5% are truly negative, "label all not-negative" scores 95%
+- That classifier is useless — its recall is zero
+- **Step 5:** freeze the prompt, then evaluate the test set **once**
+- Never trust a raw accuracy claim — produce your own numbers
+
+::: notes
+Why not just report accuracy — the fraction of all labels correct? Because accuracy lies under class imbalance, and financial text is almost always imbalanced. Suppose only five percent of filings are truly negative. A lazy classifier that labels everything not-negative scores ninety-five percent accuracy and is useless, because its recall on the class you care about is zero. Precision and recall expose the lie accuracy hides; report them with confidence intervals. Step five: report performance on the held-out test set, honestly. Tune the rubric on the development set as much as you like, but the numbers in your paper are precision, recall, and F-one on the fifty test documents, evaluated exactly once after the prompt is frozen. The deepest point: never trust a raw accuracy claim, including a model's claim about itself. Produce your own out-of-sample numbers on your own gold set, and report them next to your main result so the referee can judge how much label error your conclusion tolerates.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Validate like any instrument: a **random** gold set, a **held-out** split, a confusion matrix, then **precision, recall, and F-one** on the test set, evaluated once. Never report bare accuracy under imbalance. Earn the right to apply the classifier to all 40,000 documents. Next: the four critical limits.
+:::
+
+::: notes
+To summarize part eight: validate your classifier the way you validate any instrument. Build a random gold set by hand, hold out a test portion, tune the rubric only on the development set, then run the model, build a confusion matrix, and compute precision, recall, and F-one. Report those out-of-sample numbers — never bare accuracy, which lies under the class imbalance that pervades financial text. Evaluate the test set exactly once, after freezing the prompt. If the numbers clear your bar, you have earned the right to label the full corpus. In part nine we cover the first two of four critical limits that can wreck an AI-assisted study.
+:::

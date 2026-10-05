@@ -1,0 +1,63 @@
+---
+date: "2026-07-27"
+---
+
+## Precision, Recall, F1, and Kappa
+
+- Part 6 — turn four counts into precision, recall, $F_1$, kappa
+
+::: notes
+Welcome back to Reading Guide Pack Six and the AI Lab Manual, part six of eight. In part five we built a hand-labeled gold set, split it into a dev set and a held-out test set, and scored the model with a confusion matrix of four counts. Now we turn those four counts into the numbers you actually report — precision, recall, and F-one — and then add the one number beginners skip but a careful researcher never does: Cohen's kappa, which measures agreement above chance. These are the numbers that decide whether an LLM label is good enough to put into a regression.
+:::
+
+## Precision and Recall
+
+$$\text{Precision}=\frac{TP}{TP+FP},\quad \text{Recall}=\frac{TP}{TP+FN}$$
+
+- **Precision**: when it says layoff, how often is it right?
+- **Recall**: of the real layoffs, how many did it catch?
+- They **trade off** — report both
+- Scream "layoff" at everything → perfect recall, terrible precision
+
+::: notes
+From the four counts come the first two numbers you report. Precision equals true positives over true positives plus false positives — when the model says layoff, how often is it right. Recall equals true positives over true positives plus false negatives — of the real layoffs, how many did it catch. They trade off: a model that screams layoff at everything has perfect recall and terrible precision, while one that only flags the most obvious cases has high precision and poor recall. Which one matters more depends on your downstream use, so you always report both, never just the one that looks better.
+:::
+
+## $F_1$ and a Worked Example
+
+$$F_1 = 2\cdot\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}$$
+
+- $F_1$ = harmonic mean — punishes **lopsidedness**
+- Worked: $TP{=}80,\ FP{=}20,\ FN{=}40$
+- Precision $= 80/100 = 0.80$
+- Recall $= 80/120 \approx 0.67$, so $F_1 \approx 0.73$
+- Good for screening — not a headline coefficient without correction
+
+::: notes
+F-one is the harmonic mean of precision and recall, a single summary that punishes lopsidedness — you cannot get a high F-one by acing one and bombing the other. Here is a worked feel for the numbers. Suppose you have eighty true positives, twenty false positives, and forty false negatives. Precision is eighty over one hundred, which is zero-point-eight-zero. Recall is eighty over one hundred twenty, about zero-point-six-seven. And F-one works out to about zero-point-seven-three. That is a classifier you might happily use for screening a large corpus, but not one whose labels you would drop straight into a headline regression coefficient without a correction for the error rate.
+:::
+
+## Cohen's Kappa — Agreement Above Chance
+
+$$\kappa=\frac{p_o-p_e}{1-p_e}$$
+
+- Accuracy treats humans as **infallible** — they are not
+- $p_o$ = observed agreement; $p_e$ = agreement expected by chance
+- $\kappa=1$ perfect, $\kappa=0$ chance-level
+- Compute **human–human**: is the task even well-defined?
+- Compute **LLM–human**: is the model as good as a second annotator?
+
+::: notes
+One number more, the one beginners skip. Accuracy and F-one compare the model to humans as if the humans were infallible — but if your two human labelers only agreed seventy percent of the time, a model that agrees with the gold set seventy-five percent of the time is barely better than the noise floor. So report inter-rater agreement with Cohen's kappa, which measures agreement above what you would get by chance. Kappa equals p-observed minus p-expected, all over one minus p-expected, where p-observed is the fraction of items two raters labeled the same and p-expected is the fraction they would match by chance given each rater's label frequencies. Kappa of one is perfect; kappa of zero is chance-level. Compute it twice: between the two humans, to know whether your rubric is even well-defined; and between the LLM and a human, to know whether the model is as reliable as a second annotator. If human-human kappa is zero-point-five, the task is ambiguous — fix the rubric before blaming the model. If LLM-human kappa approaches human-human kappa, the model is a credible annotator.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+An LLM label is a **noisy measurement** of a latent concept, exactly like a sentiment score or a patent-value proxy. It earns its place in a regression only after you report its precision, recall, $F_1$, and **kappa** on a held-out test set. Anything less is running KPSS without the validation table. Next: the responsible-use checklist for your capstone.
+:::
+
+::: notes
+To summarize part six, in one sentence to carry into your capstone: an LLM label is a noisy measurement of a latent concept, exactly like a sentiment-dictionary score or a patent-value proxy, and it earns its place in a regression only after you have reported its precision, recall, F-one, and kappa on a held-out, human-labeled test set. Precision and recall trade off, so report both; F-one summarizes them; and never forget Cohen's kappa, because agreement that ignores the chance floor is not agreement at all. Anything less and you are running Kogan and coauthors without the validation table. In part seven we begin the responsible-use checklist that keeps your capstone honest and reproducible — starting with disclosure, reproducibility, and the leakage traps unique to language models.
+:::

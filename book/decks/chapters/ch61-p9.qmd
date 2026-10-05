@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## KPSS: Build a Piece of the Measure
+
+- Part 9 — three exercises that rebuild the measure yourself
+
+::: notes
+Welcome back to Chapter six-point-one, part nine of ten. In part eight we finished the referee's critique — selection, baked-in efficiency, and associations. Now we stop critiquing and start building. You do not understand a constructed measure until you have built a piece of it yourself. Three escalating exercises live in notebook six-point-one, all runnable on your laptop with a seeded synthetic fallback.
+:::
+
+## Exercise 1 — Inspect and Aggregate the Panel
+
+- Load the patent-level values; look before you trust
+- Plot the distribution — wildly right-skewed
+- A few blockbusters dwarf thousands of small patents
+- **Aggregate** to a firm-year panel by summing within firm-year
+- Print the top firm-years — do the famous innovators appear?
+
+::: notes
+All three exercises live in notebook six-point-one, the patent-value panel. Real CRSP daily returns stay read-only on GMU infrastructure, so the notebook ships a seeded synthetic fallback with the same schema — simulated grants, grant dates, and daily returns with a known true patent value baked in. Exercise one: inspect and aggregate the public patent-value panel. Download, or load the synthetic stand-in for, the patent-level values, and look at them before you trust them. Plot the distribution of per-patent dollar values — you should find it wildly right-skewed, a few blockbuster patents dwarfing thousands of small ones, which is the whole motivation for not counting patents equally. Then aggregate to a firm-year panel: sum patent values within firm and year to build the central data object. Print the top-ten firm-years by total innovation value and ask whether the names make sense — do the famous innovators show up? The deliverable is the firm-year panel plus a one-paragraph sanity check on its skew and its top entries, and a note on which patents lack a value, and why.
+:::
+
+## Exercise 2 — Rebuild One Patent's Value
+
+- Reuse your Week-4 event-study machine
+- Pull daily returns; fit a market model on the estimation window
+- Compute the **abnormal return** over the grant window
+- Multiply by market cap; compare to the published value
+- Then **stress it:** vary window length and normal-return model
+
+::: notes
+Exercise two: rebuild a single patent's value from a grant-window event study. Reuse your Week-Four event-study machine. For one patent, real or synthetic, pull the firm's daily returns around the grant date, fit a market model on a pre-event estimation window, compute the abnormal return over the short grant window, multiply by market capitalization to convert to dollars, and compare your hand-built number to the published value. Then stress the construction on purpose: vary the window length — one day, three days, five days — and the normal-return model, and watch the estimate move. The lesson — that the measure depends on the modeling choices the vulnerabilities section flagged — becomes a number on your own screen, not a caveat you read past.
+:::
+
+## Exercise 3 — Validate, Then Break a Validation
+
+- Regress a future outcome on this year's innovation value
+- Confirm the positive, significant association
+- Then **inject a confound:** simulated earnings returns in windows
+- Rebuild the measure; watch the validation degrade
+- See why the short window and aggregation are the defenses
+
+::: notes
+Exercise three: validate the measure, then break a validation. Reproduce the spirit of the paper's headline validation — in the firm-year panel, regress a future outcome, next year's profitability or growth, on this year's innovation value, and confirm the positive, significant association that earns the measure its credibility. Then inject a confound: contaminate a subset of grant windows with simulated earnings-announcement returns, rebuild the value measure on the contaminated windows, and watch the validation degrade. You will see directly how confounding news in the window eats into the measure's predictive power — and why the short window and aggregation are the defenses.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three escalating exercises in notebook six-point-one: **inspect** the wildly skewed panel and aggregate to firm-years, **rebuild** one patent's value from a grant-window event study and stress the choices, then **validate and break** the measure with an injected confound — turning every caveat into a number on your screen.
+:::
+
+::: notes
+To summarize part nine: the notebook turns the paper into hands-on work. Exercise one inspects the skewed value panel and aggregates it to a firm-year object, the central data structure. Exercise two rebuilds one patent's value with your Week-Four event-study machine, then stresses the window length and normal-return model so you see the measure move. Exercise three validates the measure against a future outcome, then deliberately breaks it by injecting an earnings confound. In part ten, the last part, we read K-P-S-S one final time like a referee — three margin questions to carry into your capstone.
+:::

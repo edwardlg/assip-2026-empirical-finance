@@ -1,0 +1,55 @@
+---
+date: "2026-07-06"
+---
+
+## When It Fails: CIA Is Untestable
+
+- Part 11 — CIA is untestable; matching is omitted-variable bias
+
+::: notes
+Welcome back to Chapter three-point-two, part eleven of twelve. In part ten we earned belief with a balance table. Now the part the brochures leave out: CIA is fundamentally untestable, beautiful balance cannot save you from an unobserved confounder, and matching is exactly the omitted-variable bias of Week Two in a new costume.
+:::
+
+## CIA Cannot Be Tested
+
+- Everything above assumed $\mathbf{X}$ holds *all* the confounders
+- CIA is a statement about the treated's unobserved $Y_i(0)$
+- That quantity is exactly what we never see
+- Balance on $\mathbf{X}$ says nothing about *unobserved* confounders
+
+::: notes
+Everything above is conditional on CIA holding — on X containing all the confounders. And here is the brutal fact: CIA is fundamentally untestable. You cannot check it in the data, ever. The reason is the fundamental problem of causal inference itself. CIA is a statement about the unobserved untreated outcome of the treated — that it matches the untreated within cells of X. But the untreated outcome for a treated unit is exactly the thing we never see. There is no statistic that confirms two groups have the same untreated-outcome distribution given X, because half of that distribution is missing by construction. Beautiful balance on X does not imply balance on the unobserved confounders, and unobserved confounders are, by definition, not in your balance table.
+:::
+
+## Maya's Missing Confounder: Motivation
+
+- Motivation drives *both* enrolling and cleaning up the application
+- It affects approval and enrollment — and is *not* in $\mathbf{X}$
+- Then CIA fails, no matter how good your balance table
+- Matched enrollees are more motivated; balance is silent on it
+
+::: notes
+This is where the warning from page one comes due. Suppose Maya's data lack a key driver: applicant motivation — the same drive to improve one's finances that makes someone both seek out the free course and clean up their application in other ways the lender rewards. Motivation affects approval and affects enrollment, and it is not in X. Then CIA fails. Run the propensity score on credit, income, and age; match beautifully; produce a balance table with every standardized mean difference under zero-point-zero-five — and your estimate is still biased, because the matched enrollees are more motivated than their matched non-enrollee twins, and motivation independently raises approval. Your gorgeous balance table is silent about it. Matching balanced what you measured and is helpless about what you did not.
+:::
+
+## It Is Just Omitted-Variable Bias
+
+- An omitted confounder *is* an omitted variable
+- Bias $= \beta_2 \cdot \delta_1$ — outcome effect times treatment association
+- Motivation: $\beta_2 > 0$ and $\delta_1 > 0 \Rightarrow$ effect biased *upward*
+- CIA is the potential-outcomes name for "no omitted confounders"
+
+::: notes
+Map this onto Week Two and the equivalence becomes exact. A confounder omitted from X is precisely an omitted variable, and the bias it creates is the omitted-variable bias of Chapter two-point-five — the product of the omitted variable's effect on the outcome, beta-two, and its association with treatment, delta-one. Motivation has beta-two positive, since it raises approval, and is positively associated with enrolling, so delta-one is positive. By the two-sign rule, the program effect is biased upward: matching on observables alone would overstate the course. CIA is just the potential-outcomes name for "no omitted confounders" — for the zero-conditional-mean condition that Chapter two-point-two demanded. Matching does not buy you anything that controlling for X in a regression does not also buy. Both are selection-on-observables; both die the same death from the same omitted confounder.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**CIA is untestable** — it concerns the treated's unobserved $Y(0)$, which is never seen, so no balance table can confirm it. An omitted confounder like motivation is exactly **omitted-variable bias** $\beta_2\delta_1$ in potential-outcomes costume. Matching dies the same death as regression. Next: what matching *does* give you, and when not to trust it.
+:::
+
+::: notes
+To summarize part eleven: CIA is fundamentally untestable, because it concerns the treated's unobserved untreated outcome — the very thing the fundamental problem of causal inference hides from us. So no balance table, however beautiful, can confirm it. An omitted confounder like motivation, which drives both enrollment and approval, breaks CIA and biases the estimate, and balance on the measured covariates is silent about it. That bias is exactly the omitted-variable bias of Week Two, the product beta-two times delta-one, here biased upward. Matching is selection-on-observables and dies the same death as regression with controls. In part twelve, the finale, we ask what matching genuinely does give you, when not to trust it, and what to carry forward.
+:::

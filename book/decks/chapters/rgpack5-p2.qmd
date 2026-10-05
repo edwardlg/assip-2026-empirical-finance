@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## The Reader's-Guide Template: Question, Identification, Data
+
+- Part 2 — the first three Reader's-Guide boxes: question, identification, data
+
+::: notes
+Welcome back to How to Read an Empirical Paper, part two of seven. In part one we set the mindset: skeptical, table-first, checklist in hand. Now we open the checklist itself. Every Reader's Guide this week has the same seven parts, in the same order, and the order is not decoration — it is the order in which a claim has to survive scrutiny. This part covers the first three boxes: the question, the identification strategy, and the data.
+:::
+
+## The Order Is Not Decoration
+
+- Seven boxes, same order, every paper
+- The order is how a claim **survives scrutiny**
+- Sharp question, no identification = a guess
+- Great identification, thin data = a curiosity
+- Apply it to any empirical paper, for life
+
+::: notes
+Before the boxes, why the order matters. A result that has a sharp question but no credible identification is just a guess. A result with great identification but thin data is a curiosity. The seven parts run in the order a claim must clear to be believed. You will fill in these boxes for Fama and French on Monday and for an unseen paper on Friday. Apply this template to any empirical paper you ever read — for class, for your capstone, or for the rest of your professional life. It does not expire when the course ends.
+:::
+
+## Box 1 — Research Question
+
+- One sentence, plain English, ending in "?"
+- Not "studies the cross-section of returns"
+- But "does **size** predict average return after market risk?"
+- Name the **outcome** being explained
+- Name the **key right-hand-side variable**
+
+::: notes
+Box one: the research question. One sentence, in plain English, ending in a question mark. Not "this paper studies the cross-section of returns," which is a topic, not a question. Instead: "does a stock's size predict its average return after you account for market risk?" If you cannot state the question as a question, you do not yet understand the paper. Force yourself to name two things right here. Name the outcome — what is being explained. And name the key right-hand-side variable — the thing whose effect we actually care about. Those two anchors keep every later box honest.
+:::
+
+## Box 2 — Identification Strategy
+
+- *How* does the paper isolate the key variable's effect?
+- Name the design: portfolio sort, panel, I V, DiD, R D
+- State the **identifying assumption** in one sentence
+- The condition under which the estimate equals the target
+- This is the **single most important box**
+
+::: notes
+Box two: the identification strategy. How does the paper claim to isolate the effect of the key variable from everything else? First name the design — a portfolio sort, a panel regression with fixed effects, an instrument, a difference-in-differences, a regression discontinuity. Then, in one sentence, state the identifying assumption: the condition under which the estimate equals the thing we want. This is the single most important box on the whole guide. Most of the rest of the guide exists in service of one decision — deciding whether that one sentence is true.
+:::
+
+## Box 3 — Data
+
+- Unit of observation: firm-month? person? state-year?
+- Sample period, source, number of observations
+- Sources like C R S P, Compustat, SEC EDGAR, surveys
+- Note **filters** — "drop financial firms," "require two prior years"
+- Filters are decisions, and decisions can be levers
+
+::: notes
+Box three: the data. What is the unit of observation — a firm-month, a person, a state-year? What is the sample period, the source, and the number of observations? Sources you will see include C R S P, Compustat, the S E C's EDGAR system, and survey data. Note any sample filters, like "we drop financial firms" or "we require two years of prior data," because filters are decisions, and decisions can be levers. Note look-ahead and survivorship traps you suspect, even when the paper itself stays silent about them. The data box is where quiet choices hide.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The first three boxes are **question** (one sentence ending in "?", naming outcome and key regressor), **identification** (the design plus the identifying assumption in one sentence — the most important box), and **data** (unit, period, source, filters). Filters are levers. Next: the last four boxes.
+:::
+
+::: notes
+To summarize part two: the first three boxes are the question, the identification, and the data. The question is one sentence ending in a question mark, naming the outcome and the key regressor. The identification names the design and states the identifying assumption in one sentence — the single most important box. The data box pins down the unit, period, source, and filters, remembering that filters are decisions and decisions can be levers. In part three we finish the template with the last four boxes: reading order, what's clever, what's vulnerable, and the replication exercises.
+:::

@@ -1,0 +1,72 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Bias vs. Wobble: Why a Sharp Estimate Can Be Wrong
+
+**Learning objectives.** By the end you can:
+
+- Distinguish bias from standard-error wobble
+- Name the three classic threats to $\hat\beta$
+- Explain why bias survives any sample size
+- Trace each threat to $\mathbb{E}[\varepsilon \mid x] = 0$ failing
+
+::: notes
+Welcome to Week Two, Chapter two-point-five, part one of nine. This is the chapter where the regression you spent four chapters learning to trust gets a hard, honest look. Our character Maya has a clean dataset and a clean fair-lending question, and she is about to make the single most expensive mistake in all of empirical work. Over these nine parts we meet the three classic ways a coefficient can be biased — pointed at the wrong target — no matter how much data you collect. This is the bridge from regression mechanics to causal inference.
+:::
+
+## Maya's "Finding"
+
+- Studies mortgage approvals at a regional lender
+- Regresses approval on a demographic indicator plus a few controls
+- Coefficient is negative, significant, with $t = 4.1$
+- By Chapter 1.5's rules, she has "found" a gap
+
+::: notes
+Maya is studying mortgage approvals at a regional lender, asking whether applicants from one demographic group are approved at lower rates than otherwise-similar applicants. That is a fair-lending question with real legal teeth. She runs the regression every beginner would run: approval — one for approved, zero for denied — on a demographic indicator, plus a handful of controls she happens to have, like loan amount and applicant age. The coefficient on the demographic indicator comes back negative and statistically significant, with a comfortable t-statistic of four-point-one. By the machinery of Chapter one-point-five — estimate divided by standard error, compared to a critical value — she has, quote, found a gap. And she is about to believe it.
+:::
+
+## A Sharp Standard Error on a Wrong Number
+
+- Chapters 2.1–2.4 taught you to compute $\hat{\beta}$ and quantify its wobble
+- A standard error says how much the estimate bounces if you redraw the sample
+- It says nothing about whether the center is the right number
+- Maya's $t = 4.1$ is a precise estimate of a biased quantity
+
+::: notes
+Here is the problem, stated bluntly. Everything you learned in Chapters two-point-one through two-point-four was about computing beta-hat correctly and quantifying how much it wobbles — the OLS estimator, the zero-conditional-mean assumption, partialling-out, and robust standard errors. But a standard error only tells you how much your estimate would bounce around if you redrew the sample. It says nothing whatsoever about whether the number you are bouncing around is the right number. You can have a razor-sharp standard error on a completely wrong coefficient. Maya's t equals four-point-one is precisely that danger — a precise estimate of a biased quantity.
+:::
+
+## Bias Is the Failure of $\mathbb{E}[\varepsilon \mid \mathbf{X}] = 0$
+
+- True model: $y = \beta_0 + \beta_1 x + \varepsilon$, want $\beta_1$ = causal effect
+- OLS is consistent only if $\mathbb{E}[\varepsilon \mid x] = 0$ (exogeneity)
+- When $\varepsilon$ moves with $x$, $x$ is **endogenous** and $\hat{\beta}_1$ misses
+- That gap is **bias** — it does not shrink with more data
+
+::: notes
+Let us be precise about what bias means. Write the true data-generating process as: y equals beta-zero plus beta-one times x plus the error epsilon, where we want beta-one to be the causal effect of x on y. OLS recovers that beta-one, on average, only if the zero-conditional-mean assumption holds — the expected value of epsilon given x equals zero. In words: the part of y your model does not explain has nothing systematic to do with x. When that holds, x is exogenous and beta-one-hat converges to the true beta-one; it is consistent. When it fails — when epsilon and x move together — x is endogenous, and beta-one-hat converges to something else. That gap is the bias, and the cruel part: it does not shrink with more data. A biased estimator with a million observations is a precisely-wrong number.
+:::
+
+## Same Disease, Three Vectors
+
+- Every threat is a story of how $\mathbb{E}[\varepsilon \mid x] = 0$ breaks
+- **Omitted variable bias** — a relevant, correlated variable hides in $\varepsilon$
+- **Measurement error** — your $x$ is a noisy copy of the true $x$
+- **Functional-form error** — unmodeled curvature lands in $\varepsilon$
+
+::: notes
+Every threat in this chapter is a story about how the zero-conditional-mean assumption breaks. Omitted variable bias breaks it by stuffing a relevant, correlated variable into epsilon. Measurement error breaks it by making the x you regress on differ from the true x, mechanically correlating your regressor with the error. Functional-form error breaks it by dumping unmodeled curvature into epsilon, where it again correlates with x. Same disease, three vectors. For each, we follow the reveal-the-trick structure: state the result, see it on real numbers, derive the algebra, see which direction it pushes, and write the code to watch it happen.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A standard error measures **wobble**, not **aim**. Bias is the gap between what $\hat{\beta}$ converges to and the truth, and it survives any amount of data. All three threats this week are the same failure: $\mathbb{E}[\varepsilon \mid x] = 0$ breaks.
+:::
+
+::: notes
+To summarize part one: a standard error measures how much your estimate wobbles, never whether it is aimed at the right target. Bias is the gap between what beta-hat converges to and the true causal parameter, and unlike sampling noise it does not shrink as the sample grows. All three threats are the same failure of the zero-conditional-mean assumption. In part two we take the first and most important threat head-on: omitted variable bias, and watch it manufacture a fifteen-percentage-point penalty in a world with literally zero discrimination.
+:::

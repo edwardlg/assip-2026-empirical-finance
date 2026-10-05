@@ -1,0 +1,71 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## Unbiased Versus Consistent: The Lesson That Reorders Everything
+
+- Part 9 — unbiased versus consistent, and the chapter's architecture
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part nine of nine, the finale. In part eight we named the smallest-variance property efficiency and warned that it presumes unbiasedness. Now we follow that trap to the chapter's deepest lesson — the distinction between unbiased and consistent — and see why it reorders the whole contract.
+:::
+
+## Two Independent Virtues
+
+- Gauss–Markov is a *finite-sample* theorem
+- Consistency: $\hat{\boldsymbol{\beta}}_N \xrightarrow{p} \boldsymbol{\beta}$ as $N$ grows
+- Unbiased: center at fixed $N$
+- Consistent: where it collapses as $N\to\infty$
+- Logically independent — either, both, or neither
+
+::: notes
+Gauss–Markov is a finite-sample theorem. Every word of it — unbiased, minimum variance — is a statement about a fixed N. But Chapter one-point-three introduced a second, large-sample virtue: consistency, the property that an estimator converges in probability to the truth as the sample grows, written beta hat sub N converges in probability to beta. These two virtues are not the same, and confusing them is the most expensive conceptual error in applied work. Unbiasedness is about the center of the sampling distribution at a fixed N. Consistency is about where that distribution collapses as N grows. They are independent: an estimator can have either, both, or neither.
+:::
+
+## The Two Warning Cases
+
+- **Unbiased but inconsistent:** use only the first 5 loans
+- Unbiased, but variance never shrinks — useless
+- **Biased but consistent:** bias melts as $N\to\infty$
+- Instrumental variables works this way
+- With big data, prefer biased-but-consistent
+
+::: notes
+Two warnings. First, unbiased but inconsistent. Imagine Maya builds an estimator using only the first five loans, ignoring the rest forever. By the part-four proof it is unbiased, but its variance never shrinks, however many millions of loans she later collects, because the recipe throws them away. It never settles onto beta. Unbiased, inconsistent, useless. Second, biased but consistent. Many key estimators in this book are biased at every finite N yet consistent — their bias melts to zero as N grows. Instrumental variables works this way, and beats an unbiased-but-inconsistent rival in any large dataset. O L S, gratifyingly, has both virtues under assumptions one through three.
+:::
+
+## A Number That Should Frighten You
+
+- Suppose the true direct effect of income is $\beta_1 = 0$
+- Maya omits credit; income inherits credit's effect
+- With 400 loans: wide SE, she might hedge
+- With 400,000 loans: SE shrinks, $-0.42$ with three stars
+- More data made her *more sure of something false*
+
+::: notes
+Here is a number that should frighten you. Suppose rates depend on income only through creditworthiness — high earners have better credit, and it's credit, not income itself, that earns the lower rate. So the genuine direct effect of income, holding credit fixed, is zero: beta one equals zero. But Maya omits credit. Her income coefficient then inherits the correlation of income with credit, times the effect of credit on rate. With four hundred loans her standard error is wide enough to hedge. With four hundred thousand loans it shrinks to nothing, and she reports negative zero point four two with three stars and a tiny interval — a precise estimate of an effect that does not exist. The data did not make her more right. It made her more sure of something false.
+:::
+
+## The Architecture, and What's Next
+
+- A 5-clause contract paid out in 3 tiers
+- 1–3: unbiased · +4: BLUE · +5: exact inference
+- Assumption 4 fails: fixable (Ch 2.4, robust SEs)
+- Assumption 3 fails: existential — no data fixes it
+- Ch 2.3 · Ch 2.4 · Ch 2.5 tour the broken clauses
+
+::: notes
+Step back and see the architecture. We signed a five-clause contract paying out in three tiers: assumptions one through three gave unbiasedness, adding four gave the BLUE guarantee, adding five gives exact inference. The unbiased-versus-consistent distinction tells us which violations are annoying and which are existential. A failure of homoskedasticity costs efficiency and honest standard errors — fixable in Chapter two-point-four. A failure of zero conditional mean costs the truth itself, and no data fixes it. Best is a promise about the tightness of your arrows, not whether you aim at the right target. The rest of Week Two tours the broken clauses: Chapter two-point-three relaxes functional form, Chapter two-point-four confronts heteroskedasticity, Chapter two-point-five stares down the master fault.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Unbiased** is the center at fixed $N$; **consistent** is where it lands as $N\to\infty$ — independent virtues. A consistent estimator of the *wrong* target just gets more confident: omit credit and $-0.42$ sharpens around an effect that's zero. Assumption 3 failures are existential; no data fixes them. That's why Ch 2.5 exists.
+:::
+
+::: notes
+To summarize the finale: unbiasedness is the center of the sampling distribution at a fixed N; consistency is where it collapses as N goes to infinity. They are independent — an estimator can be unbiased but inconsistent, or biased but consistent, like instrumental variables. The danger is a consistent estimator of the wrong target: omit credit, and O L S converges confidently onto negative zero point four two, an effect that is truly zero. That is why a failure of zero conditional mean is existential while homoskedasticity is merely annoying. Gauss–Markov guarantees precision, conditional on having won the harder battle for accuracy. That battle is Chapter two-point-five. Thank you for working through Chapter two-point-two.
+:::

@@ -1,0 +1,57 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## The Hierarchy of Bad Behavior
+
+- Part 8 — the Student's-$t$ dial from slow to broken
+
+::: notes
+Welcome back to Chapter one-point-four, part eight of nine. In part seven fat tails broke Devon's confidence interval. Now we get precise. There is a hierarchy of bad behavior, controlled by a single dial — the degrees of freedom of the Student's t distribution — and we use it to locate exactly where slow becomes broken, then watch the bell refuse to form.
+:::
+
+## "Has a Mean" $\ne$ "CLT Bites Quickly"
+
+- Mean $\mu$ and variance are **separate integrals**
+- The first can converge while the second blows up
+- **Tail probabilities** decide which
+- Use **Student's $t$** with $\nu$ degrees of freedom as the dial
+
+::: notes
+Here is the distinction Devon needs, subtle enough to deserve its own slide. A distribution can have a perfectly well-defined mean and still have a gigantic — or even infinite — variance. The mean and the variance are separate integrals; the first can converge while the second blows up. What decides it is the tail probabilities — how much weight sits far out. A family that makes this concrete, and that finance routinely uses as a stand-in for fat-tailed returns, is the Student's t distribution with nu degrees of freedom. Think of nu as a dial controlling tail weight: small nu means heavy tails, large nu means the tails thin out toward the normal. By turning that one dial we can march through the entire hierarchy of bad behavior, from merely slow to completely broken, and see exactly where each kind of failure begins.
+:::
+
+## The Hierarchy, Rung by Rung
+
+- $\nu>2$ (e.g. $\nu=5$): finite variance — CLT holds but **slow**
+- $\nu=2$: mean exists, variance **infinite** — CLT violated
+- $\nu=1$ (**Cauchy**): even the **mean** fails to exist
+- Cauchy: mean of a million draws $\sim$ one draw — **LLN itself fails**
+
+::: notes
+Walk down the dial. For nu greater than two — say nu equals five, a common fit for daily equity returns — the variance is finite, so the Central Limit Theorem does eventually hold, but slowly. The tails are heavy enough that you might need N in the hundreds or low thousands, not thirty, before the standardized mean looks normal. At nu equals two, the mean still exists but the variance is infinite. The theorem's hypothesis is violated outright — there is no sigma to standardize by, and the histogram never settles onto the bell. At nu equals one, the Cauchy distribution, the canonical horror story, even the mean fails to exist; the integral that should define it does not converge. The sample mean of N Cauchy draws has the same distribution as a single draw — averaging a million is no more informative than looking at one. Even the Law of Large Numbers fails.
+:::
+
+## See It: The Bell That Refuses to Form
+
+- Rerun the part-five experiment with Student's $t$, $\nu=3$
+- $N=30$: too peaked in the middle, too heavy in the tails
+- $N=100$: better, still visibly off
+- Push $N$ into the **thousands** before it matches the bell
+- Same theorem, same standardization — only the tails changed
+
+::: notes
+The simulation that makes this unforgettable is the exact experiment from part five, rerun with a fat-tailed population in place of the exponential. Devon uses a Student's t at three degrees of freedom — heavy enough to misbehave, but with a finite variance so the comparison to the normal is at least defined. Compare the picture to Priya's. With the exponential, N equals thirty already matched the bell. Here, at N equals thirty, the histogram is far too peaked in the middle and too heavy in the tails — too much probability piled up past plus or minus three standard errors, because the occasional monster draw keeps throwing the mean far out. By N equals one hundred it is better but still visibly off. You have to push N into the thousands before the histogram finally agrees with the dashed normal curve. Same theorem, same standardization, drastically slower convergence — and the only thing that changed is the weight in the tails.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Turn the Student's-$t$ dial: $\nu>2$ gives a **slow** CLT, $\nu=2$ gives **infinite variance and no CLT**, $\nu=1$ (Cauchy) breaks even the **LLN**. Having a mean buys only the *hope* of the LLN. With $\nu=3$, the bell needs $N$ in the **thousands**. Next: the Cauchy horror, and what Devon should do.
+:::
+
+::: notes
+To summarize part eight: a distribution can have a mean and still have infinite variance — the two are separate integrals decided by the tails. Using the Student's t dial, nu above two gives a slow Central Limit Theorem, nu equals two gives infinite variance and no theorem at all, and nu equals one, the Cauchy, breaks even the Law of Large Numbers. So having a mean buys only the hope of the Law, not a fast bell. We saw it in simulation: with three degrees of freedom the bell needs N in the thousands. In the final part we watch the Cauchy running mean refuse to settle, and decide what Devon should actually do.
+:::

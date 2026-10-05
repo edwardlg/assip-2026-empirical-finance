@@ -1,0 +1,71 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## Merge Discipline: Cardinality Is a Claim
+
+- Part 2 — merge safely: assert cardinality, check the match rate
+
+::: notes
+Welcome back to Building the Analysis Dataset, part two of seven. In part one we learned to join through a researched, date-aware crosswalk. Now it is time to merge. This part installs the most valuable habit in the chapter: treating a merge's cardinality as a claim you must verify, and measuring how complete the merge was.
+:::
+
+## Every Merge Has a Cardinality
+
+- One-to-one? One-to-many? Many-to-one? Many-to-many?
+- You think you know; you are often wrong
+- A wrong-cardinality merge does not crash
+- **Many-to-many** silently makes a Cartesian explosion
+- 3 left times 4 right gives 12 rows
+
+::: notes
+Every merge has a cardinality — a claim about how rows on the left relate to rows on the right. One-to-one? One-to-many? Many-to-one? Or many-to-many? You think you know, and you are frequently wrong, because of a duplicate you did not know was there. A merge whose cardinality is not what you assumed does not crash. It silently does the wrong thing — most destructively a many-to-many join, a Cartesian explosion. If a key appears three times on the left and four on the right, you get twelve output rows where you expected far fewer. Every duplicated row quietly reweights your regression, with no warning.
+:::
+
+## Assert the Cardinality With `validate=`
+
+- `validate="many_to_one"` asserts the relationship
+- First three legal values *check* uniqueness, raise on violation
+- `"many_to_many"` checks nothing — the silent default
+- Converts silent corruption into a loud exception
+- If you change one thing: write `validate=`
+
+::: notes
+The fix is one keyword. Pandas lets you assert the cardinality and refuses to proceed if reality disagrees, through the validate argument to merge. Merge CRSP onto the link table on PERMNO and write validate equals many-to-one. You assert that many CRSP rows match at most one link row. If a duplicate link exists, pandas raises a merge error instead of exploding the panel. The legal values are one-to-one, one-to-many, many-to-one, and many-to-many. The first three check a uniqueness assumption and raise if violated; many-to-many checks nothing and is the default. Always pass validate. It converts a silent data-corruption bug into a loud, immediate exception at the exact line that caused it. If you write only one thing differently after this chapter, write validate.
+:::
+
+## Check the Match Rate
+
+- `validate=` checks cardinality, not completeness
+- Use `how="left"` and `indicator=True` while building
+- Match rate = fraction of left rows that found a partner
+- 98 percent linked? Know the missing 2 percent
+- 60 percent linked? **Stop** — something is wrong
+
+::: notes
+But validate only checks cardinality; it does not tell you how complete your merge was. For that you check the match rate — what fraction of your left rows found a partner. So while building, use a left join with an indicator. The indicator adds a merge column flagging each row as left-only, both, or right-only; the share flagged both is your match rate. Now you have a number to defend. If ninety-eight percent link, fine — the missing two percent are probably foreign listings, closed-end funds, or securities Compustat does not cover, and you should say so. If only sixty percent link, stop. Something is wrong with your identifiers, date filter, or link-type selection, and any result on the sixty percent is selected on a criterion you have not understood. A match rate is the first place a careful reader looks to decide whether to trust your panel.
+:::
+
+## Two Pandas Hygiene Rules
+
+- After a filter you mean to edit, take `.copy()`
+- Never chain-index into an assignment
+- Chained indexing may silently do nothing
+- Do not use `df.append` — removed in pandas 2.0
+- Build a list, then `pd.concat` once
+
+::: notes
+Two hygiene rules that bite during merges. First, after a merge or filter, when you intend to modify the resulting frame, take an explicit copy. Pandas otherwise warns you with the infamous setting-with-copy warning, and worse, your edits may or may not propagate depending on whether you got a view or a copy. So filter, call copy, then assign on the owned frame. Never chain-index into an assignment; writing into a filtered slice in one expression may silently do nothing. Second, do not use the append method to stack frames in a loop — it was removed in pandas two-point-zero and was quadratic-time anyway. Build a list and call concatenate once. One concatenate, not N appends.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Every merge is a **cardinality claim** — assert it with `validate=` so a hidden duplicate raises an error instead of a silent Cartesian explosion. Then **check the match rate** with `how="left"` and an indicator: it is a finding, not a footnote. Next: the content errors no syntax checker can catch — starting with survivorship bias.
+:::
+
+::: notes
+To summarize part two: every merge carries a cardinality claim, so assert it with validate and let a hidden duplicate raise a loud error instead of exploding your panel. Then measure completeness with a left join and an indicator — the match rate is a finding you must defend, not a footnote. And keep two hygiene habits: copy before editing a filtered frame, and concatenate a list rather than appending in a loop. In part three we turn to content errors no syntax checker can catch, beginning with survivorship bias.
+:::

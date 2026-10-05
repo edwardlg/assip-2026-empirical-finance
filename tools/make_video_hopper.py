@@ -128,7 +128,13 @@ def pptx_to_pngs(pptx: Path, out_dir: Path, width: int, height: int) -> list[Pat
     # pdftoppm -r DPI gives us a width-controlled rasterization. Compute the
     # DPI needed to hit the requested pixel width on a standard 13.333"-wide
     # 16:9 slide.
-    slide_width_in = 13.333
+    # Read the deck's ACTUAL slide width so DPI hits the target pixel width
+    # exactly (pandoc's 16:9 reference is 10in wide, not 13.333in).
+    try:
+        from pptx import Presentation as _Prs
+        slide_width_in = _Prs(str(pptx)).slide_width / 914400.0
+    except Exception:
+        slide_width_in = 13.333
     dpi = max(96, int(round(width / slide_width_in)))
     if not have_cmd("pdftoppm"):
         raise RuntimeError("pdftoppm not found (apt: poppler-utils).")
@@ -157,6 +163,90 @@ def extract_notes(pptx: Path) -> list[str]:
             text = slide.notes_slide.notes_text_frame.text or ""
         notes.append(text.strip())
     return notes
+
+
+def extract_notes_from_qmd(qmd: Path) -> list[str]:
+    """Return one narration string PER SLIDE (header), aligned to beamer slides.
+
+    Walks the deck by `#`/`##` headers and grabs the `::: notes` block inside
+    each header's region (empty string if a slide has none). Aligning per-header
+    -- rather than concatenating all `::: notes` blocks -- keeps the narration in
+    lockstep with the rendered slides even when the title slide carries no note.
+    """
+    text = qmd.read_text(encoding="utf-8")
+    if text.startswith("---"):                  # drop YAML front matter
+        text = text.split("---", 2)[-1]
+    lines = text.split("\n")
+    # Slide headers = `#`/`##` at column 0 that are NOT inside a ::: fenced div
+    # (callout/notes blocks carry their own `##`) and NOT inside a code fence
+    # (python `# comment`). Counting those as slides desyncs narration.
+    depth = 0
+    in_code = False
+    hdr: list[int] = []
+    for i, ln in enumerate(lines):
+        st = ln.strip()
+        if st.startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        if re.match(r"^:::+", st):
+            depth = max(0, depth - 1) if re.match(r"^:::+\s*$", st) else depth + 1
+            continue
+        if depth == 0 and re.match(r"^#{1,2}\s", ln):
+            hdr.append(i)
+    notes: list[str] = []
+    for k, h in enumerate(hdr):
+        end = hdr[k + 1] if k + 1 < len(hdr) else len(lines)
+        region = "\n".join(lines[h:end])
+        m = re.search(r":::+\s*notes\s*\n(.*?)\n:::", region, re.DOTALL)
+        notes.append(m.group(1).strip() if m else "")
+    return notes
+
+
+def pdf_to_pngs(pdf: Path, out_dir: Path, width: int, height: int) -> list[Path]:
+    """Rasterize a (beamer) PDF to one PNG per page at the exact target size."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    if not have_cmd("pdftoppm"):
+        raise RuntimeError("pdftoppm not found (poppler).")
+    run(["pdftoppm", "-png", "-scale-to-x", str(width), "-scale-to-y", str(height),
+         str(pdf), str(out_dir / "slide")])
+    pngs = sorted(out_dir.glob("slide-*.png"))
+    if not pngs:
+        raise RuntimeError("pdftoppm produced no PNGs from the PDF")
+    return pngs
+
+
+def _sentences(text: str) -> list[str]:
+    return [x.strip() for x in re.split(r"(?<=[.!?])\s+", text.strip()) if x.strip()]
+
+
+def _srt_ts(sec: float) -> str:
+    h = int(sec // 3600); m = int((sec % 3600) // 60); s = sec % 60
+    return f"{h:02d}:{m:02d}:{s:06.3f}".replace(".", ",")
+
+
+def write_srt(notes: list[str], durations: list[float], path: Path) -> None:
+    """Burn-in transcript: sentence segments timed proportionally per slide.
+
+    The `::: notes` text IS the spoken transcript (symbols already spelled out),
+    so on-screen captions exactly match the narration.
+    """
+    segs: list[tuple[float, float, str]] = []
+    t = 0.0
+    for note, dur in zip(notes, durations):
+        sents = _sentences(note) or [note.strip() or " "]
+        weights = [max(1, len(s.split())) for s in sents]
+        total = sum(weights)
+        st = t
+        for s, w in zip(sents, weights):
+            d = dur * (w / total)
+            segs.append((st, st + d, s))
+            st += d
+        t += dur
+    lines = [f"{i}\n{_srt_ts(a)} --> {_srt_ts(b)}\n{txt}\n"
+             for i, (a, b, txt) in enumerate(segs, 1)]
+    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 MANIM_MARKER = re.compile(r"<!--\s*manim:(.+?)-->", re.IGNORECASE | re.DOTALL)
@@ -219,6 +309,74 @@ def _tts_bark(text: str, out_wav: Path) -> bool:
         return out_wav.exists()
     except Exception as exc:
         log(f"Bark failed: {exc!r}; will fall back.")
+        return False
+
+
+# Module-level cache so the Chatterbox model loads ONCE per process, not per
+# slide (loading is the expensive part; synthesis is faster-than-realtime on A100).
+_CHATTERBOX_MODEL = None
+
+
+def _chatterbox_chunks(text: str, max_chars: int = 300) -> list[str]:
+    """Split narration into sentence groups Chatterbox can synthesize in one pass."""
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    chunks, cur = [], ""
+    for s in sentences:
+        if not s:
+            continue
+        if len(cur) + len(s) + 1 <= max_chars:
+            cur = f"{cur} {s}".strip()
+        else:
+            if cur:
+                chunks.append(cur)
+            cur = s
+    if cur:
+        chunks.append(cur)
+    return chunks or [text.strip()]
+
+
+def _tts_chatterbox(text: str, out_wav: Path, voice_sample: Optional[Path]) -> bool:
+    """Chatterbox (Resemble AI) neural TTS -- MIT (code+weights), commercial-safe.
+
+    Zero-shot voice cloning from a short reference WAV via `audio_prompt_path`;
+    falls back to the model's built-in voice if no sample is given. Long notes are
+    synthesized in sentence-grouped chunks and concatenated. Every clip carries
+    Chatterbox's inaudible PerTh watermark (harmless for teaching).
+    """
+    global _CHATTERBOX_MODEL
+    try:
+        import torch  # noqa: F401
+        import torchaudio  # type: ignore
+        from chatterbox.tts import ChatterboxTTS  # type: ignore
+    except ImportError:
+        log("Chatterbox: package/torch/torchaudio not installed; skipping.")
+        return False
+    try:
+        device = "cuda" if have_gpu() else "cpu"
+        if _CHATTERBOX_MODEL is None:
+            log(f"Chatterbox: loading model on {device} (one-time)")
+            _CHATTERBOX_MODEL = ChatterboxTTS.from_pretrained(device=device)
+        model = _CHATTERBOX_MODEL
+
+        prompt = None
+        if voice_sample is not None and voice_sample.exists():
+            prompt = str(voice_sample)
+        gen_kwargs = {}
+        if prompt:
+            gen_kwargs["audio_prompt_path"] = prompt
+        # Calmer, lecture-appropriate delivery; override via env if desired.
+        gen_kwargs["exaggeration"] = float(os.environ.get("CHATTERBOX_EXAGGERATION", "0.4"))
+        gen_kwargs["cfg_weight"] = float(os.environ.get("CHATTERBOX_CFG", "0.5"))
+
+        waves = []
+        for chunk in _chatterbox_chunks(text):
+            wav = model.generate(chunk, **gen_kwargs)
+            waves.append(wav)
+        audio = waves[0] if len(waves) == 1 else torch.cat(waves, dim=-1)
+        torchaudio.save(str(out_wav), audio.cpu(), model.sr)
+        return out_wav.exists() and out_wav.stat().st_size > 0
+    except Exception as exc:
+        log(f"Chatterbox failed: {exc!r}; will fall back.")
         return False
 
 
@@ -291,10 +449,14 @@ def synthesize_narration(text: str, out_wav: Path,
         return out_wav
 
     requested = os.environ.get("TTS_BACKEND", "").lower().strip()
-    auto_order = ["xtts", "piper", "gtts", "pyttsx3"]
-    if not have_gpu() and "xtts" in auto_order:
-        auto_order.remove("xtts")
-        auto_order.insert(1, "xtts")  # try anyway (CPU fallback is slow but works)
+    # Chatterbox first: MIT-licensed (code+weights), commercial-safe, voice cloning.
+    auto_order = ["chatterbox", "xtts", "piper", "gtts", "pyttsx3"]
+    if not have_gpu():
+        # GPU-only neural backends are slow on CPU; demote them below piper.
+        for b in ("chatterbox", "xtts"):
+            if b in auto_order:
+                auto_order.remove(b)
+                auto_order.insert(2, b)
     order = [requested] + [b for b in auto_order if b != requested] if requested else auto_order
 
     for backend in order:
@@ -302,7 +464,9 @@ def synthesize_narration(text: str, out_wav: Path,
             continue
         log(f"TTS: trying backend={backend}")
         ok = False
-        if backend == "xtts":
+        if backend == "chatterbox":
+            ok = _tts_chatterbox(text, out_wav, voice_sample)
+        elif backend == "xtts":
             ok = _tts_xtts(text, out_wav, voice_sample)
         elif backend == "bark":
             ok = _tts_bark(text, out_wav)
@@ -422,37 +586,14 @@ def concat_with_crossfades(clips: list[Path], out_mp4: Path,
         shutil.copy2(clips[0], out_mp4)
         return
 
-    xfade_dur = 0.4
-    inputs: list[str] = []
-    for c in clips:
-        inputs += ["-i", str(c)]
-
-    durations = [audio_duration(Path(c).with_suffix(".wav")) + 0.4 for c in clips]
-    # The xfade `offset` is the cumulative start time of each crossfade in the
-    # output, relative to the start of the running mix.
-    parts: list[str] = []
-    last_v, last_a = "[0:v]", "[0:a]"
-    running = durations[0]
-    for i in range(1, len(clips)):
-        v_out = f"[v{i}]"
-        a_out = f"[a{i}]"
-        offset = running - xfade_dur
-        parts.append(
-            f"{last_v}[{i}:v]xfade=transition=fade:duration={xfade_dur}:"
-            f"offset={offset:.3f}{v_out}"
-        )
-        parts.append(
-            f"{last_a}[{i}:a]acrossfade=d={xfade_dur}{a_out}"
-        )
-        last_v, last_a = v_out, a_out
-        running += durations[i] - xfade_dur
-
-    filter_complex = ";".join(parts)
+    # Concat demuxer with re-encode. Chained xfade offsets are fragile for N>2
+    # (they silently truncate the output); a plain concat gives exact, correct
+    # total duration with clean hard cuts between slides -- right for lectures.
+    list_file = out_mp4.parent / "_concat_list.txt"
+    list_file.write_text("".join(f"file '{Path(c).resolve()}'\n" for c in clips))
     run([
         "ffmpeg", "-y", "-loglevel", "error",
-        *inputs,
-        "-filter_complex", filter_complex,
-        "-map", last_v, "-map", last_a,
+        "-f", "concat", "-safe", "0", "-i", str(list_file),
         "-c:v", "libx264", "-preset", "medium", "-crf", "20",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
@@ -469,7 +610,9 @@ def main() -> int:
         description="Hopper-side teaching-video render: PPTX -> narrated MP4."
     )
     ap.add_argument("--input", required=True, type=Path,
-                    help="Source .pptx (deck rendered from week-NN.qmd).")
+                    help="Slides: a beamer .pdf (preferred) or legacy .pptx.")
+    ap.add_argument("--notes-from", type=Path, default=None,
+                    help="Deck .qmd to read narration from (required for .pdf input).")
     ap.add_argument("--output", required=True, type=Path,
                     help="Destination .mp4.")
     ap.add_argument("--res", default="1080",
@@ -495,14 +638,26 @@ def main() -> int:
     work = Path(tempfile.mkdtemp(prefix="mvh_"))
     log(f"Working dir: {work}")
     try:
-        # 1) PPTX -> per-slide PNGs at requested resolution
-        pngs = pptx_to_pngs(pptx, work / "slides", width, height)
-        notes_list = extract_notes(pptx)
+        # 1) Slides -> per-slide PNGs; narration list aligned 1:1 to slides.
+        if pptx.suffix.lower() == ".pdf":
+            pngs = pdf_to_pngs(pptx, work / "slides", width, height)
+            notes_src = args.notes_from or pptx.with_suffix(".qmd")
+            notes_list = extract_notes_from_qmd(Path(notes_src))
+            log(f"beamer path: {len(pngs)} slides, {len(notes_list)} note blocks "
+                f"(notes from {notes_src})")
+        else:
+            pngs = pptx_to_pngs(pptx, work / "slides", width, height)
+            notes_list = extract_notes(pptx)
         if len(notes_list) < len(pngs):
             notes_list += [""] * (len(pngs) - len(notes_list))
+        elif len(notes_list) > len(pngs):
+            log(f"WARN: {len(notes_list)} notes > {len(pngs)} slides; truncating")
+            notes_list = notes_list[:len(pngs)]
 
         # 2) Per slide: TTS narration (+ optional manim B-roll image)
         clips: list[Path] = []
+        cap_notes: list[str] = []
+        cap_durs: list[float] = []
         for i, png in enumerate(pngs):
             raw_notes = notes_list[i] if i < len(notes_list) else ""
             clean_notes, manim_expr = split_manim_marker(raw_notes)
@@ -518,9 +673,16 @@ def main() -> int:
             shutil.copy2(wav, clip.with_suffix(".wav"))
             build_clip(png, wav, clip, width, height)
             clips.append(clip)
+            cap_notes.append(clean_notes)
+            cap_durs.append(audio_duration(wav))
 
-        # 3) Crossfade-concatenate
+        # 3) Concatenate, and emit a transcript .srt next to the output.
         concat_with_crossfades(clips, out_mp4, width, height)
+        try:
+            write_srt(cap_notes, cap_durs, out_mp4.with_suffix(".srt"))
+            log(f"Wrote transcript {out_mp4.with_suffix('.srt')}")
+        except Exception as exc:
+            log(f"SRT generation failed (non-fatal): {exc!r}")
         log(f"Wrote {out_mp4} ({out_mp4.stat().st_size/1e6:.1f} MB)")
         return 0
     finally:

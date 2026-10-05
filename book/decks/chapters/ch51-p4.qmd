@@ -1,0 +1,58 @@
+---
+date: "2026-07-20"
+---
+
+## Reading the Sorts: Watch Beta Die
+
+- Part 4 — reading tables first and watching beta go flat
+
+::: notes
+Welcome back to Chapter five-point-one, part four of seven. In part three we built the machinery — sorts and Fama–MacBeth — and the data underneath. Now we learn the most practical referee habit in the whole chapter: how to read a paper through its tables. New readers go front to back and drown in the introduction. Experienced readers read tables first. The prose is the author's argument; the tables are the evidence, and a good paper's tables tell the whole story if you know the order to take them in.
+:::
+
+## Tables First — Start With the Sorts
+
+- Experienced readers read **tables before prose**
+- Start with the **sort tables**, not the regressions
+- Sorts are nearly the first exhibits — and assume almost nothing
+- Read the **size–beta double sort** first, for one purpose
+- That purpose: *to watch beta die*
+
+::: notes
+Read tables before prose. And among the tables, start with the sort tables, not the regressions, because the sorts are the most honest thing in the paper — they assume almost nothing. They are nearly the first exhibits. Read the size–beta double sort first, and read it for one specific purpose: to watch beta die. Why the double sort and not a simple beta sort? Because in the raw data, size and beta are tangled — small firms tend to be high-beta. The double sort forms a grid of size-beta portfolios, so within a row of roughly constant size you can slide across the beta columns and see a clean comparison. The double sort is doing the work of controlling for a confounder, nonparametrically, with buckets instead of a regression slope.
+:::
+
+## The Flat Row: The Headline Without a Coefficient
+
+- Within a fixed-size row, slide low-beta → high-beta columns
+- CAPM says average return must climb steeply
+- What you see is close to **flat**
+- Holding size fixed, sorting on beta buys little return spread
+- The headline — found with zero regression coefficients
+
+::: notes
+So go into the size-beta table. Pick a row of roughly constant size and slide across the beta columns, from low-beta portfolios to high-beta portfolios, watching whether average return climbs. CAPM says it must climb steeply — that is the whole prediction. What you actually see is close to flat. Holding size fixed, sorting on beta buys you little or no spread in average return. That flat row is the headline of the entire paper, and you found it in a table that contains not a single regression coefficient. Sit with how powerful that is: before any model, before any t-statistic, the rawest possible cut of the data already shows the reigning theory failing. This is why experienced readers trust sorts — there is almost no machinery to hide behind.
+:::
+
+## The Live Patterns: Size and Value
+
+- Now read the **size–BE/ME sort**
+- Slide across BE/ME → average return **rises** (value beats growth)
+- Slide down size → average return **rises** (small beats big)
+- Two live patterns, one dead one
+- You know the result before reading a word of regression output
+
+::: notes
+Now read the size–book-to-market sort. Slide across the book-to-market columns and watch average return rise — value, meaning high book-to-market, beats growth, meaning low book-to-market. Then slide down the size dimension and watch average return rise as you move toward small firms. Two live patterns: value and size both move returns. And from the first table, one dead one: beta. You now know the entire result of the paper before reading a single word of regression output. That is the payoff of reading tables first — the sorts have already told you the story, and the regressions that follow are there to quantify it and to let the characteristics fight each other in one specification.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Read **tables first, sorts before regressions**. The size–beta sort shows a **flat row** — beta dies with no coefficient in sight — while the size–BE/ME sort shows **size and value rising**. You learn the paper's whole result from exhibits that assume almost nothing. Next: the regression horse races that quantify it, and what makes this paper genuinely clever.
+:::
+
+::: notes
+To summarize part four: read tables first, and the sorts before the regressions. The size-beta double sort shows a flat row — beta dies without a single coefficient — while the size-book-to-market sort shows both value and size rising. Two live patterns, one dead one, all from exhibits that assume almost nothing. In part five we go to the regression tables and read them as a sequence of horse races that quantify exactly what the sorts revealed — and we name the three moves that make this paper genuinely clever rather than just one more anomaly paper.
+:::

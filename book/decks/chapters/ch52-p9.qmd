@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## Replication Exercises and Referee Questions
+
+- Part 9 — three replication exercises and referee questions
+
+::: notes
+Welcome back to lesson five-point-two, part nine of nine — the finale. In part eight we mapped the four places this paper is vulnerable. Now we turn those critiques into hands-on work: three replication exercises scoped for your notebook five-point-two, each building on the sorting machinery from notebook five-point-one, and the three questions a referee would press.
+:::
+
+## Exercise One: Build and Check the Factors
+
+- Form the six 2×3 size-by-BE/ME portfolios each June
+- Construct monthly SMB, HML, and market excess return
+- Download the official Fama-French factors
+- Correlate your series with theirs, month by month
+- Aim for correlations comfortably above 0.9
+
+::: notes
+Exercise one: build the factors from scratch and check them against Ken French's data. Using your C-R-S-P and Compustat merge from notebook five-point-one, form the six two-by-three size and book-to-market portfolios at each June, construct monthly S-M-B and H-M-L by the formulas we covered, and the value-weighted market excess return. Then download the official Fama-French factors and correlate your series with theirs, month by month. You will not match perfectly — data vintages differ — but aim for correlations comfortably above zero-point-nine, and diagnose any month where you diverge badly. This single exercise teaches more about real-world data plumbing than any lecture.
+:::
+
+## Exercise Two: The 25 Regressions and CAPM
+
+- Form the five-by-five test portfolios
+- Regress each excess return on your three factors
+- Assemble the table: loadings, intercept with t, R-squared
+- Verify: high R-squared, monotonic loadings, small alphas
+- Then run **CAPM-only** and show the columns improve
+
+::: notes
+Exercise two: run the twenty-five time-series regressions and make the two-column table. Form the five-by-five size and book-to-market test portfolios, regress each one's excess return on your three factors with plain ordinary least squares, and assemble the table: loadings b-hat, s-hat, h-hat, the intercept alpha-hat with its t-statistic, and R-squared. Verify the three qualitative facts: high R-squared values everywhere, loadings that march monotonically with the sorts, and small intercepts — with small-growth as the visible exception. Then run a CAPM-only regression on the same twenty-five and show, column by column, how much the R-squared values rise and the intercepts shrink when S-M-B and H-M-L are added.
+:::
+
+## Exercise Three: GRS and Stress Test
+
+- Compute the **GRS F-statistic** for both models
+- Joint null: all 25 intercepts are zero
+- Compare CAPM versus the three-factor model
+- Change **one** construction choice and re-run
+- Report how SMB, HML, loadings, and GRS move
+
+::: notes
+Exercise three: run the G-R-S joint test and stress-test the construction. Compute the G-R-S F-statistic for the joint null that all twenty-five intercepts are zero, for both the CAPM and the three-factor model, and compare. Then change one construction choice — swap NYSE breakpoints for all-stock breakpoints, or value-weighting for equal-weighting — re-form the factors, and re-run. Report how much S-M-B, H-M-L, the loadings, and the G-R-S statistic move. This is the sensitivity critique from part eight turned into a measured number, and it is exactly the kind of robustness check a referee will demand of your own capstone.
+:::
+
+## Three Referee Questions
+
+- **Risk or mispricing?** What evidence moves you toward risk?
+- **Survivorship:** would size and value survive a correction?
+- **Small-growth:** tolerable blemish, or a missing fourth factor?
+- The companion is notebook 5.2, the full pipeline
+- Plus a "Your Turn" momentum-factor extension
+
+::: notes
+Finally, three questions to interrogate this paper the way a referee would. One, risk or mispricing: the paper shows H-M-L prices the cross-section but offers no test of why value pays — what evidence, a recession-state pattern, a link to fundamentals, an out-of-country replication, would move you toward the risk story? Two, survivorship of the factors themselves: given the factor-zoo critique, would size and value survive a multiple-testing correction applied to the full search that produced them? Three, the small-growth corner: is that one rebellious cell a tolerable blemish, or a symptom that a fourth factor is missing? The hands-on companion is notebook five-point-two, which walks the full pipeline, with a Your Turn extension that bolts on a momentum factor.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three exercises turn the lesson into skill: **build and validate** the factors, **run the 25 regressions** versus CAPM, and **GRS-test plus stress-test** the construction. Then interrogate like a referee — risk versus mispricing, survivorship, and the stubborn small-growth cell. That is how FF93 became the workhorse of empirical finance.
+:::
+
+::: notes
+To summarize part nine, and the whole lesson: three exercises turn this reading into skill — build and validate the factors against Ken French's data, run the twenty-five regressions against CAPM, and G-R-S-test plus stress-test the construction. Then interrogate the paper like a referee: risk versus mispricing, survivorship of the factors, and the stubborn small-growth cell. The nineteen ninety-three paper became the workhorse of empirical finance not by answering one question, but by building the ruler everyone now measures with. That ruler is your Week Five anchor. Well done — go run the notebook.
+:::

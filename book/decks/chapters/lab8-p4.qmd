@@ -1,0 +1,46 @@
+---
+date: "2026-08-10"
+---
+
+## Two Roads to the PDF: Overleaf and Local Compile
+
+- Part 4 — two roads to the PDF: Overleaf and local compile
+
+::: notes
+Welcome back to Week Eight, Lab Eight, part four of ten. In part three we covered the skim-traps and the GMU and PowerPoint paths. Now we turn poster-dot-tex into an actual PDF. There are two roads, and both end at the same file. The first is Overleaf — a browser LaTeX editor that needs nothing on your machine. The second is a local compile on the camp container with latexmk or tectonic. Pick whichever fits the machine you are on; the discipline that matters is identical on both.
+:::
+
+## The Overleaf Workflow
+
+- Overleaf is a browser LaTeX editor — needs nothing installed
+- **One:** upload the whole `paper/` folder, preserving subfolders
+- **Two:** set main document to `poster.tex`, compiler to `pdfLaTeX`
+- **Three:** click *Recompile* — passes for `\ref`s and QR run automatically
+- Discipline: upload the files your **code generated**, never browser edits
+
+::: notes
+The Overleaf workflow is three moves. First, create a new project and upload your paper folder — poster-dot-tex, abstract-dot-tex, the tables folder, and the figures folder — preserving the structure, because Overleaf keeps subfolders and your input and graphics-path lines depend on them. Second, set the main document to poster-dot-tex and the compiler to pdfLaTeX, under Menu, Settings, Compiler; beamerposter works under pdfLaTeX with no further configuration. Third, click Recompile; the PDF renders in the right pane, and Overleaf reruns the passes needed to resolve your references and the QR code automatically. The discipline that matters on Overleaf is the same everywhere: the abstract, tables, and figures you upload must be the ones your code just generated, not files you edited in the browser. Overleaf is a compiler, not a place to author results — and the abstract especially, because it is the one artifact JSSR will publish, must come from the analysis, never from the browser.
+:::
+
+## The Local `latexmk` / `tectonic` Path
+
+- On the container, compile in place — no upload
+- `latexmk -pdf -interaction=nonstopmode poster.tex` reruns passes for you
+- `nonstopmode`: a recoverable warning won't stop an unattended build
+- `tectonic poster.tex` — self-contained engine, downloads missing packages
+- `latexmk -C` deletes every auxiliary file for a clean rebuild
+
+::: notes
+On the camp container you skip the upload and compile in place. The simplest robust command is latexmk, which figures out how many passes are needed to resolve cross-references and the QR code and runs them for you: latexmk, dash-pdf, dash-interaction-nonstopmode, poster-dot-tex. The dash-pdf flag selects PDF output via pdflatex under the hood; nonstopmode means a recoverable warning does not stop the build to wait for keyboard input — important when this runs unattended inside make. If you prefer the self-contained engine, tectonic needs no separate driver and downloads any missing packages on first use — just tectonic, poster-dot-tex, a single command that resolves the passes internally and writes the PDF. Either way you get paper-slash-poster-dot-pdf. To start clean — which you will do constantly while debugging — latexmk dash-capital-C deletes every auxiliary file and the PDF, so the next build is from nothing.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Two roads to `poster.pdf`: Overleaf (`pdfLaTeX`, *Recompile*) or local `latexmk`/`tectonic`. Both demand the same honesty — compile the artifacts your **code generated**, never browser edits. Next: reading the build output and the printed proof.
+:::
+
+::: notes
+To summarize part four: there are two roads to a compiled poster PDF, and both end at the same file. Overleaf needs nothing installed — upload the paper folder, set the compiler to pdfLaTeX, click Recompile. Locally on the container, latexmk dash-pdf or tectonic does the same and reruns the passes for you. The honesty rule spans both: the abstract, tables, and figures must be the ones your code generated, never edited in a browser. In part five we learn to read the build output — which warnings are harmless and which are real — and the one printed proof you make before the symposium.
+:::

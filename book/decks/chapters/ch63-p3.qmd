@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## Validation as Identification
+
+- Part 3 — how a word list earns its keep against market data
+
+::: notes
+Welcome back to Chapter six-point-three, part three of nine. In part two we built the bag-of-words score and watched Loughran and McDonald construct finance-shaped word lists. But a list is just an opinion until data tests it. This part covers the validation step, which is the real identification strategy: a dictionary earns trust only if its score moves with market reactions the way real bad news would move them.
+:::
+
+## A Word List Must Earn Its Keep
+
+- A new list is just an opinion until tested
+- Validate against market outcomes real bad news predicts
+- Negative tone should mean **lower** abnormal returns
+- Negative tone should mean **higher** trading volume
+- Negative tone should mean **higher** return volatility
+
+::: notes
+The validation step is the identification. A new word list is just an opinion until it earns its keep against data. Loughran and McDonald validate by asking whether their finance-negative score relates to market outcomes the way real negative news should. If a ten-K's tone genuinely carries bad information, filings scored more negative should be followed by lower abnormal returns around the filing date, by higher trading volume, and by higher return volatility. So the test is comparative. Run these associations using the Harvard negative count, then again using the finance-specific count, and see which one shows the cleaner, more sensible relationship.
+:::
+
+## The Comparative Test
+
+- Run the same regressions with each dictionary
+- Does Harvard's apparent signal survive the cleanup?
+- A valid dictionary moves *with* market reactions
+- Not because it counts neutral accounting words
+- Headline: the finance list passes better
+
+::: notes
+The crucial move is to check whether the Harvard measure's apparent signal survives once you strip out the misclassified accounting words. The identifying claim, in the spirit of our conventions, is this. A dictionary measures financial tone validly to the extent that its score moves with market reactions to the filing in the direction real bad news would move them, and not because it is mechanically counting neutral accounting vocabulary. So the structure is a horse race. Two measures, the same regressions, the same controls, and the winner is the one whose association with returns, volume, and volatility is cleaner and more robust. The headline result: the finance dictionary passes this test better than the general one, and a meaningful part of the general dictionary's apparent negativity was noise from misclassified words.
+:::
+
+## The Two-Part Shape
+
+- **Diagnosis:** how badly does the old tool mismeasure?
+- **Repair and validation:** does the new tool carry more signal?
+- Answer to diagnosis: badly
+- Answer to repair: yes — and it became the standard
+- A good measurement paper always has this shape
+
+::: notes
+Step back and see the shape, because a good measurement paper always has it. Part A is diagnosis: how badly does the off-the-shelf tool mismeasure financial tone? Part B is repair and validation: if we build a domain-specific tool, does it carry more genuine signal? Does finance-specific negativity line up with lower returns around the filing, higher trading volume, and higher volatility, more cleanly than the general tool does? The answer to the diagnosis is, badly. The answer to the repair is, yes, and the finance dictionary has been the standard ever since. Hold this two-part template in mind. When you build your own measurement instrument, you will diagnose an existing tool's error and then validate your replacement against outcomes the tool should track.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A dictionary is **valid** to the extent its score moves with market reactions — lower returns, higher volume, higher volatility — and not because it counts neutral accounting words. The paper runs a horse race: the finance list wins, and Harvard's apparent signal weakens once misclassified words are removed. Next: the data behind the test.
+:::
+
+::: notes
+To summarize part three. Validation is the identification here. A dictionary is valid to the extent that its score moves with market reactions, lower abnormal returns, higher trading volume, and higher return volatility, and not because it mechanically counts neutral accounting words. The paper runs a horse race between the Harvard list and the finance list; the finance list wins, and Harvard's apparent signal weakens once the misclassified words are accounted for. The whole paper has the two-part shape of diagnosis then repair. In part four we look at the data: where the filings come from, and the public resource that became this paper's most durable contribution.
+:::

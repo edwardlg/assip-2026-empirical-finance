@@ -1,0 +1,58 @@
+---
+date: "2026-08-03"
+---
+
+## SEC EDGAR — Filings, Text, and XBRL
+
+- Part 4 — SEC EDGAR: filings, full-text search, XBRL
+
+::: notes
+Welcome back to Data Acquisition in Practice, part four of eight. In part three we covered WRDS — the licensed datasets that stay on GMU. Now we turn to the public workhorse of text-based finance research: S-E-C EDGAR. It is free, has no license restriction, and powers Priya's ten-K climate language and Devon's exchange S-one.
+:::
+
+## Coverage — Three Distinct Things
+
+- Every US public filing since 1993: ten-K, ten-Q, eight-K, S-1, thirteen-F
+- **Full-text search** the text of filings, 2001 to present
+- **Filing documents** — the actual HTML or text files
+- **XBRL datasets** — the structured numbers inside filings
+- Confusing these three wastes hours
+
+::: notes
+Coverage. EDGAR is the S-E-C's public archive of every filing by every U-S public company since nineteen ninety-three: ten-Ks, the annual reports; ten-Qs, quarterly; eight-Ks, material events; D-E-F fourteen-A proxy statements; S-ones, I-P-O registrations; thirteen-Fs, institutional holdings; and more. It is free and public — no license, no GMU restriction. EDGAR gives you three distinct things, and confusing them wastes hours. First, full-text search lets you search the text of filings, two thousand one to present, for words or phrases. Second, filing documents are the actual ten-K or eight-K documents in HTML or text. Third, X-B-R-L financial statement datasets are the numbers inside filings — revenue, assets, earnings per share — tagged in machine-readable form, available per-company and as bulk quarterly files.
+:::
+
+## Identifiers and Access Path
+
+- **CIK** — EDGAR's permanent company identifier, zero-padded
+- **Accession number** — identifies a specific filing
+- High-level route: the `edgartools` package wraps the URLs
+- Low-level route: plain `requests` against REST endpoints
+- The `companyfacts` endpoint returns every tagged fact
+
+::: notes
+Key identifiers. The C-I-K, or Central Index Key, is EDGAR's permanent company identifier — a number, zero-padded to ten digits in URLs; oh-oh-oh-oh-three-two-oh-one-nine-three is Apple. The accession number identifies a specific filing. A ticker maps to a C-I-K through EDGAR's company-tickers file. Access path: two routes. The high-level one is edgartools, a Python package that wraps EDGAR's messy URL structure into a clean object API — you ask a Company for its ten-K filings, take the latest, and read its structured financials. The low-level route is plain requests against EDGAR's REST endpoints, useful when you want exactly one JSON file and no dependency. For the structured numbers, the company-facts endpoint returns every X-B-R-L-tagged fact for a company as a nested dictionary.
+:::
+
+## The Fair-Access Rule, Limits, and the Pull
+
+- SEC requires a **User-Agent header** with your name and email
+- No User-Agent means a 403 Forbidden or an outright block
+- Documented limit: **at most 10 requests per second**
+- Sleep between requests; back off on errors
+- Pin the **accession number**; cache raw; parse the saved copy
+
+::: notes
+The S-E-C fair-access rule is the gotcha that bites everyone once. The S-E-C requires no key, but it does require that every request carry a user-agent header identifying you — your name and email. A request with no user-agent, or a generic one, gets a four-oh-three Forbidden or is blocked outright. This is the fair-access policy: anonymous scraping is banned, identified use is welcome. Read the identifying string from an environment variable so it is not baked into committed code. Rate limits: the documented ceiling is at most ten requests per second, aggregated across all your scripts. Exceed it and you are throttled or temporarily banned by I-P. For any loop over many filings, sleep between requests — about a seventh of a second keeps you comfortably under — and back off on errors. The reproducible pull: the pin that matters is the accession number, because a ten-K can be amended, so Apple's twenty-twenty-three ten-K is ambiguous but a specific accession number is exact. Cache the raw document, parse from the saved copy, and log the URL and a hash.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**EDGAR** is the free, public archive of US filings, offering full-text search, the filing documents, and structured XBRL numbers. Every request needs a **User-Agent** that names you, and you must stay under **10 requests per second**. Pin the **accession number** so an amended refiling never moves your results. Next: FRED and HMDA.
+:::
+
+::: notes
+To summarize part four: EDGAR is the free, public archive of every U-S filing, and it gives you three things — full-text search, the filing documents themselves, and the structured X-B-R-L numbers. The fair-access rule means every request must carry a user-agent that names you, and you must stay under ten requests per second. Pin the accession number so an amended refiling never silently moves your results. In part five we cover two more public sources: FRED for macro series, and H-M-D-A for fair-lending data at national scale.
+:::

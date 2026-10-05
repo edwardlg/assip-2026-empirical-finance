@@ -1,0 +1,67 @@
+---
+date: "2026-07-13"
+---
+
+## Potential Outcomes and Parallel Trends
+
+- Part 2 — DiD's counterfactual and the parallel-trends assumption
+
+::: notes
+Welcome to Chapter four-point-one, part two of six. In part one we found the double difference of seventy dollars. Now we do what Week Three trained you to do — refuse to trust a number until it is written in potential outcomes with the assumption that makes it causal. We are now in a panel: each state is observed at each time, so potential outcomes carry two subscripts, unit and time.
+:::
+
+## The Estimand: ATT in the Post Period
+
+- $Y_{it}(1)$, $Y_{it}(0)$: potential outcomes, now indexed by time
+- $\text{ATT}=\mathbb{E}[\,Y_{it}(1)-Y_{it}(0)\mid \text{treated, post}\,]$
+- First term = observed treated post premium, \$1,680
+- Second term = the missing counterfactual
+
+::: notes
+Define two potential outcomes for unit i in period t. Y-i-t-of-one is the outcome if treated; Y-i-t-of-zero if untreated. DiD targets the average treatment effect on the treated, in the post period — the effect on the state that got the regulation, when it had it. That is the expected value of Y-of-one minus Y-of-zero, given treated and post. The first term, the treated post outcome, is the observed premium, sixteen-eighty — that world happened. The villain is the second: what the treated premium would have been in the post period had the regulation never passed. That world did not happen. It is the missing counterfactual, and DiD's job is to supply it credibly.
+:::
+
+## DiD's Smarter Counterfactual
+
+- Naive before-after: assumes treated would stay **flat** — wrong
+- Cross-section: assumes same **level** as control — wrong
+- DiD: treated pre level **plus** control's growth
+$$1500 + 110 = \$1{,}610$$
+- $\widehat{\text{ATT}}=1680-1610=\$70$
+
+::: notes
+The naive before-after uses the treated state's pre level, fifteen hundred — assuming flat premiums. Wrong: premiums were rising everywhere. The cross-section uses the control's post level, thirteen-ten — assuming the same level. Also wrong: the treated state began three hundred higher. DiD's counterfactual is smarter. Take the treated state's pre level, and let it grow by the amount the control grew — one hundred ten dollars, our estimate of the common trend. The counterfactual is fifteen hundred plus one hundred ten, sixteen hundred ten. The actual post premium was sixteen-eighty. The gap is the ATT — seventy dollars — the double difference, the same calculation in two costumes.
+:::
+
+## Parallel Trends — The Load-Bearing Wall
+
+- Absent treatment, treated group's $Y(0)$ trend = control's $Y(0)$ trend
+- Two lines on a premium-versus-time plot stay **parallel**
+- Allows fixed level gaps; forbids **differential trends**
+- Weaker than Week 3's "no unobserved difference in levels"
+
+::: notes
+Here is the identifying assumption — the load-bearing wall — parallel trends. Absent treatment, the untreated outcome of the treated group would have changed by the same amount as the control's. In English: had the regulation never happened, the treated state's premiums would have moved in lockstep with the control's — not the same level, but the same trend. Two lines on a premium-versus-time plot stay parallel. Compare Week Three. Selection-on-observables demanded the same level of untreated outcome — forbidding any fixed unobserved difference. Parallel trends asks less: it allows the treated state to be permanently three hundred dollars more expensive, because differencing subtracts that away. It forbids only a differential trend — why a natural experiment buys what a kitchen-sink regression cannot.
+:::
+
+## Untestable, and How It Fails
+
+- Every left-side term is treated-group $Y(0)$ — including post
+- Post-period $Y(0)$ never happened → **cannot be tested**
+- If treated was already on a steeper trend, \$70 is **too big**
+- A pre-existing divergence masquerades as a treatment effect
+
+::: notes
+But underline this: parallel trends is an assumption about a counterfactual, and the counterfactual is unobservable. Every left-hand-side term is Y-of-zero for the treated group, including the post period — the world where the regulation never passed. So it can never be tested there. No data confirms the treated state would have tracked the control, because "would have" never occurred — the same un-testability as conditional independence in Week Three. When it fails, you see the wreckage. Suppose the treated state was already on a steeper trajectory, its fire risk worsening faster, unrelated to the regulation. Then absent treatment its premiums would have risen by more than one hundred ten dollars — say one hundred sixty. The true ATT would be only twenty dollars, our seventy-dollar estimate too big by fifty — a pre-existing divergence masquerading as treatment.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+DiD imputes the treated unit's missing $Y(0)$ by **starting from its own pre level and adding the control's change**. That is valid only under **parallel trends** — an assumption about a counterfactual that can never be tested in the post period. Next: writing DiD as one regression coefficient, and the event study that lets us *look* at the trends.
+:::
+
+::: notes
+To summarize: DiD imputes the treated unit's missing untreated outcome by starting from its own pre level and adding the control's change — valid only under parallel trends, a counterfactual we can never test in the post period. In part three we make this scale and give it a standard error as a single regression coefficient — the two-way fixed-effects model Week Four builds on.
+:::

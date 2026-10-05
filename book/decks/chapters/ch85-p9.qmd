@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Reproducibility Is the Credibility: Closing the Camp
+
+- Part 9 — reproducibility is credibility; closing the camp
+
+::: notes
+Welcome back to Chapter eight-point-five, part nine of nine, the last part of the last chapter. In part eight we finished the replication packet. Now we state the thesis as bluntly as it deserves, connect the talk and the packet, and trace the arc the eight weeks walked, from a single average to a defensible, reproducible paper.
+:::
+
+## A Claim Is Not Yet a Result
+
+- A result a stranger cannot reconstruct is a *claim*
+- The reviewer who runs your code has checked your work
+- No eloquence on a slide can substitute for that
+- The packet is the form your credibility takes
+- "Here's the one command that checks me," not "trust me"
+
+::: notes
+State the thesis as bluntly as it deserves. A result a stranger cannot reconstruct is not yet a result; it is a claim about a result. The reviewer who clones your repo, types the build command, and watches your estimate emerge from raw data through your seeded code into a compiled PDF has checked your work in a way no eloquence on a slide could substitute for. That is why the packet is the literal form your credibility takes once the skeptic is alone with your folder. This connects the two halves of the chapter. The most powerful thing you can say to a hostile question about a number is: the exact code that produces that number is in the packet; clone it and you'll get the same figure, seed and all. You are not asking to be believed; you are inviting verification, the posture of someone with nothing to hide. "Trust me" and "here's the one command that checks me" land completely differently with a serious audience.
+:::
+
+## The Arc the Eight Weeks Walked
+
+- Week 1: a number became a number-with-uncertainty
+- Week 2: regression — "we control for X" is a claim
+- Weeks 3–4: designs — IV, RD, diff-in-diff, synthetic control
+- Week 5: read papers as a skeptic; Week 6: honest inference
+- Weeks 7–8: made it yours, then communicable and checkable
+
+::: notes
+Trace the arc the eight weeks actually walked. Week One turned a number into a number-with-uncertainty. Week Two turned correlation into the machinery of regression and taught you that "we control for X" is a claim, not a spell, the ghost of omitted-variable bias. Weeks Three and Four turned that claim into designs — instrumental variables, regression discontinuity, difference-in-differences, synthetic control — each a specific argument for why a comparison is fair, each with its own named way of failing. Week Five taught you to read other people's papers as a skeptic, the same skill as reading your own honestly. Week Six sharpened the inference: the right standard errors, the multiple-testing correction, the bootstrap. Week Seven made it yours: an idea worth pursuing, data pulled reproducibly, a pre-analysis plan tagged before you could fool yourself, and an identification memo naming every threat. Week Eight made it communicable and checkable, defended in eight minutes and packaged so a stranger can rebuild every claim.
+:::
+
+## From an 8% Average to a Real Paper
+
+- Week 1's eight percent was the first question, not an answer
+- Now: a question attacked with a defensible design
+- Honest uncertainty, robust to the choices you worried about
+- Written so a referee believes it; one command checks it
+- "Here's what I found, why to believe it, how to check me"
+
+::: notes
+Look back at where Week One started. The first thing you did was compute an average: the mean return was about eight percent a year, and that felt like an answer. It was not an answer; it was the first question. What you have at the end is not "the average return was eight percent." It is a question nobody had cleanly answered, attacked with a design you can defend sentence by sentence, estimated with honest uncertainty, robust to the choices you worried about, written so a referee believes it, and reproducible with one command. That is an original empirical paper. The single sentence this whole camp existed to let you say truthfully is: here is what I found, here is exactly why you should believe it, and here is the command that lets you check me. You can say it now. Go say it.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**A result a stranger cannot reconstruct is only a claim.** The packet is the form your credibility takes when you stop talking. Across eight weeks, a number became a number-with-uncertainty, then a design, then a defensible, reproducible paper. The sentence the camp was built for: *"Here's what I found, why to believe it, and the command that checks me."* Go say it.
+:::
+
+::: notes
+To summarize part nine, and the camp: a result a stranger cannot reconstruct is only a claim, and the packet is the form your credibility takes once the skeptic is alone with your folder. The talk and the packet are one discipline: inviting verification rather than asking to be believed. Across eight weeks a single eight-percent average became a number-with-uncertainty, then a design, then an honest, robust, reproducible paper. The sentence this whole camp was built to let you say truthfully is: here is what I found, here is why you should believe it, and here is the command that lets you check me. Go say it.
+:::

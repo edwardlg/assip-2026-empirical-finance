@@ -399,7 +399,7 @@ References are auto-populated by Pandoc from the cited keys. The full
 bibliography for Week 8 — Simonsohn, Simmons, and Nelson 2020;
 Cameron, Gelbach, and Miller 2008 and 2011; Bertrand, Duflo, and
 Mullainathan 2004; Petersen 2009; Oster 2019; Benjamini and Hochberg
-1995; Elnahas, Gao, Hossain, and Kim 2024; Gao and Sun 2019 — lives
+1995; Elnahas, Gao, Hossain, and Kim 2024; Sun and Gao 2019 — lives
 in the textbook's bibliography file and in each chapter's footnote
 block.
 :::

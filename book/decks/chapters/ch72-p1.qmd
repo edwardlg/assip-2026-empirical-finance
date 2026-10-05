@@ -1,0 +1,64 @@
+---
+date: "2026-08-03"
+---
+
+## A Question Is Not a Dataset
+
+**Learning objectives**
+
+- Apply one six-question template to every data source
+- Read secrets from the environment, never from code
+- Keep licensed data on GMU infrastructure, out of git
+- Make every pull pinned, cached, and logged
+
+::: notes
+Welcome to Week Seven, Chapter seven-point-two, Data Acquisition in Practice, part one of eight. Last chapter, each of our five students walked out of the idea workshop with a sharpened question and a named dataset. This part frames the gap between wanting data and having a file you can defend, and lays out the six-question template we will use for every source.
+:::
+
+## Five Students, Eight or Nine Sources
+
+- Maya: HMDA loan records plus a FRED macro control
+- Devon: SEC filings plus a crypto price series
+- Priya: Compustat from WRDS plus ten-K text
+- Sam: CRSP if possible, else yfinance or Stooq
+- Leah: USPTO PatentsView patent counts by firm-year
+
+::: notes
+Recall where the five students landed. Maya wants to test whether tightened mortgage-lending standards fell harder on first-generation borrowers, so she needs H-M-D-A loan-application records and a macro control from FRED. Devon asks whether a crypto exchange's S-one disclosures predicted later token volatility, so he needs S-E-C filings and a price series. Priya links insurers' climate-risk language to their stock returns, needing Compustat fundamentals from WRDS and ten-K text from EDGAR. Sam wants a clean daily price-and-return panel to backtest momentum, which means C-R-S-P if he can get it, and yfinance or Stooq if he cannot. Leah wants patent counts by firm-year from USPTO PatentsView.
+:::
+
+## The Shared Problem
+
+- A question is **not** a dataset
+- Between "I want it" and "I can defend it" lies a craft
+- Where data lives, who owns it, how to ask
+- The same command next year gives the same answer
+- Getting data is the hardest, slowest, least glamorous part
+
+::: notes
+Five questions, eight or nine sources, and one problem they all share: a question is not a dataset. Between I want H-M-D-A data and I have a file on disk I can defend to a referee lies a whole craft — knowing where the data lives, who owns it, how to ask for it without getting rate-limited or sued, and how to pull it so that the same command run a year from now gives the same answer. Let us be honest about something polished journal tables hide: getting the data is often the hardest, slowest, and most error-prone part of an empirical project, and almost none of it is glamorous. It is API keys and headers and pagination and license agreements. But it is also where reproducibility is won or lost. A study whose data pull cannot be re-run is a study no one can check.
+:::
+
+## Six Questions for Every Source
+
+- **Coverage** — what is in it, over what span
+- **Key identifiers** — codes to find and merge a record
+- **Access path** — the package or API pattern
+- **Licensing** — who owns it, may it leave the building
+- **Rate limits and gotchas** — how to get blocked
+- **The reproducible pull** — pin, cache, log
+
+::: notes
+For each source we state the same six things, in the same order, so you can compare sources at a glance. Coverage: what is in it, over what time span. Key identifiers: the codes you use to find and later merge a record. Access path: the package or API and a short workflow pattern. Licensing and the GMU-infrastructure rule: who owns it, and whether it may leave the building. Rate limits and gotchas: how to get blocked, and how not to. And the reproducible pull: how to pin a snapshot, cache the raw data, and log the query. We stop the moment a clean raw file sits on disk with a log beside it; merging and cleaning is Chapter seven-point-four.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **question is not a dataset.** Turning one into the other is a craft, and it is where reproducibility is won or lost. For every source we ask the same six things: coverage, identifiers, access path, licensing, rate limits, and the reproducible pull. Next: three rules that apply to every source.
+:::
+
+::: notes
+To summarize part one: a question is not a dataset, and turning one into the other is a craft where reproducibility is won or lost. We will narrate a tour of each source using one fixed template of six questions — coverage, identifiers, access path, licensing, rate limits, and the reproducible pull. In part two, before any specific source, we cover the three rules that cut across all of them.
+:::

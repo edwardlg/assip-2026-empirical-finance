@@ -1,0 +1,71 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## P-Hacking and Where This Connects
+
+- Part 7 — p-hacking, then connect to Week 2
+
+::: notes
+Welcome back to Lab one, part seven of seven, our last. In part six you traced power curves and saw why a non-rejection at low power proves little. Now you turn a warning into an experiment: run many honest tests on truly worthless signals and report only the winner. You will measure how often a worthless signal looks significant, then close the lab by connecting every skill to Week Two.
+:::
+
+## The P-Hacking Setup
+
+- Imagine $m$ signals, *every one truly worthless*
+- Each honest test falsely fires only $5\%$ of the time
+- But you run *many* and report only the best
+- Build $m$ fair coins, test each, record any rejection
+- Repeat thousands of screens; measure $\Pr(\ge 1$ false positive$)$
+
+::: notes
+Here is the p-hacking setup, the multiple-testing warning turned into an experiment. Imagine Sam is screening many trading signals — or Leah is testing many candidate keywords for predicting a patent's success — and every one is truly worthless. Each honest test falsely fires only five percent of the time, but Sam runs many and reports only the best. How often does at least one worthless signal look significant? Build m independent fair coins, all with the null true at p equal to one-half, test each, and record whether any rejected. Repeat the screen thousands of times and measure the fraction with at least one false positive.
+:::
+
+## The Numbers Are Brutal
+
+- Empirical track the formula $1 - (1 - \alpha)^m$
+- About $0.05$ at $m=1$; $0.23$ at $m=5$
+- $0.64$ at $m=20$; $0.92$ at $m=50$
+- Fifty worthless signals: a spurious winner is near-certain
+- The winner's p-value looks fine but is an artifact
+
+::: notes
+The numbers are brutal. Your empirical results should track the formula one minus the quantity one minus alpha, raised to the power m — the chance of at least one false positive among m independent honest tests. That is about zero point zero five at m equal to one, zero point two three at five, zero point six four at twenty, and zero point nine two at fifty. With fifty worthless signals you are almost guaranteed a spurious winner. Print the p-value of the best-looking coin in a screen that fired: it will look respectable, maybe zero point zero one, and it is a complete artifact of having tried fifty times. The reported p-value is a lie because it ignores the silent attempts behind it.
+:::
+
+## The Fix and the Lesson
+
+- **Bonferroni:** tighten the per-test bar to $\alpha/m$
+- The family-wide false-positive rate drops back toward $0.05$
+- Three characters implement the crudest correction
+- Always ask: how many silent tries stand behind this winner?
+- **Pre-registration** commits to the test before seeing data
+
+::: notes
+Now the fix. Re-run with the per-test bar tightened to alpha divided by m. The family-wide false-positive rate drops back toward zero point zero five regardless of m. You have implemented, in three characters, the crudest multiple-testing correction — Bonferroni — and confirmed it works. The lesson: when someone shows you a single significant signal, always ask how many silent attempts stand behind this winner. And pre-registration defeats the cheat because committing to the exact test before seeing data removes the freedom to fish through many analyses and report only the lucky one. A number is only as convincing as the procedure behind it.
+:::
+
+## Where This Connects
+
+- The sampling distribution became a histogram you *built*
+- The CLT became a bell that *assembled itself*
+- Size and power became fractions you *counted*
+- Week 2: the object becomes a coefficient $\hat\beta$
+- The statistic becomes $t = (\hat\beta - 0)/\widehat{\operatorname{se}}(\hat\beta)$
+
+::: notes
+You have now done, with your own hands, the thing the chapters could only describe. The sampling distribution became a histogram you built; the Central Limit Theorem became a bell that assembled itself on your screen; size and power became fractions you counted. Most importantly, you learned the simulation habit that runs through the program: when unsure whether a tool does what it claims, build a universe where you know the truth and check. In Week Two the object under test changes from a proportion to a regression coefficient, beta hat, and the statistic becomes t equals beta hat minus zero, over the estimated standard error of beta hat — the same machine you just built and audited.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Running $m$ honest tests on worthless signals and keeping the winner inflates the false-positive rate to $1 - (1-\alpha)^m$ — about $0.92$ at $m=50$. Bonferroni's $\alpha/m$ bar pulls it back. The habit you keep: *build a universe where you know the truth and check.* The size-and-power simulator returns in Week 2 to stress-test OLS.
+:::
+
+::: notes
+To summarize part seven and the whole lab: running m honest tests on worthless signals and keeping only the winner inflates the false-positive rate to one minus one minus alpha to the power m — about zero point nine two at m equal to fifty. The Bonferroni bar of alpha over m pulls it back. The habit you keep is the most valuable thing here: when unsure a tool does what it claims, build a universe where you know the truth and check. The simulator you wrote returns in Week Two to stress-test whether OLS standard errors stay honest under heteroskedasticity, clustering, and serial correlation. Keep this notebook. That is the end of Lab one.
+:::

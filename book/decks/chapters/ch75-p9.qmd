@@ -1,0 +1,59 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## The Bridge to Week 8
+
+- Part 9 — how the memo becomes the Week-8 paper
+
+::: notes
+Welcome back to the identification memo, part nine of nine. In part eight we wrote Maya's memo end to end — the specification, the credible-not-causal paragraph, and a six-row table led by its hardest threat. Now we close the chapter by tracing how that one page becomes the spine of your Week-Eight paper, and how the frozen notebook turns the honesty rules into something the technology enforces.
+:::
+
+## The Memo Is The Spine
+
+- Chapters 7.1–7.4 took you question → dataset → PAP → clean data
+- Chapter 7.5 distilled the design into one page
+- This is what Assessment 7 grades: PAP plus memo
+- The memo is the **spine** of the Week-8 paper
+- Assumption paragraph → your empirical-strategy section
+
+::: notes
+You have now closed the design half of your project. Chapters seven-point-one through seven-point-four took you from a question to a feasible dataset to a filed pre-analysis plan to a clean, documented analysis dataset; Chapter seven-point-five distilled the design into the one page the whole paper defends. This memo is what Assessment Seven grades — the pre-analysis plan and the identification memo together, on the research-design rubric — and it is the spine of the Week-Eight paper. Here is how the spine becomes the paper. The identifying-assumption paragraph becomes your empirical-strategy section, nearly verbatim. You will not rewrite it; you will paste it and expand it, because you already did the hardest thinking when you wrote the sentence.
+:::
+
+## From Table To Paper
+
+- Threats table → skeleton of your robustness section (Ch 8.2)
+- "Run column three for every row" — placebos, alternative SEs
+- Calibrated verbs → your introduction (Ch 8.3)
+- Peer review (Ch 8.4): tables first, assumption second, prose last
+- A peer will attack the row you hoped to bury
+
+::: notes
+The threats-and-responses table becomes the skeleton of your robustness section. Chapter eight-point-two is, almost literally, the instruction "go run column three for every row of your table" — the placebos, the alternative standard errors, the bandwidth and sample perturbations that turn each promised defense into a real result. Chapter eight-point-three will have you turn the memo's prose into an introduction that promises exactly what the design can deliver and no more — the calibrated-verb discipline applied to the abstract. And Chapter eight-point-four will hand your memo to another student, who will read it the way you learned to read Fama-French in Week Five: tables first, identifying assumption second, prose last and skeptically — and who will attack the row you hoped to bury. Write the memo so that there is no such row.
+:::
+
+## Your Turn: The Frozen Notebook
+
+- Open notebook 7.5 — first-look regressions, frozen until the PAP is filed
+- Runs the first estimate of your primary specification
+- The freeze enforces the honesty rules technologically
+- Inform you, yes — but no longer *seduce* you
+- Find your most dangerous threat; audit your verb; the empty-cell test
+
+::: notes
+Open notebook seven-point-five, the first-look regressions, frozen until the pre-analysis plan is filed. It runs the first estimate of your primary specification — the headline number your memo defends — and it is frozen for a reason that is the whole ethic of this week: you do not run it until your plan and this memo are filed as a tagged commit. The freeze is the technological enforcement of the honesty rules: with the specification and threats committed in advance, the first-look regression can inform you but can no longer seduce you into rewriting the design to fit the result. Three reflection prompts go alongside it. Find your most dangerous threat, and decide whether it is testable or only arguable. Audit your verb — did you write causal or credible, and does the evidence earn it? And run the empty-cell test: is any residual-concern cell blank, and is there a threat whose residual is "this could be the entire effect"? If so, the memo just did its most important job.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The identification memo is the **spine** of the Week-8 paper: the assumption paragraph becomes your empirical strategy, the threats table becomes your robustness section, and the calibrated verbs become your introduction. The frozen notebook enforces the ethic — *commit first, then test*. The skeptic who reads a stranger's table and the author who builds an honest one are the same person.
+:::
+
+::: notes
+To summarize part nine, and the chapter: the identification memo is the spine of your Week-Eight paper. The assumption paragraph becomes your empirical-strategy section, the threats table becomes your robustness section as you run column three for every row, the calibrated verbs become your introduction, and a peer reviewer will attack whatever row you tried to bury. The frozen notebook enforces the ethic of the week — commit first, then test — so the first-look regression can inform you but never seduce you. The thread from Week Five's reading discipline through this memo to Week Eight's defense is a single idea: the skeptic who reads a stranger's table and the author who builds an honest one are the same person. The memo is you doing it to yourself, on purpose, before anyone else gets the chance.
+:::

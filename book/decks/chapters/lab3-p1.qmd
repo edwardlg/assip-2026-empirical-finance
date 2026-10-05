@@ -1,0 +1,61 @@
+---
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+## Lab 3 — Build the Weak-IV Disaster
+
+**Learning objectives — by the end you can:**
+
+- Build an endogenous-regressor DGP with tunable instrument strength
+- Show OLS is biased, and run just-identified 2SLS by hand
+- Measure that conventional CIs under-cover while AR recovers 95%
+- Compute the effective $F$; contrast weak vs. strong instruments
+
+::: notes
+Welcome to Week Three, Lab Three, part one of five. This is the capstone of the whole week. In Chapter three-point-four you built instrumental variables from the ground up — relevance, exclusion, the Wald ratio, two-stage least squares, and the first-stage F. Then Chapter three-point-five turned on the lights and showed you the dark room I-V can become: when the first stage is weak, two-stage least squares does not just get noisy, it gets biased back toward the very ordinary-least-squares estimate you reached for I-V to escape — and its textbook confidence interval gets too narrow. Confidently, precisely wrong. Bound, Jaeger, and Baker taught the profession this the hard way. In this lab you will not read about that disaster. You will build it with your own hands.
+:::
+
+## What You Will Build
+
+- A data-generating process where the **true effect is exactly zero**
+- An endogeneity that **biases OLS** upward
+- One knob — the instrument's first-stage **strength** — weak to strong
+- Watch 2SLS slide **between OLS and the truth**
+
+::: notes
+Here is the arc. You will construct a world where the true causal effect is exactly zero, plant an endogeneity that biases ordinary least squares, and then dial a single knob — the instrument's first-stage strength — from weak to strong. You will watch two-stage least squares slide between the biased ordinary-least-squares estimate and the truth. You will measure how badly the conventional ninety-five percent confidence interval under-covers, and confirm that Anderson–Rubin intervals recover honest coverage. You will compute the effective F and watch it flag the weak instrument. And finally you will flip the knob to strong and see every method snap back into agreement. The point: when you are unsure whether a tool does what it claims, build a world where you know the truth and check.
+:::
+
+## A Single Draw Is an Anecdote
+
+- One dataset can hand you a *lucky* estimate
+- The pathology lives in the **sampling distribution**, not one point
+- So almost everything here is a **Monte Carlo** — redraw 1000+ times
+- Read **averages, coverage rates, distributions** — never one sample
+
+::: notes
+The single most important habit this lab drills is the one Chapter three-point-five insisted on: a single draw is an anecdote, not evidence. One simulated dataset might, by luck, hand you a two-stage least-squares estimate near the truth and an interval that covers it. But the pathology is a statement about the sampling distribution of these estimators, and you cannot see a distribution from one point. So almost everything here is a Monte Carlo: redraw the universe more than a thousand times, and read averages, coverage rates, and whole distributions — never one lucky sample. A close cousin of that habit is a fat-tail subtlety. Because two-stage least squares is a ratio with a near-zero denominator, its sampling distribution has heavy tails, so its mean gets thrown around by a handful of wild draws. The honest summary of where the estimate typically lands is the median.
+:::
+
+## Setup and Reproducibility
+
+- Pure simulation — **no WRDS, no credentials**, runs anywhere
+- **Pin the seed**: `rng = np.random.default_rng(SEED)`
+- Draw **all** randomness from that one `rng`
+- This lab uses `SEED = 20260528`
+
+::: notes
+A word on setup. This lab is pure simulation — no licensed data, no credentials, no W-R-D-S. It runs anywhere, because you are the one building the universe. Create a conda environment with numpy, pandas, scipy, statsmodels, linearmodels, and matplotlib. Then follow two reproducibility rules. First, pin the seed using numpy's modern generator — r-n-g equals np-dot-random-dot-default-generator of seed — not the legacy global seed. Second, draw all randomness from that one generator, in order. That is what makes a Monte Carlo replayable bit-for-bit. This lab uses the seed two-zero-two-six-zero-five-two-eight. One honest caveat: Monte Carlo estimates are themselves random, so when a coverage rate comes out as zero-point-eight-zero-one instead of a clean round number, that is measurement noise, not a bug.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+You will **build** the weak-instrument disaster, not read about it: true effect zero, OLS biased, and one knob for instrument strength. The lab's discipline is that the pathology lives in the **sampling distribution** — so you average over a thousand draws, never trust one.
+:::
+
+::: notes
+To summarize part one: you are about to build, with your own hands, the weak-instrument pathology that Bound, Jaeger, and Baker made famous. The truth is set to exactly zero, ordinary least squares is deliberately biased, and a single knob controls instrument strength. The discipline that runs through the whole lab is that this pathology is a property of the sampling distribution, not of any one dataset — so you establish it by averaging over more than a thousand draws, and you summarize with the median, never the mean. In part two we lay the first brick: the data-generating process itself, naming the one line that biases ordinary least squares and the one that makes I-V possible.
+:::

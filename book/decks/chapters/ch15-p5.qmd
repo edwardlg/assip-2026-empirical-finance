@@ -1,0 +1,50 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Size and Power: Two Ways to Be Wrong
+
+- Part 5 — the two error types, size $\alpha$, and power
+
+::: notes
+Welcome back to Chapter one-point-five, part five of ten. In part four we built Sam's t-statistic and found it sits about one point six nine standard errors above zero. Now we ask how surprised we must be before we act — which means naming the two ways a test can be wrong: size and power.
+:::
+
+## Two Ways to Be Wrong
+
+| | $H_0$ true (no edge) | $H_1$ true (real edge) |
+|---|---|---|
+| **Reject $H_0$** | Type I error (false positive) | Correct (a "hit") |
+| **Fail to reject $H_0$** | Correct | Type II error (false negative) |
+
+- Size $\alpha$: the ceiling we set on Type I errors
+- Convention $\alpha=0.05$: cry victory wrongly at most 5 percent
+- $\alpha$ is set *before* the data — a property of the rule
+
+::: notes
+Any decision rule based on noisy data can be wrong in two distinct ways. A Type One error is rejecting a null that is actually true: declaring Sam's worthless rule a winner — a false positive. A Type Two error is failing to reject a null that is actually false: missing a rule that genuinely works — a false negative. We choose a ceiling on how often we are willing to make the first mistake, called the significance level, or size of the test, written alpha. The convention alpha equals zero point zero five means: I will tolerate wrongly crying victory on a truly dead rule at most five percent of the time. Crucially, alpha is set before seeing the data, and it is a property of the rule, not of any one dataset. The rule itself: reject the null when the statistic lands in the rejection region — the set of values so extreme they would occur with probability only alpha if the null were true.
+:::
+
+## The Critical Value and Power
+
+- Sam, one-sided, $\alpha=0.05$, 251 d.f.: critical value $\approx 1.65$
+- Rule: reject if $t > 1.65$
+- Type II error probability is $\beta$
+- $\text{power}=1-\beta=\Pr(\text{reject }H_0\mid H_1\text{ true})$
+- Low power: a metal detector silent over treasure
+
+::: notes
+For Sam's one-sided alternative — mu greater than zero — at alpha equals zero point zero five with two hundred fifty-one degrees of freedom, the critical value is the point cutting off the top five percent of the t-distribution, about one point six five. The rule is: reject if t exceeds one point six five. Now the second error. A Type Two error — missing a real effect — has probability written beta. The quantity we usually care about is its complement, power, which equals one minus beta. Power is the probability of rejecting the null given that the alternative is true — the probability of catching a real effect when one exists. A test with low power is a metal detector that stays silent over buried treasure. It protects you from false alarms with a small alpha by almost never alarming at all, which is useless.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A test errs two ways: **Type I** (reject a true null — controlled by size $\alpha$, conventionally 0.05) and **Type II** (miss a real effect — its complement is **power** $=1-\beta$). Sam's one-sided rule: reject if $t>1.65$. A low-power test is a detector silent over treasure. Next: the four levers that move these errors.
+:::
+
+::: notes
+To summarize part five: a test errs two ways. A Type One error rejects a true null and is controlled by the size alpha, conventionally zero point zero five, set before the data. A Type Two error misses a real effect; its complement is power, one minus beta — the chance of catching a real effect. For Sam's one-sided test, the rule is reject if t exceeds one point six five. And a low-power test is a metal detector silent over buried treasure. In part six we see the four levers that move these two errors, and make power concrete with a real calculation on Sam's rule.
+:::

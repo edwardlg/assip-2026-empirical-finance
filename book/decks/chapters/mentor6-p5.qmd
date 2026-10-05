@@ -1,0 +1,55 @@
+---
+date: "2026-07-27"
+---
+
+## Using AI Responsibly — Your Capstone's Integrity Section
+
+- Part 5 — disclose every AI use as your capstone's integrity section
+
+::: notes
+Welcome back to Mentor Session six, part five of five — the last part. In part four we used Professor Gao's earnings-management paper to show that a regression's outcome can itself be a measured proxy, validated by planting known truth in a simulation. Now we turn to the second paper — using AI responsibly in research and in teaching — and we make it the integrity section of your own capstone. The responsible-use questions in that paper are exactly the ones your capstone will be graded on, just wearing a teaching dress.
+:::
+
+## Paper Two — AI in a Trading Simulation
+
+- *Derivatives Trading Simulation Supported by AI* (forthcoming)
+- Bright line: AI as **writing aid** vs. AI as **generator of data/decisions**
+- Writing aid: a low bar — is it true and is it mine?
+- Data generation: a high bar — demands a **validation table**
+
+::: notes
+The second paper is Gao, Gopalakrishnan, Ehrlich, and Wang, forthcoming in the Journal of Financial Education — Derivatives Trading Simulation Supported by AI. Draw the bright line from Chapter six-point-five's disclosure checklist. Where is AI a writing or teaching aid — you own and verify every word, a low bar of is it true and is it mine? And where is it a generator of data or decisions that feed an analysis or a grade — a high bar that demands a validation table? In the simulation, AI drafting an explanation a student reads is a writing aid: you verify it and you own it. AI generating the prices or signals students trade against is data generation: those outputs feed a grade, so they demand validation. Each side demands a different disclosure.
+:::
+
+## Leakage and Reproducibility in Teaching
+
+- A sim that "predicts" market moves is a **leakage** minefield
+- The model may "know" how a historical episode resolved
+- Defense: a **date-fenced** information set, post-cutoff episodes
+- Reproducibility: **pin the version**, log every call
+
+::: notes
+A simulation that predicts market moves for students to trade against is a leakage minefield. The one place training-data look-ahead bites is when the model knows how a historical episode actually resolved — it has read the ending. The cleanest defense is a date-fenced information set, tested on post-cutoff episodes the model could not have read, so the simulation is fair and realistic rather than secretly rigged by hindsight. And reproducibility is the same problem we saw with labels: because the AI's outputs are stochastic and the model version can silently change, another instructor — or a referee of the education paper — can only re-run the same experience if you pin the version string and log every call. Tie that to one line of your own capstone's responsible-AI-use disclosure.
+:::
+
+## What Your Capstone Must Disclose
+
+- Disclose **and defend** every way you used AI
+- Writing aid (you own the words) vs. data generation (validate it)
+- For generated labels: prompt **verbatim**, gold-set sizes, OOS precision/recall
+- Model version **pinned**, calls **logged**, figures verified against a source
+
+::: notes
+So here is what your capstone must do. It must disclose and defend every way you used AI, separating writing aid — where you own the words — from data generation, where labels enter a regression and demand a validation table. For any generated labels, that table is concrete: the prompt verbatim, the gold-set and held-out sizes, out-of-sample precision and recall, the version pinned, every call logged, and your citations and figures verified against a primary source. The disclosure is itself graded — it is the difference between an instrument you calibrated and one you simply trusted. The seminar question you will face in Weeks seven and eight is exactly this: which text variable would a referee attack first, and can you show its error is small enough not to be driving your result?
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Disclose and defend every use of AI: **writing aid** (you own and verify the words) versus **data generation** (labels that demand a validation table — prompt verbatim, gold-set sizes, out-of-sample precision and recall, version pinned, calls logged). The honest test: *if a referee saw every prompt I tried and every label I kept, would my result still stand?*
+:::
+
+::: notes
+To close Mentor Session six: the whole session reduces to one sentence and one question. The sentence — a number from text, or any proxy backed out of a model, is a measurement, not a fact, and an AI is an uncalibrated instrument until you calibrate it. The question, the one you write at the bottom of your reflection — if a referee could see every prompt I tried and every label I kept, would my result still stand, or am I trusting an instrument I never calibrated? Write your honest measurement card this week: the proxy and its biases, the gold set and the two out-of-sample numbers, and the single concrete fix for each way you could fool yourself. Looking ahead, Weeks seven and eight are where you defend that result out loud, in seminar. Bring your measurement card, and bring your honesty.
+:::

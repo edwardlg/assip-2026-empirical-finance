@@ -1,0 +1,47 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Devon's Verdict, and What He Did Right
+
+- Part 7 — Devon's minors, his verdict, and what he did right
+
+::: notes
+Welcome back to peer review and revision, part seven of twelve. In part six we read Devon's summary and three major points on Maya's fair-lending paper. Now we read his minor points, his verdict, and we check the whole report against the skeleton — to see exactly what made it a model report.
+:::
+
+## The Minors and the Verdict
+
+- Minors: missing star thresholds, an overclaim, no y-axis label
+- Soften "establishes... cause" to match a conditional DiD
+- Cite Bertrand–Duflo–Mullainathan where clustering is introduced
+- Verdict: major revision — good question, real data, right design
+- One event study and one robust column from convincing
+
+::: notes
+Devon's minor points are exposition. Table Two's note does not state the significance thresholds for the stars, which the convention requires. The introduction claims the paper establishes that examinations cause fairer lending — stronger than a credible-conditional-on-parallel-trends difference-in-differences can support; Devon asks to soften establishes cause to match the design. Figure One has no y-axis label. And the Bertrand, Duflo, and Mullainathan, two thousand four, citation is the right one for the clustering choice and should appear where clustering is introduced, not only in the references. His verdict: major revision. The question is good, the data are real, the design is the right one; the paper is one event study and one robust-estimator column away from convincing. None of his major points asks Maya to change the project — only to defend the design it already has.
+:::
+
+## What Devon Did Right
+
+- Summarized first — proof he got the paper
+- Led with the biggest concern, named it precisely
+- Ordered majors by danger; exposition in the minors
+- For each major, stated what would move or reassure him
+- Tough and kind: closed saying the project is sound
+
+::: notes
+Read what Devon did against the skeleton. He summarized in his own words first, proving he got it. He led with the biggest concern and named it specifically — anticipation, not endogeneity. He ordered the majors by danger and put exposition in the minors. For every major point he stated the evidence that would move him, and for the worst one he stated what would reassure and what would be fatal. He was tough — he flagged a potentially fatal pre-trend and a softened-this-claim overreach — and entirely kind, closing with a sentence that tells Maya her project is sound and the path is short. That last sentence is not flattery; it is an accurate verdict. An accurate, encouraging verdict is the most motivating thing a referee can write.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Devon's minors stayed exposition (stars, an overclaim, a missing label), and his verdict — **major revision** — kept Maya's project intact while naming the short path to convincing. Checked against the skeleton, he did everything right: summary first, biggest concern named precisely, majors by danger with cures, exposition last, tough and kind. Next: flip the desk — responding with the R&R memo.
+:::
+
+::: notes
+To summarize part seven: Devon's minor points were pure exposition — missing star thresholds, an overclaiming introduction to soften, a missing axis label, and a citation to reposition. His verdict, major revision, kept Maya's project intact while naming the short path: one event study and one robust column from convincing. Checked against the skeleton, his report did everything right — summary first, biggest concern named precisely, majors ordered by danger with the evidence that would move him, exposition in the minors, and a close that was both tough and kind. An accurate, encouraging verdict is the most motivating thing a referee can write. In part eight we flip the desk: now someone has refereed your paper, and you respond with the revise-and-resubmit memo.
+:::

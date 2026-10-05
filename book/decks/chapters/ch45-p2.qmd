@@ -1,0 +1,49 @@
+---
+date: "2026-07-13"
+---
+
+## The Construction, With Numbers
+
+- Part 2 — work the instrument by hand on two regions
+
+::: notes
+Welcome back to Chapter four-point-five, part two of ten. In part one we built the shift-share instrument: combine national industry shifts with baseline local shares as B-sub-r equals the sum of share times shift. Now we make it concrete with arithmetic, because the formula is opaque and the numbers are transparent. We will work two of Maya's regions by hand, then draw out the single most important observation — which ingredient actually creates variation across regions, and why the instrument needs both to vary at all. Those observations are the seeds of the two identification views that organize the rest of the chapter.
+:::
+
+## Two Regions, Same Shifts
+
+| Industry | shift $g_j$ | Rustville $s_{rj}$ | Finchester $s_{rj}$ |
+|---|:---:|:---:|:---:|
+| Auto | $-8\%$ | $0.60$ | $0.05$ |
+| Finance | $+3\%$ | $0.10$ | $0.55$ |
+| Retail | $-1\%$ | $0.30$ | $0.40$ |
+
+- $B_{\text{Rust}} = (0.60)(-8\%)+(0.10)(3\%)+(0.30)(-1\%) = -4.8\%$
+- $B_{\text{Finch}} = (0.05)(-8\%)+(0.55)(3\%)+(0.40)(-1\%) = +0.85\%$
+
+::: notes
+Let me make it concrete with three industries. Two of Maya's regions, Rustville and Finchester, started with very different industrial DNA, but both saw the identical national shifts: autos down eight percent, finance up three percent, retail down one percent. Rustville was sixty percent autos, ten percent finance, thirty percent retail. Multiply and add: zero-point-six times minus eight, plus zero-point-one times three, plus zero-point-three times minus one — that gives minus four-point-eight percent. Finchester was five percent autos, fifty-five percent finance, forty percent retail, which works out to plus zero-point-eight-five percent. The instrument says Rustville, leaning on autos in an auto downturn, should have been hit hard; Finchester, leaning on a growing financial sector, should have done fine. Notice the only thing distinguishing these two numbers is the shares — both regions saw the identical shifts. The shares did all the work of turning one set of national shocks into two different regional predictions. Hold that observation; it is the seed of the Goldsmith-Pinkham, Sorkin and Swift view.
+:::
+
+## Both Ingredients Must Vary
+
+- Identical shares everywhere → $B_r$ constant → instruments nothing
+- Same national rate everywhere → $B_r$ constant again
+- Variation = **interaction** of share dispersion and shift dispersion
+- Same industry, different regions → **the shares**
+- Predicted shock moves at all → **the shifts**
+
+::: notes
+Now the second key observation, which plants the seed of the other view. The instrument needs both ingredients to vary. If every region had identical shares, B-sub-r would be the same constant everywhere and would instrument nothing. If every industry grew at the same national rate, B-sub-r would just be that common rate times one — again a constant. Variation in the instrument across regions is born from the interaction of share dispersion and shift dispersion. Said another way: the only thing that makes the same industry contribute differently across regions is the share, and the only thing that makes the predicted shock move at all is the shifts being nonzero and varied. The first observation — that shares do the cross-regional work — is the Goldsmith-Pinkham, Sorkin and Swift seed. The second — that the shifts are the moving randomness — is the Borusyak, Hull and Jaravel seed. Those two views are the two halves of this chapter.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Working it by hand, Rustville's predicted shock is $-4.8\%$ and Finchester's is $+0.85\%$ — and the **only** difference is their shares. Yet the instrument varies only because *both* shares and shifts are dispersed. Next: *why* the construction was invented — isolating local labor demand.
+:::
+
+::: notes
+To summarize part two: with the same national shifts, Rustville's predicted shock came out to minus four-point-eight percent and Finchester's to plus zero-point-eight-five percent, and the only thing distinguishing them was their baseline shares. Yet the instrument as a whole varies across regions only because both shares and shifts are dispersed — kill the variation in either one and the instrument collapses to a constant. These two facts are not idle; they are exactly the two anchor points the two famous identification papers grab onto. In part three we step back to the motivation: the textbook endogeneity disease, in regional form, and how importing national tides isolates precisely the piece of the local economy Maya actually wants.
+:::

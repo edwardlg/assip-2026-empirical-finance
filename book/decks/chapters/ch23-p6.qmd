@@ -1,0 +1,66 @@
+---
+date: "2026-06-29"
+---
+
+## Demeaning Is the Within Transformation
+
+- Part 6 — controlling's honest limit, and demeaning as dummies
+
+::: notes
+Welcome back to Chapter two-point-three, part six of eight. In part five we saw that "holding constant" is a subtraction confined to residual variation. Now we face the honest limit of that subtraction — it only nets out the columns you included — and then meet the theorem's most consequential special case: subtracting group means equals adding a dummy for every group.
+:::
+
+## The Honest Limit Of "Controlling"
+
+- Cleaning out size cleans **only** what runs through size, as measured
+- Firm **age** never entered $\mathbf{X}_2$ — still sits inside $\tilde{x},\ \tilde{y}$
+- $\hat{\beta}_1$ controls for size, **not** for age
+- The list of what you residualized = the **boundary** of "holding constant"
+
+::: notes
+A subtle point hides here, the one professional readers train themselves to ask. Holding size constant only cleans out the part of the relationship running through size as we measured it — log assets. It does nothing about variables we never put in the control block. If older firms both patent more and spend more on R&D for reasons unrelated to size, then firm age still sits inside the residualized R&D and patents, uncontrolled, and Leah's number controls for size but not for age. Frisch–Waugh–Lovell is brutally honest: the coefficient is a clean simple slope orthogonal to exactly the columns you included — no more. It cannot residualize out something not in the regression. That is why you must name your controls and your identifying assumption: the list of what you residualized is the boundary of "holding constant," and everything outside it is a threat you have not addressed.
+:::
+
+## The Intercept Case: Demeaning
+
+- Simplest control: a single column of ones $\boldsymbol{\iota}$
+- Regress anything on a constant $\Rightarrow$ fitted value is the **mean**
+- So $\mathbf{M}_2$ subtracts the overall mean: $(\mathbf{M}_2\mathbf{y})_i = y_i-\bar{y}$
+- A slope **with an intercept** = a slope on **demeaned** variables
+
+::: notes
+Now the special case. Take the simplest control: a single intercept, a column of ones. Regressing any variable on a constant gives the mean as the fitted value, so the residual maker subtracts the overall mean — observation i becomes y-i minus y-bar. So Frisch–Waugh–Lovell contains, as its tiniest case, a fact you half-knew: a slope in a regression with an intercept equals the slope on the demeaned variables. The intercept is a control, and controlling for it means centering. That is why, back in part three, the residual columns averaged to zero.
+:::
+
+## Group Dummies: The Within Transformation
+
+- Control = full set of **group dummies** (industry, school, year)
+- Fits each observation its **own group's mean**
+- So $\mathbf{M}_2$ subtracts the group mean: $(\mathbf{M}_2\mathbf{y})_i=y_i-\bar{y}_{g(i)}$
+- This is the **within transformation** — variation *within* groups only
+
+::: notes
+Now make the control richer. Suppose data come in groups — firms by industry, students by school, observations by year — and you control for a full set of group dummies, one per group. Regressing any variable on them fits, for each observation, its own group's mean. So the residual maker subtracts the group-specific mean — observation i becomes y-i minus the mean of y within its own group. This is the within transformation, because it keeps only the variation within each group and discards all variation between groups.
+:::
+
+## Dummies ⇔ Demeaning
+
+- Regress $y$ on $x$ **+ dummies** $=$ demeaned $y$ on demeaned $x$
+- Same slope — **guaranteed** by FWL (dummies are $\mathbf{X}_2$)
+- Leah's firms by industry: biotech vs hardware
+- Demeaned slope $= 49.67/13.33 = 3.725$ — matches the dummy regression
+
+::: notes
+Putting Frisch–Waugh–Lovell together with this fact gives a clean equivalence. Regressing y on x plus a full set of group dummies produces exactly the same slope on x as regressing within-group-demeaned y on within-group-demeaned x. The number is identical — the theorem guarantees it, because the dummies are the control block and demeaning is their residual maker. Watch it on Leah's six firms, grouped by industry: firms one through three are biotech, firms four through six are hardware. Subtract each firm's own industry mean from each variable, then run a no-intercept simple regression of demeaned patents on demeaned R&D. The slope is forty-nine-point-six-seven over thirteen-point-three-three, which is three-point-seven-two-five. And if instead you regress patents on R&D plus a biotech-versus-hardware dummy, the R&D coefficient is three-point-seven-two-five as well — agreeing to the last digit. Notice the slope differs from the one-point-eight-three-eight before: controlling for industry asks a different question than controlling for size.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+FWL is honest: a coefficient controls for **exactly** the columns you included — name them. Its tiniest case is demeaning; its richer case is the **within transformation**, so regressing on group dummies equals subtracting group means. Same slope, guaranteed. Next: this is fixed effects, four weeks early.
+:::
+
+::: notes
+To summarize part six: Frisch–Waugh–Lovell is brutally honest — a coefficient controls for exactly the columns you included, so name your controls. And the most consequential special case is the within transformation: residualizing on an intercept subtracts the overall mean, residualizing on group dummies subtracts each group's mean, so regressing on dummies gives the identical slope as subtracting group means. In part seven we see why this equivalence is the entire idea of fixed effects.
+:::

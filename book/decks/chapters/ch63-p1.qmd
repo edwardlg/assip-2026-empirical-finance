@@ -1,0 +1,63 @@
+---
+date: "2026-07-27"
+---
+
+## When Is a Liability Not a Liability?
+
+**Learning objectives.** By the end you can:
+
+- Explain why a general dictionary misreads financial tone
+- Score a document with the bag-of-words method
+- Validate a tone measure against market reactions
+- Name what bag-of-words cannot capture
+
+::: notes
+Welcome to Week Six, Chapter six-point-three, part one of nine. For five weeks you turned numbers into evidence. This week the raw material itself changes: a firm's annual report, the SEC ten-K, is roughly fifty thousand words of prose. Today's paper is Loughran and McDonald, two thousand eleven, in the Journal of Finance. It is a measurement paper, and it taught the field how not to score financial text. In this opening part we frame the lesson and state the research question.
+:::
+
+## The Raw Material Changes
+
+- A ten-K is about fifty thousand words of prose
+- It holds information the income statement lacks
+- Worry, litigation risk, uncertainty about the future
+- Text-as-data turns prose into a regression column
+- Today's paper: how *not* to do it
+
+::: notes
+A ten-K is roughly fifty thousand words of prose, and somewhere in there is information the income statement does not contain: how worried management is, how much litigation looms, how uncertain the future looks to the people who know the firm best. Text-as-data is the project of turning that prose into a column of numbers you can put in a regression. The question is how. The paper you read today taught the field how not to do it, using the most popular tool of its era. Here is the trick in one breath. The standard way of scoring text for negativity in two thousand eleven was a dictionary built for novels, newspapers, and psychology experiments. Point it at a ten-K, and most of the words it flags as negative are not negative at all. They are the ordinary vocabulary of accounting.
+:::
+
+## A Measurement Paper
+
+- "Liability," "tax," "cost," "depreciation": dark to a novel
+- To a balance sheet, they are Tuesday
+- The error is large enough to change conclusions
+- The finding is about a *tool*, not markets
+- Villain: a dictionary. Evidence: a word count
+
+::: notes
+Liability, tax, cost, depreciation, capital, crude: to a general-English sentiment dictionary these are dark words. To a balance sheet they are Tuesday. Loughran and McDonald showed this is not a quibble. It is a measurement error large enough to change what you conclude about whether the tone of a filing predicts anything. Then they did the constructive thing: they built a finance-specific dictionary, put it in the public domain, and watched it become the field standard. Read this as a measurement paper, like Petersen last week was a methods paper. Its finding is not a fact about markets; it is a fact about a tool. The villain is a dictionary, the evidence is a word count, and the moral, that the meaning of a word depends on the room it is spoken in, reaches all the way to the large language models you meet in Chapter six-point-five.
+:::
+
+## The Research Question
+
+- Does a general dictionary misclassify financial tone?
+- Can a finance-specific dictionary do better?
+- Outcome: the sentiment *score* we assign a document
+- Key variable: the *choice of dictionary* itself
+- Two analysts, same ten-K, two scores
+
+::: notes
+The plain-English question is this. Does scoring financial text with a general-English sentiment dictionary misclassify the tone of that text, and can a finance-specific dictionary do better at relating to outcomes investors care about, like returns and volatility? Name the two pieces. The outcome here is not a stock return in the usual sense; it is a measurement, the sentiment or tone score we assign a document. The key right-hand-side variable, the thing whose effect we are really testing, is the choice of dictionary itself. Two analysts read the same ten-K. One scores it with the Harvard General Inquirer, the standard general-purpose dictionary of the era. The other scores it with words chosen because they are negative in a financial context. Do these two scores disagree, do they disagree systematically, and which one actually picks up signal in market data?
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+This is a **measurement paper**: its finding is about a tool, not about markets. A general-English dictionary calls "liability," "tax," and "cost" negative — but in a ten-K those are neutral accounting words. The choice of dictionary *is* the treatment. Next: the bag-of-words method that makes the score.
+:::
+
+::: notes
+To summarize part one. Loughran and McDonald is a measurement paper: its finding is a fact about a tool, not about markets. A general-English dictionary calls liability, tax, and cost negative, but in a ten-K those are neutral accounting words, so the off-the-shelf tool mismeasures financial tone. The choice of dictionary is the treatment we are testing. In part two we open up the engine: the bag-of-words model that turns a document into a single number, and the construction step where the authors build a finance-specific word list.
+:::

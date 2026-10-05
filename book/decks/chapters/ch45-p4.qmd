@@ -1,0 +1,46 @@
+---
+date: "2026-07-13"
+---
+
+## The Finance Flavor: Bank-Lending Shocks
+
+- Part 4 — bank-lending shocks; many vs. few concentrated shocks
+
+::: notes
+Welcome back to Chapter four-point-five, part four of ten. In part three we saw why the shift-share instrument was invented — it imports the demand piece from national tides to fix an endogenous local regression. Now a second, finance flavor worth seeing because it makes the share-shift logic vivid and sets up the two identification views: bank-lending shocks. We will build a bank-mix instrument for a region's credit supply, then draw the contrast that decides everything later — many shocks versus few concentrated shares.
+:::
+
+## Building a Bank-Mix Instrument
+
+- Banks are not evenly spread; credit depends on **which banks operate there**
+- **Shares**: fraction of region's baseline deposits held by bank $b$
+- **Shifts**: each bank's national lending growth, computed **outside** region $r$
+- $B_r = \sum_b s_{rb}\, g_b$ predicts the local credit-supply shock
+- Banked with a contracting lender → predicted credit crunch
+
+::: notes
+Banks are not evenly spread. A region's credit supply depends on which banks operate there, and different banks expand or contract their lending at different national rates in a given year for reasons internal to each bank — a merger, a capital shock, a national strategy shift. So we build a shift-share instrument for a region's credit-supply shock by combining two ingredients. The shares are the fraction of region r's baseline deposits held by each bank b — the local exposure to each bank. The shifts are the national growth rate of each bank's lending, computed from the bank's lending outside region r, so it is a bank-level shock the region did not cause. The instrument, written as the sum over banks of share times bank shift, predicts region r's credit-supply shock from which banks happened to be here and how those banks did elsewhere. A town that banked heavily with a nationally-contracting institution gets a predicted credit crunch; a town tied to a nationally-expanding lender gets predicted easy credit.
+:::
+
+## Many Shocks vs. Few Concentrated Shares
+
+- Realized local credit is **endogenous** → instrument with the bank-mix prediction
+- **Labor** version: a few hundred industries — many shocks
+- **Bank** version: maybe a handful of banks dominate deposits
+- "How many shocks, how concentrated the shares" decides your strategy
+- That question sets up the **two identification views**
+
+::: notes
+Maya can now ask whether a predicted credit-supply contraction raises household delinquency, instrumenting realized local credit growth with the bank-mix prediction — because realized local credit is endogenous, since a town with deteriorating households both borrows differently and gets lent to differently. This is the household-credit cousin of the labor-demand story. Now keep both finance examples in view, because they sharpen the two identification views coming up. In the labor version there are a few hundred industries; in the bank version there might be only a handful of banks that dominate a region's deposits. As we will see, how many shocks you have, and how concentrated the shares are, is precisely what decides which identification story you are allowed to tell. That is the question we carry into the rest of the chapter.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The bank version swaps industries for banks: $B_r=\sum_b s_{rb} g_b$ predicts a region's credit-supply shock from its bank mix. With **many** shocks (industries) versus **few** concentrated ones (banks), the count of shocks and concentration of shares decides which identification story you can honestly tell. Next: *why* it's valid — view one, the shares.
+:::
+
+::: notes
+To summarize part four: the bank-lending design is the same shift-share skeleton with the nouns swapped — shares become each region's deposit fractions by bank, shifts become each bank's national lending growth computed outside the region, and the instrument predicts a credit-supply shock. The key contrast is that the labor version has hundreds of industries while the bank version may have only a handful of dominant banks. That difference — many shocks versus few concentrated shares — is exactly what decides which of the two identification stories you are allowed to invoke. In part five we finally answer the long-delayed question of why the lever is clean, starting with the first modern answer: identification comes from the shares.
+:::

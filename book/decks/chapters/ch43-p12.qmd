@@ -1,0 +1,47 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## The Full Validity Checklist
+
+- Part 12 — the full RD validity checklist of threats
+
+::: notes
+Welcome back to Chapter four-point-three, part twelve of thirteen. The McCrary test polices one threat — manipulation — but a careful analyst runs a whole checklist, because regression discontinuity's credibility rests on one claim: the cutoff is the only thing that changes. Lee and Lemieux, in two-thousand-ten, systematized this discipline. We walk the threats, including the deadliest one that leaves no fingerprint.
+:::
+
+## Threats With Statistical Fingerprints
+
+- **Covariate imbalance**: pre-determined covariates should *not* jump
+- Run the same RD with each covariate as the outcome
+- The RD analog of a balance table
+- **Donut RD**: drop points right at $c$, re-estimate
+- **Bandwidth sensitivity**: report across windows; show stability
+
+::: notes
+Beyond manipulation, several threats leave statistical fingerprints. First, covariate imbalance at the cutoff. Local randomization implies that pre-determined characteristics — things fixed before treatment, which the treatment cannot have caused — should be balanced across the cutoff, just as in a real experiment. The test: run the same regression discontinuity with each pre-determined covariate as the outcome, and confirm there is no jump. If a stock's pre-reconstitution book-to-market ratio, or prior-year return, jumps at the rank cutoff, something other than index membership is sorting. This is the regression-discontinuity analog of a balance table: the treatment should jump, and nothing predetermined should. Second, a donut regression discontinuity drops observations in a tiny window right at the cutoff and re-estimates, to confirm the jump is not driven by anomalous exactly-at-the-line cases. Third, bandwidth and specification sensitivity: an estimate that appears at one bandwidth and vanishes at half that bandwidth is not a finding. Report the estimate across a range of bandwidths and polynomial orders, show stability, and with Calonico-Cattaneo-Titiunik report the robust interval, not the naive one.
+:::
+
+## The Insidious Threat: Compound Treatments
+
+- The *same* threshold $c$ may trigger more than one thing
+- Cutoffs are convenient, so institutions reuse them
+- $660$ might flip approval, the rate tier, *and* securitization eligibility
+- Your jump is then the effect of a **bundle**, not one treatment
+- No statistical test detects it — argue it from institutions
+
+::: notes
+The most insidious threat passes the density test and the covariate-balance test and still breaks the design. The danger is that the same threshold triggers more than one thing at once. Cutoffs are administratively convenient, so institutions love to reuse them: a credit score of six-sixty might flip not only loan approval but also the interest-rate tier, the required down payment, and whether the loan is eligible for securitization — all at six-sixty. Then your jump in default rates is the combined effect of all those changes bundled together, and you cannot attribute it to loan approval alone. The estimand is a real causal effect of crossing the threshold, but it is the effect of a compound treatment, not the clean single treatment you wanted. This one cannot be tested statistically — it must be argued from institutional knowledge, exactly like the exclusion restriction in Week three. You must establish, from how the rule actually works, that the cutoff you study governs only the treatment you claim. For fuzzy regression discontinuity this is literally the exclusion restriction.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Audit every RD: McCrary for sorting, **covariate-balance RDs** (nothing predetermined should jump), **donut** and **bandwidth** checks. The through-line: crossing $c$ changes **one thing, smoothly in all else**. The deadliest threat — **compound treatments**, where $c$ triggers several things — leaves no fingerprint and must be argued from institutions. Next: the Russell wrinkle, code, and takeaways.
+:::
+
+::: notes
+To summarize part twelve: audit every regression discontinuity. Beyond the McCrary test for sorting, run covariate-balance regressions where nothing predetermined should jump, run a donut regression discontinuity that drops points right at the cutoff, and check bandwidth and specification sensitivity. The through-line of all these is one idea: regression discontinuity is identified by the assumption that crossing the cutoff changes one thing and only one thing, smoothly in everything else. The deadliest threat is compound treatments, where the same cutoff triggers several things at once; it leaves no statistical fingerprint and must be argued in prose from institutional knowledge. In part thirteen, the finale, we face the honest Russell wrinkle, run the code, and gather the takeaways.
+:::

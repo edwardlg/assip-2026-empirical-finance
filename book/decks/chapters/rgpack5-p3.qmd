@@ -1,0 +1,70 @@
+---
+date: "2026-07-20"
+---
+
+## The Reader's-Guide Template: Tables, Cleverness, Vulnerability, Replication
+
+- Part 3 — the last four boxes: reading order, clever, vulnerable, replication
+
+::: notes
+Welcome back to How to Read an Empirical Paper, part three of seven. In part two we covered the first three boxes: question, identification, and data. Now we finish the seven-part template with the last four — the table-reading order, what's clever, what's vulnerable, and three replication exercises. These are the boxes where you stop describing the paper and start judging it.
+:::
+
+## Box 4 — Table-by-Table Reading Order
+
+- Which table is the **headline** that, if broken, sinks it?
+- Which tables are **setup** (summary stats, I V first stage)?
+- Which tables are **defense** (robustness, placebo, alternatives)?
+- Write the order that absorbs the argument fastest
+- One line on what each table is *for*
+
+::: notes
+Box four: the table-by-table reading order. Which table is the headline — the one that, if it broke, would sink the paper? Which tables are setup, like summary statistics or the first stage of an instrumental-variables design? And which tables are defense — robustness checks, placebo tests, alternative specifications? Write the order in which a reader should look at the tables to absorb the argument fastest, and say in one line what each table is for. A paper's argument has a spine made of tables, and box four is where you map it.
+:::
+
+## Box 5 — What's Clever
+
+- Every surviving paper has one genuinely good idea
+- A construction, a comparison, data nobody had assembled
+- Fama–French: sort stocks into portfolios so beta noise averages out
+- Bertrand–Duflo–Mullainathan: invent **placebo laws** to catch lying SEs
+- Naming the cleverness teaches you to be clever
+
+::: notes
+Box five: what's clever. Every paper that survives has one genuinely good idea — a construction, a comparison, a piece of data nobody had assembled, or a way of turning an awkward problem into a clean one. Name it. Fama and French's cleverness is sorting stocks into portfolios so that the noise in individual-stock betas averages out. Bertrand, Duflo, and Mullainathan's cleverness is inventing placebo laws — fake policies that did nothing — to measure how often the standard errors lie. Naming the cleverness in someone else's paper is how you learn to be clever yourself.
+:::
+
+## Box 6 — What's Vulnerable
+
+- Every paper has a soft spot
+- The assumption most likely false
+- The alternative explanation it did not rule out
+- State the **single most threatening** alternative
+- And what evidence would settle it
+
+::: notes
+Box six: what's vulnerable. Every paper also has a soft spot — the assumption most likely to be false, the alternative explanation it did not rule out, the sample that may not generalize, the standard errors that may be too small. State the single most threatening alternative explanation, and say what evidence would settle it. This is not nitpicking. It is the question a referee, a seminar audience, or a skeptical capstone mentor will ask first. Reveal the trick, and reveal where the trick can fail. A reader who can only praise a paper has not finished reading it.
+:::
+
+## Box 7 — Three Replication Exercises
+
+- Three concrete things a student could *do* on a laptop
+- One: **re-create a number** from the headline table
+- Two: **stress an assumption** — new controls, window, SE flavor
+- Three: **extend the idea** — new asset class, decade, country
+- These seed your problem sets and your capstone
+
+::: notes
+Box seven: three replication exercises. Three concrete things a student could actually do, on real data, on a laptop, to test or extend the paper. The first should re-create a number from the headline table. The second should stress an assumption — re-run with different controls, a different sample window, or a different standard-error flavor. The third should extend the idea to a new setting — a new asset class, a more recent decade, a different country. These become your problem-set and notebook tasks, and they are also the seed of a capstone project.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Boxes four through seven move from describing to **judging**: the table reading order (find the headline), what's clever (the one good idea), what's vulnerable (the single most threatening alternative), and three laptop-sized replication exercises. Next: the reading-order heuristic — tables first, prose last.
+:::
+
+::: notes
+To summarize part three: the last four boxes move you from describing a paper to judging it. Box four maps the tables and finds the headline. Box five names the one genuinely good idea. Box six names the single most threatening alternative and the evidence that would settle it. Box seven lists three replication exercises — one to re-create a number, one to stress an assumption, one to extend the idea. In part four we zoom in on a habit that surprises beginners most: the reading order itself, tables first and prose last.
+:::

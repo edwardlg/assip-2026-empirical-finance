@@ -1,0 +1,47 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## The Test Statistic: A Single Ruler
+
+- Part 3 — distance from the null, in units of noise
+
+::: notes
+Welcome back to Chapter one-point-five, part three of ten. In part two we wrote down Sam's two hypotheses: the skeptic's null, mu equals zero, against the alternative, mu greater than zero. Now we build the test statistic — a single ruler that measures how far the data sit from the null, in units of their own noise.
+:::
+
+## A Statistic in Units of Its Own Noise
+
+- Raw distance $\bar{x}-0=0.08\%$ is uninterpretable alone
+- It is small or large only relative to wobble
+- Divide by the standard error $\sigma/\sqrt{N}$
+- From the CLT: $\dfrac{\bar{x}-\mu}{\sigma/\sqrt{N}}\xrightarrow{d}N(0,1)$
+- The $\sqrt{N}$: four times the data, half the wobble
+
+::: notes
+The result in one sentence: a test statistic rescales your estimate into units of its own noise, so that how far is the data from the null becomes a number you can look up. Here is the reasoning. Sam's eight basis points looks small or large only relative to how much the sample mean wobbles from sample to sample. If daily returns barely vary, then plus zero point zero eight percent averaged over two hundred fifty-two days is a mountain. If they swing wildly, it is a pebble. So a raw distance from the null is uninterpretable on its own; we must divide by a measure of its variability. Recall the Central Limit Theorem from Chapter one-point-four: the standardized sample mean — x-bar minus mu, over sigma divided by root N — converges in distribution to a standard normal. That denominator, sigma over root N, is the standard error of the mean. Note the root N: collect four times as much data and the wobble halves.
+:::
+
+## Assume the Null, Get the Statistic
+
+- Assume $H_0$ true: substitute $\mu=0$
+- Under $H_0$: $\dfrac{\bar{x}-0}{\sigma/\sqrt{N}}\xrightarrow{d}N(0,1)$
+- Estimate, minus null, divided by standard error
+- $t=0.3$: a third of an error out — unremarkable
+- $t=4$: four errors out — the null almost never visits
+
+::: notes
+Now do the one move that defines a test. Assume the null is true and substitute mu equals zero into the Central Limit Theorem expression. Under the null, x-bar minus zero, over sigma divided by root N, converges to a standard normal. This is the test statistic in its idealized form: take your estimate, subtract the null value, divide by the standard error. The result is a pure number — Sam's eight basis points expressed in standard errors above zero. A test statistic of zero point three means the data sit less than a third of a standard error from the null: utterly unremarkable. A test statistic of four means four standard errors out: a place the null almost never visits. There is one honest problem left, and fixing it gives us the t.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **test statistic** is estimate-minus-null, divided by its standard error $\sigma/\sqrt{N}$ — distance measured in units of noise. Assume $H_0$ and the CLT makes it $N(0,1)$: a pure number of standard errors from the null. But the formula still hides the unknown true $\sigma$. Next: estimating $\sigma$, and the t-distribution it forces.
+:::
+
+::: notes
+To summarize part three: a test statistic is estimate minus null, divided by its standard error sigma over root N — distance measured in units of noise. Assume the null, and the Central Limit Theorem makes that statistic a standard normal: a pure number of standard errors from the null. But the formula still hides the true population standard deviation sigma, which nobody actually knows. In part four we fix that one honest problem by estimating sigma from the data — and see the t-distribution it forces upon us.
+:::

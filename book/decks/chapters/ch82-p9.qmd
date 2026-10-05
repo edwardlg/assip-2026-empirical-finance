@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Reading the Oster δ, and Three Honesty Rules
+
+- Part 9 — use δ two ways; three honesty rules
+
+::: notes
+Welcome back to Chapter eight-point-two, part nine of ten. In part eight we reframed the unobserved-confounder threat into Oster's how-much question and met its three ingredients. Now we put delta to work — there are two ways to use it, and you should report both — then read Maya's actual number and close with three honesty rules, because this test is easy to abuse.
+:::
+
+## Two Ways to Use δ
+
+- **Bounding set:** fix $\delta=1$, solve for bias-adjusted $\beta^*$; set is $[\hat\beta_1, \beta^*]$
+- Pass: set excludes zero. Fail: set contains zero
+- **The δ that kills it:** set $\beta^*=0$, solve for the required $\hat\delta$
+- Pass: $\hat\delta \ge 1$ — confounder must beat **all** your observables
+- Fail: $\hat\delta < 1$ — a weaker confounder could erase the effect
+
+::: notes
+There are two ways to use delta, and you should report both. Use one, the bounding set: fix delta at the benchmark of one and solve for the bias-adjusted coefficient beta-star — where your estimate would land if unobservable selection were exactly as strong as observable selection. This gives an identified set, conventionally the interval from beta-one-hat to beta-star. Pass if the set excludes zero — even with confounding as strong as your observables, the effect stays the same sign and away from zero. Fail if the set contains zero. Use two, the delta that kills it: set beta-star to zero and solve for the delta required to drive your effect to zero, call it delta-hat. Pass if delta-hat is at least one — an unobservable would have to be at least as confounding as everything you observed, usually implausible, since researchers control for the most obvious confounders, so the leftovers should be weaker. The larger delta-hat, the more robust. Fail if delta-hat is below one.
+:::
+
+## Reading Maya's δ
+
+- Coef $-2.2 \to -1.4$ while $R^2$ climbs $0.08 \to 0.42$
+- Small coefficient move, large explanatory gain $\Rightarrow \hat\delta \approx 4.7$
+- A confounder must be $\approx$ 4–5× her controls to nullify
+- Since she controls the obvious confounders, that is hard to argue
+- **Robust** to selection on unobservables
+
+::: notes
+Plug in Maya's numbers: an uncontrolled A-T-T of minus two-point-two that moves only modestly to minus one-point-four when controls are added, while R-squared climbs a lot, from zero-point-zero-eight to zero-point-four-two. The coefficient moved a little but the controls explained a great deal — and it is that contrast that matters — so delta-hat is about four-point-seven. An unobservable would have to be roughly four to five times as correlated with examination adoption as her full set of applicant-composition controls to explain away the effect. Since she already controls for the obvious confounders, an unobservable that potent is hard to argue for. She can write: the result is robust to selection on unobservables under the Oster test — an omitted confounder would have to be four-point-seven times as important as the rich observables to nullify the estimate.
+:::
+
+## Three Honesty Rules
+
+- **1.** Report and defend $R_{\max}$; $\hat\delta$ is mechanically sensitive to it
+- Re-run pushing $R_{\max}$ to 1 — the harshest case
+- **2.** $\delta$ is **not** a p-value — robustness, not significance
+- Wildly significant can pair with $\hat\delta = 0.3$ (fragile)
+- **3.** A failing $\delta$ is **information** — put it in your limitations
+
+::: notes
+Three honesty rules specific to Oster, because the test is easy to abuse. First, report your maximum R-squared and defend it. Delta-hat is mechanically sensitive to it: assume the controls explain everything and the test is vacuous; assume R-max equals one and it is harshest. State you used the one-point-three default, and show how delta-hat moves if you push R-max to one. Second, delta is not a p-value. It measures robustness to a specific, untestable threat, not significance. A result can be wildly significant and have a delta-hat of zero-point-three, fragile to confounding; another can have a modest t and a delta-hat of five, hard to confound. Report both kinds of evidence — they answer different questions. Third, a failing delta is information, not an embarrassment. If delta-hat is zero-point-four, the test has told you, honestly, that a confounder weaker than your observables could be the whole story. That belongs in your limitations, stated plainly.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Report δ two ways: the bounding set at $\delta=1$, and the $\hat\delta$ that drives the effect to zero. Maya's $\hat\delta \approx 4.7$ means a confounder must out-do her controls four-to-five-fold — robust. Always report $R_{\max}$, remember δ is not a p-value, and treat a failing δ as honest information.
+:::
+
+::: notes
+To summarize part nine: use the Oster delta two ways — the bounding set, fixing delta at one to see whether the interval still excludes zero, and the delta-hat that would be required to drive your effect to zero. Maya's delta-hat of about four-point-seven means a confounder would have to be four to five times stronger than her rich controls to nullify the estimate — robust, because she already controls the obvious confounders. Three honesty rules govern the test: always report and defend your maximum R-squared, remember that delta is not a p-value but a robustness measure, and treat a failing delta as honest information for your limitations. In part ten we assemble the whole battery, ask what a survivor looks like, and confront the real lesson of the chapter.
+:::

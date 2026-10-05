@@ -1,0 +1,65 @@
+---
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+## Past Matching: Three Tools, One Theme
+
+**Learning objectives.** By the end you can:
+
+- Build IPW weights and a pseudo-population from propensity scores
+- Solve directly for entropy-balancing weights that force exact balance
+- Apply doubly-robust AIPW, consistent if either model is right
+- Judge method stability and choose among them
+
+::: notes
+Welcome to Week Three, Chapter three-point-three, part one of ten. In Chapter three-point-two, Maya built a propensity score and matched on it — and it sort of worked, but matching threw away a third of her controls and her answer wobbled. This lesson takes the same starting point and pushes past matching's limits, with one theme to watch the whole way: stability.
+:::
+
+## Maya Has a Score and a Problem
+
+- Studies a free financial-literacy course on loan rates
+- Enrollment was **not random** — selection bias
+- Built propensity score $e(\mathbf{X}) = \Pr(D=1 \mid \mathbf{X})$
+- Matched each enrollee to nearest non-enrollee
+- Lost a third of controls; income still imbalanced
+- Has a result; not yet one she **trusts**
+
+::: notes
+Recall Maya's setup. She studies a free, six-week financial-literacy course and asks whether enrolling lowered a student's interest rate on a first loan. Enrollment was not random: the students who signed up were already more financially engaged, higher income, better starting credit, and older. That is selection. Following Chapter three-point-two, she estimated a propensity score — the probability of enrolling given covariates X, written e of X — and matched each enrollee to the nearest non-enrollee. It worked, sort of. But matching discarded a third of her control group, her balance table still showed income off by a noticeable margin, and when she nudged the propensity specification, her estimate wobbled by half a percentage point. She has a result. She does not yet have a result she trusts.
+:::
+
+## Three Tools, Same Starting Point
+
+- **IPW**: reweight units by inverse propensity score
+- **Entropy balancing**: solve directly for balancing weights
+- **Doubly robust / AIPW**: combine weighting and outcome models
+- All assume **CIA** and **overlap** from Chapter three-point-two
+- All consistent in theory; differ in **stability**
+
+::: notes
+This chapter is three tools, all starting where Chapter three-point-two left off — the propensity score and the conditional-independence assumption — and all pushing past matching. The first, inverse-probability weighting, uses the score not to pair units but to reweight them, manufacturing a pseudo-population where treatment looks random. The second, entropy balancing, skips the propensity model entirely and solves directly for weights that force the covariates into balance. The third, doubly-robust or augmented I-P-W, combines a propensity model and an outcome model so you are protected if either one is right. We take the conditional-independence assumption and overlap as given — Chapter three-point-two earned them — and ask: given that they hold, what is the smartest way to use them? The recurring theme is stability. All three are consistent in theory; they differ enormously in how badly they misbehave when the propensity model is even slightly wrong, which in real data it always is.
+:::
+
+## The Target We Are After
+
+- **ATT**: $\tau_{\text{ATT}} = \mathbb{E}[Y_i(1) - Y_i(0) \mid D_i = 1]$
+- The effect for the kind of student who enrolled
+- **ATE**: the average effect over everyone
+- We see only one potential outcome per student
+- Every method **fills in the missing column**
+
+::: notes
+A reminder of the target. We want a causal contrast — usually the average treatment effect on the treated, written tau A-T-T, the expected difference between potential outcome Y-of-one and Y-of-zero among the treated. That is the average effect for the kind of student who actually enrolled. Or sometimes the average treatment effect, tau A-T-E, over everyone. The fundamental problem of causal inference is that for each student we see only one of the two potential outcomes — the rate if enrolled, or the rate if not — and the other is a missing counterfactual. Every method in this chapter is, at heart, a different clever way to fill in that missing column using the units we do observe.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three methods — **IPW**, **entropy balancing**, and **doubly-robust AIPW** — all use the propensity score and the conditional-independence assumption to fill in the missing counterfactual. They are all consistent in theory; the theme of this lesson is **stability** — how badly each misbehaves when the model is slightly wrong. Next: the IPW trick itself.
+:::
+
+::: notes
+To summarize part one: three methods — inverse-probability weighting, entropy balancing, and doubly-robust augmented I-P-W — all start from the propensity score and the conditional-independence assumption, and all fill in the missing counterfactual. They are consistent in theory; what separates them is stability when the model is wrong. In part two, we open the first method by stating the inverse-probability-weighting trick in one plain image.
+:::

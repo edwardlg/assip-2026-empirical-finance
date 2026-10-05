@@ -1,0 +1,67 @@
+---
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+## Effective F and the Strong-Instrument Contrast
+
+- Part 5 — effective $F$ flags weakness; strong instrument fixes all
+
+::: notes
+Welcome to Lab Three, part five of five. In part four the Monte Carlo exposed the disaster: the conventional interval covered only about eighty percent of the time while Anderson–Rubin recovered honest coverage. Now we finish the toolkit with the Olea–Pflueger effective F, learn the Bound–Jaeger–Baker lesson that significance is not strength, and flip the knob to a strong instrument to watch every pathology evaporate.
+:::
+
+## Step 5 — The Effective F
+
+- Classical $F$ assumes homoskedastic, non-clustered errors
+- **Olea–Pflueger effective $F$** is right under realistic errors
+- `linearmodels` reports it in first-stage diagnostics
+- Weak $\approx 1.2$ (flagged, below ~10) · strong $\approx 54$ (cleared)
+
+::: notes
+You have two ways to measure first-stage strength. The classical first-stage F you already coded — but Chapter three-point-four warned it assumes homoskedastic, non-clustered errors. The right statistic under realistic errors is the Olea–Pflueger effective F, which the linearmodels package reports directly. The effective F is around one-point-two for the weak instrument — far below the roughly-ten threshold, so it correctly flags the weak case — and around fifty-four for the strong instrument, clearing the bar by a mile. The two F statistics agree here only because this data-generating process has homoskedastic errors. In a real finance dataset, trust the effective F.
+:::
+
+## Significance Is Not Strength
+
+- Across 1,200 weak draws: mean classical $F \approx 1.4$
+- Over **99%** of weak draws: $F < 10$ — klaxon always on
+- But the **max** $F \approx 14$ — sometimes spuriously large
+- Bound–Jaeger–Baker: a *significant* first stage is not a *strong* one
+
+::: notes
+The classical-F distribution carries the deeper lesson. Across the twelve hundred weak draws, the mean classical F is about one-point-four, and over ninety-nine percent have an F below ten — the klaxon almost always sounds. But the maximum is around fourteen, above ten. A researcher unlucky enough to draw that sample would declare the instrument strong and march into the pathology. This is Bound, Jaeger, and Baker in one line: a statistically significant first stage is not a strong one. The F-greater-than-ten rule guards the typical draw, never your draw — which is why you report the effective F.
+:::
+
+## Step 6 — Flip the Knob to Strong
+
+- Re-run the identical Monte Carlo with `PI_STRONG = 0.8`
+- median 2SLS $\approx 0.00$ — **bias purged** (OLS still biased)
+- conventional coverage $\approx 0.95$ · AR $\approx 0.95$, **never** unbounded
+- mean first-stage $F \approx 52$ — off the charts
+
+::: notes
+The machinery is not broken in general — it is broken by weakness. Re-run the identical Monte Carlo with the knob set to pi equals zero-point-eight, changing nothing else, and watch every pathology evaporate. The median two-stage least-squares estimate lands on the truth, about zero — the bias is purged, even though ordinary least squares still sits at plus zero-point-four, because ordinary least squares is never fixed. Conventional coverage recovers to about ninety-five percent. Anderson–Rubin agrees and is never unbounded. And the mean first-stage F is around fifty-two — off the charts. A bar chart makes it unmissable: only the weak-conventional bar sits below the ninety-five percent line. The conventional method snaps back to honest the instant the instrument is strong.
+:::
+
+## Where This Connects
+
+- You **reproduced** the Bound–Jaeger–Baker disaster by hand
+- Two cures work: **effective $F$** flags it, **AR** stays honest
+- The camp's habit: plant a truth, simulate, read averages
+- Next: **Week 4** — diff-in-diff, RD, synthetic control
+
+::: notes
+You have now reproduced, with your own hands, the disaster Bound, Jaeger, and Baker made famous: a valid but weak instrument that drags two-stage least squares back toward the ordinary-least-squares bias it was meant to cure, reports a confidence interval far too narrow to be honest, and clears the bar by luck just often enough to fool someone. And you watched the two cures work — the effective F that flags the weakness, and the Anderson–Rubin interval that stays honest however weak the first stage is, even when honesty means confessing, through an unbounded interval, that the data cannot answer the question. The habit underneath it runs through every lab in this camp: when unsure whether a tool does what it claims, build a universe where you know the truth and check — and read the answer by averaging over many draws, never one.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The effective $F$ flags the weak instrument ($\approx 1.2$) and clears the strong one ($\approx 54$); a *significant* first stage is not a *strong* one. Flip to a strong instrument and every method agrees. Next: **Week 4** — diff-in-diff, RD, and synthetic control, stress-tested the same way.
+:::
+
+::: notes
+To summarize part five and the whole lab: the effective F flags the weak instrument at about one-point-two and clears the strong one at about fifty-four, and the Bound–Jaeger–Baker lesson is that a significant first stage is not a strong one. Flip the knob to a strong instrument and every pathology evaporates: the bias is purged, coverage recovers, every method agrees. Instrumental variables delivers only when you have a strong instrument — so the discipline is to check. In Week Four we move to design-based causal inference — difference-in-differences, regression discontinuity, and synthetic control — and we will stress-test every one exactly the way you just did here.
+:::

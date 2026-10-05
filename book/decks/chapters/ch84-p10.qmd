@@ -1,0 +1,47 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Maya Answers Devon: Bound and Concede
+
+- Part 10 — Maya's memo: a bounded threat and a concession
+
+::: notes
+Welcome back to peer review and revision, part ten of twelve. In part nine we learned the three moves: concede, defend, and bound the untestable. Now we read Maya's actual memo answering Devon, and watch the moves in real responses. This part covers her first two major points — a bounded threat and a concession. Each response quotes the comment, states the change, and points to a specific new table or figure with a specific number.
+:::
+
+## Point One: Bound the Untestable
+
+- Devon asked first for an event study on parallel trends
+- Maya added it as new Figure Two, Section four-point-two
+- Four pre-period leads jointly insignificant, F-test p = 0.41
+- Effect emerges in the examination year, grows two years
+- She bounds it: flat leads fail to refute, do not confirm
+
+::: notes
+Maya opens by thanking the referee for an unusually constructive report, noting comments are in italics and new material is flagged in blue. Major point one, anticipation and pre-trends. Devon's quoted comment: the entire causal claim rests on parallel trends, and I cannot assess it because there is no event study; flat leads would reassure me, a downward pre-trend would be close to fatal. Maya's response: this was the right thing to ask first. We added an event study as new Figure Two and discuss it in Section four-point-two. The four pre-period leads are individually insignificant and jointly insignificant, joint F-test p equals zero point four one, with no visible downward drift before adoption; the effect emerges in the year of examination and grows over the following two years. We read this as consistent with — though, as we now stress, not proof of — parallel trends. She added one sentence to the limitations noting that flat leads cannot confirm the counterfactual, only fail to refute it. That is bounding the untestable threat: present the best available evidence, and state the residual honestly rather than overclaim it away.
+:::
+
+## Point Two: Concede, and the Numbers Agree
+
+- Devon flagged the forbidden comparison in staggered DiD
+- Maya agrees it was a real gap
+- Re-estimated with Callaway–Sant'Anna, new Table 3
+- Robust estimate −1.5 points, near the −1.4 TWFE estimate
+- Agreement means the concession cost her nothing
+
+::: notes
+Major point two, the forbidden comparison. Devon's quoted comment: the design is staggered, already-treated counties are serving as controls, and I would want the headline re-estimated with a heterogeneity-robust estimator and the two numbers compared. Maya's response: we agree this was a real gap. We re-estimated the headline using the Callaway and Sant'Anna estimator against never- and not-yet-treated controls only, new Table Three. The robust estimate is negative one point five percentage points, very close to the negative one point four two-way fixed-effects estimate, suggesting the negative-weights problem is not material here — consistent with effects that, while dynamic, are similarly signed across cohorts. We now report both numbers and note the agreement in Section five-point-one. We retain two-way fixed effects as the headline for comparability but flag the robust estimate as the one we would defend if the two diverged. This is a clean concession: she granted the gap, ran the estimator, and because the numbers agree, the concession cost her nothing and bought enormous credibility.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Maya's first two responses show two moves. She **bounds** the untestable pre-trend — event study, joint F-test p = 0.41, flat leads, plus an honest limit that they fail to refute but cannot confirm. She **concedes** the staggered-DiD gap, running Callaway–Sant'Anna: the robust −1.5 agrees with the TWFE −1.4, so the concession cost nothing. Both quote, change, and cite a real number. Next: her defense, and why the memo works.
+:::
+
+::: notes
+To summarize part ten: Maya's memo answers Devon's first two majors with two of the three moves. On point one, anticipation and pre-trends, she bounds the untestable threat — adding an event study as new Figure Two, reporting four jointly insignificant leads with a joint F-test p-value of zero point four one, and stating honestly that flat leads fail to refute but cannot confirm the counterfactual. On point two, the forbidden comparison, she concedes the gap was real, runs the Callaway and Sant'Anna estimator, and reports a robust negative one point five percentage points that agrees with the two-way fixed-effects negative one point four — so the concession costs nothing and buys credibility. Each response quotes, states the change, and points to a real number. In part eleven we read her defense of point three, and tally why the whole memo works.
+:::

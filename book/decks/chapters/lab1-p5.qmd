@@ -1,0 +1,71 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Measuring the Size of Your Test
+
+- Part 5 — measure the test's empirical size
+
+::: notes
+Welcome back to Lab one, part five of seven. In part four you wrote a one-proportion z-test and checked it against a library. Now comes the payoff of owning a simulator. The size of a test is its probability of a Type One error — rejecting the null when the null is true. The chapter defined that as alpha; here you stop taking it on faith and measure it.
+:::
+
+## What Size Is
+
+- **Size** = probability of a Type I error
+- Rejecting $H_0$ when $H_0$ is *true*
+- The chapter *defined* size as $\alpha$ — you will *measure* it
+- Build a universe where the null is exactly true
+- A genuinely fair coin: $p = p_0 = 0.5$
+
+::: notes
+The size of a test is its probability of a Type One error — rejecting the null when the null is actually true. The chapter asserted a well-built test rejects a true null about alpha of the time; you will measure it. The trick is to build a universe where the null is exactly true: a genuinely fair coin, where the data-generating p equals the null value p-naught equals one-half. Run your test thousands of times on fresh fair-coin samples and count rejections. Since the null is true by construction, every rejection is a false positive, and that fraction is the empirical size.
+:::
+
+## Measure It and Report the MC SE
+
+- Loop: draw at $p_0$, run your test, count rejections
+- Empirical size = rejections divided by reps
+- Monte Carlo SE $= \sqrt{0.05 \cdot 0.95 / \text{reps}}$
+- At $20{,}000$ reps the MC SE is about $0.0015$
+- Expect size near $0.05$ — roughly $0.05$ to $0.056$
+
+::: notes
+Loop thousands of times: draw a fresh sample at p-naught, run your test, and count how often the p-value falls below alpha. The empirical size is rejections divided by reps. Crucially, report the Monte Carlo standard error — the square root of zero point zero five times zero point nine five, over the number of reps. At twenty thousand reps that is about zero point zero zero one five. So expect the empirical size near zero point zero five, in the rough neighborhood of zero point zero five up to zero point zero five six. You have verified that your from-scratch test controls its false-positive rate near the advertised level, without taking it on faith.
+:::
+
+## A Hair High Is a Finding, Not a Bug
+
+- The normal-approximation z-test is slightly **liberal**
+- It over-rejects a touch on discrete coin data
+- The smooth normal does not match the lumpy Binomial
+- That small gap shrinks as $N$ grows — it is real
+- The exact `binomtest` would sit at or below $0.05$
+
+::: notes
+Do not be alarmed if the size sits a hair above zero point zero five. The normal-approximation z-test on discrete coin data is slightly liberal — it over-rejects a touch at moderate sample sizes — because the smooth normal does not perfectly match the lumpy Binomial underneath. That small gap is itself a finding, not a bug: the approximation showing its seams, and it shrinks as N grows. The exact binomtest, by contrast, would come in at or below zero point zero five. Recognizing this slight over-rejection is part of auditing the procedure.
+:::
+
+## Stress It, and Check the P-Value Shape
+
+- Re-measure at $N=25$, $p_0 = 0.1$ — small and off-center
+- Size drifts from $0.05$, often *below* it, sometimes erratic
+- This is the normal approximation breaking down
+- Under a true null, p-values are **uniform** on $[0,1]$
+- So the fraction below any $\alpha$ should be exactly $\alpha$
+
+::: notes
+Now stress the test. Re-measure with a small sample and an off-center null — N equal to twenty-five and p-naught equal to zero point one. The empirical size drifts from zero point zero five, often below it and sometimes erratically. This is the normal approximation breaking down where part three warned, when N times p-naught is small. Finally, a reflection that seeds the last part. Under a true null, the chapter proved the p-value is uniform on zero to one. Histogram the p-values from the fair-coin runs: expect a flat, uniform shape — and a uniform distribution makes the fraction below any threshold alpha exactly alpha. That is why a true null fires at rate alpha by construction.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Build a universe where $H_0$ is *true*, run the test many times, and count rejections: that is the **empirical size**, and it should land near $\alpha$ within a few Monte Carlo SEs. A hair above $0.05$ is the normal approximation showing its seams, not a bug. Under a true null, p-values are uniform on $[0,1]$. Next: measure power.
+:::
+
+::: notes
+To summarize part five: build a universe where the null is true, run your test many times, and count rejections — that fraction is the empirical size, landing near alpha within a few Monte Carlo standard errors. A result a hair above zero point zero five is the normal approximation showing its seams, not a bug. Under a true null, p-values are uniform on zero to one, which is why the rejection rate equals alpha. In part six we point the same machine at a genuinely biased coin and measure power — how often the test catches a real effect.
+:::

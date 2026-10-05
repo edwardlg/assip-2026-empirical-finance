@@ -1,0 +1,75 @@
+---
+date: "2026-07-20"
+---
+
+## Reading Petersen as a Paper: The Question
+
+**Learning objectives.** By the end you can:
+
+- Explain why a **methods** paper needs a known-truth world
+- Read a panel SE method as a claim about **estimators**
+- State Petersen's two questions: **coverage** and cost of error
+- Diagnose why classical OLS SEs fail in panels
+
+::: notes
+Welcome to Week Five, Chapter five-point-four, part one of seven — a reader's guide to Petersen, two-thousand-nine, "Estimating Standard Errors in Finance Panel Data Sets." You met this paper back in Week Two, where we used its conclusions as a recipe — firm effect, cluster by firm; time effect, cluster by time; both, cluster two ways. This week we do something harder: we read the paper as a paper. What question did it set out to answer, how did it argue its case, and where could a referee still push? The recipe is the output. This guide is about the machine that produced it.
+:::
+
+## Reading a Methods Paper Is Its Own Skill
+
+- An **empirical** paper claims something about the **world**
+- A **methods** paper claims something about how we **do empirical work**
+- Its "finding" is a fact about **estimators**, not about markets
+- You can't check it against a stylized fact you half-believe
+- The only test: find a world where you **know** the right answer
+
+::: notes
+Reading a methods paper is its own skill, not the one you used on Fama–French this week. An empirical paper claims something about the world — value stocks earn higher returns — and you interrogate the data and identification behind that claim. A methods paper claims something about how we do empirical work itself. Its finding is a fact about estimators, not about markets. You cannot check it against a stylized fact you half-believe. The only way to evaluate "method A gives the wrong standard error and method B the right one" is to find a world where you already know the right answer, and watch which method recovers it. That is the whole identification strategy.
+:::
+
+## The Plain-English Question
+
+- In a finance panel, **which** standard-error method is correct?
+- And how **badly wrong** do you go picking the wrong one?
+- Pooled regression: $y_{it}=\beta_0+\beta_1 x_{it}+\varepsilon_{it}$
+- The point estimate $\hat\beta_1$ is rarely the problem
+- The **standard error** is — it tells you how much to trust $\hat\beta_1$
+
+::: notes
+The plain-English question: in a finance panel, which standard-error method is correct — and how badly wrong do you go if you pick the wrong one? Recall the setup. A panel observes many units i, usually firms, across many periods t. You run a pooled regression: y-i-t equals beta-zero plus beta-one times x-i-t plus the error term. The point estimate, beta-one-hat, is rarely the problem. The problem, as we proved in Week Two, is the standard error — the number that tells you how much to trust that estimate. Classical OLS assumes every error has the same variance and no two are correlated. In a panel that second assumption is almost always false: a firm's residuals are correlated with themselves over time, or all firms' residuals are correlated within a period, or both.
+:::
+
+## A Chaos of Incompatible Methods
+
+- Mid-2000s: published finance papers used wildly different SEs
+- OLS, White, Fama–MacBeth, Newey–West, cluster by firm, by time
+- Same data: standard errors differing by **factors of two or more**
+- A t-stat of $5$ under one method, $1.8$ under another
+- "Which is right?" decided **which published results to believe**
+
+::: notes
+Petersen's framing was sociological as much as statistical. He surveyed published finance papers and found authors using a chaos of incompatible methods — OLS, White errors, Fama–MacBeth, Newey–West, clustering by firm or time — often with no stated reason, getting standard errors that differed by factors of two or more on identical data. He surveyed recent Journal of Finance, J-F-E, and Review of Financial Studies issues and found this method chaos widespread. The stakes: if one dataset can produce a t-statistic of five under one method and one-point-eight under another, half the profession's significance stars were decorative.
+:::
+
+## Two Questions, Both Answered
+
+- **(a) Diagnosis:** which method has correct **coverage**?
+- A 95% interval should contain the true $\beta$ about 95% of the time
+- **(b) Cost of error:** if assumptions are violated, how far off?
+- And in which direction?
+- Almost always: SE **too small** $\Rightarrow$ you are **overconfident** — the dangerous way
+
+::: notes
+So the question has two parts. Part a is diagnosis: which method has correct coverage — when it builds a ninety-five percent confidence interval, does that interval actually contain the true beta about ninety-five percent of the time? Part b is the cost of error: if a method's assumptions are violated, by how much does your standard error mislead you, and which way? The answer is almost always the same — too small, so you are overconfident. That is the dangerous direction: an overconfident error makes you publish a false result with a confident star next to it.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **methods** paper claims a fact about **estimators**, not about markets — so you can only judge it in a world where the truth is known. Petersen asks two things: which SE method has correct **coverage**, and how badly does the wrong one mislead you (almost always: too small, overconfident). Next: how he manufactures a world where the truth is known.
+:::
+
+::: notes
+To summarize part one: a methods paper claims a fact about estimators, not the world, so you can only judge it where the true answer is already known. Petersen poses two questions — which method has correct coverage, and how badly does the wrong one mislead you, almost always too small and overconfident. In part two we see his cleverest move: rather than argue which method is right, he builds a world where he knows the truth, and lets the methods compete.
+:::

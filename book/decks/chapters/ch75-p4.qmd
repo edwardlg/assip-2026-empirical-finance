@@ -1,0 +1,59 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## The Threat Menu: RD, Synthetic Control, and Using It
+
+- Part 4 — RD and synthetic-control menus, then using them
+
+::: notes
+Welcome back to the identification memo, part four of nine. In part three we walked the threat menus for OLS, instrumental variables, and difference-in-differences. Now we finish the menu with the last two designs — regression discontinuity and synthetic control — and then learn exactly how to turn the menu into your own starting list of threats.
+:::
+
+## Regression Discontinuity
+
+- Assumes **continuity** of potential outcomes at the cutoff
+- Threat: manipulation/sorting — units control which side they land on
+- The McCrary fingerprint: a jump in the density
+- Threat: covariate imbalance — something predetermined jumps
+- Threat: **compound treatment** — more than one thing switches at once
+
+::: notes
+Regression discontinuity assumes continuity of potential outcomes at the cutoff. Its named threats are manipulation or sorting, where units precisely control which side of the cutoff they land on, so the just-above and just-below groups are no longer comparable — the McCrary fingerprint is a jump in the density; covariate imbalance at the cutoff, where something predetermined jumps where only treatment should; and the most insidious, compound treatment, where more than one thing switches at the same threshold, so your jump is the bundled effect of all of them, not the clean treatment you wanted. Manipulation and imbalance leave fingerprints you can test for; compound treatment passes every statistical test and must be ruled out by institutional argument alone.
+:::
+
+## Synthetic Control
+
+- Donors reproduce the treated unit's *untreated* path
+- Threat: bad donor pool — no match, or donors contaminated
+- Threat: anticipation — treated unit reacts before the event
+- Threat: interpolation/overfitting — weights fit pre-period noise
+- Inference is a **placebo permutation**, not a t-test
+
+::: notes
+Synthetic control assumes that a weighted average of untreated donor units reproduces the treated unit's untreated path. Its named threats are a bad donor pool, where no convex combination of donors actually matches the treated unit's pre-period, or the donors are themselves contaminated by spillovers from the treatment; anticipation, where the treated unit reacts before the event and fouls the pre-period fit; and interpolation or overfitting, where the weights fit pre-period noise and so mispredict the counterfactual. With an effective sample size of one, inference is not a t-test but a placebo permutation: you assign the fake treatment to each donor in turn and ask how extreme the real effect looks against that distribution.
+:::
+
+## Using The Menu
+
+- You run exactly **one** design for your primary spec
+- The one you committed to in your pre-analysis plan
+- Pull its row — that's your starting list of threats
+- Then add threats specific to *your* data
+- Survivorship filter, look-ahead leak, measurement error
+
+::: notes
+Here is how you use the menu. You will use exactly one of these designs for your primary specification — the one you committed to in your pre-analysis plan. Pull its row off this menu and you have your starting list of threats. Then add any that are specific to your own data: a survivorship filter, a look-ahead leak from Chapter seven-point-four, a measurement-error problem from Week One. The menu guarantees you do not forget the obvious ones; your own data supplies the rest. These named failures are the recurring villains of Weeks Three and Four, and the memo is where you finally name them out loud against your own data.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**RD** assumes continuity, threatened by manipulation, imbalance, and compound treatment. **Synthetic control** assumes donors reproduce the untreated path, threatened by a bad donor pool, anticipation, and overfitting, with inference by placebo permutation. To use the menu, pull your primary design's row, then add the threats specific to your data. Next: the four-column threats-and-responses table.
+:::
+
+::: notes
+To summarize part four: regression discontinuity assumes continuity at the cutoff, threatened by manipulation, covariate imbalance, and compound treatment — the last of which passes every test and must be argued away. Synthetic control assumes a weighted average of donors reproduces the treated unit's untreated path, threatened by a bad donor pool, anticipation, and overfitting, with inference done by placebo permutation rather than a t-test. To use the whole menu, pull the row for the one design you committed to in your pre-analysis plan, then add the threats specific to your own data. In part five we put these threats into the four-column threats-and-responses table that is the operational heart of the memo.
+:::

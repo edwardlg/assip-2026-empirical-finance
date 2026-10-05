@@ -1,0 +1,57 @@
+---
+date: "2026-07-20"
+---
+
+## The Data: CRSP Monthly Returns
+
+- Part 5 — the return tape, exchanges, sample, and grid
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part five of eleven. In part four we covered the overlapping-portfolio trick and its serial-correlation cost. Now we look at the data itself: which return tape the authors used, which exchanges, which sample period, and the J-by-K grid you will spend the most time staring at. This is a short part, but the data choices shape everything downstream.
+:::
+
+## The Return Tape and the Exchanges
+
+- Source: **CRSP** monthly returns
+- Center for Research in Security Prices file
+- Same return tape Fama and French use
+- Restricted to **NYSE and AMEX** common stocks
+- Nasdaq's broad CRSP coverage arrives later
+
+::: notes
+The dataset is CRSP monthly returns — the Center for Research in Security Prices file, the same return tape that Fama and French use. In this paper it is restricted to New York Stock Exchange and American Stock Exchange common stocks. Nasdaq's broad coverage on CRSP arrives later in history, which is one reason early momentum work leans on the NYSE and AMEX universe. When you replicate, keep that restriction in mind: adding Nasdaq later changes the small-stock composition of your deciles, and the small, illiquid names are exactly the ones that drive both the profit and the trading-cost worries.
+:::
+
+## The Sample Period and Scale
+
+- Sample period: **nineteen sixty-five to nineteen eighty-nine**
+- Twenty-five years of monthly data
+- Roughly three hundred monthly formation dates
+- Each date sorts hundreds to a couple thousand stocks
+
+::: notes
+The sample period is nineteen sixty-five to nineteen eighty-nine — twenty-five years of monthly data. That gives roughly three hundred monthly formation dates, each one spawning a decile sort over hundreds to a couple thousand eligible stocks. Three hundred formation dates sounds like a lot of observations, but remember the overlapping construction from part four: those monthly returns are not independent, so your effective sample is smaller than the raw count suggests. This is the concrete reason the Week Two inference lesson matters here. The number of independent pieces of information is what governs your standard errors, not the number of rows in the spreadsheet.
+:::
+
+## The J-by-K Grid You Will Live In
+
+- $J \in \{3, 6, 9, 12\}$ formation months
+- $K \in \{3, 6, 9, 12\}$ holding months
+- Equal-weighted decile portfolios, each stock counts equally
+- Overlapping monthly re-formation, as described
+- Modern replication: extend forward, expect shifts
+
+::: notes
+The J-by-K grid is the data object you will spend the most time on. Formation J takes values three, six, nine, and twelve months, crossed with holding K taking values three, six, nine, and twelve months. The portfolios are equal-weighted deciles — each stock counts the same, not value-weighted — with the overlapping monthly re-formation we described. For our notebook we will swap in modern CRSP and extend the sample forward, and you should expect the magnitudes to shift. The post-nineteen-ninety period is not kind to the strategy, especially the two thousand nine momentum crash, when beaten-down losers rocketed in the recovery. Do not expect modern numbers to match the original sample exactly.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Data is **CRSP** monthly returns, **NYSE and AMEX** common stocks, **nineteen sixty-five to nineteen eighty-nine**. The object you live in is the $J$-by-$K$ grid: formation and holding each in three, six, nine, twelve, equal-weighted deciles. Extend it forward and magnitudes shift. Next: how to read the tables.
+:::
+
+::: notes
+To summarize part five: the data is CRSP monthly returns on NYSE and AMEX common stocks, from nineteen sixty-five to nineteen eighty-nine, about three hundred overlapping monthly formation dates. The core object is the J-by-K grid — formation and holding periods each chosen from three, six, nine, and twelve months — using equal-weighted decile portfolios. Remember that the overlapping construction shrinks your effective sample, and that extending the data into the modern era, including the two thousand nine crash, will move the magnitudes. In part six we turn to the tables and learn the order a professional reads them in — starting with the returns matrix.
+:::

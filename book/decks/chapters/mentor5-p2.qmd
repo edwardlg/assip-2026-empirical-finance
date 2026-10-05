@@ -1,0 +1,55 @@
+---
+date: "2026-07-20"
+---
+
+## From Itch to Question to Design
+
+- Part 2 — building links one and two: sharp question, credible design
+
+::: notes
+Welcome back to the anatomy of a Journal of Finance paper, part two of four. In part one we framed a paper as a chain of four links — sharp question, credible design, transparent tables, honest robustness — that dies at its weakest point. Now we build the first two links. We turn a vague itch into a sharp question, and then we go to the link referees actually break papers on: the research design. Having a question, it turns out, is not the same as having an answer.
+:::
+
+## From Itch to Question
+
+- Every project starts as a vague **itch** — that is a topic
+- "I study municipal bonds" — a referee's eyes glaze
+- Sharpen it: name the **outcome**, the **one** key regressor, the **counterfactual**
+- Narrow, testable, falsifiable — narrowness is a *feature*
+
+::: notes
+Every project starts as a vague itch — "something is going on with municipal borrowing." That is a topic, not a paper, and saying "I study municipal bonds" makes a referee's eyes glaze. The work is sharpening it. Watch the upgrade: "Does a state's social and political climate change the interest rate a city pays to borrow, even when the city's finances are identical?" That sentence has an outcome — the borrowing cost; it has the one key right-hand-side variable — the social and political factor; and it has an implied counterfactual — the same city under a different climate. A good question is narrow, testable, and falsifiable, narrow enough that data could plausibly settle it. The narrowness is a feature, not a limitation. The papers you read this week each answer one small question cleanly, and that is exactly why they are still cited thirty years later.
+:::
+
+## Between Question and Answer: the Thicket
+
+- Cities with different social climates also differ in...
+- income, industry, population trend, state tax law
+- Any one of which moves borrowing costs on its own
+- Your variable is **tangled** with all of them
+
+::: notes
+Here is the catch. Having a question is not having an answer, because the thing you care about is tangled with everything else. Cities with different social climates also differ in income, in industry mix, in population trend, in state tax law — and any one of those moves borrowing costs all by itself. So a raw comparison — "cities in states with social factor X pay higher yields" — blames on the social factor whatever those other differences are really doing. That thicket of confounds is the obstacle standing between your question and a believable answer. This is the heart of everything Weeks Three and Four taught you. The design is your argument that you have isolated your variable from the thicket.
+:::
+
+## The Design and Its Identifying Assumption
+
+- A sort, a panel with fixed effects, an instrument, a DiD, a discontinuity
+- Attached to it: the **identifying assumption**, in one sentence
+- "This estimate is the causal effect *as long as* ___"
+- No sentence you can write $\Rightarrow$ no design, just a correlation
+
+::: notes
+A design is a concrete strategy for isolation: a portfolio sort, a panel regression with the right fixed effects, an instrument, a difference-in-differences off a policy shock, or a discontinuity at a cutoff. But the design is not just the strategy — it is the strategy plus one more sentence, the identifying assumption: the condition under which your estimate equals the causal effect and not a confound wearing its coat. You write it in the form "this estimate is the causal effect as long as blank." If you cannot write that sentence, you do not have a design. You have a correlation with ambitions. That is the exact line I apply to my own projects, pointed at my own data, before I commit two years to chasing them.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The first link is an *itch* sharpened into a one-sentence **question** — outcome, one key regressor, counterfactual. The second is the **design**: your argument that you cut your variable out of a thicket of confounds, and it only counts if you can write the **identifying assumption** in one sentence.
+:::
+
+::: notes
+To summarize part two: the first link is the move from a vague itch to a one-sentence question naming an outcome, one key regressor, and the counterfactual it implies. The second link is the design — your argument that you isolated your variable from a thicket of confounds like income, industry, and tax law. And a design only counts as a design if you can write its identifying assumption in one sentence, the "as long as blank" form. In part three we go to the two links that carry the result onto the page: tables that hide nothing, and robustness that tries to kill your own finding before a referee does.
+:::

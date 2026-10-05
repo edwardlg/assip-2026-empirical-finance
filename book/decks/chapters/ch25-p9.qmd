@@ -1,0 +1,67 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## The Bias Ledger and the Bridge to Causal Inference
+
+- Part 9 — the bias ledger and the bridge to causal inference
+
+::: notes
+Welcome back to Chapter two-point-five, part nine of nine — the finale. In part eight the RESET diagnostic completed our tour of the three threats. Now we assemble everything into one table — the bias-consistency ledger — that sorts every threat into bias versus standard error, and names its fix. Then we cross the bridge this chapter was built to reach: into causal inference, the reason Weeks Three and Four exist.
+:::
+
+## The Bias–Consistency Ledger
+
+- For each threat: bias or just SE? which direction? what fix?
+- **Bias:** OVB, measurement error in $x$, wrong functional form, simultaneity
+- **SE only:** heteroskedasticity, clustering, classical noise in $y$
+- Bias moves the **center**; SE problems only widen the **interval**
+
+::: notes
+Now we collect everything. The most useful habit this chapter gives you is to look at any regression and ask: does each problem bias my coefficient, or merely inflate my standard error, and what would fix it? Bias and precision are different diseases with different cures; conflating them is the beginner's signature error. In the bias column: omitted variables, with direction from the two-sign rule; classical measurement error in x, toward zero; wrong functional form; and simultaneity. In the standard-error column: heteroskedasticity and clustering from Chapter two-point-four, plus classical noise in the outcome. Bias moves where the estimate is centered; standard-error problems only widen the interval.
+:::
+
+## Read the Ledger Top to Bottom
+
+- Ch 2.4 problems (heteroskedasticity, clustering) live entirely in **SE**
+- Robust / clustered standard errors are their complete fix
+- This chapter's problems live in **bias** — SE adjustments can't touch them
+- Often the honest fix is a **research design**, not a regression tweak
+
+::: notes
+Read the table top to bottom and a pattern jumps out. The Chapter two-point-four problems — heteroskedasticity and clustering — live entirely in the standard-error column: they change how much your estimate wobbles, never where it is centered, and robust or clustered standard errors are the complete fix. This chapter's problems live in the bias column: they move the center, and no standard-error adjustment can touch them. Bigger samples, fancier standard errors — none helps a biased coefficient. The honest fix is often not a regression tweak, but a research design. That is the line this chapter draws.
+:::
+
+## The Bridge to Causal Inference
+
+- "Add controls and cluster" cannot rescue a biased coefficient
+- Whether $\hat\beta$ is causal = **where the variation in $x$ comes from**
+- Regression alone cannot answer that question
+- You need $x$ to vary for reasons unrelated to the error term
+
+::: notes
+Step back and see what happened to the regression you trusted. This chapter has shown its central output can be pointed at the wrong target by three everyday problems, that add-controls-and-cluster cannot rescue it, and that the regression cannot even tell it has been fooled. Maya's t of four-point-one was real; the number it certified was not the one she wanted. This is motivation, not despair. The deep lesson: whether beta-hat is causal is a question about where the variation in x comes from, and regression alone cannot answer it. If x varies because of confounders, or noise, or because y feeds back into x, OLS faithfully estimates a contaminated quantity. For a causal number, x must vary for reasons unrelated to the error term — the job of research design.
+:::
+
+## What's Next: Weeks 3 and 4
+
+- **Week 3:** potential outcomes, randomization
+- **Week 4:** instruments, difference-in-differences, regression discontinuity
+- Each manufactures the exogenous variation the threats destroy
+- Lab `nb2.5`: simulate OVB, watch attenuation, rebuild Maya's spurious gap
+
+::: notes
+Here is where it goes. Week Three starts over from the potential-outcomes framework, where a causal effect is the difference between what would happen to a unit under treatment versus no treatment — confronting the fundamental problem of causal inference, that we never see both. From there, randomization in Week Three and quasi-experimental designs in Week Four — instruments, difference-in-differences, regression discontinuity — manufacture the exogenous variation the threats destroy. Maya's fair-lending question returns in Week Four with the tools to identify the effect of D holding creditworthiness fixed, using Prof. Gao's own research. And your lab, notebook two-point-five, has you simulate omitted variable bias, watch attenuation drive the estimate toward beta-one times lambda, and rebuild Maya's spurious gap — then break it with a noisily-measured control.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The **bias ledger** sorts every threat: bias (moves the center) vs. SE (widens the interval). Bias needs a **research design**, not bigger samples. You now know the diseases — Weeks 3 and 4 are the cure.
+:::
+
+::: notes
+To summarize the finale and the whole chapter: the bias-consistency ledger is the habit to carry forward — sort every threat into those that bias your coefficient and those that only widen your standard error, because they have different cures. The three threats — omitted variables, measurement error, wrong functional form — plus simultaneity, are bias problems no data or standard-error adjustment can repair. They need credible research design, which Weeks Three and Four deliver. You now know the diseases; the next two weeks are the cure.
+:::

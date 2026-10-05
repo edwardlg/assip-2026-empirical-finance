@@ -1,0 +1,59 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## The Threat Menu: OLS, IV, and DiD
+
+- Part 3 — standard threat menus for OLS, IV, DiD
+
+::: notes
+Welcome back to the identification memo, part three of nine. In part two we wrote the identifying-assumption sentence and learned to name the specific threat, not the word endogeneity. Now we build the list of threats — and the good news is you do not invent them from scratch. Each design from Weeks Three and Four comes with a standard menu of named failures, the ones a referee reaches for first. In this part we cover the first three designs.
+:::
+
+## OLS On Observables
+
+- Assumes treatment as-good-as-random *given the controls*
+- Threat: **omitted-variable bias** — a confounder you left out
+- Threat: **selection** — units choose in on something unseen
+- Weakest rung on the credibility ladder
+- One named omitted variable can wound you
+
+::: notes
+Start with the weakest design. Ordinary least squares on observables assumes that, conditional on your controls, treatment is as-good-as-random — there is no confounder you left out. Its two named threats are omitted-variable bias, a variable that drives both treatment and outcome and is not in your controls — Week Two's ghost, and the reason "we control for X" is a claim, not a spell — and selection, units choosing into treatment on something you cannot see. This is the weakest rung on the credibility ladder, precisely because its assumption, "I have measured every confounder," is the hardest to defend and the easiest to attack. A referee needs only to name one plausible omitted variable to wound you.
+:::
+
+## Instrumental Variables
+
+- **Relevance** — instrument moves treatment — is *testable*
+- Report the first-stage $F$ statistic
+- **Exclusion** — affects outcome only through treatment — is *arguable*
+- Threat: weak instrument — $F$ too small, drifts toward OLS bias
+- Threat: exclusion violation — a back-channel to the outcome
+
+::: notes
+Instrumental variables has two assumptions, and Week Three drilled their asymmetry. Relevance — the instrument moves the treatment — is testable; you report the first-stage F statistic. Exclusion — the instrument affects the outcome only through the treatment — is arguable; there is no test, no p-value, only an argument from institutions. The two named threats follow. The weak-instrument problem: the first-stage F is too small, so two-stage least squares drifts back toward the very ordinary-least-squares bias it was meant to cure, and its confidence interval lies about its own width. The exclusion violation: the instrument has its own back-channel to the outcome. When a referee attacks an instrumental-variables paper, they almost always attack exclusion, because it is the assumption the data can never defend.
+:::
+
+## Difference-in-Differences
+
+- Assumes **parallel trends** absent treatment
+- Threat: pre-existing differential trend — a slope mislabeled an effect
+- Threat: **anticipation** — units respond before the official date
+- Threat: **forbidden comparison** — already-treated used as controls
+- A pre-trend can *refute*; a flat one never *confirms*
+
+::: notes
+Difference-in-differences assumes parallel trends: absent treatment, treated and control units' outcomes would have moved together. Its named threats are a pre-existing differential trend, where the treated group was already diverging before treatment so a slope gets mislabeled an effect; anticipation, where units respond before the official treatment date — they saw it coming — so the pre period is already contaminated; and, in staggered designs, the forbidden comparison of Chapter four-point-two, where already-treated units are used as controls, injecting negative-weights bias when effects are dynamic. Remember the one sentence underlined three times in Chapter four-point-one: parallel trends is a claim about a counterfactual, so a pre-trend can refute it but a flat pre-trend can never confirm it.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three designs, three menus: **OLS** has omitted-variable bias and selection; **IV** splits into testable relevance (first-stage $F$) and arguable exclusion, with the weak-instrument and exclusion-violation threats; **DiD** assumes parallel trends, threatened by differential pre-trends, anticipation, and the forbidden comparison. Next: RD, synthetic control, and how to use the menu.
+:::
+
+::: notes
+To summarize part three: you do not invent threats from scratch — each design carries a standard menu. Ordinary least squares has omitted-variable bias and selection, and it is the weakest rung because "I measured every confounder" is the hardest claim to defend. Instrumental variables splits into testable relevance, which you check with the first-stage F, and arguable exclusion, which you can only defend by argument; its threats are the weak instrument and the exclusion violation. Difference-in-differences assumes parallel trends, threatened by a differential pre-trend, anticipation, and the forbidden comparison — and remember a flat pre-trend can never confirm the counterfactual. In part four we finish the menu with regression discontinuity and synthetic control, then learn how to use it.
+:::

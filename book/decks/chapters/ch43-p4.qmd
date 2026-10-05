@@ -1,0 +1,52 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## A Worked Number, and When the Cutoff Only Nudges
+
+- Part 4 — a worked jump, then the cutoff that only nudges
+
+::: notes
+Welcome back to Chapter four-point-three, part four of thirteen. In part three we stated the sharp-RD estimand as a difference of two one-sided limits. Now we make it concrete with a real number from Sam's Russell setting, and then we relax the deterministic step — because the real world is messier, and the cutoff often only nudges the treatment probability.
+:::
+
+## A Number, To Make It Concrete
+
+| Rank distance from cutoff | Side | Mean passive ownership (%) |
+|---|---|---|
+| $-6$ to $-4$ (just inside R1000) | control | $5.1$ |
+| $-3$ to $-1$ (just inside R1000) | control | $5.3$ |
+| $+1$ to $+3$ (just inside R2000) | treated | $5.9$ |
+| $+4$ to $+6$ (just inside R2000) | treated | $6.0$ |
+
+- Control extrapolates to $\approx 5.4\%$; treated to $\approx 5.8\%$ at $c$
+- Jump $\hat\tau_{\text{SRD}} \approx 5.8 - 5.4 = 0.4$ points
+- Read each side's *limit* at the boundary, not nearest bins
+
+::: notes
+Here is a number. Suppose Sam bins stocks by their reconstitution rank distance from the cutoff and computes average next-year passive-fund ownership in each bin. Just inside the Russell ten-hundred, the control side, the bins read about five-point-one and five-point-three percent, climbing gently toward the cutoff; extrapolated to the cutoff, the control curve sits around five-point-four. Just inside the Russell two-thousand, the treated side, the bins read about five-point-nine and six-point-zero; extrapolated back, the treated curve sits around five-point-eight. The jump is roughly tau-hat equals five-point-eight minus five-point-four, about zero-point-four percentage points of passive ownership, caused by landing in the two-thousand rather than the bottom of the ten-hundred. Notice we did not just difference the two nearest bins blindly; we read off the limit of each side's trend at the boundary. Getting that extrapolation right is what local polynomial estimation is for.
+:::
+
+## When the Cutoff Only Nudges
+
+- The rule does not force a fixed dose of treatment
+- Crossing changes the *probability* and intensity of passive ownership
+- Not every fund rebalances; weights vary; banding adds slack
+- Probability jumps, say, from $30\%$ to $70\%$ at $c$
+- $\lim_{x\downarrow c}\mathbb{E}[D\mid X] \neq \lim_{x\uparrow c}\mathbb{E}[D\mid X]$
+
+::: notes
+Sharp regression discontinuity assumes the cutoff flips treatment with certainty. The Russell example is the textbook illustration of why that often fails. The reconstitution rule does not mechanically force a fixed quantity of passive money into every stock that crosses into the Russell two-thousand. What crossing changes is the probability and intensity of passive ownership. Index funds tracking the two-thousand tend to buy a newly added stock, but not every fund rebalances identically, the float-adjusted index weights vary, banding rules introduce slack, and some institutions track custom benchmarks. So treatment does not jump from zero to one at the cutoff; its probability jumps — from, say, a thirty-percent chance of heavy passive uptake just inside the ten-hundred to a seventy-percent chance just inside the two-thousand. Formally, the limit of the treatment share from above does not equal the limit from below.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A worked sharp-RD jump reads each side's trend *to* the cutoff: control near $5.4\%$, treated near $5.8\%$, so $\hat\tau\approx0.4$ points. But often the cutoff only shifts the **probability** of treatment — say $30\%$ to $70\%$ — not its value. That is **fuzzy RD**. Next: fuzzy RD is instrumental variables.
+:::
+
+::: notes
+To summarize part four: a worked sharp-RD jump reads each side's trend right to the cutoff — the control side near five-point-four percent, the treated side near five-point-eight — so the estimated jump is about zero-point-four percentage points. But often the cutoff only shifts the probability of treatment, say from thirty percent to seventy percent, rather than forcing its value. That is fuzzy regression discontinuity, where the treatment share jumps but does not flip. In part five we show that fuzzy regression discontinuity is exactly the instrumental-variables problem from Week three.
+:::

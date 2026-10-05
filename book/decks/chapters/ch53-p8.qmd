@@ -1,0 +1,58 @@
+---
+date: "2026-07-20"
+---
+
+## What's Clever About the Design
+
+- Part 8 — simplicity, the overlap trick, doing the skeptic's work
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part eight of eleven. In part seven we finished the table-reading order with robustness and reversal. Now we step back and ask what is genuinely clever about this paper. There are three things worth admiring: the brutal simplicity of the strategy, the data-squeezing overlap trick, and the rhetorical move of doing the skeptic's work first.
+:::
+
+## Brutal Simplicity Is the Point
+
+- No parameter to tune beyond $J$ and $K$
+- No firm characteristic, no accounting data to clean
+- Uses **only past returns** — the input EMH calls useless
+- A working simple rule hides no degree of freedom
+- The elegance *is* the evidence
+
+::: notes
+First, the strategy design is brutally simple, and that is the point. There is no parameter to tune beyond J and K, no firm characteristic to construct, no accounting data to clean. You need only past returns — the one input the weak-form efficient-markets hypothesis swears is useless. A simple rule that works is far more damaging to a theory than a complicated one, because there is nowhere to hide a degree of freedom. With a complicated model you can always suspect the authors fished among many specifications until one worked. With a rule this bare, that suspicion has no purchase. So the elegance is not just aesthetic. The elegance is the evidence. Sit with that: the simpler the rule, the more it costs the theory it violates.
+:::
+
+## The Overlap Trick Squeezes the Data
+
+- Re-form every month, average across $K$ cohorts
+- Turns a data-poor design into a data-rich monthly series
+- Cohort-averaging also smooths idiosyncratic noise
+- Valid **only** if you respect the serial dependence it creates
+- The cleverness and the vulnerability are the same coin
+
+::: notes
+Second, the overlapping-portfolio trick squeezes the data. Re-forming every month and averaging across K overlapping cohorts turns a data-poor design — one independent six-month return every six months — into a data-rich monthly series, and the cohort-averaging itself smooths idiosyncratic noise. It is a genuinely good idea, provided you then respect the serial dependence it creates when you do inference. That is the catch we hammered in part four: the same averaging that buys you statistical power also manufactures autocorrelation. The cleverness and the vulnerability are the same coin. A careful reader admires the trick and, in the same breath, reaches for the Newey-West standard error to pay for it.
+:::
+
+## Framing It as an Efficiency Anomaly
+
+- Could have stopped at "here's a strategy that makes money"
+- Instead they pre-empt the "it's just risk" rebuttal
+- They run the risk adjustment themselves
+- Burden shifts: efficiency's defender must name the missing factor
+- Doing your critic's job first is the mark of a durable paper
+
+::: notes
+Third, the authors frame momentum as an efficiency anomaly, not just a trading tip. They could have stopped at "here is a strategy that makes money." Instead they pre-empt the obvious rebuttal — you are just being paid for risk — by running the risk adjustment themselves and showing the profit is not beta in disguise. By doing the skeptic's work first, they shift the burden. Now the defender of efficiency has to name the missing risk factor. That rhetorical move — doing your critic's job before they can — is the mark of a paper built to survive. It is also a template worth stealing for your own work: anticipate the strongest objection, run that test yourself, and report it whether it helps you or not.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Three clever things: the strategy is **brutally simple** so there's no degree of freedom to hide; the overlap trick **squeezes the data** (and creates the autocorrelation you must pay for); and the authors **do the skeptic's risk-adjustment first**, shifting the burden. Next: what's vulnerable.
+:::
+
+::: notes
+To summarize part eight: three things make this paper durable. The strategy is brutally simple — only past returns, no tunable characteristics — so a theory it violates has nowhere to hide a degree of freedom, and the elegance is the evidence. The overlapping-portfolio trick squeezes a data-poor design into a data-rich series, though its cleverness and its vulnerability are the same coin, paid for with Newey-West. And the authors frame momentum as an efficiency anomaly by running the risk adjustment themselves, shifting the burden onto efficiency's defenders. In part nine we turn the table over and examine what is genuinely vulnerable, starting with transaction costs.
+:::

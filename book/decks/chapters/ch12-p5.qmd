@@ -1,0 +1,55 @@
+---
+date: "2026-06-22"
+---
+
+## The Minimum-Risk Blend
+
+- Part 5 — find the risk-minimizing weight; Maya's lesson
+
+::: notes
+Welcome back to Chapter one-point-two, part five of eight. In part four Maya ran three scenarios at an even split and watched the covariance drive her risk below the safer asset. But she does not have to settle for an even split. Portfolio variance is a quadratic in the weight, so it has a genuine bottom. In this part we find that minimum, and then draw the lesson Maya carries forward — a lesson a lender thinks about too.
+:::
+
+## Risk Is a Parabola in the Weight
+
+- $\operatorname{Var}(R_p)$ is quadratic in $w$ — it has a real bottom
+- Minimizer: $w^\star = \dfrac{\sigma_2^2 - \sigma_{12}}{\sigma_1^2 + \sigma_2^2 - 2\sigma_{12}}$
+- Scenario B: $w^\star = 0.01/0.05 = 0.2$
+- Hold only 20% of the riskier asset
+
+::: notes
+Since the portfolio variance is a quadratic in the weight w, Maya can find the weight that minimizes it with the calculus she already owns. Differentiate the variance with respect to w, set it to zero, and solve. The minimizing weight, w star, is the variance of asset two minus the covariance, all divided by the sum of the two variances minus twice the covariance. In Scenario B, where the covariance is zero, this is zero point zero one divided by zero point zero five, which is zero point two. She should hold only twenty percent of the riskier asset. The point is not the formula but the shape: risk is a parabola in the weight, it has a genuine bottom, and the location of that bottom is governed by the covariance.
+:::
+
+## The Same Parabola Returns
+
+- Plug back in: $\operatorname{Var}(R_p)=0.008$, $\operatorname{sd}\approx 0.089$
+- Lower than the even split's $0.112$
+- Optimizing a quadratic risk surface seeds portfolio theory
+- The same parabola: OLS choosing coefficients in Week 2
+
+::: notes
+Plugging that optimal weight back in gives a variance of zero point zero zero eight and a volatility of about zero point zero eight nine, lower than the even split's zero point one one two. So Maya does even better by tilting toward the safer asset. Optimization over a quadratic risk surface is the seed of modern portfolio theory, and we will meet the same parabola-with-a-minimum again when ordinary least squares chooses coefficients in Week Two. The shape recurs: a quadratic objective, a unique bottom, and a clean formula for where that bottom sits. Recognizing the pattern now means Week Two will feel like a sequel rather than a fresh shock.
+:::
+
+## The Lesson Maya Takes Away
+
+- Expected return is a straight average; risk is **not**
+- Lower covariance $\Rightarrow$ more risk cancels on combining
+- Negative covariance can beat the safest component
+- A lender fears defaults that move **together**, not apart
+
+::: notes
+Here is the lesson Maya takes away. Expected return is a straight average — that is linearity from part one. Risk is not, because of the two w times one minus w times sigma one two term. The lower the covariance, the more risk cancels when you combine assets, and a negative covariance can push the portfolio below its safest component. Diversification is one term in one quadratic, and that term is the covariance. A lender like the ones Maya studies thinks the same way about a book of loans. Defaults that move together — a regional recession hitting everyone at once — are far more dangerous than the same number of defaults that move independently, even when each individual loan looks identical on paper. Co-movement, not the count, is the real risk.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Risk is a **parabola in the weight** with a genuine minimum; the minimizing weight is governed by the covariance. Tilting Maya toward the safer asset beats the even split. The same quadratic-with-a-bottom returns as **OLS in Week 2**. Next: the reveal — covariance is geometry, and correlation is a cosine.
+:::
+
+::: notes
+To summarize part five: portfolio risk is a parabola in the weight with a genuine minimum, and the covariance governs where that bottom sits. Tilting Maya toward the safer asset beat the even split. The same quadratic-with-a-bottom returns when ordinary least squares chooses coefficients in Week Two. And the broad lesson holds for a lender too: co-movement, not the raw count of risks, is what makes a portfolio or a loan book dangerous. In part six comes the reveal that reorganizes the whole subject — covariance is secretly geometry, and correlation is a cosine.
+:::

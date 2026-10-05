@@ -1,0 +1,47 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## What's New? — Novelty and Order
+
+- Part 4 — the novelty filter, and running all three in order
+
+::: notes
+Welcome back to Chapter seven-point-one, part four of eight. In part three we ran ideas through the first two filters — so what, the consequence test, and who cares, the audience test. Now the third and hardest filter, what's new — the novelty test — and the reason all three must be run in a specific order.
+:::
+
+## What's New? — The Novelty Test
+
+- "New" ≠ "no one ever studied anything like this" (impossible, suspicious)
+- It means *your specific combination* adds something not on the shelf
+- Flavors: new data · new period/event · new outcome · new design · replication
+- Replication in a new setting is genuinely valuable — respect it
+- Does *not* count: re-running a famous result on the same data
+
+::: notes
+Third filter: what's new — the novelty test, the hardest for a beginner. "New" does not mean "no one has ever studied anything like this" — that bar is impossible, and frankly suspicious when someone claims to meet it. It means your specific combination of outcome, variation, data, or period adds something not already on the shelf. Newness comes in flavors, and naming your flavor keeps you honest: a new dataset, like on-chain data that did not exist a decade ago; a new period or event, like the recent climate-driven insurance retreat; a new outcome for an old treatment; a new identification strategy that cleans up a relationship others could only show as a correlation; or a careful replication in a new setting, which is genuinely valuable and more respectable than the field's reputation suggests. What does not count: re-running a famous result on the same data with no new angle. If your honest answer is "nothing, I just wanted to see it for myself," that is a fine learning exercise but not a Phase Two project.
+:::
+
+## Run Them In Order
+
+- **So what** first — cheap, kills the most ideas
+- **Who cares** second — tells you which literature to scan
+- **What's new** last — you can't know what's new until you scan
+- Survive all three? Still not guaranteed — feasibility can kill it
+- Fail any one? Not worth carrying, no matter how clever the method
+
+::: notes
+The order matters. Run "so what" first, because it is cheap and kills the most ideas before you invest anything. Run "who cares" second, because it tells you which literature you need to scan. Run "what's new" last, after the scan, because you literally cannot know what is new until you know what already exists. An idea that survives all three is not guaranteed to be a good project — feasibility can still kill it, and that is later in the chapter. But an idea that fails any one of these is not worth carrying further, no matter how clever the econometrics would be. This is triage: spend your scarce five weeks only on ideas that have already cleared the cheap, fast tests.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**What's new** asks whether *your specific combination* of data, outcome, period, or design adds something. Run the three filters cheap-first, scan-last; fail one, drop the idea. Next: identification — the thing that turns a story-with-a-regression into real causal research.
+:::
+
+::: notes
+To summarize part four: the third filter, what's new, asks whether your specific combination of data, outcome, period, or design adds something not already on the shelf — and that comes in flavors, from new data to a careful replication, but never a no-angle re-run. Run the three filters in order: so what first because it's cheap, who cares second because it picks your literature, what's new last because you cannot judge novelty until you scan. Fail any one and drop the idea. But surviving all three still is not enough. In part five we get specific about the second slot, the treatment, and the thing that turns a plausible story with a regression attached into genuine empirical research: identification.
+:::

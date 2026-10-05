@@ -1,0 +1,58 @@
+---
+date: "2026-07-13"
+---
+
+## Clean Designs in Mortgage Data
+
+- Part 3 — audit studies, DiD, matched comparison, and RD in mortgage data
+
+::: notes
+Welcome back to the Week Four mentor session on detecting discrimination, part three of five. In part two we settled on the honest target — a counterfactual where only the protected trait flips — and we said that a design, not a longer list of controls, is what constructs it. Now we make that concrete. We will walk through the three ways this week's toolkit builds the missing comparison in real mortgage data, and we will ask of each one the same disciplining question: what same-quality applicant is this design comparing her to, and what makes the comparison clean?
+:::
+
+## Audit Studies: Build the Counterfactual
+
+- The cleanest construction: **randomize** the trait
+- Send paired applications, identical except a signaling name
+- Bertrand and Mullainathan's résumé-callback experiment
+- The trait is randomized; everything else **held fixed by construction**
+- In mortgage markets you usually **cannot** run this
+
+::: notes
+Start with the gold standard. The audit-study tradition builds the counterfactual directly by randomizing the protected trait. The canonical example is Bertrand and Mullainathan's résumé-callback experiment: send paired applications that are identical in every respect except for a name that signals the protected characteristic. Because the trait is randomized and everything else is held fixed by construction, the difference in callbacks is the causal effect — no controls required. The trouble is that in mortgage markets you usually cannot run an experiment. You cannot mail fake mortgage applications at scale. So when you cannot manufacture the counterfactual in the lab, you reach for the week's natural-experiment designs to reconstruct it from the world. There are three workhorses, and we take them in turn.
+:::
+
+## Difference-in-Differences on a Policy Shock
+
+- Find a policy that changed the rules for **one** group, not another
+- Difference away the **fixed** unobserved between-group gaps
+- Isolates the **change** in differential treatment the policy caused
+- Load-bearing assumption: **parallel trends** (Chapter 4.1)
+- Cluster the standard errors by the policy unit
+
+::: notes
+The first workhorse is difference-in-differences. Suppose you can find a policy that changed the rules for one group and not another. Differencing over time and across groups subtracts off the fixed, unobserved between-group differences that plague any cross-section — exactly the unobserved creditworthiness that wrecked the simple regression. What survives the double-differencing is the change in differential treatment that the policy actually caused. The load-bearing assumption, the one doing all the identifying work, is parallel trends from Chapter Four-point-one: absent the policy, the gap between the two groups would have stayed on the same trajectory. That assumption is not testable directly, which is why you back it with an event-study plot and cluster your standard errors by the policy unit. Design first, then defend the assumption out loud.
+:::
+
+## Matched Comparison and the Cutoff
+
+- **Matched comparison**: pair same-quality applicants who differ only in the trait
+- Shrinks the role of observed creditworthiness; sharper residual
+- Buys local, like-for-like balance a linear regression assumes away
+- **Regression discontinuity**: compare applicants across a mechanical cutoff
+- Near-identical on either side of an underwriting line (Chapter 4.3)
+
+::: notes
+The second workhorse is matched comparison. Instead of throwing creditworthiness variables into a linear regression and trusting the functional form, you pair each same-sex application with a different-sex application that looks the same on income, score, loan-to-value, and location — so the pair differs as nearly as possible only in the protected trait. Matching buys you local, like-for-like balance that a linear regression simply assumes into existence; it shrinks the role of observed creditworthiness so the residual disparity is sharper and more credible. The third workhorse is regression discontinuity, from Chapter Four-point-three: at an underwriting cutoff — a hard line on a score or a ratio — applicants just above and just below are near-identical, so the jump in outcomes at the line reads off a treatment effect. Each of these answers the same question: what same-quality applicant are we comparing her to, and why is that comparison clean?
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+When you can't experiment, **reconstruct** the counterfactual: difference-in-differences differences out fixed unobservables (parallel trends), **matched comparison** pairs like-for-like applicants, and **regression discontinuity** compares across a mechanical cutoff. Each must name its clean comparison. Next: a worked case from real HMDA data.
+:::
+
+::: notes
+To summarize part three: when you cannot run an audit experiment, you reconstruct the counterfactual from naturally occurring variation. Difference-in-differences differences out the fixed unobserved gaps between groups and leans on parallel trends. Matched comparison pairs same-quality applicants who differ only in the protected trait, buying balance that a regression merely assumes. And regression discontinuity exploits a mechanical underwriting cutoff to compare near-identical applicants across a line. Every one of these designs must be able to name the clean comparison it is making and the threat it is most exposed to. In part four we put the whole discipline to work on a real, high-stakes dataset — the lending experience of same-sex borrowers in HMDA data.
+:::

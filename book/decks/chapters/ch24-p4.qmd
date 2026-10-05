@@ -1,0 +1,71 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## White / HC Robust Standard Errors
+
+- Part 4 — White's robust SEs for heteroskedastic errors
+
+::: notes
+Welcome back to When the Errors Misbehave, part four of eight. In part three we saw that the honest variance is always the sandwich, and the whole job is estimating its filling. Now we meet the first recipe — Halbert White's, from nineteen-eighty — for the case where the errors have different variances but stay uncorrelated across observations.
+:::
+
+## Heteroskedasticity in a Picture
+
+- Priya regresses wildfire claim size on insured value
+- A \$200K cabin: claims spread from \$0 to \$200K
+- A \$5M estate: claims spread twenty-five times wider
+- Scatter of errors grows with the regressor
+- Diagonal of $\boldsymbol\Omega$ becomes $\operatorname{diag}(\sigma_1^2,\dots,\sigma_N^2)$
+
+::: notes
+Priya has the cleanest example. She regresses the size of a wildfire claim on the insured value of the property. A two-hundred-thousand-dollar cabin can produce a claim from zero to two hundred thousand — a spread of two hundred thousand. A five-million-dollar estate can produce a claim from zero to five million — twenty-five times wider. The scatter of the errors grows with the regressor. That is heteroskedasticity: the variance of error i depends on i, so the diagonal of Omega is not a single repeated sigma squared but a list of different sigma-i squared. The off-diagonals stay zero — Priya's claims are independent across unrelated properties — so this is purely heteroskedastic and still uncorrelated.
+:::
+
+## White's Idea (1980)
+
+- We only need the small filling $\mathbf{X}'\boldsymbol\Omega\mathbf{X}$, not $\boldsymbol\Omega$
+- For diagonal $\boldsymbol\Omega$: $\mathbf{X}'\boldsymbol\Omega\mathbf{X} = \sum_i \sigma_i^2\,\mathbf{x}_i\mathbf{x}_i'$
+- A $K\times K$ matrix — $5\times 5$ for Maya, whatever $N$
+- Replace each unknown $\sigma_i^2$ with its squared residual $\hat\varepsilon_i^2$
+- One $\hat\varepsilon_i^2$ is terrible; the **sum** converges
+
+::: notes
+White's insight was to stop chasing the impossible N-by-N object and look at what we actually need. For a diagonal Omega, the filling X-prime Omega X becomes a simple sum over observations: the sum of sigma-i squared times x-i, times x-i transpose. That is a K-by-K matrix — five by five for Maya — no matter how big N is. We do not need each sigma-i squared on its own; we need this weighted sum. And White's trick is that each unknown sigma-i squared can be replaced by the one thing we observe for that point: its squared residual, epsilon-i hat squared. Any single squared residual is a terrible estimate of its variance — it is one data point. But summed across all N observations, the errors in those guesses average out, and the sum converges to the right thing.
+:::
+
+## The HC Estimator
+
+- $\widehat{\operatorname{Var}}(\hat{\boldsymbol\beta})_{\text{HC0}} = (\mathbf{X}'\mathbf{X})^{-1}\left(\sum_i \hat\varepsilon_i^2\,\mathbf{x}_i\mathbf{x}_i'\right)(\mathbf{X}'\mathbf{X})^{-1}$
+- These are White, heteroskedasticity-robust, or just robust SEs
+- Valid whether or not heteroskedasticity is present
+- If errors really are homoskedastic, robust converges to classical
+- "Always report robust" is close to a modern default
+
+::: notes
+Plug that estimated filling back into the sandwich and you get the heteroskedasticity-consistent estimator, H-C-zero: X-prime-X inverse, times the sum of squared-residual outer products, times X-prime-X inverse. These are White standard errors, also called heteroskedasticity-robust or just robust. The zero hints that there are corrected versions, H-C-one through H-C-three, coming next. Crucially, robust standard errors are valid whether or not there is heteroskedasticity. If the errors happen to be homoskedastic, the robust estimator converges to the classical answer as N grows. Either way, robust standard errors cost almost nothing and protect you from a real failure — which is why "always report robust" is close to a default in modern finance work.
+:::
+
+## The Finite-Sample Corrections
+
+- OLS residuals are systematically too small — fitting bends the line
+- So raw HC0 runs too small in finite samples — overconfident again
+- HC1: flat $\frac{N}{N-K}$ inflation — Stata's default
+- HC2: divide by $1-h_{ii}$ — leverage, point by point
+- HC3: divide by $(1-h_{ii})^2$ — aggressive, safest default
+
+::: notes
+H-C-zero is consistent — right as N goes to infinity — but in finite samples it has a flaw: O-L-S residuals are systematically too small. Fitting bends the line toward each point, so the residual understates the true error, making H-C-zero too small — overconfident again. The fix is to inflate the squared residuals. H-C-one applies a flat degrees-of-freedom factor, N over N minus K; it is Stata's default and fine for moderate N. H-C-two divides each squared residual by one minus h-i-i, the leverage of observation i — the hat-matrix diagonal, between zero and one. H-C-three divides by one minus h-i-i, squared, inflating high-leverage points hardest. When N is small or leverage is high, H-C-three is the recommended default.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+**Robust (White / HC) standard errors** estimate the filling by summing each point's squared residual — valid with or without heteroskedasticity. Use **HC1** for moderate samples, **HC3** when $N$ is small or leverage is high. Next: a concrete number, and the three symptoms that catch heteroskedasticity in your own work.
+:::
+
+::: notes
+To summarize part four: White, or H-C, standard errors estimate the sandwich filling by summing each observation's own squared residual times its regressors. They are valid whether or not heteroskedasticity is present, so defaulting to robust costs almost nothing. Use H-C-one for moderate samples, H-C-three when N is small or leverage is high. In part five we make it concrete with Priya's numbers, and name the three symptoms that catch heteroskedasticity in your own work.
+:::

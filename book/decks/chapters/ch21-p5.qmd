@@ -1,0 +1,58 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## OLS as Projection: the Hat Matrix
+
+- Part 5 — OLS as projection; naming the hat matrix
+
+::: notes
+Welcome back to Chapter two-point-one, part five of seven. In part four we solved the normal equations for beta-hat equals the inverse of X-transpose-X times X-transpose-y. Now we see what that formula does as a picture: it projects the outcome y onto the flat space the regressors can reach. Then we package the projection into a matrix — the hat matrix — and its complement, the residual maker.
+:::
+
+## OLS Projects $\mathbf{y}$ onto $\text{col}(\mathbf{X})$
+
+- $\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol\beta}$ = a combination of $\mathbf{X}$'s columns
+- All such combinations form the **column space** $\text{col}(\mathbf{X})$
+- $\hat{\mathbf{y}}$ = orthogonal **projection** of $\mathbf{y}$ onto that plane
+- $\hat{\mathbf{e}} = \mathbf{y}-\hat{\mathbf{y}}$ sticks out perpendicular
+$$\lVert\mathbf{y}\rVert^2 = \lVert\hat{\mathbf{y}}\rVert^2 + \lVert\hat{\mathbf{e}}\rVert^2$$
+
+::: notes
+Here is the geometry, where intuition lives. The fitted values are y-hat equals X times beta-hat. Think about what that can be: X times some vector of coefficients is a linear combination of the columns of X. The set of all such combinations is a flat subspace called the column space of X. For Sam's two-regressor example, it is a two-dimensional plane inside four-dimensional space, spanned by the all-ones column and the market-return column. The outcome y is a point in that four-dimensional space, and it almost never lies in the plane — recall, no line fit Sam's four points. So OLS asks: which point in the plane is closest to y? The answer is the orthogonal projection of y onto the plane — the foot of the perpendicular dropped from y. That projected point is y-hat, the fitted values. The leftover, e-hat equals y minus y-hat, is the perpendicular itself, sticking straight out. Because the angle is right, Pythagoras applies: the squared length of y equals the squared length of y-hat plus the squared length of e-hat. The variation in y splits into an explained leg and an unexplained leg of a right triangle — the decomposition every R-squared rests on.
+:::
+
+## The Hat Matrix
+
+- Read $\hat{\mathbf{y}} = \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\,\mathbf{y}$; name the fixed matrix:
+$$\mathbf{H} = \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}',\qquad \hat{\mathbf{y}} = \mathbf{H}\mathbf{y}$$
+- It "puts the hat on $\mathbf{y}$" — projection onto $\text{col}(\mathbf{X})$
+- Depends only on the design $\mathbf{X}$, not on $\mathbf{y}$
+
+::: notes
+Look again at the fitted values: y-hat equals X, times the inverse of X-transpose-X, times X-transpose, times y. The vector y sits on the right; everything to its left is a fixed N-by-N matrix that depends only on the design X. Give it a name. H equals X, times the inverse of X-transpose-X, times X-transpose, so that y-hat equals H times y. It is called the hat matrix because it is the operator that puts the hat on y — feed it the outcomes, it returns the fitted values. Geometrically, H is the projection onto the column space of X: it takes any vector and returns its shadow on the regressor plane.
+:::
+
+## The Residual Maker
+
+- $\hat{\mathbf{e}} = \mathbf{y}-\mathbf{H}\mathbf{y} = (\mathbf{I}-\mathbf{H})\mathbf{y}$
+$$\mathbf{M} = \mathbf{I}-\mathbf{H},\qquad \hat{\mathbf{e}} = \mathbf{M}\mathbf{y}$$
+- $\mathbf{M}$ = residual maker (annihilator) — the perpendicular part
+- $\mathbf{H},\mathbf{M}$ split any vector: $\mathbf{y} = \hat{\mathbf{y}} + \hat{\mathbf{e}}$
+- Both reappear all week: FWL, leverages, robust SEs
+
+::: notes
+The residuals get their own operator. Since e-hat equals y minus y-hat, which is y minus H-y, which is the quantity I minus H, times y, we define M equals I minus H, so that e-hat equals M-y. M is the residual maker, sometimes called the annihilator: hand it y and it returns the residual vector, the part of y perpendicular to the regressors. Together H and M split any vector into its two orthogonal pieces — y equals H-y plus M-y, which is y-hat plus e-hat. These two matrices appear in every remaining chapter of this week. M runs the partialling-out of Frisch-Waugh-Lovell in chapter two-point-three, and the diagonal entries of H — the leverages — drive the robust standard errors of chapter two-point-four. So it is worth knowing their defining properties cold, which is part six.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Geometrically, OLS projects $\mathbf{y}$ onto the column space of $\mathbf{X}$. The **hat matrix** $\mathbf{H} = \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'$ returns the fitted values (the shadow); the **residual maker** $\mathbf{M} = \mathbf{I}-\mathbf{H}$ returns the residuals (the perpendicular).
+:::
+
+::: notes
+To summarize part five: OLS projects y onto the column space of X. The fitted values are the shadow y casts on the regressor plane, and the residuals are the perpendicular sticking out, with the two pieces splitting y by Pythagoras. The hat matrix H puts the hat on y, and its complement, the residual maker M equals I minus H, returns the residuals. In part six we study what makes these matrices special — symmetric and idempotent, the algebraic fingerprints of projecting — and then ask the question we have been deferring: when does X-transpose-X actually have an inverse?
+:::

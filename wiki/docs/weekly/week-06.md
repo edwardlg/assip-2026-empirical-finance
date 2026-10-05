@@ -37,7 +37,7 @@ By Friday your capstone charter is locked. Anything not in the signed charter on
 
     | Block | What |
     |---|---|
-    | 9:00 – 12:00 | Read **Ch 6.4 — Bartlett et al. (2022) + Bhutta–Hizmo–Ringo** Reader's Guide (fair lending in the algorithmic era; ties to Gao & Sun 2019). Work `nb6.4`. |
+    | 9:00 – 12:00 | Read **Ch 6.4 — Bartlett et al. (2022) + Bhutta–Hizmo–Ringo** Reader's Guide (fair lending in the algorithmic era; ties to Sun & Gao 2019). Work `nb6.4`. |
     | 2:00 – 3:30 | **Mentor Session 6 — "Responsible AI in empirical research"** |
     | 4:00 – 5:00 | Office hours |
 

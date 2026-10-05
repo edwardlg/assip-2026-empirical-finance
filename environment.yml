@@ -16,6 +16,11 @@ dependencies:
   - requests
   - jupyterlab
   - nbformat
+  # --- Teaching-video pipeline (decks -> narrated MP4 on Hopper A100) ---
+  - ffmpeg            # assembly, loudnorm, H.264 encode
+  - poppler           # pdftoppm: pptx-PDF -> per-slide PNG
+  # LibreOffice converts pptx -> pdf headless; on Hopper prefer `module load libreoffice`.
+  # Quarto renders qmd -> pptx; install separately (`module load quarto` or quarto.org).
   - pip
   - pip:
       - linearmodels
@@ -30,3 +35,13 @@ dependencies:
       # AI module (Week 6) — keys via env vars only (ANTHROPIC_API_KEY, AZURE_OPENAI_KEY); never commit keys.
       - anthropic
       - openai
+      # --- Teaching-video pipeline (slides, narration, captions) ---
+      - python-pptx        # build/inspect decks + extract ::: notes
+      - pdf2image
+      - pillow
+      - chatterbox-tts     # MIT TTS (code + weights), voice cloning from a short sample
+      - whisperx           # forced-aligned caption sidecars (.vtt)
+      - faster-whisper
+      - soundfile
+      # torch/torchaudio: install the CUDA build matching Hopper's driver, e.g.
+      #   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121

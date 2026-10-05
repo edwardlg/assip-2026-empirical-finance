@@ -1,0 +1,63 @@
+---
+date: "2026-07-20"
+---
+
+## Reading BDM 2004: The Research Question
+
+**Learning objectives.** By the end you can:
+
+- State BDM's central size question precisely
+- Explain how serial correlation shrinks DiD standard errors
+- Run the placebo-law experiment yourself
+- Apply the three fixes and their limits
+
+::: notes
+Welcome to Week Five, Chapter five-point-five, part one of seven. This week we read a single paper the way a professional reads one: Bertrand, Duflo, and Mullainathan, two thousand four, How Much Should We Trust Differences-in-Differences Estimates, in the Quarterly Journal of Economics. You already met it as a footnote in Week Four, when Priya clustered her standard errors by state and watched her t-statistic fall from five point zero to one point eight. This week the footnote becomes an argument someone had to win. In this opening part we frame the paper and state its research question.
+:::
+
+## You Already Met This Paper
+
+- Week Four footnote: cluster by state, *because BDM*
+- Priya's t-stat fell from five point zero to one point eight
+- Then it was a rule; now it is an argument
+- The whole paper in one sentence
+- Conventional DiD standard errors are too small
+
+::: notes
+In Week Four this paper was a rule you obeyed. Priya clustered her standard errors by state, and her t-statistic collapsed from a triumphant five point zero to a sobering one point eight. The footnote said: this is the lesson of Bertrand, Duflo, and Mullainathan. This week we read it as an argument someone had to win, one of the most unsettling in empirical economics, because it is not about one study being wrong. It is about a whole method of computing standard errors being wrong. Here is the paper in a sentence. When you run a standard difference-in-differences regression on a long panel and report the usual standard errors, those standard errors are too small, often dramatically, because the outcome is serially correlated over time within each unit, and the conventional formula pretends it is not.
+:::
+
+## Small Standard Errors, Big Trouble
+
+- Too-small standard errors mean too-large t-statistics
+- Too-large t-statistics mean rejecting the null too often
+- You "discover" effects that are not there
+- The two-way fixed-effects regression from Week Four
+- Coefficient beta is the policy effect
+
+::: notes
+Too-small standard errors mean too-large t-statistics, which mean you reject the null too often, which means you discover effects that are not actually there. This is a methods paper, also called a credibility paper: it studies not the world, but the way economists study the world. Read it as an auditor showing up at a firm that has been reporting suspiciously smooth profits. Recall the anatomy of a difference-in-differences study. A researcher has a state-year panel, say women's wages in each of the fifty states observed annually for twenty-some years. A state passes a law, and the researcher estimates the two-way fixed-effects regression you carried all last week: outcome Y for individual i in state s in year t equals a state fixed effect alpha-s, plus a year fixed effect lambda-t, plus beta times the treatment dummy D-s-t, plus an error. The coefficient beta is the policy effect.
+:::
+
+## It Is a Size Question
+
+- Researcher reports beta hat and a standard error
+- Computes t equals beta hat over its standard error
+- Declares significance if t exceeds one point nine six
+- The assumption: errors independent across time within a state
+- Reality: a state's wages this year resemble last year
+
+::: notes
+The researcher reports beta hat and a standard error, computes t as beta hat divided by its standard error, and declares significance if the absolute t exceeds one point nine six. Everything hinges on that standard error being honest. The conventional standard error assumes the residuals are independent across time within a state. The reality, for the slow-moving outcomes economists study, is that they are not: a state with high women's wages this year almost certainly had high women's wages last year. That is serial correlation, the within-unit autocorrelation you first met as a disease back in Chapter two-point-four. Notice the kind of question this is. It is a size question, in the exact sense of Week One. The size of a test is the probability it rejects a true null, the Type One error rate, the alpha you set to zero point zero five. BDM ask: when researchers say significant at five percent, is the true size really five percent, or something far worse?
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+BDM ask one **size** question: when a difference-in-differences study claims significance at five percent, is the true false-positive rate really five percent? Their suspicion is that serial correlation makes the conventional standard error too small, inflating t-statistics. Next: the placebo-law experiment that turns this worry into a measured number.
+:::
+
+::: notes
+To summarize part one: BDM ask a single size question. When a difference-in-differences study claims significance at five percent, is the true false-positive rate really five percent, or is the machinery broken? Their suspicion is that serial correlation in the outcome makes the conventional standard error too small, which inflates t-statistics and produces false discoveries. The beautiful part is that this question is answerable. In part two we meet the trick that answers it: the placebo-law experiment, which turns an abstract worry into a single number you can read off a table.
+:::

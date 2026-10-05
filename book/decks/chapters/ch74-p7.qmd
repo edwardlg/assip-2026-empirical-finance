@@ -1,0 +1,71 @@
+---
+date: "2026-08-03"
+date-format: "YYYY-MM-DD"
+---
+
+## The Build Script: Raw to Analysis, with Row-Count Logging
+
+- Part 7 — build script: a reproducible, row-count-logged pipeline
+
+::: notes
+Welcome back to Building the Analysis Dataset, part seven of seven, the finale. Across the last six parts we made a dozen decisions — which links to trust, whether to keep delisted firms, what lag to impose, whether to winsorize, how to handle missing income. Now we make those decisions reproducible and auditable. They belong in a script, not a notebook's scrollback. We close by seeing why the panel is the foundation of the whole argument.
+:::
+
+## A One-Way Pipeline, Three Stages
+
+- **raw/** — exactly what came off the data service, never modified
+- **intermediate/** — linked, lagged, typed tables, saved as Parquet
+- **analysis/** — one rectangular panel, one row per firm-month
+- Never edit a file in place; re-derive from raw
+- Licensed extracts stay read-only, snapshot date pinned
+
+::: notes
+The organizing principle is a one-way pipeline through three stages, and you never edit a file in place. The raw folder holds exactly what came off the data service, never modified — your ground truth; if a build goes wrong you re-derive from here. Licensed extracts stay read-only with the snapshot date pinned. The intermediate folder holds the linked, lagged, typed tables, saved as Parquet so you can inspect them. The analysis folder holds the single rectangular panel your regression consumes, one row per firm-month. Data flows one way; no stage rewrites an earlier one.
+:::
+
+## Row-Count Logging at Every Step
+
+- The non-negotiable feature: log rows at every step
+- Each step prints rows in, rows out, and why
+- A small helper logs shape and returns the frame unchanged
+- The log *is* your audit trail
+- Point at it when asked where firm-months went
+
+::: notes
+The non-negotiable feature is row-count logging at every step. Each transformation prints how many rows entered, how many left, and why. This log is your audit trail; when a referee asks where the other four thousand firm-months went, you point at it. A tiny helper makes this painless: a step function that takes a frame and a name, logs the row count and unique-firm count, and returns the frame unchanged so you can chain it. You wrap each step in that helper — load raw CRSP, apply delisting returns, link with validate, filter to the date window, merge-as-of with the lag, drop negative book equity, winsorize, then listwise deletion. Every line is one auditable decision.
+:::
+
+## Read the Log Like a Detective
+
+- The log reads like the autobiography of your dataset
+- Each gap between two lines is a decision someone can question
+- Link step drops unlinked firms — confirm the *rate*
+- Date-window and negative-book-equity steps trim per stated rules
+- Listwise deletion is usually the largest cut — justify it
+
+::: notes
+Running it produces a log that reads like the autobiography of your dataset, each line carrying a row count and a firm count. The exact digits depend on your snapshot vintage; the point is the shape of the story, not the numbers. Read it like a detective. The link step drops firms with no Compustat match — expected for foreign listings and funds, but confirm the rate. The date-window step trims observations outside any valid link window. The negative-book-equity step drops firm-years per the stated screen. The listwise step is usually the largest cut, the one to justify in the memo. Every number is a sentence you can defend, and a build with no row-count log is one no one should believe — including you, three months from now.
+:::
+
+## The Panel Is the Argument's Foundation
+
+- A dozen decisions, each able to change a sign
+- A hostile referee will ask about every one
+- This chapter sits between *acquisition* and the *identification memo*
+- Identification assumptions are claims about *this* panel
+- The build script is the first chapter of the analysis
+
+::: notes
+Step back. Sam started with two clean files and a simple question, and we spent a chapter turning them into one panel. We made a dozen decisions: which link codes to trust, whether to keep delisted firms, what lag to impose, whether to winsorize book-to-market, whether to leave Priya's catastrophe losses alone. None of these is cleaning in the janitorial sense. Each can change the sign of a result, and a hostile referee will ask about every one. That is why this chapter sits between the acquisition of Chapter seven-point-two and the identification memo of Chapter seven-point-five. Identification assumptions are claims about the data you built. If the panel is contaminated by survivorship or look-ahead, the cleverest identification strategy estimates an artifact.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Make every cleaning decision **reproducible and auditable**: a one-way `raw → intermediate → analysis` pipeline with **row-count logging at every step**. The log is your audit trail and its first table. The build script is not a preliminary to the analysis — it *is* the first chapter of the analysis. In the lab, build the value panel end to end and prove no look-ahead.
+:::
+
+::: notes
+To summarize part seven, and the chapter: make every cleaning decision reproducible and auditable through a one-way pipeline — raw, intermediate, analysis — that you never edit in place, with row-count logging at every step. The log is your audit trail and your paper's first table. The build script is not a preliminary to the analysis; it is the first chapter of it. In the lab notebook you will assemble the value panel end to end, with validate on every merge, the six-month lag proven by the no-look-ahead assertion, the survivorship smell test, and a logged missing-data rule. That completes Chapter seven-point-four.
+:::

@@ -1,0 +1,73 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## The Variance of OLS
+
+- Part 5 — deriving $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$ and reading it
+
+::: notes
+Welcome back to Gauss–Markov and the meaning of best, part five of nine. In part four we proved O L S is unbiased — the archer centers on the bullseye. Now we ask the second Chapter one-point-three question: how tightly clustered are the arrows? We derive the variance of beta hat, and this is where assumption four finally does some work.
+:::
+
+## Setting Up the Variance
+
+- Start from $\hat{\boldsymbol{\beta}} - \boldsymbol{\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\boldsymbol{\varepsilon}$
+- Write $\mathbf{A} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'$, constant given $\mathbf{X}$
+- Rule: $\operatorname{Var}(\mathbf{A}\boldsymbol{\varepsilon}) = \mathbf{A}\operatorname{Var}(\boldsymbol{\varepsilon}\mid\mathbf{X})\mathbf{A}'$
+- The matrix version of "constants square"
+- Plug in Assumption 4: $\operatorname{Var}(\boldsymbol{\varepsilon}\mid\mathbf{X}) = \sigma^2\mathbf{I}$
+
+::: notes
+Start from the contamination line: beta hat minus beta equals the inverse of X transpose X, times X transpose, times epsilon. The variance of an estimator measures how much this deviation bounces around. Write A for the constant matrix — the inverse of X transpose X times X transpose — constant once we condition on X. The rule for the variance of A times epsilon is A times the variance of epsilon given X, times A transpose. That is the matrix generalization of pulling a constant out of a variance squares it, which Priya used to get sigma squared over N. Now plug in assumption four: the variance of epsilon given X equals sigma squared times the identity matrix.
+:::
+
+## The Master Variance Formula
+
+$$\operatorname{Var}(\hat{\boldsymbol{\beta}}\mid\mathbf{X}) = \sigma^2(\mathbf{X}'\mathbf{X})^{-1}$$
+
+- Middle collapses: $\mathbf{X}'\mathbf{X}$ between two inverses
+- Square-rooted diagonal = the standard errors
+- Resembles $\sigma^2/N$: more noise, jumpier
+- Bigger, better-spread $\mathbf{X}$ $\Rightarrow$ tighter
+
+::: notes
+Plugging in and simplifying, the variance of beta hat given X equals sigma squared times the inverse of X transpose X. The middle collapsed because X transpose X, sandwiched between two copies of its own inverse, leaves one inverse standing. This is the single most important variance formula in the book. Square-rooted along its diagonal, it becomes the standard errors on Maya's printout. Notice the resemblance to sigma squared over N: more error variance makes estimates jumpier, and a bigger, better-spread X — hence a smaller inverse — makes them tighter. Spread in your regressor is the multivariate version of sample size.
+:::
+
+## The Slope Variance, Concretely
+
+$$\operatorname{Var}(\hat{\beta}_1\mid\mathbf{X}) = \frac{\sigma^2}{(N-1)\,s_x^2}$$
+
+- Numerator: noise income can't explain
+- Denominator: spread of income in your sample
+- Narrow income band $\Rightarrow$ terrible slope
+- Spread in your regressor *is* precision
+
+::: notes
+Matrix algebra hides what this formula really tells you, so let's read the slope variance in a simple regression. When X is just an intercept plus one regressor, the variance of the slope works out to sigma squared divided by the quantity N minus one, times s sub x squared — where s sub x squared is the sample variance of income. Read the fraction like a story. The numerator, sigma squared, is noise income can't explain: more scatter, jumpier slope. The denominator is the spread of income in your sample. A study sampling only a narrow income band estimates the slope terribly, however many loans it has, because there's no income variation to pin the tilt. Spread in your regressor is precision.
+:::
+
+## A Number to Anchor It
+
+- $\sigma = 1.5$, $N = 400$, $s_x = 30$
+- $\operatorname{Var}(\hat{\beta}_1) = \frac{1.5^2}{399 \times 30^2} \approx 6.27\times10^{-6}$
+- Standard error $\approx 0.0025$
+- Double the income spread $\Rightarrow$ SE halves
+- Same payoff as quadrupling $N$
+
+::: notes
+A number, to make it concrete. Suppose Maya's errors have standard deviation sigma equal to one point five, she has four hundred loans, and incomes have a standard deviation of thirty, in thousands of dollars. Then the slope variance is one point five squared over three hundred ninety-nine times thirty squared — about six point two seven times ten to the minus six. The standard error is the square root of that, about zero point zero zero two five. Now notice the lever. If incomes were twice as spread out, with s sub x equal to sixty, the denominator quadruples and the standard error halves — the same square-root payoff that quadrupling the sample size would buy.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The variance of OLS is $\sigma^2(\mathbf{X}'\mathbf{X})^{-1}$ — its square-rooted diagonal is your standard errors. For one slope it reads $\sigma^2 / [(N-1)s_x^2]$: noise on top, **regressor spread** on the bottom. Spread *is* precision. But is OLS the *best* recipe? That needs Gauss–Markov.
+:::
+
+::: notes
+To summarize part five: the variance of O L S is sigma squared times the inverse of X transpose X, whose square-rooted diagonal gives Maya's standard errors. For a single slope it reads sigma squared over the quantity N minus one times the sample variance of income — noise on top, regressor spread below — so spread in your regressor literally is precision. But this gives the variance of O L S specifically. It does not yet say whether O L S is the best anyone can do. To know whether Maya's arrows are the tightest possible, we need a theorem comparing O L S against the whole field. That is Gauss–Markov, in part six.
+:::

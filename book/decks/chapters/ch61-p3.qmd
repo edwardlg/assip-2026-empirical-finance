@@ -1,0 +1,46 @@
+---
+date: "2026-07-27"
+---
+
+## KPSS: Scale to Dollars and State the Assumption
+
+- Part 3 — scale to dollars and state the validating assumption
+
+::: notes
+Welcome back to Chapter six-point-one, part three of ten. In part two we filtered out the market to keep the firm-specific abnormal return. Now we finish the recipe: scale that reaction into dollars, adjust for the fact that grants are only partly a surprise, and then state the one assumption that makes the entire measure valid — the assumption the critics will later attack.
+:::
+
+## Refinement Two: Scale and Adjust for Surprise
+
+- A 1% jump means different dollars at different firm sizes
+- Multiply the window return by **market capitalization**
+- That converts a percentage into dollars
+- Grants are only *partly* a surprise — markets anticipate some
+- Inflate by a probability factor to recover expected value
+
+::: notes
+The second refinement scales and adjusts for surprise. A one percent jump means very different dollar amounts for a ten-billion-dollar firm and a two-hundred-million-dollar firm, so the window return is multiplied by market capitalization to convert a percentage into dollars. And because a patent grant is only partly a surprise — markets anticipate some grants — the raw reaction understates the patent's full value. So K-P-S-S scale up by an estimate of the probability that the reaction reflects the patent rather than noise, recovering an expected dollar value. The end product, per patent of a given firm, is a dollar figure interpretable as the market's estimate of the private value of that patent to that firm. Sum these over all patents a firm is granted in a year, and you have a firm-level, year-level panel of innovation value — the central data object the rest of the paper, and the notebook, are built on.
+:::
+
+## State the Validating Assumption
+
+- Abnormal grant-window return = unbiased estimate of patent value
+- Requires markets efficient enough to price the patent at grant
+- Requires no other value-relevant news in the window
+- This is *not* a claim the patent *caused* growth
+- Growth results are correlational, built on top of the measure
+
+::: notes
+Now state the assumption that makes this valid, in one sentence, Week-Five style: the abnormal stock return in the grant window equals the market's unbiased estimate of the patent's economic value — as long as markets are efficient enough to impound the patent's value at grant, and no other value-relevant news contaminates the window. That single sentence is where our vulnerabilities section will aim its fire. Note what it is not. It is not a claim that the patent caused the firm to grow. The growth and reallocation results in the back half of the paper are correlational associations built on top of the measure, and K-P-S-S are appropriately careful about how strongly to read them. The one-line spec, in Week-One discipline: the constructed outcome is dollar value per patent; the raw input is the idiosyncratic stock return in a short window around the grant date; the adjustments are market-filtered, scaled by market cap, and inflated for grant-anticipation; the sample is patents granted to CRSP-listed firms; and the validating assumption is market efficiency over the short window with no confounding news.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Refinement two **scales by market cap** to turn a percentage into dollars and **inflates for grant-anticipation** to recover expected value. The validating assumption — the grant-window abnormal return is the market's **unbiased estimate**, given efficient markets and no confounding news — is exactly where the critics will aim.
+:::
+
+::: notes
+To summarize part three: the second refinement converts the filtered reaction into dollars by multiplying by market capitalization, then inflates for grant-anticipation to recover an expected value. Sum across a firm's patents in a year and you have the firm-year innovation-value panel. The whole recipe rests on one assumption: the grant-window abnormal return is the market's unbiased estimate of the patent's value, which needs efficient markets and a clean window. In part four we look at the data that feeds this machine — patents, returns, and the public dataset that made the paper infrastructure.
+:::

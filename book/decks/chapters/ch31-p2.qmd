@@ -1,0 +1,64 @@
+---
+date: "2026-07-06"
+date-format: "YYYY-MM-DD"
+---
+
+## The Fundamental Problem and the Estimands
+
+- Part 2 — why individual effects vanish, and the three estimands
+
+::: notes
+Welcome back to Chapter three-point-one, part two of five. In part one we defined a causal effect for one person as Y-of-one minus Y-of-zero, the gap between two parallel-world outcomes, and we saw the treatment is a switch that reveals only one of those worlds. Now we confront the consequence of that switch, the single hardest fact in the field, and then we name the three population averages that the rest of the week chases. Everything from here is about escaping a problem we are about to prove is unescapable at the individual level.
+:::
+
+## The Fundamental Problem
+
+- $D_i$ takes one value, so we see one world
+- Enrolled $\Rightarrow$ see $Y_i(1)$; the $Y_i(0)$ world never happens
+- The unseen one is the **missing counterfactual**
+- $\tau_i = Y_i(1)-Y_i(0)$ is **never** computable per unit
+- Causal inference is a **missing-data problem**
+
+::: notes
+Put the individual effect and the observation rule side by side. For any single person the switch D takes exactly one value. If she enrolled, we observe Y-of-one, and the world where she did not enroll never happens, so Y-of-zero is gone. If she did not, we observe Y-of-zero, and Y-of-one is the road not taken. We can never observe both potential outcomes for the same unit. This is the Fundamental Problem of Causal Inference, named by the statistician Paul Holland in nineteen eighty-six. Sit with how strange it is: tau-sub-i is a perfectly well-defined number, the difference of two real features of the person, yet it is unobservable in principle. Not because our instruments are crude or our sample is small, but because reality only runs one of the two worlds. A billion observations on person i will never reveal her tau, because the counterfactual leaves no trace. Causal inference is, irreducibly, a missing-data problem.
+:::
+
+## The Science Table We Never Fully See
+
+| $i$ | $Y_i(0)$ | $Y_i(1)$ | $\tau_i$ | $D_i$ | obs $Y_i$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 0 | 1 | $+1$ | 1 | 1 |
+| 2 | 1 | 1 | $0$ | 0 | 1 |
+| 3 | 0 | 0 | $0$ | 1 | 0 |
+| 4 | 0 | 1 | $+1$ | 0 | 0 |
+| 5 | 1 | 1 | $0$ | 1 | 1 |
+
+- We only ever get the last two columns
+- The blanks are **structural**, not noise
+
+::: notes
+Lay it out as a table to make the missingness vivid. Imagine we could peek at both columns for five applicants. The first three columns are the truth, the full science table with both potential outcomes for everyone, and the tau column is what we wish we knew. But in real life we only get the last two: the treatment each person took, and the one potential outcome it selected. For unit one we see Y-of-one equals one, but Y-of-zero is missing. For unit two we see Y-of-zero equals one, but Y-of-one is missing. Everything left of the treatment column is, for any person, half hidden. The blanks are not noise; they are structural, permanent, and the entire reason causal inference is hard. The escape is to stop asking about individuals and start asking about averages over a population.
+:::
+
+## Three Estimands: ATE, ATT, LATE
+
+- **ATE** $=\mathbb{E}[Y_i(1)-Y_i(0)]$ — effect on *everyone*
+- **ATT** $=\mathbb{E}[Y_i(1)-Y_i(0)\mid D_i=1]$ — effect on *the treated*
+- **LATE** — effect on *compliers* (named now, earned in 3.4)
+- Estimand = target in the world, named before data
+- Maya's hidden table: ATE $= 2/5 = 0.4$
+
+::: notes
+When you cannot recover individual effects, you ask about averages, and you must be careful which average. A target average is called an estimand, named before we touch data. Three carry the week. First, the Average Treatment Effect, the ATE, is the mean of the individual effects over the whole population, the expected value of Y-of-one minus Y-of-zero. It answers: what if we made the program universal? In Maya's five-unit table the effects are plus-one, zero, zero, plus-one, zero, so the ATE is two-fifths, or zero-point-four. Second, the Average Treatment effect on the Treated, the ATT, restricts the average to units who actually enrolled. It answers: for the people who chose to enroll, how much did it help them? The ATE and ATT are equal only when the treated are a representative slice. Third, the Local Average Treatment Effect, the LATE, is the effect only for compliers, the subset an instrument can move. We name it here and earn it in Chapter three-point-four.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The **Fundamental Problem**: we see at most one potential outcome per unit, so $\tau_i$ is never computable — causal inference is missing data. The escape is **averages**: ATE for everyone, ATT for the treated, LATE for compliers. Next: why Maya's naive 21 points are contaminated.
+:::
+
+::: notes
+To summarize part two: the Fundamental Problem says we observe at most one potential outcome per unit, so the individual effect is gone forever, and causal inference is a missing-data problem. But average effects are not gone. We named three estimands: the ATE for everyone, the ATT for the treated, and the LATE for the compliers, three numbers answering three questions. The discipline the rest of the week enforces is to say which estimand you are after before you estimate anything. In part three we take Maya's naive twenty-one points and decompose it exactly, into the piece she wants and the piece contaminating it.
+:::

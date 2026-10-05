@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Concede, Defend, or Bound
+
+- Part 9 — the three moves for any comment: concede, defend, bound
+
+::: notes
+Welcome back to peer review and revision, part nine of twelve. In part eight we built the response memo — quote, change, evidence — and the norm to do exactly what you said. Now we cover the judgment inside it. Not every comment is right, and a memo that caves to all of them is as weak as one that fights all of them. For each comment you decide consciously: concede, defend, or bound. The rule running through the whole book guides you: follow the evidence, not the ego.
+:::
+
+## Concede When the Referee Is Right
+
+- Follow the evidence, not the ego
+- If they caught a real flaw, fix it, say so, thank them
+- "We clustered at the wrong level; t-stat falls from 4.1 to 2.6"
+- Conceding made the result weaker — and that earns trust
+- Honest concession is the strongest evidence the result is real
+
+::: notes
+Concede when the referee is right, and concede gracefully. If they caught a real flaw, fix it, say so plainly, and thank them — the referee is correct; we had clustered at the wrong level. We now cluster by state, the level at which examinations vary, and the t-statistic on the main effect falls from four point one to two point six, which we report and discuss. Note what happened: conceding made the result weaker, and reporting the weaker number honestly is exactly the move that earns trust. A referee who sees you report a t-statistic that dropped from four point one to two point six because they were right believes the two point six far more than they would have believed the four point one. Honest concession is not surrender; it is the strongest evidence you can offer that the surviving result is real.
+:::
+
+## Defend With Evidence, Never Attitude
+
+- Defend when the referee is wrong — respectfully
+- Do the requested work first, then explain why the worry misses
+- "Weighting leaves it at 1.3; dropping small counties gives 1.5"
+- A good editor respects a well-argued rebuttal
+- But the defense must be evidence, not assertion
+
+::: notes
+Defend when the referee is wrong — respectfully, with evidence, never with attitude. Sometimes a referee misreads the paper, asks for a test that does not apply, or proposes an alternative explanation you can actually rule out. You are allowed to disagree, and a good editor respects a well-argued rebuttal more than a reflexive capitulation. But the defense must be evidence, not assertion: we respectfully disagree that small-cell volatility drives the result. As the referee suggests, we checked this directly — weighting by application volume, new column four, leaves the estimate essentially unchanged at one point three percentage points, and dropping counties below fifty applications, column five, gives one point five. We have added these columns and a sentence noting the result is not a small-cell artifact. The cleanest defenses do the requested work and then explain why the worry does not bite.
+:::
+
+## Bound the Untestable Threat
+
+- Some comments you can neither fully fix nor rebut
+- The untestable: an IV exclusion, the parallel-trends counterfactual
+- Neither concede the paper is broken nor pretend it's gone
+- Present every piece of indirect evidence you have
+- State the residual honestly — the fourth column, promoted
+
+::: notes
+There is also the comment you can neither fully fix nor fully rebut — the untestable threat, like the exclusion restriction in an instrumental variable or the parallel-trends counterfactual itself. Here you neither concede the paper is broken nor pretend the concern is gone. You bound it: acknowledge the threat is real and untestable, present every piece of indirect evidence you have, and state the residual concern honestly in the paper's limitations — the fourth column of the threats-and-responses table from Chapter seven-point-five, promoted into the memo. The referee is correct that anticipation cannot be ruled out by the data alone; you present the event study with flat leads as the best available evidence against it. A referee trusts the author who says here is what still worries me far more than one who claims a clean sweep.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+For each comment, decide consciously: **concede** when the referee is right (and report the weaker number — it earns trust), **defend** when they are wrong (do the requested work *first*, then explain), or **bound** the untestable threat (present indirect evidence, state the residual limit honestly). Follow the evidence, not the ego. Next: Maya's actual memo answering Devon.
+:::
+
+::: notes
+To summarize part nine: every comment gets one of three moves, chosen by following the evidence, not the ego. Concede when the referee is right — fix it, thank them, and report even a weaker number, because honest concession is the strongest evidence the surviving result is real. Defend when they are wrong, respectfully and with evidence, doing the requested work first and then explaining why the worry does not bite. And bound the untestable threat — neither conceding the paper is broken nor pretending the concern is gone — by presenting indirect evidence and stating the residual limitation honestly, the fourth column of the seven-point-five table promoted into the memo. In part ten we read Maya's actual memo answering Devon, showing all three moves.
+:::

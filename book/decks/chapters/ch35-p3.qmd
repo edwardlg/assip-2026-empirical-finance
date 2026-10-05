@@ -1,0 +1,67 @@
+---
+date: "2026-07-06"
+---
+
+## The Weak-Instrument Pathology
+
+- Part 3 — why a weak first stage biases 2SLS toward OLS
+
+::: notes
+Welcome back to Week Three-point-five, part three of seven. In part two we finished the referee's checklist and singled out relevance — the first-stage F — as the load-bearing diagnostic. Now we open it up and find the deepest failure in instrumental variables. The result, in one sentence: when the first stage is weak, two-stage least squares is biased toward the very O-L-S estimate it was supposed to rescue you from, and its conventional standard error is too small. So you get a confidence interval that is both centered on the wrong place and falsely narrow about it.
+:::
+
+## It Inverts Every Intuition
+
+- You used IV *because* OLS was biased by endogeneity
+- A weak instrument drags IV **back toward** biased OLS
+- It gives you the disease while handing you a **health certificate**
+- The damage is **confidently wrong**, not obviously noisy
+
+::: notes
+Read that result twice, because it inverts every intuition you have. You reached for I-V precisely because O-L-S was biased by endogeneity. A weak instrument quietly drags your I-V estimate back toward that biased O-L-S number — it gives you the disease you were treating, while handing you a certificate of health. And it does the damage not by being noisy in an obvious way, a huge standard error you would respect, but by being confidently wrong: a tight interval around a contaminated point. A noisy estimate warns you. This one lies to you.
+:::
+
+## IV Is a Ratio
+
+- $\hat\beta_{\text{IV}} = \dfrac{\widehat{\operatorname{Cov}}(z, y)}{\widehat{\operatorname{Cov}}(z, x)}$
+- Numerator = **reduced form** (how $z$ moves $y$)
+- Denominator = **first stage** (how $z$ moves $x$)
+- Weak $z$: denominator near zero, itself estimated with error
+
+::: notes
+Here is the intuition, straight from the structure of two-stage least squares. The I-V slope is a ratio: the estimated covariance of z with y, divided by the estimated covariance of z with x. The numerator is the reduced form — how the instrument moves the outcome. The denominator is the first stage — how the instrument moves the treatment. I-V is the effect of z on y, scaled up by how much z moves x. Now watch what a small denominator does. You are dividing by a number that is close to zero and itself estimated with error.
+:::
+
+## Two Catastrophes
+
+- Ratio with denominator near zero: **wild**, fat-tailed, skewed
+- Not the tidy normal the SE assumes $\Rightarrow$ SE is **too small**
+- Endogeneity correlates numerator error with the denominator
+- Ratio inherits a tilt **toward the OLS limit**
+- The weaker the instrument, the **stronger** the pull
+
+::: notes
+Two catastrophes follow. First, the sampling distribution of a ratio whose denominator hugs zero is wild — fat-tailed and skewed, nothing like the tidy normal the conventional standard-error formula assumes. The formula linearizes around the denominator and badly underestimates the true spread, which is why the reported standard error comes out too small. Second, and this is the subtle, deadly part: the denominator and the numerator's error are correlated in finite samples through the endogeneity itself. When x is endogenous, the same chance fluctuations that make the first-stage covariance land high or low also push the numerator the same way, and the ratio inherits a systematic tilt. That tilt points, provably, toward the O-L-S probability limit. The weaker the instrument, the stronger the pull.
+:::
+
+## The $1/(F+1)$ Rule
+
+- Bias of 2SLS relative to bias of OLS $\approx \dfrac{1}{F+1}$
+- Huge $F$: ratio near $0$ — IV has shed OLS's bias
+- $F = 1$: ratio $\approx \tfrac{1}{2}$ — **half of OLS's bias**
+- Sign is **toward** OLS — worse than no instrument
+
+::: notes
+There is an exact, memorable way to summarize the bias. The bias of two-stage least squares relative to the bias of O-L-S is approximately one over the quantity F plus one — the engine behind the famous F-greater-than-ten rule. When the first-stage F is enormous, one over F-plus-one is about zero and two-stage least squares has shed essentially all of O-L-S's bias. When F equals one, the ratio is about one-half: it carries half of O-L-S's bias, and the sign is toward O-L-S. This is why a weak instrument is worse than no instrument at all: no instrument leaves you with honest O-L-S and an honest worry; a weak instrument gives you contaminated O-L-S dressed up as a clean estimate.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A weak first stage means dividing by a number near zero: 2SLS is biased **toward OLS** by roughly $1/(F+1)$, and its standard error is **too small**. Next: the cautionary tale that taught the profession to fear weak instruments — quarter of birth.
+:::
+
+::: notes
+To summarize part three: a weak first stage means dividing by a number near zero and estimated with error. Two catastrophes follow — the standard error comes out too small, and the ratio tilts toward O-L-S by roughly one over F-plus-one. A weak instrument hands you back the very bias you fled, dressed as a clean estimate. In part four we meet the famous cautionary tale that burned this lesson into the profession — the quarter-of-birth instrument and the Bound–Jaeger–Baker critique — and then begin the cure.
+:::

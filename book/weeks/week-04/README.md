@@ -19,5 +19,5 @@ estimators are often wrong. See [`../../TOC.md`](../../TOC.md) for the full plan
 
 ## Lab, mentor, assessment
 - [Lab 4 — A Clean DiD on HMDA + a State Policy Shock](lab4-hmda-did.md) (real CFPB HMDA path + seeded synthetic fallback; Callaway–Sant'Anna)
-- [Mentor Session 4 — "Detecting discrimination with a clean design"](mentor4-detecting-discrimination.md) (Gao & Sun 2019, *PNAS*)
+- [Mentor Session 4 — "Detecting discrimination with a clean design"](mentor4-detecting-discrimination.md) (Sun & Gao 2019, *PNAS*)
 - [Week 4 Assessment + Rubric](assessment4.md)

@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## RAG — Answering with Citations
+
+- Part 3 — answer online: retrieve, cite, dodge failure modes
+
+::: notes
+Welcome back to Reading Guide Pack Six and the AI Lab Manual, part three of eight. In part two we built the offline index — chunking each filing, embedding the passages into vectors, and storing them for fast search. Now we run the online half: a user's question arrives, and we produce an answer grounded in the documents with citations you can check. This is the half students see, and it is also where the three big failure modes live. So we walk the query path box by box, then look hard at how each box can betray you, because the whole point of this tool is to be more trustworthy than a raw chatbot, not less.
+:::
+
+## Retrieve the Top-k Chunks
+
+- **Embed the question** with the same embedding model
+- Ask the store for the $k$ chunks whose vectors are **closest**
+- Closest = highest **cosine similarity** to the question vector
+- Typically **3 to 10** passages — your evidence
+- The model never sees the whole corpus — only these few chunks
+
+::: notes
+First, retrieve the top-k. When a question arrives, you embed the question with the same model you used on the chunks, then ask the store for the k chunks whose vectors are closest — highest cosine similarity — to the question vector. Those k passages, typically three to ten of them, are your evidence. The crucial design fact is that the model never sees your whole corpus. It only ever sees the handful of passages that retrieval judged relevant, which is exactly what lets retrieval-augmented generation scale to thousands of filings without overflowing the context window. Retrieval is the filter that decides what evidence the model is even allowed to consider.
+:::
+
+## Stuff the Prompt, Answer with Citations
+
+- One prompt = **system instructions** + retrieved chunks + the question
+- Instruction: "answer only from the context; if absent, say so"
+- Each chunk carries an **ID** → model cites the chunk it used
+- The answer is now **checkable** — open the filing and verify
+- An answer you cannot trace to a source you **cannot use**
+
+::: notes
+Second, stuff the prompt. You build one prompt: a system instruction that says answer only from the context below and, if the answer is not there, say so; then the retrieved chunks with their source IDs; then the user's question. Third and last, the model answers with citations. Because each chunk carries an ID, you instruct the model to cite the chunk it used for each claim. Now the answer is checkable — you open the cited filing and verify the sentence is really there. This is the heart of the discipline: an answer you cannot trace to a source is an answer you cannot use in a research paper. The citation is what turns a confident-sounding paragraph into evidence you can defend in front of a skeptic.
+:::
+
+## Three Failure Modes
+
+- **Bad chunking**: a fact split across two chunks, or one chunk mixing five topics
+- **Retrieval miss**: "litigation exposure" vs. "pending legal proceedings"
+- **Model ignores context**: overrides it with a confident wrong memory
+- That last one is **hallucination** — the cardinal sin of LLM research
+- The defense against all three: **validate**
+
+::: notes
+And the failure modes are not rare. Bad chunking: cut the text mid-sentence and the relevant fact splits across two chunks, so neither alone is retrievable; or chunk so coarsely that one passage mixes five topics and dilutes the signal. Retrieval miss: the right passage exists but its vector is not near the question's — the question says litigation exposure, the filing says pending legal proceedings, and the embedding model fails to bridge them, so the model answers from an irrelevant chunk. And the model ignoring the context: even with the right passage in the prompt, it can override it with a confident wrong answer from training. That last one is hallucination, which Chapter Six-point-Five calls the cardinal sin of LLM research. The defense against all three is the same discipline as the rest of this book: validate. Spot-check that retrieved chunks are relevant, confirm cited passages really say what the answer claims, and never report a RAG answer you have not traced to its source.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+RAG's **online** phase embeds the question, retrieves the top-$k$ nearest chunks, stuffs them into the prompt with their IDs, and asks the model to answer from them and cite. Bad chunking, retrieval misses, and the model ignoring its context all yield to the same defense: **validate every answer against its cited source**. Next: the prompt patterns that make output checkable.
+:::
+
+::: notes
+To summarize part three: the online half of retrieval-augmented generation embeds the question, retrieves the few nearest chunks, stuffs them into a prompt with their source IDs, and asks the model to answer using only them and to cite each claim. That citation is what makes the answer checkable. Three failure modes lurk — bad chunking that hides a fact, a retrieval miss when the wording differs, and the model overriding good context with a confident hallucination — and all three yield to the same defense: validate every answer against its cited source. In part four we open the prompt-pattern catalog: reusable templates that constrain the output and demand grounding, so the model's results are machine-parseable and checkable at scale.
+:::

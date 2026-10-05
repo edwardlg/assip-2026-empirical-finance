@@ -1,0 +1,59 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## Defending Identification: Confounds and Honest Uncertainty
+
+- Part 5 — defend identification when the questions come
+
+::: notes
+Welcome back to Chapter eight-point-five, part five of nine. In part four we budgeted the talk and rehearsed it against a clock. Now we turn to the questions, where the talk is actually judged. The good news is that you already did the work: the questions you will get are the rows of the threats table you wrote weeks ago. In this part we handle confound questions and the honest "I don't know."
+:::
+
+## The Questions Are Your Threats Table
+
+- A flailing answer undoes a polished eight minutes
+- The question period reveals if *you* believe the result
+- The questions are the rows of your threats table
+- You wrote them weeks ago, when you were calm
+- You are reading from a script you authored
+
+::: notes
+The talk is eight minutes; the questions are where the talk is actually judged. A polished eight minutes followed by a flailing answer to the first question undoes the polish entirely, because the question period is where the audience finds out whether you believe your result or merely recited it. The good news, and it is genuinely good news, is that you already did the work. The questions you will get are the rows of your threats-and-responses table from the identification chapter. You wrote them down weeks ago. You are not improvising; you are reading from a script you authored, in private, when you were calm.
+:::
+
+## Anticipate the "What About [Confound]?"
+
+- Every hard question: isn't this just some confounder?
+- That is your assumption attacked at its named weak point
+- Turn each threats row into a prepared answer
+- Threat, why plausible, what you did, residual concern
+- Answer in that order; it makes you look more credible
+
+::: notes
+Every hard question in an empirical seminar has the same shape: isn't your estimate just picking up some confounder rather than the effect you claim? That is your identifying assumption being attacked at its named weak point, and you named every one of those weak points yourself, in the first column of the threats table. So before the talk, turn each row into a prepared answer: the threat, which is their question; why it's plausible, so you don't dismiss it; what you did about it, the test or design choice; and the residual concern, what honestly remains. When the question comes, you answer in that order: yes, that's the central worry; if the confounder were driving this, we'd see a signature; we checked, and we see a reassuring result; what I still can't fully rule out is the residual. That makes you look more credible than a confident dismissal, because it shows you saw the problem before they did.
+:::
+
+## How to Say "I Don't Know" Well
+
+- You will get a question you cannot answer
+- Bluffing is fatal; the room can smell it instantly
+- Say "I don't know" with structure, a *located* one
+- Admit the limit, show why, name what would resolve it
+- A located "I don't know" builds credibility
+
+::: notes
+You will get a question you cannot answer. Everyone does; a referee's whole job is to find the question you didn't prepare. The amateur move is to bluff, to manufacture an answer on the spot, and a room full of people who do this for a living can smell a bluff instantly, and the bluff costs you far more credibility than the gap ever would. The professional move is to say "I don't know" with structure. Not a bare shrug: a located one. I don't know; that's outside what my design can speak to, because of a reason; my guess is a direction, but I'd want to check a specific thing before claiming it. That sentence admits the limit, shows you understand why it's a limit, and names what would resolve it. Maya, asked whether her fair-lending effect would generalize to auto loans, does not invent a number; she says her data is mortgages, so she genuinely doesn't know, the mechanism is examiner attention, and auto lending has a different supervisor, so she wouldn't extend the estimate without re-running it there. That is a better answer than a confident yes.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The questions are **the rows of your threats table** — answer each as threat, why plausible, what you did, residual concern. Never bluff; a room of professionals smells it instantly. Say "I don't know" with structure: a *located* answer builds more credibility than a confident dismissal. Next: telling a fatal critique from a survivable one.
+:::
+
+::: notes
+To summarize part five: the question period is where the talk is judged, and the questions are the rows of your threats table, so you answer from a script you authored when calm. For a confound question, answer in order: threat, why plausible, what you did, residual concern. And when you genuinely don't know, never bluff; say it with structure, a located "I don't know" that names why it's a limit and what would resolve it. In part six we learn to tell a fatal critique from a survivable one, live, and how to concede gracefully when the attacker is right.
+:::

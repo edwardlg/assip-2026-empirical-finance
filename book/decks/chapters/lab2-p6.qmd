@@ -1,0 +1,58 @@
+---
+date: "2026-06-29"
+---
+
+## Pass 1 Betas and Pass 2 Cross-Sections
+
+- Part 6 — run Pass 1 betas, check truth, Pass 2 slopes
+
+::: notes
+Welcome back to Lab Two, Fama–MacBeth on CRSP, part six of eight. In part five we built the synthetic panel with a planted premium of six-tenths of a percent per month. Now we run the first two passes. Pass one estimates a beta for every stock, and we check those betas against the planted truth — something you could never do on real CRSP. Pass two runs a cross-sectional regression every month, producing the jagged slope series whose roughness becomes our standard error.
+:::
+
+## Step 1 — A Beta for Every Stock
+
+- For each `permno`: regress `ret` on `mkt_excess`, keep the slope
+- Design matrix `[1, mkt_excess]`, solve via `np.linalg.lstsq`
+- `lstsq` = stable normal equations — no manual inverse
+- Merge `beta_hat` back onto every stock-month row
+- `groupby("permno").apply(ts_beta)`
+
+::: notes
+Step one is pass one: a time-series beta for every stock. For each permno, regress its return on the market excess return and keep the slope — that slope is beta-i-hat. The cleanest way is a small function applied per group. You build the design matrix with a column of ones and the market excess return, then solve with numpy's lstsq, the numerically stable way to compute the normal-equations estimator — X-transpose-X inverse times X-transpose-y — without forming the inverse by hand. Group the panel by permno, apply the function, and you get one beta per stock. Then merge those betas back onto the panel so every stock-month row carries its stock's estimated beta, ready for pass two.
+:::
+
+## Check Betas Against the Planted Truth
+
+- On synthetic data you can do what CRSP never lets you: **compare**
+- `corr(betas, true_beta)` — expect about **0.93**
+- Not 1.0 because each beta is estimated with noise
+- Crank up idiosyncratic vol → correlation drops toward 0.5
+- That's **errors-in-variables** (Ch 2.5): biases $\hat\gamma_1$ toward zero
+
+::: notes
+Now check it against the planted truth. Because this is synthetic data, you can do something CRSP would never allow: compare your estimated betas to the real ones. Compute the correlation between estimated and true betas — expect about zero-point-nine-three. They will not match exactly, because idiosyncratic noise means each beta is estimated with error. So why is the correlation not exactly one? Each beta comes from noisy returns. And if you cranked up the idiosyncratic volatility, that correlation would fall toward zero-point-five. This is the errors-in-variables problem from Chapter two-point-five: betas estimated with noise become noisy regressors in pass two, which biases gamma-one-hat toward zero. Fama and MacBeth mitigated it by forming portfolios — a fix you meet in the reflection questions.
+:::
+
+## Step 2 — A Cross-Sectional Regression Each Month
+
+- For each `month`: OLS of `ret` on `beta_hat` across all stocks
+- Keep both coefficients: intercept `gamma0`, slope `gamma1`
+- Output is a $T\times 2$ table — one row per month
+- `groupby("month").apply(xsec)`
+- Plot `gamma1` — it swings wildly positive and negative
+
+::: notes
+Step two is pass two: a cross-sectional regression every month. For each month, run one OLS of return on estimated beta across all stocks in that month, and keep both coefficients — the intercept gamma-zero-t and the slope gamma-one-t. The output is a T-by-two table, one row per month. Group the panel by month and apply the cross-sectional function. Then look at what you got: plot the time series of monthly slopes. You will see it swing wildly between positive and negative — in some months high-beta stocks crushed it, in others they got crushed. That month-to-month volatility is not noise to be embarrassed about; it is the realized market return showing through, and it is exactly the scatter that the Fama–MacBeth standard error is about to turn into honest uncertainty. The average of this jagged series is your premium; its roughness is your standard error.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Pass 1 gives one `beta_hat` per stock — correlation about **0.93** with the planted truth, short of 1.0 because of estimation noise (errors-in-variables). Pass 2 gives a $T\times 2$ table of monthly slopes that swing wildly with the realized market. Next: aggregate them into the FM estimate and SE.
+:::
+
+::: notes
+To summarize part six: pass one produces one estimated beta per stock, correlated about zero-point-nine-three with the planted truth — short of one because of estimation noise, the errors-in-variables problem that will gently bias the final premium toward zero. Pass two produces a T-by-two table of monthly intercepts and slopes, and the slope series swings wildly because the realized market return shows through. In part seven we aggregate that jagged series into the Fama–MacBeth point estimate and standard error, and we watch the recovered premium land right where the planted truth says it should.
+:::

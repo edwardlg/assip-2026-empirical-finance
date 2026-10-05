@@ -1,0 +1,64 @@
+---
+date: "2026-08-10"
+date-format: "YYYY-MM-DD"
+---
+
+## The Eight-Minute Poster Talk: Question and Stakes
+
+**Learning objectives.** By the end you can:
+
+- Structure an eight-minute talk as six clean beats
+- Open with the question, then one concrete stake
+- Translate a results table into a legible figure
+- Defend identification and ship a one-click packet
+
+::: notes
+Welcome to Week Eight, Chapter eight-point-five, part one of nine. This is the last chapter of the camp, and it is about what happens after the work is done. You stand beside your research poster and defend it for eight minutes at the symposium, and you hand someone a folder that lets them rebuild every number you claimed. Both are acts of credibility. In this part we frame the lesson and walk the first two beats of the talk: the question and the stakes.
+:::
+
+## Two Surfaces a Skeptic Touches
+
+- The **talk**: eight minutes beside your poster
+- The **packet**: a folder that rebuilds every number
+- Both fail the same way: a skeptic stays unconvinced
+- A correct result nobody can follow reads as a guess
+- Strip away all that is not load-bearing
+
+::: notes
+A correct result that nobody can follow on a poster panel, or that nobody can reproduce on their own machine, is, to the person walking the symposium floor, indistinguishable from a guess. So this chapter teaches the two crafts that turn a defensible analysis into a believed one: the discipline of a short talk beside a poster, and the discipline of a one-click replication packet. They are really the same discipline. Strip away everything that is not load-bearing, and make what remains impossible to doubt. The poster is the visual artifact the program grades, and the abstract on its title block is what the student journal publishes.
+:::
+
+## The Six-Beat Arc
+
+- Question, then why it matters
+- Then design and identification
+- Then headline result
+- Then robustness, then contribution
+- **One beat per poster panel**, about one minute each
+
+::: notes
+Eight minutes is not a short version of a long talk. It is a different object with its own shape. An eight-minute talk has room for exactly one idea, defended cleanly. The arc is: question, why it matters, design and identification, headline result, robustness, contribution. Memorize that sequence; it is the skeleton of every empirical talk worth listening to. Each beat is one slide and one poster panel, with a title block holding the journal-ready abstract. Spend roughly one minute per slide, which leaves you two minutes of slack, and you will need every second of it, because talks run long, not short.
+:::
+
+## Beat One and Two: Question, Then Stakes
+
+- State the question a sixteen-year-old could repeat
+- Resist three paragraphs of background history
+- Then earn it with one concrete stake
+- Concrete before abstract, a number before a Greek letter
+- An abstract opening loses the room in thirty seconds
+
+::: notes
+The question slide states, in one sentence a smart sixteen-year-old could repeat back, what you are asking. Not the literature, not the motivation, the question. Devon's reads: does the launch of a spot Bitcoin exchange-traded fund reduce the volatility of the underlying token? The temptation is to open with three paragraphs of crypto-market history. Resist it. The room cannot hold context it has not been given a reason to want. Then the why-it-matters slide earns the question its airtime, and you spend it after the question, not before. One concrete stake. Priya's climate-insurance talk opens with: if wildfire risk is mispriced, insurers either go insolvent or abandon whole counties. That is a stake a stranger feels. The discipline is concrete before abstract, a number before a Greek letter. A talk that opens abstract loses the room in the first thirty seconds and never gets it back.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The eight-minute talk has room for **one idea**, hit in six beats: question, why it matters, design, headline, robustness, contribution. One beat per poster panel. Open with the question, then one concrete stake, never with background. Next: the design, headline, robustness, and contribution beats.
+:::
+
+::: notes
+To summarize part one: the eight-minute talk is its own object with room for exactly one idea, defended in six beats, one beat per poster panel. The first two beats are the question, stated so a sixteen-year-old could repeat it, and then one concrete stake that earns it. Concrete before abstract, a number before a Greek letter. In part two we walk the spine of the talk: the design and identification beat, the headline result, the robustness check, and the closing contribution.
+:::

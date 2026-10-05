@@ -1,0 +1,69 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## When the LLN Fails, and What Devon Should Do
+
+- Part 9 — when the LLN fails, and Devon's fix
+
+::: notes
+Welcome back to Chapter one-point-four, part nine of nine — the final part. In part eight we ranked the hierarchy of bad behavior. Now we watch the Law of Large Numbers itself fail with the Cauchy, settle on what Devon should do, and preview the next chapter.
+:::
+
+## The Cauchy: LLN Failing in Front of You
+
+- Swap in `rng.standard_cauchy()`, rerun the **running-mean** plot
+- The average never settles onto a line
+- It leaps to wild new levels whenever a giant draw arrives
+- Visual proof: "more data" is **not** a universal cure
+
+::: notes
+For the truly pathological case, swap the Student's t for a Cauchy draw and rerun the running-mean plot from part three — the one that, with dice, settled politely onto three-point-five. With Cauchy, instead of settling onto a line, the running average jumps around forever, leaping to a wild new level whenever a giant draw arrives, never converging to anything. That is the Law of Large Numbers failing in front of your eyes — visual proof that more data is not a universal cure. Seeing the running mean refuse to settle cures you permanently of the instinct that averaging always tames noise. For some distributions there is simply nothing for the average to converge to.
+:::
+
+## Where Devon's Data Live
+
+- "Has a mean" buys only the **hope** of the LLN
+- Devon's crypto: heavy but **finite-variance** zone (low-$\nu$ $t$)
+- Eventually consistent and normal — but "eventually" is huge
+- A few hundred observations: confidence interval on **sand**
+
+::: notes
+So where does Devon's data live? Not at the Cauchy extreme — that was the horror story to anchor the scale. His crypto returns sit in the heavy but finite-variance zone, closer to a low-nu Student's t than to a normal. That means his sample mean is eventually consistent and asymptotically normal. But eventually might require far more data than he has, and any confidence interval he builds from a few hundred observations is built on sand. That is the diagnosis of his earlier failure: the intervals jumped around between months not because the math was wrong, but because the bell had not formed yet at his sample size.
+:::
+
+## What Devon Should Actually Do
+
+- Report and **quantify** fat tails — don't assume normality
+- Lean on the **median** and robust summaries
+- Use **far larger** samples before trusting normality
+- Use standard errors that don't assume thin tails
+- Cheapest habit: **plot the data and look at the tails**
+
+::: notes
+The point is not to make Devon give up; it is to make him honest about what his tools can promise. The practical responses, all of which you meet later in the book, are these. Report that returns are fat-tailed and quantify it, rather than assuming normality. Lean on the median or other robust summaries that are not hostage to a single monster day. Use far larger samples before trusting a normal approximation. And use standard errors that do not silently assume thin tails. But the single most valuable habit is also the cheapest: before trusting any average, plot the data and look at the tails. If a histogram of the raw returns has fat tails or outliers that dwarf the bulk, treat every claim based on the Central Limit Theorem as provisional until you have checked whether the bell actually forms.
+:::
+
+## Where This Is Going
+
+- Two pillars: **LLN** lands on the truth; **CLT** shapes the misses
+- Hold onto $\dfrac{\bar{x}-\mu}{\sigma/\sqrt{N}}$
+- Next chapter: we **don't know** $\sigma$ — estimate it as $\hat{\sigma}$
+- That turns the normal into **Student's $t$** — the very family we used
+- From it: the **$t$-test** and the **confidence interval**
+
+::: notes
+Let me point ahead. You now have the two pillars. The Law of Large Numbers guarantees that with enough honest data the sample mean lands on the truth. The Central Limit Theorem guarantees the misses, properly rescaled by sigma over root N, follow the standard bell — provided the data are not so fat-tailed that the bell never forms. Hold onto that standardized quantity, the sample mean minus mu over sigma over root N, because the next chapter is built entirely on it. In chapter one-point-five we confront the one thing we have been quietly cheating on: in real life we do not know sigma, and have to estimate it from the same sample. Replacing the true sigma with an estimate turns that normal into a slightly fatter-tailed cousin — the Student's t distribution, the very family we just used to break the Central Limit Theorem — and from it we derive the t-test and the confidence interval.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The Cauchy running mean never settles — the **LLN itself can fail**, so "more data" is no universal cure. Devon's fix: quantify fat tails, use robust summaries and bigger samples, and **always plot the tails first**. Next chapter (Ch 1.5): estimating $\sigma$ as $\hat{\sigma}$ gives **Student's $t$**, the $t$-test, and the confidence interval.
+:::
+
+::: notes
+To close this chapter: the two laws are the pillars under every standard error and confidence interval you build this summer, but both rest on finite variance. The Cauchy running mean refused to settle — proof the Law itself can fail. Devon's fix is to quantify fat tails, use robust summaries and larger samples, and plot the tails first. Next chapter we estimate sigma instead of knowing it, turning the normal into Student's t — and from that, the t-test and confidence interval.
+:::

@@ -98,8 +98,7 @@ effects, clustering, sample, and the identifying assumption in one sentence.
 
 Used in the Preface, the reading guides (Weeks 5–6), and the mentor sessions (§6 of master prompt):
 
-- **Fair lending / discrimination detection:** Gao, L., & Sun, H. (2019). Lending practices to
-  same-sex borrowers. *PNAS*, 116(19), 9293–9302. (Congressional testimony; HUD; Federal Reserve.)
+- **Fair lending / discrimination detection:** Sun, H., & Gao, L. (2019). Lending practices to same-sex borrowers. *Proceedings of the National Academy of Sciences*, 116(19), 9293–9302. (Congressional testimony; HUD; Federal Reserve.)
 - **Supply-chain common ownership:** Gao, L., Han, J., Kim, J-B., & Pan, T. (2024). Overlapping
   institutional ownership along the supply chain and earnings management of supplier firms.
   *Journal of Corporate Finance*, 84, 102520.

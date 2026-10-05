@@ -1,0 +1,68 @@
+---
+date: "2026-07-20"
+---
+
+## The Overlapping-Portfolio Trick
+
+- Part 4 — the overlap trick and the serial-correlation it creates
+
+::: notes
+Welcome back to the reader's guide for Jegadeesh and Titman, part four of eleven. In part three we built the J-K sort and the winner-minus-loser trade. Now we examine the move that makes the methodology efficient and also makes the statistics subtle: the overlapping-holding-period trick. This is the same overlapping-observations problem we built in Week Two, showing up in a famous paper.
+:::
+
+## Re-Form Every Month, Not Every K Months
+
+- Re-balancing only every $K$ months wastes data
+- That gives one fresh observation every $K$ months
+- Instead: form a **new** portfolio every month
+- Hold each cohort for $K$ months
+- Report the **equal-weighted average across cohorts**
+
+::: notes
+Here is the move. If you held a six-month portfolio and only re-balanced every six months, you would get one fresh, non-overlapping return observation every half-year — throwing away five-sixths of your months. Instead, Jegadeesh and Titman form a new winner-minus-loser portfolio every single month, and hold each one for K months. So in any given month you are holding K overlapping cohorts at once: the one formed this month, the one from last month, and so on back K minus one months. Your reported monthly return is the equal-weighted average across all those overlapping cohorts. This is sometimes called the overlapping-portfolio, or calendar-time, construction. It uses every month of data and smooths the estimate.
+:::
+
+## The Price: Serial Correlation
+
+- Consecutive returns share $K-1$ of their $K$ cohorts
+- Adjacent observations are **mechanically correlated**
+- Even if the true signal were independent
+- This is exactly Week Two's overlapping-observations problem
+
+::: notes
+The price you pay is serial correlation in the return series you then test. Because consecutive monthly returns share K minus one of their K component cohorts, adjacent observations are mechanically correlated — even if the true underlying signal were independent and identically distributed. This is exactly the overlapping-observations problem we built in Week Two. The cohorts literally overlap in time, so today's reported return and tomorrow's share most of their ingredients. That shared content is correlation you did not earn from any real persistence in the signal; it is a manufactured artifact of the construction. And manufactured correlation wrecks naive standard errors.
+:::
+
+## The Fix: Newey-West Standard Errors
+
+- Naive i.i.d. standard error is **too small** here
+- It overstates effective sample size, inflates the $t$
+- Fix from Chapter two-point-four: a **HAC** standard error
+- **Newey-West**, lag truncation at least $K-1$
+- Referee's first question: were errors overlap-corrected?
+
+::: notes
+Here is why it matters and how to fix it. When you regress an overlapping series on a constant to test whether its mean differs from zero, the usual ordinary-least-squares standard error, which assumes independent observations, is too small. It assumes a larger effective sample than you actually have, so it inflates the t-statistic. The fix is the one from Chapter two-point-four: a heteroskedasticity-and-autocorrelation-consistent standard error, the Newey-West estimator, with the lag truncation set to at least K minus one to absorb the induced autocorrelation. When you read this paper's t-statistics, the first question a referee asks is: did they correct the standard errors for the overlap, or are these naive t-stats on overlapping data? The paper's returns are averages across cohorts, which dampens but does not eliminate the issue; modern replications report Newey-West t-stats as a matter of course.
+:::
+
+## A Second Design Choice: The Skip
+
+- Many implementations **skip** the most recent week or month
+- Rank on earlier months, start holding one period later
+- Purpose: dodge short-horizon reversal and bid-ask bounce
+- The one-month skip is associated more with later work
+
+::: notes
+One more design choice worth flagging. Many momentum implementations skip the most recent week or month between formation and holding. For example, rank on months t minus six through t minus one, and start holding at t plus one. The purpose is to dodge the short-horizon reversal and the bid-ask bounce that would otherwise contaminate the winner and loser definitions. The exact skip convention varies across papers, so attribute it carefully: the clean one-month skip is more strongly associated with later momentum work than with this paper's main tables. When you compare results across the literature, always check whether a skip was applied, because it changes who lands in the winner and loser deciles.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Re-forming every month and averaging $K$ overlapping cohorts squeezes the data — but makes adjacent returns share $K-1$ cohorts, so naive standard errors are too small. Fix with **Newey-West**, lag at least $K-1$. Watch for the skip convention. Next: the data.
+:::
+
+::: notes
+To summarize part four: the overlapping-portfolio trick forms a new winner-minus-loser portfolio every month and averages across K overlapping cohorts, using every month of data. The cost is serial correlation — adjacent returns share K minus one of their cohorts — which makes naive standard errors too small and inflates t-statistics. The remedy is a Newey-West standard error with lag at least K minus one, straight from Chapter two-point-four. And watch for the skip convention, which differs across papers. In part five we cover the data: which return tape, which exchanges, and which sample period the authors used.
+:::

@@ -1,0 +1,58 @@
+---
+date: "2026-06-29"
+date-format: "YYYY-MM-DD"
+---
+
+## The Same Equations, by Orthogonality
+
+- Part 4 — deriving the same equations by geometry
+
+::: notes
+Welcome back to Chapter two-point-one, part four of seven. In part three we minimized the squared residuals with calculus and landed on the normal equations, X-transpose-X times beta-hat equals X-transpose-y. Now we reach the exact same equations a second way — with no calculus at all — from one geometric demand. Then we solve them for the formula on the front of every econometrics course.
+:::
+
+## The Orthogonality Argument
+
+- Suppose $\hat{\boldsymbol\beta}$ minimizes the length of $\hat{\mathbf{e}} = \mathbf{y}-\mathbf{X}\hat{\boldsymbol\beta}$
+- If $\hat{\mathbf{e}}$ had a component along a regressor $\mathbf{x}_j$...
+- ...nudge the fit that way, shrink the residual — contradiction
+- So $\hat{\mathbf{e}}$ is **perpendicular to every column** of $\mathbf{X}$
+- Like the shortest path from a point to a line
+
+::: notes
+Calculus is reliable but it can feel like symbol-pushing. Here is the same destination reached by pure reasoning, and this is the version worth remembering. Suppose beta-hat truly minimizes the squared length of the residual, e-hat equals y minus X-beta-hat. I claim e-hat must be orthogonal to every column of X. Why? Suppose it weren't — suppose the residual still had some component along one of the regressors, say column x-j. Then we could nudge our fit a little in the x-j direction and shave off that leftover, making the residual strictly shorter — which contradicts having minimized its length. The only way no such improving nudge exists is if the residual has zero component along every column of X — that is, e-hat is perpendicular to the entire column space. This is the exact analogue of the most familiar fact in plane geometry: the shortest path from a point to a line is the perpendicular dropped to it. Any other drop is longer.
+:::
+
+## Same Normal Equations, No Calculus
+
+- "Perpendicular to every column" in one stroke: $\mathbf{X}'\hat{\mathbf{e}} = \mathbf{0}$
+$$\mathbf{X}'(\mathbf{y}-\mathbf{X}\hat{\boldsymbol\beta}) = \mathbf{0}\ \Rightarrow\ \mathbf{X}'\mathbf{X}\hat{\boldsymbol\beta} = \mathbf{X}'\mathbf{y}$$
+- With intercept: $\sum_i \hat{e}_i = 0$ — residuals sum to **exactly** zero
+- Residuals uncorrelated with every regressor — by construction
+
+::: notes
+Perpendicular to every column of X is a statement we can write in one stroke. Stacking the dot products of e-hat with each column means X-transpose times e-hat equals the zero vector. Substitute the definition of the residual: X-transpose times the quantity y minus X-beta-hat equals zero. Distribute, and you get X-transpose-y minus X-transpose-X-beta-hat equals zero, which rearranges to X-transpose-X-beta-hat equals X-transpose-y. The identical normal equations, with not one derivative taken. Minimizing a squared length and dropping a perpendicular are the same act. One concrete consequence drops out immediately. Because the first column of X is all ones, the first equation in X-transpose e-hat equals zero reads: the sum of the residuals equals zero. Whenever the regression includes an intercept, the residuals sum to exactly zero — not approximately, but as an algebraic identity, no matter what the data look like. The other equations say the residuals are uncorrelated with every regressor by construction. These are not assumptions; they are what least squares mechanically forces.
+:::
+
+## Solving for the Estimator
+
+- If $\mathbf{X}'\mathbf{X}$ is invertible, multiply both sides by $(\mathbf{X}'\mathbf{X})^{-1}$
+$$\boxed{\ \hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}\ }$$
+- The formula on the front of every econometrics course
+- The unique solution to "residual perpendicular to regressors"
+- Everything else in the book sits on this one line
+
+::: notes
+Now solve the normal equations. If the K-by-K matrix X-transpose-X has an inverse — and part six pins down exactly when — multiply both sides on the left by that inverse. The matrix on the left of beta-hat collapses to the identity, and we are left with beta-hat equals the inverse of X-transpose-X, times X-transpose-y. There it is — the formula on the front of every econometrics course. It is worth seeing it not as a magic incantation but as the unique solution to a single demand: find the coefficients whose residual is perpendicular to the regressors. Everything else in this book is built on top of this one line.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The normal equations also fall out from pure geometry — the residual must be perpendicular to every regressor — and solving them gives $\hat{\boldsymbol\beta} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$. With an intercept, the residuals sum to exactly zero, as an algebraic identity.
+:::
+
+::: notes
+To summarize part four: the normal equations come out a second time from a single geometric demand — the residual must be perpendicular to every regressor — and solving them gives the famous formula, beta-hat equals the inverse of X-transpose-X times X-transpose-y. A free bonus: with an intercept, the residuals sum to exactly zero, and they are uncorrelated with every regressor by construction. In part five we draw the whole thing as a picture — OLS as projecting y onto the space the regressors span — and name the matrix that does the projecting.
+:::

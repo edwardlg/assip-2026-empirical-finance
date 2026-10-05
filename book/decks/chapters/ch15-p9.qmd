@@ -1,0 +1,47 @@
+---
+date: "2026-06-22"
+date-format: "YYYY-MM-DD"
+---
+
+## Confidence Intervals and Effect Size
+
+- Part 9 — inverting the test, and significance vs. effect size
+
+::: notes
+Welcome back to Chapter one-point-five, part nine of ten. In part eight we defined the p-value correctly. Now we turn the test inside out into a confidence interval — often the more honest object to report — and then draw the line every empirical scientist must keep straight: statistical significance versus economic significance.
+:::
+
+## A Confidence Interval Is an Inverted Test
+
+- A p-value asks: can I reject *this* null?
+- A CI answers all of them at once
+- Fail to reject $\mu_0$ exactly when $|t|\le t^*$
+- The CI is all null values that survive: $\bar{x}\pm t^*\,\widehat{\text{se}}$
+- Sam, 251 d.f.: $[-0.013\%,\ 0.173\%]$, and $0$ is inside
+
+::: notes
+A p-value answers one question — can I reject this particular null? A confidence interval answers all of them at once, and is often the more honest object to report. We fail to reject a candidate null value mu-naught at level alpha exactly when the statistic is not extreme — when the absolute value of t is at most t-star, the two-sided critical value. Rearranging, the set of all null values that survive the test is precisely the interval x-bar minus t-star times the standard error, up to x-bar plus t-star times the standard error. So a confidence interval is simply the collection of null hypotheses you cannot reject — a test, inverted. For Sam, with t-star about one point nine seven at two hundred fifty-one degrees of freedom, the ninety-five percent interval is zero point zero eight percent plus or minus one point nine seven times zero point zero four seven three percent — from minus zero point zero one three percent up to zero point one seven three percent. Zero is inside it, consistent with the fact that a two-sided test would not reject. And the meaning of confidence is about the procedure: repeat the experiment many times, and ninety-five percent of such intervals contain the true mu. Mu is fixed; the interval is the random thing.
+:::
+
+## Significance Is Not Economic Significance
+
+- Scale Sam to $N=100{,}000$ days, same tiny edge
+- The t-stat could be 5, the p-value microscopic
+- Yet eight ten-thousandths of a percent is worthless
+- Statistical significance: can I tell it from zero?
+- Effect size: is it large enough to matter?
+
+::: notes
+Here is a scenario that should bother you. Suppose Sam scales the backtest up to one hundred thousand days of simulated data, and finds the same average — but now eight ten-thousandths of a percent — with the standard error tiny because root N is huge. The t-statistic could be five, the p-value microscopic, the result wildly significant. And it would be worthless. Eight ten-thousandths of a percent per day does not survive a single basis point of trading costs. It is a real, detectable, economically meaningless effect. This is the distinction every empirical scientist must keep straight. Statistical significance asks: can I distinguish this effect from zero? It is a statement about precision, largely controlled by sample size. With enough data, almost any effect — however trivial — becomes statistically significant. Effect size, also called economic or practical significance, asks: is the effect large enough to matter? Is the edge big enough, after costs, to be worth trading? That is a question about magnitude, in the units of the problem — and no p-value can answer it. Always report the estimate and its interval, never just stars. Asterisks are not findings.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A **confidence interval** is a test inverted — all the nulls you cannot reject: $\bar{x}\pm t^*\,\widehat{\text{se}}$. Sam's 95% CI is $[-0.01\%,\,0.17\%]$, with $0$ inside. And **statistical significance is not economic significance**: with huge $N$ a trivial effect is "significant" yet worthless. Always report the estimate and its interval, never just stars. Next: three mistakes and p-hacking.
+:::
+
+::: notes
+To summarize part nine: a confidence interval is a test inverted — the whole family of null values you cannot reject, x-bar plus or minus t-star times the standard error. Sam's ninety-five percent interval runs from minus zero point zero one percent to zero point one seven percent, and zero is inside it. And the line to keep sharp: statistical significance is not economic significance. With a huge sample, a trivially small effect becomes significant yet stays worthless after costs; and a large effect measured noisily can look insignificant. Always report the estimate and its interval, never just stars. In part ten — the finale — we name the three mistakes never to make, and preview the multiple-testing trap.
+:::

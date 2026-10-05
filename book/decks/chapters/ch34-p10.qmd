@@ -1,0 +1,52 @@
+---
+date: "2026-07-06"
+---
+
+## The Code and What to Carry Forward
+
+- Part 10 — the full code, and what to carry forward
+
+::: notes
+Welcome back to Chapter three-point-four, part ten of ten — our final part. In part nine we saw the three pathologies of a weak instrument and learned to report the Olea-Pflueger effective F. Now we run the whole chapter in one block of code, watch the endogeneity bias appear and vanish, and gather the four ideas that will do real work for the rest of the camp — then point you to Chapter three-point-five.
+:::
+
+## The Code
+
+```python
+from linearmodels.iv import IV2SLS
+# Naive OLS: biased, motivation is in the error
+ols = IV2SLS(df["Y"], df[["const","D"]], None, None).fit()
+# 2SLS: instrument endogenous D with Z, correct SEs
+iv = IV2SLS(df["Y"], df[["const"]],
+            df[["D"]], df[["Z"]]).fit(cov_type="robust")
+print(iv.first_stage.diagnostics[["f.stat","f.pval"]])
+```
+
+- True $\beta_1 = -2$; OLS biased, 2SLS recovers it
+- Shrink `0.8*Z` $\to$ `0.05*Z`: 2SLS slides back to OLS
+
+::: notes
+Here is the whole chapter in one runnable idea. We simulate a world with an unobserved confounder — financial motivation — where the true effect beta-one is minus two: the treatment lowers the balance change by two units. The instrument is a random mailer, a coin flip independent of motivation. With no endogenous regressor, I-V-two-S-L-S just runs O-L-S of Y on a constant and D, and it comes out biased, because motivation is in the error and correlates with D. Then we instrument the endogenous D with Z, fitting with robust covariance, and linear-models gives the correct standard errors — the two-S-L-S coefficient lands close to the true minus two. The first-stage diagnostics report the partial F on the instrument, comfortably above ten here because we built a strong first stage with zero-point-eight times Z. Two things to notice. First, O-L-S and two-S-L-S disagree, and the gap is the endogeneity bias made visible — the entire reason for the exercise. Second, if you shrink the first stage — change zero-point-eight times Z to zero-point-zero-five times Z — and re-run, you watch two-S-L-S slide back toward the biased O-L-S number while its standard error explodes. That is the weak-instrument pathology, live.
+:::
+
+## What to Carry Forward
+
+- **Escape from CIA** — an instrument beats an unobserved confounder
+- **Two conditions** — relevance testable, exclusion arguable
+- **LATE, not ATE** — IV gives the complier effect
+- **Strength is everything** — report the effective F
+
+::: notes
+Four things from this chapter will do real work for the rest of the camp. First, the escape from C-I-A: when an unobserved confounder makes treatment endogenous and matching cannot help because the confounder is unmeasured, an instrument identifies a causal effect anyway by importing exogenous variation from outside the system. Second, the two conditions and their asymmetry: relevance — the covariance of Z and D is nonzero — is testable, so check and report the first stage; exclusion — no path from Z to Y except through D — is untestable and must be argued from institutions and logic. Random assignment, as in Maya's mailer, buys the hardest half of exclusion for free. Third, LATE, not A-T-E: I-V identifies the effect for compliers — the units the instrument moved — made exact by the Imbens-Angrist theorem under monotonicity. Fourth, strength is everything: a weak first stage drags two-S-L-S back toward O-L-S bias, corrupts your standard errors, and amplifies any exclusion violation, so report the Olea-Pflueger effective F, not a casual F greater than ten.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+IV imports exogenous variation to beat an unobserved confounder — identifying the **complier LATE**, and only when the first stage is **strong**. Next: **Chapter 3.5** reproduces the weak-IV disaster in full and arms you with **Anderson–Rubin** inference, valid no matter how weak the instrument. Open **nb3.4** to build it all by hand.
+:::
+
+::: notes
+To close Chapter three-point-four: instrumental variables imports exogenous variation to beat an unobserved confounder, identifying the complier LATE, and only when the first stage is strong. We have set up the weak-instrument problem here; in Chapter three-point-five we reproduce the full pathology in a guided disaster — watching a deliberately weak instrument make two-S-L-S hug the O-L-S bias while its confidence interval lies about its own precision — and arm you with Anderson-Rubin inference that stays valid no matter how weak the instrument is. Your turn now: open notebook three-point-four. You will reproduce Maya's mailer experiment as a Wald estimator by hand and confirm it equals the just-identified two-S-L-S coefficient; scale up to a continuous-treatment, multiple-control run where two-S-L-S recovers the true beta-one and O-L-S does not; and then read the full first-stage diagnostics, deliberately weaken the instrument, and watch two-S-L-S slide back toward O-L-S as the effective F drops below its critical value. I will see you in Chapter three-point-five.
+:::

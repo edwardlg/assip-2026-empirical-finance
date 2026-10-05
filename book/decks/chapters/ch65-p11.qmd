@@ -1,0 +1,46 @@
+---
+date: "2026-07-27"
+date-format: "YYYY-MM-DD"
+---
+
+## The APIs: Keys and the Anthropic Messages Call
+
+- Part 11 — the key-secret rule and the Anthropic Messages call
+
+::: notes
+Welcome back to the AI co-pilot for research, part eleven of fourteen. In part ten we covered prompt-induced p-hacking and the reproducibility of stochastic outputs. Now the code. A chat window is fine for exploration, but a research pipeline that labels forty thousand filings runs through an A-P-I — an application programming interface — so you send the model text with a program and get structured responses back, and the whole process is scripted, logged, and reproducible. We cover two providers you will actually use: Anthropic's A-P-I directly, and OpenAI-family models through G-M-U's Azure gateway. This part covers the key rule and the Anthropic call.
+:::
+
+## The Non-Negotiable Rule
+
+- An API key is a **secret**, like a password
+- Never in code, never in a prompt, never committed to git
+- It lives in an **environment variable**, read at runtime
+- A key in your code is in your GitHub history forever
+
+::: notes
+First, the non-negotiable rule, stated once and meant absolutely: an A-P-I key is a secret, like a password. It is never written into code, never pasted into a prompt, never committed to git, never shown in a notebook. It lives in an environment variable and is read at runtime with the operating-system environment lookup. Every snippet obeys this, and the book's conventions require it of every notebook. A key in your code is a key in your GitHub history forever. Keep that absolute — it is the one rule with no exceptions.
+:::
+
+## The Anthropic Messages API
+
+- The SDK reads the key from the environment automatically
+- Put the **stable rubric** in `system`, mark it for caching
+- Put the **volatile filing text** in `messages`
+- Caching reuses the processed rubric across all 40,000 calls
+- Verify with the usage field: cache reads above zero
+
+::: notes
+The Anthropic Messages A-P-I. The Python SDK reads your key from the environment variable automatically — you never name it in code. A classification call creates a client, then sends a request with two parts. The stable rubric goes in the system field with a cache-control marker; the volatile filing text goes in the messages field. Prompt caching is the payoff for the discipline from earlier: the A-P-I caches a prefix of the request. Your rubric might be fifteen hundred tokens, identical for all forty thousand filings; without caching you pay to re-process it forty thousand times. With the cache-control breakpoint after the rubric, the A-P-I stores the processed rubric after the first call and reuses it on every subsequent call — much cheaper and faster. This is exactly why we insisted on stable instruction first, volatile input last: any change to the cached prefix invalidates the cache, so the filing text must come after the breakpoint. Verify it works by reading the usage field — cache-read input tokens above zero means the rubric was cached. If it stays zero across repeated calls, something is silently invalidating the prefix, and you are paying full price.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Run pipelines through an **API**, never a chat window, with the **key in an environment variable** — never in code. Put the stable rubric first so **prompt caching** reuses it across all 40,000 calls, and verify cache reads above zero. Next: the remaining knobs, model tiers, and GMU's Azure gateway.
+:::
+
+::: notes
+To summarize part eleven: production pipelines run through an A-P-I, scripted and logged, with the key always in an environment variable and never in code — a key in your code lives in your GitHub history forever. On the Anthropic Messages A-P-I, put the stable rubric in the system field with a cache-control marker and the volatile filing text in messages, so prompt caching stores the processed rubric after the first call and reuses it across all forty thousand calls. Verify it by reading the usage field, where cache-read tokens above zero confirm the rubric was cached. In part twelve we cover the remaining call knobs, the three Anthropic model tiers, and G-M-U's Azure gateway as a robustness check.
+:::

@@ -1,0 +1,47 @@
+---
+date: "2026-07-13"
+date-format: "YYYY-MM-DD"
+---
+
+## Bandwidth: The Bias–Variance Trade-off
+
+- Part 8 — bandwidth as a bias–variance trade-off
+
+::: notes
+Welcome back to Chapter four-point-three, part eight of thirteen. In part seven we settled on local linear regression in a window of width h. Now: how wide should that window be? The bandwidth is the single most consequential choice in a regression-discontinuity analysis, and it is governed by a tension you have met before — the bias-variance trade-off, which we then watch print itself in numbers.
+:::
+
+## The Tension
+
+- Large $h$: many points, precise lines — low variance
+- But curvature over a wide range biases the boundary height
+- Small $h$: only stocks hugging $c$ — low bias
+- But few points, so the lines jitter — high variance
+- Too wide is biased; too narrow is noisy
+
+::: notes
+Make h large and you include lots of data far from the cutoff. Your two fitted lines are estimated precisely — many points, small standard errors, low variance — but you are now using stocks ranked nine-fifty and one-thousand-fifty to infer what is happening at one thousand, and if the true outcome curve bends over that range, your straight line will systematically mis-read its height at the boundary. That is high bias. Make h small and you use only the handful of stocks hugging the cutoff. Now there is almost no curvature to worry about, so the linear approximation is nearly exact — low bias — but with so few points your fitted lines jitter from sample to sample and your standard errors balloon. That is high variance. Too wide and you are biased; too narrow and you are noisy. The optimal bandwidth balances squared bias against variance to minimize the mean squared error of the jump estimate.
+:::
+
+## The Trade-off, In Numbers
+
+- True jump is $0.6$
+- At $h=4$: estimate about $0.56$, but wide error about $0.18$
+- At $h=32$: estimate drifts to $0.41$, error tightens to $0.07$
+- Narrow window: honest but noisy
+- Wide window: precise but wrong
+
+::: notes
+You can watch this trade-off in numbers. With a true jump of zero-point-six, the local-linear estimate at bandwidth four comes in around zero-point-five-six — close to the truth, but with a wide standard error of about zero-point-one-eight. At bandwidth thirty-two it drifts to about zero-point-four-one — a much tighter standard error of about zero-point-zero-seven, but now badly biased, because the wide window let the curvature on the treated side bend the fit. The narrow window is honest but noisy; the wide window is precise but wrong. That is the trade-off made numerical, and it warns you against eyeballing a bandwidth or, worse, p-hacking by trying bandwidths until the result you want appears.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Bandwidth is a **bias–variance trade-off**: a narrow window means low bias but high variance; a wide window means the reverse. In the simulation, a true jump of $0.6$ reads $\approx0.56$ (wide error) at $h=4$ but drifts to $\approx0.41$ (tight error) at $h=32$. Honest-but-noisy versus precise-but-wrong. Next: how to choose $h$ automatically.
+:::
+
+::: notes
+To summarize part eight: bandwidth is a bias-variance trade-off. A narrow window means low bias but high variance; a wide window means low variance but high bias. The simulation makes it concrete: with a true jump of zero-point-six, the estimate reads about zero-point-five-six with a wide error at bandwidth four, but drifts to about zero-point-four-one with a tight error at bandwidth thirty-two. Honest-but-noisy versus precise-but-wrong. The lesson is not to eyeball or p-hack the bandwidth. In part nine we meet the two procedures that choose it for you, data-driven and principled.
+:::

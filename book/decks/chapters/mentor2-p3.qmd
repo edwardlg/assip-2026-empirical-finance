@@ -1,0 +1,55 @@
+---
+date: "2026-06-29"
+---
+
+## The Panel Case — Petersen's Taxonomy
+
+- Part 3 — firm effects, time effects, and two-way clustering
+
+::: notes
+Welcome back to Mentor Session Two, "Why your standard error is the whole ballgame," part three of four. In part two we saw that every standard error is one sandwich with a different filling for Omega, and that positive within-group correlation makes naive standard errors too small. Now we go to the place where finance researchers spend most of their lives: the panel — firms observed over many years. Panels are tricky because the errors can hold hands in two directions at once. Petersen's two-thousand-nine paper turned this from folklore into a discipline, and his taxonomy is what we cover now.
+:::
+
+## Two Effects at Once
+
+- A panel is firms $\times$ years
+- **Firm effect**: errors correlated over time *within* a firm
+- **Time effect**: a common shock hits all firms in a given year
+- A panel can have *both* simultaneously
+
+::: notes
+Start with the structure. A panel is a grid: firms down the side, years across the top. There are two distinct ways the errors can be correlated. The first is a firm effect: within a single firm, the error this year is correlated with the error next year, because firms carry persistent, slow-moving quirks. The second is a time effect: in a given year, a common shock — a recession, a regulatory change — hits every firm at once, so all the firms in that column move together. A real panel can have both effects at the same time, and that is exactly the case Petersen showed most finance papers were handling badly.
+:::
+
+## Match the Tool to the Effect
+
+- Firm effect $\rightarrow$ cluster by **firm**
+- Time effect $\rightarrow$ time fixed effects, or cluster by **time**
+- Both $\rightarrow$ **two-way** cluster
+- Diagnostic: cluster by firm, then by time — bigger move = bigger problem
+
+::: notes
+Now match the tool to the effect. If you have a firm effect, cluster by firm: that lets the errors inside each firm be arbitrarily correlated over time. If you have a time effect, either put in time fixed effects or cluster by time. If you have both, you do two-way clustering, which honors co-movement down the firm dimension and across the time dimension simultaneously. And Petersen gives you a diagnostic you can actually run instead of guessing. Cluster by firm and read the standard error; then cluster by time and read it again. Whichever one moves the standard error further off the plain White, heteroskedasticity-robust number is pointing at your bigger problem. The data tells you which effect dominates.
+:::
+
+## Fixed Effects Are Not Clustering
+
+- Fixed effects **remove a mean** (a level shift)
+- Clustering **honors leftover co-movement** in the errors
+- They are *not* substitutes — different jobs
+- You often need **both** in the same spec
+
+::: notes
+Here is the single most common confusion, and it is worth saying slowly. Fixed effects and clustering are not substitutes. A fixed effect removes a mean — it subtracts out each firm's average level, or each year's average level, taking a systematic shift out of the model. Clustering does something completely different: it leaves the point estimate alone and instead honors the leftover co-movement in the errors when it computes the standard error. One removes a level; the other corrects the uncertainty. Because they do different jobs, you very often need both in the same specification — firm fixed effects to absorb the level, and clustering to get the standard error right. Confusing the two is exactly the kind of mistake a referee catches in the first five minutes.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+A panel can carry a **firm effect** (correlation over time within a firm) and a **time effect** (common yearly shocks) at once — cluster by firm, by time, or **two-way**. Fixed effects remove a mean; clustering honors leftover co-movement — they are not substitutes, and you often need both. Next: the few-clusters trap and reporting like a referee.
+:::
+
+::: notes
+To summarize part three: a panel can carry a firm effect, meaning errors correlated over time within a firm, and a time effect, meaning common shocks hitting all firms in a year — and you handle them by clustering by firm, by time, or two-way. Petersen's diagnostic is to cluster each way and see which moves the standard error more off the White number. And remember that fixed effects remove a mean while clustering honors leftover co-movement; they are not substitutes, and you often need both. In part four we confront the trap where the cure reintroduces the disease — too few clusters — and we learn to report a standard error the way a referee would want to see it.
+:::

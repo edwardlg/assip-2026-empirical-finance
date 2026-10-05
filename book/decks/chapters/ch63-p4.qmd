@@ -1,0 +1,58 @@
+---
+date: "2026-07-27"
+---
+
+## The Data and the Public Dictionary
+
+- Part 4 — EDGAR filings and the Master Dictionary deliverable
+
+::: notes
+Welcome back to Chapter six-point-three, part four of nine. In part three we saw that validation is the identification: a dictionary earns trust only if its score tracks market reactions. Now we look at the data behind that test. The unit of observation is a ten-K filing, the raw material is public and enormous, and the paper's most durable deliverable is not a number. It is a downloadable file.
+:::
+
+## The Filings: SEC EDGAR
+
+- Unit of observation: one ten-K filing
+- Every U.S. public firm files its ten-K with the SEC
+- Since the mid-nineties they live in EDGAR, free
+- A large sample of filings over a decade-plus
+- Raw material is public and enormous
+
+::: notes
+The unit of observation is a ten-K filing, one firm's annual report for one fiscal year, and downstream, the firm-filing's market reaction. The filings come from SEC EDGAR. Every U.S. public company files its ten-K with the Securities and Exchange Commission, and since the mid-nineteen-nineties those filings live in the S-E-C's EDGAR electronic archive, free to anyone. Loughran and McDonald assemble a large sample of ten-Ks over roughly a decade-plus window around the late nineteen-nineties and two-thousands. This is a defining feature of text-as-data finance: the raw material is public and enormous. There is no licensing wall, as there is with CRSP or Compustat. The cost is not access; it is the engineering of parsing fifty thousand words of messy markup into a clean bag of words, stripping tables, exhibits, tags, and boilerplate.
+:::
+
+## The Market Data
+
+- Filings matched to returns, volume, volatility
+- Around the filing date, CRSP-style
+- Plus firm characteristics as controls
+- Size, book-to-market, and similar
+- Text score is the key regressor; reaction is the outcome
+
+::: notes
+To validate, the filings are matched to standard market data around the filing date: returns, trading volume, and return volatility, CRSP-style, plus firm characteristics like size and book-to-market as controls. The text score is the key regressor; the market reaction is the outcome. This is the same table-reading discipline you practiced in Week Five. The text score sits on the right-hand side, the market reaction sits on the left, and the controls hold fixed the firm features that might otherwise confound the comparison. The novelty is entirely on the right-hand side: the regressor is manufactured from prose.
+:::
+
+## The Public Resource — the Real Deliverable
+
+- The most-used output is a *file*, not a table
+- The **Master Dictionary** and its word lists
+- Maintained and updated publicly ever since
+- "We use the Loughran–McDonald dictionary" = downloaded these
+- Sometimes the instrument is the contribution
+
+::: notes
+Here is the most durable contribution. The most-used output of this paper is not a number in a table; it is a file. Loughran and McDonald released the Master Dictionary and the associated word lists, negative, positive, uncertainty, litigious, modal, and more, maintained and updated publicly ever since. When a paper today says, we measure tone using the Loughran-McDonald dictionary, it means it downloaded these lists and counted. That a two thousand eleven Journal of Finance paper's most durable contribution is a freely downloadable word list tells you something true about modern empirical finance: sometimes the most valuable thing you can publish is a clean, reusable measurement instrument. Watch the usual sample traps too: which filings are dropped, very small firms, financials, filings that fail to parse, and whether the parsing rules quietly change the sample.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+The filings come from **SEC EDGAR** — public, free, enormous; the cost is parsing, not access. Filings are matched to returns, volume, and volatility for validation. The paper's most durable deliverable is the **Master Dictionary**: a downloadable word list that became infrastructure. Next: how to read the paper's tables in the right order.
+:::
+
+::: notes
+To summarize part four. The filings come from SEC EDGAR: public, free, and enormous, so the cost is parsing, not access. The filings are matched to standard return, volume, and volatility data around the filing date, with firm controls, to validate the tone score. And the paper's single most durable deliverable is not a coefficient; it is the Master Dictionary, a freely downloadable family of word lists that became field infrastructure. In part five we set the reading order. This paper should not be read front to back; we read the misclassification evidence first, then the horse race.
+:::

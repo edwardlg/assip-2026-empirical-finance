@@ -1,0 +1,55 @@
+---
+date: "2026-06-29"
+---
+
+## Fixed Effects Four Weeks Early, and Fast
+
+- Part 7 — within transformation as fixed effects, fast and plottable
+
+::: notes
+Welcome back to Chapter two-point-three, the Frisch–Waugh–Lovell theorem, part seven of eight. In part six we proved that regressing on group dummies is identical to subtracting group means — the within transformation. Now we see why that single equivalence is the entire idea of fixed effects, which run Weeks three and four of the camp, and why it lets fixed-effects software run in milliseconds instead of failing entirely. We also get a diagnostic bonus: the ability to plot any coefficient.
+:::
+
+## This Is Fixed Effects, Four Weeks Early
+
+- Panel of firms over years: group by **firm**
+- A firm dummy absorbs everything **time-invariant** about a firm
+- Within transformation = subtract each firm's **own time-average**
+- $y_{it}=\alpha_i+\beta x_{it}+\varepsilon_{it}$ — "within" $=$ "dummy" by FWL
+
+::: notes
+This is not a side curiosity. It is the entire idea of fixed effects. A panel of firms observed over many years has a natural grouping — by firm. Controlling for a firm dummy for every firm absorbs everything about a firm that does not change over time: its industry, its founding culture, its headquarters state, its baseline managerial quality. The within transformation subtracts each firm's own time-average from each observation, leaving only how the firm deviates from itself over time. Frisch–Waugh–Lovell is the reason the "subtract the firm mean" estimator and the "firm dummy for every firm" estimator give the identical slope — and the reason you need not build and invert a matrix with thousands of dummy columns. When we write the panel model in Week three — y-i-t equals alpha-i plus beta x-i-t plus the error — and estimate beta by within-demeaning, you should hear Frisch–Waugh–Lovell humming underneath. We get that machinery for free, four weeks early, just by turning the dial from one mean to many group means.
+:::
+
+## FWL Makes Fixed Effects Fast
+
+- Don't invert a 5,000-column dummy matrix — **demean** instead
+- Demeaning costs almost nothing: just subtract group means
+- Two-way (firm $\times$ year): **iterate** demeaning till it converges
+- This is how `pyfixest` and friends "absorb" fixed effects
+
+::: notes
+Frisch–Waugh–Lovell is mostly an interpretive theorem, but it has a practical computational edge that real software leans on hard. Imagine a panel with five thousand firms and twenty years. Controlling for a firm dummy and a year dummy the brute-force way means a design matrix with over five thousand columns, and inverting a five-thousand-square matrix for a single regression — enormous and numerically delicate. The theorem says you never have to. Instead of inverting that giant matrix, partial out the dummies by demeaning — subtract each firm's mean and each year's mean — then solve a small regression on the residualized variables. For two-way fixed effects, firm and year together, the demeanings interfere, so you iterate until they converge — the method of alternating projections. The cost drops from "invert a huge matrix" to "compute some group averages," linear in the data. This is exactly how modern packages such as pyfixest work — they never form the dummy matrix at all. Every high-dimensional fixed-effects result in modern empirical finance exists because the theorem lets the dummies be absorbed instead of inverted.
+:::
+
+## The Diagnostic Bonus: The Partial-Regression Plot
+
+- FWL collapses any $K$-dim coefficient to a **bivariate** slope
+- So you can **plot** it: $\tilde{y}$ against $\tilde{x}$, slope drawn through
+- The **added-variable plot** — see which firms drive the coefficient
+- The honest 2-D picture of a high-dimensional number
+
+::: notes
+There is a quieter, diagnostic edge too. Because Frisch–Waugh–Lovell collapses any multivariate coefficient down to a bivariate slope of cleaned patents on cleaned R&D, you can plot it. The scatter of residualized outcome against residualized regressor, with the slope drawn through it, is the honest two-dimensional picture of a coefficient that otherwise lives in K dimensions. That plot is called a partial-regression, or added-variable, plot — the single best way to see whether a control coefficient is driven by the bulk of the data or by one or two influential firms hiding in a high-dimensional regression. It is exactly what you will build in the notebook.
+:::
+
+## Key Takeaway
+
+::: callout-tip
+## Key takeaway
+Subtracting each firm's time-average equals a dummy per firm — that **is** fixed effects, the engine of Weeks 3 and 4. FWL lets software absorb thousands of dummies by cheap demeaning, and lets you **plot** any coefficient as an added-variable scatter. Next: the pitfalls, the code, and the handoff.
+:::
+
+::: notes
+To summarize part seven: the within transformation is the entire idea of fixed effects, arriving four weeks early — subtracting each firm's time-average is identical to adding a dummy for every firm, and Frisch–Waugh–Lovell guarantees the same slope. That equivalence is also a computational gift: software absorbs thousands of dummies by cheap demeaning instead of inverting a giant matrix, iterating for two-way fixed effects. And it gives us the partial-regression plot, an honest picture of a high-dimensional coefficient. In part eight, the finale, we cover the two places naive use of the trick bites, run the whole chapter in fifteen lines of code, name the people behind the theorem, and look ahead to the next chapter.
+:::

@@ -172,7 +172,7 @@ claims through design, not control variables.
 - **nb4.5** Bartik instrument decomposition `[~1,700 w / ~24 cells]`
 
 - **Lab 4 (Lab Manual): "A Clean DiD on HMDA + a State Policy Shock."** Build a panel from HMDA, define treatment by a state regulatory change, run event-study + Callaway–Sant'Anna, stress parallel trends; ties to the fair-lending thread. `[~4,600 w]`
-- **Mentor Session 4 (Lei Gao):** *"Detecting discrimination with a clean design."* Tied to Gao & Sun (2019, *PNAS*) fair-lending. Pre-read, 3 warm-ups, 5-slide deck, 3 stretch questions, reflection. `[~2,200 w]`
+- **Mentor Session 4 (Lei Gao):** *"Detecting discrimination with a clean design."* Tied to Sun & Gao (2019, *PNAS*) fair-lending. Pre-read, 3 warm-ups, 5-slide deck, 3 stretch questions, reflection. `[~2,200 w]`
 - **Assessment W4 + rubric.** `[~2,000 w]`
 
 **Week 4 subtotal: ~73,000 words** *(chapters 33,600 · problems 12,400 · notebooks 8,900 · lab 4,600 · mentor 2,200 · assessment 2,000 · narrative 1,400 · overhead/figures prose ~7,900)*
@@ -227,7 +227,7 @@ LLMs *responsibly* as a research co-pilot.
 - **Ch 6.1 — Reader's Guide: Kogan, Papanikolaou, Seru & Stoffman (2017), "Technological Innovation, Resource Allocation, and Growth," *QJE* 132(2):665–712.** Patent-value measure from stock returns. `[~3,200 w]`
 - **Ch 6.2 — Reader's Guide: Hoberg & Phillips (2016), "Text-Based Network Industries and Endogenous Product Differentiation," *JPE* 124(5):1423–1465.** TNIC; cosine similarity of 10-K text. `[~3,200 w]`
 - **Ch 6.3 — Reader's Guide: Loughran & McDonald (2011), "When Is a Liability Not a Liability? Textual Analysis...," *JF* 66(1):35–65.** Finance-specific sentiment dictionaries; the bag-of-words era. `[~3,200 w]`
-- **Ch 6.4 — Reader's Guide (paired): Bartlett, Morse, Stanton & Wallace (2022), "Consumer-Lending Discrimination in the FinTech Era," *JFE* 143(1):30–56; and Bhutta, Hizmo & Ringo, "How Much Does Racial Bias Affect Mortgage Lending?" Federal Reserve FEDS / working paper.** Fair-lending in the algorithmic era; ties to Gao & Sun (2019). `[~3,600 w]`
+- **Ch 6.4 — Reader's Guide (paired): Bartlett, Morse, Stanton & Wallace (2022), "Consumer-Lending Discrimination in the FinTech Era," *JFE* 143(1):30–56; and Bhutta, Hizmo & Ringo, "How Much Does Racial Bias Affect Mortgage Lending?" Federal Reserve FEDS / working paper.** Fair-lending in the algorithmic era; ties to Sun & Gao (2019). `[~3,600 w]`
 - **Ch 6.5 — The AI Co-Pilot for Research (LLM-in-the-Loop).** Prompt patterns for empirical work; RAG over 10-Ks; LLM text classification with **out-of-sample validation**; critical limits — hallucinated cites, look-ahead/training-data leakage, prompt-induced p-hacking; reproducibility of stochastic outputs. `[~7,200 w]`
 
 **Daily Problem Sets**
@@ -378,7 +378,7 @@ CRSP · Compustat (Fundamentals Annual/Quarterly) · IBES · Thomson/SEC 13F · 
 > Publication-style worked exemplars students can model their own paper on. Each ~3,000–3,800 words
 > of paper + ~1,000 words of an annotated "how this paper was built" margin commentary.
 
-- **Capstone 1 — Fair Lending on HMDA.** Disparity in mortgage approval/pricing; decomposition + a clean design; ties to Gao & Sun (2019). `[~4,600 w]`
+- **Capstone 1 — Fair Lending on HMDA.** Disparity in mortgage approval/pricing; decomposition + a clean design; ties to Sun & Gao (2019). `[~4,600 w]`
 - **Capstone 2 — Common Ownership from 13F.** Constructing common-ownership measures and a disclosure/competition outcome (a student-track variant of the anchor paper's earnings-management outcome); ties to Gao, Han, Kim & Pan (2024), *JCF*, 84:102520. `[~4,600 w]`
 - **Capstone 3 — Innovation from USPTO PatentsView.** Patent-based innovation measure and a firm-outcome event study; ties to KPSS (2017). `[~4,400 w]`
 - **Capstone 4 — SEC 8-K Text Classification.** Classifying 8-K events with OOS-validated text models and a return reaction study; AI-module methods. `[~4,600 w]`
